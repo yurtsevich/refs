@@ -1,0 +1,261 @@
+.rounded_box_corners (@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
+}
+
+.box_shadow (@horizontal: 1px, @vertical: 1px, @blur: 3px, @color: #999) {
+  -moz-box-shadow: @horizontal @vertical @blur @color;
+  -webkit-box-shadow: @horizontal @vertical @blur @color;
+  box-shadow: @horizontal @vertical @blur @color;
+}
+
+.vertical_text_direction {
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+
+p {
+  margin-top: 10px;
+}
+
+code.elem {
+  color: #365f91;
+}
+
+code.attr {
+  color: #76923c;
+}
+
+code.value {
+  color: #746a34;
+}
+
+q {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 10px 30px 10px;
+  color: #666;
+}
+
+#container {
+  float: left;
+  width: 100%;
+}
+
+#index {
+  float: left; 
+  width: 500px;
+}
+
+#main_index {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 40 px;
+  min-height: 100%;
+  padding-top: 20px;
+
+  text-align: right;
+
+  background-color: #ccc;
+
+  ul {
+    margin: 40px 0 60px 1.4em;
+    padding-bottom: 60px;
+     
+    list-style: none outside none;
+    text-decoration: none;
+    font-weight: bold;
+
+    li a {
+      float: right;
+      clear: right;
+      line-height: 1;
+      width: 40px;
+      padding: 5px 10px 6px;
+      margin: 2px 20px 0 -20px;
+      
+      color: #fff;
+      background: #222 url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+      border-bottom: 1px solid rgba(0,0,0,0.25); 
+      .rounded_box_corners;
+      .box_shadow;
+      
+      text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+          
+      :link, :visited, :active { 
+        text-decoration: none;
+        color: #fff;
+      }  
+
+      :hover {
+        color: #cc4933;
+      }
+
+    }
+
+    li#active a {
+      width: 60px; 
+      margin-right: 0;
+      background: #991900 url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+      
+      :hover {
+        color: #fff;
+      }
+    }
+    
+  }
+}
+
+
+#content {
+  position: fixed;
+  left: 83px;
+  padding: 20px 10px 180px 0;
+  width: 350 px;
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 100%;
+  max-height: 100%;
+  background: #eee;
+  
+  overflow: scroll;
+}
+
+#title {
+  margin: 0 250px 0 750px;
+  font-size: 40pt;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+  color: #632423;
+}
+
+#main {
+  margin: 0 20px 0 500px;
+  
+  h1, h2, h3, h4 {
+    color: #632423;
+    font-weight: normal;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+    
+    a, a:active, a:visited { color: #632423; }
+    a:hover { color: #632423; }
+  }
+  
+  h1 {
+    margin: 100px 0 30px -30px;
+    border-bottom: 2px solid #632423;
+    font-size: 28pt;
+    font-variant: small-caps;
+  }
+  
+  h2 {
+    margin: 30px 0 20px -30px;
+    border-bottom: 1px solid #632423;
+    font-size: 20pt;
+    font-variant: small-caps;
+  }
+  
+  h3 {
+    margin: 30px 0 10px -30px;
+    font-size: 16pt;
+  }
+  
+  h4 {
+    margin: 10px 0 10px 0;
+  }
+  
+  ol, ul {
+    margin-top: 0.6em;
+  }
+  
+  aside {
+    float: right;
+    width: 300px;
+    padding: 20px;
+    margin: 10px 5px 10px 20px;
+    background: #eee url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+    .rounded_box_corners;
+    .box_shadow;
+  }
+  
+  table {
+    th {
+      padding: 5px;
+      color: #eee;
+      background-color: #aaa;
+      border: 1px solid #aaa;
+    }
+    
+    td {
+      padding: 5px;
+      background-color: #eee;
+      border: 1px solid #aaa;
+    }
+  }
+  
+  abbr.changed_in_html5 {
+    color: #00b050;
+    vertical-align: super;
+    font-size: x-small;
+  }
+  
+  span.changed_in_html5 {
+    color: #00b050;
+  }
+  
+  abbr.new_in_html5 {
+    color: #c00000;
+    vertical-align: super;
+    font-size: x-small;
+  }
+  
+  span.new_in_html5 {
+    color: #c00000;
+  }
+  
+  abbr.obsolete_in_html5 {
+    color: #00b0f0;
+    vertical-align: super;
+    font-size: x-small;
+  }
+  
+  span.obsolete_in_html5 {
+    color: #00b0f0;
+  }
+  
+  .refs {
+    float: left;
+    font-size: x-small;
+    padding: 4px;
+    margin: -5px 10px 0 -60px;
+    background: #dfe7fd url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+    .rounded_box_corners;
+    .box_shadow;
+    
+    ul {
+      margin: 0;
+      list-style: none outside none;
+      
+      li a {
+        text-decoration: none;
+      }
+    }
+  }
+  
+  .new_changed {
+    float: right;
+    padding: 4px;
+    margin: -35px 5px 10px 10px;
+    min-width: 90%;
+
+    font-size: x-small;
+    color: #333;
+    background: #eee url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+    .rounded_box_corners;
+    .box_shadow;
+  }
+}

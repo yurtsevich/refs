@@ -1,0 +1,225 @@
+.vertical_text_direction {
+  -moz-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+}
+p { margin-top: 10px; }
+code.elem { color: #365f91; }
+code.attr { color: #76923c; }
+code.value { color: #746a34; }
+q { font-style: italic; }
+blockquote {
+  margin: 10px 30px 10px;
+  color: #666666;
+}
+#container {
+  float: left;
+  width: 100%;
+}
+#index {
+  float: left;
+  width: 500px;
+}
+#main_index {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 40 px;
+  min-height: 100%;
+  padding-top: 20px;
+  text-align: right;
+  background-color: #cccccc;
+}
+#main_index ul {
+  margin: 40px 0 60px 1.4em;
+  padding-bottom: 60px;
+  list-style: none outside none;
+  text-decoration: none;
+  font-weight: bold;
+}
+#main_index ul li a {
+  float: right;
+  clear: right;
+  line-height: 1;
+  width: 40px;
+  padding: 5px 10px 6px;
+  margin: 2px 20px 0 -20px;
+  color: #ffffff;
+  background: #222222 url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 1px 1px 3px #999999;
+  -webkit-box-shadow: 1px 1px 3px #999999;
+  box-shadow: 1px 1px 3px #999999;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+}
+#main_index ul li a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+#main_index ul li a:visited {
+  text-decoration: none;
+  color: #ffffff;
+}
+#main_index ul li a:active {
+  text-decoration: none;
+  color: #ffffff;
+}
+#main_index ul li a:hover { color: #cc4933; }
+#main_index ul li#active a {
+  width: 60px;
+  margin-right: 0;
+  background: #991900 url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+}
+#main_index ul li#active a:hover { color: #ffffff; }
+#content {
+  position: fixed;
+  left: 83px;
+  padding: 20px 10px 180px 0;
+  width: 350 px;
+  min-width: 350px;
+  max-width: 350px;
+  min-height: 100%;
+  max-height: 100%;
+  background: #eeeeee;
+  overflow: scroll;
+}
+#title {
+  margin: 0 250px 0 750px;
+  font-size: 40pt;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  color: #632423;
+}
+#main { margin: 0 20px 0 500px; }
+#main h1 {
+  color: #632423;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+#main h1 a { color: #632423; }
+#main h1 a:active { color: #632423; }
+#main h1 a:visited { color: #632423; }
+#main h1 a:hover { color: #632423; }
+#main h2 {
+  color: #632423;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+#main h2 a { color: #632423; }
+#main h2 a:active { color: #632423; }
+#main h2 a:visited { color: #632423; }
+#main h2 a:hover { color: #632423; }
+#main h3 {
+  color: #632423;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+#main h3 a { color: #632423; }
+#main h3 a:active { color: #632423; }
+#main h3 a:visited { color: #632423; }
+#main h3 a:hover { color: #632423; }
+#main h4 {
+  color: #632423;
+  font-weight: normal;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+#main h4 a { color: #632423; }
+#main h4 a:active { color: #632423; }
+#main h4 a:visited { color: #632423; }
+#main h4 a:hover { color: #632423; }
+#main h1 {
+  margin: 100px 0 30px -30px;
+  border-bottom: 2px solid #632423;
+  font-size: 28pt;
+  font-variant: small-caps;
+}
+#main h2 {
+  margin: 30px 0 20px -30px;
+  border-bottom: 1px solid #632423;
+  font-size: 20pt;
+  font-variant: small-caps;
+}
+#main h3 {
+  margin: 30px 0 10px -30px;
+  font-size: 16pt;
+}
+#main h4 { margin: 10px 0 10px 0; }
+#main ol { margin-top: 0.6em; }
+#main ul { margin-top: 0.6em; }
+#main aside {
+  float: right;
+  width: 300px;
+  padding: 20px;
+  margin: 10px 5px 10px 20px;
+  background: #eeeeee url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 1px 1px 3px #999999;
+  -webkit-box-shadow: 1px 1px 3px #999999;
+  box-shadow: 1px 1px 3px #999999;
+}
+#main table th {
+  padding: 5px;
+  color: #eeeeee;
+  background-color: #aaaaaa;
+  border: 1px solid #aaaaaa;
+}
+#main table td {
+  padding: 5px;
+  background-color: #eeeeee;
+  border: 1px solid #aaaaaa;
+}
+#main abbr.changed_in_html5 {
+  color: #00b050;
+  vertical-align: super;
+  font-size: x-small;
+}
+#main span.changed_in_html5 { color: #00b050; }
+#main abbr.new_in_html5 {
+  color: #c00000;
+  vertical-align: super;
+  font-size: x-small;
+}
+#main span.new_in_html5 { color: #c00000; }
+#main abbr.obsolete_in_html5 {
+  color: #00b0f0;
+  vertical-align: super;
+  font-size: x-small;
+}
+#main span.obsolete_in_html5 { color: #00b0f0; }
+#main .refs {
+  float: left;
+  font-size: x-small;
+  padding: 4px;
+  margin: -5px 10px 0 -60px;
+  background: #dfe7fd url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 1px 1px 3px #999999;
+  -webkit-box-shadow: 1px 1px 3px #999999;
+  box-shadow: 1px 1px 3px #999999;
+}
+#main .refs ul {
+  margin: 0;
+  list-style: none outside none;
+}
+#main .refs ul li a { text-decoration: none; }
+#main .new_changed {
+  float: right;
+  padding: 4px;
+  margin: -35px 5px 10px 10px;
+  min-width: 90%;
+  font-size: x-small;
+  color: #333333;
+  background: #eeeeee url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 1px 1px 3px #999999;
+  -webkit-box-shadow: 1px 1px 3px #999999;
+  box-shadow: 1px 1px 3px #999999;
+}
