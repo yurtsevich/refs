@@ -23,12 +23,24 @@ code.elem {
   color: #365f91;
 }
 
+code.at_rule {
+  color: #365f91;
+}
+
 code.attr {
   color: #76923c;
 }
 
 code.value {
   color: #746a34;
+}
+
+.term {
+  color: #1c346a;
+}
+
+.todo {
+  color: red;
 }
 
 q {
@@ -38,6 +50,13 @@ q {
 blockquote {
   margin: 10px 30px 10px;
   color: #666;
+}
+
+figcaption.imgcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
 }
 
 #container {
@@ -59,12 +78,11 @@ blockquote {
   padding-top: 20px;
 
   text-align: right;
-
+  font-size: 0.65em;
   background-color: #ccc;
 
   ul {
-    margin: 40px 0 60px 1.4em;
-    padding-bottom: 60px;
+    margin-left: 1.4em;
      
     list-style: none outside none;
     text-decoration: none;
@@ -74,9 +92,9 @@ blockquote {
       float: right;
       clear: right;
       line-height: 1;
-      width: 40px;
+      min-width: 40px;
       padding: 5px 10px 6px;
-      margin: 2px 20px 0 -20px;
+      margin: 2px 10px 0 -20px;
       
       color: #fff;
       background: #222 url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
@@ -98,7 +116,7 @@ blockquote {
     }
 
     li#active a {
-      width: 60px; 
+      width: 50px; 
       margin-right: 0;
       background: #991900 url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
       
@@ -106,18 +124,18 @@ blockquote {
         color: #fff;
       }
     }
-    
+
+    li:first-child a { margin-top: 40px; }
   }
 }
 
 
 #content {
   position: fixed;
-  left: 83px;
-  padding: 20px 10px 180px 0;
-  width: 350 px;
-  min-width: 350px;
-  max-width: 350px;
+  left: 65px;
+  padding: 20px 10px 180px -10px;
+  min-width: 280px;
+  max-width: 280px;
   min-height: 100%;
   max-height: 100%;
   background: #eee;
@@ -125,17 +143,16 @@ blockquote {
   overflow: scroll;
 }
 
-#title {
-  margin: 0 250px 0 750px;
-  font-size: 40pt;
-  text-align: center;
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
-  color: #632423;
-}
-
 #main {
-  margin: 0 20px 0 500px;
+  margin: 0 20px 0 403px;
   
+  header {
+    font-size: 40pt;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+    color: #632423;
+  }
+
   h1, h2, h3, h4 {
     color: #632423;
     font-weight: normal;
@@ -169,7 +186,8 @@ blockquote {
   }
   
   ol, ul {
-    margin-top: 0.6em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
   
   aside {
@@ -258,4 +276,14 @@ blockquote {
     .rounded_box_corners;
     .box_shadow;
   }
-}
+  
+  .two_column_code_example {
+    width: 100%;
+    
+    td {
+      padding: 0 50px 0 10px;
+      border: #888 1px dashed;
+      background-color: #1B2426;
+    }
+  }
+}  

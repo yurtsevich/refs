@@ -5,7 +5,7 @@
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="be-tarask" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
 
@@ -13,8 +13,8 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Уласны тэхнічны даведнік</title>
-  <meta name="description" content="Індэкс уласнага тэхнічнага даведніку (HTML, CSS, Java, Ruby etc.)">
+  <title>Тэхнічны даведнік па HTML</title>
+  <meta name="description" content="Тэхнічны даведнік па HTML">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -37,6 +37,10 @@
  
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="../js/libs/modernizr-1.6.min.js"></script>
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 
 <body>
@@ -48,9 +52,17 @@
           <li><a href="../htmlRef/index.html">HTML</a></li>
           <li><a href="../cssRef/index.html">CSS</a></li>
           <li><a href="../jsRef/index.html">JS</a></li>
+          <li><a href="../designRef/index.html">Design</a></li>
+        </ul>
+        <ul>
+          <li><a href="../javaRef/index.html">Java</a></li>
         </ul>
         <ul>
           <li><a href="../rubyRef/index.html">Ruby</a></li>
+          <li><a href="../railsRef/index.html">Rails</a></li>
+        </ul>
+        <ul>
+          <li><a href="../gitRef/index.html">Git</a></li>
         </ul>
       </div>
       
@@ -66,18 +78,18 @@
                 </ul>
               </li>
               <li><a href="#Links_4_5_diffs">Розьніца паміж 4ай і 5ай вэрсіямі</a></li>
-              <li><a href="#Links_refs">References</a></li>
-              <li><a href="#Links_forms">Forms</a></li>
+              <li><a href="#Links_refs">Даведнікі</a></li>
+              <li><a href="#Links_forms">Формы</a></li>
             </ul>
           </li>
           <li><a href="#HTML_XHTML">HTML і XHTML</a></li>
-          <li class="liOpen"><a href="#DOCTYPE">DOCTYPE</a>
+          <li><a href="#DOCTYPE">DOCTYPE</a>
             <ul>
               <li><a href="#DOCTYPE_types">Тыпы</a></li>
               <li><a href="#DOCTYPE_descriptions">Апісаньне DOCTYPES, даступных грамадзкасьці ад W3C</a></li>
               <li><a href="#DOCTYPE_agent_modes">Рэжымы агентаў у залежнасьці ад DOCTYPE</a></li>
             </ul>
-          <li class="liOpen"><a href="#Templates">Шаблёны дакумэнтаў</a>
+          <li><a href="#Templates">Шаблёны дакумэнтаў</a>
             <ul>
               <li><a href="#Templates_Boilerplate">Boilerplate template</a></li>
               <li><a href="#Templates_5_short">Кароткі HTML5</a></li>
@@ -87,7 +99,7 @@
           </li>
           <li class="liOpen"><a href="#Elements">Элемэнты HTML</a>
             <ul>
-              <li><a href="#Elements_by_content">Па тыпу зьместу</a>
+              <li class="liOpen"><a href="#Elements_by_content">Па тыпу зьместу</a>
                 <ul>
                   <li><a href="#Elements_root">Карнявы</a></li>
                   <li><a href="#Elements_metadata">Мэтаданыя дакумэнту</a></li>
@@ -225,7 +237,7 @@
                   <li><a href="#source">source</a></li>
                   <li><a href="#span">span</a></li>
                   <li><a href="#strong">strong</a></li>
-                  <li><a href="#style">style</a></li>
+                  <li><a href="#style_elem">style</a></li>
                   <li><a href="#sub">sub</a></li>
                   <li><a href="#summary">summary</a></li>
                   <li><a href="#sup">sup</a></li>
@@ -237,7 +249,7 @@
                   <li><a href="#th">th</a></li>
                   <li><a href="#thead">thead</a></li>
                   <li><a href="#time">time</a></li>
-                  <li><a href="#title">title</a></li>
+                  <li><a href="#title_elem">title</a></li>
                   <li><a href="#tr">tr</a></li>
                   <li><a href="#ul">ul</a></li>
                   <li><a href="#var">var</a></li>
@@ -261,9 +273,9 @@
                   <li><a href="#id">id</a></li>
                   <li><a href="#lang">lang</a></li>
                   <li><a href="#spellcheck">spellcheck</a></li>
-                  <li><a href="#style">style</a></li>
+                  <li><a href="#style_attr">style</a></li>
                   <li><a href="#tabindex">tabindex</a></li>
-                  <li><a href="#title">title</a></li>
+                  <li><a href="#title_attr">title</a></li>
                 </ul>
               </li>
               <li><a href="#Attributes_custom_data">Custom Data Attributes</a></li>
@@ -299,42 +311,48 @@
       </div>
     </div>
     
-    <div id="title">
-      Даведнік па HTML
-    </div>
-    
     <article id="main">
+      <header>
+        Даведнік па HTML
+      </header>
+    
       <section>
         <h1><a name="Links">Карысныя спасылкі</a></h1>
+        
         <h2><a name="Links_MarkUp_home">MarkUp home</a></h2>
         <p><a href="http://www.w3.org/MarkUp/">http://www.w3.org/MarkUp/</a></p>
+        
         <h2><a name="Links_specs">Стандарты і спэцыфікацыі</a></h2>
         <h3><a name="Links_specs_4_01">HTML 4.01</a></h3>
-        <p><i>Specification</i> at <b>W3C</b>: <a href="http://www.w3.org/TR/html401/">http://www.w3.org/TR/html401</a></p>
+        <p><i>Спэцыфікацыя</i> на <b>W3C</b>: <a href="http://www.w3.org/TR/html401/">http://www.w3.org/TR/html401</a></p>
         <h3><a name="Links_specs_5">HTML 5.0</a></h3>
-        <p>Current <i>draft</i> at <b>W3C</b>: <a href="http://dev.w3.org/html5/spec/">http://dev.w3.org/html5/spec</a></p>
-        <p>Current <i>draft</i> at <b>WHATWG</b>: <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">http://www.whatwg.org/specs/web-apps/current-work/multipage</a></p>
-        <p><cite>Dive into HTML5</cite>: <a href="http://diveintohtml5.org/">http://diveintohtml5.org</a></p>
-        <p><cite>HTML5 Gallery</cite>: <a href="http://html5gallery.com/">http://html5gallery.com</a></p>
-        <p><cite>HTML 5 Doctor</cite>: <a href="http://html5doctor.com/">http://html5doctor.com</a></p>
-        <p><i>JavaScript</i>, каторы вызначае ці падтрымліваюцца агентам пэўныя асаблівасьці <i>HTML5</i>: <a href="http://www.modernizr.com/">http://www.modernizr.com</a></p>
+        <p>Цяперашні <i>чарнавік</i> на <b>W3C</b>: <a href="http://dev.w3.org/html5/spec/">http://dev.w3.org/html5/spec</a></p>
+        <p>Цяперашні <i>чарнавік</i> на <b>WHATWG</b>: <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/">http://www.whatwg.org/specs/web-apps/current-work/multipage</a></p>
+        <p><cite>"Dive into HTML5"</cite>: <a href="http://diveintohtml5.org/">http://diveintohtml5.org</a></p>
+        <p><cite>"HTML5 Gallery"</cite>: <a href="http://html5gallery.com/">http://html5gallery.com</a></p>
+        <p><cite>"HTML 5 Doctor"</cite>: <a href="http://html5doctor.com/">http://html5doctor.com</a></p>
+        <p><a href="..\jsRef\index.html"><span class="term"><i>JavaScript</i></span></a>, каторы вызначае ці падтрымліваюцца агентам пэўныя асаблівасьці <i>HTML5</i>: <a href="http://www.modernizr.com/">http://www.modernizr.com</a></p>
+        
         <h2><a name="Links_4_5_diffs">Розьніца паміж 4ай і 5ай вэрсіямі</a></h2>
         <p>Current <i>draft</i> at <b>W3C</b>: <a href="http://www.w3.org/TR/html5-diff/">http://www.w3.org/TR/html5-diff/</a></p>
-        <h2><a name="Links_refs">References</a></h2>
-        <p><cite>The Markup Language Reference</cite> at <b>W3C</b>: <a href="http://dev.w3.org/html5/markup/">http://dev.w3.org/html5/markup</a></p>
-        <p><cite>HTML 5 Reference</cite> at <b>W3C</b>: <a href="http://dev.w3.org/html5/html-author/">http://dev.w3.org/html5/html-author</a></p>
-        <p><cite>HTML Reference</cite> at <b>SitePoint</b>: <a href="http://reference.sitepoint.com/html/">http://reference.sitepoint.com/html</a></p>
-        <h2><a name="Links_forms">Forms</a></h2>
+        
+        <h2><a name="Links_refs">Даведнікі</a></h2>
+        <p><cite>The Markup Language Reference</cite> на <b>W3C</b>: <a href="http://dev.w3.org/html5/markup/">http://dev.w3.org/html5/markup</a></p>
+        <p><i>Даведнік</i> па <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 на <b>W3C</b>: <a href="http://dev.w3.org/html5/html-author/">http://dev.w3.org/html5/html-author</a></p>
+        <p><i>Даведнік</i> па <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>4 на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/html/">http://reference.sitepoint.com/html</a></p>
+        
+        <h2><a name="Links_forms">Формы</a></h2>
         <p>Генэратар коду <i>вэб-формаў</i>: <a href="http://www.phpform.org/">http://www.phpform.org</a></p>
       </section>
+      
       <section>
         <h1><a name="HTML_XHTML">HTML і XHTML</a></h1>
-        <p>Дакумэнт HTML можа быць запісаны традыцыйным <i>HTML-сынтаксісам</i> і <i>XML-сынтаксісам</i> (так называемы XHTML).</p>
-        <p><i>HTML-сынтаксіс</i> мае жорстка зададзены набор элемэнтаў і атрыбутаў. Аўтары і агенты HTML павінны прытрымлівацца гэтага набору.</p>
-        <p><i>XML жа сынтаксіс</i> вольны, могуць ўводзіцца новыя элемэнты і атрыбуты, але сам па сабе гэты сынтаксіс нашмат больш строгі:
+        <p>Дакумэнт <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> можа быць запісаны традыцыйным <i><abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-сынтаксісам</i> і <i><abbr class="term" title="eXtensible Markup Language">XML</abbr>-сынтаксісам</i> (так называемы XHTML).</p>
+        <p><i><abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-сынтаксіс</i> мае жорстка зададзены набор элемэнтаў і атрыбутаў. Аўтары і агенты <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> павінны прытрымлівацца гэтага набору.</p>
+        <p><i><abbr class="term" title="eXtensible Markup Language">XML</abbr> жа сынтаксіс</i> вольны, могуць ўводзіцца новыя элемэнты і атрыбуты, але сам па сабе гэты сынтаксіс нашмат больш строгі:
           <ul>
             <li><strong>Абавязкова павінен утрымліваць элемэнты <a href="#html"><code class="elem">html</code></a>, <a href="#head"><code class="elem">head</code></a> і <a href="#body"><code class="elem">body</code></a></strong>.</li>
-            <aside><sup>1</sup> <code class="attr">xmlns</code> - гэта <i>namespace</i> для XML</aside>
+            <aside><sup>1</sup> <code class="attr">xmlns</code> - гэта <i>namespace</i> для <abbr class="term" title="eXtensible Markup Language">XML</abbr></aside>
             <li><strong>Адкрываючы тэг <code class="elem">html</code> павенен утрымліваць атрыбут <code class="attr">xmlns</code><sup>1</sup></strong>.</li>
             <li><strong>Усе элемэнты павінны мець адкрываючыя і закрываючыя тэгі</strong>, акрамя пустых (у адпаведнасьці са спэцыфікацыяй) элемэнтаў, для каторых выкарыстоўваецца адпаведны сынтаксіс пустога элемэнту (<code>&lt;br&nbsp;/&gt;</code>).</li>
             <li><strong>Усе элемэнты і атрыбуты зьяўляюцца <i>case-sensitive</i></strong>.</li>
@@ -343,13 +361,13 @@
         </p>
         <p>Вельмі істотныя аспэкты, якімі адрозьніваюцца сынтаксісы паміж сабой:
           <ul>
-            <li>У XHTML мова пазначаецца атрыбутам <code class="attr">xml:lang</code>, а не <code class="attr">lang</code>, як у HTML.</li>
-            <aside><sup>2</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў HTML-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
+            <li>У XHTML мова пазначаецца атрыбутам <code class="attr">xml:lang</code>, а не <code class="attr">lang</code>, як у <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>.</li>
+            <aside><sup>2</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
             <li>У XHTML кадыроўка тэксту<sup>2</sup> пазначаецца ў аб’яўленьні <code>xml</code>:
             <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-            <?xml version="1.0" encoding="UTF-8"?>
+            &lt;?xml version="1.0" encoding="UTF-8"?&gt;
             ]]></script>
-            <p>У той час, як ў HTML гэта робіцца праз Content-Type:</p>
+            <p>У той час, як ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> гэта робіцца праз Content-Type:</p>
             <script type="syntaxhighlighter" class="brush: html"><![CDATA[
             <meta http-equiv="Content-Type" 
                 content="text/html; charset=UTF-8" />
@@ -381,24 +399,25 @@
           </ul>
         </p>
       </section>
+      
       <section>
         <h1><a name="DOCTYPE">DOCTYPE</a></h1>
         <h2><a name="DOCTYPE_types">Тыпы</a></h2>
-        <p>Гэта асабовая інструкцыя, абавязковая для HTML-сынтаксісу, якая вызначае мадэль апрацоўкі бразузэра. Гэтая інструкцыя павінна зьмяшчацца ў самым пачатку дакумэнту і адпавядаць аднаму з 3х фарматаў:
+        <p>Гэта асабовая інструкцыя, абавязковая для <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-сынтаксісу, якая вызначае мадэль апрацоўкі бразузэра. Гэтая інструкцыя павінна зьмяшчацца ў самым пачатку дакумэнту і адпавядаць аднаму з 3х фарматаў:
           <ol>
-            <li>Нармальны:
+            <li>Сучасны:
               <script type="syntaxhighlighter" class="brush: html"><![CDATA[
               <!DOCTYPE html>
               ]]></script>
             </li>
-            <li>Deprecated:
+            <li>Састарэлы:
               <script type="syntaxhighlighter" class="brush: html"><![CDATA[
               <!DOCTYPE html 
                   PUBLIC "-//W3C//DTD HTML 4.01//EN" 
                   "http://www.w3.org/TR/html4/strict.dtd">
               ]]></script>
             </li>
-            <li>3.  Сумяшчальны з <i>legacy-tool</i>, то бок з агентам, каторы працуе не з грамадзкімі вэрсіямі HTML, а з уласнымі, пашыранымі:
+            <li>Сумяшчальны з <i>legacy-tool</i>, то бок з агентам, каторы працуе не з грамадзкімі вэрсіямі <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>, а з уласнымі, пашыранымі:
               <script type="syntaxhighlighter" class="brush: html"><![CDATA[
               <!DOCTYPE html SYSTEM "about:legacy-compat">
               ]]></script>
@@ -419,35 +438,35 @@
                   &nbsp;&nbsp;&nbsp;&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;HTML&nbsp;4.01//EN" 
                   &nbsp;&nbsp;&nbsp;&nbsp;"http://www.w3.org/TR/html4/strict.dtd"&gt;
               </code></pre></td>
-              <td>Строгі HTML 4.01. Не дазваляецца выкарыстаньне састарэлых прэзэнтацыйных(ці стылевых, напр. <a href="#Deprecated_elements"><code class="elem">font</code></a>) элемэнтаў. Не дазваляецца выкарыстаньне <a href="#Deprecated elements">фрэймаў</a>.</td>
+              <td>Строгі <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> 4.01. Не дазваляецца выкарыстаньне састарэлых прэзэнтацыйных(ці стылевых, напр. <a href="#Deprecated_elements"><code class="elem">font</code></a>) элемэнтаў. Не дазваляецца выкарыстаньне <a href="#Deprecated elements">фрэймаў</a>.</td>
             </tr>
             <tr>
               <td style="width: 30em; min-width: 30em;"><pre><code>&lt;!DOCTYPE html 
                 &nbsp;&nbsp;&nbsp;&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;HTML&nbsp;4.01&nbsp;Transitional//EN" 
                 &nbsp;&nbsp;&nbsp;&nbsp;"http://www.w3.org/TR/html4/loose.dtd"&gt;
               </code></pre></td>
-              <td>Пераходны HTML 4.01. У параўнаньні з папярэднім дазваляецца выкарыстаньне прэзэнтацыйных элемэнтаў, якія зьяўляюцца састарэлымі для строгага тыпу.</td>
+              <td>Пераходны <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> 4.01. У параўнаньні з папярэднім дазваляецца выкарыстаньне прэзэнтацыйных элемэнтаў, якія зьяўляюцца састарэлымі для строгага тыпу.</td>
             </tr>
             <tr>
               <td style="width: 30em; min-width: 30em;"><pre><code>&lt;!DOCTYPE html 
                 &nbsp;&nbsp;&nbsp;&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;HTML&nbsp;4.01&nbsp;Frameset//EN"
                 &nbsp;&nbsp;&nbsp;&nbsp;"http://www.w3.org/TR/html4/frameset.dtd"&gt;
               </code></pre></td>
-              <td>Фрэймавы HTML 4.01. Тое ж самае, што папярэдні тып, толькі яшчэ дазваляецца выкарыстоўваць <a href="#Deprecated elements">фрэймы</a>.</td>
+              <td>Фрэймавы <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> 4.01. Тое ж самае, што папярэдні тып, толькі яшчэ дазваляецца выкарыстоўваць <a href="#Deprecated elements">фрэймы</a>.</td>
             </tr>
             <tr>
               <td style="width: 30em; min-width: 30em;"><pre><code>&lt;!DOCTYPE html
                 &nbsp;&nbsp;&nbsp;&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Strict//EN"
                 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
               </code></pre></td>
-              <td>Строгі XHTML 1.0. Тое ж, что строгі HTML 4.01 толькі дакумэнт павінен быць напісаны, як правільны XML.</td>
+              <td>Строгі XHTML 1.0. Тое ж, что строгі <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> 4.01 толькі дакумэнт павінен быць напісаны, як правільны <abbr class="term" title="eXtensible Markup Language">XML</abbr>.</td>
             </tr>
             <tr>
               <td style="width: 30em; min-width: 30em;"><pre><code>&lt;!DOCTYPE html 
                 &nbsp;&nbsp;&nbsp;&nbsp;PUBLIC&nbsp;"-//W3C//DTD&nbsp;XHTML&nbsp;1.0&nbsp;Transitional//EN"
                 &nbsp;&nbsp;&nbsp;&nbsp;"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
               </code></pre></td>
-              <td>Пераходны XHTML 1.0. Тое ж, что пераходны HTML 4.01 толькі дакумэнт павінен быць напісаны, як правільны XML.</td>
+              <td>Пераходны XHTML 1.0. Тое ж, что пераходны <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> 4.01 толькі дакумэнт павінен быць напісаны, як правільны <abbr class="term" title="eXtensible Markup Language">XML</abbr>.</td>
             </tr>
             <tr>
               <td style="width: 30em; min-width: 30em;"><pre><code>&lt;!DOCTYPE html
@@ -470,10 +489,11 @@
         <p>Каб правільна адлюстроўваць і сучасные дакумэнты, адпавядаючыя стандарту, і старыя, не адпавядаючыя стандарту, у браўзэраў ёсьць некалькі рэжымаў працы/адлюстраваньня.</p>
         <ol>
           <li><i>Quirks Mode</i>. Рэжым сумяшчальны са старымі дакумэнтамі, каторыя не адпавядаюць сучасным стандартам.</li>
-          <li><i>Standards Mode</i> (у HTML5 выкарыстоўваецца тэрмін "<i>no quirks mode</i>"). Рэжым, у каторым агенты адлюстроўваюць дакумэнт у адпаведнасьці са стандартам.</li>
-          <li><i>Almost Standards Mode</i> (у HTML5 выкарыстоўваецца тэрмін "<i>limited quirks mode</i>"). Рэжым, у каторым вертыкальныя памеры ячэек табліцы разьлічваюцца традыцыйна, а не ў адпаведнасьці са спэцыфікацыяй CSS2.</li>
+          <li><i>Standards Mode</i> (у <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 выкарыстоўваецца тэрмін "<i>no quirks mode</i>"). Рэжым, у каторым агенты адлюстроўваюць дакумэнт у адпаведнасьці са стандартам.</li>
+          <li><i>Almost Standards Mode</i> (у <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 выкарыстоўваецца тэрмін "<i>limited quirks mode</i>"). Рэжым, у каторым вертыкальныя памеры ячэек табліцы разьлічваюцца традыцыйна, а не ў адпаведнасьці са спэцыфікацыяй <a href="http://www.w3.org/TR/CSS2/">CSS2</a>.</li>
         </ol>
       </section>
+      
       <section>
         <h1><a name="Templates">Шаблёны дакумэнтаў</a></h1>
         <h2><a name="Templates_Boilerplate">Boilerplate web site HTML5 template</a></h2>
@@ -602,32 +622,42 @@
         </html>
         ]]></script>
       </section>
+      
       <section>
         <h1><a name="Elements">Элемэнты HTML</a></h1>
+        
         <h2><a name="Elements_by_content">Па тыпу зьместу</a></h2>
+        
         <h3><a name="Elements_root">Карнявы</a></h3>
         <p><a href="#html"><code class="elem">html</code></a></p>
+        
         <h3><a name="Elements_metadata">Мэтаданыя дакумэнту</a></h3>
         <p><a href="#base"><code class="elem">base</code></a>&nbsp;&mdash; базавы URL</p>
         <p><a href="#head"><code class="elem">head</code></a>&nbsp;&mdash; кантэйнер мэтаданых дакумэнту</p>
         <p><a href="#link"><code class="elem">link</code></a>&nbsp;&mdash; мэтаданыя суадносінаў паміж дакумэнтаў</p>
         <p><a href="#meta"><code class="elem">meta</code></a>&nbsp;<abbr class="changed_in_html5" title="УВАГА! Прызначэньне ці сэнс элемэнту/атрыбуту зьмяніўся ў HTML5 у параўнаньні з HTML4">changed</abbr>&nbsp;&mdash; мэтаданыя</p>
-        <p><a href="#style"><code class="elem">style</code></a>&nbsp;&mdash; інфармацыя аб стылі (прэзэнтацыйная інфармацыя)</p>
+        <p><a href="#style_elem"><code class="elem">style</code></a>&nbsp;&mdash; інфармацыя аб стылі (прэзэнтацыйная інфармацыя)</p>
         <p><a href="#title"><code class="elem">title</code></a>&nbsp;&mdash; загаловак дакумэнту</p>
+        
         <h3><a name="Elements_flow">Flow elements</a></h3>
-        <p>Да HTML5 называліся <i>block</i>-элемэнтамі. Можна назваць іх <strong>разьметачнымі</strong> элемэнтамі&nbsp;&mdash; выдзяляюць семантыку і структуру тэксту. Зь 5й вэрсіі фактычна ўсе элемэнты, каторыя зьмяшчаюцца ў <a href="#body"><code class="elem">body</code></a>, можна аднесьці да гэтага тыпу. Уключаюць:</p>
+        <p>Да <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 называліся <i>block</i>-элемэнтамі. Можна назваць іх <strong>разьметачнымі</strong> элемэнтамі&nbsp;&mdash; выдзяляюць семантыку і структуру тэксту. Зь 5й вэрсіі фактычна ўсе элемэнты, каторыя зьмяшчаюцца ў <a href="#body"><code class="elem">body</code></a>, можна аднесьці да гэтага тыпу. Уключаюць:</p>
         <p><a href="#Elements_phrasing"><i>Phrasing elements</i></a>, а таксама: <a href="#address"><code class="elem">address</code></a>&nbsp;&middot; <a href="#article"><code class="elem">article</code></a>&nbsp;&middot; <a href="#aside"><code class="elem">aside</code></a>&nbsp;&middot; <a href="#blockquote"><code class="elem">blockquote</code></a>&nbsp;&middot; <a href="#details"><code class="elem">details</code></a>&nbsp;&middot; <a href="#div"><code class="elem">div</code></a>&nbsp;&middot; <a href="#dl"><code class="elem">dl</code></a>&nbsp;&middot; <a href="#fieldset"><code class="elem">fieldset</code></a>&nbsp;&middot; <a href="#figure"><code class="elem">figure</code></a>&nbsp;&middot; <a href="#footer"><code class="elem">footer</code></a>&nbsp;&middot; <a href="#form"><code class="elem">form</code></a>&nbsp;&middot; <a href="#h"><code class="elem">h1, h2, h3, h4, h5, h6</code></a>&nbsp;&middot; <a href="#header"><code class="elem">header</code></a>&nbsp;&middot; <a href="#hgroup"><code class="elem">hgroup</code></a>&nbsp;&middot; <a href="#hr"><code class="elem">hr</code></a>&nbsp;&middot; <a href="#menu"><code class="elem">menu</code></a>&nbsp;&middot; <a href="#nav"><code class="elem">nav</code></a>&nbsp;&middot; <a href="#ol"><code class="elem">ol</code></a>&nbsp;&middot; <a href="#p"><code class="elem">p</code></a>&nbsp;&middot; <a href="#pre"><code class="elem">pre</code></a>&nbsp;&middot; <a href="#section"><code class="elem">section</code></a>&nbsp;&middot; <a href="#table"><code class="elem">table</code></a>&nbsp;&middot; <a href="#ul"><code class="elem">ul</code></a></p>
+        
         <h3><a name="Elements_phrasing">Phrasing elements</a></h3>
-        <p>Да HTML5 называліся <i>inline</i>-элемэнтамі. Можна назваць іх <strong>тэкставымі</strong> элемэнтамі – фактычна фарміруюць тэкст дакумэнту. Могуць зьмяшчаць унутры толькі таксама <i>phrasing elements</i>. Уключаюць:</p>
+        <p>Да <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 называліся <i>inline</i>-элемэнтамі. Можна назваць іх <strong>тэкставымі</strong> элемэнтамі – фактычна фарміруюць тэкст дакумэнту. Могуць зьмяшчаць унутры толькі таксама <i>phrasing elements</i>. Уключаюць:</p>
         <p><a href="#a"><code class="elem">a</code></a>&nbsp;&middot; <a href="#abbr"><code class="elem">abbr</code></a>&nbsp;&middot; <a href="#area"><code class="elem">area</code></a>&nbsp;&middot; <a href="#audio"><code class="elem">audio</code></a>&nbsp;&middot; <a href="#b"><code class="elem">b</code></a>&nbsp;&middot; <a href="#bdo"><code class="elem">bdo</code></a>&nbsp;&middot; <a href="#br"><code class="elem">br</code></a>&nbsp;&middot; <a href="#button"><code class="elem">button</code></a>&nbsp;&middot; <a href="#canvas"><code class="elem">canvas</code></a>&nbsp;&middot; <a href="#cite"><code class="elem">cite</code></a>&nbsp;&middot; <a href="#code"><code class="elem">code</code></a>&nbsp;&middot; <a href="#command"><code class="elem">command</code></a>&nbsp;&middot; <a href="#datalist"><code class="elem">datalist</code></a>&nbsp;&middot; <a href="#del"><code class="elem">del</code></a>&nbsp;&middot; <a href="#dfn"><code class="elem">dfn</code></a>&nbsp;&middot; <a href="#em"><code class="elem">em</code></a>&nbsp;&middot; <a href="#embed"><code class="elem">embed</code></a>&nbsp;&middot; <a href="#i"><code class="elem">i</code></a>&nbsp;&middot; <a href="#iframe"><code class="elem">iframe</code></a>&nbsp;&middot; <a href="#img"><code class="elem">img</code></a>&nbsp;&middot; <a href="#input"><code class="elem">input</code></a>&nbsp;&middot; <a href="#ins"><code class="elem">ins</code></a>&nbsp;&middot; <a href="#kbd"><code class="elem">kbd</code></a>&nbsp;&middot; <a href="#keygen"><code class="elem">keygen</code></a>&nbsp;&middot; <a href="#label"><code class="elem">label</code></a>&nbsp;&middot; <a href="#map"><code class="elem">map</code></a>&nbsp;&middot; <a href="#mark"><code class="elem">mark</code></a>&nbsp;&middot; <a href="#meter"><code class="elem">meter</code></a>&nbsp;&middot; <a href="#noscript"><code class="elem">noscript</code></a>&nbsp;&middot; <a href="#object"><code class="elem">object</code></a>&nbsp;&middot; <a href="#output"><code class="elem">output</code></a>&nbsp;&middot; <a href="#progress"><code class="elem">progress</code></a>&nbsp;&middot; <a href="#q"><code class="elem">q</code></a>&nbsp;&middot; <a href="#ruby"><code class="elem">ruby</code></a>&nbsp;&middot; <a href="#samp"><code class="elem">samp</code></a>&nbsp;&middot; <a href="#script"><code class="elem">script</code></a>&nbsp;&middot; <a href="#select"><code class="elem">select</code></a>&nbsp;&middot; <a href="#small"><code class="elem">small</code></a>&nbsp;&middot; <a href="#span"><code class="elem">span</code></a>&nbsp;&middot; <a href="#strong"><code class="elem">strong</code></a>&nbsp;&middot; <a href="#sub"><code class="elem">sub</code></a>&nbsp;&middot; <a href="#sup"><code class="elem">sup</code></a>&nbsp;&middot; <a href="#textarea"><code class="elem">textarea</code></a>&nbsp;&middot; <a href="#time"><code class="elem">time</code></a>&nbsp;&middot; <a href="#var"><code class="elem">var</code></a>&nbsp;&middot; <a href="#video"><code class="elem">video</code></a>&nbsp;&middot; <a href="#wbr"><code class="elem">wbr</code></a></p>
+        
         <h3><a name="Elements_transparent">Transparent elements</a></h3>
         <p>Гэтыя элемэнты самі зьяўляюцца і дазваляюць зьмяшчаць унутры сябе як <i>flow</i>-, гэтак і <i>phrasing</i>-элемэнты, у залежнасьці ад таго, што дазваляюць зьмяшчаць у сабе іх бацькоўскія элемэнты.</p>
+        
         <h3><a name="Elements_void">Void elements</a></h3>
         <p>Элемэнты, якія ня могуць мець ніякага зьместу. Уключаюць:</p>
         <p><a href="#area"><code class="elem">area</code></a>&nbsp;&middot; <a href="#base"><code class="elem">base</code></a>&nbsp;&middot; <a href="#br"><code class="elem">br</code></a>&nbsp;&middot; <a href="#col"><code class="elem">col</code></a>&nbsp;&middot; <a href="#command"><code class="elem">command</code></a>&nbsp;&middot; <a href="#embed"><code class="elem">embed</code></a>&nbsp;&middot; <a href="#hr"><code class="elem">hr</code></a>&nbsp;&middot; <a href="#img"><code class="elem">img</code></a>&nbsp;&middot; <a href="#input"><code class="elem">input</code></a>&nbsp;&middot; <a href="#keygen"><code class="elem">keygen</code></a>&nbsp;&middot; <a href="#link"><code class="elem">link</code></a>&nbsp;&middot; <a href="#meta"><code class="elem">meta</code></a>&nbsp;&middot; <a href="#param"><code class="elem">param</code></a>&nbsp;&middot; <a href="#source"><code class="elem">source</code></a>&nbsp;&middot; <a href="#wbr"><code class="elem">wbr</code></a></p>
+        
         <h3><a name="Elements_scripts">Скрыпты</a></h3>
         <p><a href="#noscript"><code class="elem">noscript</code></a>&nbsp;&mdash; фрагмэнт дакумэнту, каторы не апрацоўваецца скрыптом</p>
         <p><a href="#script"><code class="elem">script</code></a>&nbsp;&mdash; убудаваны скрыпт</p>
+        
         <h3><a name="Elements_sectioning">Сэкцыйныя элемэнты</a></h3>
         <p><a href="#address"><code class="elem">address</code></a>&nbsp;&mdash; кантактная інфармацыя аўтара дакумэнту (не прызначаны для пазначэньня агульных адрасоў, а менавіта кантактнай інфармацыі аўтара – напрыклад, і-мэйл ці тэлефон; для пазначэньня адрасоў гл. <a href="#Microformats">Microformats</a>)</p>
         <p><a href="#article"><code class="elem">article</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; асобны артыкул дакумэнту</p>
@@ -638,6 +668,7 @@
         <p><a href="#hgroup"><code class="elem">hgroup</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; група загалоўкаў</p>
         <p><a href="#nav"><code class="elem">nav</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; група навігацыйных спасылак</p>
         <p><a href="#section"><code class="elem">section</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; асобная сэкцыя артыкулу</p>
+        
         <h3><a name="Elements_grouping">Элемэнты, групуючыя зьмест</a></h3>
         <p><a href="#blockquote"><code class="elem">blockquote</code></a>&nbsp;&mdash; блёк цытаваньня</p>
         <p><a href="#br"><code class="elem">br</code></a>&nbsp;&mdash; разрыў радка</p>
@@ -653,6 +684,7 @@
         <p><a href="#p"><code class="elem">p</code></a>&nbsp;&mdash; параграф</p>
         <p><a href="#pre"><code class="elem">pre</code></a>&nbsp;&mdash; тэкст у прадвызначаным фармаце</p>
         <p><a href="#ul"><code class="elem">ul</code></a>&nbsp;&mdash; ненумараваны сьпіс</p>
+        
         <h3><a name="Elements_semantics">Элемэнты, пазначаючыя сэмантыку фрагмэнтаў тэксту</a></h3>
         <p><a href="#a"><code class="elem">a</code></a>&nbsp;<abbr class="changed_in_html5" title="УВАГА! Прызначэньне ці сэнс элемэнту/атрыбуту зьмяніўся ў HTML5 у параўнаньні з HTML4">changed</abbr>&nbsp;&mdash; спасылка</p>
         <p><a href="#abbr"><code class="elem">abbr</code></a>&nbsp;&mdash; абрэвіятура</p>
@@ -677,14 +709,16 @@
         <p><a href="#sup"><code class="elem">sup</code></a>&nbsp;&mdash; па-над-радковы тэкст</p>
         <p><a href="#time"><code class="elem">time</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; дата і/ці час</p>
         <p><a href="#var"><code class="elem">var</code></a>&nbsp;&mdash; сэнсавая ці літаральная (у формуле) пераменная</p>
+        
         <h3><a name="Elements_authoring">Элемэнты, пазначаючыя аўтарскія рэдагаваньні тэксту</a></h3>
         <p><a href="#del"><code class="elem">del</code></a>&nbsp;&mdash; выдалены тэкст</p>
         <p><a href="#ins"><code class="elem">ins</code></a>&nbsp;&mdash; устаўлены тэкст</p>
+        
         <h3><a name="Elements_embedding">Убудаваны зьмест</a></h3>
         <p><a href="#area"><code class="elem">area</code></a>&nbsp;&mdash; спасылка на пэўную вобласьць выявы</p>
         <p><a href="#audio"><code class="elem">audio</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; аўдыё-струмень (<i>audio stream</i>)</p>
         <p><a href="#canvas"><code class="elem">canvas</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; канва для дынамічнай графікі (<i>canvas for dynamic graphics</i>)</p>
-        <p><a href="#embed"><code class="elem">embed</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; убудаваньне не-HTML зьместу, праз плагіны (<i>integration point for plugins</i>)</p>
+        <p><a href="#embed"><code class="elem">embed</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; убудаваньне не-<abbr class="term" title="Hyper Text Markup Language">HTML</abbr> зьместу, праз плагіны (<i>integration point for plugins</i>)</p>
         <p><a href="#iframe"><code class="elem">iframe</code></a>&nbsp;&mdash; убудаваны/укладзены фрэйм (<i>nested browsing context</i>, <i>inline frame</i>)</p>
         <p><a href="#img"><code class="elem">img</code></a>&nbsp;&mdash; выява</p>
         <p><a href="#map"><code class="elem">map</code></a>&nbsp;&mdash; мапа спасылак на выяве</p>
@@ -692,6 +726,7 @@
         <p><a href="#param"><code class="elem">param</code></a>&nbsp;&mdash; парамэтры плагінаў</p>
         <p><a href="#source"><code class="elem">source</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; медыя-крыніца (<i>media source</i>)</p>
         <p><a href="#video"><code class="elem">video</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; відэа-струмень (<i>video</i>)</p>
+        
         <h3><a name="Elements_tables">Табліцы</a></h3>
         <p><a href="#caption"><code class="elem">caption</code></a>&nbsp;&mdash; загаловак табліцы</p>
         <p><a href="#col"><code class="elem">col</code></a>&nbsp;&mdash; калёнка табліцы</p>
@@ -703,6 +738,7 @@
         <p><a href="#th"><code class="elem">th</code></a>&nbsp;&mdash; ячэйка шапкі табліцы</p>
         <p><a href="#thead"><code class="elem">thead</code></a>&nbsp;&mdash; група радкоў у якасьці <i>header</i>’а табліцы</p>
         <p><a href="#tr"><code class="elem">tr</code></a>&nbsp;&mdash; радок табліцы</p>
+        
         <h3><a name="Elements_forms">Формы</a></h3>
         <p><a href="#button"><code class="elem">button</code></a>&nbsp;&mdash; кнопка</p>
         <p><a href="#datalist"><code class="elem">datalist</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; перадвызначаныя опцыі для іншых кантролаў</p>
@@ -719,14 +755,17 @@
         <p><a href="#progress"><code class="elem">progress</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; паказальнік прагрэсу пэўнага працэсу</p>
         <p><a href="#select"><code class="elem">select</code></a>&nbsp;&mdash; кантрол выбару опцыі</p>
         <p><a href="#textarea"><code class="elem">textarea</code></a>&nbsp;&mdash; вобласьць уводу тэксту (шматрадковага)</p>
+        
         <h3><a name="Elements_interacting">Інтэрактыўныя элемэнты</a></h3>
         <p><a href="#command"><code class="elem">command</code></a>&nbsp;&mdash; каманда</p>
         <p><a href="#details"><code class="elem">details</code></a>&nbsp;&mdash; <i>control for additional on-demand information</i></p>
         <p><a href="#menu"><code class="elem">menu</code></a>&nbsp;&mdash; мэню камандаў</p>
         <p><a href="#summary"><code class="elem">summary</code></a>&nbsp;&mdash; прадстаўляе <i>summary</i>, <i>caption</i> ці <i>legend</i> для <a href="#details"><code class="elem">details</code></a>-элемэнту</p>
+        
         <h3><a name="Elements_schemes">Схемы</a></h3>
         <img title="HTML5Doctor sectioning flowchart" alt="HTML5Doctor sectioning flowchart" src="../images/HTML5Doctor-sectioning-flowchart.png"/>
         <img title="Узаемаадносіны паміж групамі элемэнтаў" alt="Узаемаадносіны паміж групамі элемэнтаў" src="../images/ElementTypes.png"/>
+        
         <h2><a name="Elements_descriptions">Апісаньне элемэнтаў</a></h2>
         
         <h3><a name="a"><code class="elem">a</code></a></h3>
@@ -764,7 +803,7 @@
                   <li><code class="value">_top</code>&nbsp;&mdash; зьмест спасылкі будзе адкрыты ў бягучым акне (як <a href="#Deprecated_elements"><code class="elem">frame</code></a> самага верхняга ўзроўню)</li>
                 </ul>
               </p>
-              <p>Атрыбут быў <i>deprecated</i> у HTML 4.0/4.01</p>
+              <p>Атрыбут быў <i>deprecated</i> (непажаданы да выкарыстаньня) у <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> 4.0/4.01</p>
               <p>Выкарыстаньне фрэймаў старога (<a href="#Deprecated_elements"><code class="elem">frame</code></a>) і новага (<a href="#iframe"><code class="elem">iframe</code></a>) тыпаў, як і ключавых словаў <i>browsing-context</i> не дазваляецца ў дакумэнтах строгага фармату, як воркэраўнд каб спасылка адкрывалася ў новым акне можна выкарыстоўваць наступны скрыпт:
                 <script type="syntaxhighlighter" class="brush: html"><![CDATA[
                 <a href="http://www.nn.by" onclick="window.open(this.href); return false;">Link</a>
@@ -847,7 +886,7 @@
                   <li><code class="value">_top</code>&nbsp;&mdash; зьмест спасылкі будзе адкрыты ў бягучым акне (як <a href="#Deprecated_elements"><code class="elem">frame</code></a> самага верхняга ўзроўню)</li>
                 </ul>
               </p>
-              <p>Атрыбут быў <i>deprecated</i> у HTML 4.0/4.01</p>
+              <p>Атрыбут быў <i>deprecated</i> (непажаданы да выкарыстаньня) у <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> 4.0/4.01</p>
               <p>Выкарыстаньне фрэймаў старога (<a href="#Deprecated_elements"><code class="elem">frame</code></a>) і новага (<a href="#iframe"><code class="elem">iframe</code></a>) тыпаў, як і ключавых словаў <i>browsing-context</i> не дазваляецца ў дакумэнтах строгага фармату, як воркэраўнд каб спасылка адкрывалася ў новым акне можна выкарыстоўваць наступны скрыпт:
                 <script type="syntaxhighlighter" class="brush: html"><![CDATA[
                 <a href="http://www.nn.by" onclick="window.open(this.href); return false;">Link</a>
@@ -1161,7 +1200,7 @@
             <li><a href="http://reference.sitepoint.com/html/code/">SitePoint</a></li>
           </ul>
         </div>
-        <p>Элемэнт сэмантычна пазначае фрагмэнт тэксту, які зьяўляецца пэўным кампутарным кодам – HTML, Java, JavaSript, Perl і г.д. Часта выкарыстоўваецца ў спалучэньні з элемэнтам <a href="#pre"><code class="elem">pre</code></a>.</p>
+        <p>Элемэнт сэмантычна пазначае фрагмэнт тэксту, які зьяўляецца пэўным кампутарным кодам – <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>, <a href="..\javaRef\index.html"><span class="term">Java</span></a>, <a href="..\jsRef\index.html"><span class="term">JavaScript</span></a>, Perl і г.д. Часта выкарыстоўваецца ў спалучэньні з элемэнтам <a href="#pre"><code class="elem">pre</code></a>.</p>
         <h4>Атрыбуты</h4>
         <p>
           <ul>
@@ -1516,7 +1555,7 @@
             <li><a href="http://reference.sitepoint.com/html/em/">SitePoint</a></li>
           </ul>
         </div>
-        <p>Пазначае фрагмэнт тэксту, на які трэба зьвярнуць большую ўвагу ў параўнаньні да астатняга тэксту. Трэба ведаць, што элемэнт (як і ўсе астатнія па стандарту) не вызначае стыль, а толькі кажа аб сэнсе элемэнту&nbsp;&mdash; больш важны фрагмэнт тэксту, хаця ўва ўсіх браўзэрах па-змоўчваньні ён і будзе адлюстраваны нахіленым шрыфтом. Для пазначэньня тэксту нахіленым шрыфтом, які не валодае такой сэмантыкай, трэба карыстацца альбо элемэнтамі <a href="#i"><code class="elem">i</code></a> і <a href="#cite"><code class="elem">cite</code></a>, калі яны пасуюць, альбо іншым сэмантычна пасуючым элемэнтам і карыстацца сродкамі CSS для наданьня нахіленасьці шрыфту.</p>
+        <p>Пазначае фрагмэнт тэксту, на які трэба зьвярнуць большую ўвагу ў параўнаньні да астатняга тэксту. Трэба ведаць, што элемэнт (як і ўсе астатнія па стандарту) не вызначае стыль, а толькі кажа аб сэнсе элемэнту&nbsp;&mdash; больш важны фрагмэнт тэксту, хаця ўва ўсіх браўзэрах па-змоўчваньні ён і будзе адлюстраваны нахіленым шрыфтом. Для пазначэньня тэксту нахіленым шрыфтом, які не валодае такой сэмантыкай, трэба карыстацца альбо элемэнтамі <a href="#i"><code class="elem">i</code></a> і <a href="#cite"><code class="elem">cite</code></a>, калі яны пасуюць, альбо іншым сэмантычна пасуючым элемэнтам і карыстацца сродкамі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для наданьня нахіленасьці шрыфту.</p>
         <h4>Атрыбуты</h4>
         <p>
           <ul>
@@ -1532,7 +1571,7 @@
             <li><a href="http://reference.sitepoint.com/html/embed/">SitePoint</a></li>
           </ul>
         </div>
-        <p>Ўжываецца для ўбудаваньня не-HTML зьместу, для адлюстраваньня каторага звычайна патрабуецца дадатковыя плагіны&nbsp;&mdash; напр., такі мэдыя-зьмест, як флэш і відэа.</p>
+        <p>Ўжываецца для ўбудаваньня не-<abbr class="term" title="Hyper Text Markup Language">HTML</abbr> зьместу, для адлюстраваньня каторага звычайна патрабуецца дадатковыя плагіны&nbsp;&mdash; напр., такі мэдыя-зьмест, як флэш і відэа.</p>
         <h4>Атрыбуты</h4>
         <p>
           <ul>
@@ -1666,7 +1705,7 @@
         </div>
         <p>Прадстаўляе форму (кантэйнэр кантролаў), каторую карыстальнік можа запоўніць і адаслаць.</p>
         <h4>Атрыбуты</h4>
-        <aside><sup>12</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў HTML-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
+        <aside><sup>12</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
         <p>
           <ul>
             <li><a href="#Attributes_global">глябальныя</a></li>
@@ -1755,7 +1794,7 @@
             <li><a href="http://dev.w3.org/html5/spec/sections.html#the-hgroup-element">W3C</a></li>
           </ul>
         </div>
-        <p>Элемэнт для групаваньня аднаго ці болей элемэнтаў <a href="#h"><code class="elem">h1, h2, h3, h4, h5, h6</code></a>&nbsp;&mdash; напрыклад, загалоўку сэкцыі і яе першага падзагалоўку.</p>
+        <p>Элемэнт для групаваньня аднаго ці болей элемэнтаў <a href="#h"><code class="elem">h1, h2, h3, h4, h5, h6</code></a>&nbsp;&mdash; напрыклад, загалоўку сэкцыі і яе першага падзагалоўку. Пры гэтым у падзагалоўку звычайна зьмяшчаецца <i>tagline</i> (ключавая фраза/падзагаловак).</p>
         <h4>Атрыбуты</h4>
         <p>
           <ul>
@@ -2638,7 +2677,7 @@
         <p>
           <ul>
             <li><a href="#Attributes_global">глябальныя</a></li>
-            <li><code class="attr">value</code>&nbsp;<abbr class="changed_in_html5" title="УВАГА! Прызначэньне ці сэнс элемэнту/атрыбуту зьмяніўся ў HTML5 у параўнаньні з HTML4">changed</abbr>&nbsp;&mdash; атрыбут дазваляецца ўжываць толькі ў выпадку, калі бацькоўскім элемэнтам зьяўляецца <a href="#ol"><code class="elem">ol</code></a> і прадстаўляе нумар элемэнту ў сьпісе ў гэтым выпадку. У 4й вэрсіі атрыбут быў <i>deprecated</i>, але ў 5й ізноў паўнавартасны.</li>
+            <li><code class="attr">value</code>&nbsp;<abbr class="changed_in_html5" title="УВАГА! Прызначэньне ці сэнс элемэнту/атрыбуту зьмяніўся ў HTML5 у параўнаньні з HTML4">changed</abbr>&nbsp;&mdash; атрыбут дазваляецца ўжываць толькі ў выпадку, калі бацькоўскім элемэнтам зьяўляецца <a href="#ol"><code class="elem">ol</code></a> і прадстаўляе нумар элемэнту ў сьпісе ў гэтым выпадку. У 4й вэрсіі атрыбут быў <i>deprecated</i> (непажаданы да выкарыстаньня), але ў 5й ізноў паўнавартасны.</li>
           </ul>
         </p>
         <h4>Прыклад</h4>
@@ -2670,7 +2709,7 @@
             <li><a href="http://reference.sitepoint.com/html/link/">SitePoint</a></li>
           </ul>
         </div>
-        <p>Элемэнт уяўляе зь сябе мэтаданыя, каторыя выражаюць адносіны да спасылаемага дакумэнту. Напрыклад, спасылка на CSS-дакумэнт, які павінен ужывацца разам з гэтым HTML-дакумэнтам, ці спасылкі на іншыя HTML-дакумэнты з пазначэньнем тыпу адносін&nbsp;&mdash; папярэдні, наступны дакумэнт, дакумэнт зьместу і інш. Можа ўжывацца толькі ў <a href="#head"><code class="elem">head</code></a>-элемэнце ці ў элемэнце <a href="#noscript"><code class="elem">noscript</code></a>, які ў сваю чаргу зьмешчаны ў <a href="#head"><code class="elem">head</code></a>. <a href="#Elements_void">Void</a>-элемэнт.</p>
+        <p>Элемэнт уяўляе зь сябе мэтаданыя, каторыя выражаюць адносіны да спасылаемага дакумэнту. Напрыклад, спасылка на <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-дакумэнт, які павінен ужывацца разам з гэтым <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнтам, ці спасылкі на іншыя <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнты з пазначэньнем тыпу адносін&nbsp;&mdash; папярэдні, наступны дакумэнт, дакумэнт зьместу і інш. Можа ўжывацца толькі ў <a href="#head"><code class="elem">head</code></a>-элемэнце ці ў элемэнце <a href="#noscript"><code class="elem">noscript</code></a>, які ў сваю чаргу зьмешчаны ў <a href="#head"><code class="elem">head</code></a>. <a href="#Elements_void">Void</a>-элемэнт.</p>
         <aside><sup>16</sup> Сьпіс тэгаў і пад-тэгаў для моваў: <a href="http://www.iana.org/assignments/language-subtag-registry/">http://www.iana.org/assignments/language-subtag-registry</a></aside>
         <h4>Атрыбуты</h4>
         <p>
@@ -2865,7 +2904,7 @@
             <li><a href="http://dev.w3.org/html5/markup/meta.charset.html">W3C</a></li>
           </ul>
         </div>
-        <aside><sup>19</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў HTML-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
+        <aside><sup>19</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
         <p>Пазначае кадоўку<sup>19</sup> дакумэнту.</p>
         <p>
           <script type="syntaxhighlighter" class="brush: html"><![CDATA[
@@ -2918,7 +2957,7 @@
                 дзе <code class>&lt;type&gt;</code>:
                 <ul>
                   <li><code class="value">null</code>&nbsp;&mdash; увесь зьмест.</li>
-                  <li><code class="value">code</code>&nbsp;&mdash; HTML код.</li>
+                  <li><code class="value">code</code>&nbsp;&mdash; <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-код.</li>
                   <li><code class="value">content</code>&nbsp;&mdash; увесь зьмест старонкі.</li>
                   <li><code class="value">object</code>&nbsp;&mdash; пэўны аб’ект. У гэтым выпадку пасьля "<code class="value">object;</code>" пазначаецца ID аб’екта (значэньне атрыбута <code class="attr">id</code>) і яшчэ адна кропка с коскай.</li>
                 </ul>
@@ -2953,7 +2992,7 @@
         </p>
         
         <h3><a name="meta_content_language"><code class="elem">meta</code> <code class="attr">http-equiv=</code><code class="value">"content-language"</code></a></h3>
-        <div class="new_changed" style="min-width: 50%; max-width: 50%;"><span class="obsolete_in_html5">obsolete</span>&nbsp;&mdash; элемэнт не пажадана выкарыстоўваць у 5й вэрсіі HTML. Замест яго варта ўжываць атрыбут <code class="attr">lang</code> <a href="#html"><code class="elem">html</code></a>-элемэнту.</div>
+        <div class="new_changed" style="min-width: 50%; max-width: 50%;"><span class="obsolete_in_html5">obsolete</span>&nbsp;&mdash; элемэнт не пажадана выкарыстоўваць у 5й вэрсіі <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>. Замест яго варта ўжываць атрыбут <code class="attr">lang</code> <a href="#html"><code class="elem">html</code></a>-элемэнту.</div>
         <div class="refs">
           <ul>
             <li><a href="http://dev.w3.org/html5/markup/meta.http-equiv.content-language.html">W3C</a></li>
@@ -2973,8 +3012,8 @@
         <script type="syntaxhighlighter" class="brush: html"><![CDATA[
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         ]]></script>
-        <aside><sup>21</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў HTML-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
-        <p>Першая часта (<code class="value">text/html</code>) пазначае, што гэта HTML-дакумэнт, а другая&nbsp;&mdash; кадоўку<sup>21</sup> дакумэнту.</p>
+        <aside><sup>21</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
+        <p>Першая часта (<code class="value">text/html</code>) пазначае, што гэта <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнт, а другая&nbsp;&mdash; кадоўку<sup>21</sup> дакумэнту.</p>
         
         <h3><a name="meta_default_style"><code class="elem">meta</code> <code class="attr">http-equiv=</code><code class="value">default-style</code></a></h3>
         <div class="refs">
@@ -2986,11 +3025,11 @@
         <p><i>Pragma</i>-дырэктыва для пазначэньня прадвызначанага стылю. У атрыбуце <code class="attr">content</code> пазначаецца значэньне атрыбуту <code class="attr">id</code>(?):
           <ol>
             <li>альбо элемэнту <a href="#link"><code class="elem">link</code></a>;</li>
-            <li>альбо элемэнту <a href="#style"><code class="elem">style</code></a>,</li>
+            <li>альбо элемэнту <a href="#style_elem"><code class="elem">style</code></a>,</li>
           </ol>
           каторыя адпаведна:
           <ol>
-            <li>альбо спасылаюцца на CSS-файл;</li>
+            <li>альбо спасылаюцца на <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-файл;</li>
             <li>альбо ўтрымліваюць убудаванае апісаньне стылю.</li>
           </ol>
         </p>
@@ -3137,7 +3176,7 @@
             <li><a href="http://reference.sitepoint.com/html/noscript/">SitePoint</a></li>
           </ul>
         </div>
-        <p>Элемэнт уключае ў сябе зьмест, які будзе паказаны, калі ў агента няма падтрымкі скрыптоў альбо гэтая падртымка адключана карыстальнікам (напр., дзеля бясьпекі). Элемэнт можа ўключацца ў <a href="#head"><code class="elem">head</code></a>, тады ў ім дазваляецца ўжываць толькі элемэнты <a href="#link"><code class="elem">link</code></a>, <a href="#meta"><code class="elem">meta</code></a> і <a href="#style"><code class="elem">style</code></a>, а таксама ў <a href="#body"><code class="elem">body</code></a>, тады ён зьяўляецца <a href="#Elements_transparent">transparent</a>, адзінае выключэньне&nbsp;&mdash; сярод яго даччыных элемэнтаў ня можа быць іншы <code class="elem">noscript</code> элемэнт. Ужываць гэты элемэнт не рэкамэндуецца, таму што ёсьць шмат сытуацый, калі спалучэньне элемэнтаў <a href="#script"><code class="elem">script</code></a>/<code class="elem">noscript</code> можа прывесьці да памылак. Напр., калі скрыпты падтрымліваюцца, але іх выкананьне блякуецца <i>firewall</i>&nbsp;&mdash; тады зьмест элемэнту не будзе паказаны, а сам скрыпт таксама ня выканаецца.</p>
+        <p>Элемэнт уключае ў сябе зьмест, які будзе паказаны, калі ў агента няма падтрымкі скрыптоў альбо гэтая падртымка адключана карыстальнікам (напр., дзеля бясьпекі). Элемэнт можа ўключацца ў <a href="#head"><code class="elem">head</code></a>, тады ў ім дазваляецца ўжываць толькі элемэнты <a href="#link"><code class="elem">link</code></a>, <a href="#meta"><code class="elem">meta</code></a> і <a href="#style_elem"><code class="elem">style</code></a>, а таксама ў <a href="#body"><code class="elem">body</code></a>, тады ён зьяўляецца <a href="#Elements_transparent">transparent</a>, адзінае выключэньне&nbsp;&mdash; сярод яго даччыных элемэнтаў ня можа быць іншы <code class="elem">noscript</code> элемэнт. Ужываць гэты элемэнт не рэкамэндуецца, таму што ёсьць шмат сытуацый, калі спалучэньне элемэнтаў <a href="#script"><code class="elem">script</code></a>/<code class="elem">noscript</code> можа прывесьці да памылак. Напр., калі скрыпты падтрымліваюцца, але іх выкананьне блякуецца <i>firewall</i>&nbsp;&mdash; тады зьмест элемэнту не будзе паказаны, а сам скрыпт таксама ня выканаецца.</p>
         <p>Замест гэтага як асноўны <i>workflow</i> рэкамэндуецца для ўжываньня зьмест бяз скрыпту, каторы ў элемэнце <a href="#script"><code class="elem">script</code></a> выдаляецца/хаваецца. Пры такім падыходзе, калі скрыпты не падтрымліваюцца, альбо адключаны, альбо іх заблякаваў <i>firewall</i>, будзе паказаны асноўны зьмест, а скрыпт, каторый прызначаны ў тым ліку схаваць яго частку проста не адпрацуе, у іншым выпадку, ён схавае частку асноўнага зьместу і карэктна адпрацуе.</p>
         <h4>Атрыбуты</h4>
         <p>
@@ -3205,7 +3244,7 @@
           </ul>
         </div>
         <aside><sup>22</sup> MIME types: <a href="http://tools.ietf.org/html/rfc2046">http://tools.ietf.org/html/rfc2046</a> і <a href="http://www.iana.org/assignments/media-types/">http://www.iana.org/assignments/media-types</a></aside>
-        <p>Элемэнт агульнага прызначэньня для ўбудаваньня ў дакумэнт аб’ектаў розных тыпаў. У залежнасьці ад тыпу аб’екты будуць ітэрпрэтаваны альбо як выявы, альбо як убудаваны <i>browsing-context</i> (іншы HTML), альбо як аддалены рэсурс для апрацоўкі яго плагінам. Даччынымі элемэнтамі могуць быць <a href="#param"><code class="elem">param</code></a>, каторыя павінны ісьці першымі сярод усіх даччыных элемэнтаў, а потым&nbsp;&mdash; элемэнты, адпавядаючыя <a href="#Elements_transparent">Transparent elements</a>. Абавязкова павінен прысутнічаць атрыбут <code class="attr">data</code> альбо <code class="attr">type</code>. Іншы элемэнт, які падобны на гэты&nbsp;&mdash; <a href="#param"><code class="elem">embed</code></a>.</p>
+        <p>Элемэнт агульнага прызначэньня для ўбудаваньня ў дакумэнт аб’ектаў розных тыпаў. У залежнасьці ад тыпу аб’екты будуць ітэрпрэтаваны альбо як выявы, альбо як убудаваны <i>browsing-context</i> (іншы <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>), альбо як аддалены рэсурс для апрацоўкі яго плагінам. Даччынымі элемэнтамі могуць быць <a href="#param"><code class="elem">param</code></a>, каторыя павінны ісьці першымі сярод усіх даччыных элемэнтаў, а потым&nbsp;&mdash; элемэнты, адпавядаючыя <a href="#Elements_transparent">Transparent elements</a>. Абавязкова павінен прысутнічаць атрыбут <code class="attr">data</code> альбо <code class="attr">type</code>. Іншы элемэнт, які падобны на гэты&nbsp;&mdash; <a href="#param"><code class="elem">embed</code></a>.</p>
         <h4>Атрыбуты</h4>
         <aside><sup>23</sup> A valid hash-name reference to an element of type <i>type</i> is a string that starts with a "#" character, followed by a string which exactly matches the value of the <code class="attr">name</code> attribute of an element of type <i>type</i> anywhere in the document.</aside>
         <p>
@@ -3269,8 +3308,8 @@
           <ul>
             <li><a href="#Attributes_global">глябальныя</a></li>
             <li><code class="attr">reversed=</code><code class="value">"reversed"</code> ці <code class="value">""</code> ці ўвогуле без значэньня&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; у любым з гэтых выпадкаў кажа агенту, што сьпіс мае зваротны парадак (<code>..., 3, 2, 1</code>).</li>
-            <li><code class="attr">start</code>&nbsp;<abbr class="changed_in_html5" title="УВАГА! Прызначэньне ці сэнс элемэнту/атрыбуту зьмяніўся ў HTML5 у параўнаньні з HTML4">changed</abbr>&nbsp;&mdash; парадкавы нумар першага элемэнту&nbsp;&mdash; "зь якога нумару пачаць". У папярэдняй вэрсіі быў <i>deprecated</i>, але ў 5й "забарона" зьнятая.</li>
-            <li><code class="attr">type</code>&nbsp;<abbr class="obsolete_in_html5" title="УВАГА! Элемэнт/атрыбут не пажаданы да ўжыцьця ў HTML5">obsolete</abbr>&nbsp;&mdash; <strong>АЛЕ!</strong> IE кепска падтрымлівае CSS-атрыбут <code class="attr">list-style-type</code> (каторы павінен ужывацца замест яго), таму ёсьць сэнс часам выкарыстоўваць і/альбо гэты атрыбут.</li>
+            <li><code class="attr">start</code>&nbsp;<abbr class="changed_in_html5" title="УВАГА! Прызначэньне ці сэнс элемэнту/атрыбуту зьмяніўся ў HTML5 у параўнаньні з HTML4">changed</abbr>&nbsp;&mdash; парадкавы нумар першага элемэнту&nbsp;&mdash; "зь якога нумару пачаць". У папярэдняй вэрсіі быў <i>deprecated</i> (непажаданы да выкарыстаньня), але ў 5й "забарона" зьнятая.</li>
+            <li><code class="attr">type</code>&nbsp;<abbr class="obsolete_in_html5" title="УВАГА! Элемэнт/атрыбут не пажаданы да ўжыцьця ў HTML5">obsolete</abbr>&nbsp;&mdash; <strong>АЛЕ!</strong> IE кепска падтрымлівае <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-атрыбут <a href="..\cssRef\index.html#list-style-type"><code class="attr">list-style-type</code></a> (каторы павінен ужывацца замест яго), таму ёсьць сэнс часам выкарыстоўваць і/альбо гэты атрыбут.</li>
           </ul>
         </p>
         
@@ -3626,8 +3665,6 @@
           </ruby>
           <!-- ... -->
           ]]></script>
-        </p>
-        <p>
           <figure>
             <figcaption>Можа выглядаць як:</figcaption>
             <img title="Ілюстрацыя выкарыстаньня ruby" alt="Ілюстрацыя выкарыстаньня ruby" src="../images/ruby1.png" />
@@ -3642,8 +3679,6 @@
           </ruby>
           <!-- ... -->
           ]]></script>
-        </p>
-        <p>
           <figure>
             <figcaption>Можа выглядаць як:</figcaption>
             <img title="Ілюстрацыя выкарыстаньня ruby" alt="Ілюстрацыя выкарыстаньня ruby" src="../images/ruby2.png" />
@@ -3682,7 +3717,7 @@
             <li><a href="http://reference.sitepoint.com/html/script/">SitePoint</a></li>
           </ul>
         </div>
-        <aside><sup>24</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў HTML-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
+        <aside><sup>24</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
         <p>Элемэнт дазваляе дадаваць скрыпты і блёкі даных у дакумэнты. Скрыпт можа быць убудаваным, ці загружацца са зьнешняга файлу. Скрыпт прадназначаны для выкананьня на кліенцкай машыне, таму ёсьць даволі вялікая верагоднасьць яго невыкананьня&nbsp;&mdash; карыстальнік можа адключыць выкананьне скрыптоў у сваім агенце. Як вынік, існуе нефармальнае патрабаваньне&nbsp;&mdash; блякаваньне выкананьня скрпытоў не павінна істотным чынам адбівацца на функцыянальнасьці старонак. Тып скрыпту па змоўчваньні&nbsp;&mdash; <code class="value">"text/javascript"</code>.</p>
         <h4>Атрыбуты</h4>
         <p>
@@ -3966,7 +4001,7 @@
             <li><a href="http://reference.sitepoint.com/html/span/">SitePoint</a></li>
           </ul>
         </div>
-        <p>Элемэнт агульнага прызначэньня, які агортвае пэўную фразу (невялікі фрагмэнт тэксту), і сам па сабе ніякай сэнсавай нагрузкі не нясе. Звычайна патрэбны для азначэньня пэўнага фрагмэнту тэксту для зьмены яго стылю афармленьня праз CSS.</p>
+        <p>Элемэнт агульнага прызначэньня, які агортвае пэўную фразу (невялікі фрагмэнт тэксту), і сам па сабе ніякай сэнсавай нагрузкі не нясе. Звычайна патрэбны для азначэньня пэўнага фрагмэнту тэксту для зьмены яго стылю афармленьня праз <a href="..\cssRef\index.html"><span class="term">CSS</span></a>.</p>
         <h4>Атрыбуты</h4>
         <p>
           <ul>
@@ -4012,7 +4047,7 @@
           ]]></script>
         </p>
         
-        <h3><a name="style"><code class="elem">style</code></a></h3>
+        <h3><a name="style_elem"><code class="elem">style</code></a></h3>
         <div class="refs">
           <ul>
             <li><a href="http://dev.w3.org/html5/markup/style.html">W3C</a></li>
@@ -4346,7 +4381,7 @@
           </ul>
         </p>
         
-        <h3><a name="title"><code class="elem">title</code></a></h3>
+        <h3><a name="title_elem"><code class="elem">title</code></a></h3>
         <div class="refs">
           <ul>
             <li><a href="http://dev.w3.org/html5/markup/title.html">W3C</a></li>
@@ -4442,7 +4477,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
             <li><code class="attr">autoplay=</code><code class="value">"autoplay"</code> ці <code class="value">""</code> ці ўвогуле без значэньня&nbsp;&mdash; у любым з гэтых выпадкаў кажа агенту пачынаць прайграваць відэа адразу ж, як гэта стане магчымым.</li>
             <li><code class="attr">controls=</code><code class="value">"controls"</code> ці <code class="value">""</code> ці ўвогуле без значэньня&nbsp;&mdash; у любым з гэтых выпадкаў кажа агенту, каб той паказаў кантролы кіраваньня прайграваньнем.</li>
-            <li><code class="attr">height</code>&nbsp;&mdash; вышыня акна з відэа у CSS-пікселях.</li>
+            <li><code class="attr">height</code>&nbsp;&mdash; вышыня акна з відэа у <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-пікселях.</li>
             <li><code class="attr">loop=</code><code class="value">"loop"</code> ці <code class="value">""</code> ці ўвогуле без значэньня&nbsp;&mdash; у любым з гэтых выпадкаў кажа агенту пачаць прайграваньне ізноў пасьля дасягненьня канцу відэа.</li>
             <li><code class="attr">poster</code>&nbsp;&mdash; URL-спасылка да выявы, каторая будзе паказвацца пакуль відэа яшчэ не прайграецца/не даступна.</li>
             <li><code class="attr">preload</code></li>&nbsp;&mdash; кажа агенту ці ўжываць "аптымістычнае пампаваньне" струменю ці мэтаданых (адразу пачынаць кэшаваць даныя, нават калі карыстальнік шчэ не цісную на старт). Значэньні:
@@ -4453,7 +4488,7 @@
               </ul>
             </li>
             <li><code class="attr">src</code>&nbsp;&mdash; URL крыніцы відэа-струменю.</li>
-            <li><code class="attr">width</code>&nbsp;&mdash; шырыня акна з відэа у CSS-пікселях.</li>
+            <li><code class="attr">width</code>&nbsp;&mdash; шырыня акна з відэа у <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-пікселях.</li>
           </ul>
         </p>
         
@@ -4500,7 +4535,7 @@
           </ul>
         </p>
         <h3><a name="class"><code class="attr">class</code></a></h3>
-        <p>Пазначае клясу ці клясы (праз прагал) адпаведнага элемэнту. Гэтыя клясы потым могуць ужывацца ў CSS і JavaScript для наданьня стылю і дынамікі адпаведным элемэнтам.</p>
+        <p>Пазначае клясу ці клясы (праз прагал) адпаведнага элемэнту. Гэтыя клясы потым могуць ужывацца ў <a href="..\cssRef\index.html"><span class="term">CSS</span></a> і <a href="..\jsRef\index.html"><span class="term">JavaScript</span></a> для наданьня стылю і дынамікі адпаведным элемэнтам.</p>
         <h3><a name="contenteditable"><code class="attr">contenteditable</code></a></h3>
         <div class="new_changed" style="min-width: 75%; max-width: 75%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы атрыбут, уведзены ў 5й вэрсіі.</div>
         <p>Можа прымаць значэньні <code class="value">true</code> і <code class="value">false</code>. Прызначана для пазначэньня ці можа зьмест элемэнту рэдагавацца.</p>
@@ -4532,12 +4567,12 @@
         <h3><a name="spellcheck"><code class="attr">spellcheck</code></a></h3>
         <div class="new_changed" style="min-width: 85%; max-width: 85%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы атрыбут, уведзены ў 5й вэрсіі.</div>
         <p>Пазначае элемэнт, чый зьмест падлягае праверцы артаграфіі і граматыкі.</p>
-        <h3><a name="style"><code class="attr">style</code></a></h3>
-        <p>Зьмяшчае інструкцыі CSS, каторыя павінны быць ужытыя да элемэнту.</p>
+        <h3><a name="style_attr"><code class="attr">style</code></a></h3>
+        <p>Зьмяшчае інструкцыі <a href="..\cssRef\index.html"><span class="term">CSS</span></a>, каторыя павінны быць ужытыя да элемэнту.</p>
         <h3><a name="tabindex"><code class="attr">tabindex</code></a></h3>
         <p>Пазначае парадкавы нумар у чарзе праходу фокусу. Калі пэўны элемэнт ня мае гэтага атрыбуту, ён усё роўна будзе факусіравацца, але толькі пасьля тых элемэнтаў, якія ўтрымліваюць гэты атрыбут. Калі ж пэўны элемэнт утрымлівае атрыбут <code class="attr">disabled</code>, нават у выпадку пазначэньня атрыбуту <code class="attr">tabindex</code>, ён будзе выключаны з чаргі праходу фокусу.</p>
-        <h3><a name="title"><code class="attr">title</code></a></h3>
-        <p>Дазваляе пазначыць дадатковую інфармацыю пра пэўны элемэнт. Звычайна зьмест гэтага атрыбуту паказваецца як <i>tooltip</i> элемэнту. Часьцей за ўсё ўжываецца разам з элемэнтамі <a href="#a"><code class="elem">a</code></a>, <a href="#abbr"><code class="elem">abbr</code></a>, <code class="elem">acronym</code> (<i>deprecated</i> у 5й вэрсіі HTML) і элемэнтамі <a href="#form">формы</a>, каб пазначыць дадатковую/дапаможную інфармацыю пра спасылку, скарачэньне, элемэнты формы (фармат зьместу, напр.) адпаведна.</p>
+        <h3><a name="title_attr"><code class="attr">title</code></a></h3>
+        <p>Дазваляе пазначыць дадатковую інфармацыю пра пэўны элемэнт. Звычайна зьмест гэтага атрыбуту паказваецца як <i>tooltip</i> элемэнту. Часьцей за ўсё ўжываецца разам з элемэнтамі <a href="#a"><code class="elem">a</code></a>, <a href="#abbr"><code class="elem">abbr</code></a>, <code class="elem">acronym</code> (<i>deprecated</i> (непажаданы да выкарыстаньня) у 5й вэрсіі <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>) і элемэнтамі <a href="#form">формы</a>, каб пазначыць дадатковую/дапаможную інфармацыю пра спасылку, скарачэньне, элемэнты формы (фармат зьместу, напр.) адпаведна.</p>
         <h2><a name="Attributes_custom_data">Custom Data Attributes</a></h1>
         <div class="refs">
           <ul>
@@ -4545,12 +4580,12 @@
           </ul>
         </div>
         <p>
-          Да ўсіх элемэнтаў HTML зараз могуць дадавацца дадатковыя атрыбуты выгляду <code class="attr">'data-*'</code>, каторыя прадстаўляюць нейкія атрыбуты гэтых элемэнтаў, якія не магчыма прадставіць праз атрыбуты са спэцыфікацыі. Прымальнае выкарыстаньне такіх атрыбутаў:
+          Да ўсіх элемэнтаў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> зараз могуць дадавацца дадатковыя атрыбуты выгляду <code class="attr">'data-*'</code>, каторыя прадстаўляюць нейкія атрыбуты гэтых элемэнтаў, якія не магчыма прадставіць праз атрыбуты са спэцыфікацыі. Прымальнае выкарыстаньне такіх атрыбутаў:
           <ol>
-            <li>Утрымліваць пачатковую вышыню ці празрыстаць элемэнту, каторыя пазьней могуць спатрэбіцца для анімацыі праз <em>JavaScript</em>.</li>
-            <li>Утрымліваць парамэтры для <em>Flesh</em>, каторы загружаецца праз <em>JavaScript</em>.</li>
+            <li>Утрымліваць пачатковую вышыню ці празрыстаць элемэнту, каторыя пазьней могуць спатрэбіцца для анімацыі праз <a href="..\jsRef\index.html"><span class="term"><em>JavaScript</em></span></a>.</li>
+            <li>Утрымліваць парамэтры для <em>Flesh</em>, каторы загружаецца праз <a href="..\jsRef\index.html"><span class="term"><em>JavaScript</em></span></a>.</li>
             <li>Утрымліваць <a href="http://jasonkarns.com/blog/2010/03/10/google-analytics-tagging/"><i>custom web analytics tagging data</i></a>.</li>
-            <li>Захоўваць даныя пра <i>health</i>, <i>ammo</i> ці <i>lives</i> у <em>JavaScript</em> гульні.</li>
+            <li>Захоўваць даныя пра <i>health</i>, <i>ammo</i> ці <i>lives</i> у <a href="..\jsRef\index.html"><span class="term"><em>JavaScript</em></span></a> гульні.</li>
             <li><a href="http://dev.opera.com/articles/view/accessible-html5-video-with-javascripted-captions/"><i>To power accessible JavaScript <code class="elem">video</code> subtitles</i></a>.</li>
           </ol>
         </p>
@@ -4563,9 +4598,9 @@
             <li><a href="http://www.w3.org/TR/2009/CR-css3-mediaqueries-20090915/">W3C</a></li>
           </ul>
         </div>
-        <p>HTML і CSS падтрымліваюць табліцы стыляў, каторыя <i>media-dependent</i>.</p>
+        <p><abbr class="term" title="Hyper Text Markup Language">HTML</abbr> і <a href="..\cssRef\index.html"><span class="term">CSS</span></a> падтрымліваюць табліцы стыляў, каторыя <i>media-dependent</i>.</p>
         <p>
-          Сьпіс тыпаў <code class="attr">media</code>, каторыя падтрымліваюцца ў HTML4:
+          Сьпіс тыпаў <code class="attr">media</code>, каторыя падтрымліваюцца ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>4:
           <ul>
             <li><code class="value">aural</code></li>
             <li><code class="value">braille</code></li>
@@ -4582,7 +4617,7 @@
           <link rel="stylesheet" media="screen and (color)" href="example.css" />
           ]]></script>
         </p>
-        <p>У гэтым прыкладзе CSS-файл <code>example.css</code> будзе ўжыты для прылады <code class="value">screen</code> (манітор) з пэўнай характарыстыкай&nbsp;&mdash; <code class="value">color</code> (каляровы). Тое ж самае з выкарыстаньнем <code>@import</code>-rule у CSS будзе выглядаць:</p>
+        <p>У гэтым прыкладзе <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-файл <code>example.css</code> будзе ўжыты для прылады <code class="value">screen</code> (манітор) з пэўнай характарыстыкай&nbsp;&mdash; <code class="value">color</code> (каляровы). Тое ж самае з выкарыстаньнем <a href="..\cssRef\index.html#At-rules_import"><code class="at_rule">@import</code></a>-rule у <a href="..\cssRef\index.html"><span class="term">CSS</span></a> будзе выглядаць:</p>
         <p>
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           @import url(color.css) screen and (color);
@@ -4595,10 +4630,10 @@
           ]]></script>
         </p>
         <h2><a name="Media_HTML5">Дадатковыя <code class="attr">media</code> у HTML5</a></h2>
-        <p>There have been requests for ways to describe in more detail what type of output devices a style sheet applies to. Fortunately HTML4 foresaw these requests and defined a forward-compatible syntax for media types. Here is a quote from <a href="http://www.w3.org/TR/1999/REC-html401-19991224/types.html#h-6.13">HTML4, section 6.13</a>:</p>
+        <p>There have been requests for ways to describe in more detail what type of output devices a style sheet applies to. Fortunately <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>4 foresaw these requests and defined a forward-compatible syntax for media types. Here is a quote from <a href="http://www.w3.org/TR/1999/REC-html401-19991224/types.html#h-6.13">HTML4, section 6.13</a>:</p>
         <blockquote>
           <p>
-            Future versions of HTML may introduce new values and may allow parameterized values. To facilitate the introduction of these extensions, conforming user agents must be able to parse the <code class="attr">media</code class="attr"> attribute value as follows:
+            Future versions of <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> may introduce new values and may allow parameterized values. To facilitate the introduction of these extensions, conforming user agents must be able to parse the <code class="attr">media</code class="attr"> attribute value as follows:
             <ol>
               <li>The value is a comma-separated list of entries. For example,
                 <p>
@@ -4647,7 +4682,7 @@
         <h3><a name="Media_orientation"><code class="value">orientation</code></a></h3>
         <p>Арыентацыя прылады. The <code class="value">orientation</code> media feature is <code class="value">'portrait'</code> when the value of the <code class="value">height</code> media feature is greater than or equal to the value of the <code class="value">width</code> media feature. Otherwise <code class="value">orientation</code> is <code class="value">'landscape'</code>.</p>
         <p>
-          Прыклад у CSS-фармаце:
+          Прыклад у <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-фармаце:
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           @media all and (orientation: portrait) { 
             /* ... */ 
@@ -4663,7 +4698,7 @@
         <h3><a name="Media_device_aspect_ratio"><code class="value">device-aspect-ratio</code></a></h3>
         <p>Суадносіны <code class="value">device-width</code> да <code class="value">device-height</code> прылады.</p>      
         <p>
-          For example, if a screen device with square pixels has 1280 horizontal pixels and 720 vertical pixels (commonly referred to as "16:9"), the following Media Queries will all match the device (у CSS-фармаце):
+          For example, if a screen device with square pixels has 1280 horizontal pixels and 720 vertical pixels (commonly referred to as "16:9"), the following Media Queries will all match the device (у <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-фармаце):
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           @media screen and (device-aspect-ratio: 16/9) { 
             /* ... */ 
@@ -4691,7 +4726,7 @@
         <h3><a name="Media_resolution"><code class="value">resolution</code></a></h3>
         <p>Разрозьненьне прылады.</p>
         <p>
-          Прыклад у CSS-фармаце:
+          Прыклад у <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-фармаце:
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           @media print and (min-resolution: 300dpi) { 
             /* ... */ 
@@ -4701,7 +4736,7 @@
         <h3><a name="Media_scan"><code class="value">scan</code></a></h3>
         <p>Scanning process of <code class="value">tv</code> output devices.</p>
         <p>
-          Прыклад у CSS-фармаце:
+          Прыклад у <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-фармаце:
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           @media tv and (scan: progressive) { 
             /* ... */ 
@@ -4765,11 +4800,11 @@
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/applet"><code class="elem">applet</code></a></td>
-              <td>Убудаваньне Java-аплетаў. Замест гэтага трэба выкарыстоўваць больш агульны <a href="#object"><code class="elem">object</code></a>.</td>
+              <td>Убудаваньне <a href="..\javaRef\index.html"><span class="term">Java</span></a>-аплетаў. Замест гэтага трэба выкарыстоўваць больш агульны <a href="#object"><code class="elem">object</code></a>.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/basefont"><code class="elem">basefont</code></a></td>
-              <td>Стыль базавага шрыфту. Замест гэтага трэба карыстацца сродкамі CSS.</td>
+              <td>Стыль базавага шрыфту. Замест гэтага трэба карыстацца сродкамі <a href="..\cssRef\index.html"><span class="term">CSS</span></a>.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/bgsound"><code class="elem">bgsound</code></a></td>
@@ -4777,15 +4812,15 @@
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/big"><code class="elem">big</code></a></td>
-              <td>Павялічвае фонт зьместу. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі CSS для зьмяненьня стылю.</td>
+              <td>Павялічвае фонт зьместу. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для зьмяненьня стылю.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/blink"><code class="elem">blink</code></a></td>
-              <td>Тэкст міргаціць. Замест гэтага трэба выкарыстоўваць сродкі CSS/script, але не забываемся, што гэты эфект лічыцца негустоўным.</td>
+              <td>Тэкст міргаціць. Замест гэтага трэба выкарыстоўваць сродкі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> і/альбо <a href="..\jsRef\index.html"><span class="term">JavaScript</span></a>, але не забываемся, што гэты эфект лічыцца негустоўным.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/center"><code class="elem">center</code></a></td>
-              <td>Цэнтруе тэкст. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі CSS для зьмяненьня стылю.</td>
+              <td>Цэнтруе тэкст. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для зьмяненьня стылю.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/comment"><code class="elem">comment</code></a></td>
@@ -4797,15 +4832,15 @@
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/font"><code class="elem">font</code></a></td>
-              <td>Зьмяняе стыль шрыфту. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі CSS для зьмяненьня стылю.</td>
+              <td>Зьмяняе стыль шрыфту. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для зьмяненьня стылю.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/frame"><code class="elem">frame</code></a></td>
-              <td>Замест гэтага элемэнту трэба ўжываць CSS-<i>layout</i> ці <a href="#iframe"><code class="elem">iframe</code></a>-элемэнт.</td>
+              <td>Замест гэтага элемэнту трэба ўжываць <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-<i>layout</i> ці <a href="#iframe"><code class="elem">iframe</code></a>-элемэнт.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/frameset"><code class="elem">frameset</code></a></td>
-              <td>Замест гэтага элемэнту трэба ўжываць CSS-<i>layout</i> ці <a href="#iframe"><code class="elem">iframe</code></a>-элемэнт.</td>
+              <td>Замест гэтага элемэнту трэба ўжываць <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-<i>layout</i> ці <a href="#iframe"><code class="elem">iframe</code></a>-элемэнт.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/isindex"><code class="elem">isindex</code></a></td>
@@ -4817,11 +4852,11 @@
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/marquee"><code class="elem">marquee</code></a></td>
-              <td>Аўтаматычная пракрутка пэўнага тэксту (бягучы радок). Ужываньне гэтага эфекту лічыцца кепскім стылем, які часта раздражняе карыстальнікаў. Нават калі і ёсьць сэнс ужываньня гэтага эфекту, трэба ўжываць скрыпты ці CSS-анімацыю.</td>
+              <td>Аўтаматычная пракрутка пэўнага тэксту (бягучы радок). Ужываньне гэтага эфекту лічыцца кепскім стылем, які часта раздражняе карыстальнікаў. Нават калі і ёсьць сэнс ужываньня гэтага эфекту, трэба ўжываць <a href="..\jsRef\index.html"><span class="term">JavaScript</span></a> ці <a href="..\cssRef\index.html"><span class="term">CSS</span></a>-анімацыю.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/nobr"><code class="elem">nobr</code></a></td>
-              <td>Кажа агенту не рабіць разрыў радка (перанос) у пэўным фрагменце тэксту. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі CSS для зьмяненьня стылю.</td>
+              <td>Кажа агенту не рабіць разрыў радка (перанос) у пэўным фрагменце тэксту. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для зьмяненьня стылю.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/noembed"><code class="elem">noembed</code></a></td>
@@ -4829,31 +4864,31 @@
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/noframes"><code class="elem">noframes</code></a></td>
-              <td>Утрымлівае зьмест, альтэрнатыўны таму, што зьмяшчаецца ў <code class="elem">frameset</code> (гл. вышэй у гэтай табліцы), калі браўзер ня ў стане адлюстраваць апошняе (не падтрымлівае працу з фрэймамі). Улічваючы, што ўжываньне фрэймаў само па сабе на дадзены момант <i>deprecated</i>, адпадае неабходнасьць і ў гэтым элеменце.</td>
+              <td>Утрымлівае зьмест, альтэрнатыўны таму, што зьмяшчаецца ў <code class="elem">frameset</code> (гл. вышэй у гэтай табліцы), калі браўзер ня ў стане адлюстраваць апошняе (не падтрымлівае працу з фрэймамі). Улічваючы, што ўжываньне фрэймаў само па сабе на дадзены момант <i>deprecated</i> (непажаданы да выкарыстаньня), адпадае неабходнасьць і ў гэтым элеменце.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/plaintext"><code class="elem">plaintext</code></a></td>
-              <td>Прадфарматаваны тэкст (з захаваньнем прагалаў, пераносаў радка; напрыклад HTML-<i>markup</i> будзе адлюстраваны як тэкст, а не інтэрпрэтаваны як HTML-markup). Замест гэтага элемэнту трэба ўжываць элемэнт <a href="#pre"><code class="elem">pre</code></a>.</td>
+              <td>Прадфарматаваны тэкст (з захаваньнем прагалаў, пераносаў радка; напрыклад <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-<i>разьметка</i> будзе адлюстравана як тэкст, а не інтэрпрэтаваны як <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-<i>разьметка</i>). Замест гэтага элемэнту трэба ўжываць элемэнт <a href="#pre"><code class="elem">pre</code></a>.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/s"><code class="elem">s</code></a></td>
-              <td>Перакрэсьлівае тэкст. Замест гэтага трэба ўжываць элемэнт <a href="#del"><code class="elem">del</code></a> ці іншы сэмантычна пасуючы элемэнт + сродкі CSS для зьмяненьня стылю.</td>
+              <td>Перакрэсьлівае тэкст. Замест гэтага трэба ўжываць элемэнт <a href="#del"><code class="elem">del</code></a> ці іншы сэмантычна пасуючы элемэнт + сродкі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для зьмяненьня стылю.</td>
             </tr>
             <tr>
               <td><code class="elem">spacer</code></td>
-              <td>?. Замест гэтага трэба карыстацца сродкамі CSS.</td>
+              <td>?. Замест гэтага трэба карыстацца сродкамі <a href="..\cssRef\index.html"><span class="term">CSS</span></a>.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/strike"><code class="elem">strike</code></a></td>
-              <td>Перакрэсьлівае тэкст. Замест гэтага трэба ўжываць элемэнт <a href="#del"><code class="elem">del</code></a> ці іншы сэмантычна пасуючы элемэнт + сродкі CSS для зьмяненьня стылю.</td>
+              <td>Перакрэсьлівае тэкст. Замест гэтага трэба ўжываць элемэнт <a href="#del"><code class="elem">del</code></a> ці іншы сэмантычна пасуючы элемэнт + сродкі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для зьмяненьня стылю.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/tt"><code class="elem">tt</code></a></td>
-              <td>Тэлетайп – тэкст зь літарамі аднолькавай шырыні. Замест гэтага трэба ўжываць элемэнт <a href="#code"><code class="elem">code</code></a> ці іншы сэмантычна пасуючы элемэнт + сродкі CSS для зьмяненьня стылю.</td>
+              <td>Тэлетайп – тэкст зь літарамі аднолькавай шырыні. Замест гэтага трэба ўжываць элемэнт <a href="#code"><code class="elem">code</code></a> ці іншы сэмантычна пасуючы элемэнт + сродкі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для зьмяненьня стылю.</td>
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/u"><code class="elem">u</code></a></td>
-              <td>Падкрэсьлівае тэкст. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі CSS для зьмяненьня стылю.</td>
+              <td>Падкрэсьлівае тэкст. Замест гэтага трэба ўжываць сэмантычна пасуючы элемэнт і карыстацца сродкамі <a href="..\cssRef\index.html"><span class="term">CSS</span></a> для зьмяненьня стылю.</td>
             </tr>
             <tr>
               <td><a href="#wbr"><code class="elem">wbr</code></a></td>
@@ -4861,18 +4896,24 @@
             </tr>
             <tr>
               <td><a href="http://reference.sitepoint.com/html/xmp"><code class="elem">xmp</code></a></td>
-              <td>Тэкст прыкладу. Прадфарматаваны тэкст (з захаваньнем прагалаў, пераносаў радка і ўжываньнем шрыфту з літарамі аднолькавай шырыні; напрыклад HTML-markup будзе адлюстраваны як тэкст, а не інтэрпрэтаваны як HTML-markup). Замест гэтага элемэнту трэба ўжываць элемэнт <a href="#pre"><code class="elem">pre</code></a></td>
+              <td>Тэкст прыкладу. Прадфарматаваны тэкст (з захаваньнем прагалаў, пераносаў радка і ўжываньнем шрыфту з літарамі аднолькавай шырыні; напрыклад <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-<i>разьметка</i> будзе адлюстраваны як тэкст, а не інтэрпрэтаваны як <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-<i>разьметка</i>). Замест гэтага элемэнту трэба ўжываць элемэнт <a href="#pre"><code class="elem">pre</code></a></td>
             </tr>
           </tbody>
         </table>
       </section>
-    </div>
-    
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
-
+      
+      <footer>
+        <p>Copyright &copy; 2010-2011 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+        <p xmlns:dct="http://purl.org/dc/terms/">
+          <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
+            <img src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.png"
+                style="border-style: none;" alt="Common Creatives. Attribution + Noncommercial (by-nc)" />
+          </a>
+          <span property="dct:title">Тэхнічны даведнік па HTML</span> вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але абавязкова ў некамэрцыйных мэтах і з пазнакай аўтара матэрыялу (Юрцэвіч Дзьмітры).
+        </p>
+      </footer>
+    </article>
+  </div><!--! end of #container -->
 
   <!-- Javascript at the bottom for fast page loading -->
 

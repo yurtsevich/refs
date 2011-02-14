@@ -5,7 +5,7 @@
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="be-tarask" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
 
@@ -13,8 +13,8 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Уласны тэхнічны даведнік</title>
-  <meta name="description" content="Індэкс уласнага тэхнічнага даведніку (HTML, CSS, Java, Ruby etc.)">
+  <title>Тэхнічны даведнік па CSS</title>
+  <meta name="description" content="Тэхнічны даведнік па CSS">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -28,15 +28,1162 @@
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/style.css?v=1">
+  <link rel="stylesheet" href="../css/mktree.css?v=1">
+  <link rel="stylesheet" href="../css/shCore.css?v=1">
+  <link rel="stylesheet" href="../css/shThemeRDark.css?v=1">
 
   <!-- Uncomment if you are specifically targeting less enabled mobile browsers
   <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
  
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="../js/libs/modernizr-1.6.min.js"></script>
+  
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+<body>
+
+  <div id="container">
+    <div id="index">
+      <div id="main_index">
+        <ul>
+          <li><a href="../htmlRef/index.html">HTML</a></li>
+          <li><a href="../cssRef/index.html">CSS</a></li>
+          <li><a href="../jsRef/index.html">JS</a></li>
+          <li><a href="../webRef/index.html">Web</a></li>
+        </ul>
+        <ul>
+          <li><a href="../javaRef/index.html">Java</a></li>
+        </ul>
+        <ul>
+          <li><a href="../rubyRef/index.html">Ruby</a></li>
+          <li><a href="../railsRef/index.html">Rails</a></li>
+        </ul>
+        <ul>
+          <li><a href="../gitRef/index.html">Git</a></li>
+        </ul>
+      </div>
+      
+      <div id="content">
+        <ul class="mktree">
+          <li class="liOpen"><a href="#Links">Карысныя спасылкі</a>
+            <ul>
+              <li><a href="#Links_CSS_home">CSS home</a></li>
+              <li><a href="#Links_specs">Стандарты і спэцыфікацыі</a>
+                <ul>
+                  <li><a href="#Links_specs_2_1">CSS 2.1</a></li>
+                </ul>
+              </li>
+              <li><a href="#Links_refs">References</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="#Concepts">Базавыя канцэпцыі</a>
+            <ul>
+              <li><a href="#Concepts_what_is_CSS">Што такое CSS</a></li>
+              <li><a href="#Concepts_CSS_versions">Вэрсіі CSS</a></li>
+              <li><a href="#Concepts_CSS_types">Тыпы CSS і спосабы іх падключэньня</a></li>
+              <li><a href="#Concepts_syntax_terminology">Сынтакс і тэрміналёгія</a></li>
+              <li><a href="#Concepts_comments">Камэнтары</a></li>
+              <li><a href="#Concepts_CSS_escape_notation">CSS Escape Notation</a></li>
+              <li><a href="#Concepts_cascade_specificity">Каскад і спэцыфічнасьць</a>
+                <ul>
+                  <li><a href="#Concepts_style_sources">Крыніцы стыляў</a></li>
+                  <li><a href="#Concepts_declaration_importance">Важнасьць аб&#39;яўленьняў</a></li>
+                  <li><a href="#Concepts_selectors_specificity">Спэцыфічнасьць селектараў</a></li>
+                  <li><a href="#Concepts_order_in_source">Парадак сьледаваньня</a></li>
+                </ul>
+              </li>
+              <li><a href="#Concepts_inheritance">Спадчыннасьць</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="#At-rules">At-rules</a>
+            <ul>
+              <li><a href="#At-rules_charset">&#64;charset</a></li>
+              <li><a href="#At-rules_import">&#64;import</a></li>
+              <li><a href="#At-rules_media">&#64;media</a></li>
+              <li><a href="#At-rules_page">&#64;page</a></li>
+              <li><a href="#At-rules_font-face">&#64;font-face</a></li>
+              <li><a href="#At-rules_namespace">&#64;namespace</a></li>
+            </ul>
+          </li>
+          
+          <li class="liOpen"><a href="#Selectors">Селектары</a>
+            <ul>
+              <li><a href="#Selectors_universal">Унівэрсальны селектар</a></li>
+              <li><a href="#Selectors_elements">Селектар па элемэнтам</a></li>
+              <li><a href="#Selectors_classes">Селектар па клясам</a></li>
+              <li><a href="#Selectors_IDs">Селектар па ідэнтыфікатарам</a></li>
+              <li><a href="#Selectors_attributes">Селектар па атрыбутам</a></li>
+              <li><a href="#Selectors_pseudo-classes">Псэўда-клясы</a></li>
+              <li><a href="#Selectors_pseudo-elements">Псэўда-элемэнты</a></li>
+              <li><a href="#Selectors_grouping">Групаваньне селектараў</a></li>
+              <li><a href="#Selectors_combinators">Камбінатары селектараў</a></li>
+            </ul>
+          </li>
+          
+          <li class="liOpen"><a href="#Attributes">Атрыбуты</a>
+            <ul>
+              <li class="liOpen"><a href="#Attributes_by_types">Па тыпам</a>
+                <ul>
+                  <li><a href="#Attributes_box">Box-атрыбуты</a></li>
+                  <li><a href="#Attributes_layout">Атрыбуты разьмяшчэньня</a></li>
+                  <li><a href="#Attributes_list">Атрыбуты сьпісаў</a></li>
+                  <li><a href="#Attributes_table">Атрыбуты табліц</a></li>
+                  <li><a href="#Attributes_color_background">Атрыбуты колераў і фонаў</a></li>
+                  <li><a href="#Attributes_typographical">Тыпаграфічныя атрыбуты</a></li>
+                  <li><a href="#Attributes_generated_content">Атрыбуты згенераванага зьместу</a></li>
+                  <li><a href="#Attributes_UI">Атрыбуты UI</a></li>
+                  <li><a href="#Attributes_paged_media">Paged-media атрыбуты</a></li>
+                  <li><a href="#Attributes_vendor_specific">Vendor-спэцыфічныя атрыбуты</a></li>
+                </ul>
+              </li>
+              <li class="liOpen"><a href="#Attributes_description">Апісаньне атрыбутаў</a>
+                <ul>
+                  
+                </ul>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="liOpen"><a href="#Values">Значэньні</a>
+            <ul>
+              <li class="liOpen"><a href="#Values_length">Дліны</a>
+                <ul>
+                  <li><a href="#Length_relative_units">Адносныя адзінкі вымярэньня</a></li>
+                  <li><a href="#Length_absolute_units">Абсалютныя адзінкі вымярэньня</a></li>
+                </ul>
+              </li>
+              <li class="liOpen"><a href="#Values_images">Выявы</a>
+                <ul>
+                  
+                </ul>
+              </li>
+            </ul>
+          </li>
+          
+          <li class="liOpen"><a href="#TipsTricks">Tips &amp; Tricks</a>
+            <ul>
+              <!--li><a href="#Links_CSS_home">CSS home</a></li>
+              <li><a href="#Links_specs">Стандарты і спэцыфікацыі</a></li>
+              <li><a href="#Links_refs">References</a></li-->
+            </ul>
+          </li>
+          
+          <li class="liOpen"><a href="#Frameworks">Frameworks</a>
+            <ul>
+              <li><a href="#Frameworks_Blueprint">Blueprint</a></li>
+              <li><a href="#Frameworks_960gs">960.gs</a></li>
+              <li><a href="#Frameworks_YUI">Yahoo UI</a></li>
+            </ul>
+          </li>
+
+          <li class="liOpen"><a href="#Templates_concepts_tools">Шаблёны, па-над-CSS канцэпцыі, прылады</a>
+            <ul>
+              <li><a href="#Reset">Reset CSS</a></li>
+              <li><a href="#Boilerplate">Boilerplate</a></li>
+              <li><a href="#Less">Less CSS</a>
+                <ul>
+                  <li><a href="#Less_variables">Пераменныя</a></li>
+                  <li><a href="#Less_mixins">Дамешкі</a></li>
+                  <li><a href="#Less_nested_rules">Укладзеныя правілы</a></li>
+                  <li><a href="#Less_functions_operations">Функцыі і апэрацыі</a></li>
+                  <li><a href="#Less_using">Выкарыстаньне</a></li>
+                </ul>
+              </li>
+              <!--li><a href="#Links_refs">References</a></li-->
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <article id="main">
+      <header>
+        Даведнік па CSS
+      </header>
+
+      <section>
+        <h1><a name="Links">Карысныя спасылкі</a></h1>
+        
+        <h2><a name="Links_CSS_home">CSS home</a></h2>
+        <p><i>Афіцыйная</i> пляцоўка на <b>W3C</b>: <a href="http://www.w3.org/Style/CSS/">http://www.w3.org/Style/CSS</a></p>
+        <p><i>Неафіцыйная</i> пляцоўка: <a href="http://www.css3.info/">http://www.css3.info</a></p>
+        
+        <h2><a name="Links_specs">Стандарты і спэцыфікацыі</a></h2>
+        <h3><a name="Links_specs_2_1">CSS 2.1</a></h3>
+        <p><i>Спэцыфікацыя</i> на <b>W3C</b>: <a href="http://www.w3.org/TR/CSS2/">http://www.w3.org/TR/CSS2</a></p>
+        
+        <h2><a name="Links_refs">References</a></h2>
+        <p><i>Даведнік па базавым аспэктам</i>: <a href="http://www.cssbasics.com/">http://www.cssbasics.com</a></p>
+        <p><i>Дасканалы даведнік</i> на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/css/">http://reference.sitepoint.com/css</a></p>
+        <p>? <i>Hands on tutorial</i> на <b>westciv</b>: <a href="http://www.westciv.com/style_master/academy/hands_on_tutorial/index.html">http://www.westciv.com/style_master/academy/hands_on_tutorial/index.html</a></p>
+        <p>? <i>Complete css guide</i> на <b>westciv</b>: <a href="http://www.westciv.com/style_master/academy/css_tutorial/introduction/index.html">http://www.westciv.com/style_master/academy/css_tutorial/introduction/index.html</a></p>
+        
+      </section>
+      
+      <section>
+        <h1><a name="Concepts">Базавыя канцэпцыі</a></h1>
+        
+        <h2><a name="Concepts_what_is_CSS">Што такое CSS</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/css/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>Вэб-дакумэнт складаецца з 3х слаёў:
+          <figure style="float: right;">
+            <img alt="Тры слаі вэб-дакумэнту" title="Тры слаі вэб-дакумэнту" src="../images/css_three-layers.png"/>
+            <figcaption class="imgcaption">Тры слаі вэб-дакумэнту</figcaption>
+          </figure>
+          <ol>
+            <li><em><strong>Зьмест</strong> (Content)</em>&nbsp;&mdash; тое, што аўтар хоча данесьці да чытача.</li>
+            <li><em><strong>Прадстаўленьне</strong> (Presentation)</em>&nbsp;&mdash; як гэта інфармацыя выглядае.</li>
+            <li><em><strong>Паводзіны</strong> (Behavior)</em>&nbsp;&mdash; узаемадзеяньні карыстальніка з дакумэнтам.</li>
+          </ol>
+        </p>
+        <p>Асноўная ідэя <abbr class="term" title="Cascading Style Sheets">CSS</abbr> заключаецца ў тым, каб захоўваць тое, як <em>інфармацыя <strong>адлюстроўваецца/прадстаўляецца</strong> асобна ад самой інфармацыі</em>. Перавагі такога падыходу:
+          <ol>
+            <li>Сродкі <abbr class="term" title="Cascading Style Sheets">CSS</abbr> нашмат <em>больш магутныя</em> за сродкі <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>.</li>
+            <li>Магчымасьць рабіць <em><i>re-use</i> рэсурсаў</em>: адзін <code>css</code>-файл можа ўжывацца для шмат дакумэнтаў. Зьмены ў стылі ўсяго сайту/аплікацыі трэба рабіць не ўва ўсіх дакумэнтах сайту, а толькі ў адпаведным <code>css</code>-файле.</li>
+            <li><em>Зьмяншаецца аб&#39;ём перадаваемай інфармацыі</em>.</li>
+            <li>Зьмест, аддзелены ад стылю, <em>можа выкарыстоўвацца ня толькі браўзэрамі</em>.</li>
+          </ol>
+        </p>
+        
+        <h2><a name="Concepts_CSS_versions">Вэрсіі CSS</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/csshistory/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>
+          <ul>
+            <li><em>CSS1</em>&nbsp;&mdash; прыняты ў 1996 г. Бедны, у асноўным кіраваў тыпаграфікай.</li>
+            <li><em>CSS2</em>&nbsp;&mdash; прыняты ў 1998 г. Нашмат больш магутная вэрсія, але складана рэалізуемая на той момант. З-за апошняй акалічнасьці была зроблена спрошчаная, перагледжаная вэрсія:
+              <ul><li><a href="http://www.w3.org/TR/CSS2/"><em>CSS2.1</em></a>&nbsp;&mdash; звычайна, калі гаворыцца пра 2гую вэрсію <abbr class="term" title="Cascading Style Sheets">CSS</abbr>, маецца на ўвазе менавіта гэтая вэрсія.</li></ul>
+            </li>
+            <li><em>CSS3</em>&nbsp;&mdash; будучая вэрсія, яшчэ ня прынятая канчаткова, існуючая толькі ў выглядзе асобных рэкамэндацыяў па пэўным разьдзелам. Аднак, у бальшыні <a href="http://www.w3schools.com/browsers/browsers_stats.asp">асноўных браўзэраў</a> шмат якія асаблівасьці стандарту ўжо рэалізаваныя.</li>
+          </ul>
+        </p>
+        
+        <h2><a name="Concepts_CSS_types">Тыпы CSS і спосабы іх падключэньня</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/linkingcss/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>Тыпы <em>аўтарскіх</em> <abbr class="term" title="Cascading Style Sheets">CSS</abbr> у парадку, у якім браўзэр шукае стыль пэўнага элемэнту:
+          <ol>
+            <li><em><strong>Inline</strong> (убудаваны) стыль</em>. Пры выкарыстаньні <a href="../htmlRef/index.html#style_attr"><code class="attr">style</code></a>-атрыбуту <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>-аб'ектаў:
+              <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+              <ul style="font-size: 120%; color: #060;">
+                ⋮ <!-- list items -->
+              </ul>
+              ]]></script>
+              <p>Убудаваныя стылі абмежаваны тым, што:
+                <ul>
+                  <li>немагчыма вызначыць для якіх тыпаў <a href="../htmlRef/index.html#Media"><i>media</i></a> яны павінны ўжывацца;</li>
+                  <li>іх немагчыма ўжыць для <i><a href="#Selectors_pseudo_class">pseudo-classes</a></i> і <i><a href="#Selectors_pseudo_element">pseudo-elements</a></i>.</li>
+                </ul>
+              </p>
+              <p>Недахоп такога спосабу ўжываць стылі ў тым, што яны ўбудаваны ў гэтым выпадку ў кантэнт. Але гэта можа быць апраўдана, калі такім стылем трэба пазначыць толькі адзін (некалькі) <a href="../htmlRef/index.html#Elements">элемэнт</a> старонкі.</p>
+            </li>
+            <li style="margin-top: 10px;"><em><strong>Internal</strong> (унутраны) стыль</em>. Пры выкарыстаньні <a href="../htmlRef/index.html#style_elem"><code class="elem">style</code></a>-элемэнту ўнутры <a href="../htmlRef/index.html#head"><code class="elem">head</code></a>-элемэнту <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>:
+              <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+              <style type="text/css" media="screen, projection">
+                ⋮ <!-- CSS rules -->
+              </style>
+              ]]></script>
+              <aside><sup>1</sup> Калі ўва ўнутраным і зьнешнім <abbr class="term" title="Cascading Style Sheets">CSS</abbr> не пазначаны атрыбут <code class="attr">media</code>, спэцыфікацыя кажа, што будзе ўжыта значэньне <code class="value">screen</code>, але насамрэч браўзэры апрацоўваюць гэты выпадак, як быццам пазначана значэньне <code class="value">all</code>.</aside>
+              <p>Недахопы амаль тыя ж, што і папярэдняга тыпу. Адзінае, у гэтым выпадку можна дабівацца re-use аднаго і таго ж стылю для некалькіх элемэнтаў <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>, а таксама пазначаць <a href="../htmlRef/index.html#Media"><i>media</i></a><sup>1</sup>.</p>
+            </li>
+            <li style="margin-top: 10px;"><em><strong>External</strong> (зьнешні) стыль</em>. Падключаецца са зьнешняга <code>css</code>-файлу. Падключэньне магчымае 2ма шляхамі:
+              <ol style="list-style-type: lower-latin;">
+                <li><a href="../htmlRef/index.html#link"><code class="elem">link</code></a>-элемэнт ўнутры <a href="../htmlRef/index.html#head"><code class="elem">head</code></a>-элемэнту <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>:
+                  <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+                  <link rel="stylesheet" type="text/css" 
+                      href="style.css" media="screen" />
+                  ]]></script>
+                  <p>Гэты мэтад можа таксама выкарыстоўвацца для падключэньня альтэрнатыўных стыляў:
+                    <ul>
+                      <li>калі ў элемэнце <a href="../htmlRef/index.html#link"><code class="elem">link</code></a> пазначана <strong><code class="attr">rel=</code><code class="value">"stylesheet"</code></strong> і <strong>адсутнічае</strong> атрыбут <code class="attr">title</code>, стыль лічыцца "нерухомым" ці пастаянным і не можа быць заменены іншым. Калі ў браўзэры абіраецца іншы стыль, ён ужываецца паралельна з гэтым нерухомым, а не замест яго.</li>
+                      <li>калі ў элемэнце <a href="../htmlRef/index.html#link"><code class="elem">link</code></a> пазначана <strong><code class="attr">rel=</code><code class="value">"stylesheet"</code></strong> і <strong>прысутнічае</strong> атрыбут <code class="attr">title</code>, стыль лічыцца змоўчным, але можа быць адключаны, калі карыстач абярэ іншы стыль ў браўзэры.</li>
+                      <aside><sup>2</sup> Зьвярніце ўвагу, што спэцыфікацыя <abbr class="term" title="Cascading Style Sheets">CSS</abbr> выкарыстоўвае тэрмін <i>alternate</i>, а не <i>alternative</i></aside>
+                      <li>калі ў элемэнце <a href="../htmlRef/index.html#link"><code class="elem">link</code></a> пазначана <strong><code class="attr">rel=</code><code class="value">"alternate stylesheet"</code></strong><sup>2</sup>, стыль па-змоўчваньні не выкарыстоўваецца, але можа быць уключаны карыстачом парз браўзэр.</li>
+                      <li>калі ў некалькіх элемэнтаў <a href="../htmlRef/index.html#link"><code class="elem">link</code></a> маецца <strong>атрыбут <code class="attr">title</code> з адным і тым жа значэньнем</strong>, то ўключэньне аднаго зь іх прывядзе да ўключэньня іншых і, адпаведна, да адключэньня стыляў зь іншымі "імёнамі" ці без "імёнаў".</li>
+                    </ul>
+                  </p>
+                </li>
+                <li><a href="#At-rules_import"><code class="attr">@import</code></a> <i>at-rule</i> ўнутры <a href="../htmlRef/index.html#head"><code class="elem">head</code></a>-элемэнту <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>:
+                  <aside>Падобна да <strong>internal</strong> стыляў, але замест яўнага прапісваньня стылю імпартуецца зьмест <code>css</code>-файлу.</aside>
+                  <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+                  <style type="text/css">
+                    @import url(style.css);
+                  </style>
+                  ]]></script>
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </p>
+        <p>І для 3.а, і для 3.b характэрна тое, што <a href="http://en.wikipedia.org/wiki/URI"><abbr class="term" title="Uniform Resource Identifier">URI</span></a>'s у <code class="attr">href</code>-атрыбуце і ў <a href="#At-rules_import"><code class="attr">@import</code></a> <i>at-rule</i> зьяўляюцца адноснымі да <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>-дакумэнту, які ўтрымлівае гэтую спасылку. Калі <a href="#At-rules_import"><code class="attr">@import</code></a> выкарыстоўваецца ў <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-дакумэнце, тады <a href="http://en.wikipedia.org/wiki/URI"><abbr class="term" title="Uniform Resource Identifier">URI</span></a> зьяўляецца адносным да гэтага <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-дакумэнту.</p>
+        
+        <h2><a name="Concepts_syntax_terminology">Сынтакс і тэрміналёгія</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/syntax/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p><abbr class="term" title="Cascading Style Sheets">CSS</abbr> складаецца з набору выразаў (<i>statements</i>). Выразам можа быць альбо <a href="#At-rules"><i>at-rule</i></a>, якое складаецца з ключавога слова (сымбаль <code>&#64;</code>, за каторым ідзе <i>at-rule</i> імя), за каторым ідзе блёк (<code>{...}</code>) ці тэкст, які сканчваецца кропкай з коскай:
+          <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+          @import url(base.css);
+          
+          @media print {
+            body {
+              font-size: 12pt;
+            }
+          }
+          ]]></script>
+        </p> 
+        <p>Акрамя <i>at-rule</i> выразам можа быць <i>rule-set</i>, каторы складаецца з <a href="#Selectors">селектара</a> і блёку аб'яўленьняў (сьпісу <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-атрыбутаў зь іх значэньнямі):
+          <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+          h2 {
+            color: #666;
+            font-weight: bold;
+          }
+          ]]></script>
+          Дзе <code class="elem">h2</code>&nbsp;&mdash; селектар, а ў блёку аб'яўленьняў пазначаюцца атрыбут <code class="attr">color</code> са значэньнем <code class="value">#666</code> і атрыбут <code class="attr">font-weight</code> са значэньнем <code class="value">bold</code>.
+        </p>
+        
+        <h2><a name="Concepts_comments">Камэнтары</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/comments">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>Камэнтары ў <abbr class="term" title="Cascading Style Sheets">CSS</abbr> пачынаюцца з <code>/*</code>, а сканчваюцца <code>*/</code> і могуць ахопліваць некалькі радкоў:
+          <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+          /* This is a single-line comment */
+
+          p {
+            /* This is a comment that
+               spans multiple lines */
+          }
+          ]]></script>
+        </p>
+          
+        <h2><a name="Concepts_CSS_escape_notation">CSS Escape Notation</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/cssescapenotation/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>Прадстаўленьне <i>escape</i> (спэцыяльных) сымбаляў у <abbr class="term" title="Cascading Style Sheets">CSS</abbr> адрозьніваецца ад <a href="../htmlRef/index.html#Special_symbols">спосабу</a> рабіць гэта ў <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>. У <abbr class="term" title="Cascading Style Sheets">CSS</abbr> гэта робіцца наступным чынам: выкарыстоўваецца сымбаль зваротнага слэшу (\), пасьля якога ідуць ад 1 да 6 шаснаццацірычных лічбаў, якія прадстаўляюць код сымбалю з табліцы <em>ISO 10646 standard</em>, каторая эквівалентная <em>Unicode</em>. Любы сымбаль, які адрозьніваецца ад шаснаццацірычнай лічбы перарве пасьлядоўнасьць.</p>
+        <p>Калі сымбаль, які павінен ісьці адразу пасьля <i>escape</i> сымбалю, таксама уяўляе зь сябе шаснаццацірычную лічбу, трэба альбо дапоўніць <i>escape</i> код нулямі да агульнай іх колькасьці ў 6 лічбаў, альбо ўставіць прагал пасьля <i>escape</i> сымбалю. Напрыклад, калі трэба пазначыць <code>"»back"</code>, можна ўвесьці альбо <code>"\0000bbback"</code>, альбо <code>"\bb back"</code>. З апошняга прыкладу зразумела, што першы прагал пасьля <i>escape</i> сымбалю выдаляецца (нават калі ў гэтым сымбалі ўжываюцца ўсе 6 дазволеных лічбаў). Каб насамрэч уставіць прагал, трэба пазначыць яго двойчы.</p>
+
+        <h2><a name="Concepts_cascade_specificity">Каскад і спэцыфічнасьць</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/inheritancecascade/">SitePoint</a></li>
+            <li><a href="http://www.westciv.com/style_master/academy/css_tutorial/advanced/cascade_inheritance.html">westciv</a></li>
+            <li><a href="http://www.w3.org/TR/css3-cascade/">W3C</a></li>
+          </ul>
+        </div>
+        <p>Каскад (першая літара ў скарачэньні <i>CSS</i>, ад ангельскага <i>cascade</i>) азначае, што вызначэньні стылю пэўнага дакумэнту могуць каскадам імпартавацца з розных крыніцаў&nbsp;&mdash; <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>-дакумэнт карыстаецца вызначэньнямі стылю, напрыклад, з файла <code>department.css</code>, апошні ў сваю чаргу імпартуе пэўныя вызначэньні стылю, напрыклад, з файла <code>corporate.css</code> і г.д.</p>
+        <p>Такім чынам, для аднаго і таго ж элемэнту могуць адпавядаць розныя вызначэньні стылю з розных файлаў, ці нават з аднаго і таго ж файлу. Якім жа чынам вырашаецца які зь іх ужыць? Гэты працэс вырашэньня для кожнага з атрыбутаў складаецца з 4 крокаў:
+          <ol>
+            <li>Знайсьці ўсе аб&#39;яўленьні, якія вызначаюць значэньне пэўнага атрыбуту для пэўнага элемэнту.</li>
+            <li>Адсартаваць гэтыя аб&#39;яўленьні ў адпаведнасьці з іх узроўнем важнасьці і паходжаньня.</li>
+            <li>Адсартаваць аб&#39;яўленьні ў межах аднолькавага узроўню важнасьці і паходжаньня па спэцыфічнасьці <a href="#Selectors">селектараў</a>.</li>
+            <li>Апошнім крокам, калі некалькі аб&#39;яўленьняў маюць аднолькавую важнасьць, паходжаньне і спэцыфічнасьць, адсартаваць іх у пасьлядоўнасьці іх сьледаваньня ў файлах.</li>
+          </ol>
+        </p>
+        <p>Першым крокам <strong>агент</strong> (звычайна браўзэр) шукае ўва ўсіх даступных крыніцах вызначэньні пэўнага атрыбуту.</p>
+        
+        <h3><a name="Concepts_style_sources">Крыніцы стыляў</a></h3>
+        <p>Крыніцамі могуць быць: <em>стылі самога агенту</em>, <em>аўтарскія стылі</em>, <em>стылі карыстальніка</em>.</p>
+        <p><strong>Стылем агентаў</strong> зьяўляюцца дэфолтныя стылі для элемэнтаў, значэньні іх звычайна (але не заўсёды) супадаюць з дэфолтнымі стылямі для элемэтнаў <a href="..\htmlRef\index.html"><span class="term">HTML</span></a> са спэцыфікацыі (гл. разьдзел <i>"Typical default display properties"</i>, напрыклад элемэнтаў <a href="http://dev.w3.org/html5/markup/a.html#a-display"><code class="elem">a</code></a> і <a href="http://dev.w3.org/html5/markup/b.html#b-display"><code class="elem">b</code></a>).</p>
+        <p>Агенты могуць таксама даваць магчымасьць іх <strong>карыстальнікам ствараць уласныя дэфолтныя стылі</strong>, альбо стылі для пэўных пляцовак.</p>
+        <p>Ну, і напрыканцы <strong>аўтарскія стылі</strong>&nbsp;&mdash; уласна і ёсьць стылі ў агульным разуменьні, каторыя падключаюцца да <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>-дакумэнту праз элемэнты <a href="..\htmlRef\index.html#link"><code class="elem">link</code></a> і <a href="..\htmlRef\index.html#style_elem"><code class="elem">style</code></a>.</p>
+        <p>Праходзячы па ўсім аб&#39;яўленьням у вышэйазначаных стылях, агенты выбіраюць сярод іх толькі тыя, <a href="#Selectors">селектары</a> каторых адпавядаюць патрэбнаму элемэнту.</p>
+        <p>Такім чынам, у канцы першага кроку мы маем усе аб&#39;яўленьні пэўнага атрыбуту, вызначаныя для пэўнага элемэнту.</p>
+        
+        <h3><a name="Concepts_declaration_importance">Важнасьць аб&#39;яўленьняў</a></h3>
+        <p>Другім крокам вызначаецца <strong>ўзровень важнасьці</strong> сярод усіх знойдзенных аб&#39;яўленьняў. Акрамя звычайных аб&#39;яўленьняў можна пазначаць больш важныя&nbsp;&mdash; праз дадаваньне <code class="value">!important</code> <em>у самы канец</em> аб&#39;яўленьня:
+          <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+          p {
+            font-size: 1em !important;
+          }
+          ]]></script>
+        </p>
+        <p>Парадак пры вызначэньні ўзроўню важнасьці наступны (ад меньш да больш важнага):
+          <ol>
+            <li>аб&#39;яўленьні ў стылях агенту;</li>
+            <li>звычайныя аб&#39;яўленьні ў стылях карыстальніка;</li>
+            <li>звычайныя аб&#39;яўленьні ў аўтарскіх стылях;</li>
+            <li>важныя аб&#39;яўленьні ў аўтарскіх стылях;</li>
+            <li>важныя аб&#39;яўленьні ў стылях карыстальніка.</li>
+          </ol>
+        </p>
+        <p>Адпаведна, сярод усіх магчымых аб&#39;яўленьняў выбіраецца тое, каторае аказалася найбольш важным.</p>
+        
+        <h3><a name="Concepts_selectors_specificity">Спэцыфічнасьць селектараў</a></h3>
+        <p>Трэцім крокам <em>сярод найбольш важных</em> (калі іх больш за адно) выбіраецца тое аб&#39;яўленьне, <a href="#Selectors">селектар</a> каторага больш спэцыфічны.</p>
+        <p>Ступень спэцыфічнасьці вызначаецца па пасьлядоўнасьці лічбаў <code>a,b,c,d</code>, дзе <code>a</code> найбольш спэцыфічнае, <code>b</code> менш спэцыфічнае за <code>a</code>, <code>c</code> менш спэцыфічнае за <code>b</code>, а <code>d</code> найменш спэцыфічнае. Такім чынам, калі сярод усіх селектараў будзе пэўны са значэньнем у <code>a</code> большым, за астатнія селектары, ён будзе самым спэцыфічным. Калі будзе некалькі селектараў з найвялікшым значэньнем у <code>a</code>, сярод іх будзе выбраны той, у каторага большае значэньне ў <code>b</code>, і г.д. Гэтыя лічбы адпавядаюць:
+          <ol style="list-style-type: lower-latin;">
+            <li>аб&#39;яўленьне ў <a href="..\htmlRef\index.html#style_attr"><code class="attr">style</code></a>-атрыбуце адпаведнага <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>-элемэнту;</li>
+            <li>колькасьць <a href="#Selectors_IDs">ID-селектараў</a>;</li>
+            <li>колькасьць <a href="#Selectors_classes">class-селектараў</a>, <a href="#Selectors_attributes">attribute-селектараў</a> і <a href="#Selectors_pseudo-classes">pseudo-клясаў</a>;</li>
+            <li>колькасьць <a href="#Selectors_elements">element-селектараў</a> і <a href="#Selectors_pseudo-elements">pseudo-элемэнтаў</a>.</li>
+          </ol>
+        </p>
+        <p>Астатнія тыпы селектараў маюць нулявую спэцыфічнасьць і проста ігнаруюцца пры падліку. Напрыклад:
+          <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+          p.message {
+            color: green;
+          }
+          
+          #home #warning p.message {
+            color: yellow;
+          }
+          #warning p.message {
+            color: white;
+          }
+          
+          body#home div#warning p.message {
+            color: blue;
+          }
+          
+          p {
+            color: teal;
+          }
+          
+          * body#home>div#warning p.message {
+            color: red;
+          }
+          
+          #warning p {
+            color: black;
+          }
+          ]]></script>
+        </p>
+        <p>Вынік падліку спэцыфічнасьці селектараў, прыведзеных вышэй, пры вызначэньні якое ж значэньне атрыбуту <a href="#color"><code class="attr">color</code></a> ужыць да чарговага <a href="..\htmlRef\index.html#p"><code class="elem">p</code></a>-элемэнту прыведзена ў табліцы ніжэй:
+          <table>
+            <thead>
+              <tr>
+                <th>Selector</th>
+                <th><p>Inline стыль</p><p><code>a</code></p></th>
+                <th><p>IDs<br />&nbsp;</p><p><code>b</code></p></th>
+                <th><p>Classes, attributes, pseudo-classes</p><p><code>c</code></p></th>
+                <th><p>Elements, pseudo-elements</p><p><code>d</code></p></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><code>body#home div#warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>3</td></tr>
+              <tr><td><code>* body#home>div#warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>3</td></tr>
+              <tr><td><code>#home #warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>1</td></tr>
+              <tr><td><code>#warning p.message</code></td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+              <tr><td><code>#warning p</code></td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+              <tr><td><code>p.message</code></td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+              <tr><td><code>p</code></td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+            </tbody>
+          </table>
+        </p>
+        
+        <h3><a name="Concepts_order_in_source">Парадак сьледаваньня</a></h3>
+        <p>Калі ж і на трэцім кроку не ўдалося звузіць колькасьць пасуючых аб&#39;яўленьняў да аднаго, тады ўлічваецца іх парадак у зыходных файлах. Той, каторы сустракаецца апошнім, перакрывае папярэднія і насамрэч ужываецца.</p>
+        
+        <h2><a name="Concepts_inheritance">Спадчыннасьць</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/inheritance/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>Значэньні пэўных атрыбутаў (напр. <a href="#font-size"><code class="attr">font-size</code></a> ці <a href="#color"><code class="attr">color</code></a>), калі не пазначаныя наўпрост, спадкуюцца элемэнтамі ад іх бацькоўскіх элемэнтаў:
+          <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+          div {
+            font-size: 20px;
+          }
+          ]]></script>
+          <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+          <div>
+            <p>
+              This <em>sentence</em> will have a 20px
+              <a href="#">font-size</a>.
+            </p>
+          </div>
+          ]]></script>
+        </p>
+        <p>У прыкладзе вышэй тэкст і ў элемэнце <a href="..\htmlRef\index.html#p"><code class="elem">p</code></a>, і ў <a href="..\htmlRef\index.html#em"><code class="elem">em</code></a>, і ў <a href="..\htmlRef\index.html#a"><code class="elem">a</code></a> будзе памерам <code class="value">20px</code>.</p>
+        <p>Калі ж значэньні атрыбутаў аўтаматычна не спадкуюцца (напр. <a href="#background-color"><code class="attr">background-color</code></a>), іх можна ўспадкаваць уручную, пазначыўшы для пэўнага атрыбуту ў якасьці яго значэньня <code class="value">inherit</code>, калі гэта дазваляецца спэцыфікацыяй, натуральна.</p>
+
+      </section>
+
+      <section>
+        <h1><a name="At-rules">At-rules</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/atrulesref/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p><i>At-rules</i>&nbsp;&mdash; гэта інструкцыі ці дырэктывы для парсера <abbr class="term" title="Cascading Style Sheets">CSS</abbr>.</p>
+        
+        <aside><sup>3</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>/<abbr class="term" title="Cascading Style Sheets">CSS</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
+        <h3><a name="At-rules_charset"><code class="at_rule">&#64;charset</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/at-charset/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>Выкарыстоўваецца для пазначэньня кадоўкі<sup>3</sup> зьнешняга файлу стыляў (<code>css</code>-файлу). Па зразумелым прычынам гэтая дырэктыва, калі прысутнічае, павінна быць самым першым выразам у <code>css</code>-файле.</p>
+        <p>Агенты карыстаюцца наступным сьпісам пры вызначэньні кадоўкі <code>css</code>-файлу, у парадку зьмяншэньня прыярытэту:
+          <ul>
+            <li>Атрыбут <code class="attr">charset</code> <abbr class="term" title="HyperText Transfer Protocol">HTTP</abbr> загалоўку <code>Content-Type</code>, каторы дасылаецца вэб-сэрверам.</li>
+            <li><code class="at_rule">&#64;charset</code>-дырэктыва.</li>
+            <li>Атрыбут <code class="attr">charset</code> <a href="..\htmlRef\index.html#link"><code class="elem">link</code></a>-элемэнту, каторым <a href="..\htmlRef\index.html"><span class="term">HTML</span></a>-дакумэнт спасылаецца да <code>css</code>-файлу.</li>
+            <li>Кадоўка дакумэнту, каторы спасылаецца да гэтага <code>css</code>-файлу.</li>
+          </ul>
+          І толькі, калі не атрымалася вызначыць кадоўку ніводным з гэтых варыянтаў, ужываецца змоўчная кадоўка&nbsp;&mdash; <code>UTF-8</code>. 
+        </p>
+        <h4>Прыклад</h4>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        @charset "ISO-8859-15";
+        ]]></script>
+
+        <h3><a name="At-rules_import"><code class="at_rule">&#64;import</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/at-import/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>Зьяўляецца мэханізмам імпартаваньня аднаго файлу стыляў у іншы. Выкарыстоўваецца наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        @import  { URI | string } [  media type, … ] ;
+        ]]></script>
+        <p>У выпадку пазначэньня адносных спасылак/шляхоў "адпраўной кропкай" лічыцца месцазнаходжаньне файлу стыляў, у якім гэтая дырэктыва зьмешчана. Пасьля спасылкі/шляху могуць пазначацца <a href="..\htmlRef\index.html#Media">media</a>-тыпы, для якіх гэтая дырэктыва павінна ўжывацца.</p>
+        <p><code class="at_rule">&#64;import</code>-дырэктыва павінна ісьці вышэй за ўсе <a href="#Concepts_syntax_terminology"><i>rule-sets</i></a>, у адваротным выпадку яна будзе праігнаравана.</p>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        /* Зробіць імпарт файла /css/screen.css у выпадку ўжываньня ў 
+        дадзены момант манітору ці праектара. */
+        @import url(/css/screen.css) screen, projection;
+        
+        html {
+          background-color: #fff;
+          color: #000;
+        }
+        
+        /* Дадзеная дырэктыва будзе праігнаравана, таму што зьмешчана 
+        пасьля папярэдняга rule-set. */
+        @import url("other.css");
+        ]]></script>
+
+        <h3><a name="At-rules_media"><code class="at_rule">&#64;media</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/at-media/">SitePoint</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="At-rules_page"><code class="at_rule">&#64;page</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/at-page/">SitePoint</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="At-rules_font-face"><code class="at_rule">&#64;font-face</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/at-fontface/">SitePoint</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="At-rules_namespace"><code class="at_rule">&#64;namespace</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/at-namespace/">SitePoint</a></li>
+          </ul>
+        </div>
+      
+      </section>
+      
+      <section>
+        <h1><a name="Selectors">Селектары</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.w3.org/TR/css3-selectors/">W3C</a></li>
+            <li><a href="http://reference.sitepoint.com/css/selectorref/">SitePoint</a></li>
+          </ul>
+        </div>
+        <p>Селектары&nbsp;&mdash; гэта шаблёны, каторыя вызначаюць да якіх элемэнтаў <a href="..\htmlRef\index.html"><span class="term">HTML</span></a> будуць ужытыя <a href="#Concepts_syntax_terminology">аб&#39;яўленьні</a>, якія зьмяшчаюцца ў <a href="#Concepts_syntax_terminology">блёку</a> пасьля гэтага селектара. Гэтыя аб&#39;яўленьні будуць ужытыя да ўсіх элемэнтаў, каторыя адпавядаюць шаблёну, акрамя выпадку, калі яны перавызначаныя ў іншым, больш <a href="#Concepts_selectors_specificity">спэцыфічным</a> селектары.</p>
+        <p>Селектар можа складацца з шэрагу простых селектараў, каторыя падзяляюцца паміж сабой <a href="#Selectors_combinators">камбінатарамі</a>. <a href="#Selectors_pseudo-elements">Псэўда-элемэнты</a> таксама могуць быць уключаныя адразу пасьля апошняга простага селектару ў шэрагу.</p>
+        
+        
+        <h2><a name="Selectors_universal">Унівэрсальны селектар</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/universalselector/">SitePoint</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="Selectors_elements">Селектар па элемэнтам</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/elementtypeselector/">SitePoint</a></li>
+          </ul>
+        </div>
+                      
+        <h2><a name="Selectors_classes">Селектар па клясам</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/classselector/">SitePoint</a></li>
+          </ul>
+        </div>
+              
+        <h2><a name="Selectors_IDs">Селектар па ідэнтыфікатарам</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/idselector/">SitePoint</a></li>
+          </ul>
+        </div>
+              
+        <h2><a name="Selectors_attributes">Селектар па атрыбутам</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/attributeselector/">SitePoint</a></li>
+          </ul>
+        </div>
+              
+        <h2><a name="Selectors_pseudo-classes">Псэўда-клясы</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/pseudoclasses/">SitePoint</a></li>
+          </ul>
+        </div>
+              
+        <h2><a name="Selectors_pseudo-elements">Псэўда-элемэнты</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/pseudoelements/">SitePoint</a></li>
+          </ul>
+        </div>
+              
+        <h2><a name="Selectors_grouping">Групаваньне селектараў</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/selectorgrouping/">SitePoint</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="Selectors_combinators">Камбінатары селектараў</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/combinators/">SitePoint</a></li>
+          </ul>
+        </div>
+
+      </section>
+      
+      <section>
+        <h1><a name="Attributes">Атрыбуты</a></h1>
+        
+        <h2><a name="Attributes_by_types">Па тыпам</a></h2>
+        
+        <h3><a name="Attributes_box">Box-атрыбуты</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.w3.org/TR/css3-box/">W3C-box</a></li>
+            <li><a href="http://www.w3.org/TR/css3-linebox/">W3C-linebox</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Attributes_layout">Атрыбуты разьмяшчэньня</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.w3.org/TR/css3-layout/">W3C</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Attributes_list">Атрыбуты сьпісаў</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.w3.org/TR/css3-lists/">W3C</a></li>
+          </ul>
+        </div>
+        
+        <h3><a name="Attributes_table">Атрыбуты табліц</a></h3>
+        <h3><a name="Attributes_color_background">Атрыбуты колераў і фонаў</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.w3.org/TR/css3-color/">W3C-color</a></li>
+            <li><a href="http://www.w3.org/TR/css3-background/">W3C-background</a></li>
+          </ul>
+        </div>
+        
+        <h3><a name="Attributes_typographical">Тыпаграфічныя атрыбуты</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.w3.org/TR/css3-fonts/">W3C-fonts</a></li>
+            <li><a href="http://www.w3.org/TR/css3-multicol/">W3C-multicol</a></li>
+            <li><a href="http://www.w3.org/TR/css3-text/">W3C-text</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Attributes_generated_content">Атрыбуты згенераванага зьместу</a></h3>
+        <h3><a name="Attributes_UI">Атрыбуты UI</a></h3>
+        <h3><a name="Attributes_paged_media">Paged-media атрыбуты</a></h3>
+        <h3><a name="Attributes_vendor_specific">Vendor-спэцыфічныя атрыбуты</a></h3>
+
+        <h2><a name="Attributes_description">Апісаньне атрыбутаў</a></h2>
+        
+      </section>
+      
+      <section>
+        <h1><a name="Values">Значэньні</a></h1>
+        
+        <h2><a name="Values_length">Дліны</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://reference.sitepoint.com/css/lengthunits/">SitePoint</a></li>
+            <li><a href="http://www.w3.org/TR/CSS2/syndata.html#length-units">W3C</a></li>
+          </ul>
+        </div>
+        <p>Тып значэньняў шмат якіх <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-атрыбутаў пазначана як <code class="value">&lt;length&gt;</code>. Гэта велічыня, якая складаецца з лічбавага значэньня і адзінкі вымярэньня, паміж якімі не дазваляецца нават прагал. Калі у якасьці лічбавага значэньня выкарыстоўваецца <code>0</code>, тады адзінку можна апусціць.</p>
+        
+        <h3><a name="Length_relative_units">Адносныя адзінкі вымярэньня</a></h3>
+        <p>Тры магчымыя адносныя адзінкі вымярэньня прыведзены ў табліцы ніжэй:</p>
+        <table style="margin-top: 10px;">
+          <thead>
+            <tr><th>Адзінка</th> <th>Апісаньне</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>em</code></td> <td>цяперашні памер шрыфту</td></tr>
+            <tr><td><code>ex</code></td> <td>вышыня літары <i>х</i> цяперашняга шрыфту</td></tr>
+          </tbody>
+        </table>
+        <p>Адзінкі <code>em</code> і <code>ex</code> залежаць ад памеру шрыфту, каторы ўжываецца да элемэнту.</p>
+        <p>Значэнье <code>1em</code> адпавядае памеру цяперашняга шрыфту (успадкаванага ад бацькоўскага элемэнту), якім бы чынам ён ня быў вызначаны. Такім чынам, выраз <code class="attr">font-size:</code>&nbsp;<code class="value">1em;</code> ня мае ніякай сілы, яго вынік такі ж, калі б мы ўвогуле яго не прыводзілі. А пазначэньне <code class="attr">font-size:</code>&nbsp;<code class="value">1.2em;</code> зробіць шрыфт адпаведнага элемэнту на 20% большым за памер бацькоўскага шрыфту.</p>
+        <p>Значэнье <code>1ex</code> адпавядае вышыні літары <i>х</i> цяперашняга шрыфту, як паказана на малюнку ніжэй. Цікава, што гэтае значэньне вызначана ў тым ліку і для шрыфтоў, якія не ўтрымліваюць літару <i>х</i>.</p>
+        <figure style="text-align: center;">
+          <img alt="Памер шрыфту і літары <i>х</i>" title="Памер шрыфту і літары <i>х</i>" src="../images/font-sizes.png"/>
+          <figcaption class="imgcaption">Памер шрыфту і літары <i>х</i></figcaption>
+        </figure>
+        <p>Варта таксама адзначыць, што даччыныя элемэнты <a href="#Concepts_inheritance">спадкуюць</a> не адносныя значэньні ад бацькоў, а разьлічаныя. У прыкладзе ніжэй значэньнем атрыбуту <code class="attr">text-indent</code> элемэнту <a href="..\htmlRef\index.html#h"><code class="elem">h1</code></a> будзе <code class="value">36px</code>, а не <code class="value">45px</code>, калі <a href="..\htmlRef\index.html#h"><code class="elem">h1</code></a> зьяўляецца даччыным да элемэнту <a href="..\htmlRef\index.html#body"><code class="elem">body</code></a>.
+          <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+          body {
+            font-size: 12px;
+            text-indent: 3em;  /* i.e., 36px */
+          }
+          h1 { font-size: 15px; }
+          ]]></script>
+        </p>
+        
+        <h3><a name="Length_absolute_units">Абсалютныя адзінкі вымярэньня</a></h3>
+        <p>У наступнай табліцы прыводзяцца абсалютныя адзінкі вымярэньня:</p>
+        <table style="margin-top: 10px;">
+          <thead>
+            <tr><th>Адзінка</th> <th>Апісаньне</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>mm</code></td> <td>мілімэтры</td></tr>
+            <tr><td><code>cm</code></td> <td>сантымэтры</td></tr>
+            <tr><td><code>in</code></td> <td>цалі (<em>1 цаля роўная 25,4 мм</em>)</td></tr>
+            <tr><td><code>pt</code></td> <td>пункты (<em>1 пункт роўны 1/72 цалі ці 0,353 мм</em>)</td></tr>
+            <tr><td><code>pc</code></td> <td>цыцэра (<em>1 цыцэра роўная 12 пунктам, 1/6 цалі ці 4,23 мм</em>)</td></tr>
+            <tr><td><code>px</code></td> <td>пікселі (<em>1 піксэль роўны 0,75 пунктаў, 1/96 цалі ці 0,26 мм</em>)</td></tr>
+          </tbody>
+        </table>
+        <p>Абсалютныя адзінкі не рэкамэндуецца ўжываць для вызначэньня памеру шрыфтоў.</p>
+        <p>Хаця піксэль і пазначаны ў спэцыфікацыі як абсалютная адзінка вымярэньня і хаця аб&#39;екты, чые памеры пазначаны ў піксэлях, сапраўды не скаліруюцца ў браўзэры, усё ж яе варта лічыць адноснай адзінкай, таму што звычайна піксэль&nbsp;&mdash; гэта мінімальна магчымая для адлюстраваньня кропка манітору і, натуральна, гэта велічыня розная ў розных маніторах. Ужываць піксэлі для манітораў з высокім разрозьненьнем не рэкамэндуецца.</p>
+        
+        <h2><a name="Values_images">Выявы</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://dev.w3.org/csswg/css3-images/">W3C</a></li>
+          </ul>
+        </div>
+        
+      </section>
+      
+      <section>
+        <h1><a name="TipsTricks">Tips &amp; Tricks</a></h1>
+
+        <p><a href="http://www.w3.org/Style/Examples/007/">W3C</a></p>
+        <p><a href="http://www.westciv.com/style_master/house/tutorials/quick/index.html">westciv</a></p>
+        <p><a href="http://websitetips.com/css/">http://websitetips.com/css</a></p>
+        <p><a href="http://www.noupe.com/css/101-css-techniques-of-all-time-part1.html">101 CSS Techniques Of All Time - Part1</a></p>
+        <p><a href="http://www.noupe.com/css/101-css-techniques-of-all-time-part2.html">101 CSS Techniques Of All Time - Part2</a></p>
+        <p><a href="http://www.tizag.com/cssT/">CSS Tutorial on tizag.com</a></p>
+        <p><a href="http://www.w3schools.com/css/css_positioning.asp">CSS positioning</a></p>
+        <p><a href="http://thinkvitamin.com/">thinkvitamin.com</a></p>
+        <p><a href="http://snook.ca/archives/html_and_css/content_overlay_css/">Content Overlay</a></p>
+        <p><a href="http://meyerweb.com/eric/css/edge/">Eric Meyer CSS edge</a></p>
+        <p><a href="http://snook.ca/archives/html_and_css/six_keys_to_understanding_css_layouts/">6 Keys to Understanding Modern CSS-based Layouts</a></p>
+        <p><a href="http://snook.ca/archives/html_and_css/css-text-rotation/">Text Rotation with CSS</a></p>
+        <p><a href="http://snook.ca/archives/html_and_css/multiple-bg-css-gradients/">Multiple Backgrounds and CSS Gradients</a></p>
+        <p><a href="http://css-tricks.com/snippets/css/css-box-shadow/">CSS Box Shadow</a></p>
+        <p><a href="http://css-tricks.com/">css-tricks.com</a></p>
+        <p>rgba: <a href="http://www.zenelements.com/blog/css3-rgb-rgba-color-opacity/">zenelements.com</a>,
+          <a href="http://24ways.org/2009/working-with-rgba-colour/">24ways.org</a>, 
+          <a href="http://css-tricks.com/rgba-browser-support/">css-tricks.com</a></p>
+        <p><a href="http://webitect.net/design/designtutorials/6-smashingly-practical-css3-effects-you-can-use-right-now/">6 smashingly practical css3 effects</a></p>
+        <p><a href="http://www.zurb.com/playground/radioactive-buttons/">Radioactive Buttons</a></p>
+        <p><a href="http://stackoverflow.com/questions/438821/what-does-do-in-a-css-link/438828#438828/">What does '?' do in a Css link?</a>,
+          <a href="http://stackoverflow.com/questions/3466989/what-does-appending-v-1-to-css-and-javascript-urls-in-link-and-script-tags-do">What does appending "?v=1" to CSS and Javascript URLs in link and script tags do?</a></p>
+        <p><a href="http://www.barelyfitz.com/">barelyfitz.com</a></p>
+        <p><a href="http://stackoverflow.com/questions/4236151/how-to-make-a-div-always-float-on-the-screen-in-top-right-corner/">How to make a DIV always float on the screen in top right corner?</a></p>
+        <p><a href="http://css-discuss.incutio.com/wiki/Centering_Block_Element/">Centering Block Element</a></p>
+        <p><a href="http://www.wickham43.net/index.php">Wickham's HTML / CSS tutorial</a></p>
+        <p><a href="http://sixrevisions.com/css/basic-css3-techniques-that-you-should-know/">Basic CSS3 Techniques That You Should Know</a></p>
+        <p><a href="http://kyleschaeffer.com/best-practices/pure-css-image-hover/">Pure CSS Image Hover</a></p>
+        <p><a href="http://www.devdevote.com/markup/">DevDevote</a></p>
+        
+      </section>
+      
+      <section>
+        <h1><a name="Frameworks">Frameworks</a></h1>
+        
+        <h2><a name="Frameworks_Blueprint">Blueprint</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.blueprintcss.org/">Blueprint</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="Frameworks_960gs">960.gs</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://960.gs/">960.gs</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="Frameworks_YUI">Yahoo UI</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://developer.yahoo.com/yui/">YUI</a></li>
+          </ul>
+        </div>
+        
+      </section>
+      
+      <section>
+        <h1><a name="Templates_concepts_tools">Шаблёны, па-над-CSS канцэпцыі, прылады</a></h1>
+        
+        <h2><a name="Reset">Reset CSS</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://meyerweb.com/eric/tools/css/reset/">Reset</a></li>
+          </ul>
+        </div>
+        <p>Канцэпцыя грунтуецца на тым падыходзе, што некаторыя з дэфолтных значэньняў <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-<a href="#Attributes">атрыбутаў</a> скідваюцца ў <code>none</code>/<code>0</code>/<code>1</code> значэньні, каб потым усталёўвацца ўручную/яўна пры неабходнасьці. Гэта робіцца з-за таго, што гэтыя значэньні адрозьніваюцца ў розных браўзерах&nbsp;&mdash; для большай сумяшчальнасьці рэалізацыі сярод усіх браўзэраў.</p>
+        <p>Код "скіду" некаторых дэфолтных значэньняў:
+          <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+          /* http://meyerweb.com/eric/tools/css/reset/ 
+             v2.0 | 20110126
+             License: none (public domain)
+          */
+          
+          html, body, div, span, applet, object, iframe,
+          h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+          a, abbr, acronym, address, big, cite, code,
+          del, dfn, em, img, ins, kbd, q, s, samp,
+          small, strike, strong, sub, sup, tt, var,
+          b, u, i, center,
+          dl, dt, dd, ol, ul, li,
+          fieldset, form, label, legend,
+          table, caption, tbody, tfoot, thead, tr, th, td,
+          article, aside, canvas, details, embed, 
+          figure, figcaption, footer, header, hgroup, 
+          menu, nav, output, ruby, section, summary,
+          time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+          }
+          
+          /* HTML5 display-role reset for older browsers */
+          article, aside, details, figcaption, figure, 
+          footer, header, hgroup, menu, nav, section {
+            display: block;
+          }
+          
+          body {
+            line-height: 1;
+          }
+          
+          ol, ul {
+            list-style: none;
+          }
+          
+          blockquote, q {
+            quotes: none;
+          }
+          
+          blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none;
+          }
+          
+          table {
+            border-collapse: collapse;
+            border-spacing: 0;
+          }
+          ]]></script>
+        </p>
+        <p> <a href="http://snook.ca/archives/html_and_css/no_css_reset">Лічыцца</a>, што выкарыстоўваць саму па сабе гэтую канцэпцыю няма вялікага сэнсу. Замест яе трэба карыстацца альбо ўласнымі надбудовамі над ёй, альбо больш шырокімі і магутнымі канцэпцыямі/фрэймворкамі, напр. <a href="#Boilerplate">Boilerplate</a>, <a href="#Frameworks_Blueprint">Blueprint</a>.</p>
+
+        <h2><a name="Boilerplate">Boilerplate</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://github.com/paulirish/html5-boilerplate/wiki/">Boilerplate</a></li>
+          </ul>
+        </div>
+        
+        
+        <h2><a name="Less">Less CSS</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://lesscss.org/">Less</a></li>
+          </ul>
+        </div>
+        <p>Прылада, якая спрашчае стварэньне <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-стыляў.</p>
+        
+        <h3><a name="Less_variables">Пераменныя</a></h3>
+        <p>З дапамогаю пераменных можна пазначаць шырока ўжываныя значэньні ў адным месцы, што спрашчае далейшыя глябальныя зьмены гэтых значэньняў&nbsp;&mdash; значэньне зьмяняецца ў адным месцы, а не паўсюдна, дзе ўжываецца.</p>
+        <p>
+          <table class="two_column_code_example" cellpadding="5px;">
+            <tbody>
+              <tr>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* LESS */
+      
+                  @color: #4D926F;
+                  
+                  #header {
+                    color: @color;
+                  }
+                  
+                  h2 {
+                    color: @color;
+                  }
+                  ]]></script>
+                </td>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Compiled CSS */
+        
+                  #header {
+                    color: #4D926F;
+                  }
+                  
+                  h2 {
+                    color: #4D926F;
+                  }
+                  ]]></script>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+        
+        <h3><a name="Less_mixins">Дамешкі</a></h3>
+        <p>Дамешкі (<i>mixins</i>) дазваляюць атрыбуты аднаго селектару/клясы убудоўваць (<i>embed</i>) ў іншы. Прынцып падобны да <a href="#Tools_LESS_variables">пераменных</a>, адно што працуе для цэлых блёкаў.</p>
+        <p>
+          <table class="two_column_code_example" cellpadding="5px;">
+            <tbody>
+              <tr>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* LESS */
+
+                  .rounded-corners (@radius: 5px) {
+                    border-radius: @radius;
+                    -webkit-border-radius: @radius;
+                    -moz-border-radius: @radius;
+                  }
+                  
+                  #header {
+                    .rounded-corners;
+                  }
+                  
+                  #footer {
+                    .rounded-corners(10px);
+                  }
+                  ]]></script>
+                </td>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Compiled CSS */
+
+                  #header {
+                    border-radius: 5px;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                  }
+                  
+                  #footer {
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                  }
+                  ]]></script>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+        
+        <h3><a name="Less_nested_rules">Укладзеныя правілы</a></h3>
+        <p>Укладзеныя правілы (<i>nested rules</i>) дазваляюць запісваць герархічныя правілы ў выглядзе герархіі селектараў (укладзеных адзін у другі) замест складанай лінейнай запісі.</p>
+        <p>
+          <table class="two_column_code_example" cellpadding="5px;">
+            <tbody>
+              <tr>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* LESS */
+
+                  #header {
+                    h1 {
+                      font-size: 26px;
+                      font-weight: bold;
+                    }
+
+                    p { 
+                      font-size: 12px;
+
+                      a { 
+                        text-decoration: none;
+                        
+                        &:hover { border-width: 1px }
+                      }
+                    }
+                  }
+
+                  ]]></script>
+                </td>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Compiled CSS */
+
+                  #header h1 {
+                    font-size: 26px;
+                    font-weight: bold;
+                  }
+                  
+                  #header p {
+                    font-size: 12px;
+                  }
+                  
+                  #header p a {
+                    text-decoration: none;
+                  }
+                  
+                  #header p a:hover {
+                    border-width: 1px;
+                  }
+                  ]]></script>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+
+        <h3><a name="Less_functions_operations">Функцыі і апэрацыі</a></h3>
+        <p>Калі некаторыя значэньні ў вашых стылях зьяўляюцца прапарцыйнымі ў адносінах да іншых, можна карыстацца для гэтага матэматчнымі апэрацыямі, а таксама "зьвяртацца" да <a href="..\jsRef\index.html"><span class="term">JavaScript</span></a>-функцыяў.</p>
+        <p>
+          <table class="two_column_code_example" cellpadding="5px;">
+            <tbody>
+              <tr>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* LESS */
+
+                  @the-border: 1px;
+                  @base-color: #111;
+                  @red:        #842210;
+                  
+                  #header {
+                    color: @base-color * 3;
+                    border-left: @the-border;
+                    border-right: @the-border * 2;
+                  }
+
+                  #footer { 
+                    color: @base-color + #003300;
+                    border-color: desaturate(@red, 10%);
+                  }
+                  ]]></script>
+                </td>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Compiled CSS */
+
+                  #header {
+                    color: #333;
+                    border-left: 1px;
+                    border-right: 2px;
+                  }
+
+                  #footer { 
+                    color: #114411;
+                    border-color: #7d2717;
+                  }
+                  ]]></script>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+        
+        <h3><a name="Less_using">Выкарыстаньне</a></h3>
+        <p>Стыль пішацца ў LESS-фармаце і запісваецца ў файл з пашырэньнем <code>.less</code>. А затым ёсьць 2 шляхі выкарыстаньня:
+          <ol>
+            <li><strong>Пры наяўнасьці ўсталяванага <a href="..\rubyRef\index.html"><span class="term">Ruby</span></a></strong> можна скарыстацца адпаведным <a href="http://rubygems.org/gems/less/"><i>gem</i></a>&#39;ам і скампіляваць <code>less</code>-файл у <code>css</code>-файл.
+              <p>Усталёўваем <i>gem</i> праз кансоль:</p>
+              <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
+              gem install less [--http-proxy http://<PROXY_SERVER_NAME>:<PROXY_SERVER_PORT>]
+              ]]></script>
+              <p>Знаходзячыся ў тэчцы з <code>less</code>-файлам запускаем у кансолі наступную каманду, каторая запіша вынік сваёй працы ў <code>css</code>-файл з такім жа імем:</p>
+              <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
+              lessc <STYLE_NAME>.less
+              ]]></script>
+              <p>Пасьля гэта можна выкарыстоўваць файл стыляў <code>&lt;STYLE_NAME&gt;.css</code> звычайным чынам.</p>
+            </li>
+            <li style="margin-top: 10px;"><strong>Client-side выкарыстаньне</strong>. Калі вы не можаце скарыстацца папярэднім спосабам і перакананы, што карыстальнікі сайту/аплікацыі не адключаюць у браўзэры працу скрыптоў, тады можна ў якасьці крыніцы стыляў падключаць у <a href="..\htmlRef\index.html"><span class="term">HTML</span></a> наўпрост <code>less</code>-файл (праз элемэнт <a href="..\htmlRef\index.html#link"><code class="elem">link</code></a>, зьвярніце пры гэтым ўвагу на патрэбнае значэньне атрыбуту <code class="attr">rel</code>):
+              <script type="syntaxhighlighter" class="brush: html;"><![CDATA[
+              <link rel="stylesheet/less" type="text/css" href="styles.less">
+              ]]></script>
+              <p>Пасьля гэтага ўключыце спасылку на скрыпт (падключэньне <code>less</code>-стыляў у <a href="..\htmlRef\index.html#head"><code class="elem">head</code></a> павінна абавязкова папярэднічаць падключэньню скрыпта), папярэдне <a href="http://lesscss.googlecode.com/files/less-1.0.41.min.js">спампаваўшы</a> гэты скрыпт:</p>
+              <script type="syntaxhighlighter" class="brush: html;"><![CDATA[
+              &lt;script src="less.js" type="text/javascript"&gt;&lt;/script&gt;
+              ]]></script>
+            </li>
+          </ol>
+        </p>
+      </section>
+
+      <footer>
+        <p>&copy; Copyright 2011 by <address>d.yurtsevich@gmail.com</address></p>
+      </footer>
+    </article>
+  </div> <!--! end of #container -->
+
+
+  <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script-->
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
+    
   <script src="../js/mylibs/jquery.activeMenu.js"></script>
   <script>
     $(document).ready(function(){ 
@@ -44,234 +1191,53 @@
     }); 
   </script>
 
-
-</head>
-
-<body>
-
-  <div id="container">
+  <script src="../js/mylibs/mktree.js"></script>
+  <script src="../js/mylibs/xregexp.js"></script>
+  <script src="../js/mylibs/shCore.js"></script> 
+  <script src="../js/mylibs/shAutoloader.js"></script>
+  <script type="text/javascript">
+    function path()
+    {
+      var args = arguments,
+          result = []
+          ;
+       
+      for(var i = 0; i < args.length; i++)
+          result.push(args[i].replace('@', '../js/mylibs/'));
+           
+      return result
+    };
+ 
+    SyntaxHighlighter.autoloader.apply(null, path(
+      'applescript            @shBrushAppleScript.js',
+      'actionscript3 as3      @shBrushAS3.js',
+      'bash shell             @shBrushBash.js',
+      'coldfusion cf          @shBrushColdFusion.js',
+      'cpp c                  @shBrushCpp.js',
+      'c# c-sharp csharp      @shBrushCSharp.js',
+      'css                    @shBrushCss.js',
+      'delphi pascal          @shBrushDelphi.js',
+      'diff patch pas         @shBrushDiff.js',
+      'erl erlang             @shBrushErlang.js',
+      'groovy                 @shBrushGroovy.js',
+      'java                   @shBrushJava.js',
+      'jfx javafx             @shBrushJavaFX.js',
+      'js jscript javascript  @shBrushJScript.js',
+      'perl pl                @shBrushPerl.js',
+      'php                    @shBrushPhp.js',
+      'text plain             @shBrushPlain.js',
+      'py python              @shBrushPython.js',
+      'ruby rails ror rb      @shBrushRuby.js',
+      'sass scss              @shBrushSass.js',
+      'scala                  @shBrushScala.js',
+      'sql                    @shBrushSql.js',
+      'vb vbnet               @shBrushVb.js',
+      'xml xhtml xslt html    @shBrushXml.js'
+    ));
     
-    <div id="main_index">
-      <ul>
-        <li><a href="../htmlRef/index.html">HTML</a></li>
-        <li><a href="../cssRef/index.html">CSS</a></li>
-        <li><a href="../rubyRef/index.html">Ruby</a></li>
-      </ul>
-    </div>
-    
-    <div id="content">
-     
-    </div>
-    
-    <header>
-
-    </header>
-    
-    <div id="main">
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-      blah-blah-blah...
-      
-      
-    </div>
-    
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
-
-
-  <!-- Javascript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+  </script>  
     
   <!-- scripts concatenated and minified via ant build script-->
   <script src="../js/plugins.js"></script>

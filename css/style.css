@@ -3,13 +3,21 @@
   -webkit-transform: rotate(-90deg);
 }
 p { margin-top: 10px; }
-code.elem { color: #365f91; }
+code.elem, code.at_rule { color: #365f91; }
 code.attr { color: #76923c; }
 code.value { color: #746a34; }
+.term { color: #1c346a; }
+.todo { color: red; }
 q { font-style: italic; }
 blockquote {
   margin: 10px 30px 10px;
   color: #666666;
+}
+figcaption.imgcaption {
+  text-align: center;
+  font-style: italic;
+  font-size: smaller;
+  text-indent: 0;
 }
 #container {
   float: left;
@@ -27,11 +35,11 @@ blockquote {
   min-height: 100%;
   padding-top: 20px;
   text-align: right;
+  font-size: 0.65em;
   background-color: #cccccc;
 }
 #main_index ul {
-  margin: 40px 0 60px 1.4em;
-  padding-bottom: 60px;
+  margin-left: 1.4em;
   list-style: none outside none;
   text-decoration: none;
   font-weight: bold;
@@ -40,9 +48,9 @@ blockquote {
   float: right;
   clear: right;
   line-height: 1;
-  width: 40px;
+  min-width: 40px;
   padding: 5px 10px 6px;
-  margin: 2px 20px 0 -20px;
+  margin: 2px 10px 0 -20px;
   color: #ffffff;
   background: #222222 url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
@@ -68,31 +76,30 @@ blockquote {
 }
 #main_index ul li a:hover { color: #cc4933; }
 #main_index ul li#active a {
-  width: 60px;
+  width: 50px;
   margin-right: 0;
   background: #991900 url(http://www.zurb.com/images/alert-overlay.png) repeat-x;
 }
 #main_index ul li#active a:hover { color: #ffffff; }
+#main_index ul li:first-child a { margin-top: 40px; }
 #content {
   position: fixed;
-  left: 83px;
-  padding: 20px 10px 180px 0;
-  width: 350 px;
-  min-width: 350px;
-  max-width: 350px;
+  left: 65px;
+  padding: 20px 10px 180px -10px;
+  min-width: 280px;
+  max-width: 280px;
   min-height: 100%;
   max-height: 100%;
   background: #eeeeee;
   overflow: scroll;
 }
-#title {
-  margin: 0 250px 0 750px;
+#main { margin: 0 20px 0 403px; }
+#main header {
   font-size: 40pt;
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
   color: #632423;
 }
-#main { margin: 0 20px 0 500px; }
 #main h1 {
   color: #632423;
   font-weight: normal;
@@ -146,8 +153,14 @@ blockquote {
   font-size: 16pt;
 }
 #main h4 { margin: 10px 0 10px 0; }
-#main ol { margin-top: 0.6em; }
-#main ul { margin-top: 0.6em; }
+#main ol {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+#main ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 #main aside {
   float: right;
   width: 300px;
@@ -222,4 +235,10 @@ blockquote {
   -moz-box-shadow: 1px 1px 3px #999999;
   -webkit-box-shadow: 1px 1px 3px #999999;
   box-shadow: 1px 1px 3px #999999;
+}
+#main .two_column_code_example { width: 100%; }
+#main .two_column_code_example td {
+  padding: 0 50px 0 10px;
+  border: #888888 1px dashed;
+  background-color: #1b2426;
 }
