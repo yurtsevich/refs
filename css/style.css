@@ -3,6 +3,10 @@
   -webkit-transform: rotate(-90deg);
 }
 p { margin-top: 10px; }
+p.intro {
+  margin: 10px 20px 0;
+  font-style: italic;
+}
 code.elem, code.at_rule { color: #365f91; }
 code.attr { color: #76923c; }
 code.value { color: #746a34; }
@@ -242,3 +246,4 @@ figcaption.imgcaption {
   border: #888888 1px dashed;
   background-color: #1b2426;
 }
+footer { margin-bottom: 5em; }
