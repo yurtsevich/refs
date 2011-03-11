@@ -68,12 +68,85 @@
 
       <div id="content">
         <ul class="mktree">
-          <li class="liOpen"><a href="#Links">Карысныя спасылкі</a>
+          <li><a href="#Links">Карысныя спасылкі</a>
             <ul>
-              <li><a href="#Links_home">Home</a></li>
-              <li><a href="#Links_refs">References</a></li>
+              <li><a href="#Links_home">Хатняя старонка</a></li>
+              <li><a href="#Links_api">API</a></li>
+              <li><a href="#Links_refs">Даведнікі і кнігі</a></li>
+              <li><a href="#Links_refs_casts">Railscast</a></li>
             </ul>
           </li>
+          <li class="liOpen"><a href="#GettingStarted">Пачынаем</a>
+            <ul>
+              <li class="liOpen"><a href="#GettingStarted_what_is">Што такое Rails?</a>
+                <ul>
+                  <li><a href="#GettingStarted_what_is_MVC">Архітэктура MVC</a>
+                    <ul>
+                      <li><a href="#GettingStarted_what_is_MVC_Models">Мадэлі</a></li>
+                      <li><a href="#GettingStarted_what_is_MVC_Views">Вью</a></li>
+                      <li><a href="#GettingStarted_what_is_MVC_Controllers">Кантролеры</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#GettingStarted_what_is_Components">Кампанэнты Rails</a>
+                    <ul>
+                      <li><a href="#GettingStarted_what_is_Components_Action_Pack">Action Pack</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Action_Controller">Action Controller</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Action_View">Action View</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Action_Dispatch">Action Dispatch</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Action_Mailer">Action Mailer</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Active_Model">Active Model</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Active_Record">Active Record</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Active_Resource">Active Resource</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Active_Support">Active Support</a></li>
+                      <li><a href="#GettingStarted_what_is_Components_Railties">Railties</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#GettingStarted_what_is_REST">REST</a></li>
+                  
+                </ul>
+              </li>
+              <li><a href="#GettingStarted_NewProject">Стварэньне новага праекту</a>
+                <ul>
+                  <li><a href="#GettingStarted_NewProject_InstallingRails">Усталяваньне Rails</a></li>
+                  <li><a href="#GettingStarted_NewProject_BlogProject">Стварэньне блог-аплікацыі</a></li>
+                  <li><a href="#GettingStarted_NewProject_InstallingGems">Усталяваньне патрэбных гемаў</a></li>
+                  <li><a href="#GettingStarted_NewProject_ConfiguringDB">Наладжваньне базы даных</a>
+                    <ul>
+                      <li><a href="#GettingStarted_NewProject_ConfiguringDB_SQLite3">SQLite3</a></li>
+                      <li><a href="#GettingStarted_NewProject_ConfiguringDB_MySQL">MySQL</a></li>
+                      <li><a href="#GettingStarted_NewProject_ConfiguringDB_PostgreSQL">PostgreSQL</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#GettingStarted_NewProject_CreatingDB">Стварэньне базы</a></li>
+                  <li><a href="#GettingStarted_NewProject_StartingApp">Запуск аплікацыі</a></li>
+                </ul>
+              </li>
+              <li><a href="#GettingStarted_Git">Кантроль вэрсій з Git</a></li>
+              <li><a href="#GettingStarted_Deploying">Разгортваньне аплікацыі ў вытворчым асяродку</a></li>
+              <li><a href="#GettingStarted_FastDevelopingWithScaffold">Хуткая распрацоўка пры дапамозе Scaffold</a></li>
+            </ul>
+          </li>
+          <li class="liOpen"><a href="#Models">Мадэлі</a>
+            <ul>
+              <li><a href="#Models_Migratings">Міграцыя</a></li>
+              <li><a href="#Models_ValidationsCallbacks">Валідацыя і зваротныя выклікі</a></li>
+              <li><a href="#Models_Associations">Асацыяцыі</a></li>
+              <li><a href="#Models_Querying">Састаўленьне запытаў</a></li>
+            </ul>
+          </li>
+          <li class="liOpen"><a href="#Views">Вью</a>
+            <ul>
+              <li><a href="#Views_LayoutsRendering">Макеты і візуалізацыя ў Rails</a></li>
+              <li><a href="#Views_FormHelpers">Дапаможнікі формаў</a></li>
+            </ul>
+          </li>
+          <li class="liOpen"><a href="#Controllers">Кантролеры</a>
+            <!--ul>
+              <li><a href="#Views_LayoutsRendering">Макеты і візуалізацыя ў Rails</a></li>
+              <li><a href="#Views_FormHelpers">Дапаможнікі формаў</a></li>
+            </ul-->
+          </li>
+
         </ul>
       </div>
     </div>
@@ -83,20 +156,381 @@
         Даведнік па Rails
       </header>
 
+      <p class="intro">Гэты даведнік зьяўляецца кампіляцыяй матэрыялаў з розных крыніцаў для спрашчэньня пошуку найважнейшай інфармацыі па выкарыстаньні вэб-фрэймворка для Ruby&nbsp;&mdash; Ruby on Rails, але пры гэтым аўтар не адказвае за абсалютную дасканаласьць і актуальнасьць усёй інфармацыі, што тут зьмяшчаецца, а, адпаведна, і за магчымыя негатыўныя наступствы ад любога выкарыстаньня гэтай інфармацыі.</p>
+      <p class="intro">Пры выяўленьні памылак, недакладнасьцей альбо пры наяўнасьці пажаданьняў нешта дадаць ці палепшыць зьвяртайцеся, калі ласка, праз форму зваротнай сувязі (статычная кнопка Feedback у правым баку экрана).</p>
+
+      <p><a href="http://noteslog.com/post/netbeans-6-9-1-ruby-1-9-2-rails-3-0-0-debugging/">Rails debug in NetBeans</a></p>
+
+      <aside class="warn">Гэты даведнік апісвае Rails 3.0. Некаторыя асаблівасьці, прыведзеныя тут, могуць не адпавядаць ранейшым вэрсіям Rails (а прыклады могуць не працаваць). Акрамя гэтага, для 3й вэрсіі Rails неабходна, каб быў усталяваны <a href="../rubyRef/index.html"><span class="term">Ruby</span></a> вэрсіі не ніжэй за 1.9.2. Будзьце ўважлівы!</aside>
       <section>
         <h1><a name="Links">Карысныя спасылкі</a></h1>
-        <h2><a name="Links_home">Home</a></h2>
-        <h2><a name="Links_refs">References</a></h2>
+        <h2><a name="Links_home">Хатняя старонка</a></h2>
+        <p><a href="http://rubyonrails.org/">http://rubyonrails.org</a></p>
+        
+        <aside>У якасьці IDE рэкамэндуецца карыстацца <a href="http://aptana.com/products/studio3/">Aptana Studio</a> (больш комплексная падтрымка Rails асяродку, але пакуль бэта і напрыклад кантэкстная дапамога працуе кепска) альбо <a href="http://netbeans.org/downloads/index.html">NetBeans</a> (на дадзены момант мусіць найлепшая падтрымка сярод бясплатных сродкаў).</aside>
+        <h2><a name="Links_api">API</a></h2>
+        <p>Ruby + Rails (вельмі добра рэалізаваны пошук): <a href="http://railsapi.com/doc/rails-v3.0.1_ruby-v1.9.2/">http://railsapi.com/doc/rails-v3.0.1_ruby-v1.9.2</a></p>
+        <p><a href="http://api.rubyonrails.org/">http://api.rubyonrails.org</a></p>
+        <p><a href="http://www.rubydoc.info/docs/rails/3.0.0/frames/">http://www.rubydoc.info/docs/rails/3.0.0/frames</a></p>
+        
+        <h2><a name="Links_refs">Даведнікі і кнігі</a></h2>
+        <p><a href="http://guides.rubyonrails.org/">Галоўная старонка афіцыйных даведнікаў</a></p>
+        <p><a href="http://railstutorial.org/book/">Вельмі добры вучэбнік</a></p>
+        
+        <h2><a name="Links_refs_casts">Railscast (відэа-урокі)</a></h2>
+        <p><a href="http://railscasts.com/">http://railscasts.com</a></p>
+      </section>
+      
+      <section>
+        <h1><a name="GettingStarted">Пачынаем</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://guides.rubyonrails.org/getting_started.html">Guide</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="GettingStarted_what_is">Што такое Rails?</a></h2>
+        <p>Rails&nbsp;&mdash; гэта фрэймворк распрацоўкі вэб-аплікацыяў, напісаны на мове праграмаваньня <a href="../rubyRef/index.html"><span class="term">Ruby</span></a>. Ён спраектаваны такім чынам, каб зрабіць працэс стварэньня вэб-аплікацыяў прасьцейшым, улічваючы тыя аспэкты, зь якімі вымушаны сутыкацца бальшыня распрацоўшчыкаў. Rails дазваляе пісаць менш коду, рашаючы пры тым больш задачаў, чым іншыя мовы ці фрэймворкі.</p>
+        <p>Дадзены фрэймворк грунтуецца на дапушчэньні, што ў шэрагу магчымых рашэньняў заўсёды існуюць найлепшыя, і ён &laquo;заахвочвае&raquo; распрацоўшчыка да карыстаньня імі, і часам нават робіць &laquo;перашкоды&raquo; на шляху карыстаньня ня лепшымі з рашэньняў.</p>
+        <p>Філязофія Rails уключае такія прынцыпы, як:
+          <ul>
+            <li>DRY (ад анг. <i>Don't Repeat Youself</i>, што азначае <i>не паўтарайце сябе</i>)&nbsp;&mdash; сьцвярджае, што пісаць шматкроць адзін і той жа код зьяўляецца кепскай рэччу.</li>
+            <li>Дамоўленасьці па-над наладкамі&nbsp;&mdash; азначае, што ў Rails у шмат якіх выпадках ужо прадвызначана што і як трэба рабіць, замест таго, каб патрабаваць ад распрацоўшчыка вызначаць кожную дробязь праз файлы канфігурацыі.</li>
+            <li><a href="#GettingStarted_what_is_REST"><span class="term">REST</span></a> зьяўляецца найлепшым шаблёнам (<i>pattern</i>) для вэб-аплікацыяў&nbsp;&mdash; арганізацыя аплікацыяў вакол рэсурсаў і стандартных HTTP дзеясловаў прыводзіць да найхутчэйшага іх стварэньня.</li>
+          </ul>
+        </p>
+        
+        <h3><a name="GettingStarted_what_is_MVC">Архітэктура MVC</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://en.wikipedia.org/wiki/Model–view–controller">Wiki</a></li>
+          </ul>
+        </div>
+        <figure style="float: right;">
+          <img alt="Архітэктура MVC" title="Архітэктура MVC" src="../images/mvc.png"/>
+          <figcaption class="imgcaption">Архітэктура MVC</figcaption>
+        </figure>
+        <p>У ядры Rails ляжыць архітэктурны патэрн Мадэль-Вью-Кантролер (ці скарочана MVC ад анг. <i>Model-View-Controller</i>), перавагамі каторага зьяўляюцца:
+          <ul>
+            <li>ізаляцыя бізнэс-лёгікі ад інтэрфэйсу;</li>
+            <li>лёгкасьць утрымліваць код DRY;</li>
+            <li>ясна дзе знаходзіцца код таго ці іншага тыпу, што палягчае будучую падтрымку коду.</li>
+          </ul>
+        </p>
+        <p>У выпадку ўзаемадзеяньня з Rails-аплікацыяй вэб-браўзер дасылае запыт, яго атрымлівае вэб-сэрвер і перадасылае Rails-кантролеру (файлы ў тэчцы <code>app/controllers/</code>), каторы адказны за далейшую апрацоўку. У некаторых выпадках кантролер адразу ж згенерыць Rails-вью (файлы ў тэчцы <code>app/views/</code>), каторы ўяўляе зь сябе <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-файл з убудаваным у яго <a href="../rubyRef/index.html"><span class="term">Ruby</span></a>-кодам&nbsp;&mdash; так званыя шаблёны вью (<i>view templates</i>). Больш верагодна, аднак, кантролер зьвернецца да Rails-мадэлі (файлы ў тэчцы <code>app/models/</code>)&nbsp;&mdash; Rails-аб&#39;ект, каторы прадстаўляе элемэнт аплікацыі (напрыклад, карыстальнік аплікацыі) і адказны за ўзаемадзеяньне з базай даных для атрыманьня інфармацыі па гэтаму элемэнту. Пасьля атрыманьня даных з мадэлі кантролер згенерыць вью, устаўляючы туды гэтыя даныя, і дашле атрыманы вью да вэб-браўзера для прадстаўленьня карыстальніку.</p>
+        
+        <h4><a name="GettingStarted_what_is_MVC_Models">Мадэлі</a></h4>
+        <p>Мадэль утрымлівае даныя аплікацыі і правілы, па якім гэтыя даныя павінны апрацоўвацца. У выпадку Rails асноўнае выкарыстаньне мадэляў&nbsp;&mdash; кіраваньне правіламі атрыманьня інфармацыі з табліцы базы даных. У бальшыні выпадкаў адна мадэль аплікацыі будзе адпавядаць адной табліцэ базы даных. Асноўная маса бізнэс лёгікі аплікацыі таксама ўтрымліваецца ў мадэлях.</p>
+        
+        <h4><a name="GettingStarted_what_is_MVC_Views">Вью</a></h4>
+        <p>Вью прадстаўляюць інтэрфэйс аплікацыі.</p>
+        
+        <h4><a name="GettingStarted_what_is_MVC_Controllers">Кантролеры</a></h4>
+        <p>Кантролеры зьяўляюцца &laquo;клеям&raquo; паміж мадэляў і вью. У Rails яны адказваюць за апрацоўку запытаў ад браўзэраў, атрыманьне ў адпаведнасьці з тымі запытамі даных з мадэляў, і перадачу гэтых даных у вью для прадстаўленьня карыстальніку.</p>
+        
+        <h3><a name="GettingStarted_what_is_Components">Кампанэнты Rails</a></h3>
+        <p>Rails уключае ў сябе шэраг асобных кампанэнтаў:
+          <ul>
+            <li>Action Pack
+              <ul>
+                <li>Action Controller</li>
+                <li>Action View</li>
+                <li>Action Dispatch</li>
+              </ul>
+            </li>
+            <li>Action Mailer</li>
+            <li>Active Model</li>
+            <li>Active Record</li>
+            <li>Active Resource</li>
+            <li>Active Support</li>
+            <li>Railties</li>
+          </ul>
+        </p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Action_Pack">Action Pack</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Action_Controller">Action Controller</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Action_View">Action View</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Action_Dispatch">Action Dispatch</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Action_Mailer">Action Mailer</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Active_Model">Active Model</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Active_Record">Active Record</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Active_Resource">Active Resource</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Active_Support">Active Support</a></h4>
+        <p></p>
+        
+        <h4><a name="GettingStarted_what_is_Components_Railties">Railties</a></h4>
+        <p></p>
+        
+        <h3><a name="GettingStarted_what_is_REST">REST</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.petefreitag.com/item/431.cfm">REST vs SOAP</a></li>
+            <li><a href="http://www.xfront.com/REST-Web-Services.html">xfront.com</a></li>
+            <li><a href="http://www.infoq.com/articles/rest-introduction/">Brief Intro</a></li>
+            <li><a href="http://bitworking.org/news/373/An-Introduction-to-REST/">Intro</a></li>
+            <li><a href="http://en.wikipedia.org/wiki/Representational_State_Transfer">Wiki</a></li>
+            <li><a href="http://ajaxpatterns.org/RESTful_Service">ajaxpatterns.org</a></li>
+            <li><a href="http://www.infoq.com/articles/webber-rest-workflow">REST workflow</a></li>
+          </ul>
+        </div>        
+        <p>REST зьяўляецца абрэвіятураў ад ангельскага <i>Representational State Transfer</i> (перадача прадстаўнічага стану) і зьяўляецца асновай RESTful архітэктуры. Лічыцца, што ўпершыню гэты архітэктурны прынцып быў сфармуляваны ў <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">доктарскай дысэртацыі Роя Філдзінга</a>. У Rails ужываньне REST зводзіцца да 2-х галоўных прынцыпаў:
+          <ul>
+            <li>выкарыстаньне ідэнтыфікатараў рэсурсаў, як напр. URL'аў, для прадстаўленьня рэсурсаў;</li>
+            <li>перадача &laquo;прадстаўнічага&raquo; стану рэсурсу паміж кампанэнтамі сыстэмы.</li>
+          </ul>
+        </p>
+        <p>Напр., запыт кшталту:</p>
+        <p><code>DELETE /photos/17</code></p>
+        <p>будзе зразумелы ў Rails як зьвяртаньне да фота-рэсурсу з ідэнтыфікатарам 17 і пазначэньне пры гэтым пажаданай апэрацыі&nbsp;&mdash; выдаленьне гэтага рэсурсу. REST зьяўляецца натуральным стылем для архітэктуры вэб-аплікацыяў і Rails рэалізуе яго ў сваім нутры даволі празрыста, пазбаўляючы распрацоўшчыка ад неабходнасьці паглыбляцца ў складаныя аспэкты RESTful-архітэктуры.</p>
+      
+        <h2><a name="GettingStarted_NewProject">Стварэньне новага праекту</a></h2>
+        
+        <h3><a name="GettingStarted_NewProject_InstallingRails">Усталяваньне Rails</a></h3>
+        <p>Перад тым, як ствараць Rails-праект, трэба ўсталяваць уласна Rails:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        $ gem install rails
+        ]]></script>
+        
+        <h3><a name="GettingStarted_NewProject_BlogProject">Стварэньне блог-аплікацыі</a></h3>
+        <p>Пасьля ўсталяваньня Rails можна ствараць новую аплікацыю, напрыклад блог, папярэдне перайшоўшы ў тэчку, прызначаную для Rails-праектаў:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        $ mkdir projects
+        $ cd projects
+        $ rails new blog
+        ]]></script>
+        <p>Апошняя каманда створыць шкілет Rails-праекту пад назвай <i>Blog</i> у тэчцы <code>blog</code>. Гэты шкілет уяўляе зь сябе пэўную структуру файлаў і тэчак, аднолькавую для ўсіх Rails-праектаў, што зьяўляецца вялікім плюсам Rails&nbsp;&mdash; унівэрсальная структура файлаў і тэчак усіх Rails-праектаў значна палягчае іх падтрымку нават тымі распрацоўшчыкамі, каторыя першапачаткова ня ўдзельнічалі ў іх распрацоўцы. Разгледзем падрабязьней гэтую структуру:
+          <table>
+            <caption>Структура шкілету Rails-аплікацыі</caption>
+            <thead>
+              <tr><th>Файл/Тэчка</th> <th>Прызначэньне</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>app/</code></td> <td>Уласна код, уключаючы мадэлі, вью, кантролеры і хэлперы.</td></tr>
+              <tr><td><code>config/</code></td> <td>Наладкі: маршруты (<i>routes</i>), база даных, інтэрнацыяналізацыя і інш.</td></tr>
+              <tr><td><code>db/</code></td> <td>Файлы маніпуляцый базай даных. Утрымлівае цяперашнюю схему, файлы міграцыі даных і першапачатковай ініцыялізацыі базы.</td></tr>
+              <tr><td><code>doc/</code></td> <td>Дакумэнтацыя.</td></tr>
+              <tr><td><code>lib/</code></td> <td>Модулі бібліятэк.</td></tr>
+              <tr><td><code>log/</code></td> <td>Логі.</td></tr>
+              <tr><td><code>public/</code></td> <td>Адзіная тэчка, каторая бачна &laquo;звонку&raquo;. У ёй утрымліваюцца выявы, <a href="../cssRef/index.html"><span class="term">CSS</span></a>-файлы, <a href="../jsRef/index.html"><span class="term">JavaScript</span></a>'ы і іншыя статычныя файлы.</td></tr>
+              <tr><td><code>script/</code></td> <td>Скрыпты для старту, дэплою аплікацыі, для старту вэб-сэрверу і інш.</td></tr>
+              <tr><td><code>test/</code></td> <td>Тэсты (юніт-тэсты, <i>fixtures</i> і інш.).</td></tr>
+              <tr><td><code>tmp/</code></td> <td>Часовыя файлы.</td></tr>
+              <tr><td><code>vendor/</code></td> <td>Староньні код, звычайна <a href="../rubyRef/index.html#Gems">гемы</a>.</td></tr>
+              <tr><td><code>README</code></td> <td>Апісаньне і даведнік па аплікацыі. Павінен утрымліваць інфармацыю як усталёўваць і карыстацца аплікацыяй.</td></tr>
+              <tr><td><code>Rakefile</code></td> <td>Файл утрымлівае batch-каманды, каторыя могуць быць запушчаныя пры дапамозе праграмы <code>rake</code> у тэрмінальным акне. Аналяг <code>build.xml</code> пры выкарыстаньні <a href="http://ant.apache.org/"><code>ant</code></a>.</td></tr>
+              <tr><td><code>Gemfile</code></td> <td>Апісаньне гемаў, каторыя патрабуюцца для аплікацыі.</td></tr>
+              <tr><td><code>config.ru</code></td> <td>Наладкі для Rack-сэрвероў, каторыя выкарыстоўваюцца для старта аплікацыі.</td></tr>
+            </tbody>
+          </table>  
+        </p>
+        
+        <h3><a name="GettingStarted_NewProject_InstallingGems">Усталяваньне патрэбных гемаў</a></h3>
+        <p>Rails-аплікацыі па змоўчваньні кіруюць <a href="../rubyRef/index.html#Gems">гемамі</a> і іх залежнасьцямі праз <a href="http://gembundler.com/">Bundler</a>. Як нам ня трэба ніякіх гемаў больш за тыя, што пазначаныя ў змоўчаным <code>Gemfile</code>, можна проста запусьціць наступную каманду, каб усталяваць іх:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        $ bundle install
+        ]]></script>
+        
+        <h3><a name="GettingStarted_NewProject_ConfiguringDB">Наладжваньне базы даных</a></h3>
+        <p>Мала якія Rails-аплікацыі могуць абыйсьціся без базы даных. Адпаведныя наладкі пазначаюцца ў файле <code>config/database.yml</code>. Калі паглядзець на зьмест гэтага файлу, то можно ўбачыць наладкі да змоўчанай базы даных <a href="http://www.sqlite.org/">SQLite3</a>. Гэты файл утрымлівае сэкцыі для 3-х розных асяродкаў, у каторых Rails можа запускацца па змоўчваньні:
+          <ul>
+            <li>асяродак <strong>распрацоўкі</strong> (<i>development</i>) выкарыстоўваецца непасрэдна пры распрацоўцы аплікацыі;</li>
+            <li><strong>тэставы</strong> (<i>test</i>) асяродак выкарыстоўваецца пры запуску аўтаматычных тэстаў;</li>
+            <li><strong>прадукцыйны</strong>/<strong>працоўны</strong> (<i>production</i>) асяродак выкарыстоўваецца пасьля дэплою аплікацыі на агульнадаступныя сэрверы для мэтавага карыстаньня.</li>
+          </ul>
+        </p>
+        
+        <h4><a name="GettingStarted_NewProject_ConfiguringDB_SQLite3">SQLite3</a></h4>
+        <p>Rails пастаўляецца з убудаванай падтрымкай SQLite3, каторая зьяўляецца &laquo;лёгкай&raquo; базай даных, не патрабуючай для сваёй працы сэрвераў (так называемая <i>file-based</i>). Яна не патрабуе дадатковых крокаў па сваёй наладке і запуску, і таму зьяўляецца пажаданай для выкарыстаньня ў распрацоўшчыцкім і тэставым асяродках. Вось як выглядае прыкладнае наладжваньне базы SQLite3 у файле <code>config/database.yml</code> для распрацоўшчыцкага асяродку:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        development:
+          adapter: sqlite3
+          database: db/development.sqlite3
+          pool: 5
+          timeout: 5000
+        ]]></script>
+        <p>Акрамя SQLite3 у Rails убудавана выключная падтрымка яшчэ MySQL і PostgreSQL, а таксама маецца шэраг плагінаў для падтрымкі іншых базаў даных.</p>
+        
+        <h4><a name="GettingStarted_NewProject_ConfiguringDB_MySQL">MySQL</a></h4>
+        <p>У выпадку выкарыстаньня MySQL у распрацоўшчыцкім асяродку наладкі ў <code>config/database.yml</code> будуць выглядаць наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        development:
+          adapter: mysql2
+          encoding: utf8
+          database: blog_development
+          pool: 5
+          username: root
+          password:
+          socket: /tmp/mysql.sock
+        ]]></script>
+        <p>Для карыстальніка <i>root</i> без паролю. У выпадку іншых уваходных даных, зьмяніце іх адпаведна.</p>
+        
+        <h4><a name="GettingStarted_NewProject_ConfiguringDB_PostgreSQL">PostgreSQL</a></h4>
+        <p>У выпадку выкарыстаньня PostgreSQL наладкі будуць выглядаць наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        development:
+          adapter: postgresql
+          encoding: unicode
+          database: blog_development
+          pool: 5
+          username: blog
+          password:
+        ]]></script>
+        <p>Зьмяніце імя і пароль карыстальніка адпаведна вашай базе даных.</p>
+        
+        <h3><a name="GettingStarted_NewProject_CreatingDB">Стварэньне базы</a></h3>
+        <p>Калі база даных наладжана, можна ствараць яе:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        $ rake db:create
+        ]]></script>
+        <p>Гэта створыць пустую базу ў тэчцы <code>db/</code>.</p>
+        
+        <h3><a name="GettingStarted_NewProject_StartingApp">Запуск аплікацыі</a></h3>
+        <p>Засталося запусьціць вэб-сэрвер, каб пабачыць стартавую старонку згенераванай па-змоўчваньні аплікацыі:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        $ rails server
+        ]]></script>
+        <p>Каб пабачыць вынік, трэба ў адрасным радку вэб-браўзэра набраць <a href="http://localhost:3000">http://localhost:3000</a>. Вы павінны пабачыць наступную старонку:</p>
+        <img alt="Start page of Rails default application" title="Start page of Rails default application" src="../images/StartPageOfRoRDefaultApp.png"/>
+      
+        <h2><a name="GettingStarted_Git">Кантроль вэрсій з Git</a></h2>
+        <p><strong>TODO</strong>: <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#sec:version_control">http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#sec:version_control</a></p>
+        
+        <h2><a name="GettingStarted_Deploying">Разгортваньне аплікацыі ў вытворчым асяродку</a></h2>
+        <p><strong>TODO</strong>: <a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#sec:deploying">http://ruby.railstutorial.org/ruby-on-rails-tutorial-book#sec:deploying</a></p>
+        
+        <h2><a name="GettingStarted_FastDevelopingWithScaffold">Хуткая распрацоўка пры дапамозе Scaffold</a></h2>
+        <p><strong>TODO</strong>: <a href="http://ruby.railstutorial.org/chapters/a-demo-app#top">http://ruby.railstutorial.org/chapters/a-demo-app#top</a></p>
+        <p><a href="http://guides.rubyonrails.org/getting_started.html#creating-a-resource">http://guides.rubyonrails.org/getting_started.html#creating-a-resource</a></p>
+      </section>
+
+      <section>
+        <h1><a name="Models">Мадэлі</a></h1>
+        
+        <h2><a name="Models_Migratings">Міграцыя даных</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://guides.rubyonrails.org/migrations.html">Guide</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="Models_ValidationsCallbacks">Валідацыя даных і зваротныя выклікі</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://guides.rubyonrails.org/active_record_validations_callbacks.html">Guide</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="Models_Associations">Асацыяцыі</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://guides.rubyonrails.org/association_basics.html">Guide</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="Models_Querying">Састаўленьне запытаў</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://guides.rubyonrails.org/active_record_querying.html">Guide</a></li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section>
+        <h1><a name="Views">Вью</a></h1>
+        
+        <h2><a name="Views_LayoutsRendering">Макеты і візуалізацыя ў Rails</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Guide</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="Views_FormHelpers">Дапаможнікі формаў</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://guides.rubyonrails.org/form_helpers.html">Guide</a></li>
+          </ul>
+        </div>
+        
+      </section>
+
+      <section>
+        <h1><a name="Controllers">Кантролеры</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Overview</a></li>
+            <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
+          </ul>
+        </div>
+        
       </section>
 
       <footer>
-        <p>&copy; Copyright 2011 by <address>d.yurtsevich@gmail.com</address></p>
+        <div id="powered">
+          <h5>Падзякі</h5>
+          <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
+            <ul>
+              <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
+              <li><a href="http://www.caodesigns.com/blog/free-stuff/jquery-active-menu-plugin-2.php">Active Menu</a>&nbsp;&mdash; дадатак да jQuery, каб пазначаць цяперашні разьдзел у каталёгу даведнікаў</li>
+              <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
+              <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
+              <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
+            </ul>
+          </p>
+        </div>
+        <div id="copyright">
+          <p>Copyright &copy; 2010-2011 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
+              <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
+                  style="border-style: none;" alt="Common Creatives. Attribution + Noncommercial (by-nc)" />
+            </a>
+          </p>
+          <p><cite>Тэхнічны даведнік па Rails</cite> публікуецца пад ліцензіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://www.yurtsevich.info/refs/railsRef/index.html">крыніцы</a></strong> матэрыялу.</p>
+        </div>
       </footer>
     </article>
   </div> <!--! end of #container -->
 
 
   <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- GetSatisfaction feedback button BEGIN -->
+  <script type="text/javascript" charset="utf-8">
+    var is_ssl = ("https:" == document.location.protocol);
+    var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+    document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+    var feedback_widget_options = {};
+  
+    feedback_widget_options.display = "overlay";  
+    feedback_widget_options.company = "yurtsevich";
+    feedback_widget_options.placement = "right";
+    feedback_widget_options.color = "#222";
+    feedback_widget_options.style = "problem";
+  
+    var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+  </script>
+  <!-- GetSatisfaction feedback button END -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
@@ -177,7 +611,7 @@
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
        change the UA-XXXXX-X to be your site's ID -->
   <script>
-   var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+   var _gaq = [['_setAccount', 'UA-18077954-1'], ['_trackPageview']];
    (function(d, t) {
     var g = d.createElement(t),
         s = d.getElementsByTagName(t)[0];
@@ -187,5 +621,7 @@
    })(document, 'script');
   </script>
   
+  <script src="http://static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">clicky.init(17136);</script>
 </body>
 </html>

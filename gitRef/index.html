@@ -67,10 +67,18 @@
 
       <div id="content">
         <ul class="mktree">
-          <li class="liOpen"><a href="#Links">Карысныя спасылкі</a>
+          <li><a href="#Links">Карысныя спасылкі</a></li>
+          <li><a href="#Configuration">Наладкі</a>
             <ul>
-              <li><a href="#Links_home">Home</a></li>
-              <li><a href="#Links_refs">References</a></li>
+              <li><a href="#Configuration_identity">Асабістыя даныя</a></li>
+              <li><a href="#Configuration_merge">Прылада параўнаньня</a></li>
+              <li><a href="#Configuration_list">Прагляд наладкаў</a></li>
+            </ul>
+          </li>
+          <li class="liOpen"><a href="#Repo">Стварэньне рэпазыторыяў</a>
+            <ul>
+              <li><a href="#Repo_init">Ініцыіраваньне новага</a></li>
+              <li><a href="#Repo_clone">Кланіраваньне аддаленага</a></li>
             </ul>
           </li>
         </ul>
@@ -83,19 +91,144 @@
       </header>
 
       <section>
+        <p class="intro">Гэты даведнік зьяўляецца кампіляцыяй матэрыялаў з розных крыніцаў для спрашчэньня пошуку найважнейшай інфармацыі па выкарыстаньні Git&nbsp;&mdash; <strong>сыстэмы кантролю вэрсій</strong> (а-ля <abbr title="Concurrent Versioning System">CVS</abbr> ці <abbr title="Subversion">SVN</abbr>) <strong>размеркаванага тыпу</strong>. Пры гэтым аўтар не адказвае за абсалютную дасканаласьць і актуальнасьць усёй інфармацыі, што тут зьмяшчаецца, а, адпаведна, і за магчымыя негатыўныя наступствы ад любога выкарыстаньня гэтай інфармацыі.</p>
+        <p class="intro">Пры выяўленьні памылак, недакладнасьцей альбо пры наяўнасьці пажаданьняў нешта дадаць ці палепшыць зьвяртайцеся, калі ласка, праз форму зваротнай сувязі (статычная кнопка Feedback у правым баку экрана).</p>
+        
         <h1><a name="Links">Карысныя спасылкі</a></h1>
-        <h2><a name="Links_home">Home</a></h2>
-        <h2><a name="Links_refs">References</a></h2>
+        <p>Усталёўшчык Git можна спампаваць: <a href="http://git-scm.com/download/">http://git-scm.com/download</a></p>
+        <p>Афіцыйны навучальны дапаможнік (<strong>пачаткоўцам</strong>): <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html</a></p>
+        <p>Афіцыйны даведнік (<strong>адмыслоўцам</strong>): <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">http://www.kernel.org/pub/software/scm/git/docs/user-manual.html</a></p>
+        <p>Вольная электронная кніга <cite>Pro Git</cite>: <a href="http://progit.org/book/">http://progit.org/book</a></p>
+        
+        <h1><a name="Configuration">Наладкі</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://progit.org/book/ch1-5.html">ProGit</a></li>
+          </ul>
+        </div>
+        <p>Наладкі зьмяняюцца пры выкананьні каманды <code>git config</code> і захоўваюцца ў наступных файлах:
+          <ul>
+            <li><em><code>&lt;ТЭЧКА_РЭПАЗЫТОРЫЮ&gt;/&lt;ТЭЧКА_GIT&gt;/config</code></em> (звычайна <code>.git/config</code> у корне рэпазыторыю)&nbsp;&mdash; наладкі, спэцыфічныя для гэтага рэпазыторыю;</li>
+            <li><em><code>&lt;ХАТНЯЯ_ТЭЧКА_КАРЫСТАЛЬНІКА&gt;/.gitconfig</code></em> (зьмяняюцца пры выкарыстаньні опцыі <code>--global</code>)&nbsp;&mdash; наладкі, спэцыфічныя для карыстальніка;</li>
+            <li><em><code>&lt;ТЭЧКА_ЎСТАЛЁЎКІ_GIT&gt;/etc/gitconfig</code></em> (зьмяняюцца пры выкарыстаньні опцыі <code>--system</code>)&nbsp;&mdash; наладкі, характэрныя для ўсёй сыстэмы;</li>
+          </ul>
+        </p>
+        
+        <h2><a name="Configuration_identity">Асабістыя даныя карыстальніка</a></h2>
+        <p>Перш за ўсё пазначце свае ідэнтыфікацыйныя даныя:</p>
+        <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
+          git config --global user.name "Alesj Zagorski"
+          git config --global user.email a.zagorski@example.com
+        ]]></script>
+        
+        <h2><a name="Configuration_merge">Прылада параўнаньня (merge tool)</a></h2>
+        <p>Акрамя гэтага можна пазначыць сваю ўлюбёную прыладу параўнаньня файлаў:</p>
+        <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
+          git config --global merge.tool winmerge
+          git config --global mergetool.winmerge.cmd WinMergeU.exe \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
+        ]]></script>
+        <p>Пры гэтым папярэдне дадаўшы ў пераменную асяродка <code>PATH</code> шлях да WinMergeU.exe</p>
+        
+        <h2><a name="Configuration_list">Прагляд наладкаў</a></h2>
+        <p>Праглядзець усе цяперашнія наладкі можна камандай:</p>
+        <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
+          git config --list
+        ]]></script>
+        <p>Пры гэтым вынік папярэдняй каманды будзе выглядаць неяк так:</p>
+        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+        core.symlinks=false
+        core.autocrlf=true
+        color.diff=auto
+        pack.packsizelimit=2g
+        help.format=html
+        http.sslcainfo=/bin/curl-ca-bundle.crt
+        sendemail.smtpserver=/bin/msmtp.exe
+        user.name=Dzmitry Yurtsevich
+        user.email=d.yurtsevich@gmail.com
+        merge.tool=winmerge
+        mergetool.winmerge.cmd=WinMergeU.exe "$LOCAL" "$BASE" "$REMOTE" "$MERGED"
+        ]]></script>
+        <p>А цяперашняе значэньне пэўнага атрыбуту наступным чынам (напрыклад, імя карыстальніка):</p>
+        <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
+        git config user.name
+        ]]></script>
+
+        <h1><a name="Repo">Стварэньне рэпазыторыяў</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://progit.org/book/ch2-1.html">ProGit</a></li>
+          </ul>
+        </div>        
+        <p>Існуюць дзьве галоўныя магчымасьці, каб стварыць рэпазыторый. Першая&nbsp;&mdash; ініцыіраваць новы рэпазыторый ў лякальнай тэчцы (ў пустой, ці з ужо існуючым праектам). Другая&nbsp;&mdash; кланіраваць існуючы "аддалены" рэпазыторый.</p>
+  
+        <h2><a name="Repo_init">Ініцыіраваньне новага рэпазыторыю</a></h2>
+        <p>Для таго, каб ініцыіраваць новы рэпазыторый, трэба ў тэчцы праекту (ці ў пустой тэчцы, у каторай плянуецца стварыць праект) запусьціць каманду:</p>
+        <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
+        git init
+        ]]></script>
+        <p>У выніку будзе створана схаваная тэчка рэпазыторыю <code>.git</code></p>
+        
+        <h2><a name="Repo_clone">Кланіраваньне аддаленага рэпазыторыю</a></h2>
+        <p>"Аддалены" ў дадзеным выпадку дастаткова адноснае разуменьне, таму што такім рэпазыторыям можа быць і існуючы у лякальнай файлавай сыстэме (хаця гэта і ня вельмі верагодны выпадак). Але галоўнае для гэтага мэтаду&nbsp;&mdash; што "эталонны" рэпазыторый ужо павінен недзе існаваць:</p>
+        <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
+        git clone &lt;ШЛЯХ_ДА_РЭПАЗЫТОРЫЮ&gt; [&lt;ІМЯ_ЛЯКАЛЬНАГА_РЭПАЗЫТОРЫЮ&gt;]
+        ]]></script>
+        <p>Напрыклад, у выпадку каманды:</p>
+        <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
+        git clone git://github.com/schacon/grit.git mygrit
+        ]]></script>
+        <p>у цяперашняй тэчцы будзе створана тэчка <code>mygrit</code>, у каторую будзе кланіраван рэпазэторый, які знаходзіца па адрасе <code>github.com/schacon/grit.git</code> з выкарыстаньне пратаколу <code>git://</code>. Магчымыя таксама пратакол <code>http(s)://</code> ці ўвогуле без пратаколу ў выпадку лякальнага зьмяшчэньня "аддаленага" рэпазыторыю. Калі імя ствараемага рэпазыторыю (апошні парамэтар) не пазначана, будзе ўжыта імя "аддаленага" рэпазыторыю.</p>
       </section>
 
       <footer>
-        <p>&copy; Copyright 2011 by <address>d.yurtsevich@gmail.com</address></p>
+        <div id="powered">
+          <h5>Падзякі</h5>
+          <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
+            <ul>
+              <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
+              <li><a href="http://www.caodesigns.com/blog/free-stuff/jquery-active-menu-plugin-2.php">Active Menu</a>&nbsp;&mdash; дадатак да jQuery, каб пазначаць цяперашні разьдзел у каталёгу даведнікаў</li>
+              <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
+              <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
+              <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
+            </ul>
+          </p>
+        </div>
+        <div id="copyright">
+          <p>Copyright &copy; 2010-2011 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
+              <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
+                  style="border-style: none;" alt="Common Creatives. Attribution + Noncommercial (by-nc)" />
+            </a>
+          </p>
+          <p><cite>Тэхнічны даведнік па Git</cite> публікуецца пад ліцензіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://www.yurtsevich.info/refs/gitRef/index.html">крыніцы</a></strong> матэрыялу.</p>
+        </div>
       </footer>
     </article>
   </div> <!--! end of #container -->
 
 
   <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- GetSatisfaction feedback button BEGIN -->
+  <script type="text/javascript" charset="utf-8">
+    var is_ssl = ("https:" == document.location.protocol);
+    var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+    document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+    var feedback_widget_options = {};
+  
+    feedback_widget_options.display = "overlay";  
+    feedback_widget_options.company = "yurtsevich";
+    feedback_widget_options.placement = "right";
+    feedback_widget_options.color = "#222";
+    feedback_widget_options.style = "problem";
+  
+    var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+  </script>
+  <!-- GetSatisfaction feedback button END -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
@@ -176,7 +309,7 @@
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
        change the UA-XXXXX-X to be your site's ID -->
   <script>
-   var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+   var _gaq = [['_setAccount', 'UA-18077954-1'], ['_trackPageview']];
    (function(d, t) {
     var g = d.createElement(t),
         s = d.getElementsByTagName(t)[0];
@@ -186,5 +319,7 @@
    })(document, 'script');
   </script>
   
+  <script src="http://static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">clicky.init(17136);</script>
 </body>
 </html>

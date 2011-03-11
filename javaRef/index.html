@@ -84,19 +84,62 @@
       </header>
 
       <section>
+        <p class="intro">Гэты даведнік зьяўляецца кампіляцыяй матэрыялаў з розных крыніцаў для спрашчэньня пошуку найважнейшай інфармацыі па выкарыстаньні аб&#39;ектна-арыентаванай, крос-плятформеннай мовы праграмаваньня Java, але пры гэтым аўтар не адказвае за абсалютную дасканаласьць і актуальнасьць усёй інфармацыі, што тут зьмяшчаецца, а, адпаведна, і за магчымыя негатыўныя наступствы ад любога выкарыстаньня гэтай інфармацыі.</p>
+        <p class="intro">Пры выяўленьні памылак, недакладнасьцей альбо пры наяўнасьці пажаданьняў нешта дадаць ці палепшыць зьвяртайцеся, калі ласка, праз форму зваротнай сувязі (статычная кнопка Feedback у правым баку экрана).</p>
         <h1><a name="Links">Карысныя спасылкі</a></h1>
         <h2><a name="Links_home">Home</a></h2>
         <h2><a name="Links_refs">References</a></h2>
       </section>
 
       <footer>
-        <p>&copy; Copyright 2011 by <address>d.yurtsevich@gmail.com</address></p>
+        <div id="powered">
+          <h5>Падзякі</h5>
+          <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
+            <ul>
+              <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
+              <li><a href="http://www.caodesigns.com/blog/free-stuff/jquery-active-menu-plugin-2.php">Active Menu</a>&nbsp;&mdash; дадатак да jQuery, каб пазначаць цяперашні разьдзел у каталёгу даведнікаў</li>
+              <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
+              <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
+              <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
+            </ul>
+          </p>
+        </div>
+        <div id="copyright">
+          <p>Copyright &copy; 2010-2011 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
+              <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
+                  style="border-style: none;" alt="Common Creatives. Attribution + Noncommercial (by-nc)" />
+            </a>
+          </p>
+          <p><cite>Тэхнічны даведнік па Java</cite> публікуецца пад ліцензіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://www.yurtsevich.info/refs/javaRef/index.html">крыніцы</a></strong> матэрыялу.</p>
+        </div>
       </footer>
     </article>
   </div> <!--! end of #container -->
 
 
   <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- GetSatisfaction feedback button BEGIN -->
+  <script type="text/javascript" charset="utf-8">
+    var is_ssl = ("https:" == document.location.protocol);
+    var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+    document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+    var feedback_widget_options = {};
+  
+    feedback_widget_options.display = "overlay";  
+    feedback_widget_options.company = "yurtsevich";
+    feedback_widget_options.placement = "right";
+    feedback_widget_options.color = "#222";
+    feedback_widget_options.style = "problem";
+  
+    var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+  </script>
+  <!-- GetSatisfaction feedback button END -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
@@ -177,7 +220,7 @@
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet 
        change the UA-XXXXX-X to be your site's ID -->
   <script>
-   var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']];
+   var _gaq = [['_setAccount', 'UA-18077954-1'], ['_trackPageview']];
    (function(d, t) {
     var g = d.createElement(t),
         s = d.getElementsByTagName(t)[0];
@@ -187,5 +230,7 @@
    })(document, 'script');
   </script>
   
+  <script src="http://static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">clicky.init(17136);</script>
 </body>
 </html>

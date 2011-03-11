@@ -36,7 +36,7 @@
   margin: 0 !important;
   outline: 0 !important;
   overflow: visible !important;
-  padding: 0 !important;
+  padding: 0.2em 0 !important;
   position: static !important;
   right: auto !important;
   text-align: left !important;
@@ -99,10 +99,10 @@
 }
 .syntaxhighlighter table td.gutter .line {
   text-align: right !important;
-  padding: 0 0.5em 0 1em !important;
+  padding: 0.05em 0.5em 0.05em 1em !important;
 }
 .syntaxhighlighter table td.code .line {
-  padding: 0 1em !important;
+  padding: 0.05em 1em !important;
 }
 .syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
   padding-left: 0em !important;

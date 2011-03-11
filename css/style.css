@@ -4,12 +4,16 @@
 }
 p { margin-top: 10px; }
 p.intro {
-  margin: 10px 20px 0;
-  font-style: italic;
+  margin: 10px 80px 0;
+  font-size: 0.65em;
+  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
 }
-code.elem, code.at_rule { color: #365f91; }
-code.attr { color: #76923c; }
-code.value { color: #746a34; }
+code.elem, code.at_rule, code.keyword { color: #337ecf; }
+code.attr, code.local_var { color: #76923c; }
+code.value, code.class { color: #746a34; }
+code.method { color: #555588; }
+code.const { color: #885588; }
+code.var { color: #ffaa3a; }
 .term { color: #1c346a; }
 .todo { color: red; }
 q { font-style: italic; }
@@ -97,7 +101,10 @@ figcaption.imgcaption {
   background: #eeeeee;
   overflow: scroll;
 }
-#main { margin: 0 20px 0 403px; }
+#main {
+  margin: 0 20px 0 403px;
+  counter-reset: section;
+}
 #main header {
   font-size: 40pt;
   text-align: center;
@@ -145,14 +152,19 @@ figcaption.imgcaption {
   border-bottom: 2px solid #632423;
   font-size: 28pt;
   font-variant: small-caps;
+  counter-increment: section;
+  counter-reset: chapter;
 }
 #main h2 {
   margin: 30px 0 20px -30px;
   border-bottom: 1px solid #632423;
   font-size: 20pt;
   font-variant: small-caps;
+  counter-increment: chapter;
+  counter-reset: subchapter;
 }
 #main h3 {
+  counter-increment: subchapter;
   margin: 30px 0 10px -30px;
   font-size: 16pt;
 }
@@ -178,16 +190,27 @@ figcaption.imgcaption {
   -webkit-box-shadow: 1px 1px 3px #999999;
   box-shadow: 1px 1px 3px #999999;
 }
+#main aside.warn { background: #ffbbbb url(http://www.zurb.com/images/alert-overlay.png) repeat-x; }
+#main table {
+  margin-top: 1em;
+  color: #232323;
+}
+#main table caption { font-style: italic; }
 #main table th {
   padding: 5px;
-  color: #eeeeee;
-  background-color: #aaaaaa;
+  background-color: #cccccc;
   border: 1px solid #aaaaaa;
 }
 #main table td {
   padding: 5px;
   background-color: #eeeeee;
   border: 1px solid #aaaaaa;
+}
+#main table.list td { border: none; }
+#main table#operators td { min-width: 2.45em; }
+#main table#keywords td {
+  color: #337ecf;
+  min-width: 5em;
 }
 #main abbr.changed_in_html5 {
   color: #00b050;
@@ -246,4 +269,15 @@ figcaption.imgcaption {
   border: #888888 1px dashed;
   background-color: #1b2426;
 }
-footer { margin-bottom: 5em; }
+footer {
+  display: inline-block;
+  margin: 6em 0;
+  font-size: 0.65em;
+  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+}
+footer #copyright { width: 35%; }
+footer #powered {
+  float: right;
+  width: 53%;
+  margin: 0 5%;
+}
