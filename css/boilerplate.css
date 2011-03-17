@@ -85,7 +85,10 @@ select, input, textarea, button { font:99% sans-serif; }
  * en.wikipedia.org/wiki/MediaWiki_talk:Common.css/Archive_11#Teletype_style_fix_for_Chrome
  */
 pre, kbd, samp { font-family: monospace, sans-serif; }
-code { font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace, sans-serif; } 
+code { 
+  font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace, sans-serif;
+  color: #777; 
+} 
 
 /* 
  * minimal base styles 
