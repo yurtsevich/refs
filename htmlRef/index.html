@@ -13,8 +13,8 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Тэхнічны даведнік па HTML</title>
-  <meta name="description" content="Тэхнічны даведнік па HTML">
+  <title>Даведнік па HTML</title>
+  <meta name="description" content="Даведнік па HTML">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -27,7 +27,7 @@
 
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
-  <link rel="stylesheet" href="../css/style.css?v=2">
+  <link rel="stylesheet" href="../css/screen.css?v=2">
   <link rel="stylesheet" href="../css/mktree.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeRDark.css?v=1">
@@ -49,12 +49,12 @@
     <div id="index">
       <div id="main_index">
         <ul>
-          <li><a href="../htmlRef/index.html">HTML</a></li>
-          <!--li><a href="../cssRef/index.html">CSS</a></li>
+          <li class="active"><a href="../htmlRef/index.html">HTML</a></li>
+          <li><a href="../cssRef/index.html">CSS</a></li>
           <li><a href="../jsRef/index.html">JS</a></li>
-          <li><a href="../webRef/index.html">Web</a></li-->
+          <li><a href="../webRef/index.html">Web</a></li>
         </ul>
-        <!--ul>
+        <ul>
           <li><a href="../javaRef/index.html">Java</a></li>
         </ul>
         <ul>
@@ -63,7 +63,7 @@
         </ul>
         <ul>
           <li><a href="../gitRef/index.html">Git</a></li>
-        </ul-->
+        </ul>
       </div>
       
       <div id="content">
@@ -315,16 +315,13 @@
       <header>
         Даведнік па HTML
       </header>
-    
-      <section>
-        <p class="intro">Гэты даведнік зьяўляецца кампіляцыяй матэрыялаў з розных крыніцаў для спрашчэньня пошуку найважнейшай інфармацыі па выкарыстаньні HTML, але пры гэтым аўтар не адказвае за абсалютную дасканаласьць і актуальнасьць усёй інфармацыі, што тут зьмяшчаецца, а, адпаведна, і за магчымыя негатыўныя наступствы ад любога выкарыстаньня гэтай інфармацыі.</p>
-        <p class="intro">Пры выяўленьні памылак, недакладнасьцей альбо пры наяўнасьці пажаданьняў нешта дадаць ці палепшыць зьвяртайцеся, калі ласка, праз форму зваротнай сувязі (статычная кнопка Feedback у правым баку экрана).</p>
 
+      <section>
         <h1><a name="Links">Карысныя спасылкі</a></h1>
-        
+
         <h2><a name="Links_MarkUp_home">MarkUp home</a></h2>
         <p><a href="http://www.w3.org/MarkUp/">http://www.w3.org/MarkUp/</a></p>
-        
+
         <h2><a name="Links_specs">Стандарты і спэцыфікацыі</a></h2>
         <h3><a name="Links_specs_4_01">HTML 4.01</a></h3>
         <p><i>Спэцыфікацыя</i> на <b>W3C</b>: <a href="http://www.w3.org/TR/html401/">http://www.w3.org/TR/html401</a></p>
@@ -335,19 +332,19 @@
         <p><cite>"HTML5 Gallery"</cite>: <a href="http://html5gallery.com/">http://html5gallery.com</a></p>
         <p><cite>"HTML 5 Doctor"</cite>: <a href="http://html5doctor.com/">http://html5doctor.com</a></p>
         <p><a href="../jsRef/index.html"><span class="term"><i>JavaScript</i></span></a>, каторы вызначае ці падтрымліваюцца агентам пэўныя асаблівасьці <i>HTML5</i>: <a href="http://www.modernizr.com/">http://www.modernizr.com</a></p>
-        
+
         <h2><a name="Links_4_5_diffs">Розьніца паміж 4ай і 5ай вэрсіямі</a></h2>
         <p>Current <i>draft</i> at <b>W3C</b>: <a href="http://www.w3.org/TR/html5-diff/">http://www.w3.org/TR/html5-diff/</a></p>
-        
+
         <h2><a name="Links_refs">Даведнікі</a></h2>
         <p><cite>The Markup Language Reference</cite> на <b>W3C</b>: <a href="http://dev.w3.org/html5/markup/">http://dev.w3.org/html5/markup</a></p>
         <p><i>Даведнік</i> па <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 на <b>W3C</b>: <a href="http://dev.w3.org/html5/html-author/">http://dev.w3.org/html5/html-author</a></p>
         <p><i>Даведнік</i> па <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>4 на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/html/">http://reference.sitepoint.com/html</a></p>
-        
+
         <h2><a name="Links_forms">Формы</a></h2>
         <p>Генэратар коду <i>вэб-формаў</i>: <a href="http://www.phpform.org/">http://www.phpform.org</a></p>
       </section>
-      
+
       <section>
         <h1><a name="HTML_XHTML">HTML і XHTML</a></h1>
         <p>Дакумэнт <abbr class="term" title="Hyper Text Markup Language">HTML</abbr> можа быць запісаны традыцыйным <i><abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-сынтаксісам</i> і <i><abbr class="term" title="eXtensible Markup Language">XML</abbr>-сынтаксісам</i> (так называемы XHTML).</p>
@@ -402,7 +399,7 @@
           </ul>
         </p>
       </section>
-      
+
       <section>
         <h1><a name="DOCTYPE">DOCTYPE</a></h1>
         <h2><a name="DOCTYPE_types">Тыпы</a></h2>
@@ -496,11 +493,13 @@
           <li><i>Almost Standards Mode</i> (у <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 выкарыстоўваецца тэрмін "<i>limited quirks mode</i>"). Рэжым, у каторым вертыкальныя памеры ячэек табліцы разьлічваюцца традыцыйна, а не ў адпаведнасьці са спэцыфікацыяй <a href="http://www.w3.org/TR/CSS2/">CSS2</a>.</li>
         </ol>
       </section>
-      
+
       <section>
         <h1><a name="Templates">Шаблёны дакумэнтаў</a></h1>
         <h2><a name="Templates_Boilerplate">Boilerplate web site HTML5 template</a></h2>
         <p>Паўнавартасны шаблён сайту цалкам: <a href="https://github.com/paulirish/html5-boilerplate/wiki/">https://github.com/paulirish/html5-boilerplate/wiki</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-official-guide-to-html5-boilerplate/">The Official Guide to HTML5 Boilerplate</a></p>
+
         <h2><a name="Templates_5_short">Кароткі HTML5</a></h2>
         <script type="syntaxhighlighter" class="brush: html"><![CDATA[
         <!DOCTYPE html>
@@ -512,12 +511,12 @@
           <meta name="title" content="Загаловак старонкі" />
           <meta name="description" content="Апісаньне зьместу старонкі." />
           <meta name="keywords" content="ключавыя словы старонкі" />
-          
+
           <title>Загаловак старонкі</title>
         </head>
-        
+
         <body>
-          
+
         </body>
         </html>
         ]]></script>
@@ -529,11 +528,11 @@
         <head>
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
           <meta charset="utf-8" />
-        
+
           <!-- SHOULD BE USED TO RELOAD/REDIRERCT PAGE IN CERTAIN PERIOD OF TIME -->
           <!-- meta http-equiv="refresh" content="5" /-->
           <meta http-equiv="refresh" content="5; url=http://yurtsevich.info/" />
-          
+
           <meta name="title" content="Загаловак старонкі" />
           <meta name="description" content="Апісаньне зьместу старонкі." />
           <meta name="classification" content="Катэгорыя зьместу старонкі, напр., Internet" />
@@ -546,7 +545,7 @@
           <meta name="creator" content="Аўтар дакумэнту2" />
           <meta name="publisher" content="Публікатар дакумэнту1" />
           <meta name="publisher" content="Публікатар дакумэнту2" />
-        
+
           <meta name="copyright" 
               content="Copyright © 2010 -Уладальнік правоў-, All Rights Reserved" />
           <!-- As alternative to above -->
@@ -554,23 +553,23 @@
               content="Copyright © 2010 -Уладальнік правоў-, All Rights Reserved" />
           <!-- More detailed information to above tag 'rights' -->
           <meta name="rights-standard" content=";copr2010" /> 
-            
+
           <meta name="rating" content="general" />
           <meta name="audience" content="all" />
-        
+
           <!-- IF INFO ON PAGE MAY BE EXPIRED. -->
           <meta name="expires" content="2010-12-31" />
           <!-- IF PAGE IS INTENDED TO BE PRINTED AT SPECIFIC CIRCUMSTANCES. -->
           <meta name="format-print" content="A5" />
-        
+
           <!-- IF PAGE SHOULD NOT BE FOUND IF SEARCHED BY CERTAIN KEYWORDS. -->
           <meta name="keywords-not" content="sex" />
           <!-- IF PAGE SHOULD NOT BE FOUND IF SEARCHED BY CERTAIN KEYWORDS. -->
           <meta name="robots" content="noindex,nofollow" />
-        
+
           <title>Загаловак старонкі</title>
         </head>
-        
+
         <body>
         </body>
         </html>
@@ -584,11 +583,11 @@
         <head>
           <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
           <meta http-equiv="Content-Language" content="be-BY">
-        
+
           <!-- SHOULD BE USED TO RELOAD/REDIRERCT PAGE IN CERTAIN PERIOD OF TIME -->
           <!-- meta http-equiv="refresh" content="5" /-->
           <meta http-equiv="refresh" content="5; url=http://yurtsevich.info/">
-          
+
           <meta name="title" content="Загаловак старонкі">
           <meta name="description" content="Апісаньне зьместу старонкі.">
           <meta name="classification" content="Катэгорыя зьместу старонкі, напр., Internet">
@@ -601,7 +600,7 @@
           <meta name="creator" content="Аўтар дакумэнту2">
           <meta name="publisher" content="Публікатар дакумэнту1">
           <meta name="publisher" content="Публікатар дакумэнту2">
-        
+
           <meta name="copyright" 
               content="Copyright © 2010 -Уладальнік правоў-, All Rights Reserved">
           <!-- As alternative to above -->
@@ -609,31 +608,31 @@
               content="Copyright © 2010 -Уладальнік правоў-, All Rights Reserved">
           <!-- More detailed information to above tag 'rights' -->
           <meta name="rights-standard" content=";copr2010"> 
-            
+
           <meta name="rating" content="general">
           <meta name="audience" content="all">
-        
+
           <!-- IF PAGE SHOULD NOT BE FOUND IF SEARCHED BY CERTAIN KEYWORDS. -->
           <meta name="robots" content="noindex,nofollow">
-        
+
           <title>Загаловак старонкі</title>
         </head>
-        
+
         <body>
           <a href="http://validator.w3.org/check/referer">Валідацыя</a>
         </body>
         </html>
         ]]></script>
       </section>
-      
+
       <section>
         <h1><a name="Elements">Элемэнты HTML</a></h1>
-        
+
         <h2><a name="Elements_by_content">Па тыпу зьместу</a></h2>
-        
+
         <h3><a name="Elements_root">Карнявы</a></h3>
         <p><a href="#html"><code class="elem">html</code></a></p>
-        
+
         <h3><a name="Elements_metadata">Мэтаданыя дакумэнту</a></h3>
         <p><a href="#base"><code class="elem">base</code></a>&nbsp;&mdash; базавы URL</p>
         <p><a href="#head"><code class="elem">head</code></a>&nbsp;&mdash; кантэйнер мэтаданых дакумэнту</p>
@@ -641,26 +640,26 @@
         <p><a href="#meta"><code class="elem">meta</code></a>&nbsp;<abbr class="changed_in_html5" title="УВАГА! Прызначэньне ці сэнс элемэнту/атрыбуту зьмяніўся ў HTML5 у параўнаньні з HTML4">changed</abbr>&nbsp;&mdash; мэтаданыя</p>
         <p><a href="#style_elem"><code class="elem">style</code></a>&nbsp;&mdash; інфармацыя аб стылі (прэзэнтацыйная інфармацыя)</p>
         <p><a href="#title"><code class="elem">title</code></a>&nbsp;&mdash; загаловак дакумэнту</p>
-        
+
         <h3><a name="Elements_flow">Flow elements</a></h3>
         <p>Да <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 называліся <i>block</i>-элемэнтамі. Можна назваць іх <strong>разьметачнымі</strong> элемэнтамі&nbsp;&mdash; выдзяляюць семантыку і структуру тэксту. Зь 5й вэрсіі фактычна ўсе элемэнты, каторыя зьмяшчаюцца ў <a href="#body"><code class="elem">body</code></a>, можна аднесьці да гэтага тыпу. Уключаюць:</p>
         <p><a href="#Elements_phrasing"><i>Phrasing elements</i></a>, а таксама: <a href="#address"><code class="elem">address</code></a>&nbsp;&middot; <a href="#article"><code class="elem">article</code></a>&nbsp;&middot; <a href="#aside"><code class="elem">aside</code></a>&nbsp;&middot; <a href="#blockquote"><code class="elem">blockquote</code></a>&nbsp;&middot; <a href="#details"><code class="elem">details</code></a>&nbsp;&middot; <a href="#div"><code class="elem">div</code></a>&nbsp;&middot; <a href="#dl"><code class="elem">dl</code></a>&nbsp;&middot; <a href="#fieldset"><code class="elem">fieldset</code></a>&nbsp;&middot; <a href="#figure"><code class="elem">figure</code></a>&nbsp;&middot; <a href="#footer"><code class="elem">footer</code></a>&nbsp;&middot; <a href="#form"><code class="elem">form</code></a>&nbsp;&middot; <a href="#h"><code class="elem">h1, h2, h3, h4, h5, h6</code></a>&nbsp;&middot; <a href="#header"><code class="elem">header</code></a>&nbsp;&middot; <a href="#hgroup"><code class="elem">hgroup</code></a>&nbsp;&middot; <a href="#hr"><code class="elem">hr</code></a>&nbsp;&middot; <a href="#menu"><code class="elem">menu</code></a>&nbsp;&middot; <a href="#nav"><code class="elem">nav</code></a>&nbsp;&middot; <a href="#ol"><code class="elem">ol</code></a>&nbsp;&middot; <a href="#p"><code class="elem">p</code></a>&nbsp;&middot; <a href="#pre"><code class="elem">pre</code></a>&nbsp;&middot; <a href="#section"><code class="elem">section</code></a>&nbsp;&middot; <a href="#table"><code class="elem">table</code></a>&nbsp;&middot; <a href="#ul"><code class="elem">ul</code></a></p>
-        
+
         <h3><a name="Elements_phrasing">Phrasing elements</a></h3>
         <p>Да <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>5 называліся <i>inline</i>-элемэнтамі. Можна назваць іх <strong>тэкставымі</strong> элемэнтамі – фактычна фарміруюць тэкст дакумэнту. Могуць зьмяшчаць унутры толькі таксама <i>phrasing elements</i>. Уключаюць:</p>
         <p><a href="#a"><code class="elem">a</code></a>&nbsp;&middot; <a href="#abbr"><code class="elem">abbr</code></a>&nbsp;&middot; <a href="#area"><code class="elem">area</code></a>&nbsp;&middot; <a href="#audio"><code class="elem">audio</code></a>&nbsp;&middot; <a href="#b"><code class="elem">b</code></a>&nbsp;&middot; <a href="#bdo"><code class="elem">bdo</code></a>&nbsp;&middot; <a href="#br"><code class="elem">br</code></a>&nbsp;&middot; <a href="#button"><code class="elem">button</code></a>&nbsp;&middot; <a href="#canvas"><code class="elem">canvas</code></a>&nbsp;&middot; <a href="#cite"><code class="elem">cite</code></a>&nbsp;&middot; <a href="#code"><code class="elem">code</code></a>&nbsp;&middot; <a href="#command"><code class="elem">command</code></a>&nbsp;&middot; <a href="#datalist"><code class="elem">datalist</code></a>&nbsp;&middot; <a href="#del"><code class="elem">del</code></a>&nbsp;&middot; <a href="#dfn"><code class="elem">dfn</code></a>&nbsp;&middot; <a href="#em"><code class="elem">em</code></a>&nbsp;&middot; <a href="#embed"><code class="elem">embed</code></a>&nbsp;&middot; <a href="#i"><code class="elem">i</code></a>&nbsp;&middot; <a href="#iframe"><code class="elem">iframe</code></a>&nbsp;&middot; <a href="#img"><code class="elem">img</code></a>&nbsp;&middot; <a href="#input"><code class="elem">input</code></a>&nbsp;&middot; <a href="#ins"><code class="elem">ins</code></a>&nbsp;&middot; <a href="#kbd"><code class="elem">kbd</code></a>&nbsp;&middot; <a href="#keygen"><code class="elem">keygen</code></a>&nbsp;&middot; <a href="#label"><code class="elem">label</code></a>&nbsp;&middot; <a href="#map"><code class="elem">map</code></a>&nbsp;&middot; <a href="#mark"><code class="elem">mark</code></a>&nbsp;&middot; <a href="#meter"><code class="elem">meter</code></a>&nbsp;&middot; <a href="#noscript"><code class="elem">noscript</code></a>&nbsp;&middot; <a href="#object"><code class="elem">object</code></a>&nbsp;&middot; <a href="#output"><code class="elem">output</code></a>&nbsp;&middot; <a href="#progress"><code class="elem">progress</code></a>&nbsp;&middot; <a href="#q"><code class="elem">q</code></a>&nbsp;&middot; <a href="#ruby"><code class="elem">ruby</code></a>&nbsp;&middot; <a href="#samp"><code class="elem">samp</code></a>&nbsp;&middot; <a href="#script"><code class="elem">script</code></a>&nbsp;&middot; <a href="#select"><code class="elem">select</code></a>&nbsp;&middot; <a href="#small"><code class="elem">small</code></a>&nbsp;&middot; <a href="#span"><code class="elem">span</code></a>&nbsp;&middot; <a href="#strong"><code class="elem">strong</code></a>&nbsp;&middot; <a href="#sub"><code class="elem">sub</code></a>&nbsp;&middot; <a href="#sup"><code class="elem">sup</code></a>&nbsp;&middot; <a href="#textarea"><code class="elem">textarea</code></a>&nbsp;&middot; <a href="#time"><code class="elem">time</code></a>&nbsp;&middot; <a href="#var"><code class="elem">var</code></a>&nbsp;&middot; <a href="#video"><code class="elem">video</code></a>&nbsp;&middot; <a href="#wbr"><code class="elem">wbr</code></a></p>
-        
+
         <h3><a name="Elements_transparent">Transparent elements</a></h3>
         <p>Гэтыя элемэнты самі зьяўляюцца і дазваляюць зьмяшчаць унутры сябе як <i>flow</i>-, гэтак і <i>phrasing</i>-элемэнты, у залежнасьці ад таго, што дазваляюць зьмяшчаць у сабе іх бацькоўскія элемэнты.</p>
-        
+
         <h3><a name="Elements_void">Void elements</a></h3>
         <p>Элемэнты, якія ня могуць мець ніякага зьместу. Уключаюць:</p>
         <p><a href="#area"><code class="elem">area</code></a>&nbsp;&middot; <a href="#base"><code class="elem">base</code></a>&nbsp;&middot; <a href="#br"><code class="elem">br</code></a>&nbsp;&middot; <a href="#col"><code class="elem">col</code></a>&nbsp;&middot; <a href="#command"><code class="elem">command</code></a>&nbsp;&middot; <a href="#embed"><code class="elem">embed</code></a>&nbsp;&middot; <a href="#hr"><code class="elem">hr</code></a>&nbsp;&middot; <a href="#img"><code class="elem">img</code></a>&nbsp;&middot; <a href="#input"><code class="elem">input</code></a>&nbsp;&middot; <a href="#keygen"><code class="elem">keygen</code></a>&nbsp;&middot; <a href="#link"><code class="elem">link</code></a>&nbsp;&middot; <a href="#meta"><code class="elem">meta</code></a>&nbsp;&middot; <a href="#param"><code class="elem">param</code></a>&nbsp;&middot; <a href="#source"><code class="elem">source</code></a>&nbsp;&middot; <a href="#wbr"><code class="elem">wbr</code></a></p>
-        
+
         <h3><a name="Elements_scripts">Скрыпты</a></h3>
         <p><a href="#noscript"><code class="elem">noscript</code></a>&nbsp;&mdash; фрагмэнт дакумэнту, каторы не апрацоўваецца скрыптом</p>
         <p><a href="#script"><code class="elem">script</code></a>&nbsp;&mdash; убудаваны скрыпт</p>
-        
+
         <h3><a name="Elements_sectioning">Сэкцыйныя элемэнты</a></h3>
         <p><a href="#address"><code class="elem">address</code></a>&nbsp;&mdash; кантактная інфармацыя аўтара дакумэнту (не прызначаны для пазначэньня агульных адрасоў, а менавіта кантактнай інфармацыі аўтара – напрыклад, і-мэйл ці тэлефон; для пазначэньня адрасоў гл. <a href="#Microformats">Microformats</a>)</p>
         <p><a href="#article"><code class="elem">article</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; асобны артыкул дакумэнту</p>
@@ -671,7 +670,7 @@
         <p><a href="#hgroup"><code class="elem">hgroup</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; група загалоўкаў</p>
         <p><a href="#nav"><code class="elem">nav</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; група навігацыйных спасылак</p>
         <p><a href="#section"><code class="elem">section</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; асобная сэкцыя артыкулу</p>
-        
+
         <h3><a name="Elements_grouping">Элемэнты, групуючыя зьмест</a></h3>
         <p><a href="#blockquote"><code class="elem">blockquote</code></a>&nbsp;&mdash; блёк цытаваньня</p>
         <p><a href="#br"><code class="elem">br</code></a>&nbsp;&mdash; разрыў радка</p>
@@ -687,7 +686,7 @@
         <p><a href="#p"><code class="elem">p</code></a>&nbsp;&mdash; параграф</p>
         <p><a href="#pre"><code class="elem">pre</code></a>&nbsp;&mdash; тэкст у прадвызначаным фармаце</p>
         <p><a href="#ul"><code class="elem">ul</code></a>&nbsp;&mdash; ненумараваны сьпіс</p>
-        
+
         <h3><a name="Elements_semantics">Элемэнты, пазначаючыя сэмантыку фрагмэнтаў тэксту</a></h3>
         <p><a href="#a"><code class="elem">a</code></a>&nbsp;<abbr class="changed_in_html5" title="УВАГА! Прызначэньне ці сэнс элемэнту/атрыбуту зьмяніўся ў HTML5 у параўнаньні з HTML4">changed</abbr>&nbsp;&mdash; спасылка</p>
         <p><a href="#abbr"><code class="elem">abbr</code></a>&nbsp;&mdash; абрэвіятура</p>
@@ -712,11 +711,11 @@
         <p><a href="#sup"><code class="elem">sup</code></a>&nbsp;&mdash; па-над-радковы тэкст</p>
         <p><a href="#time"><code class="elem">time</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; дата і/ці час</p>
         <p><a href="#var"><code class="elem">var</code></a>&nbsp;&mdash; сэнсавая ці літаральная (у формуле) пераменная</p>
-        
+
         <h3><a name="Elements_authoring">Элемэнты, пазначаючыя аўтарскія рэдагаваньні тэксту</a></h3>
         <p><a href="#del"><code class="elem">del</code></a>&nbsp;&mdash; выдалены тэкст</p>
         <p><a href="#ins"><code class="elem">ins</code></a>&nbsp;&mdash; устаўлены тэкст</p>
-        
+
         <h3><a name="Elements_embedding">Убудаваны зьмест</a></h3>
         <p><a href="#area"><code class="elem">area</code></a>&nbsp;&mdash; спасылка на пэўную вобласьць выявы</p>
         <p><a href="#audio"><code class="elem">audio</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; аўдыё-струмень (<i>audio stream</i>)</p>
@@ -729,7 +728,7 @@
         <p><a href="#param"><code class="elem">param</code></a>&nbsp;&mdash; парамэтры плагінаў</p>
         <p><a href="#source"><code class="elem">source</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; медыя-крыніца (<i>media source</i>)</p>
         <p><a href="#video"><code class="elem">video</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; відэа-струмень (<i>video</i>)</p>
-        
+
         <h3><a name="Elements_tables">Табліцы</a></h3>
         <p><a href="#caption"><code class="elem">caption</code></a>&nbsp;&mdash; загаловак табліцы</p>
         <p><a href="#col"><code class="elem">col</code></a>&nbsp;&mdash; калёнка табліцы</p>
@@ -741,7 +740,7 @@
         <p><a href="#th"><code class="elem">th</code></a>&nbsp;&mdash; ячэйка шапкі табліцы</p>
         <p><a href="#thead"><code class="elem">thead</code></a>&nbsp;&mdash; група радкоў у якасьці <i>header</i>’а табліцы</p>
         <p><a href="#tr"><code class="elem">tr</code></a>&nbsp;&mdash; радок табліцы</p>
-        
+
         <h3><a name="Elements_forms">Формы</a></h3>
         <p><a href="#button"><code class="elem">button</code></a>&nbsp;&mdash; кнопка</p>
         <p><a href="#datalist"><code class="elem">datalist</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; перадвызначаныя опцыі для іншых кантролаў</p>
@@ -758,19 +757,19 @@
         <p><a href="#progress"><code class="elem">progress</code></a>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; паказальнік прагрэсу пэўнага працэсу</p>
         <p><a href="#select"><code class="elem">select</code></a>&nbsp;&mdash; кантрол выбару опцыі</p>
         <p><a href="#textarea"><code class="elem">textarea</code></a>&nbsp;&mdash; вобласьць уводу тэксту (шматрадковага)</p>
-        
+
         <h3><a name="Elements_interacting">Інтэрактыўныя элемэнты</a></h3>
         <p><a href="#command"><code class="elem">command</code></a>&nbsp;&mdash; каманда</p>
         <p><a href="#details"><code class="elem">details</code></a>&nbsp;&mdash; <i>control for additional on-demand information</i></p>
         <p><a href="#menu"><code class="elem">menu</code></a>&nbsp;&mdash; мэню камандаў</p>
         <p><a href="#summary"><code class="elem">summary</code></a>&nbsp;&mdash; прадстаўляе <i>summary</i>, <i>caption</i> ці <i>legend</i> для <a href="#details"><code class="elem">details</code></a>-элемэнту</p>
-        
+
         <h3><a name="Elements_schemes">Схемы</a></h3>
         <img title="HTML5Doctor sectioning flowchart" alt="HTML5Doctor sectioning flowchart" src="../images/HTML5Doctor-sectioning-flowchart.png"/>
         <img title="Узаемаадносіны паміж групамі элемэнтаў" alt="Узаемаадносіны паміж групамі элемэнтаў" src="../images/ElementTypes.png"/>
-        
+
         <h2><a name="Elements_descriptions">Апісаньне элемэнтаў</a></h2>
-        
+
         <h3><a name="a"><code class="elem">a</code></a></h3>
         <div class="new_changed"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у адрозьненьне ад 4й вэрсіі, у 5й гэты элемэнт – <a href="#Elements_transparent"><i>transparent</i></a>, то бок дазваляе як <a href="#Elements_phrasing"><i>phrasing</i></a> (у 4й вэрсіі), гэтак і <a href="#Elements_flow"><i>flow content</i></a> (у 5й вэрсіі), але толькі калі бацькоўскі элемэнт дазваляе апошняе.</div>
         <div class="refs">
@@ -824,7 +823,7 @@
           <a href="http://help.example.com" target="_blank">Help</a>
           ]]></script>
         </p>
-        
+
         <h3><a name="abbr"><code class="elem">abbr</code></a></h3>
         <div class="refs">
           <ul>
@@ -839,7 +838,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="address"><code class="elem">address</code></a></h3>
         <div class="refs">
           <ul>
@@ -854,7 +853,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="area"><code class="elem">area</code></a></h3>
         <div class="refs">
           <ul>
@@ -917,7 +916,7 @@
             <li><code class="attr">shape=</code><code class="value">"default"</code>&nbsp;&mdash; пазначае, што прамакутная вобласьць спасылкі&nbsp;&mdash; гэта ўся выява.</li>
           </ul>
         </p>
-        
+
         <h3><a name="article"><code class="elem">article</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -932,7 +931,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="aside"><code class="elem">aside</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -947,7 +946,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="audio"><code class="elem">audio</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -973,7 +972,7 @@
             <li><a name="audio.attr.src"><code class="attr">src</code></a>&nbsp;&mdash; URL крыніцы аўдыё-струменю.</li>
           </ul>
         </p>
-        
+
         <h3><a name="b"><code class="elem">b</code></a></h3>
         <div class="new_changed"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у адрозьненьне ад 4й вэрсіі, у 5й гэты элемэнт  не ўплывае на стыль, а толькі сэмантычна пазначае фрагмэнт тэксту, для якога прынятае друкарскае прадстаўленьне – тлусты шрыфт, але які не адрозьніваецца ад асноўнага тэксту па значэньні.</div>
         <div class="refs">
@@ -989,7 +988,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="base"><code class="elem">base</code></a></h3>
         <div class="refs">
           <ul>
@@ -1006,7 +1005,7 @@
             <li><code class="attr">target</code>&nbsp;&mdash; імя <i>browsing context</i> для пазначэньня ў спасылках дакумэнту. Гэта толькі падказка для праграміста, тут не маецца на ўвазе, што ў спасылках можна выбіраць паміж некалькімі <code class="elem">base</code> праз іх <code class="attr">target</code>-імя.</li>
           </ul>
         </p>
-        
+
         <h3><a name="bdo"><code class="elem">bdo</code></a></h3>
         <div class="refs">
           <ul>
@@ -1021,7 +1020,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="blockquote"><code class="elem">blockquote</code></a></h3>
         <div class="refs">
           <ul>
@@ -1037,7 +1036,7 @@
             <li><code class="attr">cite</code>&nbsp;&mdash; URL крыніцы, адкуль узята цытата.</li>
           </ul>
         </p>
-        
+
         <h3><a name="body"><code class="elem">body</code></a></h3>
         <div class="refs">
           <ul>
@@ -1053,7 +1052,7 @@
             <li>Сэрыя падзейных атрыбутаў (<code class="attr">on…</code>), па дэталі глядзі спасылку на W3C.</li>
           </ul>
         </p>
-        
+
         <h3><a name="br"><code class="elem">br</code></a></h3>
         <div class="refs">
           <ul>
@@ -1068,7 +1067,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="button"><code class="elem">button</code></a></h3>
         <div class="refs">
           <ul>
@@ -1088,7 +1087,7 @@
             <li><code class="attr">value</code>&nbsp;&mdash; значэньне кантрола, з пары імя/значэньне, каторымі апэрыруе <a href="#form">форма</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="button_submit"><code class="elem">button</code> <code class="attr">type=</code><code class="value">"submit"</code></a></h3>
         <div class="refs">
           <ul>
@@ -1117,7 +1116,7 @@
             <li><code class="attr">type=</code><code class="value">"submit"</code>&nbsp;&mdash; кажа аб тым, што гэта кнопка менавіта для сабміта формы.</li>
           </ul>
         </p>
-        
+
         <h3><a name="button_reset"><code class="elem">button</code> <code class="attr">type=</code><code class="value">"reset"</code></a></h3>
         <div class="refs">
           <ul>
@@ -1132,7 +1131,7 @@
             <li><code class="attr">type=</code><code class="value">"reset"</code>&nbsp;&mdash; кажа аб тым, што гэта кнопка менавіта для адмены формы.</li>
           </ul>
         </p>
-        
+
         <h3><a name="button_button"><code class="elem">button</code> <code class="attr">type=</code><code class="value">"button"</code></a></h3>
         <div class="refs">
           <ul>
@@ -1147,7 +1146,7 @@
             <li><code class="attr">type=</code><code class="value">"button"</code>&nbsp;&mdash; кажа аб тым, што гэта кнопка агульнага прызначэньня.</li>
           </ul>
         </p>
-        
+
         <h3><a name="canvas"><code class="elem">canvas</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1164,7 +1163,7 @@
             <li><code class="attr">width</code>&nbsp;&mdash; шырыня канвы.
           </ul>
         </p>
-        
+
         <h3><a name="caption"><code class="elem">caption</code></a></h3>
         <div class="refs">
           <ul>
@@ -1179,7 +1178,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="cite"><code class="elem">cite</code></a></h3>
         <div class="new_changed"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у адрозьненьне ад 4й вэрсіі, у 5й гэты элемэнт  не павінен ужывацца для пазначэньня імені асобы ў тэксьце.</div>
         <div class="refs">
@@ -1195,7 +1194,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="code"><code class="elem">code</code></a></h3>
         <div class="refs">
           <ul>
@@ -1210,7 +1209,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="col"><code class="elem">col</code></a></h3>
         <div class="refs">
           <ul>
@@ -1226,7 +1225,7 @@
             <li><code class="attr">span</code>&nbsp;&mdash; лічба, пазначае колькі калёнак аб’ядноўвае гэты элемэнт.</li>
           </ul>
         </p>
-        
+
         <h3><a name="colgroup"><code class="elem">colgroup</code></a></h3>
         <div class="refs">
           <ul>
@@ -1261,7 +1260,7 @@
           </table>
           ]]></script>
         </p>
-        
+
         <h3><a name="command"><code class="elem">command</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1295,7 +1294,7 @@
           </menu>
           ]]></script>
         </p>
-        
+
         <h3><a name="command_checkbox"><code class="elem">command</code> <code class="attr">type=</code><code class="value">"checkbox"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1312,7 +1311,7 @@
             <li><code class="attr">type=</code><code class="value">"checkbox"</code>&nbsp;&mdash; пазначаецца тып каманды.</li>
           </ul>
         </p>
-        
+
         <h3><a name="command_command"><code class="elem">command</code> <code class="attr">type=</code><code class="value">"command"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1328,7 +1327,7 @@
             <li><code class="attr">type=</code><code class="value">"command"</code>&nbsp;&mdash; пазначаецца тып каманды.</li>
           </ul>
         </p>
-        
+
         <h3><a name="command_radio"><code class="elem">command</code> <code class="attr">type=</code><code class="value">"radio"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1346,7 +1345,7 @@
             <li><code class="attr">type=</code><code class="value">"radio"</code>&nbsp;&mdash; пазначаецца тып каманды.</li>
           </ul>
         </p>
-        
+
         <h3><a name="datalist"><code class="elem">datalist</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1378,7 +1377,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="dd"><code class="elem">dd</code></a></h3>
         <div class="refs">
           <ul>
@@ -1404,7 +1403,7 @@
           </dl>
           ]]></script>
         </p>
-        
+
         <h3><a name="del"><code class="elem">del</code></a></h3>
         <div class="refs">
           <ul>
@@ -1422,7 +1421,7 @@
             <li><code class="attr">datetime</code>&nbsp;&mdash; дата і/ці час<sup>10</sup>.</li>
           </ul>
         </p>
-        
+
         <h3><a name="details"><code class="elem">details</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1449,7 +1448,7 @@
           ]]></script>
           <img alt="details" title="details" src="../images/details.png"/>
         </p>
-        
+
         <h3><a name="dfn"><code class="elem">dfn</code></a></h3>
         <div class="refs">
           <ul>
@@ -1474,7 +1473,7 @@
               and so Hammond ordered the iris to be opened.</p>
           ]]></script>
         </p>
-        
+
         <h3><a name="div"><code class="elem">div</code></a></h3>
         <div class="refs">
           <ul>
@@ -1489,7 +1488,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="dl"><code class="elem">dl</code></a></h3>
         <div class="refs">
           <ul>
@@ -1524,7 +1523,7 @@
           </dl>
           ]]></script>
         </p>
-        
+
         <h3><a name="dt"><code class="elem">dt</code></a></h3>
         <div class="refs">
           <ul>
@@ -1550,7 +1549,7 @@
           </dl>
           ]]></script>
         </p>
-        
+
         <h3><a name="em"><code class="elem">em</code></a></h3>
         <div class="refs">
           <ul>
@@ -1565,7 +1564,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="embed"><code class="elem">embed</code></a></h3>
         <div class="new_changed" style="max-width: 75%;"><span class="new_in_html5">new</span>&nbsp;&mdash; хаця гэта і не новы элемэнт, у сэнсе, што ўжо даўно і даволі добра падтрымліваецца фактычна ўсімі вядучымі браўзэрамі, але афіцыйна уведзены толькі ў 5ю вэрсію стандарту.</div>
         <div class="refs">
@@ -1592,7 +1591,7 @@
           <embed src="volksworld-video-report.mp4">
           ]]></script>
         </p>
-        
+
         <h3><a name="fieldset"><code class="elem">fieldset</code></a></h3>
         <div class="refs">
           <ul>
@@ -1630,7 +1629,7 @@
           </form>
           ]]></script>
         </p>
-        
+
         <h3><a name="figcaption"><code class="elem">figcaption</code></a></h3>
         <div class="new_changed" style="min-width: 85%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1645,7 +1644,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="figure"><code class="elem">figure</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1683,7 +1682,7 @@
           </figure>
           ]]></script>
         </p>
-        
+
         <h3><a name="footer"><code class="elem">footer</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1698,7 +1697,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="form"><code class="elem">form</code></a></h3>
         <div class="refs">
           <ul>
@@ -1743,7 +1742,7 @@
           </form>
           ]]></script>
         </p>
-        
+
         <h3><a name="h"><code class="elem">h1, h2, h3, h4, h5, h6</code></a></h3>
         <div class="refs">
           <ul>
@@ -1758,7 +1757,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="head"><code class="elem">head</code></a></h3>
         <div class="refs">
           <ul>
@@ -1773,8 +1772,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
-        
+
         <h3><a name="header"><code class="elem">header</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1789,7 +1787,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="hgroup"><code class="elem">hgroup</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -1818,7 +1816,7 @@
           </section>
           ]]></script>
         </p>
-        
+
         <h3><a name="hr"><code class="elem">hr</code></a></h3>
         <div class="new_changed"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у адрозьненьне ад 4й вэрсіі, у 5й элемэнт не прэзэнтацыйны, а сэмантычны.</div>
         <div class="refs">
@@ -1834,7 +1832,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="html"><code class="elem">html</code></a></h3>
         <div class="refs">
           <ul>
@@ -1851,7 +1849,7 @@
             <li><code class="attr">manifest</code>&nbsp;<abbr class="new_in_html5" title="Новы элемэнт/атрыбут, уведзены ў HTML5">new</abbr>&nbsp;&mdash; URL-спасылка на маніфэст кэшу аплікацыі<sup>13</sup></li>
           </ul>
         </p>
-        
+
         <h3><a name="i"><code class="elem">i</code></a></h3>
         <div class="new_changed"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у адрозьненьне ад 4й вэрсіі, у 5й элемэнт не прэзэнтацыйны, а сэмантычны.</div>
         <div class="refs">
@@ -1877,7 +1875,7 @@
           <p>There is a certain <i lang="fr">je ne sais quoi</i> in the air.</p>
           ]]></script>
         </p>
-        
+
         <h3><a name="iframe"><code class="elem">iframe</code></a></h3>
         <div class="refs">
           <ul>
@@ -1905,7 +1903,7 @@
             <li><code class="attr">width</code>&nbsp;&mdash; шырыня фрэйму ў піксэлях.</li>
           </ul>
         </p>
-        
+
         <h3><a name="img"><code class="elem">img</code></a></h3>
         <div class="refs">
           <ul>
@@ -2004,7 +2002,7 @@
            <h2>Miles</h2>
            <p>My other cat, Miles just eats and sleeps.</p>
           </article>
-          
+
           <article>
            <h1>Photography</h1>
            <h2>Shooting moving targets indoors</h2>
@@ -2016,7 +2014,7 @@
            <p>To achieve this, you'll need either an extremely sensitive film, or
            immense flash lights.</p>
           </article>
-          
+
           <article>
            <h1>About me</h1>
            <h2>My pets</h2>
@@ -2026,7 +2024,7 @@
            <h2>music</h2>
            <p>After our walks, having emptied my mind, I like listening to Bach.</p>
           </article>
-          
+
           <article>
            <h1>Fluffy and the Yarn</h1>
            <p>Fluffy was a cat who liked to play with yarn. He also liked to jump.</p>
@@ -2171,7 +2169,7 @@
                   with each year: 624%, 75%, 138%, 40%, 35%, 9%, 21%">
           ]]></script>
         </p>
-        
+
         <h3><a name="input"><code class="elem">input</code></a></h3>
         <div class="new_changed"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у 5й вэрсіі дададзены новыя тыпы элемэнту, а таксама дадатковыя атрыбуты.</div>
         <div class="refs">
@@ -2187,7 +2185,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_text"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"text"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2201,7 +2199,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_password"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"password"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2215,7 +2213,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_checkbox"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"checkbox"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2229,7 +2227,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_radio"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"radio"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2243,7 +2241,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_button"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"button"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2257,7 +2255,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_submit"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"submit"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2271,7 +2269,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_reset"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"reset"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2285,7 +2283,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_file"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"file"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2313,7 +2311,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_image"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"image"</code></a></h3>
         <div class="refs">
           <ul>
@@ -2327,7 +2325,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_datetime"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"datetime"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2342,7 +2340,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_datetime_local"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"datetime-local"</code></a></h3>
         <div class="new_changed" style="min-width: 60%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2357,7 +2355,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_date"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"date"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2372,7 +2370,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_month"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"month"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2387,7 +2385,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_time"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"time"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2402,7 +2400,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_week"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"week"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2417,7 +2415,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_number"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"number"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2432,7 +2430,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_range"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"range"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2447,7 +2445,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_email"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"email"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2462,7 +2460,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_url"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"url"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2477,7 +2475,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_search"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"search"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2492,7 +2490,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_tel"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"tel"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2507,7 +2505,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="input_color"><code class="elem">input</code> <code class="attr">type=</code><code class="value">"color"</code></a></h3>
         <div class="new_changed" style="min-width: 65%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2522,7 +2520,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="ins"><code class="elem">ins</code></a></h3>
         <div class="refs">
           <ul>
@@ -2540,7 +2538,7 @@
             <li><code class="attr">datetime</code>&nbsp;&mdash; дата і/ці час<sup>15</sup>.</li>
           </ul>
         </p>
-        
+
         <h3><a name="kbd"><code class="elem">kbd</code></a></h3>
         <div class="refs">
           <ul>
@@ -2576,7 +2574,7 @@
           <p>To make George eat an apple, select <kbd>File | Eat Apple...</kbd></p>
           ]]></script>
         </p>
-        
+
         <h3><a name="keygen"><code class="elem">keygen</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2608,7 +2606,7 @@
           ]]></script>
           The server will then receive a form submission with a packaged RSA public key as the value of "key".
         </p>
-        
+
         <h3><a name="label"><code class="elem">label</code></a></h3>
         <div class="refs">
           <ul>
@@ -2638,7 +2636,7 @@
               value="Not_Applicable" id="rb"/> Not applicable</label>
           ]]></script>
         </p>
-        
+
         <h3><a name="legend"><code class="elem">legend</code></a></h3>
         <div class="refs">
           <ul>
@@ -2667,7 +2665,7 @@
           </form>
           ]]></script>
         </p>
-        
+
         <h3><a name="li"><code class="elem">li</code></a></h3>
         <div class="refs">
           <ul>
@@ -2704,7 +2702,7 @@
           </figure>
           ]]></script>
         </p>
-        
+
         <h3><a name="link"><code class="elem">link</code></a></h3>
         <div class="refs">
           <ul>
@@ -2764,7 +2762,7 @@
           <link rel="next" href="chapter6.html">
           ]]></script>
         </p>
-        
+
         <h3><a name="map"><code class="elem">map</code></a></h3>
         <div class="refs">
           <ul>
@@ -2793,7 +2791,7 @@
           </map>
           ]]></script>
         </p>
-        
+
         <h3><a name="mark"><code class="elem">mark</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2837,7 +2835,7 @@
           </code></pre>
           ]]></script>
         </p>
-        
+
         <h3><a name="menu"><code class="elem">menu</code></a></h3>
         <div class="new_changed"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у 4й вэрсіі вызначалася як больш агульнае "<i>single column menu list</i>", а ў 5й&nbsp;&mdash; як больш спэцыфічнае "<i>list of commands</i>".</div>
         <div class="refs">
@@ -2888,7 +2886,7 @@
           </menu>
           ]]></script>
         </p>
-        
+
         <h3><a name="meta"><code class="elem">meta</code></a></h3>
         <div class="new_changed"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у 4й вэрсіі дазвалялася ўжываць любое значэньне ў атрыбуце <code class="attr">http-equiv</code>, у 5й гэты атрыбут можа прымаць толькі пэўныя значэньні.</div>
         <div class="refs">
@@ -2898,8 +2896,7 @@
           </ul>
         </div>
         <p>Элемэнт для пазначэньня мэта-даных дакумэнту. Наконт пэўнага ўжываньня глядзі адпаведныя разьдзелы ніжэй.</p>
-        
-        
+
         <h3><a name="meta_charset"><code class="elem">meta</code> <code class="attr">charset</code></a></h3>
         <div class="new_changed" style="min-width: 80%;"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -2914,7 +2911,7 @@
           <meta charset="utf-8">
           ]]></script>
         </p>
-        
+
         <h3><a name="meta_name"><code class="elem">meta</code> <code class="attr">name</code></a></h3>
         <div class="refs">
           <ul>
@@ -2993,7 +2990,7 @@
             </li>
           </ul>
         </p>
-        
+
         <h3><a name="meta_content_language"><code class="elem">meta</code> <code class="attr">http-equiv=</code><code class="value">"content-language"</code></a></h3>
         <div class="new_changed" style="min-width: 50%; max-width: 50%;"><span class="obsolete_in_html5">obsolete</span>&nbsp;&mdash; элемэнт не пажадана выкарыстоўваць у 5й вэрсіі <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>. Замест яго варта ўжываць атрыбут <code class="attr">lang</code> <a href="#html"><code class="elem">html</code></a>-элемэнту.</div>
         <div class="refs">
@@ -3003,7 +3000,7 @@
           </ul>
         </div>
         <p><i>Pragma</i>-дырэктыва для пазначэньня мовы зьместу.</p>
-        
+
         <h3><a name="meta_content_type"><code class="elem">meta</code> <code class="attr">http-equiv=</code><code class="value">"content-type"</code></a></h3>
         <div class="refs">
           <ul>
@@ -3017,7 +3014,7 @@
         ]]></script>
         <aside><sup>21</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
         <p>Першая часта (<code class="value">text/html</code>) пазначае, што гэта <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>-дакумэнт, а другая&nbsp;&mdash; кадоўку<sup>21</sup> дакумэнту.</p>
-        
+
         <h3><a name="meta_default_style"><code class="elem">meta</code> <code class="attr">http-equiv=</code><code class="value">default-style</code></a></h3>
         <div class="refs">
           <ul>
@@ -3036,7 +3033,7 @@
             <li>альбо ўтрымліваюць убудаванае апісаньне стылю.</li>
           </ol>
         </p>
-        
+
         <h3><a name="meta_refresh"><code class="elem">meta</code> <code class="attr">http-equiv=</code><code class="value">"refresh"</code></a></h3>
         <div class="refs">
           <ul>
@@ -3060,7 +3057,7 @@
           <meta http-equiv="refresh" content="5;url=http://yurtsevich.info/" />
           ]]></script>
         </p>
-        
+
         <h3><a name="meter"><code class="elem">meter</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3108,7 +3105,7 @@
               and a height of <meter value="2">2cm</meter>.</p> <!-- BAD! -->
           ]]></script>
         </p>
-        
+
         <h3><a name="nav"><code class="elem">nav</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3170,8 +3167,7 @@
           </body>
           ]]></script>
         </p>
-        
-        
+
         <h3><a name="noscript"><code class="elem">noscript</code></a></h3>
         <div class="refs">
           <ul>
@@ -3238,7 +3234,7 @@
           </form>
           ]]></script>
         </p>
-        
+
         <h3><a name="object"><code class="elem">object</code></a></h3>
         <div class="refs">
           <ul>
@@ -3297,7 +3293,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="ol"><code class="elem">ol</code></a></h3>
         <div class="refs">
           <ul>
@@ -3315,7 +3311,7 @@
             <li><code class="attr">type</code>&nbsp;<abbr class="obsolete_in_html5" title="УВАГА! Элемэнт/атрыбут не пажаданы да ўжыцьця ў HTML5">obsolete</abbr>&nbsp;&mdash; <strong>АЛЕ!</strong> IE кепска падтрымлівае <a href="../cssRef/index.html"><span class="term">CSS</span></a>-атрыбут <a href="../cssRef/index.html#list-style-type"><code class="attr">list-style-type</code></a> (каторы павінен ужывацца замест яго), таму ёсьць сэнс часам выкарыстоўваць і/альбо гэты атрыбут.</li>
           </ul>
         </p>
-        
+
         <h3><a name="optgroup"><code class="elem">optgroup</code></a></h3>
         <div class="refs">
           <ul>
@@ -3357,7 +3353,7 @@
             <img title="Ілюстрацыя выкарыстаньня optgroup" alt="Ілюстрацыя выкарыстаньня optgroup" src="../images/optgroup.png" />
           </figure>
         </p>
-        
+
         <h3><a name="option"><code class="elem">option</code></a></h3>
         <div class="refs">
           <ul>
@@ -3390,7 +3386,7 @@
           </form>
           ]]></script>
         </p>
-        
+
         <h3><a name="output"><code class="elem">output</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3418,7 +3414,7 @@
           </form>
           ]]></script>
         </p>
-        
+
         <h3><a name="p"><code class="elem">p</code></a></h3>
         <div class="refs">
           <ul>
@@ -3466,7 +3462,7 @@
           </section>
           ]]></script>
         </p>
-        
+
         <h3><a name="param"><code class="elem">param</code></a></h3>
         <div class="refs">
           <ul>
@@ -3506,7 +3502,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="pre"><code class="elem">pre</code></a></h3>
         <div class="refs">
           <ul>
@@ -3532,7 +3528,7 @@
           }</code></pre>
           ]]></script>
         </p>
-        
+
         <h3><a name="progress"><code class="elem">progress</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3574,7 +3570,7 @@
           </section>
           ]]></script>
         </p>
-        
+
         <h3><a name="q"><code class="elem">q</code></a></h3>
         <div class="refs">
           <ul>
@@ -3602,7 +3598,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="rp"><code class="elem">rp</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3628,7 +3624,7 @@
           <!-- ... -->
           ]]></script>
         </p>
-        
+
         <h3><a name="rt"><code class="elem">rt</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3643,7 +3639,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="ruby"><code class="elem">ruby</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3687,7 +3683,7 @@
             <img title="Ілюстрацыя выкарыстаньня ruby" alt="Ілюстрацыя выкарыстаньня ruby" src="../images/ruby2.png" />
           </figure>
         </p>
-        
+
         <h3><a name="samp"><code class="elem">samp</code></a></h3>
         <div class="refs">
           <ul>
@@ -3712,7 +3708,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="script"><code class="elem">script</code></a></h3>
         <div class="refs">
           <ul>
@@ -3770,7 +3766,7 @@
           </form>
           ]]></script>
         </p>
-        
+
         <h3><a name="section"><code class="elem">section</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3805,7 +3801,7 @@
           </article>
           ]]></script>
         </p>
-        
+
         <h3><a name="select"><code class="elem">select</code></a></h3>
         <div class="refs">
           <ul>
@@ -3839,7 +3835,7 @@
           </form>
           ]]></script>
         </p>
-        
+
         <h3><a name="small"><code class="elem">small</code></a></h3>
         <div class="new_changed" style="min-width: 90%; max-width: 90%;"><span class="changed_in_html5">changed</span>&nbsp;&mdash; у адрозьненьне ад 4й вэрсіі элемэнт не нясе стылявой мэты (малы шрыфт), але сэмантычную мэту&nbsp;&mdash; частка тэксту, якая звычайна адлюстроўваецца малым шрыфтом.</div>
         <div class="refs">
@@ -3878,7 +3874,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="source"><code class="elem">source</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -3996,7 +3992,7 @@
           </video>
           ]]></script>
         </p>
-        
+
         <h3><a name="span"><code class="elem">span</code></a></h3>
         <div class="refs">
           <ul>
@@ -4023,7 +4019,7 @@
               class="brandname">Intel</span>.</p>
           ]]></script>
         </p>
-        
+
         <h3><a name="strong"><code class="elem">strong</code></a></h3>
         <div class="refs">
           <ul>
@@ -4049,7 +4045,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="style_elem"><code class="elem">style</code></a></h3>
         <div class="refs">
           <ul>
@@ -4089,7 +4085,7 @@
           </html>
           ]]></script>
         </p>
-        
+
         <h3><a name="sub"><code class="elem">sub</code></a></h3>
         <div class="refs">
           <ul>
@@ -4112,7 +4108,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="summary"><code class="elem">summary</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -4127,7 +4123,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="sup"><code class="elem">sup</code></a></h3>
         <div class="refs">
           <ul>
@@ -4152,7 +4148,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="table"><code class="elem">table</code></a></h3>
         <div class="refs">
           <ul>
@@ -4193,7 +4189,7 @@
           </table>
           ]]></script>
         </p>
-        
+
         <h3><a name="tbody"><code class="elem">tbody</code></a></h3>
         <div class="refs">
           <ul>
@@ -4208,7 +4204,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="td"><code class="elem">td</code></a></h3>
         <div class="refs">
           <ul>
@@ -4226,7 +4222,7 @@
             <li><code class="attr">rowspan</code>&nbsp;&mdash; колькасьць радкоў табліцы, на якія "пашыраецца" гэтая ячэйка.</li>
           </ul>
         </p>
-        
+
         <h3><a name="textarea"><code class="elem">textarea</code></a></h3>
         <div class="refs">
           <ul>
@@ -4257,7 +4253,7 @@
             </li>
           </ul>
         </p>
-        
+
         <h3><a name="tfoot"><code class="elem">tfoot</code></a></h3>
         <div class="refs">
           <ul>
@@ -4306,7 +4302,7 @@
             <img title="Ілюстрацыя выкарыстаньня tfoot" alt="Ілюстрацыя выкарыстаньня tfoot" src="../images/tfoot.png" />
           </figure>
         </p>
-        
+
         <h3><a name="th"><code class="elem">th</code></a></h3>
         <div class="refs">
           <ul>
@@ -4350,7 +4346,7 @@
           Апісаньне прыкладу:
           <img title="Тлумачэньне th прыкладу" alt="Тлумачэньне th прыкладу" src="../images/th_example_explanation.png" />
         </p>
-        
+
         <h3><a name="thead"><code class="elem">thead</code></a></h3>
         <div class="refs">
           <ul>
@@ -4365,7 +4361,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="time"><code class="elem">time</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -4383,7 +4379,7 @@
             <li><code class="attr">pubdate=</code><code class="attr">"pubdate"</code>, ці <code class="value">""</code>, ці ўвогуле без значэньня&nbsp;&mdash; у любым з гэтых выпадкаў азначае, што прыведзеныя дата і/ці час азначаюць дату публікацыі бліжэйшага бацькоўскага <a href="#article"><code class="elem">article</code></a>-элемэнту, альбо ўсяго дакумэнту, калі ў яго герархіі элемэнтаў няма бацькоўскага <a href="#article"><code class="elem">article</code></a>-элемэнту.</li>
           </ul>
         </p>
-        
+
         <h3><a name="title_elem"><code class="elem">title</code></a></h3>
         <div class="refs">
           <ul>
@@ -4398,7 +4394,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="tr"><code class="elem">tr</code></a></h3>
         <div class="refs">
           <ul>
@@ -4413,7 +4409,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="ul"><code class="elem">ul</code></a></h3>
         <div class="refs">
           <ul>
@@ -4428,7 +4424,7 @@
             <li><a href="#Attributes_global">глябальныя</a></li>
           </ul>
         </p>
-        
+
         <h3><a name="var"><code class="elem">var</code></a></h3>
         <div class="refs">
           <ul>
@@ -4465,7 +4461,7 @@
           </p>
           ]]></script>
         </p>
-        
+
         <h3><a name="video"><code class="elem">video</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -4494,7 +4490,7 @@
             <li><code class="attr">width</code>&nbsp;&mdash; шырыня акна з відэа у <a href="../cssRef/index.html"><span class="term">CSS</span></a>-пікселях.</li>
           </ul>
         </p>
-        
+
         <h3><a name="wbr"><code class="elem">wbr</code></a></h3>
         <div class="new_changed"><span class="new_in_html5">new</span>&nbsp;&mdash; новы элемэнт, уведзены ў 5й вэрсіі.</div>
         <div class="refs">
@@ -4517,7 +4513,7 @@
           </figure>
         </p>
       </section>
-      
+
       <section>
         <h1><a name="Attributes">Атрыбуты</a></h1>
         <h2><a name="Attributes_global">Глябальныя</a></h1>
@@ -4593,7 +4589,7 @@
           </ol>
         </p>
       </section>
-      
+
       <section>
         <h1><a name="Media">Media</a></h1>
         <div class="refs">
@@ -4601,7 +4597,7 @@
             <li><a href="http://www.w3.org/TR/2009/CR-css3-mediaqueries-20090915/">W3C</a></li>
           </ul>
         </div>
-        <p><abbr class="term" title="Hyper Text Markup Language">HTML</abbr> і <a href="../cssRef/index.html"><span class="term">CSS</span></a> падтрымліваюць табліцы стыляў, каторыя <i>media-dependent</i>.</p>
+        <p><abbr class="term" title="Hyper Text Markup Language">HTML</abbr> і <a href="../cssRef/index.html"><span class="term">CSS</span></a> падтрымліваюць <i>media</i>-залежныя табліцы стыляў.</p>
         <p>
           Сьпіс тыпаў <code class="attr">media</code>, каторыя падтрымліваюцца ў <abbr class="term" title="Hyper Text Markup Language">HTML</abbr>4:
           <ul>
@@ -4677,44 +4673,44 @@
           ]]></script>
         </p>
         <h3><a name="Media_height"><code class="value">height</code></a></h3>
-        <p>Вышыня вобласьці адлюстраваньня прылады.</p>      
+        <p>Вышыня вобласьці адлюстраваньня прылады.</p>
         <h3><a name="Media_device_width"><code class="value">device-width</code></a></h3>
         <p>Шырыня паверхні візуалізацыі (<i>rendering surface</i>) прылады. For continuous media, this is the width of the screen. For paged media, this is the width of the page sheet size.</p>      
         <h3><a name="Media_device_height"><code class="value">device-height</code></a></h3>
         <p>Вышыня паверхні візуалізацыі прылады.</p>      
         <h3><a name="Media_orientation"><code class="value">orientation</code></a></h3>
-        <p>Арыентацыя прылады. The <code class="value">orientation</code> media feature is <code class="value">'portrait'</code> when the value of the <code class="value">height</code> media feature is greater than or equal to the value of the <code class="value">width</code> media feature. Otherwise <code class="value">orientation</code> is <code class="value">'landscape'</code>.</p>
+        <p>Арыентацыя прылады. Мае значэньне <code class="value">'portrait'</code>, калі значэньне характарыстыкі <code class="value">height</code> больш ці раўно значэньню характарыстыкі <code class="value">width</code>. Інакш значэньне <code class="value">orientation</code>&nbsp;&mdash; <code class="value">'landscape'</code>.</p>
         <p>
           Прыклад у <a href="../cssRef/index.html"><span class="term">CSS</span></a>-фармаце:
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
-          @media all and (orientation: portrait) { 
+          @media all and (orientation: portrait) {
             /* ... */ 
           }
-          
-          @media all and (orientation: landscape) { 
+
+          @media all and (orientation: landscape) {
             /* ... */
           }
           ]]></script>
-        </p>      
+        </p>
         <h3><a name="Media_aspect_ratio"><code class="value">aspect-ratio</code></a></h3>
-        <p>Суадносіны <code class="value">width</code> да <code class="value">height</code> прылады.</p>      
+        <p>Суадносіны <code class="value">width</code> да <code class="value">height</code> прылады.</p>
         <h3><a name="Media_device_aspect_ratio"><code class="value">device-aspect-ratio</code></a></h3>
-        <p>Суадносіны <code class="value">device-width</code> да <code class="value">device-height</code> прылады.</p>      
+        <p>Суадносіны <code class="value">device-width</code> да <code class="value">device-height</code> прылады.</p>
         <p>
           For example, if a screen device with square pixels has 1280 horizontal pixels and 720 vertical pixels (commonly referred to as "16:9"), the following Media Queries will all match the device (у <a href="../cssRef/index.html"><span class="term">CSS</span></a>-фармаце):
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           @media screen and (device-aspect-ratio: 16/9) { 
             /* ... */ 
           }
-          
+
           @media screen and (device-aspect-ratio: 32/18) { 
             /* ... */
           }
-          
+
           @media screen and (device-aspect-ratio: 1280/720) { 
             /* ... */ 
           }
-          
+
           @media screen and (device-aspect-ratio: 2560/1440) { 
             /* ... */
           }
@@ -4723,9 +4719,9 @@
         <h3><a name="Media_color"><code class="value">color</code></a></h3>
         <p>Колькасьць бітаў, якія прылада выдзяляе на кожны свой каляровы кампанэнт. Калі лічбавае значэньне не пазначанае, значыць проста каляровы, не важна колькі бітаў на каляровы кампанэнт. Калі значэньне <code>0</code>&nbsp;&mdash; некаляровая прылада.</p>      
         <h3><a name="Media_color_index"><code class="value">color-index</code></a></h3>
-        <p>Колькасьць запісаў у <i>color lookup table</i>. Калі прылада не выкарыстоўвае <i>color lookup table</i>&nbsp;&mdash; <code>0</code>.</p>      
+        <p>Колькасьць запісаў у <i>color lookup table</i>. Калі прылада не выкарыстоўвае <i>color lookup table</i>&nbsp;&mdash; <code>0</code>.</p>
         <h3><a name="Media_monochrome"><code class="value">monochrome</code></a></h3>
-        <p>Колькасьць бітаў на піксэль у манахромным <i>frame buffer</i>. Калі прылада не манахромная&nbsp;&mdash; <code>0</code>.</p>      
+        <p>Колькасьць бітаў на піксэль у манахромным <i>frame buffer</i>. Калі прылада не манахромная&nbsp;&mdash; <code>0</code>.</p>
         <h3><a name="Media_resolution"><code class="value">resolution</code></a></h3>
         <p>Разрозьненьне прылады.</p>
         <p>
@@ -4737,20 +4733,20 @@
           ]]></script>
         </p>
         <h3><a name="Media_scan"><code class="value">scan</code></a></h3>
-        <p>Scanning process of <code class="value">tv</code> output devices.</p>
+        <p>Тып працэсу сканаваньня ў прыладах <code class="value">tv</code>-вываду.</p>
         <p>
           Прыклад у <a href="../cssRef/index.html"><span class="term">CSS</span></a>-фармаце:
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
-          @media tv and (scan: progressive) { 
+          @media tv and (scan: progressive) {
             /* ... */ 
           }
           ]]></script>
         </p>
         <aside><sup>30</sup> <a href="http://www.w3.org/TR/2009/CR-CSS2-20090908/media.html#continuous-media-group">http://www.w3.org/TR/2009/CR-CSS2-20090908/media.html#continuous-media-group</a></aside>
         <h3><a name="Media_grid"><code class="value">grid</code></a></h3>
-        <p>Пазначае прылада <i>grid</i> ці <i>bitmap</i><sup>30</sup>.</p>      
+        <p>Пазначае прылада <i>grid</i> ці <i>bitmap</i><sup>30</sup>.</p>
       </section>
-      
+
       <section>
         <h1><a name="Special_symbols">Спэцыяльныя сымбалі</a></h1>
         <div class="refs">
@@ -4763,7 +4759,7 @@
         <img alt="Спэцыяльныя сымбалі" title="Спэцыяльныя сымбалі" src="../images/spec_symb_1.png" style="margin: 60px 0 0 -80px; vertical-align: top;" />
         <img alt="Спэцыяльныя сымбалі" title="Спэцыяльныя сымбалі" src="../images/spec_symb_2.png"/>
       </section>
-      
+
       <section>
         <h1><a name="Microformats">Microformats</a></h1>
         <div class="refs">
@@ -4772,21 +4768,21 @@
           </ul>
         </div>
       </section>
-      
+
       <section>
         <h1><a name="HTML5_features">HTML5 асаблівасьці</a></h1>
         <p>
           Як кадыраваць і ўбудоўваць відэа на сайт: <a href="http://camendesign.com/code/video_for_everybody#video-what">http://camendesign.com/code/video_for_everybody#video-what</a>
         </p>
       </section>
-      
+
       <section>
         <h1><a name="CheatSheet">CheatSheet</a></h1>
         <p>
           <img alt="CheatSheet" title="CheatSheet" src="../images/html-cheat-sheet-v1.png"/>
         </p>
       </section>
-      
+
       <section>
         <h1><a name="Deprecated_elements">Deprecated элемэнты</a></h1>
         <table style="margin-bottom: 100px;">
@@ -4904,14 +4900,13 @@
           </tbody>
         </table>
       </section>
-      
+
       <footer>
         <div id="powered">
           <h5>Падзякі</h5>
           <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
             <ul>
               <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
-              <li><a href="http://www.caodesigns.com/blog/free-stuff/jquery-active-menu-plugin-2.php">Active Menu</a>&nbsp;&mdash; дадатак да jQuery, каб пазначаць цяперашні разьдзел у каталёгу даведнікаў</li>
               <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
               <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
               <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
@@ -4933,7 +4928,7 @@
   </div><!--! end of #container -->
 
   <!-- Javascript at the bottom for fast page loading -->
-  
+
   <!-- GetSatisfaction feedback button BEGIN -->
   <script type="text/javascript" charset="utf-8">
     var is_ssl = ("https:" == document.location.protocol);
@@ -4943,13 +4938,13 @@
 
   <script type="text/javascript" charset="utf-8">
     var feedback_widget_options = {};
-  
+
     feedback_widget_options.display = "overlay";  
     feedback_widget_options.company = "yurtsevich";
     feedback_widget_options.placement = "right";
     feedback_widget_options.color = "#222";
     feedback_widget_options.style = "problem";
-  
+
     var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
   </script>
   <!-- GetSatisfaction feedback button END -->
@@ -4957,13 +4952,6 @@
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
-    
-  <script src="../js/mylibs/jquery.activeMenu.js"></script>
-  <script>
-    $(document).ready(function(){ 
-      $('#main_index ul').activeMenu(); 
-    }); 
-  </script>
 
   <script src="../js/mylibs/mktree.js"></script>
   <script src="../js/mylibs/xregexp.js"></script>
@@ -4975,13 +4963,13 @@
       var args = arguments,
           result = []
           ;
-       
+
       for(var i = 0; i < args.length; i++)
           result.push(args[i].replace('@', '../js/mylibs/'));
            
       return result
     };
- 
+
     SyntaxHighlighter.autoloader.apply(null, path(
       'applescript            @shBrushAppleScript.js',
       'actionscript3 as3      @shBrushAS3.js',
@@ -5008,17 +4996,16 @@
       'vb vbnet               @shBrushVb.js',
       'xml xhtml xslt html    @shBrushXml.js'
     ));
-    
+
     SyntaxHighlighter.defaults['toolbar'] = false;
     SyntaxHighlighter.all();
   </script>
-  
+
   <!-- scripts concatenated and minified via ant build script-->
   <script src="../js/plugins.js"></script>
   <script src="../js/script.js"></script>
   <!-- end concatenated and minified scripts-->
-  
-  
+
   <!--[if lt IE 7 ]>
     <script src="js/libs/dd_belatedpng.js"></script>
     <script> DD_belatedPNG.fix('img, .png_bg'); //fix any <img> or .png_bg background-images </script>
@@ -5042,7 +5029,7 @@
     s.parentNode.insertBefore(g, s);
    })(document, 'script');
   </script>
-  
+
   <script src="http://static.getclicky.com/js" type="text/javascript"></script>
   <script type="text/javascript">clicky.init(17136);</script>
 </body>

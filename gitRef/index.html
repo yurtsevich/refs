@@ -13,8 +13,8 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Тэхнічны даведнік па Git</title>
-  <meta name="description" content="Тэхнічны даведнік па Git">
+  <title>Даведнік па Git</title>
+  <meta name="description" content="Даведнік па Git">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -27,7 +27,7 @@
 
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
-  <link rel="stylesheet" href="../css/style.css?v=1">
+  <link rel="stylesheet" href="../css/screen.css?v=1">
   <link rel="stylesheet" href="../css/mktree.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeRDark.css?v=1">
@@ -61,7 +61,7 @@
           <li><a href="../railsRef/index.html">Rails</a></li>
         </ul>
         <ul>
-          <li><a href="../gitRef/index.html">Git</a></li>
+          <li class="active"><a href="../gitRef/index.html">Git</a></li>
         </ul>
       </div>
 
@@ -77,8 +77,8 @@
           </li>
           <li class="liOpen"><a href="#Repo">Стварэньне рэпазыторыяў</a>
             <ul>
-              <li><a href="#Repo_init">Ініцыіраваньне новага</a></li>
-              <li><a href="#Repo_clone">Кланіраваньне аддаленага</a></li>
+              <li><a href="#Repo_init">Ініцыіяваньне новага</a></li>
+              <li><a href="#Repo_clone">Кланаваньне адлеглага</a></li>
             </ul>
           </li>
         </ul>
@@ -91,15 +91,12 @@
       </header>
 
       <section>
-        <p class="intro">Гэты даведнік зьяўляецца кампіляцыяй матэрыялаў з розных крыніцаў для спрашчэньня пошуку найважнейшай інфармацыі па выкарыстаньні Git&nbsp;&mdash; <strong>сыстэмы кантролю вэрсій</strong> (а-ля <abbr title="Concurrent Versioning System">CVS</abbr> ці <abbr title="Subversion">SVN</abbr>) <strong>размеркаванага тыпу</strong>. Пры гэтым аўтар не адказвае за абсалютную дасканаласьць і актуальнасьць усёй інфармацыі, што тут зьмяшчаецца, а, адпаведна, і за магчымыя негатыўныя наступствы ад любога выкарыстаньня гэтай інфармацыі.</p>
-        <p class="intro">Пры выяўленьні памылак, недакладнасьцей альбо пры наяўнасьці пажаданьняў нешта дадаць ці палепшыць зьвяртайцеся, калі ласка, праз форму зваротнай сувязі (статычная кнопка Feedback у правым баку экрана).</p>
-        
         <h1><a name="Links">Карысныя спасылкі</a></h1>
         <p>Усталёўшчык Git можна спампаваць: <a href="http://git-scm.com/download/">http://git-scm.com/download</a></p>
         <p>Афіцыйны навучальны дапаможнік (<strong>пачаткоўцам</strong>): <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html</a></p>
         <p>Афіцыйны даведнік (<strong>адмыслоўцам</strong>): <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">http://www.kernel.org/pub/software/scm/git/docs/user-manual.html</a></p>
         <p>Вольная электронная кніга <cite>Pro Git</cite>: <a href="http://progit.org/book/">http://progit.org/book</a></p>
-        
+
         <h1><a name="Configuration">Наладкі</a></h1>
         <div class="refs">
           <ul>
@@ -113,14 +110,14 @@
             <li><em><code>&lt;ТЭЧКА_ЎСТАЛЁЎКІ_GIT&gt;/etc/gitconfig</code></em> (зьмяняюцца пры выкарыстаньні опцыі <code>--system</code>)&nbsp;&mdash; наладкі, характэрныя для ўсёй сыстэмы;</li>
           </ul>
         </p>
-        
+
         <h2><a name="Configuration_identity">Асабістыя даныя карыстальніка</a></h2>
         <p>Перш за ўсё пазначце свае ідэнтыфікацыйныя даныя:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
           git config --global user.name "Alesj Zagorski"
           git config --global user.email a.zagorski@example.com
         ]]></script>
-        
+
         <h2><a name="Configuration_merge">Прылада параўнаньня (merge tool)</a></h2>
         <p>Акрамя гэтага можна пазначыць сваю ўлюбёную прыладу параўнаньня файлаў:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
@@ -128,7 +125,7 @@
           git config --global mergetool.winmerge.cmd WinMergeU.exe \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
         ]]></script>
         <p>Пры гэтым папярэдне дадаўшы ў пераменную асяродка <code>PATH</code> шлях да WinMergeU.exe</p>
-        
+
         <h2><a name="Configuration_list">Прагляд наладкаў</a></h2>
         <p>Праглядзець усе цяперашнія наладкі можна камандай:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
@@ -160,15 +157,15 @@
           </ul>
         </div>        
         <p>Існуюць дзьве галоўныя магчымасьці, каб стварыць рэпазыторый. Першая&nbsp;&mdash; ініцыіраваць новы рэпазыторый ў лякальнай тэчцы (ў пустой, ці з ужо існуючым праектам). Другая&nbsp;&mdash; кланіраваць існуючы "аддалены" рэпазыторый.</p>
-  
-        <h2><a name="Repo_init">Ініцыіраваньне новага рэпазыторыю</a></h2>
+
+        <h2><a name="Repo_init">Ініцыіяваньне новага рэпазыторыю</a></h2>
         <p>Для таго, каб ініцыіраваць новы рэпазыторый, трэба ў тэчцы праекту (ці ў пустой тэчцы, у каторай плянуецца стварыць праект) запусьціць каманду:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
         git init
         ]]></script>
         <p>У выніку будзе створана схаваная тэчка рэпазыторыю <code>.git</code></p>
-        
-        <h2><a name="Repo_clone">Кланіраваньне аддаленага рэпазыторыю</a></h2>
+
+        <h2><a name="Repo_clone">Кланаваньне адлеглага рэпазыторыю</a></h2>
         <p>"Аддалены" ў дадзеным выпадку дастаткова адноснае разуменьне, таму што такім рэпазыторыям можа быць і існуючы у лякальнай файлавай сыстэме (хаця гэта і ня вельмі верагодны выпадак). Але галоўнае для гэтага мэтаду&nbsp;&mdash; што "эталонны" рэпазыторый ужо павінен недзе існаваць:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
         git clone &lt;ШЛЯХ_ДА_РЭПАЗЫТОРЫЮ&gt; [&lt;ІМЯ_ЛЯКАЛЬНАГА_РЭПАЗЫТОРЫЮ&gt;]
@@ -186,7 +183,6 @@
           <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
             <ul>
               <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
-              <li><a href="http://www.caodesigns.com/blog/free-stuff/jquery-active-menu-plugin-2.php">Active Menu</a>&nbsp;&mdash; дадатак да jQuery, каб пазначаць цяперашні разьдзел у каталёгу даведнікаў</li>
               <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
               <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
               <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
@@ -233,13 +229,6 @@
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
-    
-  <script src="../js/mylibs/jquery.activeMenu.js"></script>
-  <script>
-    $(document).ready(function(){ 
-      $('#main_index ul').activeMenu(); 
-    }); 
-  </script>
 
   <script src="../js/mylibs/mktree.js"></script>
   <script src="../js/mylibs/xregexp.js"></script>

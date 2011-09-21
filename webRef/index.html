@@ -13,8 +13,8 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Тэхнічны даведнік па канцэпцыям і дызайну Web сайтаў і аплікацыяў</title>
-  <meta name="description" content="Тэхнічны даведнік па вэб-дызайну">
+  <title>Распрацоўка сайтаў і сеціўных праграмаў</title>
+  <meta name="description" content="Распрацоўка сайтаў і сеціўных праграмаў">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -26,7 +26,8 @@
 
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
-  <link rel="stylesheet" href="../css/style.css?v=1">
+  <link rel="stylesheet" href="../css/screen.css?v=1">
+  <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="../css/mktree.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeRDark.css?v=1">
@@ -43,7 +44,6 @@
 </head>
 
 <body>
-
   <div id="container">
     <div id="index">
       <div id="main_index">
@@ -51,7 +51,7 @@
           <li><a href="../htmlRef/index.html">HTML</a></li>
           <li><a href="../cssRef/index.html">CSS</a></li>
           <li><a href="../jsRef/index.html">JS</a></li>
-          <li><a href="../webRef/index.html">Web</a></li>
+          <li class="active"><a href="../webRef/index.html">Web</a></li>
         </ul>
         <ul>
           <li><a href="../javaRef/index.html">Java</a></li>
@@ -73,22 +73,955 @@
               <li><a href="#Links_refs">References</a></li>
             </ul>
           </li>
+          <li class="liOpen"><a href="#ABC">Альфабэт вэб-распрацоўкі</a>
+            <ul>
+              <!--li><a href="#Links_home">Home</a></li>
+              <li><a href="#Links_refs">References</a></li-->
+            </ul>
+          </li>
+          <li class="liOpen"><a href="#BuildSites">Пабудова сайтаў</a>
+            <ul>
+              <!--li><a href="#Links_home">Home</a></li>
+              <li><a href="#Links_refs">References</a></li-->
+            </ul>
+          </li>
+          <li class="liOpen"><a href="#Typography">Тыпаграфіка</a>
+            <ul>
+              <li><a href="#Typography_Blogs">Блогі</a></li>
+              <li><a href="#Typography_Theory">Тэорыя</a>
+                <ul>
+                  <li><a href="#Typography_Theory_Serif">Шрыфты <i>serif</i></a></li>
+                  <li><a href="#Typography_Theory_SansSerif">Шрыфты <i>sans serif</i></a></li>
+                </ul>
+              </li>
+              <li class="liOpen"><a href="#Typography_SystemFonts">Сыстэмныя шрыфты</a>
+                <ul>
+                  <li><a href="#Typography_SystemFonts_Stacks">Стэкі шрыфтоў</a>
+                    <ul>
+                      <li><a href="#Typography_SystemFonts_Stacks_Serif">Шрыфты <i>serif</i></a></li>
+                      <li><a href="#Typography_SystemFonts_Stacks_SansSerif">Шрыфты <i>sans serif</i></a></li>
+                      <li><a href="#Typography_SystemFonts_Stacks_Monospace">Роўнашырынны (<i>monospace</i>) шрыфт</i></a></li>
+                      <li><a href="#Typography_SystemFonts_Stacks_Handwritten">Рукапісны шрыфт</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#Typography_CombiningFonts">Спалучэньне шрыфтоў</a></li>
+                </ul>
+              </li>
+              <li class="liOpen"><a href="#Typography_NotSystemFonts">Несыстэмныя шрыфты</a>
+                <ul>
+                  <li><a href="#Typography_NotSystemFonts_Formats">Фарматы шрыфтоў</a>
+                    <ul>
+                      <li><a href="#Typography_NotSystemFonts_Formats_TrueType">TTF</a></li>
+                      <li><a href="#Typography_NotSystemFonts_Formats_OpenType">OTF</a></li>
+                      <li><a href="#Typography_NotSystemFonts_Formats_EOT">EOT</a></li>
+                      <li><a href="#Typography_NotSystemFonts_Formats_WOFF">WOFF</a></li>
+                      <li><a href="#Typography_NotSystemFonts_Formats_SVG">SVG</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#Typography_NotSystemFonts_Using">Выкарыстаньне</a></li>
+                  <li><a href="#Typography_NotSystemFonts_CatalogsStores">Каталёгі і крамы шрыфтоў</a>
+                    <ul>
+                      <li><a href="#Typography_NotSystemFonts_CatalogsStores_GoogleWebfonts">Google's WebFonts</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="liOpen"><a href="#TechnicsExamples">Тэхнікі і прыклады</a>
+            <ul>
+              <li><a href="#TechnicsExamples_Menu">Мэню</a>
+                <ul>
+                  <li><a href="#TechnicsExamples_Menu_Horizontal">Гарызантальныя</a>
+                    <ul>
+                      <li><a href="#TechnicsExamples_Menu_Horizontal_Dropdown">Спадаючае мэню з дапамогаю HTML5, CSS3 і jQuery</a></li>
+                      <li><a href="#TechnicsExamples_Menu_Horizontal_MegaDropdown">Спадаючае Mega-мэню з дапамогаю CSS3</a></li>
+                      <li><a href="#TechnicsExamples_Menu_Horizontal_LavaLamp">Мэню ў стылі Lava-Lamp</a></li>
+                      <li><a href="#TechnicsExamples_Menu_Horizontal_FlipedItems">Fliped-эфэкт</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#TechnicsExamples_Buttons">Кнопкі</a></li>
+              <li><a href="#TechnicsExamples_StickyNotes">Плаваючыя нататкі з дапамогай Local Storage</a></li>
+              <li><a href="#TechnicsExamples_FloatedBoxInParentBounds">Плаваючы бокс у межах бацькоўскага элемэнту</a></li>
+            </ul>
+          </li>
+          
+          <li class="liOpen"><a href="#Tools">Прылады</a>
+            <ul>
+              <li><a href="#Tools_ImagesCompression">Сьцісканьне выяваў</a></li>
+            </ul>
+          </li>
+          
+          <li class="liOpen"><a href="#Services">Сэрвісы</a>
+            <ul>
+              <li><a href="#Services_Amazon">Amazon</a></li>
+              <li><a href="#Services_Amazon">CAPTCHA</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
     
     <article id="main">
       <header>
-        Даведнік па канцэпцыям і дызайну Web сайтаў і аплікацыяў
+        Распрацоўка сайтаў і сеціўных праграмаў
       </header>
 
       <section>
-        <p class="intro">Гэты даведнік зьяўляецца кампіляцыяй матэрыялаў з розных крыніцаў для спрашчэньня пошуку найважнейшай інфармацыі па канцэпцыям і дызайну Web сайтаў і аплікацыяў, але пры гэтым аўтар не адказвае за абсалютную дасканаласьць і актуальнасьць усёй інфармацыі, што тут зьмяшчаецца, а, адпаведна, і за магчымыя негатыўныя наступствы ад любога выкарыстаньня гэтай інфармацыі.</p>
-        <p class="intro">Пры выяўленьні памылак, недакладнасьцей альбо пры наяўнасьці пажаданьняў нешта дадаць ці палепшыць зьвяртайцеся, калі ласка, праз форму зваротнай сувязі (статычная кнопка Feedback у правым баку экрана).</p>
         <h1><a name="Links">Карысныя спасылкі</a></h1>
         <h2><a name="Links_home">Home</a></h2>
         <h2><a name="Links_refs">References</a></h2>
+      </section>
+
+      <section><p>http://www.theuxbookmark.com/2010/08/interaction-design/a-monster-list-of-ui-guidelines-style-guides !!!</p>
+        <p>http://www.smashingmagazine.com/2011/05/05/innovative-techniques-to-simplify-signups-and-logins/</p>
+        <p>http://sickdesigner.com/index.php/2011/html-css/masonry-css-getting-awesome-with-css3/</p>
+      </section>
+      
+      <section>
+        <h1><a name="ABC">Альфабэт вэб-распрацоўкі</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/articles/the-abcs-of-web-development/">NetTuts+</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h1><a name="BuildSite">Пабудова сайтаў</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/site-builds/convert-a-warm-cheerful-web-design-to-html-and-css/">NetTuts+</a></li>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/design-a-beautiful-website-from-scratch/">Design a Beautiful Website From Scratch</a></li>
+            <li><a href="http://net.tutsplus.com/tutorials/design-tutorials/design-and-code-a-slick-website-from-scratch-%E2%80%93-part-i/">Design and Code a Slick Website from Scratch – Part I</a></li>
+          </ul>
+        </div>
+      </section>
+      
+      <section>
+        <h1><a name="Typography">Тыпаграфіка</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.squidspot.com/Periodic_Table_of_Typefaces/Wallpapers/PeriodicTable_1920.jpg">Periodic Table</a></li>
+            <li><a href="http://mrdouglaswood.files.wordpress.com/2010/04/soyouneedatypeface.jpg">Chart</a></li>
+            <li><a href="http://webdesignledger.com/inspiration/40-examples-of-beautiful-typography-in-web-design">Real Examples</a></li>
+          </ul>
+        </div>
+        <p><a href="http://webtypography.net/toc/">Кніга &laquo;Элемэнты друкарскага стылю ў сеціве&raquo;</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/typography-on-the-web/">An Analysis of Typography on the Web</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/six-ways-to-improve-your-web-typography/">6 Ways To Improve Your Web Typography</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/03/24/how-to-choose-a-typeface/">How to Choose a Typeface</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/">Technical Web Typography: Guidelines and Techniques</a></p>
+
+        <h2><a name="Typography_Blogs">Блогі</a></h2>
+        <table>
+          <tbody>
+            <tr>
+              <td width="25%"><a href="http://nicewebtype.com/">nicewebtype.com</a></td>
+              <td width="25%"><a href="http://ilovetypography.com/">ilovetypography.com</a></td>
+              <td width="25%"><a href="http://tdc.org/">tdc.org</a></td>
+              <td width="25%"><a href="http://typographica.org/">typographica.org</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2><a name="Typography_Theory">Тэорыя</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.bigbrandsystem.com/design-101-7-typographic-resources-and-1-type-joke/">bigbrandsystem.com</a></li>
+          </ul>
+        </div>
+        <p>Найбольш <strong>агульная</strong> рэкамэндацыя для ўжываньня шрыфтоў у сеціве&nbsp;&mdash; ужываць ня больш за 2 шрыфта і спалучаць <a href="#Typography_Theory_Serif">сэрыфны</a> і <a href="#Typography_Theory_SansSerif">несэрыфны</a> шрыфт для загалоўкаў і асноўнага тэксту.</p>
+
+        <h3><a name="Typography_Theory_Serif">Шрыфты <i>serif</i></a></h3>
+        <figure style="float: right;">
+          <img alt="Прыклад сэрыфнага шрыфту" title="Прыклад сэрыфнага шрыфту" src="../images/serif_example.png"/>
+          <figcaption class="imgcaption">Прыклад сэрыфнага шрыфту</figcaption>
+        </figure>
+        <p><a href="http://be-x-old.wikipedia.org/wiki/%D0%A1%D1%8D%D1%80%D1%8B%D1%84" title="Пра сэрыфны шрыфт на Вікіпэдыі">Сэрыфнымі</a> зьяўляюцца тыя шрыфты, на канцах знакаў каторых зьмяшчаюцца маленькія засечкі (штрыхі). Засечкі бываюць аднабаковымі і двухбаковымі, іх форма можа быць трохкутнай, прастакутнай, закругленай і г.д. Прыкладамі такіх шрыфтоў зьяўляюцца <i>Times New Roman</i> і <i>Georgia</i>. Іх стыль звычайна клясычны, афіцыйны. Добра падыходзяць для доўгіх блёкаў тэксту, таму звычайна ўжываюцца пры друку кніг і часопісаў.</p>
+
+        <h3><a name="Typography_Theory_SansSerif">Шрыфты <i>sans serif</i></a></h3>
+        <figure style="float: right;">
+          <img alt="Прыклад несэрыфнага шрыфту" title="Прыклад несэрыфнага шрыфту" src="../images/sans_serif_example.png"/>
+          <figcaption class="imgcaption">Прыклад несэрыфнага шрыфту</figcaption>
+        </figure>
+        <p>Несэрыфнымі зьяўляюцца шрыфты, на канцах знакаў каторых, адпаведна, адсутнічаюць тыя засечкі, каторыя прысутнічаюць у сэрыфных (<i>sans</i> перакладаецца з францускай як &laquo;без&raquo;). Прыкладамі такіх шрыфтоў зьяўляюцца <i>Arial</i> і <i>Verdana</i>. Яны выглядаюць сучасна, добра падыходзяць для загалоўкаў і інструкцыяў, вельмі часта выкарыстоўваюцца ў сеціве.</p>
+
+        <h2><a name="Typography_SystemFonts">Сыстэмныя шрыфты</a></h2>
+        <p>Нягледзячы на тое, што выбар убудаваных шрыфтоў даволі абмежаваны, трэба старацца ўжываць менавіта іх. Хаця ў розных сыстэмах (<i>Windows</i>, <i>Linux</i>, <i>Mac OS</i>) убудаванымі зьяўляюцца розныя шрыфты і гэта, здавалася б, звужвае кола выбару яшчэ больш. Але сярод розных шрыфтоў на розных сыстэмах можна знайсьці амаль цалкам супадаючыя па характарыстакам ці вельмі падобныя адзін на другі. Улічваючы гэтыя асаблівасьці, адмыслоўцамі былі састаўлены так званыя <em>стэкі шрыфтоў</em>&nbsp;&mdash; пералічэньні блізкіх па характарыстыкам шрыфтоў розных сыстэмаў. Такім чынам, калі старонка адкрываецца ў браўзэры, ён (браўзэр) спрабуе знайсьці сярод сыстэмных першы ў пералічэньні шрыфт, калі яго няма сярод сыстэмных, браўзэр бярэ наступны і гэтак далей да канца сьпісу. У канцы пералічэньня звычайна пазначаны шрыфт, каторы абавязкова існуе ўва ўсіх сыстэмах&nbsp;&mdash; гэта <code>serif</code> і <code>sans-serif</code> адпаведна, ў залежнасьці ад <a href="#Typography_Theory">сямейства шрыфта</a>.</p>
+
+        <h3><a name="Typography_SystemFonts_Stacks">Стэкі шрыфтоў</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.awayback.com/revised-font-stack/">Theory</a></li>
+            <li><a href="http://www.smashingmagazine.com/2009/09/22/complete-guide-to-css-font-stacks/">Guide</a></li>
+            <li><a href="http://www.codestyle.org/servlets/FontStack/">Stack builder</a></li>
+            <li><a href="http://www.typetester.org/">Compare fonts</a></li>
+            <li><a href="http://www.apaddedcell.com/web-fonts">Fonts in Win, Mac, Linux</a></li>
+          </ul>
+        </div>
+        <p>Тлом блакітнага і жоўтага колеру ў табліцах, прыведзеных ніжэй, згрупаваныя падобныя стэкі. Майце таксама на ўвазе, што адлюстраваньне шрыфтоў у апошняй калонцы гэтых табліцаў будзе трохі залежыць ад вашай сыстэмы і браўзэра.</p>
+
+        <h4><a name="Typography_SystemFonts_Stacks_Serif">Шрыфты <i>serif</i></a></h4>
+        <table class="font_stacks">
+          <thead>
+            <tr>
+              <th>Назва стэку з плагіну <a href="https://github.com/lloydk/font-stack/" title="font-stack плагін да фрэймворка Compass">font-stack</a> да фрэймворка <a href="../cssRef/index.html#Sass">Compass</a></th>
+              <th>Сьпіс шрыфтоў стэку</th>
+              <th>Прыклад</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="garamond">
+              <td class="font_stack_name"><code>$garamond-font-stack</code></td>
+              <td class="font_stack"><code>Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif</code></td>
+              <td id="garamond_example" class="font_example">"Garamond" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="didot">
+              <td class="font_stack_name"><code>$didot-font-stack</code></td>
+              <td class="font_stack"><code>Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif</code></td>
+              <td id="didot_example" class="font_example">"Didot" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="goudy_old_style">
+              <td class="font_stack_name"><code>$goudy-old-style-font-stack</code></td>
+              <td class="font_stack"><code>"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif</code></td>
+              <td id="goudy_old_style_example" class="font_example">"Goudy Old Style" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="baskerville">
+              <td class="font_stack_name"><code>$baskerville-font-stack</code></td>
+              <td class="font_stack"><code>Baskerville, "Baskerville old face", "Hoefler Text", Garamond, "Times New Roman", serif</code></td>
+              <td id="baskerville_example" class="font_example">"Baskerville" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="hoefler_text">
+              <td class="font_stack_name"><code>$hoefler-text-font-stack</code></td>
+              <td class="font_stack"><code>"Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif</code></td>
+              <td id="hoefler_text_example" class="font_example">"Hoefler Text" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="cambria">
+              <td class="font_stack_name"><code>$cambria-font-stack</code></td>
+              <td class="font_stack"><code>Cambria, Georgia, serif</code></td>
+              <td id="cambria_example" class="font_example">"Cambria" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="constantia">
+              <td class="font_stack_name"><code>$constantia-font-stack</code></td>
+              <td class="font_stack"><code>Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif</code></td>
+              <td id="constantia_example" class="font_example">"Constantia" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="palatino">
+              <td class="font_stack_name"><code>$palatino-font-stack</code></td>
+              <td class="font_stack"><code>Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif</code></td>
+              <td id="palatino_example" class="font_example">"Palatino" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="book_antiqua">
+              <td class="font_stack_name"><code>$book-antiqua-font-stack</code></td>
+              <td class="font_stack"><code>"Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif</code></td>
+              <td id="book_antiqua_example" class="font_example">"Book Antiqua" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="big_caslon">
+              <td class="font_stack_name"><code>$big-caslon-font-stack</code></td>
+              <td class="font_stack"><code>"Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif</code></td>
+              <td id="big_caslon_example" class="font_example">"Big Caslon" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="bodoni_mt">
+              <td class="font_stack_name"><code>$bodoni-mt-font-stack</code></td>
+              <td class="font_stack"><code>"Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif</code></td>
+              <td id="bodoni_mt_example" class="font_example">"Bodoni MT" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="lucida_bright">
+              <td class="font_stack_name"><code>$lucida-bright-font-stack</code></td>
+              <td class="font_stack"><code>"Lucida Bright", Georgia, serif</code></td>
+              <td id="lucida_bright_example" class="font_example">"Lucida Bright" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4><a name="Typography_SystemFonts_Stacks_SansSerif">Шрыфты <i>sans serif</i></a></h4>
+        <table class="font_stacks">
+          <thead>
+            <tr>
+              <th>Назва стэку з плагіну <a href="https://github.com/lloydk/font-stack/" title="font-stack плагін да фрэймворка Compass">font-stack</a> да фрэймворка <a href="../cssRef/index.html#Sass">Compass</a></th>
+              <th>Сьпіс шрыфтоў стэку</th>
+              <th>Прыклад</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="gill_sans">
+              <td class="font_stack_name"><code>$gill-sans-font-stack</code></td>
+              <td class="font_stack"><code>"Gill Sans", "Gill Sans MT", Calibri, sans-serif</code></td>
+              <td id="gill_sans_example" class="font_example">"Gill Sans" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="optima">
+              <td class="font_stack_name"><code>$optima-font-stack</code></td>
+              <td class="font_stack"><code>Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif</code></td>
+              <td id="optima_example" class="font_example">"Optima" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="segoe">
+              <td class="font_stack_name"><code>$segoe-font-stack</code></td>
+              <td class="font_stack"><code>Segoe, "Segoe UI", "Helvetica Neue", Arial, sans-serif</code></td>
+              <td id="segoe_example" class="font_example">"Segoe" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="calibri">
+              <td class="font_stack_name"><code>$calibri-font-stack</code></td>
+              <td class="font_stack"><code>Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif</code></td>
+              <td id="calibri_example" class="font_example">"Calibri" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="helvetica">
+              <td class="font_stack_name"><code>$helvetica-font-stack</code></td>
+              <td class="font_stack"><code>"Helvetica Neue", Arial, Helvetica, sans-serif</code></td>
+              <td id="helvetica_example" class="font_example">"Helvetica" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="geneva">
+              <td class="font_stack_name"><code>$geneva-font-stack</code></td>
+              <td class="font_stack"><code>Geneva, Tahoma, Verdana, sans-serif</code></td>
+              <td id="geneva_example" class="font_example">"Geneva" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="tahoma">
+              <td class="font_stack_name"><code>$tahoma-font-stack</code></td>
+              <td class="font_stack"><code>Tahoma, Geneva, Verdana, sans-serif</code></td>
+              <td id="tahoma_example" class="font_example">"Tahoma" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="verdana">
+              <td class="font_stack_name"><code>$verdana-font-stack</code></td>
+              <td class="font_stack"><code>Verdana, Geneva, sans-serif</code></td>
+              <td id="verdana_example" class="font_example">"Verdana" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="lucida_grande">
+              <td class="font_stack_name"><code>$lucida-grande-font-stack</code></td>
+              <td class="font_stack"><code>"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif</code></td>
+              <td id="lucida_grande_example" class="font_example">"Lucida Grande" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="trebuchet">
+              <td class="font_stack_name"><code>$trebuchet-font-stack</code></td>
+              <td class="font_stack"><code>"Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif</code></td>
+              <td id="trebuchet_example" class="font_example">"Trebuchet" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="futura">
+              <td class="font_stack_name"><code>$futura-font-stack</code></td>
+              <td class="font_stack"><code>Futura, "Trebuchet MS", Arial, sans-serif</code></td>
+              <td id="futura_example" class="font_example">"Futura" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="candara">
+              <td class="font_stack_name"><code>$candara-font-stack</code></td>
+              <td class="font_stack"><code>Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif</code></td>
+              <td id="candara_example" class="font_example">"Candara" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+            <tr id="franklin_gothic">
+              <td class="font_stack_name"><code>$franklin-gothic-font-stack</code></td>
+              <td class="font_stack"><code>"Franklin Gothic Medium", Arial, sans-serif</code></td>
+              <td id="franklin_gothic_example" class="font_example">"Franklin Gothic" based font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4><a name="Typography_SystemFonts_Stacks_Monospace">Роўнашырынны (<i>monospace</i>) шрыфт</a></h4>
+        <table class="font_stacks">
+          <thead>
+            <tr>
+              <th>Назва стэку з плагіну <a href="https://github.com/lloydk/font-stack/" title="font-stack плагін да фрэймворка Compass">font-stack</a> да фрэймворка <a href="../cssRef/index.html#Sass">Compass</a></th>
+              <th>Сьпіс шрыфтоў стэку</th>
+              <th>Прыклад</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="monospace">
+              <td class="font_stack_name"><code>$monospace-font-stack</code></td>
+              <td class="font_stack"><code>"Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace</code></td>
+              <td id="monospace_example" class="font_example">"Monospace" font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4><a name="Typography_SystemFonts_Stacks_Handwritten">Рукапісны шрыфт</a></h4>
+        <table class="font_stacks">
+          <thead>
+            <tr>
+              <th>Назва стэку з плагіну <a href="https://github.com/lloydk/font-stack/" title="font-stack плагін да фрэймворка Compass">font-stack</a> да фрэймворка <a href="../cssRef/index.html#Sass">Compass</a></th>
+              <th>Сьпіс шрыфтоў стэку</th>
+              <th>Прыклад</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="handwritten">
+              <td class="font_stack_name"><code>$cursive-font-stack</code></td>
+              <td class="font_stack"><code>"Bradley Hand ITC", "Apple Chancery", "URW Chancery L", cursive</code></td>
+              <td id="handwritten_example" class="font_example">"handwritten" font
+                <p class="colored_header_example">Colored header</p>
+                <p class="capitalized_example">Пример всех заглавных</p>
+                <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3><a name="Typography_SystemFonts_Combining">Спалучэньне шрыфтоў</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.peatah.org/combinations2.html">Typeface combinations</a></li>
+            <li><a href="http://www.typography.com/email/2010_03/index_tw.htm">4 technics for combining fonts</a></li>
+            <li><a href="http://www.as8.it/handouts/mixing-typefaces_U&lc1992.pdf">Mixing typefaces</a></li>
+            <li><a href="http://bonfx.com/19-top-fonts-in-19-top-combinations/">19 top fonts in 19 top combinations</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="Typography_NotSystemFonts">Несыстэмныя шрыфты</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.smashingmagazine.com/2011/03/02/the-font-face-rule-revisited-and-useful-tricks/">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>Пры дапамозе <a href="../cssRef/index.html#At-rules">дырэктывы <span class="term">CSS</span></a> <a href="../cssRef/index.html#At-rules_font-face"><code class="at_rule">&#64;font-face</code></a> можна ўбудоўваць фактычна любы шрыфт, прыўносячы дызайнэрскую разнастайнасьць у сайты і сеціўныя праграмы. Хаця выкарыстоўваць дадатковыя, несыстэмныя шрыфты трэба з асьярогаю, таму што іх трэба запампаваць на кампутар карыстальніка, што, натуральна, робіць сайты і праграмы больш &laquo;цяжкімі&raquo;.</p>
+
+        <h3><a name="Typography_NotSystemFonts_Formats">Фарматы шрыфтоў</a></h3>
+        <p>Перш за ўсё разгледзем існые фарматы сеціўных шрыфтоў. На самай справе іх існуе вялікая колькасьць, таму спынімся толькі на асноўных зь іх.</p>
+
+        <h4><a name="Typography_NotSystemFonts_Formats_TrueType">TrueType (TTF)</a></h4>
+        <p>Гэты фармат быў распрацаваны ў канцы 80-х як альтэрнатыва <a href="http://www.adobe.com/" title="Adobe site">Адобаўскім</a> <i>Type 1</i> шрыфтам, якія выкарыстоўваліся ў <i>PostScript</i>. Як маштабуемы вектарны шрыфт ён выціснуў растравыя шрыфты, каторыя выкарыстоўваліся на той час у кампутарнай тэхніцы. Пасьля <a href="http://microsoft.com/" title="Сайт Microsoft"><i>Microsoft</i></a> абрала гэты фармат для сваіх сыстэмных шрыфтоў.</p>
+
+        <h4><a name="Typography_NotSystemFonts_Formats_OpenType">OpenType (OTF)</a></h4>
+        <p>Пры распрацоўцы гэтага фармату <i>Microsoft</i> і <i>Adobe</i> аб'ядналі свае высілкі. Грунтуючыся на фармаце <i>TrueType</i> у яго былі дададзены дадатковыя друкарскія ўласьцівасьці, хаця іх падтрымка ў браўзэрах дагэтуль незадавальняючая. У залежнасьці ад тэхналёгіі фармаваньня абрысу шрыфта існуе дзьве вэрсіі гэтага фармату:</p>
+        <ul>
+          <li><i>OpenType</i> шрыфты з контурнай тэхналёгіяй <i>TrueType</i> і</li>
+          <li><i>OpenType</i> шрыфты з контурнай тэхналёгіяй <i>PostScript</i>.</li>
+        </ul>
+        <p>Шрыфты з контурнай тэхналёгіяй <i>PostScript</i> адлюстроўваюцца на <i>Windows</i>-плятформах без <i>subpixel rendering</i>, што значна ўплывае на якасьць адлюстраваньня. Таму, нягледзячы на тое, што <i>Microsoft</i> абяцае вырашыць гэтую праблему ў будучым, лепш выкарыстоўваць шрыфты з контурнай тэхналёгіяй <i>TrueType</i>.</p>
+
+        <h4><a name="Typography_NotSystemFonts_Formats_EOT">EOT</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://eotfast.com/">TTF to EOT conversion</a></li>
+          </ul>
+        </div>
+        <p><i>Internet Explorer</i> з канца 90-х ужывае нявольны стандарт <i>Embedded OpenType</i>. Гэта варыяцыя ад фарматаў <i>TrueType</i> і <i>OpenType</i>, каторая мае наступныя дадатковыя ўласьцівасьці:</p>
+        <ul>
+          <li><i>EOT</i> шрыфты зьяўляюцца кампактнай формай <i>OpenType</i>, каторая аптымізавана для хуткай дастаўкі праз сьцісканьне даных.</li>
+          <li>Пры дапамозе мэханізму <abbr class="term" title="Uniform Resource Locator">URL</abbr>-зьвязкі шрыфты <i>EOT</i> могуць быць абмежаваны пэўнымі даменамі&nbsp;&mdash; ўжывацца толькі ў іх межах, што вырашае праблему незаконнага ўжываньня нявольных шрыфтоў.</li>
+        </ul>
+        <p>Нягледзячы на тое, што гэты фармат хутчэй за ўсё ня мае патэнцыялу заняць месца стандарту для сеціўных шрыфтоў, яго нельга скідваць з рахунку на сёняшні дзень, таму што вэрсіі IE&lt;9 не падтрымліваюць больш ніякіх фарматаў.</p>
+
+        <h4><a name="Typography_NotSystemFonts_Formats_WOFF">WOFF</a></h4>
+        <p>У адрозьненьні ад <i>EOT</i>, <i>Web Open Font Format</i> (WOFF) разглядаецца <a href="http://W3C.com/" title="Сайт W3C">W3C</a> у якасьці магчымага стандарту для сеціўных шрыфтоў. На самай справе гэта нават не самайстойны фармат, а абгортка для шрыфтоў <i>OpenType</i> і <i>TrueType</i>. Гэты фармат выкарыстоўвае інтэграваны альгарытм сьцісканьня <i>zlib</i>, што дазваляе сьціскаць шрыфты <i>TrueType</i> на больш, чым 40%. Фармат падтрымліваецца браўзэрамі <a href="http://www.mozilla.com/be/firefox/" title="Сайт Firefox"><i>Firefox</i></a> пачынаючы з вэрсіі 3.6 і <a href="http://www.google.com/chrome/?hl=be" title="Сайт Chrome" target="_blank"><i>Chrome</i></a> пачынаючы з вэрсіі 5.0.</p>
+
+        <h4><a name="Typography_NotSystemFonts_Formats_SVG">SVG</a></h4>
+        <p>Даволі экзатычны фармат, каторы таксама ня мае перспэктываў, з-за некаторых сваіх недахопаў, напрыклад, немагчымасьці сьцісканьня. Аднак, у апэрацыйных сыстэмах <i>iOS</i> (для прыладаў <i>iPhone</i> і <i>iPad</i>) да вэрсіі 4.2 (восень 2010) выкарыстоўваўся толькі гэты фармат. Пры дапамозе <a href="http://www.fontsquirrel.com/fontface/generator">генератара Fontsquirrel</a> можна сканвэртаваць шрыфт ў гэты фармат.</p>
+
+        <h3><a name="Typography_NotSystemFonts_Using">Выкарыстаньне</a></h3>
+        <p>Як на практыцы ўжываць несыстэмныя шрыфты глядзіце <a href="../cssRef/index.html#At-rules_font-face">дапаможнік па CSS</a>.</p>
+
+        <h3><a name="Typography_NotSystemFonts_CatalogsStores">Каталёгі і крамы шрыфтоў</a></h3>
+        <p><a href="http://www.smashingmagazine.com/2010/10/20/review-of-popular-web-font-embedding-services/">http://www.smashingmagazine.com/2010/10/20/review-of-popular-web-font-embedding-services/</a></p>
+        <p>Несыстэмныя шрыфты можна вольна спампаваць ці набыць нявольныя на наступных рэсурсах:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Бясплатныя</th>
+              <th colspan="2">Платныя</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://www.fontsquirrel.com/">fontsquirrel.com</a></td>
+              <td><a href="http://typekit.com/">typekit.com</a></td>
+              <td><a href="http://fontdeck.com/">fontdeck.com</a></td>
+            </tr>
+            <tr>
+              <td><a href="http://www.searchfreefonts.com/">searchfreefonts.com</a></td>
+              <td><a href="http://www.fontshop.com/">fontshop.com</a></td>
+              <td><a href="http://www.fonts.com/">fonts.com</a></td>
+            </tr>
+            <tr>
+              <td><a href="http://www.dafont.com/">dafont.com</a></td>
+              <td><a href="http://new.myfonts.com/">new.myfonts.com</a></td>
+              <td><a href="http://www.webtype.com/">webtype.com</a></td>
+            </tr>
+            <tr>
+              <td><a href="http://www.urbanfonts.com/">urbanfonts.com</a></td>
+              <td><a href="http://www.fontspring.com/">fontspring.com</a></td>
+              <td><a href="http://www.fonthead.com/">fonthead.com</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4><a name="Typography_NotSystemFonts_CatalogsStores_GoogleWebfonts">Google's WebFonts</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://code.google.com/apis/webfonts/">Home</a></li>
+          </ul>
+        </div>
+        <p>Трохі асобнай групай стаіць каталёг шрыфтоў ад <i>Google</i> з-за таго, што ён не дае магчымасьць спампаваць сам шрыфт, а толькі спаслацца адмысловай <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-інструкцыяй да адпаведнага шрыфту, каторы фізычна захоўваецца на магутнасьцях <i>Google</i>:</p>
+        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+        <html>
+        <head>
+          <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+          <style>
+            body {
+              font-family: 'Tangerine', serif;
+              font-size: 48px;
+            }
+          </style>
+        </head>
+        <body>
+          <h1>Making the Web Beautiful!</h1>
+        </body>
+        </html>
+        ]]></script>
         
+        <h3><a name="Typography_NotSystemFonts_Selected">Абраныя несыстэмныя шрыфты</a></h3>
+        <table class="font_stacks">
+          <tbody>
+            <tr>
+              <td id="aller_example" class="not_system_font_example">
+                <a href="../fonts/Aller/FontFace_Regular\AllerRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Aller" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="aller_light_example" class="not_system_font_example">
+                <a href="../fonts/Aller/FontFace_Light/AllerLightRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Aller Light" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="cantarell_example" class="not_system_font_example">
+                <a href="../fonts/Cantarell/FontFace_Regular/CantarellRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Cantarell" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="carto_gothic_example" class="not_system_font_example">
+                <a href="../fonts/CartoGothic/FontFace_Regular/CartoGothicStdBook-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Carto Gothic Std Book" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="delicious_example" class="not_system_font_example">
+                <a href="../fonts/Delicious/FontFace_Regular/DeliciousRoman-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Delicious" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="fertigo_pro_example" class="not_system_font_example">
+                <a href="../fonts/FertigoPro/FontFace_Regular/FertigoProRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Fertigo Pro" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="diavlo_medium_example" class="not_system_font_example">
+                <a href="../fonts/Diavlo/FontFace_Medium/DiavloMedium-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Diavlo Medium" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="diavlo_light_example" class="not_system_font_example">
+                <a href="../fonts/Diavlo/FontFace_Light/DiavloLight-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Diavlo Light" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="fontin_sans_example" class="not_system_font_example">
+                <a href="../fonts/FontinSans/FontFace_Regular/FontinSansCRRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Fontin Sans" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="museo_sans_example" class="not_system_font_example">
+                <a href="../fonts/MuseoSans/FontFace/MuseoSans500-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Museo Sans" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="junction_example" class="not_system_font_example">
+                <a href="../fonts/Junction/FontFace_Regular/junctionregularRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Junction" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="mg_open_cosmetica_example" class="not_system_font_example">
+                <a href="../fonts/MgOpen/FontFace_CosmeticaRegular/MgOpenCosmeticaRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "MG Open Cosmetica" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="gentium_basic_example" class="not_system_font_example">
+                <a href="../fonts/GentiumBasic/FontFace_Regular/GentiumBasicRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Gentium Basic" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="nadia_serif_example" class="not_system_font_example">
+                <a href="../fonts/NadiaSerif/FontFace/NadiaSerifNormal-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Nadia Serif" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="nobile_example" class="not_system_font_example">
+                <a href="../fonts/Nobile/FontFace_Regular/NobileRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Nobile" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="pt_sans_example" class="not_system_font_example">
+                <a href="../fonts/PTSans/FontFace_Regular/PTSansRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "PT Sans" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+              <td id="pt_sans_narrow_example" class="not_system_font_example">
+                <a href="../fonts/PTSans/FontFace_NarrowRegular/PTSansNarrowRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "PT Sans Narrow" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+              <td id="pt_sans_narrow_bold_example" class="not_system_font_example">
+                <a href="../fonts/PTSans/FontFace_NarrowBold/PTSansNarrowBold-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "PT Sans Narrow Bold" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="pt_sans_caption_example" class="not_system_font_example">
+                <a href="../fonts/PTSans/FontFace_CaptionRegular/PTSansCaptionRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "PT Sans Caption" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+              <td id="open_sans_condensed_example" class="not_system_font_example">
+                <a href="../fonts/OpenSansCondensed/FontFace_Light/OpenSansCondensedLight-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Open Sans Condensed" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+              <td id="romeral_example" class="not_system_font_example">
+                <a href="../fonts/Romeral/FontFace/RomeralRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Romeral" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="titillium_example" class="not_system_font_example">
+                <a href="../fonts/TitilliumText/FontFace_Regular/TitilliumText22LRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Titillium" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="titillium_thin_example" class="not_system_font_example">
+                <a href="../fonts/TitilliumText/FontFace_Thin/TitilliumText22LThin-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Titillium Thin" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="titillium_light_example" class="not_system_font_example">
+                <a href="../fonts/TitilliumText/FontFace_Light/TitilliumText22LLight-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Titillium Light" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="sansation_example" class="not_system_font_example">
+                <a href="../fonts/Sansation/FontFace_Regular/SansationRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Sansation" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="sansation_light_example" class="not_system_font_example">
+                <a href="../fonts/Sansation/FontFace_Light/SansationLight-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Sansation Light" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="yanone_kaffeesatz_light_example" class="not_system_font_example">
+                <a href="../fonts/YanoneKaffeesatz/FontFace_Light/YanoneKaffeesatzLight-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Yanone Kaffeesatz Light" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="droid_sans_example" class="not_system_font_example">
+                <a href="fonts/DroidSans/FontFace_Regular/DroidSansRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Droid Sans" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+              <td id="district_thin_example" class="not_system_font_example">
+                <a href="fonts/DistrictThin/FontFace_Regular/DistrictThinRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "District Thin" font
+                  <p class="colored_header_example">Colored header</p>
+                </a>
+              </td>
+              <td id="hattori_hanzo_light_example" class="not_system_font_example">
+                <a href="fonts/HattoriHanzo/FontFace_Light/HattoriHanzoLight-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Hattori Hanzo Light" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td id="ubuntu_light_example" class="not_system_font_example">
+                <a href="fonts/DroidSans/FontFace_Regular/DroidSansRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Ubuntu Light" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+              <td id="century_gothic_example" class="not_system_font_example">
+                <a href="fonts/CenturyGothic/FontFace/CenturyGothicRegular-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                  "Century Gothic" font
+                  <p class="colored_header_example">Colored header</p>
+                  <p class="capitalized_example">Пример всех заглавных</p>
+                  <p class="small_grayed_example">Малы шрыфт шэрым колерам</p>
+                </a>
+              </td>
+              <td id="hattori_hanzo_light_example" class="not_system_font_example">
+                <a href="fonts/HattoriHanzo/FontFace_Light/HattoriHanzoLight-demo.html" title="Перайсьці да больш падрабязнага агляду шрыфта">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h1><a name="TechnicsExamples">Тэхнікі і прыклады</a></h1>
+        
+        <h2><a name="TechnicsExamples_Menu">Мэню</a></h2>
+        
+        <h3><a name="TechnicsExamples_Menu_Horizontal">Гарызантальныя</a></h3>
+        
+        <h4><a name="TechnicsExamples_Menu_Horizontal_Dropdown">Спадаючае мэню з дапамогаю HTML5, CSS3 і jQuery</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/how-to-create-a-drop-down-nav-menu-with-html5-css3-and-jquery/">NetTuts+</a></li>
+          </ul>
+        </div>
+        
+        <h4><a name="TechnicsExamples_Menu_Horizontal_MegaDropdown">Спадаючае Mega-мэню з дапамогаю CSS3</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/how-to-build-a-kick-butt-css3-mega-drop-down-menu/">NetTuts+</a></li>
+          </ul>
+        </div>
+        
+        <h4><a name="TechnicsExamples_Menu_Horizontal_LavaLamp">Мэню ў стылі Lava-Lamp</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/how-to-build-a-lava-lamp-style-navigation-menu/">NetTuts+</a></li>
+          </ul>
+        </div>
+        
+        <h4><a name="TechnicsExamples_Menu_Horizontal_FlipedItems">Fliped-эфэкт</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-how-to-write-a-neat-flipnav-script/">NetTuts+</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="TechnicsExamples_Buttons">Кнопкі</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/build-awesome-practical-css3-buttons/">NetTuts+</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="TechnicsExamples_Forms">Формы</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/build-awesome-practical-css3-buttons/">NetTuts+</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/how-to-build-cross-browser-html5-forms/">How to Build Cross-Browser HTML5 Forms</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/rethinking-forms-in-html5/">Rethinking Forms in HTML5</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/design-a-prettier-web-form-with-css-3/">Design a Prettier Web Form with CSS 3</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/build-a-neat-html5-powered-contact-form/">Build a Neat HTML5 Powered Contact Form</a></p>
+        <p><a href="http://www.smashingmagazine.com/2008/04/17/web-form-design-modern-solutions-and-creative-ideas/">Web Form Design: Modern Solutions and Creative Ideas</a></p>
+        <p><a href="http://www.noupe.com/css/form-elements-40-cssjs-styling-and-functionality-techniques.html">Form Elements: 40+ CSS/JS Styling and Functionality Techniques</a></p>
+        <p><a href="http://www.smileycat.com/design_elements/blog_comment_forms/">Прыклады формаў</a></p>
+
+        <h2><a name="TechnicsExamples_StickyNotes">Плаваючыя нататкі з дапамогай Local Storage</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/building-persistant-sticky-notes-with-local-storage/">NetTuts+</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-learning-about-html5-local-storage/">And more about Local Storage</a></p>
+        
+        <h2><a name="TechnicsExamples_FloatedBoxInParentBounds">Плаваючы бокс у межах бацькоўскага элемэнту</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/spotlight-constrained-stickies-with-jquer/">NetTuts+</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h1><a name="Tools">Прылады</a></h1>
+        <h2><a name="Tools_Compression">Сьцісканьне выяваў</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.smushit.com/ysmush.it/">Smush.it</a></li>
+          </ul>
+        </div>
+      </section>
+      
+      <section>
+        <h1><a name="Services">Сэрвісы</a></h1>
+        
+        <h2><a name="Services_Amazon">Amazon</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://aws.amazon.com/s3/">S3 - Storage</a></li>
+            <li><a href="http://aws.amazon.com/cloudfront/">CloudFront - CDN</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/other/using-aws-s3-to-power-your-digital-world/">Using AWS S3 to Power Your Digital World</a></p>
+        
+        <h2><a name="Services_Amazon">CAPTCHA</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://mollom.com/">mollom.com</a></li>
+            <li><a href="http://defensio.com/">defensio.com</a></li>
+            <li><a href="http://akismet.com/">akismet.com</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <br /> <br />
         <p>Элемэнт <i>Feedback</i> на сайце ад <code>getsatisfaction.com</code>: <a href="https://getsatisfaction.com/langaroo">home</a>, <a href="https://getsatisfaction.com/langaroo/admin/widgets">widgets</a></p>
         <br /><br />
         <p>Responsive Web Design: <a href="http://www.alistapart.com/articles/responsive-web-design/">A list apart</a>, <a href="http://blogs.sitepoint.com/2011/01/11/responsive-web-design-with-html5-and-the-less-framework-3/">SitePoint</a>. Examples: <a href="http://www.stephencaver.com/">stephencaver.com</a>, <a href="http://www.hicksdesign.co.uk/">hicksdesign.co.uk</a>. Рэалізацыя на <a href="http://cssgrid.net/">cssgrid.com</a></p>
@@ -97,24 +1030,55 @@
           <a href="http://www.dynamicdrive.com/style/layouts/item/css-liquid-layout-21-fixed-fluid/">www.dynamicdrive.com</a></p>
         
         <p><a href="http://snook.ca/archives/design/">snook.ca</a></p>
-        
-        <p><a href="http://mrdouglaswood.files.wordpress.com/2010/04/soyouneedatypeface.jpg">Typeface chart</a></p>
-        
         <p><a href="http://www.onextrapixel.com/2010/10/06/pixel-art-create-a-better-favicon-for-your-website/">Pixel Art: Create a Better Favicon For Your Website</a></p>
         
         <p><a href="http://labs.dragoninteractive.com/rainbows_manual.php">Manual of Dragon Labs' Rainbow</a></p>
         
-        <p><a href="http://code.google.com/apis/webfonts/">Google's WebFonts</a></p>
-        <p><a href="http://www.smashingmagazine.com/2009/09/22/complete-guide-to-css-font-stacks/">Guide to CSS Font Stacks: Techniques and Resources</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/html5-and-css3-without-guilt/">HTML5 and CSS3 Without Guilt</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/take-advantage-of-css3-to-achieve-subtle-design/">Take Advantage of CSS3 to Achieve Subtle Design</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-practical-css-shapes/">Fold effect</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-intricacies-of-simplicity-css3/">The Intricacy of Simplicity: CSS3</a></p>
+
+        <p><a href="http://dev.opera.com/articles/view/the-mobile-web-optimization-guide">mobile web optimization guide</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/flexible-mobile-first-layouts-with-css3/">Flexible, Mobile-First Layouts with CSS3</a></p>
         
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/20-email-design-best-practices-and-resources-for-beginners/">20 Email Design Best Practices and Resources for Beginners</a></p>
         
-        <p><a href="http://psd.tutsplus.com/">psd.tutsplus.com</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/learn-how-to-create-a-retro-animated-flip-down-clock/">Learn how to Create a Retro Animated Flip-Down Clock</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-getting-clever-with-css3-shadows/">Quick Tip: Getting Clever with CSS3 Shadows</a></p>
+        <p><a href="http://www.smashingmagazine.com/2009/06/23/10-ui-design-patterns-you-should-be-paying-attention-to/">10 UI Design Patterns You Should Be Paying Attention To</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/03/29/designing-for-the-future-web/">Designing For The Future Web</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/03/23/speeding-up-your-websites-database/">Speeding Up Your Website’s Database</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/02/03/bringing-interactivity-to-your-website-with-web-standards/">Bringing Interactivity To Your Website With Web Standards</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/02/08/useful-web-services-tools-and-resources-for-web-designers/">Useful Web Services, Tools and Resources For Web Designers</a></p>
+
+        <p><a href="http://webdesigneraid.com/roundup-of-usability-testing-tools-for-web-designers-and-developers/">Roundup of Usability Testing Tools for Web Designers and Developers</a></p>
+
+        <p>http://briefix.com/</p>
+
+        <p><a href="http://webdesigneraid.com/top-3-free-wireframing-and-mockup-tools-lumzy-mockup-builder-and-tiggr-compared-and-reviewed/">Top 3 FREE Wireframing and Mockup Tools – Lumzy, Mockup Builder and Tiggr Compared and Reviewed</a></p>
+        <p><a href="http://webdesigneraid.com/8-new-premium-and-free-project-management-tools-for-tracking-your-business/">8 New Premium and Free Project Management Tools For Tracking Your Business</a></p>
+
+        <p><a href="http://webdesign.tutsplus.com/tutorials/site-elements/create-a-simple-user-interface-kit-from-scratch-themeroller-fw-phase/">Create A Simple User Interface Kit From Scratch (Themeroller + FW Phase!)</a></p>
+        <p><a href="http://webdesign.tutsplus.com/tutorials/create-a-sleek-corporate-web-design-part-13/">Create a Sleek, Corporate Web Design (HD Video Series: Day 1) </a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/05/24/building-an-effective-coming-soon-page-for-your-product/">Building An Effective ‘Coming Soon’ Page For Your Product</a></p>
+        <p><a href="http://www.smashingmagazine.com/2009/11/10/designing-coming-soon-pages/">Designing “Coming Soon” Pages</a></p>
+        <p><a href="http://coding.smashingmagazine.com/2011/06/16/five-useful-interactive-css-jquery-techniques-deconstruted/">Five Useful Interactive CSS/jQuery Techniques Deconstructed</a></p>
+        <p><a href="http://www.campaignmonitor.com/css/">Guide to CSS support in email</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-submit-a-form-with-control-enter/">How to Submit a Form with Control + Enter</a></p>
+        <p><a href="http://www.spritecow.com/">Sprite Cow - дапамога ў выбары пазіцыі і памераў спрайтаў у спрайт-выявах.</a></p>
+        
+        <p><a href="http://www.bookofspeed.com/index.html">BOOK OF SPEED</a></p>
+        <p><a href="http://pagespeed.googlelabs.com/">http://pagespeed.googlelabs.com</a></p>
+        
         <br />
 	http://no-www.org/
 	<br />
         <p><a href="http://www.javascriptkit.com/howto/htaccess.shtml">Comprehensive guide to .htaccess</a></p>
+        <p><a href="http://www.javascriptkit.com/howto/robots.shtml">Introduction to robots.txt</a></p>
         <p><a href="https://github.com/paulirish/html5-boilerplate/blob/master/.htaccess#L9-17">html5-boilerplate / .htaccess</a></p>
         <p><a href="http://serverfault.com/questions/215203/performance-wise-htaccess">performance wise htaccess</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/other/a-deeper-look-at-mod_rewrite-for-apache/">An In Depth Guide to mod_rewrite for Apache</a></p>
         <br />
         <p><a href="http://www.w3.org/WAI/intro/aria/">WAI-ARIA (Accessible Rich Internet Applications Suite) Overview</a></p>
         
@@ -126,7 +1090,6 @@
           <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
             <ul>
               <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
-              <li><a href="http://www.caodesigns.com/blog/free-stuff/jquery-active-menu-plugin-2.php">Active Menu</a>&nbsp;&mdash; дадатак да jQuery, каб пазначаць цяперашні разьдзел у каталёгу даведнікаў</li>
               <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
               <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
               <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
@@ -173,13 +1136,6 @@
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
-    
-  <script src="../js/mylibs/jquery.activeMenu.js"></script>
-  <script>
-    $(document).ready(function(){ 
-      $('#main_index ul').activeMenu(); 
-    }); 
-  </script>
 
   <script src="../js/mylibs/mktree.js"></script>
   <script src="../js/mylibs/xregexp.js"></script>

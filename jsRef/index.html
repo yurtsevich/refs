@@ -13,8 +13,8 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Тэхнічны даведнік па JavaScript</title>
-  <meta name="description" content="Тэхнічны даведнік па JavaScript">
+  <title>Даведнік па JavaScript</title>
+  <meta name="description" content="Даведнік па JavaScript">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -27,7 +27,7 @@
 
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
-  <link rel="stylesheet" href="../css/style.css?v=1">
+  <link rel="stylesheet" href="../css/screen.css?v=1">
   <link rel="stylesheet" href="../css/mktree.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeRDark.css?v=1">
@@ -51,7 +51,7 @@
         <ul>
           <li><a href="../htmlRef/index.html">HTML</a></li>
           <li><a href="../cssRef/index.html">CSS</a></li>
-          <li><a href="../jsRef/index.html">JS</a></li>
+          <li class="active"><a href="../jsRef/index.html">JS</a></li>
           <li><a href="../webRef/index.html">Web</a></li>
         </ul>
         <ul>
@@ -74,6 +74,26 @@
               <li><a href="#Links_refs">References</a></li>
             </ul>
           </li>
+          
+          <li class="liOpen"><a href="#Frameworks">Фрэймворкі</a>
+            <ul>
+              <li><a href="#Frameworks_jQuery">jQuery</a></li>
+              <li><a href="#Frameworks_YUI">Yahoo UI</a></li>
+              <li><a href="#Frameworks_Prototype">Prototype</a></li>
+              <li><a href="#Frameworks_MooTools">MooTools</a></li>
+              <li><a href="#Frameworks_Node.js">Node.js</a></li>
+            </ul>
+          </li>
+          
+          <li class="liOpen"><a href="#Tools">Прылады</a>
+            <ul>
+              <li><a href="#Tools_Compression">Сьцісканьне скрыптоў</a></li>
+              <li><a href="#Tools_GoodPractices">Добрая практыка</a></li>
+              <!--li><a href="#Frameworks_Prototype">Prototype</a></li>
+              <li><a href="#Frameworks_MooTools">MooTools</a></li>
+              <li><a href="#Frameworks_Node.js">Node.js</a></li-->
+            </ul>
+          </li>
         </ul>
       </div>
     </div>
@@ -84,14 +104,215 @@
       </header>
 
       <section>
-        <p class="intro">Гэты даведнік зьяўляецца кампіляцыяй матэрыялаў з розных крыніцаў для спрашчэньня пошуку найважнейшай інфармацыі па выкарыстаньні дынамічнай мовы праграмаваньня для вэбу JavaScript, але пры гэтым аўтар не адказвае за абсалютную дасканаласьць і актуальнасьць усёй інфармацыі, што тут зьмяшчаецца, а, адпаведна, і за магчымыя негатыўныя наступствы ад любога выкарыстаньня гэтай інфармацыі.</p>
-        <p class="intro">Пры выяўленьні памылак, недакладнасьцей альбо пры наяўнасьці пажаданьняў нешта дадаць ці палепшыць зьвяртайцеся, калі ласка, праз форму зваротнай сувязі (статычная кнопка Feedback у правым баку экрана).</p>
         <h1><a name="Links">Карысныя спасылкі</a></h1>
         <h2><a name="Links_home">Home</a></h2>
         <h2><a name="Links_refs">References</a></h2>
       </section>
 
-      <p><a href="http://api.jquery.com/">JQuery API</a></p>
+      <section>
+        <p>Лагіраваньне і дэбаг у JavaScript. Прасьцейшы спосаб&nbsp;&mdash; вывад інфармацыі ў кансоль <a href="http://getfirebug.com/" title="Firebug home page">Firebug</a>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          function log(obj){
+            if (window.console && console.log) {
+              console.log(obj);
+            }
+          }
+        ]]></script>
+      </section>
+
+      <section>
+        <p><a href="http://net.tutsplus.com/series/javascript-from-null-series/">JavaScript from Null</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-test-your-javascript-code-with-qunit/">How to Test your JavaScript Code with QUnit</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/testing-your-javascript-with-jasmine/">Testing Your JavaScript with Jasmine</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/test-driven-javascript-development-in-practice/">Test-Driven JavaScript Development in Practice</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/top-10-things-that-javascript-got-wrong/">Top 10 Things that JavaScript Got Wrong</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-javascript-event-delegation-in-4-minutes/">JavaScript Event Delegation in 4 Minutes</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/whats-new-in-javascript-1-8-5/">What’s new in JavaScript 1.8.5</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-calling-javascript-methods-on-other-objects/">Quick Tip: Calling JavaScript Methods on Other Objects</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/extreme-javascript-performance/">Extreme JavaScript Performance</a></p>
+        <p><a href="http://learn.appendto.com/">Learn jQuery &amp; JavaScript for free</a></p>
+        <p><a href="https://www.proxino.com/">Proxino: optimize and monitor your JavaScript</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/into-the-ring-with-knockout-js-part-2-the-rematch/">Into the Ring with knockout.js: Part 2 – the Rematch</a></p>
+        <p><a href="http://vintagejs.com/">Add retro-look to your images</a></p>
+        <p><a href="http://josscrowcroft.github.com/accounting.js/">Library for number, money and currency formatting</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/">The Essentials of Writing High Quality JavaScript</a></p>
+        
+        <h3><a name="JavaScript_Plugins">Плагіны</a></h3>
+        <p><a href="http://www.javascriptkit.com/cutpastejava.shtml">Сьпіс плагінаў</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/04/07/useful-javascript-and-jquery-tools-libraries-plugins/">Useful JavaScript and jQuery Tools, Libraries, Plugins</a></p>
+        <p><a href="http://markdalgleish.com/projects/fathom/">Fathom.js - прэзэнтацыі на JavaScript</a></p>
+        <p><a href="http://harvesthq.github.com/chosen/">Chosen - makes long select boxes much more user-friendly.</a></p>
+        <p><a href="http://knockoutjs.com/">Knockout.js - Simplify dynamic JavaScript UIs by applying the Model-View-View Model (MVVM).</a></p>
+
+        <h4><a name="JavaScript_Plugins_Table">Табліцы</a></h4>
+        <p><a href="http://www.kryogenix.org/code/browser/sorttable/">Сартыроўка даных</a></p>
+        <p><a href="http://www.javascriptkit.com/script/script2/tablefilter.shtml">Фільтрацыя даных I</a></p>
+        <p><a href="http://tablefilter.free.fr/">Фільтрацыя даных II</a></p>
+
+      </section>
+
+      <section>
+        <h1><a name="Frameworks">Фрэймворкі</a></h1>
+        <h2><a name="Frameworks_jQuery">jQuery</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://jquery.com/">Home</a></li>
+            <li><a href="http://api.jquery.com/">API</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/20-helpful-jquery-methods-you-should-be-using/">20 Helpful jQuery Methods you Should be Using</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-the-difference-between-live-and-delegate/">The Difference Between Live() and Delegate()</a></p>
+        <p><a href="http://www.learningjquery.com/2010/03/using-delegate-and-undelegate-in-jquery-1-4-2/">Using Delegate and Undelegate in jQuery 1.4.2</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-an-introduction-to-jquery-templating/">An Introduction to jQuery Templating</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/fun-with-jquery-templating-and-ajax/">jQuery Templating and AJAX</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-display-elements-sequentially-with-jquery/">Display Elements Sequentially with jQuery</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/progressively-enhance-a-form-link-to-modal-form/">Progressively Enhance a Form to a Modal Form</a></p>
+        <p><a href="http://www.tuttoaster.com/create-an-ajaxjqueryphp-contact-form/">Create an AJAX/jQuery/PHP Contact Form</a></p>
+        <p><a href="http://www.csskarma.com/blog/sliding-labels-v2/">Sliding labels on form</a></p>
+
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/14-helpful-jquery-tricks-notes-and-best-practices/">14 Helpful jQuery Tricks, Notes, and Best Practices</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/uncovering-jquerys-hidden-features/">Uncovering jQuery’s Hidden Features</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-think-right-to-left-with-jquery/">Quick Tip: Think Right-to-Left with jQuery</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/spotlight-jquery-replacetext/">jQuery replaceText</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/jquery-1-4-released-the-15-new-features-you-must-know/">jQuery 1.4 Released: The 15 New Features you Must Know</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/jquery-animations-a-7-step-program/">jQuery Animations: A 7-Step Program</a></p>
+        <p><a href="http://www.gmtaz.com/jquery-13-cheatsheet-wallpaper/">CheatSheet</a></p>
+        <p><a href="http://webdesigneraid.com/8-great-websites-to-learn-step-by-step-jquery/">8 Great Websites to Learn Step-by-Step jQuery</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/using-jquery-to-manipulate-and-filter-data/">Using jQuery To Manipulate and Filter Data</a></p>
+
+        <h3><a name="Frameworks_jQuery_UI">jQuery UI</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://jqueryui.com/">jQuery UI</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/whats-changed-in-jquery-ui-1-8-plus-free-books/">What’s Changed in jQuery UI 1.8</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/coding-your-first-jquery-ui-plugin/">Coding your First jQuery UI Plugin</a></p>
+
+        <h3><a name="Frameworks_jQuery_Plugins">Плагіны</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://plugins.jquery.com/">Home</a></li>
+          </ul>
+        </div>
+        <p><a href="http://www.tuttoaster.com/41-remarkable-and-useful-jquery-plugins/">41 Remarkable and useful jQuery Plugins</a></p>
+        <p><a href="http://www.jquery4u.com/plugins/">Popular jQuery Plugins</a></p>
+        <p><a href="http://www.jquery4u.com/plugins/jquery-plugins-2010/">Best jQuery Plugins for 2010</a></p>
+        <p><a href="http://speckyboy.com/2010/03/01/25-amazing-and-fresh-jquery-plugins/">25 Amazing and Fresh jQuery Plugins</a></p>
+        <p><a href="http://webdesigneraid.com/15-best-of-the-best-jquery-plugins-in-2010/">15 Best of the best jQuery Plugins in 2010</a></p>
+        <p><a href="http://webdesignledger.com/resources/best-jquery-plugins-of-2010">Best jQuery Plugins of 2010</a></p>
+        <p><a href="http://webdesignledger.com/resources/10-useful-jquery-plugins">10 Useful jQuery Plugins</a></p>
+        <p><a href="http://webdesignledger.com/resources/10-useful-jquery-plugins-and-techniques">10 Useful jQuery Plugins and Techniques</a></p>
+        <p><a href="http://malsup.com/jquery/block/#overview" title="BlockUI">BlockUI</a></p>
+        <p><a href="https://github.com/danbentley/placeholder" title="placeholder">Placeholder</a></p>
+        <p><a href="http://flowplayer.org/tools/index.html" title="placeholder">jQuery Tools</a></p>
+
+        <h4><a name="Frameworks_jQuery_Plugins_Tables">Табліцы</a></h4>
+        <p><a href="http://www.picnet.com.au/picnet_table_filter.html">Picnet table filter</a></p>
+        <p><a href="http://www.datatables.net">DataTables</a></p>
+
+        <h4><a name="Frameworks_jQuery_Plugins_SelectField">Элемэнт select</a></h4>
+        <p><a href="http://abeautifulsite.net/blog/2011/01/jquery-selectbox-plugin/">SelectBox Plugin</a></p>
+
+        <h4><a name="Frameworks_jQuery_Plugins_KeyboardShortcuts">Keyboard shortcuts</a></h4>
+        <p><a href="http://code.google.com/p/js-hotkeys/">js-hotkeys</a></p>
+
+        <h4><a name="Frameworks_jQuery_Plugins_Tooltips">Tooltips</a></h4>
+        <p><a href="http://www.1stwebdesigner.com/css/stylish-jquery-tooltip-plugins-webdesign/">30 Stylish jQuery Tooltip Plugins For Catchy Designs</a></p>
+        <p><a href="http://visionwidget.com/inspiration/web/495-jquery-tooltip-plugins.html">20 Examples of jQuery Tooltip Plugins</a></p>
+        <p><a href="http://bassistance.de/jquery-plugins/jquery-plugin-tooltip/">jQuery plugin: Tooltip</a></p>
+        <p><a href="http://www.websovet.com/jquery-dlya-chajnikov-vsplyvayushhaya-podskazka-plagin-tooltip">jQuery для чайников | Всплывающая подсказка | Плагин Tooltip</a></p>
+
+        <h4><a name="Frameworks_jQuery_Plugins_Pagination">Pagination</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://github.com/remylab/jPaginator/">jPaginator</a></li>
+            <li><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/extreme-makeover-jpaginator-css3-edition/">Tutorial</a></li>
+          </ul>
+        </div>
+        <p><img src="../images/jPaginator.png" alt="jPaginator screenshot" title="jPaginator screenshot" /></p>
+
+        <h2><a name="Frameworks_YUI">Yahoo UI</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://developer.yahoo.com/yui/">YUI</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-an-introduction-to-yui/">An Introduction to YUI </a></p>
+
+        <h2><a name="Frameworks_Prototype">Prototype</a></h2>
+        <h2><a name="Frameworks_MooTools">MooTools</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://mootools.net/">MooTools</a></li>
+          </ul>
+        </div>
+        <p><a href="http://davidwalsh.name/">David Walsh blog</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/sexy-animated-tabs-using-mootools/">Sexy Animated Tabs Using MooTools</a></p>
+
+        <h2><a name="Frameworks_Node.js">Node.js</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://nodejs.org/">Home</a></li>
+            <li><a href="https://github.com/joyent/node/wiki">Wiki</a></li>
+          </ul>
+        </div>
+        <p>Яшчэ адзін <i>JavaScript</i>-фрэймворк, але не ў клясычным разуменьні. Гэта фрэймворк для сэрвераў. Так-так, ён прызначаны для выкананьня не на кліенцкім баку (у браўзэры), а на сэрверным баку. Зьяўляецца вельмі хуткім падзейна-арыентаваным фрэймворкам, які працуе на <a href="http://code.google.com/p/v8/">рухавіку V8 ад Гугла</a>. Некаторыя ўводныя, тлумачальныя артыкулы:</p>
+        <ul>
+          <li><a href="http://simonwillison.net/2009/Nov/23/node/">Node.js is genuinely exciting</a></li>
+          <li><a href="http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb">Understanding node.js</a></li>
+          <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/">Learning Server-Side JavaScript with Node.js</a></li>
+          <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/">This Time, You’ll Learn Node.js</a></li>
+        </ul>
+
+        <h2><a name="Frameworks_Backbone.js">Backbone.js</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://documentcloud.github.com/backbone/">Home</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-backbone-js/">Getting Started with Backbone.js</a></p>
+      </section>
+
+      <section>
+        <h1><a name="Technology">Тэхналёгіі</a></h1>
+
+        <h2><a name="Technology_AJAX">AJAX</a></h2>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/24-best-practices-for-ajax-implementations/">24 Best Practices for AJAX Implementations</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-cross-domain-ajax-request-with-yql-and-jquery/">Cross Domain AJAX Request with YQL and jQuery</a></p>
+        <p>AJAX-падзеі:</p>
+        <ul>
+          <li>ajax:before – right before ajax call</li>
+          <li>ajax:loading – before ajax call, but after XmlHttpRequest object is created)</li>
+          <li>ajax:success – successful ajax call</li>
+          <li>ajax:failure – failed ajax call</li>
+          <li>ajax:complete – completion of ajax call (after ajax:success and ajax:failure)</li>
+          <li>ajax:after – after ajax call is sent (note: not after it returns)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h1><a name="Tools">Прылады</a></h1>
+        <h2><a name="Tools_Compression">Сьцісканьне скрыптоў</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://javascriptcompressor.com/">JavaScript Compressor</a></li>
+            <li><a href="http://www.xmlforasp.net/JSCompressor.aspx">JSCompressor</a></li>
+            <li><a href="http://jscompress.com/">JSCompress</a></li>
+            <li><a href="http://ender.no.de/">Ender</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="Tools_GoodPractices">Добрая практыка</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://jslint.com/">JSLint</a></li>
+          </ul>
+        </div>
+        <p>Прылада правярае ці адпавядае напісаны вамі скрыпт пэўным крытэрам &laquo;добрай практыкі&raquo;.</p>
+        
+      </section>
+
       <p><a href="http://snook.ca/archives/javascript/">snook.ca</a></p>
       <p><a href="http://blogs.sitepoint.com/2009/03/31/make-a-mega-drop-down-menu-with-jquery/">mega-drop-down-menu</a></p>
       
@@ -107,25 +328,29 @@
       <p><a href="http://www.tripwiremagazine.com/2010/01/75-top-jquery-plugins-to-improve-your-html-forms.html">75+ Top jQuery Plugins to improve Your HTML Forms</a></p>
       <p><a href="http://bassistance.de/jquery-plugins/">jQuery plugins</a></p>
       <p><a href="http://www.designyourway.net/blog/resources/55-jquery-form-plugins-to-download-and-use/">55 jQuery Form Plugins To Download And Use</a></p>
-      
+
       <p><a href="http://davidwalsh.name/facebook-lightbox/">LightFace: Facebook Lightbox for MooTools</a></p>
-      
+
       <p><a href="http://www.askthecssguy.com/2007/03/form_field_hints_with_css_and.html">Form field hints with CSS and JavaScript</a></p>
       <p><a href="http://www.askthecssguy.com/2009/08/59_amazing_and_jawdropping_web_1.html">59+ Amazing (and jaw-dropping) web design-related lists with titles that will rip your face off, blow your mama's mind, and make you cry under the crushing pain of their inspiration</a></p>
       <p><a href="http://www.askthecssguy.com/">http://www.askthecssguy.com</a></p>
+      <p><a href="http://leaflet.cloudmade.com/">A Modern, Lightweight Open-Source JavaScript Library for Interactive Maps by CloudMade</a></p>
+      
 
+      <p>Prototype: <a href="http://www.prototypejs.org">http://www.prototypejs.org</a>,
+        <a href="http://api.prototypejs.org/language/Function/prototype/bind/">http://api.prototypejs.org/language/Function/prototype/bind/</a>,
+        <a href="http://alternateidea.com/blog/articles/2006/2/8/working-with-events-in-prototype">http://alternateidea.com/blog/articles/2006/2/8/working-with-events-in-prototype</a>
+      </p>
       <footer>
         <div id="powered">
           <h5>Падзякі</h5>
-          <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
-            <ul>
-              <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
-              <li><a href="http://www.caodesigns.com/blog/free-stuff/jquery-active-menu-plugin-2.php">Active Menu</a>&nbsp;&mdash; дадатак да jQuery, каб пазначаць цяперашні разьдзел у каталёгу даведнікаў</li>
-              <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
-              <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
-              <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
-            </ul>
-          </p>
+          <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:</p>
+          <ul>
+            <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
+            <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
+            <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
+            <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
+          </ul>
         </div>
         <div id="copyright">
           <p>Copyright &copy; 2010-2011 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
@@ -167,13 +392,6 @@
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
-    
-  <script src="../js/mylibs/jquery.activeMenu.js"></script>
-  <script>
-    $(document).ready(function(){ 
-      $('#main_index ul').activeMenu(); 
-    }); 
-  </script>
 
   <script src="../js/mylibs/mktree.js"></script>
   <script src="../js/mylibs/xregexp.js"></script>

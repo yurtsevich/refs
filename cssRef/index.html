@@ -1,4 +1,4 @@
-<!doctype html>  
+<!doctype html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ --> 
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
@@ -14,7 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>Тэхнічны даведнік па CSS</title>
-  <meta name="description" content="Тэхнічны даведнік па CSS">
+  <meta name="description" content="Даведнік па CSS">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
   <!--  Mobile viewport optimized: j.mp/bplateviewport -->
@@ -27,7 +27,7 @@
 
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
-  <link rel="stylesheet" href="../css/style.css?v=1">
+  <link rel="stylesheet" href="../css/screen.css?v=1">
   <link rel="stylesheet" href="../css/mktree.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeRDark.css?v=1">
@@ -41,6 +41,9 @@
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  
+  <!-- For example need -->
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -50,7 +53,7 @@
       <div id="main_index">
         <ul>
           <li><a href="../htmlRef/index.html">HTML</a></li>
-          <li><a href="../cssRef/index.html">CSS</a></li>
+          <li class="active"><a href="../cssRef/index.html">CSS</a></li>
           <li><a href="../jsRef/index.html">JS</a></li>
           <li><a href="../webRef/index.html">Web</a></li>
         </ul>
@@ -167,9 +170,22 @@
           
           <li class="liOpen"><a href="#TipsTricks">Tips &amp; Tricks</a>
             <ul>
-              <!--li><a href="#Links_CSS_home">CSS home</a></li>
-              <li><a href="#Links_specs">Стандарты і спэцыфікацыі</a></li>
-              <li><a href="#Links_refs">References</a></li-->
+              <li><a href="#TipsTricks_Layout">Разьмяшчэньне</a>
+                <ul>
+                  <li><a href="#TipsTricks_Layout_EqualHeightColumns">Візуальна роўнавышынныя калёнкі пры дапамозе градыенту</a></li>
+                </ul>
+              </li>
+              <li><a href="#TipsTricks_Box">Бокс</a>
+                <ul>
+                  <li><a href="#TipsTricks_Box_ChildrenFloatAndParentCollapse">Праблема згортваньня бацькоўскага элемэнту пры даччыным float</a></li>
+                  <li><a href="#TipsTricks_Box_MultipleBorders">Множныя бордэры</a></li>
+                </ul>
+              </li>
+              <li><a href="#TipsTricks_Text">Тэкст</a>
+                <ul>
+                  <li><a href="#TipsTricks_Text_Vertical">Вертыкальны тэкст</a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           
@@ -177,7 +193,7 @@
             <ul>
               <li><a href="#Frameworks_Blueprint">Blueprint</a></li>
               <li><a href="#Frameworks_960gs">960.gs</a></li>
-              <li><a href="#Frameworks_YUI">Yahoo UI</a></li>
+              <li><a href="#Frameworks_YUIGrids">YUI Grids</a></li>
             </ul>
           </li>
 
@@ -194,7 +210,17 @@
                   <li><a href="#Less_using">Выкарыстаньне</a></li>
                 </ul>
               </li>
-              <!--li><a href="#Links_refs">References</a></li-->
+              <li><a href="#Sass">Sass</a>
+                <ul>
+                  <li><a href="#Sass_variables">Пераменныя</a></li>
+                  <li><a href="#Sass_mixins">Дамешкі</a></li>
+                  <li><a href="#Sass_nested_rules">Укладзеныя правілы</a></li>
+                  <li><a href="#Sass_functions_operations">Функцыі і апэрацыі</a></li>
+                  <li><a href="#Sass_using">Выкарыстаньне</a></li>
+                </ul>
+              </li>
+              <li><a href="#Validation">Праверка CSS</a></li>
+              <li><a href="#Compression">Сьцісканьне CSS</a></li>
             </ul>
           </li>
         </ul>
@@ -205,10 +231,12 @@
       <header>
         Даведнік па CSS
       </header>
+      <!--aside class="intro">
+        <p>Інфармацыя, прыведзеная ў даведніку не зьяўляецца ўласнай працай аўтара, а толькі кампіляцыяй на ўласны, суб'ектыўны капыл і перакладам іншых матэрыялаў па тэматыцы.</p>
+        <p>Калі знойдзеце яе палезнай, гэта будзе мяне цешыць. Пры гэтым не судзіце занадта строга.</p>
+      </aside-->
 
       <section>
-        <p class="intro">Гэты даведнік зьяўляецца кампіляцыяй матэрыялаў з розных крыніцаў для спрашчэньня пошуку найважнейшай інфармацыі па выкарыстаньні CSS, але пры гэтым аўтар не адказвае за абсалютную дасканаласьць і актуальнасьць усёй інфармацыі, што тут зьмяшчаецца, а, адпаведна, і за магчымыя негатыўныя наступствы ад любога выкарыстаньня гэтай інфармацыі.</p>
-        <p class="intro">Пры выяўленьні памылак, недакладнасьцей альбо пры наяўнасьці пажаданьняў нешта дадаць ці палепшыць зьвяртайцеся, калі ласка, праз форму зваротнай сувязі (статычная кнопка Feedback у правым баку экрана).</p>
         <h1><a name="Links">Карысныя спасылкі</a></h1>
         
         <h2><a name="Links_CSS_home">CSS home</a></h2>
@@ -480,10 +508,10 @@
             <thead>
               <tr>
                 <th>Selector</th>
-                <th><p>Inline стыль</p><p><code>a</code></p></th>
-                <th><p>IDs<br />&nbsp;</p><p><code>b</code></p></th>
-                <th><p>Classes, attributes, pseudo-classes</p><p><code>c</code></p></th>
-                <th><p>Elements, pseudo-elements</p><p><code>d</code></p></th>
+                <th><p>Inline стыль<br /><code>a</code></p></th>
+                <th><p>IDs<br /><code>b</code></p></th>
+                <th><p>Classes, attributes, pseudo-classes<br /><code>c</code></p></th>
+                <th><p>Elements, pseudo-elements<br /><code>d</code></p></th>
               </tr>
             </thead>
             <tbody>
@@ -603,8 +631,51 @@
         <div class="refs">
           <ul>
             <li><a href="http://reference.sitepoint.com/css/at-fontface/">SitePoint</a></li>
+            <li><a href="http://www.fontsquirrel.com/fontface/generator/">Code generator</a></li>
           </ul>
         </div>
+        <p>Дырэктыва дазваляе выкарыстоўваць у сеціўных старонках несыстэмныя шрыфты. Больш падрабязную інфармацыю пра шрыфты ўвогуле, пра іх фарматы, пра стэкі сыстэмных шрыфтоў і магчымасьці ўбудоўваць несыстэмныя <a href="../webRef/index.html#Typography">глядзіце адпаведны разьдзел у даведніку па распрацоўцы сайтаў</a>.</p>
+        <p>Улічваючы неаднастайнасьць фарматаў, каторымі карыстаюцца розныя апэрацыйныя сыстэмы, лепш за ўсё карыстацца <a href="http://www.fontsquirrel.com/fontface/generator" title="Fontsquirrel generator">генэратарам ад Fontsquirrel</a>, каторы ня толькі генэруе правільны і ўсеабдымны код, але і канвэртуе шрыфт з сыходнага фармату ў іншыя распаўсюджаныя, для падтрымкі як мага большай колькасьцю браўзэраў. Разгледзем некаторыя з опцыяў гэтага генэратару:</p>
+        <ul>
+          <li>Група опцыяў <i>Rendering</i>:
+            <ul>
+              <li><i>Apply Hinting</i>: палепшанае адлюстраваньне шрыфту на <i>Windows</i>-плятформах. Ад гэтай опцыі варта адмаўляцца толькі ў тым выпадку, калі вы дакладна ведаеце, што шрыфт ужо аптымізаваны.</li>
+              <li><i>Remove Kerning</i>: для &laquo;палягчэньня&raquo; шрыфту можна абраць гэтую опцыю, каторая выдаліць <i>kerning</i>-даныя з шрыфту. Даволі сьмела можна абіраць гэтую опцыю для асноўнага тэксту, але з вялікай асьцярогай для загалоўкаў, ці ўвогуле лепш адмовіцца ад опцыі для апошняга.</li>
+            </ul>
+          </li>
+          <li><i>WebOnly<sup>TM</sup></i>: кажа браўзэрам не ўсталёўваць шрыфт у сыстэму, каб пазьбегнуць несанкцыяваных копій нявольных шрыфтоў.</li>
+          <li>Пры дапамозе групы опцыяў <i>Subsetting</i> можна абмяжоўваць шрыфт на ўтрыманьне даных толькі пэўных знакаў:
+            <ul>
+              <li><i>Basic Subsetting</i>: стандартны набор знакаў лацінскіх моваў.</li>
+              <li><i>Custom Subsetting</i>: дазваляе ўручную вызначаць набор знакаў.</li>
+              <li><i>No Subsetting</i>: ніяк не абмяжоўвае шрыфт, ён будзе ўтрымліваць усе знакі, якія ў ім вызначаныя.</li>
+            </ul>
+          </li>
+          <li>Група опцыяў <i>CSS Formats</i>:
+            <ul>
+              <li><a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax"><i>Fontspring Syntax</i></a>: найбольш простая і сумяшчальная опцыя.</li>
+              <li><a href="http://www.fontspring.com/blog/the-new-bulletproof-font-face-syntax"><i>Smiley</i></a></li>
+              <li><a href="http://readableweb.com/mo-bulletproofer-font-face-css-syntax/"><i>Mo’ Bulletproofer</i></a></li>
+            </ul>
+          </li>
+          <li>Група опцыяў <i>CSS options</i>:
+            <ul>
+              <li><i>Style Linking</i>: групуе розныя стылі аднаго сямейства, каб пазьней можна было асобна рэгуляваць стыль і таўчшыню шрыфта праз атрыбуты <a href="#font-style"><code class="attr">font-style</code></a> і <a href="#font-weight"><code class="attr">font-weight</code></a>. Ужываньне гэтай опцыі магчыма толькі, калі шрыфт складаецца з чатырох стандартных стыляў: <i>regular</i>, <i>italic</i>, <i>bold</i> і <i>bold italic</i>, інакш яе выкарыстоўваць ня варта.</li>
+              <li><i>Base64 Encode</i>: убудаваньне шрыфту пры дапамозе <i>base64</i>-кадаваньня ў <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-код. У выніку чаго шрыфт не зьявіцца асобным файлам у кэшы браўзэра.</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Прыклад генэруемага коду:</p>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        @font-face {
+          font-family: Graublauweb;
+          src:  url('Graublauweb.eot'); /* IE9 Compatibility Modes with IE7-IE8 */
+          src:  url('Graublauweb.eot?') format('eot'),  /* IE6-IE8 */
+                url('Graublauweb.woff') format('woff'), /* Modern Browsers */
+                url('Graublauweb.ttf')  format('truetype'), /* Safari, Android, iOS */
+                url('Graublauweb.svg#svgGraublauweb') format('svg'); /* Legacy iOS */
+        }
+        ]]></script>
 
         <h3><a name="At-rules_namespace"><code class="at_rule">&#64;namespace</code></a></h3>
         <div class="refs">
@@ -621,11 +692,13 @@
           <ul>
             <li><a href="http://www.w3.org/TR/css3-selectors/">W3C</a></li>
             <li><a href="http://reference.sitepoint.com/css/selectorref/">SitePoint</a></li>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/">NetTuts+</a></li>
           </ul>
         </div>
         <p>Селектары&nbsp;&mdash; гэта шаблёны, каторыя вызначаюць да якіх элемэнтаў <a href="../htmlRef/index.html"><span class="term">HTML</span></a> будуць ужытыя <a href="#Concepts_syntax_terminology">аб&#39;яўленьні</a>, якія зьмяшчаюцца ў <a href="#Concepts_syntax_terminology">блёку</a> пасьля гэтага селектара. Гэтыя аб&#39;яўленьні будуць ужытыя да ўсіх элемэнтаў, каторыя адпавядаюць шаблёну, акрамя выпадку, калі яны перавызначаныя ў іншым, больш <a href="#Concepts_selectors_specificity">спэцыфічным</a> селектары.</p>
         <p>Селектар можа складацца з шэрагу простых селектараў, каторыя падзяляюцца паміж сабой <a href="#Selectors_combinators">камбінатарамі</a>. <a href="#Selectors_pseudo-elements">Псэўда-элемэнты</a> таксама могуць быць уключаныя адразу пасьля апошняга простага селектару ў шэрагу.</p>
-        
+        <br />
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/">http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/</a></p>
         
         <h2><a name="Selectors_universal">Унівэрсальны селектар</a></h2>
         <div class="refs">
@@ -694,8 +767,13 @@
       
       <section>
         <h1><a name="Attributes">Атрыбуты</a></h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/10-css3-properties-you-need-to-be-familiar-with/">NetTuts+</a></li>
+          </ul>
+        </div>
         
-        <h2><a name="Attributes_by_types">Па тыпам</a></h2>
+        <h2><a name="Attributes_by_types">Па тыпах</a></h2>
         
         <h3><a name="Attributes_box">Box-атрыбуты</a></h3>
         <div class="refs">
@@ -815,7 +893,152 @@
       
       <section>
         <h1><a name="TipsTricks">Tips &amp; Tricks</a></h1>
+        
+        <h2><a name="TipsTricks_Layout">Разьмяшчэньне</a></h2>
+        
+        <h3><a name="TipsTricks_Layout_EqualHeightColumns">Візуальна роўнавышынныя калёнкі пры дапамозе градыенту</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-mimic-equal-columns-with-css3-gradients/">NetTuts+</a></li>
+          </ul>
+        </div>
+        
+        <h2><a name="TipsTricks_Box">Бокс</a></h2>
+        
+        <h3><a name="TipsTricks_Box_ChildrenFloatAndParentCollapse">Праблема згортваньня бацькоўскага элемэнту пры даччыным <code class="attr">float</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/ask-nettuts-1-callbacks-less-and-floats/">NetTuts+</a></li>
+          </ul>
+        </div>
+        <p>Калі ўва ўсіх даччыных элемэнтах боксу адзначаны атрыбут <code class="attr">float</code> (<code class="value">left</code> ці <code class="value">right</code>), тады ён будзе згортнутым (<i>collapsed</i>), быццам ён пусты, без даччыных элемэнтаў. Напрыклад, маем наступные вызначэньне стылю:</p>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        #nav {  
+          background: black; /* чорнага тла не відаць */  
+        }  
 
+        #nav li {  
+          float: left;  
+          padding-right: 10px;  
+          list-style: none;  
+        }
+        ]]></script>
+        <p>і наступны <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-код:</p>
+        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+        <ul id="nav">  
+          <li><a href="#">Link</a></li>  
+          <li><a href="#">Link</a></li>  
+          <li><a href="#">Link</a></li>  
+          <li><a href="#">Link</a></li>  
+        </ul> 
+        ]]></script>
+        <p>што будзе выглядаць:</p>
+        <img src="../images/css_tricks_collapse_by_float.png"
+                  alt="Прыклад згортваньня бацькоўскага элемэнту пры даччыным float" title="Прыклад згортваньня бацькоўскага элемэнту пры даччыным float" />
+        <p>Як бачым, у сьпісу няма чорнага тлу, як гэта вызначана ў стылі. Гэта таму, што ён нулявога памеру (не абгортвае даччыныя элемэнты). Вырашыць гэтую праблему можна наступным чынам. Па-першае, бацькоўскаму элемэнту можна дадаць атрыбут <code>overflow: hidden;</code>:</p>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        #nav {  
+          background: black;
+          overflow: hidden; /* Вуаля! */  
+        }
+        ]]></script>
+        <p>Па-другое, можна скарыстацца тэхнікай <i>clearfix</i>. Для гэтага дададзім да нашага сьпісу клясу <code>clearfix</code>:</p>
+        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+        <ul id="nav" class="clearfix">  
+        ... 
+        ]]></script>
+        <p>і дададзім наступнае вызначэньне стылю для гэтай клясы:</p>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        .clearfix {  
+          *zoom: 1; /* triggers hasLayout in older versions of iE */  
+        }  
+        
+        .clearfix:after {  
+          content: " ";  
+          display: block;  
+          clear: both;  
+          visibility: hidden;  
+          font-size: 0;  
+          height: 0;  
+        }
+        ]]></script>
+        <p>і першы, і другі варыянты прывядуць да наступнага выніку:</p>
+        <img src="../images/css_tricks_collapse_by_float_fix.png"
+                  alt="Выпраўленае згортваньне бацькоўскага элемэнту пры даччыным float" title="Выпраўленае згортваньне бацькоўскага элемэнту пры даччыным float" />
+        
+        <h3><a name="TipsTricks_Box_MultipleBorders">Множныя бордэры</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-multiple-borders-with-simple-css/">NetTuts+</a></li>
+          </ul>
+        </div>
+        <p>Пры неабходнасьці задаць боксу множныя бордэры можна скарыстацца наступнай тэхнікай:</p>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        body { background: #d2d1d0; }  
+   
+        #box {
+          background: #f4f4f4;
+          border: 1px solid #bbbbbb;
+          width: 200px;
+          height: 200px;
+          margin: 60px auto;
+          position: relative;
+        }  
+   
+        #box:before {  
+          border: 1px solid white;  
+          content: '';  
+          width: 198px;  
+          height: 198px;  
+          position: absolute;  
+        }  
+   
+        #box:after {  
+          content: '';  
+          position: absolute;  
+          width: 196px;  
+          height: 196px;  
+          border: 1px solid #bbbbbb;  
+          left: 1px; top: 1px;  
+        }  
+        ]]></script>
+        <p>Тады наступны код:</p>
+        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+        <div id="box"></div>  
+        ]]></script>
+        <p>прывядзе да такога выніку: </p>
+        <img src="../images/css_tricks_multi_borders.png"
+                  alt="Прыклад множных бордэраў" title="Прыклад множных бордэраў" />
+        
+        <h2><a name="TipsTricks_Text">Тэкст</a></h2>
+        
+        <h3><a name="TipsTricks_Text_Vertical">Вертыкальны тэкст</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-easiest-way-to-create-vertical-text-with-css/">NetTuts+</a></li>
+          </ul>
+        </div>
+        <p>Пры патрэбе адлюстраваць слова вертыкальна (не павернутым на 90 градусаў, а менавіта вертыкальна), можна прыбегнуць да наступнай тэхніцы. Паміж літарамі слова ставім прагалы:</p>
+        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+        <body>  
+          <h1> N e t t u t s </h1>  
+        </body>  
+        ]]></script>
+        <p>і ўжываем наступны стыль:</p>
+        <script type="syntaxhighlighter" class="brush: css"><![CDATA[
+        h1 {  
+          width: 1em;  
+          font-size: 40px;  
+          letter-spacing: 40px; /* загадзя вялікае letter-spacing */  
+        }  
+        ]]></script>
+        <p>памер шрыфту пры гэтым можна зьмяняць любым чынам&nbsp;&mdash; адзінка <code>em</code> у шырыні блёку будзе заўсёды адпавядаць вышыні літары M пры актуальным памеры шрыфта, то бок адна літара гарантавана зьмесьціцца, а загадзя вялікае значэньне ў <code class="attr">letter-spacing</code class> не дазволіць 2 літарам адлюстравацца на адным радку:</p>
+        <p style="width: 1em; font-size: 40px; letter-spacing: 40px;"> N e t t u t s </p>
+        
+        <h3><a name="TipsTricks_Text_Shadows">Эфекты пры дапамозе ценю</a></h3>
+        <p><a href="http://unitinteractive.com/blog/2010/11/03/text-shadow-and-too-much-time/">http://unitinteractive.com/blog/2010/11/03/text-shadow-and-too-much-time</a></p>
+        
+        <p>&nbsp;</p>
         <p><a href="http://www.w3.org/Style/Examples/007/">W3C</a></p>
         <p><a href="http://www.westciv.com/style_master/house/tutorials/quick/index.html">westciv</a></p>
         <p><a href="http://websitetips.com/css/">http://websitetips.com/css</a></p>
@@ -846,13 +1069,20 @@
         <p><a href="http://sixrevisions.com/css/basic-css3-techniques-that-you-should-know/">Basic CSS3 Techniques That You Should Know</a></p>
         <p><a href="http://kyleschaeffer.com/best-practices/pure-css-image-hover/">Pure CSS Image Hover</a></p>
         <p><a href="http://www.devdevote.com/markup/">DevDevote</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/getting-to-work-to-with-css3-power-tools/">Getting to Work with CSS3 Power Tools</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/css-fundametals-css-3-transitions/">CSS Fundamentals: CSS 3 Transitions</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/9-most-common-ie-bugs-and-how-to-fix-them/">9 Most Common IE Bugs and How to Fix Them</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/02/16/css-useful-coding-techniques-and-design-solutions/">CSS: Innovative Techniques and Practical Solutions</a></p>
+        <p><a href="http://www.smashingmagazine.com/2011/02/11/the-bright-near-future-of-css/">The Bright (Near) Future of CSS</a></p>
+        <p><a href="http://webdesigneraid.com/5-awesome-things-that-you-can-do-with-css3/">5 Awesome Things That You Can Do with CSS3</a></p>
         
-        
+        <p><a href="http://www.cssdrive.com/">http://www.cssdrive.com/</a></p>
         
       </section>
       
       <section>
         <h1><a name="Frameworks">Frameworks</a></h1>
+        
         
         <h2><a name="Frameworks_Blueprint">Blueprint</a></h2>
         <div class="refs">
@@ -860,6 +1090,7 @@
             <li><a href="http://www.blueprintcss.org/">Blueprint</a></li>
           </ul>
         </div>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/a-closer-look-at-the-blueprint-css-framework/">A Closer Look At the Blueprint CSS Framework</a></p>
         
         <h2><a name="Frameworks_960gs">960.gs</a></h2>
         <div class="refs">
@@ -867,14 +1098,23 @@
             <li><a href="http://960.gs/">960.gs</a></li>
           </ul>
         </div>
+        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/prototyping-with-the-grid-960-css-framework/">Prototyping With The Grid 960 CSS Framework</a></p>
+        <p>Скрыпт, які падключае розныя грыд-стылі, у залежнасьці ад разрозьненьня экрану: <a href="http://adapt.960.gs/">http://adapt.960.gs/</a></p>
         
-        <h2><a name="Frameworks_YUI">Yahoo UI</a></h2>
+        <h2><a name="Frameworks_YUIGrids">YUI Grids</a></h2>
         <div class="refs">
           <ul>
-            <li><a href="http://developer.yahoo.com/yui/">YUI</a></li>
+            <li><a href="http://developer.yahoo.com/yui/grids/">YUI Grids</a></li>
           </ul>
         </div>
         
+        <h2><a name="Frameworks_YUIGrids">Golden Grid System</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://goldengridsystem.com/">Home</a></li>
+          </ul>
+        </div>
+
       </section>
       
       <section>
@@ -970,7 +1210,7 @@
               <tr>
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
-                  /* LESS */
+                  /* Less */
       
                   @color: #4D926F;
                   
@@ -1002,14 +1242,14 @@
         </p>
         
         <h3><a name="Less_mixins">Дамешкі</a></h3>
-        <p>Дамешкі (<i>mixins</i>) дазваляюць атрыбуты аднаго селектару/клясы убудоўваць (<i>embed</i>) ў іншы. Прынцып падобны да <a href="#Tools_LESS_variables">пераменных</a>, адно што працуе для цэлых блёкаў.</p>
+        <p>Дамешкі (<i>mixins</i>) дазваляюць атрыбуты аднаго селектару/клясы убудоўваць (<i>embed</i>) ў іншы. Прынцып падобны да <a href="#Less_variables">пераменных</a>, адно што працуе для цэлых блёкаў і ўтрымлівае магчымасьць перадаваць парамэтры.</p>
         <p>
           <table class="two_column_code_example" cellpadding="5px;">
             <tbody>
               <tr>
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
-                  /* LESS */
+                  /* Less */
 
                   .rounded-corners (@radius: 5px) {
                     border-radius: @radius;
@@ -1056,7 +1296,7 @@
               <tr>
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
-                  /* LESS */
+                  /* Less */
 
                   #header {
                     h1 {
@@ -1070,7 +1310,7 @@
                       a { 
                         text-decoration: none;
                         
-                        &:hover { border-width: 1px }
+                        a:hover { border-width: 1px }
                       }
                     }
                   }
@@ -1112,7 +1352,7 @@
               <tr>
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
-                  /* LESS */
+                  /* Less */
 
                   @the-border: 1px;
                   @base-color: #111;
@@ -1176,6 +1416,228 @@
             </li>
           </ol>
         </p>
+        
+        <h2><a name="Sass">Sass</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://sass-lang.com/">Sass</a></li>
+          </ul>
+        </div>
+        <p>Яшчэ адна прылада, якая спрашчае стварэньне <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-стыляў. Магчымасьці вельмі падобныя да <a href="#Less">Less</a>, аднак ёсьць некалькі нязначных адрозьненьняў, таму прадубліруем апісаньне магчымасьцяў. Таксама варта адзначыць, што зь цягам разьвіцьця гэтай прылады зьмяніўся яе сынтаксіс. У ранейшых вэрсіях файлы мелі пашырэньне <code>.sass</code> і <a href="http://www.yaml.org/">YAML</a>-падобны фармат, у сучасных жа вэрсіях файлы маюць пашырэньне <code>.scss</code> і <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-падобны фармат.</p>
+        
+        <h3><a name="Sass_variables">Пераменныя</a></h3>
+        <p>З дапамогаю пераменных можна пазначаць шырока ўжываныя значэньні ў адным месцы, што спрашчае далейшыя глябальныя зьмены гэтых значэньняў&nbsp;&mdash; значэньне зьмяняецца ў адным месцы, а не паўсюдна, дзе ўжываецца.</p>
+        <p>
+          <table class="two_column_code_example" cellpadding="5px;">
+            <tbody>
+              <tr>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Sass */
+
+                  $blue: #3bbfce;
+                  $margin: 16px;
+
+                  .content-navigation {
+                    border-color: $blue;
+                    color: darken($blue, 9%);
+                  }
+
+                  .border {
+                    padding: $margin / 2;
+                    margin: $margin / 2;
+                    border-color: $blue;
+                  }
+                  ]]></script>
+                </td>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Compiled CSS */
+
+                  .content-navigation {
+                    border-color: #3bbfce;
+                    color: #2b9eab;
+                  }
+
+                  .border {
+                    padding: 8px;
+                    margin: 8px;
+                    border-color: #3bbfce;
+                  }
+                  ]]></script>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+
+        <h3><a name="Sass_mixins">Дамешкі</a></h3>
+        <p>Дамешкі (<i>mixins</i>) дазваляюць атрыбуты аднаго селектару/клясы убудоўваць (<i>embed</i>) ў іншы. Прынцып падобны да <a href="#Sass_variables">пераменных</a>, адно што працуе для цэлых блёкаў і ўтрымлівае магчымасьць перадаваць парамэтры.</p>
+        <p>
+          <table class="two_column_code_example" cellpadding="5px;">
+            <tbody>
+              <tr>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Sass */
+
+                  @mixin table-base {
+                    th {
+                      text-align: center;
+                      font-weight: bold;
+                    }
+                    td, th {padding: 2px}
+                  }
+
+                  @mixin left($dist) {
+                    float: left;
+                    margin-left: $dist;
+                  }
+
+                  #data {
+                    @include left(10px);
+                    @include table-base;
+                  }
+                  ]]></script>
+                </td>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Compiled CSS */
+
+                  #data {
+                    float: left;
+                    margin-left: 10px;
+                  }
+
+                  #data th {
+                    text-align: center;
+                    font-weight: bold;
+                  }
+
+                  #data td, #data th {
+                    padding: 2px;
+                  }
+                  ]]></script>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+
+        <h3><a name="Sass_nested_rules">Укладзеныя правілы</a></h3>
+        <p>Укладзеныя правілы (<i>nested rules</i>) дазваляюць запісваць герархічныя правілы ў выглядзе герархіі селектараў (укладзеных адзін у другі) замест складанай лінейнай запісі.</p>
+        <p>
+          <table class="two_column_code_example" cellpadding="5px;">
+            <tbody>
+              <tr>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Sass */
+
+                  table.hl {
+                    margin: 2em 0;
+                    td.ln {
+                      text-align: right;
+                    }
+                  }
+
+                  li {
+                    font: {
+                      family: serif;
+                      weight: bold;
+                      size: 1.2em;
+                    }
+                  }
+                  ]]></script>
+                </td>
+                <td>
+                  <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                  /* Compiled CSS */
+
+                  table.hl {
+                    margin: 2em 0;
+                  }
+
+                  table.hl td.ln {
+                    text-align: right;
+                  }
+
+                  li {
+                    font-family: serif;
+                    font-weight: bold;
+                    font-size: 1.2em;
+                  }
+                  ]]></script>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </p>
+
+        <h3><a name="Sass_inheritance">Спадчыннасьць</a></h3>
+        <p>У <i>Sass</i> таксама магчыма прызначыць, каб адзін селектар цалкам успадкоўваў стыль іншага.</p>
+        <table class="two_column_code_example" cellpadding="5px;">
+          <tbody>
+            <tr>
+              <td>
+                <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                /* Sass */
+
+                .error {
+                  border: 1px #f00;
+                  background: #fdd;
+                }
+                .error.intrusion {
+                  font-size: 1.3em;
+                  font-weight: bold;
+                }
+  
+                .badError {
+                  @extend .error;
+                  border-width: 3px;
+                }
+                ]]></script>
+              </td>
+              <td>
+                <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
+                /* Compiled CSS */
+
+                .error, .badError {
+                  border: 1px #f00;
+                  background: #fdd;
+                }
+  
+                .error.intrusion,
+                .badError.intrusion {
+                  font-size: 1.3em;
+                  font-weight: bold;
+                }
+  
+                .badError {
+                  border-width: 3px;
+                }
+                ]]></script>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3><a name="Sass_functions_operations">Функцыі і апэрацыі</a></h3>
+        <p><mark>TODO</mark></p>
+        
+        <p>http://compass-style.org/.. <code>compass init rails .</code>&nbsp;&mdash; ініцыялізацыя компаса ў Rails-праекце.</p>
+        <p>http://rubygems.org/gems/font-stack</p>
+        
+        <h2><a name="Validation">Праверка CSS</a></h2>
+        <p>Сэрвіс, каторыя выдае ня толькі фармальныя памылкі/недакладнасьці: <a href="http://csslint.net/">http://csslint.net/</a></p>
+        
+        <h2><a name="Compression">Сьцісканьне CSS</a></h2>
+        <p>Прылады, каторыя дазваляюць сьціскаць (мінімізаваць) CSS для вытворчага асяродку:</p>
+        <ul>
+          <li><a href="http://www.cssoptimiser.com/">http://www.cssoptimiser.com/</a></li>
+          <li><a href="http://www.cssdrive.com/index.php/main/csscompressor/">http://www.cssdrive.com/index.php/main/csscompressor/</a></li>
+          <li><a href="http://www.cleancss.com/">http://www.cleancss.com/</a></li>
+        </ul>
       </section>
 
       <footer>
@@ -1184,7 +1646,6 @@
           <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
             <ul>
               <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
-              <li><a href="http://www.caodesigns.com/blog/free-stuff/jquery-active-menu-plugin-2.php">Active Menu</a>&nbsp;&mdash; дадатак да jQuery, каб пазначаць цяперашні разьдзел у каталёгу даведнікаў</li>
               <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
               <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
               <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
@@ -1231,13 +1692,6 @@
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <!--script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script-->
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
-    
-  <script src="../js/mylibs/jquery.activeMenu.js"></script>
-  <script>
-    $(document).ready(function(){ 
-      $('#main_index ul').activeMenu(); 
-    }); 
-  </script>
 
   <script src="../js/mylibs/mktree.js"></script>
   <script src="../js/mylibs/xregexp.js"></script>
