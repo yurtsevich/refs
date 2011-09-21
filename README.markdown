@@ -3,10 +3,7 @@
 ## Што ўнутры
 
 Web-распрацоўка:
-[HTML](/htmlRef/)
-<ul>
-<li>[HTML](/htmlRef/)</li>
-<li>[CSS](/cssRef/)</li>
-<li>[JavaScript](/jsRef/)</li>
-<li>[Распрацоўка сеціўных праграмаў і сайтаў](/webRef/)</li>
-</ul>
+*[HTML](/htmlRef/)
+*[CSS](/cssRef/)
+*[JavaScript](/jsRef/)
+*[Распрацоўка сеціўных праграмаў і сайтаў](/webRef/)
