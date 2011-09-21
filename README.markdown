@@ -4,13 +4,10 @@
 
 Web-распрацоўка:
 
-* [HTML](/htmlRef/)
-
-* [CSS](/cssRef/)
-
-* [JavaScript](/jsRef/)
-
-* [Распрацоўка сеціўных праграмаў і сайтаў](/webRef/)
+ * [HTML](https://github.com/yurtsevich/Manuals/tree/master/htmlRef/).
+ * [CSS](https://github.com/yurtsevich/Manuals/tree/master/cssRef/)
+ * [JavaScript](https://github.com/yurtsevich/Manuals/tree/master/jsRef/).
+ * [Распрацоўка сеціўных праграмаў і сайтаў](https://github.com/yurtsevich/Manuals/tree/master/webRef/)
 
 Ruby/Rails:
 
