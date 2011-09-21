@@ -3,17 +3,18 @@
 ## Што ўнутры
 
 Web-распрацоўка:
-* [HTML](/htmlRef/)
-* [CSS](/cssRef/)
-* [JavaScript](/jsRef/)
-* [Распрацоўка сеціўных праграмаў і сайтаў](/webRef/)
++ [HTML](/htmlRef/)
++ [CSS](/cssRef/)
++ [JavaScript](/jsRef/)
++ [Распрацоўка сеціўных праграмаў і сайтаў](/webRef/)
 
 Ruby/Rails:
 * [Ruby](/rubyRef/)
+
 * [Rails](/railsRef/)
 
 Java:
-* [Java](/javaRef/)
+- [Java](/javaRef/)
 
 Git:
 * [Git](/gitRef/)
