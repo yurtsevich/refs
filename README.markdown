@@ -2,9 +2,10 @@
 
 ## Што ўнутры
 
-<ul>Web-распрацоўка:
-<li>[HTML](https://github.com/yurtsevich/Manuals/tree/master/htmlRef)</li>
-<li>[CSS](https://github.com/yurtsevich/Manuals/tree/master/cssRef)</li>
-<li>[JavaScript](https://github.com/yurtsevich/Manuals/tree/master/jsRef)</li>
-<li>[Распрацоўка сеціўных праграмаў і сайтаў](https://github.com/yurtsevich/Manuals/tree/master/webRef)</li>
+Web-распрацоўка:
+<ul>
+<li>[HTML](/htmlRef/)</li>
+<li>[CSS](/cssRef/)</li>
+<li>[JavaScript](/jsRef/)</li>
+<li>[Распрацоўка сеціўных праграмаў і сайтаў](/webRef/)</li>
 </ul>
