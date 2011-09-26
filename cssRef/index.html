@@ -13,7 +13,7 @@
        Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Тэхнічны даведнік па CSS</title>
+  <title>Даведнік па CSS</title>
   <meta name="description" content="Даведнік па CSS">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
@@ -65,6 +65,7 @@
         <ul>
           <li><a href="../gitRef/index.html">Git</a></li>
         </ul>
+        <div class="zip_link"><a href="../Manuals.zip" title="Архіў усіх даведнікаў адным файлам (~7 Mb)"></a></div>
         <div class="github_link"><a href="https://github.com/yurtsevich/Manuals" title="Зыходнікі ўсіх даведнікаў на GitHub"></a></div>
       </div>
       
@@ -94,7 +95,7 @@
                 <ul>
                   <li><a href="#Concepts_style_sources">Крыніцы стыляў</a></li>
                   <li><a href="#Concepts_declaration_importance">Важнасьць аб&#39;яўленьняў</a></li>
-                  <li><a href="#Concepts_selectors_specificity">Спэцыфічнасьць селектараў</a></li>
+                  <li><a href="#Concepts_selectors_specificity">Спэцыфічнасьць сэлектараў</a></li>
                   <li><a href="#Concepts_order_in_source">Парадак сьледаваньня</a></li>
                 </ul>
               </li>
@@ -113,28 +114,28 @@
             </ul>
           </li>
           
-          <li class="liOpen"><a href="#Selectors">Селектары</a>
+          <li class="liOpen"><a href="#Selectors">Сэлектары</a>
             <ul>
-              <li><a href="#Selectors_universal">Унівэрсальны селектар</a></li>
-              <li><a href="#Selectors_elements">Селектар па элемэнтам</a></li>
-              <li><a href="#Selectors_classes">Селектар па клясам</a></li>
-              <li><a href="#Selectors_IDs">Селектар па ідэнтыфікатарам</a></li>
-              <li><a href="#Selectors_attributes">Селектар па атрыбутам</a></li>
+              <li><a href="#Selectors_universal">Унівэрсальны сэлектар</a></li>
+              <li><a href="#Selectors_elements">Сэлектар паводле элемэнтаў</a></li>
+              <li><a href="#Selectors_classes">Сэлектар паводле клясаў</a></li>
+              <li><a href="#Selectors_IDs">Сэлектар паводле ідэнтыфікатараў</a></li>
+              <li><a href="#Selectors_attributes">Сэлектар паводле атрыбутаў</a></li>
               <li><a href="#Selectors_pseudo-classes">Псэўда-клясы</a></li>
               <li><a href="#Selectors_pseudo-elements">Псэўда-элемэнты</a></li>
-              <li><a href="#Selectors_grouping">Групаваньне селектараў</a></li>
-              <li><a href="#Selectors_combinators">Камбінатары селектараў</a></li>
+              <li><a href="#Selectors_grouping">Групаваньне сэлектараў</a></li>
+              <li><a href="#Selectors_combinators">Камбінатары сэлектараў</a></li>
             </ul>
           </li>
           
           <li class="liOpen"><a href="#Attributes">Атрыбуты</a>
             <ul>
-              <li class="liOpen"><a href="#Attributes_by_types">Па тыпам</a>
+              <li class="liOpen"><a href="#Attributes_by_types">Па тыпах</a>
                 <ul>
                   <li><a href="#Attributes_box">Box-атрыбуты</a></li>
                   <li><a href="#Attributes_layout">Атрыбуты разьмяшчэньня</a></li>
                   <li><a href="#Attributes_list">Атрыбуты сьпісаў</a></li>
-                  <li><a href="#Attributes_table">Атрыбуты табліц</a></li>
+                  <li><a href="#Attributes_table">Атрыбуты табліцаў</a></li>
                   <li><a href="#Attributes_color_background">Атрыбуты колераў і фонаў</a></li>
                   <li><a href="#Attributes_typographical">Тыпаграфічныя атрыбуты</a></li>
                   <li><a href="#Attributes_generated_content">Атрыбуты згенераванага зьместу</a></li>
@@ -380,14 +381,14 @@
           }
           ]]></script>
         </p> 
-        <p>Акрамя <i>at-rule</i> выразам можа быць <i>rule-set</i>, каторы складаецца з <a href="#Selectors">селектара</a> і блёку аб'яўленьняў (сьпісу <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-атрыбутаў зь іх значэньнямі):
+        <p>Акрамя <i>at-rule</i> выразам можа быць <i>rule-set</i>, каторы складаецца з <a href="#Selectors">сэлектара</a> і блёку аб'яўленьняў (сьпісу <abbr class="term" title="Cascading Style Sheets">CSS</abbr>-атрыбутаў зь іх значэньнямі):
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           h2 {
             color: #666;
             font-weight: bold;
           }
           ]]></script>
-          Дзе <code class="elem">h2</code>&nbsp;&mdash; селектар, а ў блёку аб'яўленьняў пазначаюцца атрыбут <code class="attr">color</code> са значэньнем <code class="value">#666</code> і атрыбут <code class="attr">font-weight</code> са значэньнем <code class="value">bold</code>.
+          Дзе <code class="elem">h2</code>&nbsp;&mdash; сэлектар, а ў блёку аб'яўленьняў пазначаюцца атрыбут <code class="attr">color</code> са значэньнем <code class="value">#666</code> і атрыбут <code class="attr">font-weight</code> са значэньнем <code class="value">bold</code>.
         </p>
         
         <h2><a name="Concepts_comments">Камэнтары</a></h2>
@@ -429,7 +430,7 @@
           <ol>
             <li>Знайсьці ўсе аб&#39;яўленьні, якія вызначаюць значэньне пэўнага атрыбуту для пэўнага элемэнту.</li>
             <li>Адсартаваць гэтыя аб&#39;яўленьні ў адпаведнасьці з іх узроўнем важнасьці і паходжаньня.</li>
-            <li>Адсартаваць аб&#39;яўленьні ў межах аднолькавага узроўню важнасьці і паходжаньня па спэцыфічнасьці <a href="#Selectors">селектараў</a>.</li>
+            <li>Адсартаваць аб&#39;яўленьні ў межах аднолькавага узроўню важнасьці і паходжаньня па спэцыфічнасьці <a href="#Selectors">сэлектараў</a>.</li>
             <li>Апошнім крокам, калі некалькі аб&#39;яўленьняў маюць аднолькавую важнасьць, паходжаньне і спэцыфічнасьць, адсартаваць іх у пасьлядоўнасьці іх сьледаваньня ў файлах.</li>
           </ol>
         </p>
@@ -440,7 +441,7 @@
         <p><strong>Стылем агентаў</strong> зьяўляюцца дэфолтныя стылі для элемэнтаў, значэньні іх звычайна (але не заўсёды) супадаюць з дэфолтнымі стылямі для элемэтнаў <a href="../htmlRef/index.html"><span class="term">HTML</span></a> са спэцыфікацыі (гл. разьдзел <i>"Typical default display properties"</i>, напрыклад элемэнтаў <a href="http://dev.w3.org/html5/markup/a.html#a-display"><code class="elem">a</code></a> і <a href="http://dev.w3.org/html5/markup/b.html#b-display"><code class="elem">b</code></a>).</p>
         <p>Агенты могуць таксама даваць магчымасьць іх <strong>карыстальнікам ствараць уласныя дэфолтныя стылі</strong>, альбо стылі для пэўных пляцовак.</p>
         <p>Ну, і напрыканцы <strong>аўтарскія стылі</strong>&nbsp;&mdash; уласна і ёсьць стылі ў агульным разуменьні, каторыя падключаюцца да <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-дакумэнту праз элемэнты <a href="../htmlRef/index.html#link"><code class="elem">link</code></a> і <a href="../htmlRef/index.html#style_elem"><code class="elem">style</code></a>.</p>
-        <p>Праходзячы па ўсім аб&#39;яўленьням у вышэйазначаных стылях, агенты выбіраюць сярод іх толькі тыя, <a href="#Selectors">селектары</a> каторых адпавядаюць патрэбнаму элемэнту.</p>
+        <p>Праходзячы па ўсім аб&#39;яўленьням у вышэйазначаных стылях, агенты выбіраюць сярод іх толькі тыя, <a href="#Selectors">сэлектары</a> каторых адпавядаюць патрэбнаму элемэнту.</p>
         <p>Такім чынам, у канцы першага кроку мы маем усе аб&#39;яўленьні пэўнага атрыбуту, вызначаныя для пэўнага элемэнту.</p>
         
         <h3><a name="Concepts_declaration_importance">Важнасьць аб&#39;яўленьняў</a></h3>
@@ -462,17 +463,17 @@
         </p>
         <p>Адпаведна, сярод усіх магчымых аб&#39;яўленьняў выбіраецца тое, каторае аказалася найбольш важным.</p>
         
-        <h3><a name="Concepts_selectors_specificity">Спэцыфічнасьць селектараў</a></h3>
-        <p>Трэцім крокам <em>сярод найбольш важных</em> (калі іх больш за адно) выбіраецца тое аб&#39;яўленьне, <a href="#Selectors">селектар</a> каторага больш спэцыфічны.</p>
-        <p>Ступень спэцыфічнасьці вызначаецца па пасьлядоўнасьці лічбаў <code>a,b,c,d</code>, дзе <code>a</code> найбольш спэцыфічнае, <code>b</code> менш спэцыфічнае за <code>a</code>, <code>c</code> менш спэцыфічнае за <code>b</code>, а <code>d</code> найменш спэцыфічнае. Такім чынам, калі сярод усіх селектараў будзе пэўны са значэньнем у <code>a</code> большым, за астатнія селектары, ён будзе самым спэцыфічным. Калі будзе некалькі селектараў з найвялікшым значэньнем у <code>a</code>, сярод іх будзе выбраны той, у каторага большае значэньне ў <code>b</code>, і г.д. Гэтыя лічбы адпавядаюць:
+        <h3><a name="Concepts_selectors_specificity">Спэцыфічнасьць сэлектараў</a></h3>
+        <p>Трэцім крокам <em>сярод найбольш важных</em> (калі іх больш за адно) выбіраецца тое аб&#39;яўленьне, <a href="#Selectors">сэлектар</a> каторага больш спэцыфічны.</p>
+        <p>Ступень спэцыфічнасьці вызначаецца па пасьлядоўнасьці лічбаў <code>a,b,c,d</code>, дзе <code>a</code> найбольш спэцыфічнае, <code>b</code> менш спэцыфічнае за <code>a</code>, <code>c</code> менш спэцыфічнае за <code>b</code>, а <code>d</code> найменш спэцыфічнае. Такім чынам, калі сярод усіх сэлектараў будзе пэўны са значэньнем у <code>a</code> большым, за астатнія сэлектары, ён будзе самым спэцыфічным. Калі будзе некалькі сэлектараў з найвялікшым значэньнем у <code>a</code>, сярод іх будзе выбраны той, у каторага большае значэньне ў <code>b</code>, і г.д. Гэтыя лічбы адпавядаюць:
           <ol style="list-style-type: lower-latin;">
             <li>аб&#39;яўленьне ў <a href="../htmlRef/index.html#style_attr"><code class="attr">style</code></a>-атрыбуце адпаведнага <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-элемэнту;</li>
-            <li>колькасьць <a href="#Selectors_IDs">ID-селектараў</a>;</li>
-            <li>колькасьць <a href="#Selectors_classes">class-селектараў</a>, <a href="#Selectors_attributes">attribute-селектараў</a> і <a href="#Selectors_pseudo-classes">pseudo-клясаў</a>;</li>
-            <li>колькасьць <a href="#Selectors_elements">element-селектараў</a> і <a href="#Selectors_pseudo-elements">pseudo-элемэнтаў</a>.</li>
+            <li>колькасьць <a href="#Selectors_IDs">ID-сэлектараў</a>;</li>
+            <li>колькасьць <a href="#Selectors_classes">class-сэлектараў</a>, <a href="#Selectors_attributes">attribute-сэлектараў</a> і <a href="#Selectors_pseudo-classes">pseudo-клясаў</a>;</li>
+            <li>колькасьць <a href="#Selectors_elements">element-сэлектараў</a> і <a href="#Selectors_pseudo-elements">pseudo-элемэнтаў</a>.</li>
           </ol>
         </p>
-        <p>Астатнія тыпы селектараў маюць нулявую спэцыфічнасьць і проста ігнаруюцца пры падліку. Напрыклад:
+        <p>Астатнія тыпы сэлектараў маюць нулявую спэцыфічнасьць і проста ігнаруюцца пры падліку. Напрыклад:
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           p.message {
             color: green;
@@ -502,7 +503,7 @@
           }
           ]]></script>
         </p>
-        <p>Вынік падліку спэцыфічнасьці селектараў, прыведзеных вышэй, пры вызначэньні якое ж значэньне атрыбуту <a href="#color"><code class="attr">color</code></a> ужыць да чарговага <a href="../htmlRef/index.html#p"><code class="elem">p</code></a>-элемэнту прыведзена ў табліцы ніжэй:
+        <p>Вынік падліку спэцыфічнасьці сэлектараў, прыведзеных вышэй, пры вызначэньні якое ж значэньне атрыбуту <a href="#color"><code class="attr">color</code></a> ужыць да чарговага <a href="../htmlRef/index.html#p"><code class="elem">p</code></a>-элемэнту прыведзена ў табліцы ніжэй:
           <table>
             <thead>
               <tr>
@@ -686,7 +687,7 @@
       </section>
       
       <section>
-        <h1><a name="Selectors">Селектары</a></h1>
+        <h1><a name="Selectors">Сэлектары</a></h1>
         <div class="refs">
           <ul>
             <li><a href="http://www.w3.org/TR/css3-selectors/">W3C</a></li>
@@ -694,40 +695,40 @@
             <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/">NetTuts+</a></li>
           </ul>
         </div>
-        <p>Селектары&nbsp;&mdash; гэта шаблёны, каторыя вызначаюць да якіх элемэнтаў <a href="../htmlRef/index.html"><span class="term">HTML</span></a> будуць ужытыя <a href="#Concepts_syntax_terminology">аб&#39;яўленьні</a>, якія зьмяшчаюцца ў <a href="#Concepts_syntax_terminology">блёку</a> пасьля гэтага селектара. Гэтыя аб&#39;яўленьні будуць ужытыя да ўсіх элемэнтаў, каторыя адпавядаюць шаблёну, акрамя выпадку, калі яны перавызначаныя ў іншым, больш <a href="#Concepts_selectors_specificity">спэцыфічным</a> селектары.</p>
-        <p>Селектар можа складацца з шэрагу простых селектараў, каторыя падзяляюцца паміж сабой <a href="#Selectors_combinators">камбінатарамі</a>. <a href="#Selectors_pseudo-elements">Псэўда-элемэнты</a> таксама могуць быць уключаныя адразу пасьля апошняга простага селектару ў шэрагу.</p>
+        <p>Сэлектары&nbsp;&mdash; гэта шаблёны, каторыя вызначаюць да якіх элемэнтаў <a href="../htmlRef/index.html"><span class="term">HTML</span></a> будуць ужытыя <a href="#Concepts_syntax_terminology">аб&#39;явы</a>, якія зьмяшчаюцца ў <a href="#Concepts_syntax_terminology">блёку</a> пасьля гэтага сэлектара. Гэтыя аб&#39;яўленьні будуць ужытыя да ўсіх элемэнтаў, каторыя адпавядаюць шаблёну, акрамя выпадку, калі яны перавызначаныя ў іншым, больш <a href="#Concepts_selectors_specificity">спэцыфічным</a> сэлектары.</p>
+        <p>Сэлектар можа складацца з шэрагу простых сэлектараў, якія падзяляюцца паміж сабой <a href="#Selectors_combinators">камбінатарамі</a>. <a href="#Selectors_pseudo-elements">Псэўда-элемэнты</a> таксама могуць быць зьмешчаныя адразу пасьля апошняга простага сэлектару ў шэрагу.</p>
         <br />
         <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/">http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/</a></p>
         
-        <h2><a name="Selectors_universal">Унівэрсальны селектар</a></h2>
+        <h2><a name="Selectors_universal">Унівэрсальны сэлектар</a></h2>
         <div class="refs">
           <ul>
             <li><a href="http://reference.sitepoint.com/css/universalselector/">SitePoint</a></li>
           </ul>
         </div>
         
-        <h2><a name="Selectors_elements">Селектар па элемэнтам</a></h2>
+        <h2><a name="Selectors_elements">Сэлектар паводле элемэнтаў</a></h2>
         <div class="refs">
           <ul>
             <li><a href="http://reference.sitepoint.com/css/elementtypeselector/">SitePoint</a></li>
           </ul>
         </div>
                       
-        <h2><a name="Selectors_classes">Селектар па клясам</a></h2>
+        <h2><a name="Selectors_classes">Сэлектар паводле клясаў</a></h2>
         <div class="refs">
           <ul>
             <li><a href="http://reference.sitepoint.com/css/classselector/">SitePoint</a></li>
           </ul>
         </div>
               
-        <h2><a name="Selectors_IDs">Селектар па ідэнтыфікатарам</a></h2>
+        <h2><a name="Selectors_IDs">Сэлектар паводле ідэнтыфікатараў</a></h2>
         <div class="refs">
           <ul>
             <li><a href="http://reference.sitepoint.com/css/idselector/">SitePoint</a></li>
           </ul>
         </div>
               
-        <h2><a name="Selectors_attributes">Селектар па атрыбутам</a></h2>
+        <h2><a name="Selectors_attributes">Сэлектар паводле атрыбутаў</a></h2>
         <div class="refs">
           <ul>
             <li><a href="http://reference.sitepoint.com/css/attributeselector/">SitePoint</a></li>
@@ -748,14 +749,14 @@
           </ul>
         </div>
               
-        <h2><a name="Selectors_grouping">Групаваньне селектараў</a></h2>
+        <h2><a name="Selectors_grouping">Групаваньне сэлектараў</a></h2>
         <div class="refs">
           <ul>
             <li><a href="http://reference.sitepoint.com/css/selectorgrouping/">SitePoint</a></li>
           </ul>
         </div>
         
-        <h2><a name="Selectors_combinators">Камбінатары селектараў</a></h2>
+        <h2><a name="Selectors_combinators">Камбінатары сэлектараў</a></h2>
         <div class="refs">
           <ul>
             <li><a href="http://reference.sitepoint.com/css/combinators/">SitePoint</a></li>
@@ -796,7 +797,7 @@
           </ul>
         </div>
         
-        <h3><a name="Attributes_table">Атрыбуты табліц</a></h3>
+        <h3><a name="Attributes_table">Атрыбуты табліцаў</a></h3>
         <h3><a name="Attributes_color_background">Атрыбуты колераў і фонаў</a></h3>
         <div class="refs">
           <ul>
@@ -1241,7 +1242,7 @@
         </p>
         
         <h3><a name="Less_mixins">Дамешкі</a></h3>
-        <p>Дамешкі (<i>mixins</i>) дазваляюць атрыбуты аднаго селектару/клясы убудоўваць (<i>embed</i>) ў іншы. Прынцып падобны да <a href="#Less_variables">пераменных</a>, адно што працуе для цэлых блёкаў і ўтрымлівае магчымасьць перадаваць парамэтры.</p>
+        <p>Дамешкі (<i>mixins</i>) дазваляюць атрыбуты аднаго сэлектару/клясы убудоўваць (<i>embed</i>) ў іншы. Прынцып падобны да <a href="#Less_variables">пераменных</a>, адно што працуе для цэлых блёкаў і ўтрымлівае магчымасьць перадаваць парамэтры.</p>
         <p>
           <table class="two_column_code_example" cellpadding="5px;">
             <tbody>
@@ -1288,7 +1289,7 @@
         </p>
         
         <h3><a name="Less_nested_rules">Укладзеныя правілы</a></h3>
-        <p>Укладзеныя правілы (<i>nested rules</i>) дазваляюць запісваць герархічныя правілы ў выглядзе герархіі селектараў (укладзеных адзін у другі) замест складанай лінейнай запісі.</p>
+        <p>Укладзеныя правілы (<i>nested rules</i>) дазваляюць запісваць герархічныя правілы ў выглядзе герархіі сэлектараў (укладзеных адзін у другі) замест складанай лінейнай запісі.</p>
         <p>
           <table class="two_column_code_example" cellpadding="5px;">
             <tbody>
@@ -1471,7 +1472,7 @@
         </p>
 
         <h3><a name="Sass_mixins">Дамешкі</a></h3>
-        <p>Дамешкі (<i>mixins</i>) дазваляюць атрыбуты аднаго селектару/клясы убудоўваць (<i>embed</i>) ў іншы. Прынцып падобны да <a href="#Sass_variables">пераменных</a>, адно што працуе для цэлых блёкаў і ўтрымлівае магчымасьць перадаваць парамэтры.</p>
+        <p>Дамешкі (<i>mixins</i>) дазваляюць атрыбуты аднаго сэлектару/клясы убудоўваць (<i>embed</i>) ў іншы. Прынцып падобны да <a href="#Sass_variables">пераменных</a>, адно што працуе для цэлых блёкаў і ўтрымлівае магчымасьць перадаваць парамэтры.</p>
         <p>
           <table class="two_column_code_example" cellpadding="5px;">
             <tbody>
@@ -1524,7 +1525,7 @@
         </p>
 
         <h3><a name="Sass_nested_rules">Укладзеныя правілы</a></h3>
-        <p>Укладзеныя правілы (<i>nested rules</i>) дазваляюць запісваць герархічныя правілы ў выглядзе герархіі селектараў (укладзеных адзін у другі) замест складанай лінейнай запісі.</p>
+        <p>Укладзеныя правілы (<i>nested rules</i>) дазваляюць запісваць герархічныя правілы ў выглядзе герархіі сэлектараў (укладзеных адзін у другі) замест складанай лінейнай запісі.</p>
         <p>
           <table class="two_column_code_example" cellpadding="5px;">
             <tbody>
@@ -1574,7 +1575,7 @@
         </p>
 
         <h3><a name="Sass_inheritance">Спадчыннасьць</a></h3>
-        <p>У <i>Sass</i> таксама магчыма прызначыць, каб адзін селектар цалкам успадкоўваў стыль іншага.</p>
+        <p>У <i>Sass</i> таксама магчыма прызначыць, каб адзін сэлектар цалкам успадкоўваў стыль іншага.</p>
         <table class="two_column_code_example" cellpadding="5px;">
           <tbody>
             <tr>
@@ -1659,7 +1660,7 @@
                   style="border-style: none;" alt="Common Creatives. Attribution + Noncommercial (by-nc)" />
             </a>
           </p>
-          <p><cite>Тэхнічны даведнік па CSS</cite> публікуецца пад ліцензіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://www.yurtsevich.info/refs/cssRef/index.html">крыніцы</a></strong> матэрыялу.</p>
+          <p><cite>Тэхнічны даведнік па CSS</cite> публікуецца пад ліцэнзіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://www.yurtsevich.info/refs/cssRef/index.html">крыніцы</a></strong> матэрыялу.</p>
         </div>
       </footer>
     </article>
