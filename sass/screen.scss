@@ -42,6 +42,9 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     .github_link {bottom: 50px; display: block; left: 15px; position: absolute;
       a {background: url("../images/github.png") no-repeat scroll 0 0 transparent; display: inline-block; height: 32px; width: 32px;}
     }
+    .zip_link {bottom: 100px; display: block; left: 15px; position: absolute;
+      a {background: url("../images/zip.png") no-repeat scroll 0 0 transparent; display: inline-block; height: 32px; width: 32px;}
+    }
   }
   #content {background: #eee; left: 65px; max-height: 100%; max-width: 280px; min-height: 100%; min-width: 280px; padding: 20px 10px 180px -10px; 
       overflow: scroll; position: fixed; 
