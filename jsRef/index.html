@@ -62,7 +62,7 @@
         <ul>
           <li><a href="../gitRef/index.html">Git</a></li>
         </ul>
-        <div class="zip_link"><a href="../Manuals.zip" title="Архіў усіх даведнікаў адным файлам (~7 Mb)"></a></div>
+        <div class="zip_link"><a href="../Manuals.zip" title="Архіў усіх даведнікаў адным файлам (~8 Mb)"></a></div>
         <div class="github_link"><a href="https://github.com/yurtsevich/Manuals" title="Зыходнікі ўсіх даведнікаў на GitHub"></a></div>
       </div>
 
@@ -70,8 +70,8 @@
         <ul class="mktree">
           <li class="liOpen"><a href="#Links">Карысныя спасылкі</a>
             <ul>
-              <li><a href="#Links_home">Home</a></li>
-              <li><a href="#Links_refs">References</a></li>
+              <li><a href="#Links_Refs">Даведнікі і кнігі</a></li>
+              <li><a href="#Links_Lessons">Урокі</a></li>
             </ul>
           </li>
           
@@ -82,6 +82,10 @@
               <li><a href="#Frameworks_Prototype">Prototype</a></li>
               <li><a href="#Frameworks_MooTools">MooTools</a></li>
               <li><a href="#Frameworks_Node.js">Node.js</a></li>
+              <li><a href="#Frameworks_Backbone.js">Backbone.js</a></li>
+              <li><a href="#Frameworks_SproutCore">SproutCore</a></li>
+              <li><a href="#Frameworks_Angular">Angular</a></li>
+              <li><a href="#Frameworks_KnockOut">KnockOut</a></li>
             </ul>
           </li>
           
@@ -105,26 +109,78 @@
 
       <section>
         <h1><a name="Links">Карысныя спасылкі</a></h1>
-        <h2><a name="Links_home">Home</a></h2>
-        <h2><a name="Links_refs">References</a></h2>
+
+        <h2><a name="Links_Docs">Комплексная дакумэнтацыя</a></h2>
+        <p><i>JavaScript</i> на <strong>developer.mozilla.org</strong>: <a href="https://developer.mozilla.org/en/JavaScript">https://developer.mozilla.org/en/JavaScript</a></p>
+        <p><i>AJAX</i> на <strong>developer.mozilla.org</strong>: <a href="https://developer.mozilla.org/en/Ajax">https://developer.mozilla.org/en/Ajax</a></p>
+
+        <h2><a name="Links_Refs">Даведнікі і кнігі</a></h2>
+        <p>&laquo;Паўторныя ўводзіны ў <i>JavaScript</i>&raquo; на <strong>developer.mozilla.org</strong>: <a href="https://developer.mozilla.org/en/A_re-introduction_to_JavaScript">https://developer.mozilla.org/en/A_re-introduction_to_JavaScript</a></p>
+        <p><i>Даведнік</i> на <strong>SitePoint.com</strong>: <a href="http://reference.sitepoint.com/javascript/">http://reference.sitepoint.com/javascript</a></p>
+
+        <h2><a name="Links_Lessons">Урокі</a></h2>
+        <p><i>Інтэрактыўныя ўрокі</i> для пачаткоўцаў на <strong>CodeCademy.com</strong>: <a href="http://www.codecademy.com/courses/javascript-intro/">http://www.codecademy.com/courses/javascript-intro</a></p>
+        <p><i>Відэа-ўрокі</i> для пачаткоўцаў на <strong>appendTo.com</strong>: <a href="http://learn.appendto.com/lessons">http://learn.appendto.com/lessons</a></p>
+
+        <h2><a name="Links_Blogs">Блогі</a></h2>
+        <p>Разьдзел <i>JavaScript</i> на <strong>SmashingMagazine.com</strong>: <a href="http://coding.smashingmagazine.com/tag/javascript/">http://coding.smashingmagazine.com/tag/javascript</a></p>
+        <p>Разьдзел <i>JavaScript &amp; AJAX</i> на <strong>net.TutsPlus.com</strong>: <a href="http://net.tutsplus.com/category/tutorials/javascript-ajax/">http://net.tutsplus.com/category/tutorials/javascript-ajax</a></p>
+        <p>Разьдзел <i>AJAX</i> на <strong>noupe.com</strong>: <a href="http://www.noupe.com/category/ajax">http://www.noupe.com/category/ajax</a></p>
+        <p>Разьдзел <i>jQuery</i> на <strong>AddyOsmani.com</strong>: <a href="http://addyosmani.com/blog/?s=jQuery">http://addyosmani.com/blog/?s=jQuery</a></p>
+        <p><a href="http://net.tutsplus.com/articles/web-roundups/30-developers-you-must-subscribe-to-as-a-javascript-junkie/">&laquo;33 Developers you MUST Subscribe to as a JavaScript Junkie&raquo;</a></p>
       </section>
 
       <section>
-        <p>Лагіраваньне і дэбаг у JavaScript. Прасьцейшы спосаб&nbsp;&mdash; вывад інфармацыі ў кансоль <a href="http://getfirebug.com/" title="Firebug home page">Firebug</a>:</p>
+        <h1><a name="Types">Стандартныя тыпы</a></h1>
+
+        <h2><a name="Types_Numbers">Лікі</a></h2>
+        <p></p>
+
+        <h2><a name="Types_Strings">Радкі</a></h2>
+        <p></p>
+
+        <h2><a name="Types_Boolean">Булевы тып</a></h2>
+        <p>Пры ўжываньні ў выразах наступныя значэньні інтэрпрэтуюцца як &laquo;ілжывыя&raquo;:</p>
+        <ul>
+          <li><code class="keyword">false</code></li>
+          <li><code class="keyword">null</code></li>
+          <li><code class="keyword">undefined</code></li>
+          <li><code>0</code></li>
+          <li><code>""</code></li>
+          <li><code class="keyword">NaN</code></li>
+        </ul>
+
+      </section>
+
+      <section>
+        <h1><a name="LoggingDebugTesting">Лагіраваньне, дэбаг і тэставаньне</a></h1>
+        
+        <h2><a name="LoggingDebug">Лагіраваньне і дэбаг</a></h2>
+        <p>Прасьцейшы спосаб рабіць лагіраваньне і дэбаг у <i>JavaScript</i>&nbsp;&mdash; вывад інфармацыі ў кансоль <a href="http://getfirebug.com/" title="Хатняя старонка Firebug"><i>Firebug</i></a>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          function log(obj){
+          function log(obj) {
             if (window.console && console.log) {
               console.log(obj);
             }
           }
         ]]></script>
-      </section>
+        <p>Што такое <i>Firebug</i> можна даведацца ў відэа-ўводзінах да гэтага <a href="http://firefox.com/" title="Хатняя старонка Firefox"><i>Firefox</i></a>-дадатку на <strong>css-tricks.com</strong>: <a href="http://css-tricks.com/video-screencasts/15-introduction-to-firebug/">http://css-tricks.com/video-screencasts/15-introduction-to-firebug/</a>.</p>
 
-      <section>
-        <p><a href="http://net.tutsplus.com/series/javascript-from-null-series/">JavaScript from Null</a></p>
+        <h2><a name="Testing">Тэставаньне</a></h2>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-test-your-javascript-code-with-qunit/">How to Test your JavaScript Code with QUnit</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/testing-your-javascript-with-jasmine/">Testing Your JavaScript with Jasmine</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/test-driven-javascript-development-in-practice/">Test-Driven JavaScript Development in Practice</a></p>
+      </section>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+      <section>
+        <p><a href="http://net.tutsplus.com/series/javascript-from-null-series/">JavaScript from Null</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/top-10-things-that-javascript-got-wrong/">Top 10 Things that JavaScript Got Wrong</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-javascript-event-delegation-in-4-minutes/">JavaScript Event Delegation in 4 Minutes</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/whats-new-in-javascript-1-8-5/">What’s new in JavaScript 1.8.5</a></p>
@@ -272,6 +328,27 @@
           </ul>
         </div>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-backbone-js/">Getting Started with Backbone.js</a></p>
+
+        <h2><a name="Frameworks_SproutCore">SproutCore</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.sproutcore.com/">Home</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="Frameworks_Angular">Angular</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://angularjs.org/">Home</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="Frameworks_KnockOut">KnockOut</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://knockoutjs.com/">Home</a></li>
+          </ul>
+        </div>
       </section>
 
       <section>
@@ -335,7 +412,7 @@
       <p><a href="http://www.askthecssguy.com/2009/08/59_amazing_and_jawdropping_web_1.html">59+ Amazing (and jaw-dropping) web design-related lists with titles that will rip your face off, blow your mama's mind, and make you cry under the crushing pain of their inspiration</a></p>
       <p><a href="http://www.askthecssguy.com/">http://www.askthecssguy.com</a></p>
       <p><a href="http://leaflet.cloudmade.com/">A Modern, Lightweight Open-Source JavaScript Library for Interactive Maps by CloudMade</a></p>
-      
+      <p>WebWorkers: <a href="http://wearehugh.com/public/2010/08/html5-web-workers/">http://wearehugh.com/public/2010/08/html5-web-workers</a>, <a href="https://developer.mozilla.org/En/Using_web_workers">https://developer.mozilla.org/En/Using_web_workers</a></p>
 
       <p>Prototype: <a href="http://www.prototypejs.org">http://www.prototypejs.org</a>,
         <a href="http://api.prototypejs.org/language/Function/prototype/bind/">http://api.prototypejs.org/language/Function/prototype/bind/</a>,
