@@ -1,4 +1,15 @@
 @font-face {
+    font-family: 'AlegreyaSCRegular';
+    src: url('alegreyasc-regular-webfont.eot');
+    src: url('alegreyasc-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('alegreyasc-regular-webfont.woff') format('woff'),
+         url('alegreyasc-regular-webfont.ttf') format('truetype'),
+         url('alegreyasc-regular-webfont.svg#AlegreyaSCRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
   font-family: 'AllerLightRegular';
   src: url("fonts/Aller/FontFace_Light/aller_lt-webfont.eot");
   src: url("fonts/Aller/FontFace_Light/aller_lt-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Aller/FontFace_Light/aller_lt-webfont.woff") format("woff"), url("fonts/Aller/FontFace_Light/aller_lt-webfont.ttf") format("truetype"), url("fonts/Aller/FontFace_Light/aller_lt-webfont.svg#AllerLightRegular") format("svg");

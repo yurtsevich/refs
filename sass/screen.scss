@@ -4,7 +4,9 @@
 @import "compass/css3";
 @import "font-stack";
 
-h1, h2, h3, h4, h5, h6 {font-family: $cambria-font-stack;}
+h1, h2, h3, h4, h5, h6 {font-family: $cambria-font-stack;
+  a {text-decoration: none; /*excluding text underlying of links inside of headers*/}
+}
 p {margin-top: 10px;}
 q {font-style: italic;}
 blockquote {color: #666; margin: 10px 30px 10px;}
@@ -30,7 +32,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
        position: fixed; text-align: right; top: 0px; width: 70px;
 
     ul {font-weight: bold; list-style: none outside none; margin-left: -5px; margin-top: 40px;
-      li {@include background-image(linear-gradient(#444, #282828)); @include border-radius(3px); 
+      li {@include background-image(linear-gradient(#444, #282828)); @include border-radius(3px);
           @include box-shadow(rgba(50, 50, 50, 0.8) 1px 1px 1px); margin: 3px 10px 0 0; width: 60px; overflow: hidden;
         a:link, a:visited, a:active {color: #fff; display: block; line-height: 1.4em; padding: 5px 10px 6px; text-decoration: none;}
         a:hover {color: #cc4933;}
@@ -46,8 +48,8 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
       a {background: url("../images/zip.png") no-repeat scroll 0 0 transparent; display: inline-block; height: 32px; width: 32px;}
     }
   }
-  #content {background: #eee; left: 65px; max-height: 100%; max-width: 280px; min-height: 100%; min-width: 280px; padding: 20px 10px 180px -10px; 
-      overflow: scroll; position: fixed; 
+  #content {background: #eee; left: 65px; max-height: 100%; max-width: 280px; min-height: 100%; min-width: 280px; padding: 20px 10px 180px -10px;
+      overflow: scroll; position: fixed;
   }
 }
 
@@ -65,7 +67,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
 
   ol, ul {margin-bottom: 0.5em; margin-top: 0.5em;}
 
-  aside {background: #eee; @include border-radius(5px); box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.5); float: right; 
+  aside {background: #eee; @include border-radius(5px); box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.5); float: right;
       margin: 10px 5px 10px 20px; padding: 20px; width: 300px;
     &.warn {background: #fbb;}
     &.intro {background-color: #f4c288; font: 0.65em $lucida-grande-font-stack;}
@@ -94,9 +96,9 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     .colored_header_example {color: #78d; font-size: 28pt;}
     .capitalized_example {text-transform: uppercase;}
     .small_grayed_example {color: #888; font-size: 10pt;}
-    #garamond, #didot, #cambria, #bodoni_mt, #gill_sans, #helvetica, #geneva, #tahoma, #verdana, 
+    #garamond, #didot, #cambria, #bodoni_mt, #gill_sans, #helvetica, #geneva, #tahoma, #verdana,
       #trebuchet, #futura, #calibri, #franklin_gothic {background-color: #F5F9FF;}
-    #goudy_old_style, #baskerville, #hoefler_text, #constantia, #palatino, #book_antiqua, 
+    #goudy_old_style, #baskerville, #hoefler_text, #constantia, #palatino, #book_antiqua,
       #big_caslon, #lucida_bright, #optima, #segoe, #lucida_grande, #candara {background-color: #FFFFE5;}
     #garamond_example {font-family: $garamond-font-stack;}
     #didot_example {font-family: $didot-font-stack;}
@@ -163,13 +165,14 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     #greyscale_basic_example {font-family: "GreyscaleBasicRegular";}
     #folks_light_example {font-family: "FolksLightRegular";}
     #century_gothic_example {font-family: "CenturyGothicRegular";}
+    #alegreya_sc_regular_example {font-family: "AlegreyaSCRegular";}
   }
 
   abbr.changed_in_html5, abbr.new_in_html5, abbr.obsolete_in_html5 {font-size: x-small; vertical-align: super;}
   abbr.changed_in_html5 {color: #00b050;}
   abbr.new_in_html5 {color: #c00000;}
   abbr.obsolete_in_html5 {color: #00b0f0;}
-  
+
   span.changed_in_html5 {color: #00b050;}
   span.new_in_html5 {color: #c00000;}
   span.obsolete_in_html5 {color: #00b0f0;}

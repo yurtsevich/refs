@@ -3,70 +3,75 @@
 h1, h2, h3, h4, h5, h6 {
   font-family: Cambria, Georgia, serif;
 }
-
 /* line 8, ../sass/screen.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none;
+  /*excluding text underlying of links inside of headers*/
+}
+
+/* line 10, ../sass/screen.scss */
 p {
   margin-top: 10px;
 }
 
-/* line 9, ../sass/screen.scss */
+/* line 11, ../sass/screen.scss */
 q {
   font-style: italic;
 }
 
-/* line 10, ../sass/screen.scss */
+/* line 12, ../sass/screen.scss */
 blockquote {
   color: #666;
   margin: 10px 30px 10px;
 }
 
 /*code {font-family: $monospace-font-stack;}*/
-/* line 13, ../sass/screen.scss */
+/* line 15, ../sass/screen.scss */
 code.elem, code.at_rule, code.keyword {
   color: #337ECF;
 }
 
-/* line 14, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 code.attr, code.local_var {
   color: #76923c;
 }
 
-/* line 15, ../sass/screen.scss */
+/* line 17, ../sass/screen.scss */
 code.value, code.class {
   color: #746a34;
 }
 
-/* line 16, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 code.method {
   color: #558;
 }
 
-/* line 17, ../sass/screen.scss */
+/* line 19, ../sass/screen.scss */
 code.const {
   color: #858;
 }
 
-/* line 18, ../sass/screen.scss */
+/* line 20, ../sass/screen.scss */
 code.var {
   color: #FFAA3A;
 }
 
-/* line 20, ../sass/screen.scss */
+/* line 22, ../sass/screen.scss */
 .term {
   color: #1c346a;
 }
 
-/* line 21, ../sass/screen.scss */
+/* line 23, ../sass/screen.scss */
 .todo {
   color: red;
 }
 
-/* line 23, ../sass/screen.scss */
+/* line 25, ../sass/screen.scss */
 figure {
   margin: 20px;
 }
 
-/* line 24, ../sass/screen.scss */
+/* line 26, ../sass/screen.scss */
 figcaption.imgcaption {
   font-size: smaller;
   font-style: italic;
@@ -74,18 +79,18 @@ figcaption.imgcaption {
   text-indent: 0;
 }
 
-/* line 26, ../sass/screen.scss */
+/* line 28, ../sass/screen.scss */
 #container {
   float: left;
   width: 100%;
 }
 
-/* line 28, ../sass/screen.scss */
+/* line 30, ../sass/screen.scss */
 #index {
   float: left;
   width: 500px;
 }
-/* line 29, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 #index #main_index {
   background-color: #ccc;
   font-size: 0.65em;
@@ -98,14 +103,14 @@ figcaption.imgcaption {
   top: 0px;
   width: 70px;
 }
-/* line 32, ../sass/screen.scss */
+/* line 34, ../sass/screen.scss */
 #index #main_index ul {
   font-weight: bold;
   list-style: none outside none;
   margin-left: -5px;
   margin-top: 40px;
 }
-/* line 33, ../sass/screen.scss */
+/* line 35, ../sass/screen.scss */
 #index #main_index ul li {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #444444), color-stop(100%, #282828));
   background-image: -webkit-linear-gradient(#444444, #282828);
@@ -127,7 +132,7 @@ figcaption.imgcaption {
   width: 60px;
   overflow: hidden;
 }
-/* line 35, ../sass/screen.scss */
+/* line 37, ../sass/screen.scss */
 #index #main_index ul li a:link, #index #main_index ul li a:visited, #index #main_index ul li a:active {
   color: #fff;
   display: block;
@@ -135,11 +140,11 @@ figcaption.imgcaption {
   padding: 5px 10px 6px;
   text-decoration: none;
 }
-/* line 36, ../sass/screen.scss */
+/* line 38, ../sass/screen.scss */
 #index #main_index ul li a:hover {
   color: #cc4933;
 }
-/* line 38, ../sass/screen.scss */
+/* line 40, ../sass/screen.scss */
 #index #main_index ul li.active {
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -149,39 +154,39 @@ figcaption.imgcaption {
   margin-right: 0;
   width: 68px;
 }
-/* line 39, ../sass/screen.scss */
+/* line 41, ../sass/screen.scss */
 #index #main_index ul li.active a:hover {
   color: #fff;
 }
-/* line 42, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 #index #main_index .github_link {
   bottom: 50px;
   display: block;
   left: 15px;
   position: absolute;
 }
-/* line 43, ../sass/screen.scss */
+/* line 45, ../sass/screen.scss */
 #index #main_index .github_link a {
   background: url("../images/github.png") no-repeat scroll 0 0 transparent;
   display: inline-block;
   height: 32px;
   width: 32px;
 }
-/* line 45, ../sass/screen.scss */
+/* line 47, ../sass/screen.scss */
 #index #main_index .zip_link {
   bottom: 100px;
   display: block;
   left: 15px;
   position: absolute;
 }
-/* line 46, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 #index #main_index .zip_link a {
   background: url("../images/zip.png") no-repeat scroll 0 0 transparent;
   display: inline-block;
   height: 32px;
   width: 32px;
 }
-/* line 49, ../sass/screen.scss */
+/* line 51, ../sass/screen.scss */
 #index #content {
   background: #eee;
   left: 65px;
@@ -194,61 +199,61 @@ figcaption.imgcaption {
   position: fixed;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 #main {
   margin: 20px 20px 0 403px;
 }
-/* line 55, ../sass/screen.scss */
+/* line 57, ../sass/screen.scss */
 #main header {
   color: #632423;
   font: 50pt Cambria, Georgia, serif;
   text-align: center;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
-/* line 57, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 #main h1, #main h2, #main h3, #main h4 {
   color: #632423;
   font-weight: normal;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
-/* line 58, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 #main h1 a, #main h1 a:active, #main h1 a:visited, #main h2 a, #main h2 a:active, #main h2 a:visited, #main h3 a, #main h3 a:active, #main h3 a:visited, #main h4 a, #main h4 a:active, #main h4 a:visited {
   color: #632423;
 }
-/* line 59, ../sass/screen.scss */
+/* line 61, ../sass/screen.scss */
 #main h1 a:hover, #main h2 a:hover, #main h3 a:hover, #main h4 a:hover {
   color: #632423;
 }
-/* line 61, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 #main h1 {
   border-bottom: 2px solid #632423;
   font-size: 40pt;
   font-variant: small-caps;
   margin: 100px 0 30px -30px;
 }
-/* line 62, ../sass/screen.scss */
+/* line 64, ../sass/screen.scss */
 #main h2 {
   border-bottom: 1px solid #632423;
   font-size: 32pt;
   font-variant: small-caps;
   margin: 30px 0 20px -30px;
 }
-/* line 63, ../sass/screen.scss */
+/* line 65, ../sass/screen.scss */
 #main h3 {
   font-size: 24pt;
   margin: 30px 0 10px -30px;
 }
-/* line 64, ../sass/screen.scss */
+/* line 66, ../sass/screen.scss */
 #main h4 {
   font-size: 18pt;
   margin: 10px 0 10px 0;
 }
-/* line 66, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 #main ol, #main ul {
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
-/* line 68, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 #main aside {
   background: #eee;
   -moz-border-radius: 5px;
@@ -263,16 +268,16 @@ figcaption.imgcaption {
   padding: 20px;
   width: 300px;
 }
-/* line 70, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 #main aside.warn {
   background: #fbb;
 }
-/* line 71, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 #main aside.intro {
   background-color: #f4c288;
   font: 0.65em "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
-/* line 74, ../sass/screen.scss */
+/* line 76, ../sass/screen.scss */
 #main table {
   border-collapse: separate;
   border-bottom: 1px solid #111111;
@@ -280,395 +285,399 @@ figcaption.imgcaption {
   margin: 30px 0 40px;
   width: 100%;
 }
-/* line 75, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #main table caption {
   font-style: italic;
   line-height: 3em;
 }
-/* line 76, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 #main table thead {
   text-align: left;
 }
-/* line 77, ../sass/screen.scss */
+/* line 79, ../sass/screen.scss */
 #main table th, #main table td {
   padding: 8px;
 }
-/* line 78, ../sass/screen.scss */
+/* line 80, ../sass/screen.scss */
 #main table th {
   border-bottom: 1px solid #111111;
   color: #222222;
   font: 15px/2em "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 }
-/* line 79, ../sass/screen.scss */
+/* line 81, ../sass/screen.scss */
 #main table th:first-child {
   padding-left: 0;
 }
-/* line 80, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 #main table td {
   border-bottom: 1px solid #EEEEEE;
   border-left: 1px solid #EEEEEE;
   color: #666666;
   font: 14px/1.4em Segoe, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
-/* line 81, ../sass/screen.scss */
+/* line 83, ../sass/screen.scss */
 #main table td:first-child {
   border-left: none;
   padding-left: 0;
 }
-/* line 83, ../sass/screen.scss */
+/* line 85, ../sass/screen.scss */
 #main td.file_folder {
   width: 140px;
 }
-/* line 84, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 #main table.list td {
   border: none;
 }
-/* line 85, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 #main table#operators td {
   min-width: 2.45em;
 }
-/* line 86, ../sass/screen.scss */
+/* line 88, ../sass/screen.scss */
 #main table#keywords td {
   min-width: 5em;
 }
-/* line 88, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 #main table.font_stacks .font_stack_name {
   width: 20%;
 }
-/* line 89, ../sass/screen.scss */
+/* line 91, ../sass/screen.scss */
 #main table.font_stacks .font_stack {
   width: 40%;
 }
-/* line 90, ../sass/screen.scss */
+/* line 92, ../sass/screen.scss */
 #main table.font_stacks .font_example {
   color: #333;
   font-size: 14pt;
   width: 40%;
 }
-/* line 91, ../sass/screen.scss */
+/* line 93, ../sass/screen.scss */
 #main table.font_stacks .not_system_font_example {
   font-size: 14pt;
   width: 30%;
 }
-/* line 92, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 #main table.font_stacks .not_system_font_example a {
   color: #333;
   text-decoration: none;
 }
-/* line 94, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 #main table.font_stacks .colored_header_example {
   color: #78d;
   font-size: 28pt;
 }
-/* line 95, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 #main table.font_stacks .capitalized_example {
   text-transform: uppercase;
 }
-/* line 96, ../sass/screen.scss */
+/* line 98, ../sass/screen.scss */
 #main table.font_stacks .small_grayed_example {
   color: #888;
   font-size: 10pt;
 }
-/* line 98, ../sass/screen.scss */
+/* line 100, ../sass/screen.scss */
 #main table.font_stacks #garamond, #main table.font_stacks #didot, #main table.font_stacks #cambria, #main table.font_stacks #bodoni_mt, #main table.font_stacks #gill_sans, #main table.font_stacks #helvetica, #main table.font_stacks #geneva, #main table.font_stacks #tahoma, #main table.font_stacks #verdana,
 #main table.font_stacks #trebuchet, #main table.font_stacks #futura, #main table.font_stacks #calibri, #main table.font_stacks #franklin_gothic {
   background-color: #F5F9FF;
 }
-/* line 100, ../sass/screen.scss */
+/* line 102, ../sass/screen.scss */
 #main table.font_stacks #goudy_old_style, #main table.font_stacks #baskerville, #main table.font_stacks #hoefler_text, #main table.font_stacks #constantia, #main table.font_stacks #palatino, #main table.font_stacks #book_antiqua,
 #main table.font_stacks #big_caslon, #main table.font_stacks #lucida_bright, #main table.font_stacks #optima, #main table.font_stacks #segoe, #main table.font_stacks #lucida_grande, #main table.font_stacks #candara {
   background-color: #FFFFE5;
 }
-/* line 101, ../sass/screen.scss */
+/* line 103, ../sass/screen.scss */
 #main table.font_stacks #garamond_example {
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 }
-/* line 102, ../sass/screen.scss */
+/* line 104, ../sass/screen.scss */
 #main table.font_stacks #didot_example {
   font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
-/* line 103, ../sass/screen.scss */
+/* line 105, ../sass/screen.scss */
 #main table.font_stacks #lucida_bright_example {
   font-family: "Lucida Bright", Georgia, serif;
 }
-/* line 104, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 #main table.font_stacks #palatino_example {
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
 }
-/* line 105, ../sass/screen.scss */
+/* line 107, ../sass/screen.scss */
 #main table.font_stacks #big_caslon_example {
   font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
 }
-/* line 106, ../sass/screen.scss */
+/* line 108, ../sass/screen.scss */
 #main table.font_stacks #baskerville_example {
   font-family: Baskerville, "Baskerville old face", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
-/* line 107, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
 #main table.font_stacks #hoefler_text_example {
   font-family: "Hoefler Text", "Baskerville old face", Garamond, "Times New Roman", serif;
 }
-/* line 108, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 #main table.font_stacks #bodoni_mt_example {
   font-family: "Bodoni MT", Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
 }
-/* line 109, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 #main table.font_stacks #goudy_old_style_example {
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
 }
-/* line 110, ../sass/screen.scss */
+/* line 112, ../sass/screen.scss */
 #main table.font_stacks #constantia_example {
   font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
 }
-/* line 111, ../sass/screen.scss */
+/* line 113, ../sass/screen.scss */
 #main table.font_stacks #cambria_example {
   font-family: Cambria, Georgia, serif;
 }
-/* line 112, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 #main table.font_stacks #book_antiqua_example {
   font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
 }
-/* line 113, ../sass/screen.scss */
+/* line 115, ../sass/screen.scss */
 #main table.font_stacks #optima_example {
   font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
-/* line 114, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 #main table.font_stacks #futura_example {
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
-/* line 115, ../sass/screen.scss */
+/* line 117, ../sass/screen.scss */
 #main table.font_stacks #gill_sans_example {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
 }
-/* line 116, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #main table.font_stacks #trebuchet_example {
   font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
 }
-/* line 117, ../sass/screen.scss */
+/* line 119, ../sass/screen.scss */
 #main table.font_stacks #helvetica_example {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
-/* line 118, ../sass/screen.scss */
+/* line 120, ../sass/screen.scss */
 #main table.font_stacks #verdana_example {
   font-family: Verdana, Geneva, sans-serif;
 }
-/* line 119, ../sass/screen.scss */
+/* line 121, ../sass/screen.scss */
 #main table.font_stacks #lucida_grande_example {
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
 }
-/* line 120, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 #main table.font_stacks #geneva_example {
   font-family: Geneva, Tahoma, Verdana, sans-serif;
 }
-/* line 121, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 #main table.font_stacks #segoe_example {
   font-family: Segoe, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
-/* line 122, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 #main table.font_stacks #candara_example {
   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
-/* line 123, ../sass/screen.scss */
+/* line 125, ../sass/screen.scss */
 #main table.font_stacks #calibri_example {
   font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
 }
-/* line 124, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 #main table.font_stacks #franklin_gothic_example {
   font-family: "Franklin Gothic Medium", Arial, sans-serif;
 }
-/* line 125, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 #main table.font_stacks #tahoma_example {
   font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
-/* line 126, ../sass/screen.scss */
+/* line 128, ../sass/screen.scss */
 #main table.font_stacks #monospace_example {
   font-family: "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
 }
-/* line 127, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 #main table.font_stacks #handwritten_example {
   font-family: "Bradley Hand ITC", "Apple Chancery", "URW Chancery L", cursive;
 }
-/* line 128, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 #main table.font_stacks #aller_light_example {
   font-family: "AllerLightRegular";
 }
-/* line 129, ../sass/screen.scss */
+/* line 131, ../sass/screen.scss */
 #main table.font_stacks #aller_example {
   font-family: "AllerRegular";
 }
-/* line 130, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 #main table.font_stacks #cantarell_example {
   font-family: "CantarellRegular";
 }
-/* line 131, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 #main table.font_stacks #carto_gothic_example {
   font-family: "CartoGothicStdBook";
 }
-/* line 132, ../sass/screen.scss */
+/* line 134, ../sass/screen.scss */
 #main table.font_stacks #delicious_example {
   font-family: "DeliciousRoman";
 }
-/* line 133, ../sass/screen.scss */
+/* line 135, ../sass/screen.scss */
 #main table.font_stacks #fertigo_pro_example {
   font-family: "FertigoProRegular";
 }
-/* line 134, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 #main table.font_stacks #diavlo_medium_example {
   font-family: "DiavloMedium";
 }
-/* line 135, ../sass/screen.scss */
+/* line 137, ../sass/screen.scss */
 #main table.font_stacks #diavlo_light_example {
   font-family: "DiavloLight";
 }
-/* line 136, ../sass/screen.scss */
+/* line 138, ../sass/screen.scss */
 #main table.font_stacks #fontin_sans_example {
   font-family: "FontinSansCRRegular";
 }
-/* line 137, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 #main table.font_stacks #gentium_basic_example {
   font-family: "GentiumBasicRegular";
 }
-/* line 138, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 #main table.font_stacks #junction_example {
   font-family: "JunctionRegular";
 }
-/* line 139, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 #main table.font_stacks #mg_open_cosmetica_example {
   font-family: "MgOpenCosmeticaRegular";
 }
-/* line 140, ../sass/screen.scss */
+/* line 142, ../sass/screen.scss */
 #main table.font_stacks #museo_sans_example {
   font-family: "MuseoSans500";
 }
-/* line 141, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 #main table.font_stacks #nadia_serif_example {
   font-family: "NadiaSerifNormal";
 }
-/* line 142, ../sass/screen.scss */
+/* line 144, ../sass/screen.scss */
 #main table.font_stacks #nobile_example {
   font-family: "NobileRegular";
 }
-/* line 143, ../sass/screen.scss */
+/* line 145, ../sass/screen.scss */
 #main table.font_stacks #pt_sans_example {
   font-family: "PTSansRegular";
 }
-/* line 144, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 #main table.font_stacks #pt_sans_narrow_example {
   font-family: "PTSansNarrowRegular";
 }
-/* line 145, ../sass/screen.scss */
+/* line 147, ../sass/screen.scss */
 #main table.font_stacks #pt_sans_narrow_bold_example {
   font-family: "PTSansNarrowBold";
 }
-/* line 146, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 #main table.font_stacks #pt_sans_caption_example {
   font-family: "PTSansCaptionRegular";
 }
-/* line 147, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 #main table.font_stacks #open_sans_condensed_example {
   font-family: "OpenSansCondensedLight";
 }
-/* line 148, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 #main table.font_stacks #romeral_example {
   font-family: "RomeralRegular";
 }
-/* line 149, ../sass/screen.scss */
+/* line 151, ../sass/screen.scss */
 #main table.font_stacks #titillium_example {
   font-family: "TitilliumText22LRegular";
 }
-/* line 150, ../sass/screen.scss */
+/* line 152, ../sass/screen.scss */
 #main table.font_stacks #titillium_thin_example {
   font-family: "TitilliumText22LThin";
 }
-/* line 151, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 #main table.font_stacks #titillium_light_example {
   font-family: "TitilliumText22LLight";
 }
-/* line 152, ../sass/screen.scss */
+/* line 154, ../sass/screen.scss */
 #main table.font_stacks #sansation_example {
   font-family: "SansationRegular";
 }
-/* line 153, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 #main table.font_stacks #sansation_light_example {
   font-family: "SansationLight";
 }
-/* line 154, ../sass/screen.scss */
+/* line 156, ../sass/screen.scss */
 #main table.font_stacks #yanone_kaffeesatz_light_example {
   font-family: "YanoneKaffeesatzLight";
 }
-/* line 155, ../sass/screen.scss */
+/* line 157, ../sass/screen.scss */
 #main table.font_stacks #droid_sans_example {
   font-family: "DroidSansRegular";
 }
-/* line 156, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 #main table.font_stacks #hattori_hanzo_light_example {
   font-family: "HattoriHanzoLight";
 }
-/* line 157, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 #main table.font_stacks #district_thin_example {
   font-family: "DistrictThinRegular";
 }
-/* line 158, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 #main table.font_stacks #colaborate_thin_example {
   font-family: "ColaborateThinRegular";
 }
-/* line 159, ../sass/screen.scss */
+/* line 161, ../sass/screen.scss */
 #main table.font_stacks #quicksand_light_example {
   font-family: "QuicksandLight";
 }
-/* line 160, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 #main table.font_stacks #bonvenocf_light_example {
   font-family: "BonvenoCFLight";
 }
-/* line 161, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 #main table.font_stacks #lane_narrow_example {
   font-family: "LaneNarrowRegular";
 }
-/* line 162, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #main table.font_stacks #ubuntu_light_example {
   font-family: "UbuntuLight";
 }
-/* line 163, ../sass/screen.scss */
+/* line 165, ../sass/screen.scss */
 #main table.font_stacks #greyscale_basic_example {
   font-family: "GreyscaleBasicRegular";
 }
-/* line 164, ../sass/screen.scss */
+/* line 166, ../sass/screen.scss */
 #main table.font_stacks #folks_light_example {
   font-family: "FolksLightRegular";
 }
-/* line 165, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 #main table.font_stacks #century_gothic_example {
   font-family: "CenturyGothicRegular";
 }
 /* line 168, ../sass/screen.scss */
+#main table.font_stacks #alegreya_sc_regular_example {
+  font-family: "AlegreyaSCRegular";
+}
+/* line 171, ../sass/screen.scss */
 #main abbr.changed_in_html5, #main abbr.new_in_html5, #main abbr.obsolete_in_html5 {
   font-size: x-small;
   vertical-align: super;
 }
-/* line 169, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 #main abbr.changed_in_html5 {
   color: #00b050;
 }
-/* line 170, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 #main abbr.new_in_html5 {
   color: #c00000;
 }
-/* line 171, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 #main abbr.obsolete_in_html5 {
   color: #00b0f0;
 }
-/* line 173, ../sass/screen.scss */
+/* line 176, ../sass/screen.scss */
 #main span.changed_in_html5 {
   color: #00b050;
 }
-/* line 174, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 #main span.new_in_html5 {
   color: #c00000;
 }
-/* line 175, ../sass/screen.scss */
+/* line 178, ../sass/screen.scss */
 #main span.obsolete_in_html5 {
   color: #00b0f0;
 }
-/* line 177, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 #main .refs {
   background: #dfe7fd;
   -moz-border-radius: 5px;
@@ -683,16 +692,16 @@ figcaption.imgcaption {
   margin: -5px 10px 0 -60px;
   padding: 4px;
 }
-/* line 179, ../sass/screen.scss */
+/* line 182, ../sass/screen.scss */
 #main .refs ul {
   list-style: none outside none;
   margin: 0;
 }
-/* line 180, ../sass/screen.scss */
+/* line 183, ../sass/screen.scss */
 #main .refs ul li a {
   text-decoration: none;
 }
-/* line 184, ../sass/screen.scss */
+/* line 187, ../sass/screen.scss */
 #main .new_changed {
   background: #eee;
   -moz-border-radius: 5px;
@@ -709,29 +718,29 @@ figcaption.imgcaption {
   min-width: 90%;
   padding: 4px;
 }
-/* line 188, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 #main .two_column_code_example {
   width: 100%;
 }
-/* line 189, ../sass/screen.scss */
+/* line 192, ../sass/screen.scss */
 #main .two_column_code_example td {
   background-color: #1B2426;
   border: #888 1px dashed;
   padding: 0 50px 0 10px;
 }
 
-/* line 193, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 footer {
   display: inline-block;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   font-size: 0.65em;
   margin: 6em 0;
 }
-/* line 194, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 footer #copyright {
   width: 35%;
 }
-/* line 195, ../sass/screen.scss */
+/* line 198, ../sass/screen.scss */
 footer #powered {
   float: right;
   margin: 0 5%;
