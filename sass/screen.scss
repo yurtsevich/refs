@@ -5,6 +5,7 @@
 @import "font-stack";
 
 body {font: 94% $optima-font-stack;}
+section, header {max-width: 800px;}
 h1, h2, h3, h4, h5, h6 {font-family: $goudy-old-style-font-stack;
   a {text-decoration: none; /*excluding text underlying of links inside of headers*/}
 }
@@ -12,9 +13,8 @@ p {margin-top: 10px;}
 q {font-style: italic;}
 blockquote {color: #666; margin: 10px 30px 10px;}
 
-/*code {background-color: #EEEEEE; border: 1px solid #DDDDDD; border-radius: 2px; padding: 0 5px;}*/
-/*code {background-color: #EEEEEE; padding: 0 5px;}*/
 code {color: #222222; padding: 0 3px; @include text-shadow(rgba(0, 0, 0, 0.4) 1px 1px 1px);}
+.syntaxhighlighter code {@include text-shadow(none);}
 code.elem, code.at_rule, code.keyword {color: #337ECF;}
 code.attr, code.local_var {color: #76923c;}
 code.value, code.class {color: #746a34;}

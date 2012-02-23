@@ -5,38 +5,46 @@ body {
 }
 
 /* line 8, ../sass/screen.scss */
+section, header {
+  max-width: 800px;
+}
+
+/* line 9, ../sass/screen.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
 }
-/* line 9, ../sass/screen.scss */
+/* line 10, ../sass/screen.scss */
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   text-decoration: none;
   /*excluding text underlying of links inside of headers*/
 }
 
-/* line 11, ../sass/screen.scss */
+/* line 12, ../sass/screen.scss */
 p {
   margin-top: 10px;
 }
 
-/* line 12, ../sass/screen.scss */
+/* line 13, ../sass/screen.scss */
 q {
   font-style: italic;
 }
 
-/* line 13, ../sass/screen.scss */
+/* line 14, ../sass/screen.scss */
 blockquote {
   color: #666;
   margin: 10px 30px 10px;
 }
 
-/*code {background-color: #EEEEEE; border: 1px solid #DDDDDD; border-radius: 2px; padding: 0 5px;}*/
-/*code {background-color: #EEEEEE; padding: 0 5px;}*/
-/* line 17, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 code {
   color: #222222;
   padding: 0 3px;
   text-shadow: rgba(0, 0, 0, 0.4) 1px 1px 1px;
+}
+
+/* line 17, ../sass/screen.scss */
+.syntaxhighlighter code {
+  text-shadow: none;
 }
 
 /* line 18, ../sass/screen.scss */
