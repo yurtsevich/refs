@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'AlegreyaSCRegular';
-    src: url('alegreyasc-regular-webfont.eot');
-    src: url('alegreyasc-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('alegreyasc-regular-webfont.woff') format('woff'),
-         url('alegreyasc-regular-webfont.ttf') format('truetype'),
-         url('alegreyasc-regular-webfont.svg#AlegreyaSCRegular') format('svg');
+    src: url('fonts/Alegreya/AlegreyaSC_Regular/alegreyasc-regular-webfont.eot');
+    src: url('fonts/Alegreya/AlegreyaSC_Regular/alegreyasc-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Alegreya/AlegreyaSC_Regular/alegreyasc-regular-webfont.woff') format('woff'),
+         url('fonts/Alegreya/AlegreyaSC_Regular/alegreyasc-regular-webfont.ttf') format('truetype'),
+         url('fonts/Alegreya/AlegreyaSC_Regular/alegreyasc-regular-webfont.svg#AlegreyaSCRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
