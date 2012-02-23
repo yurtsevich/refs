@@ -4,14 +4,17 @@
 @import "compass/css3";
 @import "font-stack";
 
-h1, h2, h3, h4, h5, h6 {font-family: $cambria-font-stack;
+body {font: 94% $optima-font-stack;}
+h1, h2, h3, h4, h5, h6 {font-family: $goudy-old-style-font-stack;
   a {text-decoration: none; /*excluding text underlying of links inside of headers*/}
 }
 p {margin-top: 10px;}
 q {font-style: italic;}
 blockquote {color: #666; margin: 10px 30px 10px;}
 
-/*code {font-family: $monospace-font-stack;}*/
+/*code {background-color: #EEEEEE; border: 1px solid #DDDDDD; border-radius: 2px; padding: 0 5px;}*/
+/*code {background-color: #EEEEEE; padding: 0 5px;}*/
+code {color: #222222; padding: 0 3px; @include text-shadow(rgba(0, 0, 0, 0.4) 1px 1px 1px);}
 code.elem, code.at_rule, code.keyword {color: #337ECF;}
 code.attr, code.local_var {color: #76923c;}
 code.value, code.class {color: #746a34;}
@@ -20,6 +23,7 @@ code.const {color: #858;}
 code.var {color: #FFAA3A;}
 
 .term {color: #1c346a;}
+.deprecated {text-decoration: line-through;}
 .todo {color: red;}
 
 figure {margin: 20px;}
@@ -28,46 +32,51 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
 #container {float: left; width: 100%;}
 
 #index {float: left; width: 500px;
-  #main_index {background-color: #ccc; font-size: 0.65em; left: 0px; height: 100%; min-height: 550px; padding-top: 20px;
-       position: fixed; text-align: right; top: 0px; width: 70px;
+  #main_index {background-color: #BBBBBB; font-size: 0.70em;
+      left: 0px; height: 100%; min-height: 550px; padding-top: 20px; position: fixed; text-align: right; top: 0px;
+      width: 40px; z-index: 50;
 
-    ul {font-weight: bold; list-style: none outside none; margin-left: -5px; margin-top: 40px;
-      li {@include background-image(linear-gradient(#444, #282828)); @include border-radius(3px);
-          @include box-shadow(rgba(50, 50, 50, 0.8) 1px 1px 1px); margin: 3px 10px 0 0; width: 60px; overflow: hidden;
-        a:link, a:visited, a:active {color: #fff; display: block; line-height: 1.4em; padding: 5px 10px 6px; text-decoration: none;}
-        a:hover {color: #cc4933;}
-      }
-      li.active {@include box-shadow(none); background: #991900; margin-right: 0; width: 68px;
-        a:hover {color: #fff;}
+    ul {background-color: #CCCCCC; list-style: none outside none; margin-left: 0; margin-top: 40px;
+      li {border-top: 1px solid #BBBBBB; padding: 3px 0; width: 40px; overflow: hidden;
+        a:link, a:visited, a:active {color: #444444; display: block; line-height: 1.4em; padding: 5px; text-decoration: none;}
+        &:hover {background: #DDDDDD;
+          a {color: #111111; @include text-shadow(rgba(0, 0, 0, 0.5) 1px 1px 2px);}
+        }
+        &.active {background: #EEEEEE;
+          a:link, a:visited, a:active {color: #111111; font-weight: bold; @include text-shadow(rgba(0, 0, 0, 0.6) 1px 2px 3px);}
+        }
       }
     }
-    .github_link {bottom: 50px; display: block; left: 15px; position: absolute;
-      a {background: url("../images/github.png") no-repeat scroll 0 0 transparent; display: inline-block; height: 32px; width: 32px;}
+    .github_link, .zip_link {display: block; left: 5px; position: absolute;
+      a {background: no-repeat scroll 0 0 transparent; display: inline-block; height: 32px; width: 32px;}
     }
-    .zip_link {bottom: 100px; display: block; left: 15px; position: absolute;
-      a {background: url("../images/zip.png") no-repeat scroll 0 0 transparent; display: inline-block; height: 32px; width: 32px;}
+    .github_link {bottom: 50px;
+      a {background-image: url("../images/github.png");}
+    }
+    .zip_link {bottom: 100px;
+      a {background-image: url("../images/zip.png");}
     }
   }
-  #content {background: #eee; left: 65px; max-height: 100%; max-width: 280px; min-height: 100%; min-width: 280px; padding: 20px 10px 180px -10px;
+  #content {background: #eee; left: 40px; max-height: 100%; max-width: 280px; min-height: 100%; min-width: 280px; padding: 20px 10px 180px -10px;
       overflow: scroll; position: fixed;
   }
 }
 
-#main {margin: 20px 20px 0 403px;
-  header {color: #632423; font: 50pt $cambria-font-stack; text-align: center; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);}
+#main {margin: 20px 20px 0 376px;
+  header {color: #222222; font: 50pt $goudy-old-style-font-stack; text-align: center; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);}
 
-  h1, h2, h3, h4 {color: #632423; font-weight: normal; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
-    a, a:active, a:visited { color: #632423; }
-    a:hover { color: #632423; }
+  h1, h2, h3, h4 {color: #222222; font-weight: normal; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+    a, a:active, a:visited { color: #222222; }
+    a:hover { color: #222222; }
   }
-  h1 {border-bottom: 2px solid #632423; font-size: 40pt; font-variant: small-caps; margin: 100px 0 30px -30px;}
-  h2 {border-bottom: 1px solid #632423; font-size: 32pt; font-variant: small-caps; margin: 30px 0 20px -30px;}
-  h3 {font-size: 24pt; margin: 30px 0 10px -30px;}
-  h4 {font-size: 18pt; margin: 10px 0 10px 0;}
+  h1 {border-bottom: 2px solid #222222; font-size: 40pt; font-variant: small-caps; margin: 70px 0 30px -30px;}
+  h2 {border-bottom: 1px solid #222222; font-size: 32pt; font-variant: small-caps; margin: 40px 0 20px -30px;}
+  h3 {font-size: 24pt; margin: 30px 0 15px -30px;}
+  h4 {font-size: 18pt; margin: 25px 0 10px 0;}
 
   ol, ul {margin-bottom: 0.5em; margin-top: 0.5em;}
 
-  aside {background: #eee; @include border-radius(5px); box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.5); float: right;
+  aside {background: #eee; border: 1px solid #BBBBBB; @include border-radius(2px); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); float: right;
       margin: 10px 5px 10px 20px; padding: 20px; width: 300px;
     &.warn {background: #fbb;}
     &.intro {background-color: #f4c288; font: 0.65em $lucida-grande-font-stack;}
@@ -177,14 +186,19 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   span.new_in_html5 {color: #c00000;}
   span.obsolete_in_html5 {color: #00b0f0;}
 
-  .refs {background: #dfe7fd; @include border-radius(5px); box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.5); font-size: x-small;
-      float: left; margin: -5px 10px 0 -60px; padding: 4px;
+  .refs {background: #EEEEEE; border: 1px solid #BBBBBB; @include border-radius(1px);
+      @include box-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px); font-size: x-small; float: left;
+      margin: -10px 10px 0 -60px; padding: 4px 8px;
     ul {list-style: none outside none; margin: 0;
-      li a {text-decoration: none;}
+      li {border-top: 1px solid #BFC7DD;
+        &:first-child {border-top: none;}
+        a {line-height: 1.5; padding: 0 8px; text-decoration: none;}
+      }
     }
   }
 
-  .new_changed {background: #eee; @include border-radius(5px); box-shadow: 1px 1px 1px rgba(100, 100, 100, 0.5); color: #333;
+  .new_changed {background: #eee; @include border-radius(5px);
+      @include box-shadow(rgba(100, 100, 100, 0.5) 1px 1px 1px); color: #333;
       font-size: x-small; float: right; margin: -35px 5px 10px 10px; min-width: 90%; padding: 4px;
   }
 
