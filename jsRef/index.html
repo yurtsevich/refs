@@ -25,7 +25,7 @@
 
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
-  <link rel="stylesheet" href="../css/screen.css?v=1">
+  <link rel="stylesheet" href="../css/screen.css?v=2">
   <link rel="stylesheet" href="../css/mktree.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeRDark.css?v=1">
@@ -153,7 +153,13 @@
                       <li><a href="#Frameworks_jQuery_Querying_Parents">Доступ да бацькоўскіх элемэнтаў</a></li>
                       <li><a href="#Frameworks_jQuery_Querying_SameLevel">Доступ да элемэнтаў аднаго ўзроўню</a></li>
                       <li><a href="#Frameworks_jQuery_Querying_Narrowing">Звужэньне набору элемэнтаў</a></li>
-                      <li><a href="#Frameworks_jQuery_Querying_Navigation">Перамяшчэньне па масіву элемэнтаў</a></li>
+                      <li><a href="#Frameworks_jQuery_Querying_Navigation">Перамяшчэньне па набору элемэнтаў</a></li>
+                      <li><a href="#Frameworks_jQuery_Querying_Chaining">Ланцуг выклікаў</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#Frameworks_jQuery_Manipulating">Маніпуляцыі з элемэнтамі</a>
+                    <ul>
+                      <li><a href="#Frameworks_jQuery_Manipulating_Attributes">Атрыбуты элемэнтаў</a></li>
                     </ul>
                   </li>
                   <li><a href="#Frameworks_jQuery_UI">jQuery UI</a></li>
@@ -889,7 +895,7 @@
         <p>&laquo;1&raquo; у шляху, у апошнім прыкладзе азначае запыт на апошнюю вэрсію, калі патрэбна не апошняя, а пэўная вэрсія, трэба пазначыць яе замест, напрыклад: &laquo;1.7.1&raquo;. Заўважце, што перавагай спасылкі на лякальную вэрсію зьяўляецца магчымасьць працаваць зь лякальнай вэрсіяй сайту, сеціўнай праграмы, ці займацца распрацоўкай нават ня маючы сувязі з інтэрнэтам. Перавагай жа спасылкі на <a href="http://en.wikipedia.org/wiki/Content_delivery_network" title="Content Delivery Network">CDN</a> зьяўляецца высокая верагоднасьць кэшаваньня файлу бібліятэкі і на сэрвэры, і ў лякальным браўзэры карыстальнікаў, што прывядзе да хутчэйшай загрузкі старонкі.</p>
 
         <h3><a name="Frameworks_jQuery_Querying" href="#Frameworks_jQuery_Querying">Доступ да элемэнтаў</a></h3>
-        <p>У самім агульным выпадку доступ да элемэнтаў <a href="http://ru.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model"><span class="term">DOM</span></a> адбываецца праз <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<a href="../cssRef/index.html#Selectors"><span class="term">сэлектары</span></a>:</p>
+        <p>У самым агульным выпадку доступ да элемэнтаў <a href="http://ru.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model"><span class="term">DOM</span></a> адбываецца праз <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<a href="../cssRef/index.html#Selectors"><span class="term">сэлектары</span></a>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var lis = jQuery("ul li");
         ]]></script>
@@ -913,7 +919,7 @@
             <li><a href="http://api.jquery.com/find/">find</a></li>
           </ul>
         </div>
-        <p>Атрымаць усе непасрэдныя дзіцячыя элемэнты можна пры дапамозе функцыі <code class="function">children</code>. У наступны прыкладзе:</p>
+        <p>Атрымаць усе непасрэдныя дзіцячыя элемэнты можна пры дапамозе функцыі <code class="method">children</code>. У наступны прыкладзе:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $(document).ready(function() {
             var lis = $("ul.emphasis").children("li");
@@ -932,7 +938,7 @@
           </ul>
         ]]></script>
         <p><i>jQuery</i>-выраз <code>$("ul.emphasis").children("li")</code> эквівалентны <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<a href="../cssRef/index.html#Selectors"><span class="term">сэлектару</span></a> <code>ul.emphasis > li</code>.</p>
-        <p>Атрымаць усе дзіцячыя элемэнты незалежна ад герархіі можна пры дапамозе функцыі <code class="function">find</code>. У наступны прыкладзе:</p>
+        <p>Атрымаць усе дзіцячыя элемэнты незалежна ад герархіі можна пры дапамозе функцыі <code class="method">find</code>. У наступны прыкладзе:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $(document).ready(function() {
             var lis = $("ul.emphasis").find("li");
@@ -960,7 +966,7 @@
             <li><a href="http://api.jquery.com/closest/">closest</a></li>
           </ul>
         </div>
-        <p>Аналягічна функцыям доступу да дзіцячых элемэнтаў сярод функцыяў доступу да бацькоўскіх ёсьць: <code class="function">parent</code>, якая вяртае <strong>наўпроставага</strong> бацьку ў герархіі; <code class="function">parents</code>, якая вяртае <strong>ўсе</strong> бацькоўскія элемэнты адпаведна пазначанаму <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<a href="../cssRef/index.html#Selectors"><span class="term">сэлектару</span></a>, незалежна ад герархіі; а таксама <code class="function">closest</code>, якая вяртае <strong>бліжэйшы</strong> элемэнт у бацькоўскай герархіі, <strong>улучна з самім элемэнтам</strong>, у якога гэта функцыя выклікаецца.</p>
+        <p>Аналягічна функцыям доступу да дзіцячых элемэнтаў сярод функцыяў доступу да бацькоўскіх ёсьць: <code class="method">parent</code>, якая вяртае <strong>наўпроставага</strong> бацьку ў герархіі; <code class="method">parents</code>, якая вяртае <strong>ўсе</strong> бацькоўскія элемэнты адпаведна пазначанаму <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<a href="../cssRef/index.html#Selectors"><span class="term">сэлектару</span></a>, незалежна ад герархіі; а таксама <code class="method">closest</code>, якая вяртае <strong>бліжэйшы</strong> элемэнт у бацькоўскай герархіі, <strong>улучна з самім элемэнтам</strong>, у якога гэта функцыя выклікаецца.</p>
 
         <h4><a name="Frameworks_jQuery_Querying_SameLevel" href="#Frameworks_jQuery_Querying_SameLevel">Доступ да элемэнтаў аднаго ўзроўню</a></h4>
         <div class="refs">
@@ -982,7 +988,7 @@
             concole.log($(this).text());
           });
         ]]></script>
-        <p>У выніку, у кансоль браўзэра будзе выведзена імя націснутай кнопкі. Для таго, каб атрымаць усе элемэнты таго ж узроўню, маецца функцыя <code class="function">siblings</code>:</p>
+        <p>У выніку, у кансоль браўзэра будзе выведзена імя націснутай кнопкі. Для таго, каб атрымаць усе элемэнты таго ж узроўню, маецца функцыя <code class="method">siblings</code>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $(".buttons button").on("click", function() {
             $(this).siblings().text("siblings");
@@ -996,35 +1002,136 @@
             <li><a href="http://api.jquery.com/first/">first</a></li>
             <li><a href="http://api.jquery.com/last/">last</a></li>
             <li><a href="http://api.jquery.com/eq/">eq</a></li>
+            <li><a href="http://api.jquery.com/filter/">filter</a></li>
           </ul>
         </div>
-        <p>У выпадку, калі пэўны <i>jQuery</i>-запыт вярнуў шэраг элемэнтаў, маюцца функцыі звужэньня гэтага набору да аднаго элемэнту: функцыя <code class="function">first</code> верне першы элемэнт шэрагу (альбо масіву); <code class="function">last</code> верне апошні элемэнт; а функцыя <code class="function">eq</code> верне адвольны элемэнт па ягонаму індэксу (пачынаючы з 0):</p>
+        <p>У выпадку, калі пэўны <i>jQuery</i>-запыт вярнуў шэраг элемэнтаў, маюцца функцыі звужэньня гэтага набору: функцыя <code class="method">first</code> верне першы элемэнт шэрагу (альбо масіву); <code class="method">last</code> верне апошні элемэнт; функцыя <code class="method">eq</code> верне адвольны элемэнт па ягонаму індэксу (пачынаючы з 0); а функцыя <code class="method">filter</code> звузіць набор да тых элемэнтаў, якія задаволяць перададзенаму ёй <a href="../cssRef/index.html"><span class="term">CSS</span></a>-крытэру:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          $(document).ready(function() {
-            var second = $(".buttons").find("button").eq(1);
-          });
+          var second = $(".buttons").find("button").eq(1);
+          var last = $(".buttons").find("button").filter(":last-child");
+          // апошняе эквівалентна (менавіта ў дадзеным выпадку):
+          var last = $(".buttons").find("button").last();
         ]]></script>
-        <p>У выніку мы атрымаем ня ўсе кнопкі кантэйнэра <code>buttons</code>, але толькі адзну зь іх&nbsp;&mdash; другую.</p>
+        <p>У выніку мы атрымаем ня ўсе кнопкі кантэйнэра <code>buttons</code>, але толькі другую ў першым радку і апошнюю ў другім і чацьвертым радку. Яшчэ адзін прыклад выкарыстаньня функцыі <code class="method">filter</code>:</p>
+        <script type="syntaxhighlighter" class="brush: html; highlight: [5, 7, 9, 11]"><![CDATA[
+          <dl>
+            <dt>What are your hours?</dt>
+            <dd>We are open 24/7.</dd>
+            <dt>What are your hours?</dt>
+            <dd>We are open 24/7.</dd>
+            <dt>What are your hours?</dt>
+            <dd>We are open 24/7.</dd>
+            <dt>What are your hours?</dt>
+            <dd>We are open 24/7.</dd>
+            <dt>What are your hours?</dt>
+            <dd>We are open 24/7.</dd>
+          </dl>
+        ]]></script>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("dd").filter(":nth-child(n+4)").addClass("hidden"); // дадасьць клясу hidden толькі да тых dd, якія
+                                                                // зьяўляюцца ня менш як 4мі дзіцячымі элемэнтамі
+                                                                // свайго бацькі, то бок пачынаючы з 2га dd
+        ]]></script>
 
-        <h4><a name="Frameworks_jQuery_Querying_Navigation" href="#Frameworks_jQuery_Querying_Navigation">Перамяшчэньне па масіву элемэнтаў</a></h4>
+        <h4><a name="Frameworks_jQuery_Querying_Navigation" href="#Frameworks_jQuery_Querying_Navigation">Перамяшчэньне па наборы элемэнтаў</a></h4>
         <div class="refs">
           <ul>
             <li><a href="http://api.jquery.com/prev/">prev</a></li>
             <li><a href="http://api.jquery.com/next/">next</a></li>
           </ul>
         </div>
-        <p>Таксама інсуюць функцыі перамяшчэньня па масіву элемэнтаў. У прыкладзе вышэй мы атрымалі другую кнопку кантэйнэра <code>buttons</code>. Цяпер мы можам атрымаць доступ да папярэдняй ці наступнай кнопцы ў гэтым наборы праз функцыі <code class="function">prev</code> і <code class="function">next</code>:</p>
+        <p>Таксама інсуюць функцыі перамяшчэньня па масіву элемэнтаў. У прыкладзе вышэй мы атрымалі другую кнопку кантэйнэра <code class="class">buttons</code>. Цяпер мы можам атрымаць доступ да папярэдняй ці наступнай кнопцы ў гэтым наборы праз функцыі <code class="method">prev</code> і <code class="method">next</code>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          $(document).ready(function() {
-            var first = $(".buttons").find("button").eq(1).prev();
-          });
+          var first = $(".buttons").find("button").eq(1).prev();
         ]]></script>
         <p>што эквівалентна наступнаму:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          $(document).ready(function() {
-            var first = $(".buttons").find("button").first();
+          var first = $(".buttons").find("button").first();
+        ]]></script>
+
+        <h4><a name="Frameworks_jQuery_Querying_Chaining" href="#Frameworks_jQuery_Querying_Chaining">Ланцуг выклікаў</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://api.jquery.com/end/">end</a></li>
+          </ul>
+        </div>
+        <p>Кожная <i>jQuery</i>-функцыя вяртае <i>jQuery</i>-аб&#39;ект, які абгортвае адпаведны(-я) <i>JavaScript</i>-аб&#39;ект(-ы). Гэта дазваляе запісваць выклікі функцый у ланцуг, як можна было зразумець з папярэдніх прыкладаў. Калі ў такім ланцугу прысутнічаюць функцыі доступу да элемэнтаў, фільтрацыі набору элемэнтаў, ці перамяшчэньня па наборы, адмяніць вынік працы папярэдняй такой функцыі можна пры дапамозе функцыі <code class="method">end</code>:</p>
+        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+          <div class="buttons">
+            <button>першая</button>
+            <button>другая</button>
+            <button>трэцяя</button>
+          </div>
+        ]]></script>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $(".buttons button").on("click", function() {
+            $(this)                   // вяртае націснутую кнопку
+              .siblings()             // вяртае ўсе элемэнты таго ж узроўню, то бок усе кнопкі
+              .removeAttr("disabled") // выдаляе атрыбут disabled ува ўсіх кнопак
+            .end()                    // адмяняе вынік працы апошняй функцыі доступу - siblings, то бок звужаем набор,
+                                      // у выніку jQuery-аб&#39; будзе ўтрымліваць спасылку толькі на націснутую кнопку
+            .attr("disabled", "disabled"); // дадаем атрыбут disabled да гэтай націснутай кнопкі
           });
         ]]></script>
+
+        <h3><a name="Frameworks_jQuery_Manipulating" href="#Frameworks_jQuery_Manipulating">Маніпуляцыі з элемэнтамі</a></h3>
+
+        <h4><a name="Frameworks_jQuery_Manipulating_Attributes" href="#Frameworks_jQuery_Manipulating_Attributes">Атрыбуты элемэнтаў</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://api.jquery.com/attr/">attr</a></li>
+            <li><a href="http://api.jquery.com/data/">data</a></li>
+            <li><a href="http://api.jquery.com/removeAttr/">removeAttr</a></li>
+          </ul>
+        </div>
+        <p>Атрымаць і зьмяніць значэньне атрыбуту пэўнага <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-элемэнту можна пры дапамозе варыянтаў функцыі <code class="method">attr</code>. Варыянт з адным парамэтрам (назвай атрыбуту) верне значэньне атрыбуту. Варыянт з двума парамэтрамі (першы&nbsp;&mdash; назва атрыбуту, другі&nbsp;&mdash; яго значэнье) альбо дадасьць новы атрыбут з пазначаным значэньнем, альбо зьменіць значэньне існага атрыбуту на пазначанае:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("#elem").attr("title", "Some title");   // Прызначаем атрыбуту title элемэнту з id роўным "elem" значэньне "Some title"
+          concole.log($("#elem").attr("title"));    // Выводзім прызначанае ў папярэднім выразе значэньне атрыбуту title
+        ]]></script>
+        <p>Таксама існуе варыянт функцыі, у якім можна адначасна зьмяняць значэньні некалькіх атрыбутаў:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $('#greatphoto').attr({
+            alt: 'Beijing Brush Seller',
+            title: 'photo by Kelly Clark'
+          });
+        ]]></script>
+        <p>...і варыянт, калі ў якасьці друга парамэтру выкарыстоўваецца ня проста значэньне, але функцыя, якая павінна вяртаць новае значэньне, а прымае яна індэкс элемэнту ў наборы і старое значэньне атрыбуту:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $('#greatphoto').attr('title', function(i, val) {
+            return val + ' - photo by Kelly Clark'
+          });
+        ]]></script>
+        <p>Спэцыфікацыя <a href="../htmlRef/index.html"><span class="term">HTML</span></a>5 дазволіла выкарыстоўваць карыстальніцкія атрыбуты для элемэнтаў выгляду <code>data-...</code>:</p>
+        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+          <button data-file="day">Day</button>
+        ]]></script>
+        <p>Для доступу да такіх атрыбутаў у <i>jQuery</i> ёсьць адмысловая аліас-функцыя <code class="method">data</code>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("button").data("file");
+          // што эквівалентна:
+          $("button").attr("data-file");
+        ]]></script>
+        <p>Цалкам выдаліць пэўны атрыбут з элемэнту можна пры дапамозе функцыі <code class="method">removeAttr</code>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $('#greatphoto').removeAttr('title');
+        ]]></script>
+
+        <h3><a name="Frameworks_jQuery_EventsHandling" href="#Frameworks_jQuery_EventsHandling">Апрацоўка падзеяў</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://api.jquery.com/on/">on</a></li>
+            <li><a href="http://api.jquery.com/off/">off</a></li>
+            <li><a href="http://api.jquery.com/bind/"><span class="deprecated">bind</span></a></li>
+            <li><a href="http://api.jquery.com/unbind/"><span class="deprecated">unbind</span></a></li>
+            <li><a href="http://api.jquery.com/live/"><span class="deprecated">live</span></a></li>
+            <li><a href="http://api.jquery.com/die/"><span class="deprecated">die</span></a></li>
+            <li><a href="http://api.jquery.com/delegate/"><span class="deprecated">delegate</span></a></li>
+            <li><a href="http://api.jquery.com/undelegate/"><span class="deprecated">undelegate</span></a></li>
+          </ul>
+        </div>
+        <p></p>
+
 
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/20-helpful-jquery-methods-you-should-be-using/">20 Helpful jQuery Methods you Should be Using</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-the-difference-between-live-and-delegate/">The Difference Between Live() and Delegate()</a></p>
