@@ -27,7 +27,6 @@
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/screen.css?v=1">
   <link rel="stylesheet" href="../css/rails.css?v=1">
-  <link rel="stylesheet" href="../css/mktree.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
 
@@ -68,7 +67,8 @@
       </div>
 
       <div id="content">
-        <ul class="mktree">
+        <ul class="tree">
+
           <li><a href="#Links">Карысныя спасылкі</a>
             <ul>
               <li><a href="#Links_home">Хатняя старонка</a></li>
@@ -77,6 +77,7 @@
               <li><a href="#Links_refs_casts">Railscast</a></li>
             </ul>
           </li>
+
           <li class="liOpen"><a href="#GettingStarted">Пачынаем</a>
             <ul>
               <li class="liOpen"><a href="#GettingStarted_what_is">Што такое Rails?</a>
@@ -127,6 +128,7 @@
               <li><a href="#GettingStarted_FastDevelopment">Хуткая распрацоўка</a></li>
             </ul>
           </li>
+
           <li class="liOpen"><a href="#Controllers">Кантролеры</a>
             <ul>
               <li><a href="#Controllers_Parameters">Парамэтры</a>
@@ -141,12 +143,14 @@
               <li><a href="#Controllers_Routing">Разводка</a></li>
             </ul>
           </li>
+
           <li class="liOpen"><a href="#Views">Вью</a>
             <ul>
               <li><a href="#Views_LayoutsRendering">Макеты і візуалізацыя ў Rails</a></li>
               <li><a href="#Views_FormHelpers">Дапаможнікі формаў</a></li>
             </ul>
           </li>
+
           <li class="liOpen"><a href="#Models">Мадэлі</a>
             <ul>
               <li class="liOpen"><a href="#Models_Migrations">Міграцыі</a>
@@ -174,6 +178,7 @@
               <li><a href="#Models_Querying">Састаўленьне запытаў</a></li>
             </ul>
           </li>
+
           <li class="liOpen"><a href="#Security">Бясьпека</a>
             <ul>
               <li><a href="#Security_Sessions">Сэсіі</a>
@@ -258,6 +263,8 @@
         <h2><a name="Links_refs">Даведнікі і кнігі</a></h2>
         <p><a href="http://guides.rubyonrails.org/">Галоўная старонка афіцыйных даведнікаў</a></p>
         <p><a href="http://railstutorial.org/book/">Вельмі добры вучэбнік</a></p>
+
+        <p>http://www.bigfatrails.com/book/</p>
 
         <h2><a name="Links_refs_casts">Railscast (відэа-урокі)</a></h2>
         <p><a href="http://railscasts.com/">http://railscasts.com</a></p>
@@ -1551,9 +1558,14 @@
   <!-- GetSatisfaction feedback button END -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
-  <script src="../js/libs/mktree.js"></script>
+  <script src="../js/libs/jquery.tree.js"></script>
+
+  <script src="../js/libs/waypoints.min.js"></script>
+  <script src="../js/ref.js"></script>
+
   <script src="../js/libs/xregexp.js"></script>
   <script src="../js/libs/shCore.js"></script>
   <script src="../js/libs/shAutoloader.js"></script>

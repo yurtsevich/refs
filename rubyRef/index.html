@@ -26,7 +26,6 @@
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/screen.css?v=1">
-  <link rel="stylesheet" href="../css/mktree.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
 
@@ -67,7 +66,7 @@
       </div>
 
       <div id="content">
-        <ul class="mktree">
+        <ul class="tree">
           <li><a href="#Links">Карысныя спасылкі</a>
             <ul>
               <li><a href="#Links_home">Хатняя старонка</a></li>
@@ -82,12 +81,14 @@
               <li><a href="#Links_gems">Gems</a></li>
             </ul>
           </li>
+
           <li><a href="#Intro">Што такое Ruby?</a>
             <ul>
               <li><a href="#Intro_OOP">Аб&#8217;ектна-арыентаваная мова</a></li>
               <li><a href="#Intro_IntuitiveNotation">Інтуітыўная натацыя</a></li>
             </ul>
           </li>
+
           <li class="liOpen"><a href="#LangParts">Часткі мовы</a>
             <ul>
               <li><a href="#LangParts_Keywords">Ключавыя словы</a></li>
@@ -106,10 +107,10 @@
                   <li><a href="#LangParts_Operators_Exponentiation">Cтупеняваньне</a></li>
                   <li><a href="#LangParts_Operators_Arithmetic">Арытмэтычныя</a></li>
                   <li><a href="#LangParts_Operators_ShiftAppend">Зрух і дадаваньне</a></li>
-                  <li><a href="#LangParts_Operators_Bitwise">Лягічныя пабітавыя</a></li>
+                  <li><a href="#LangParts_Operators_Bitwise">Бітавыя</a></li>
                   <li><a href="#LangParts_Operators_Comparison">Параўнаньне</a></li>
                   <li><a href="#LangParts_Operators_Equality">Роўнасьць</a></li>
-                  <li><a href="#LangParts_Operators_Boolean">Лягічныя булеўскія</a></li>
+                  <li><a href="#LangParts_Operators_Boolean">Лягічныя</a></li>
                   <li><a href="#LangParts_Operators_Ranges">Дыяпазону</a></li>
                   <li><a href="#LangParts_Operators_Conditional">Умоўная</a></li>
                   <li><a href="#LangParts_Operators_Defined">Праверка вызначэньня</a></li>
@@ -144,6 +145,7 @@
               <li><a href="#LangParts_BlockArguments">Аргумэнты блёкаў</a></li>
             </ul>
           </li>
+
           <li class="liOpen"><a href="#Types">Стандартныя тыпы</a>
             <ul>
               <li class="liOpen"><a href="#Types_Object">Object</a>
@@ -241,6 +243,7 @@
                   <li><a href="#Types_Ranges_AsSequences">Як пасьлядоўнасьці</a></li>
                 </ul-->
               </li>
+
           <li class="liOpen"><a href="#Gems">Gems</a>
             <ul>
               <li><a href="#Gems_DevKit">DevKit</a>
@@ -494,7 +497,7 @@
           messages << message     #=> ["hello world"]
         ]]></script>
 
-        <h3><a name="LangParts_Operators_Bitwise">Лягічныя пабітавыя: <code>~</code>, <code>&amp;</code>, <code>|</code> і <code>^</code></a></h3>
+        <h3><a name="LangParts_Operators_Bitwise">Бітавыя: <code>~</code>, <code>&amp;</code>, <code>|</code> і <code>^</code></a></h3>
         <p>Лягічныя пабітавыя апэрацыі (адпаведна) NOT, AND, OR і XOR.</p>
 
         <h3><a name="LangParts_Operators_Comparison">Параўнаньне: <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> і <code>&lt;=&gt;</code></a></h4>
@@ -505,7 +508,7 @@
         <p>Апэрацыя <code>=~</code> правярае ці сымбальная чарада адпавядае шаблёну (<i>Regexp</i>), а апэрацыя <code>!~</code> робіць адваротнае.</p>
         <p>Апэрацыя <code>===</code> правярае ці ўваходзіць пэўнае значэньне ў пазначаны дыяпазон.</p>
 
-        <h3><a name="LangParts_Operators_Boolean">Лягічныя булеўскія: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>, <code>and</code>, <code>or</code>, <code>not</code></a></h3>
+        <h3><a name="LangParts_Operators_Boolean">Лягічныя: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>, <code>and</code>, <code>or</code>, <code>not</code></a></h3>
         <p>Вынікам апэрацыі <code>&amp;&amp;</code> будзе <code class="keyword">true</code>, калі абодва яе аргумэнта маюць значэньне <code class="keyword">true</code>, інакш вынікам будзе <code class="keyword">false</code>. Вынікам апэрацыі <code>||</code> будзе <code class="keyword">true</code>, калі хаця б адзін зь яе аргумэнтаў мае значэньне <code class="keyword">true</code>, а вынікам <code class="keyword">false</code> будзе толькі тады, калі абодва аргумэнта таксама маюць значэньне <code class="keyword">false</code>. Апэрацыя <code>!</code> робіць булеўскае адмаўленьне свайго адзінага аргумэнта, то бок вяртае <code class="keyword">false</code>, калі аргумэнт мае значэньне <code class="keyword">true</code>, і, наадварот, вяртае <code class="keyword">true</code>, калі калі аргумэнт мае значэньне <code class="keyword">false</code>.</p>
         <p>Апэрацыі <code>and</code>, <code>or</code> і <code>not</code> зьяўляюцца меньш прыярытэтнымі эквівалентамі адпаведна апэрацый <code>&amp;&amp;</code>, <code>||</code> і <code>!</code>.</p>
 
@@ -1852,9 +1855,14 @@
   <!-- GetSatisfaction feedback button END -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
-  <script src="../js/libs/mktree.js"></script>
+  <script src="../js/libs/jquery.tree.js"></script>
+
+  <script src="../js/libs/waypoints.min.js"></script>
+  <script src="../js/ref.js"></script>
+
   <script src="../js/libs/xregexp.js"></script>
   <script src="../js/libs/shCore.js"></script>
   <script src="../js/libs/shAutoloader.js"></script>

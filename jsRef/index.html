@@ -26,7 +26,7 @@
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/screen.css?v=2">
-  <link rel="stylesheet" href="../css/mktree.css?v=1">
+  <link rel="stylesheet" href="../css/js.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
 
@@ -67,7 +67,7 @@
       </div>
 
       <div id="content">
-        <ul class="mktree">
+        <ul class="tree">
           <li class="liOpen"><a href="#Links">Карысныя спасылкі</a>
             <ul>
               <li><a href="#Links_Docs">Комплексная дакумэнтацыя</a></li>
@@ -99,38 +99,121 @@
                 </ul>
               </li>
               <li><a href="#Types_Boolean">Лягічны тып</a></li>
-							<li><a href="#Types_null">null</a></li>
-							<li><a href="#Types_undefined">undefined</a></li>
+							<li><a href="#Types_null"><i>null</i></a></li>
+							<li><a href="#Types_undefined"><i>undefined</i></a></li>
             </ul>
           </li>
-          <li class="liOpen"><a href="#BasicObjects">Базавыя аб&#39;екты</a>
+          <li><a href="#CoreObjects">Базавыя аб&#39;екты</a>
             <ul>
-              <li><a href="#BasicObjects_Math"><i>Math</i></a></li>
-              <li><a href="#BasicObjects_Number"><i>Number</i></a>
+              <li><a href="#CoreObjects_Array"><i>Array</i></a></li>
+              <li><a href="#CoreObjects_Boolean"><i>Boolean</i></a></li>
+              <li><a href="#CoreObjects_Date"><i>Date</i></a></li>
+              <li><a href="#CoreObjects_Error"><i>Error</i></a>
                 <ul>
-                  <li><a href="#BasicObjects_Number_Props">Атрыбуты</a>
-                    <ul>
-                      <li><a href="#BasicObjects_Number_Props_Examples">Прыклады</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#BasicObjects_Number_Methods">Мэтады</a></li>
+                  <li><a href="#CoreObjects_RangeError"><i>RangeError</i></a></li>
                 </ul>
               </li>
-              <li><a href="#BasicObjects_RangeError"><i>RangeError</i></a></li>
+              <li><a href="#CoreObjects_Function"><i>Function</i></a></li>
+              <li><a href="#CoreObjects_Math"><i>Math</i></a>
+                <ul>
+                  <li><a href="#CoreObjects_Math_Props">Атрыбуты</a></li>
+                  <li><a href="#CoreObjects_Math_Methods">Мэтады</a></li>
+                </ul>
+              </li>
+              <li><a href="#CoreObjects_NaN"><i>NaN</i></a></li>
+              <li><a href="#CoreObjects_Number"><i>Number</i></a>
+                <ul>
+                  <li><a href="#CoreObjects_Number_Props">Атрыбуты</a>
+                    <ul>
+                      <li><a href="#CoreObjects_Number_Props_Examples">Прыклады</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#CoreObjects_Number_Methods">Мэтады</a></li>
+                </ul>
+              </li>
+              <li><a href="#CoreObjects_Object"><i>Object</i></a></li>
+              <li><a href="#CoreObjects_RegExp"><i>RegExp</i></a></li>
+              <li><a href="#CoreObjects_String"><i>String</i></a></li>
             </ul>
           </li>
           <li class="liOpen"><a href="#Operators">Апэрацыі</a>
             <ul>
-              <li class="liOpen"><a href="#Operators_Arithmetic">Арытмэтычныя</a></li>
+              <li><a href="#Operators_Assignments">Прысваеньня</a>
+                <ul>
+                  <li><a href="#Operators_Assignments_Shortened">Скарочаныя формы прысваеньняў</a></li>
+                </ul>
+              </li>
+              <li><a href="#Operators_Comparison">Параўнаньня</a></li>
+              <li><a href="#Operators_Arithmetic">Арытмэтычныя</a>
+                <ul>
+                  <li><a href="#Operators_Arithmetic_Unary">Унарныя</a></li>
+                  <li><a href="#Operators_Arithmetic_Binary">Бінарныя</a></li>
+                </ul>
+              </li>
+              <li><a href="#Operators_Bitwise">Бітавыя</a></li>
+              <li><a href="#Operators_Logical">Лягічныя</a>
+                <ul>
+                  <li><a href="#Operators_Logical_Examples">Прыклады</a></li>
+                </ul>
+              </li>
+              <li><a href="#Operators_Special">Асаблівыя</a>
+                <ul>
+                  <li><a href="#Operators_Special_PropertyAccess">Доступу да атрыбутаў</a></li>
+                  <li><a href="#Operators_Special_Conditional">Умоўны</a></li>
+                  <li><a href="#Operators_Special_Comma">Апэратар-коска</a></li>
+                  <li><a href="#Operators_Special_delete"><i>delete</i></a></li>
+                  <li><a href="#Operators_Special_get"><i>get</i></a></li>
+                  <li><a href="#Operators_Special_in"><i>in</i></a></li>
+                  <li><a href="#Operators_Special_instanceof"><i>instanceof</i></a></li>
+                  <li><a href="#Operators_Special_new"><i>new</i></a></li>
+                  <li><a href="#Operators_Special_set"><i>set</i></a></li>
+                  <li><a href="#Operators_Special_this"><i>this</i></a></li>
+                  <li><a href="#Operators_Special_typeof"><i>typeof</i></a></li>
+                  <li><a href="#Operators_Special_void"><i>void</i></a></li>
+                </ul>
+              </li>
             </ul>
           </li>
           <li class="liOpen"><a href="#Statements">Апэратары</a>
             <ul>
-              <!--li class="liOpen"><a href="#Operators_Arithmetic">Арытмэтычныя</a></li-->
+              <li><a href="#Statements_Declarations">Аб&#39;яўленьняў</a>
+                <ul>
+                  <li><a href="#Statements_Declarations_function"><i>function</i></a></li>
+                  <li><a href="#Statements_Declarations_var"><i>var</i></a></li>
+                </ul>
+              </li>
+              <li><a href="#Statements_Conditional">Умоўныя</a>
+                <ul>
+                  <li><a href="#Statements_Conditional_if...else"><i>if...else</i></a></li>
+                  <li><a href="#Statements_Conditional_switch"><i>switch</i></a></li>
+                </ul>
+              </li>
+              <li><a href="#Statements_Loops">Цыклю</a>
+                <ul>
+                  <li><a href="#Statements_Loops_do...while"><i>do...while</i></a></li>
+                  <li><a href="#Statements_Loops_for"><i>for</i></a></li>
+                  <li><a href="#Statements_Loops_for...in"><i>for...in</i></a></li>
+                  <li><a href="#Statements_Loops_while"><i>while</i></a></li>
+                </ul>
+              </li>
+              <li><a href="#Statements_Jumps">Пераходаў</a>
+                <ul>
+                  <li><a href="#Statements_Jumps_break"><i>break</i></a></li>
+                  <li><a href="#Statements_Jumps_continue"><i>continue</i></a></li>
+                  <li><a href="#Statements_Jumps_return"><i>return</i></a></li>
+                  <li><a href="#Statements_Jumps_throw"><i>throw</i></a></li>
+                  <li><a href="#Statements_Jumps_try...catch"><i>try...catch</i></a></li>
+                </ul>
+              </li>
+              <li><a href="#Statements_Miscellaneous">Іншыя</a>
+                <ul>
+                  <li><a href="#Statements_Miscellaneous_with"><i>with</i></a></li>
+                </ul>
+              </li>
             </ul>
           </li>
-          <li class="liOpen"><a href="#Multithreading">Multithreading</a></li>
-          <li class="liOpen"><a href="#LoggingDebugTesting">Лагіраваньне, дэбаг і тэставаньне</a>
+          <li class="liOpen"><a href="#Multithreading">Шматпатокавасьць</a></li>
+          <li class="liOpen"><a href="#LoggingDebugTesting">Лагіраваньне і тэставаньне</a>
             <ul>
               <li class="liOpen"><a href="#LoggingDebug">Лагіраваньне і дэбаг</a></li>
               <li class="liOpen"><a href="#Testing">Тэставаньне</a></li>
@@ -155,11 +238,18 @@
                       <li><a href="#Frameworks_jQuery_Querying_Narrowing">Звужэньне набору элемэнтаў</a></li>
                       <li><a href="#Frameworks_jQuery_Querying_Navigation">Перамяшчэньне па набору элемэнтаў</a></li>
                       <li><a href="#Frameworks_jQuery_Querying_Chaining">Ланцуг выклікаў</a></li>
+                      <li><a href="#Frameworks_jQuery_Querying_this"><i>this</i></a></li>
                     </ul>
                   </li>
                   <li><a href="#Frameworks_jQuery_Manipulating">Маніпуляцыі з элемэнтамі</a>
                     <ul>
                       <li><a href="#Frameworks_jQuery_Manipulating_Attributes">Атрыбуты элемэнтаў</a></li>
+                      <li><a href="#Frameworks_jQuery_Manipulating_Content">Даданьне зьместу</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#Frameworks_jQuery_EventsHandling">Апрацоўка падзеяў</a>
+                    <ul>
+                      <li><a href="#Frameworks_jQuery_EventsHandling_EventTypes">Тыпы падзеяў</a></li>
                     </ul>
                   </li>
                   <li><a href="#Frameworks_jQuery_UI">jQuery UI</a></li>
@@ -213,26 +303,25 @@
         <h1><a name="Links" href="#Links">Карысныя спасылкі</a></h1>
 
         <h2><a name="Links_Docs" href="#Links_Docs">Комплексная дакумэнтацыя</a></h2>
-        <p><i>JavaScript</i> на <b>developer.mozilla.org</b>: <a href="https://developer.mozilla.org/en/JavaScript">https://developer.mozilla.org/en/JavaScript</a></p>
-        <p><i>AJAX</i> на <b>developer.mozilla.org</b>: <a href="https://developer.mozilla.org/en/Ajax">https://developer.mozilla.org/en/Ajax</a></p>
+        <p><i>JavaScript</i> на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en/JavaScript">https://developer.mozilla.org/en/JavaScript</a></p>
+        <p><i>AJAX</i> на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en/Ajax">https://developer.mozilla.org/en/Ajax</a></p>
         <p>&laquo;<i>Learn JavaScript</i>&raquo; на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en-US/learn/javascript">https://developer.mozilla.org/en-US/learn/javascript</a></p>
-        <p><a href="http://javascript.ru/">http://javascript.ru/</a></p>
 
         <h2><a name="Links_Refs" href="#Links_Refs">Даведнікі і кнігі</a></h2>
-        <p>&laquo;Паўторныя ўводзіны ў <i>JavaScript</i>&raquo; на <strong>developer.mozilla.org</strong>: <a href="https://developer.mozilla.org/en/A_re-introduction_to_JavaScript">https://developer.mozilla.org/en/A_re-introduction_to_JavaScript</a></p>
+        <p><i>Даведнік</i> на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en/JavaScript/Guide">https://developer.mozilla.org/en/JavaScript/Guide</a></p>
         <p>&laquo;<i>JavaScript Garden</i>&raquo;: <a href="http://bonsaiden.github.com/JavaScript-Garden/">http://bonsaiden.github.com/JavaScript-Garden</a></p>
-        <p><i>Даведнік</i> на <strong>SitePoint.com</strong>: <a href="http://reference.sitepoint.com/javascript/">http://reference.sitepoint.com/javascript</a></p>
         <p><a href="http://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527">JavaScript: The Definitive Guide: Activate Your Web Pages</a> (шостае выданьне вядомай папяровай кнігі, напісанай <a href="http://www.amazon.com/David-Flanagan/e/B000APEZR4" title="Старонка, прысьвечаная Дэвіду Флэнэгэну на Amazon.com">Дэвідам Флэнэгэнам</a> ад выдавецтва <a href="http://oreilly.com/" title="Хатняя старонка выдавецтва O&#39;Reilly">O&#39;Reilly</a>&nbsp;&mdash; на мой погляд лепшая крыніца, з тых што мне трапляліся, паглыбленага вывучэньня <i>JavaScript</i>, але на жаль электроннага варыянту няма ў вольным доступе). Ці перакладзенае на расейскую мову пятае выданьне гэтай кнігі: <a href="http://www.ozon.ru/context/detail/id/3881091/">http://www.ozon.ru/context/detail/id/3881091/</a>.</p>
 
         <h2><a name="Links_Lessons" href="#Links_Lessons">Урокі</a></h2>
-        <p><i>Інтэрактыўныя ўрокі</i> для пачаткоўцаў на <strong>CodeCademy.com</strong>: <a href="http://www.codecademy.com/courses/javascript-intro/">http://www.codecademy.com/courses/javascript-intro</a></p>
-        <p><i>Відэа-ўрокі</i> для пачаткоўцаў на <strong>appendTo.com</strong>: <a href="http://learn.appendto.com/lessons">http://learn.appendto.com/lessons</a></p>
+        <p><i>Інтэрактыўныя ўрокі</i> для пачаткоўцаў на <b>CodeCademy.com</b>: <a href="http://www.codecademy.com/courses/javascript-intro/">http://www.codecademy.com/courses/javascript-intro</a></p>
+        <p><i>Відэа-ўрокі</i> для пачаткоўцаў на <b>appendTo.com</b>: <a href="http://learn.appendto.com/lessons">http://learn.appendto.com/lessons</a></p>
+        <p>Бясплатны 30-дзённы <i>відэа-курс</i> па <a href="#Frameworks_jQuery"><i>jQuery</i></a> на <b>Tuts+ Premium</b>: <a href="http://tutsplus.com/course/30-days-to-learn-jquery/">http://tutsplus.com/course/30-days-to-learn-jquery/</a></p>
 
         <h2><a name="Links_Blogs" href="#Links_Blogs">Блогі</a></h2>
-        <p>Разьдзел <i>JavaScript</i> на <strong>SmashingMagazine.com</strong>: <a href="http://coding.smashingmagazine.com/tag/javascript/">http://coding.smashingmagazine.com/tag/javascript</a></p>
-        <p>Разьдзел <i>JavaScript &amp; AJAX</i> на <strong>net.TutsPlus.com</strong>: <a href="http://net.tutsplus.com/category/tutorials/javascript-ajax/">http://net.tutsplus.com/category/tutorials/javascript-ajax</a></p>
-        <p>Разьдзел <i>AJAX</i> на <strong>noupe.com</strong>: <a href="http://www.noupe.com/category/ajax">http://www.noupe.com/category/ajax</a></p>
-        <p>Разьдзел <i>jQuery</i> на <strong>AddyOsmani.com</strong>: <a href="http://addyosmani.com/blog/?s=jQuery">http://addyosmani.com/blog/?s=jQuery</a></p>
+        <p>Разьдзел <i>JavaScript</i> на <b>SmashingMagazine.com</b>: <a href="http://coding.smashingmagazine.com/tag/javascript/">http://coding.smashingmagazine.com/tag/javascript</a></p>
+        <p>Разьдзел <i>JavaScript &amp; AJAX</i> на <b>Net.Tuts+</b>: <a href="http://net.tutsplus.com/category/tutorials/javascript-ajax/">http://net.tutsplus.com/category/tutorials/javascript-ajax</a></p>
+        <p>Разьдзел <i>AJAX</i> на <b>noupe.com</b>: <a href="http://www.noupe.com/category/ajax">http://www.noupe.com/category/ajax</a></p>
+        <p>Разьдзел <i>jQuery</i> на <b>AddyOsmani.com</b>: <a href="http://addyosmani.com/blog/?s=jQuery">http://addyosmani.com/blog/?s=jQuery</a></p>
         <p><a href="http://net.tutsplus.com/articles/web-roundups/30-developers-you-must-subscribe-to-as-a-javascript-junkie/">&laquo;33 Developers you MUST Subscribe to as a JavaScript Junkie&raquo;</a></p>
       </section>
 
@@ -258,13 +347,13 @@
 
         <h2><a name="Overview_JavaScriptAndECMAScript" href="#Overview_JavaScriptAndECMAScript"><i>JavaScript</i> і <i>ECMAScript</i></a></h2>
         <aside><sup>1</sup> Падрабязьней у ангельскай Вікіпэдыі: <a href="http://en.wikipedia.org/wiki/JavaScript#Versions">JavaScript</a>, <a href="http://en.wikipedia.org/wiki/ECMAScript#Version_correspondence">ECMAScript</a></aside>
-        <p><a href="http://www.ecma-international.org/" title="Афіцыйны сайт Ecma International">Ecma International</a> працуе над стандартаванай вэрсіяй <i>JavaScript</i>, якая завецца <a href="http://en.wikipedia.org/wiki/ECMAScript" title="Пра ECMAScript у ангельскай Вікіпэдыі"><i>ECMAScript</i></a>. Стандарт <i>ECMAScript</i> задакумэнтаваны ў <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" title="ECMA-262 спэцыфікацыя">сэцыфікацыі <i>ECMA-262</i></a> (<i>ISO-16262</i>), першая рэдакцыя якой (па-анг. <i>Edition 1</i>), была зроблена на аснове <i>JavaScript</i> вэрсіі 1.1 (<i>Netscape Navigator 3.0</i>).</p>
+        <p><a href="http://www.ecma-international.org/" title="Афіцыйны сайт Ecma International">Ecma International</a> працуе над стандартаванай вэрсіяй <i>JavaScript</i>, якая завецца <a href="http://en.wikipedia.org/wiki/ECMAScript" title="Пра ECMAScript у ангельскай Вікіпэдыі"><i>ECMAScript</i></a>. Стандарт <i>ECMAScript</i> задакумэнтаваны ў <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" title="ECMA-262 спэцыфікацыя">спэцыфікацыі <i>ECMA-262</i></a> (<i>ISO-16262</i>), першая рэдакцыя якой (па-анг. <i>Edition 1</i>), была зроблена на аснове <i>JavaScript</i> вэрсіі 1.1 (<i>Netscape Navigator 3.0</i>).</p>
         <table>
           <caption>Суадносіны паміж вэрсіямі <i>JavaScript</i> і <i>ECMAScript</i>, і якімі браўзэрамі яны падтрымліваюцца<sup>1</sup></caption>
           <thead>
             <tr>
               <th>Вэрсія <i>JavaScript</i></th>
-              <th>Дата</i></th>
+              <th>Дата</th>
               <th>Адпавядае вэрсіі <i>ECMAScript</i></th>
               <th>Netscape</th>
               <th>Mozilla Firefox</th>
@@ -277,7 +366,7 @@
           <tbody style="text-align: center;">
             <tr>
               <td>1.1</td>
-              <td>Жнівень 1996 г.</td>
+              <td>Жнівень 1996&nbsp;г.</td>
               <td>Edition 1</td>
               <td>Navigator 3.0</td>
               <td></td>
@@ -288,7 +377,7 @@
             </tr>
             <tr>
               <td>1.2</td>
-              <td>Чэрвень 1997 г.</td>
+              <td>Чэрвень 1997&nbsp;г.</td>
               <td></td>
               <td>Navigator 4.0&mdash;4.05</td>
               <td></td>
@@ -299,7 +388,7 @@
             </tr>
             <tr>
               <td>1.3</td>
-              <td>Кастрычнік 1998 г.</td>
+              <td>Кастрычнік 1998&nbsp;г.</td>
               <td>Edition 1</td>
               <td>Navigator 4.06&mdash;4.7x</td>
               <td></td>
@@ -321,7 +410,7 @@
             </tr>
             <tr>
               <td>1.5</td>
-              <td>Лістапад 2000 г.</td>
+              <td>Лістапад 2000&nbsp;г.</td>
               <td>Edition 3</td>
               <td>Navigator 6.0</td>
               <td>1.0</td>
@@ -332,7 +421,7 @@
             </tr>
             <tr>
               <td>1.6</td>
-              <td>Лістапад 2005 г.</td>
+              <td>Лістапад 2005&nbsp;г.</td>
               <td>Edition 3 + пашыраныя магчымасьці</td>
               <td></td>
               <td>1.5</td>
@@ -343,7 +432,7 @@
             </tr>
             <tr>
               <td>1.7</td>
-              <td>Кастрычнік 2006 г.</td>
+              <td>Кастрычнік 2006&nbsp;г.</td>
               <td>Edition 3 + пашыраныя магчымасьці</td>
               <td></td>
               <td>2.0</td>
@@ -354,7 +443,7 @@
             </tr>
             <tr>
               <td>1.8</td>
-              <td>Чэрвень 2008 г.</td>
+              <td>Чэрвень 2008&nbsp;г.</td>
               <td>Edition 3 + пашыраныя магчымасьці</td>
               <td></td>
               <td>3.0</td>
@@ -376,7 +465,7 @@
             </tr>
             <tr>
               <td>1.8.2</td>
-              <td>Чэрвень 2009 г.</td>
+              <td>Чэрвень 2009&nbsp;г.</td>
               <td>Edition 3 + пашыраныя магчымасьці</td>
               <td></td>
               <td>3.6</td>
@@ -387,7 +476,7 @@
             </tr>
             <tr>
               <td>1.8.5</td>
-              <td>Ліпень 2010 г.</td>
+              <td>Ліпень 2010&nbsp;г.</td>
               <td>Edition 5</td>
               <td></td>
               <td>4</td>
@@ -410,7 +499,7 @@
 						<li><a href="https://developer.mozilla.org/en/A_re-introduction_to_JavaScript#Numbers">re-Introduction</a></li>
 					</ul>
 				</div>
-        <p>У <i>JavaScript</i> усе лікі (і цэлыя, і рэчаісныя) прадстаўляюцца адно праз 64-бітавыя рэчаісныя значэньні падвойнай дакладнасьці ў фамаце, вызначаным стандартам <a href="http://en.wikipedia.org/wiki/IEEE_754-2008" title="Апісаньне стандарту IEEE 754 у ангельскай Вікіпэдыі">IEEE 754</a>. Гэты фармат здольны прадстаўляць лікі ў дыяпазоне ад &plusmn;1,7976931348623157&#215;10<sup>308</sup> да &plusmn;5&#215;10<sup>-324</sup>. У <i>JavaScript</i> існуе базавы аб&#39;ект-абгортка для лікаў: <a href="#BasicObjects_Number">Number</a>. Лік, які ўтрымліваецца наўпрост у кодзе <i>JavaScript</i>-праграмы, называецца лікавым літаралам.</p>
+        <p>У <i>JavaScript</i> усе лікі (і цэлыя, і рэчаісныя) прадстаўляюцца адно праз 64-бітавыя рэчаісныя значэньні падвойнай дакладнасьці ў фамаце, вызначаным стандартам <a href="http://en.wikipedia.org/wiki/IEEE_754-2008" title="Апісаньне стандарту IEEE 754 у ангельскай Вікіпэдыі">IEEE 754</a>. Гэты фармат здольны прадстаўляць лікі ў дыяпазоне ад &plusmn;1,7976931348623157&#215;10<sup>308</sup> да &plusmn;5&#215;10<sup>-324</sup>. У <i>JavaScript</i> існуе базавы аб&#39;ект-абгортка для лікаў: <a href="#CoreObjects_Number">Number</a>. Лік, які ўтрымліваецца наўпрост у кодзе <i>JavaScript</i>-праграмы, называецца лікавым літаралам.</p>
 
         <h3><a name="Types_Numbers_Integers" href="#Types_Numbers_Integers">Цэлыя літаралы</a></h3>
         <div class="refs">
@@ -460,7 +549,7 @@
 
         <h3><a name="Types_Numbers_Arithmetics" href="#Types_Numbers_Arithmetics">Арытмэтыка</a></h3>
         <p>Для выкананьня арытмэтычных дзеяў над лікамі ў <i>JavaScript</i> існуюць <a href="#Operators_Arithmetic">арытмэтычныя апэрацыі</a>: <code>+</code> для складаньня, <code>-</code> для адніманьня, <code>*</code> для памнажэньня, <code>/</code> для дзяленьня і <code>%</code> для вызначэньня астачы цэлалікавага дзяленьня.</p>
-        <p>Акрамя гэтага існуе базавы дапаможны аб&#39;ект <a href="#BasicObjects_Math"><code class="class">Math</code></a>, які мае шэраг мэтадаў для ажыцьцяўленьня пэўных арытмэтычных апэрацыяў.</p>
+        <p>Акрамя гэтага існуе базавы дапаможны аб&#39;ект <a href="#CoreObjects_Math"><code>Math</code></a>, які мае шэраг мэтадаў для ажыцьцяўленьня пэўных арытмэтычных апэрацыяў.</p>
 
         <h3><a name="Types_Numbers_UtilityFunctions" href="#Types_Numbers_UtilityFunctions">Дапаможныя функцыі</a></h3>
         <div class="refs">
@@ -470,16 +559,17 @@
             <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/isNaN">isNaN</a></li>
           </ul>
         </div>
-        <p>Для пераўтварэньня сымбальных чародаў у лікі існуюць дапаможныя функцыі верхняга ўзроўню: <code class="method">parseInt</code> і <code class="method">parseFloat</code>, для цэлых і рэчаісных лікаў адпаведна. Напрыклад, вынікам усіх наступных выразаў будзе рэчаісны лік 3,14:</p>
+        <p>Для пераўтварэньня сымбальных чародаў у лікі існуюць дапаможныя функцыі верхняга ўзроўню: <code>parseInt</code> і <code>parseFloat</code>, для цэлых і рэчаісных лікаў адпаведна. Напрыклад, вынікам усіх наступных выразаў будзе рэчаісны лік 3,14:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           parseFloat("3.14");
           parseFloat("314e-2");
           parseFloat("0.0314E+2");
-          parseFloat("3.14more non-digit characters");  // працэс сканаваньня чарады пры вызначэньні ліку,
-                                                        // які ў ёй утрымліваецца сканчваецца на першым сымбалі,
-                                                        // які ня можа уваходзіць у лікавы літарал
+          parseFloat("3.14more non-digit characters");  // працэс сканаваньня чарады пры вызначэньні
+                                                        // ліку, які ў ёй утрымліваецца сканчваецца
+                                                        // на першым сымбалі, які ня можа уваходзіць
+                                                        // у лікавы літарал
         ]]></script>
-        <p>А наступны прыклад верне <a href="#Number_NaN"><code class="attr">NaN</code></a>:</p>
+        <p>А наступны прыклад верне <a href="#CoreObjects_NaN"><code>NaN</code></a>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           parseFloat("FF2");
         ]]></script>
@@ -501,12 +591,12 @@
           parseInt("15px", 10);
           parseInt("12", 13);
         ]]></script>
-        <p>Наступныя прыклады вернуць <a href="#Number_NaN"><code class="attr">NaN</code></a>:</p>
+        <p>Наступныя прыклады вернуць <a href="#CoreObjects_NaN"><code>NaN</code></a>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           parseInt("Hello", 8); // Зусім ня лік
           parseInt("546", 2);   // Некарэктныя лічбы для дваічнага ліку
         ]]></script>
-        <p>Для праверкі ці зьяўляецца пэўнае значэньне карэктным лікам існуе функцыя <code class="method">isNaN</code>, таксама верхняга ўзроўню. Гэтую функцыю трэба выкарыстоўваць з пэўнай асьцярогай, асабліва, калі правяраемым значэньнем можа быць ня лік&nbsp;&mdash; у гэтым выпадку значэньне будзе спачатку пераўтворана ў лік, які ўжо ў сваю чаргу будзе пераданы ў функцыю:</p>
+        <p>Для праверкі ці зьяўляецца пэўнае значэньне лікам існуе функцыя <code>isNaN</code>, таксама верхняга ўзроўню. Гэтую функцыю трэба выкарыстоўваць з пэўнай асьцярогай, асабліва, калі правяраемым значэньнем можа быць ня лік&nbsp;&mdash; у гэтым выпадку значэньне будзе спачатку пераўтворана ў лік, які ўжо ў сваю чаргу будзе пераданы ў функцыю:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           isNaN(NaN);       // true
           isNaN(true);      // false: значэньне true, як і false будзе пераўтворана ў адпаведна
@@ -521,6 +611,7 @@
           isNaN("blabla")   // true: спроба пераўтварыць чараду "blabla" у лік ня будзе
                             // пасьпяховай, гэта спроба верне NaN
         ]]></script>
+        <p>Для праверкі ці зьяўляецца значэньне пэўным лікам (не бясконцасьцю) існуе функцыя верхняга ўзроўню <code>isFinite</code>. Калі ў яксьці аргумэнту ёй перададзеныя <a href="#CoreObjects_NaN"><code>NaN</code></a>, <a href="#Number_PositiveInfinity">дадатная</a> ці <a href="#Number_NegativeInfinity">адмоўная бясконцасьць</a>, яна верне <code class="keyword">false</code>, у астатніх выпадках&nbsp;&mdash; <code class="keyword">true</code>.</p>
 
         <h2><a name="Types_Strings" href="#Types_Strings">Сымбальныя чароды</a></h2>
         <div class="refs">
@@ -613,7 +704,7 @@
           msg = "Hello, " + "world";      // У выніку атрымліваем "Hello, world"
           greeting = "Welcome to my blog," + " " + name;
         ]]></script>
-        <p>Для вызначэньня дліны чарады выкарыстоўваецца атрыбут <code class="attr">length</code>:</p>
+        <p>Для вызначэньня дліны чарады выкарыстоўваецца атрыбут <code>length</code>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           s.length;
         ]]></script>
@@ -622,34 +713,34 @@
           var s = "hello, world";   // Пачынаем з пэўнага тэксту.
 
           // Доступ да сымбаляў:
-          s.charAt(0);              // => "h": першы сымбаль чарады.
-          s[0];                     // => "h": тое ж, што і папярэдні выраз.
-          s.charAt(s.length-1);     // => "d": апошні сымбаль чарады.
+          s.charAt(0);            // => "h": першы сымбаль чарады.
+          s[0];                   // => "h": тое ж, што і папярэдні выраз.
+          s.charAt(s.length-1);   // => "d": апошні сымбаль чарады.
 
           // Лічбавы код сымбаляў:
-          s.charCodeAt(0);          // => 104: Unicode-значэньне літары h
+          s.charCodeAt(0);        // => 104: Unicode-значэньне літары h
 
           // Доступ да часткі чарады:
-          s.substring(1,4);         // => "ell": частка чарады паміж сымбаляў з пазначанымі індэксамі,
-                                    // уключаючы сымбаль з індэксам, які вызначаецца першым аргумэнтам.
-          s.slice(1,4);             // => "ell": тое ж, што і папярэдні выраз.
-          s.slice(-3);              // => "rld": апошнія 3 сымбаля
-          s.substr(2,3);            // => "llo": падчарада з трох сымбаляў, пачынаючы з індэксу 2
+          s.substring(1,4);       // => "ell": частка чарады паміж сымбаляў з пазначанымі індэксамі,
+                                  // уключаючы сымбаль з індэксам, які вызначаецца першым аргумэнтам.
+          s.slice(1,4);           // => "ell": тое ж, што і папярэдні выраз.
+          s.slice(-3);            // => "rld": апошнія 3 сымбаля
+          s.substr(2,3);          // => "llo": падчарада з трох сымбаляў, пачынаючы з індэксу 2
 
           // Месцазнаходжаньне сымбаляў:
-          s.indexOf("l");           // => 2: месцазнаходжаньне першай літары l.
-          s.lastIndexOf("l");       // => 10: месцазнаходжаньне апошняй літары l.
-          s.indexOf("l", 3);        // => 3: месцазнаходжаньне першай літары "l", пачынаючы з індэксу 3
+          s.indexOf("l");         // => 2: месцазнаходжаньне першай літары l.
+          s.lastIndexOf("l");     // => 10: месцазнаходжаньне апошняй літары l.
+          s.indexOf("l", 3);      // => 3: месцазнаходжаньне першай літары "l", пачынаючы з індэксу 3
 
           // Падзел чарады на часткі:
-          s.split(", ");            // => ["hello", "world"]: вяртае часткі зыходнай чарады, на якія
-                                    // яна падзяляецца пазначаным сымбалем
+          s.split(", ");          // => ["hello", "world"]: вяртае часткі зыходнай чарады, на якія
+                                  // яна падзяляецца пазначаным сымбалем
 
           // Мадыфікацыя зыходнай чарады:
-          s.replace("h", "H");      // => "Hello, world": зьмяняе сымбалі, прадстаўленыя першым аргумэнтам
-                                    // на тыя, якія прадстаўлены другім аргумэнтам
-          s.toUpperCase();          // => "HELLO, WORLD": зьмяняе ўсе малыя літары на вялікія
-          s.toLowerCase();          // => "hello, world": зьмяняе ўсе вялікія літары на малыя
+          s.replace("h", "H");    // => "Hello, world": зьмяняе сымбалі, прадстаўленыя першым
+                                  // аргумэнтам на тыя, якія прадстаўлены другім аргумэнтам
+          s.toUpperCase();        // => "HELLO, WORLD": зьмяняе ўсе малыя літары на вялікія
+          s.toLowerCase();        // => "hello, world": зьмяняе ўсе вялікія літары на малыя
         ]]></script>
 
         <h2><a name="Types_Boolean" href="#Types_Boolean">Лягічны тып</a></h2>
@@ -659,84 +750,347 @@
           <li><code class="keyword">null</code></li>
           <li><code class="keyword">undefined</code></li>
           <li><code>0</code></li>
-          <li><code>""</code></li>
-          <li><code class="keyword">NaN</code></li>
+          <li><code>""</code> (пустая <a href="#Types_Strings">чарада</a>)</li>
+          <li><a href="#CoreObjects_NaN"><code>NaN</code></a></li>
         </ul>
 
-        <h2><a name="Types_null" href="#Types_null"><code class="keyword">null</code></a></h2>
+        <h2><a name="Types_null" href="#Types_null"><code>null</code></a></h2>
 
-				<h2><a name="Types_undefined" href="#Types_undefined"><code class="keyword">undefined</code></a></h2>
+				<h2><a name="Types_undefined" href="#Types_undefined"><code>undefined</code></a></h2>
 			</section>
 
       <section>
-        <h1><a name="BasicObjects" href="#BasicObjects">Базавыя аб&#39;екты</a></h1>
+        <h1><a name="CoreObjects" href="#CoreObjects">Базавыя аб&#39;екты</a></h1>
         <div class="refs">
           <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects">Guide</a></li>
             <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects">Reference</a></li>
           </ul>
         </div>
         <p>У <i>JavaScript</i> існуюць базавыя ці, інакш кажучы, глябальныя аб&#39;екты (у тым сэнсе, што даступныя ў глябальнай прасторы імёнаў). Ніжэй прыведзена больш падрабязная інфармацыя па кожнаму зь іх.</p>
 
-        <h2><a name="BasicObjects_Math" href="#BasicObjects_Math"><code class="class">Math</code></a></h2>
-
-        <h2><a name="BasicObjects_Number" href="#BasicObjects_Number"><code class="class">Number</code></a></h2>
+        <h2><a name="CoreObjects_Array" href="#CoreObjects_Array"><code>Array</code></a></h2>
         <div class="refs">
           <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Array_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="CoreObjects_Boolean" href="#CoreObjects_Boolean"><code>Boolean</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Boolean_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Boolean">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="CoreObjects_Date" href="#CoreObjects_Date"><code>Date</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Date_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="CoreObjects_Error" href="#CoreObjects_Error"><code>Error</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Error">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="CoreObjects_RangeError" href="#CoreObjects_RangeError"><code>RangeError</code></a></h3>
+
+        <h2><a name="CoreObjects_Function" href="#CoreObjects_Function"><code>Function</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Function_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function">Reference</a></li>
+          </ul>
+        </div>
+        <p>Любая функцыя ў <i>JavaScript</i> зьяўляецца экзэмплярам базавага аб&#39;екту <code>Function</code>. Па-першае, функцыю можна стварыць праз канструктар:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          new Function ([arg1[, arg2[, ... argN]],] functionBody)
+        ]]></script>
+        <p>Выклікаючы канструктар, спачатку перадаецца сьпіс імёнаў неабавязковых аргумэнтаў, а апошнім ідзе сымбальная чарада, якая ўтрымлівае выразы для выкананьня, напрыклад:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          // Стварае функцыю, якая прымае два аргумэнты і вяртае іх суму,
+          // прызначае зьменнай adder спасылку на створаную функцыю
+          var adder = new Function("a", "b", "return a + b");
+
+          // Выклік створанай функцыі
+          adder(2, 6);  //=> 8
+        ]]></script>
+        <p>Часам, для вырашэньня пэўных задачаў, немагчыма абмінуць стварэньне функцыяў праз канструктар, але звычайна, ў астатніх выпадках, трэба пазьбягаць гэтага, таму што такія функцыі ствараюцца пры кожным сваім выкліку наноў. Замест гэтага ў большасьці выпадкаў трэба аб&#39;яўляць функцыю і выклікаць яе ў тэксьце праграмы:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          // Аб&#39;яўленьне функцыі
+          function sayHello() {
+            console.log("Hello there!");
+          };
+
+          // Выклік аб&#39;яўленай функцыі
+          sayHello(); // Вывядзе чараду "Hello there!" у кансоль
+        ]]></script>
+        <p>Функцыя можа быць прызначана зьменнай:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var sayHi = function() {
+            console.log("Hi there!");
+          };
+
+          // Выклік аб&#39;яўленай функцыі
+          sayHi(); // Вывядзе чараду "Hi there!" у кансоль
+        ]]></script>
+        <p>Гэта вельмі падобна да звычайнага аб&#39;яўленьня функцыі, але трэба ведаць, што:</p>
+        <ul>
+          <li>калі функцыя ствараецца праз выраз кшталту <code>var adder = new Function("...")</code>, <code>adder</code> зьяўляецца зьменнай, якая у дадзены момант спасылаецца на аб&#39;ект <code>Function</code> (а ў іншы момант можа спасылацца на іншы аб&#39;ект, у тым ліку іншага тыпу),</li>
+          <li>калі ж функцыя ствараецца праз выраз <code>function sayHello() {...}</code>, <code>sayHello</code> зьяўляецца імем функцыі, а ня зьменнай.</li>
+        </ul>
+        <p>Функцыі таксама можна аб&#39;яўляць унутры іншых функцыяў. Укладзеныя (унутраныя) функцыі абмежаваны для выкарыстаньня толькі сваімі абымаючымі (зьнешнімі) функцыямі. Пры гэтым унутраныя функцыі могуць мець доступ да аргумэнтаў і зьменных сваіх зьнешніх функцыяў, але зьнешнія функцыі ня могуць мець доступ да аргумэнтаў і зьменных сваіх унутраных функцыяў.</p>
+
+        <h3><a name="CoreObjects_Function_Props" href="#CoreObjects_Function_Props">Атрыбуты</a></h3>
+        <p>У  аб&#39;ектаў <code>Function</code> маецца адзін атрыбут, які дазваляе пашыраць/зьмяняць усе экзэмпляры адпаведных аб&#39;ектаў:</p>
+
+        <h4><a name="CoreObjects_Function_Props_prototype" href="#CoreObjects_Function_Props_prototype">prototype</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/prototype">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="CoreObjects_Function_Methods" href="#CoreObjects_Function_Methods">Мэтады</a></h3>
+        <p>Разгледзем мэтады, якія даступны экзэмплярам <code>Function</code>.</p>
+
+        <h4><a name="CoreObjects_Function_Methods_apply" href="#CoreObjects_Function_Methods_apply"><code>apply</code></a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/apply">Reference</a></li>
+          </ul>
+        </div>
+
+        <h4><a name="CoreObjects_Function_Methods_bind" href="#CoreObjects_Function_Methods_bind"><code>bind</code></a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind">Reference</a></li>
+          </ul>
+        </div>
+
+        <h4><a name="CoreObjects_Function_Methods_call" href="#CoreObjects_Function_Methods_call"><code>call</code></a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/call">Reference</a></li>
+          </ul>
+        </div>
+
+        <h4><a name="CoreObjects_Function_Methods_isGenerator" href="#CoreObjects_Function_Methods_isGenerator"><code>isGenerator</code></a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/isGenerator">Reference</a></li>
+          </ul>
+        </div>
+
+        <h4><a name="CoreObjects_Function_Methods_toString" href="#CoreObjects_Function_Methods_toString"><code>toString</code></a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/toString">Reference</a></li>
+          </ul>
+        </div>
+
+
+
+        <h2><a name="CoreObjects_Math" href="#CoreObjects_Math"><code>Math</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Math_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="CoreObjects_Math_Props" href="#CoreObjects_Math_Props">Атрыбуты</a></h3>
+        <ul>
+          <li><code>E</code>&nbsp;&mdash; аснова натуральнага лягарытму (прыкладна 2,718).</li>
+          <li><code>LN2</code>&nbsp;&mdash; натуральны лягарытм 2 (прыкладна 0,693).</li>
+          <li><code>LN10</code>&nbsp;&mdash; натуральны лягарытм 10 (прыкладна 2,303).</li>
+          <li><code>LOG2E</code>&nbsp;&mdash; лягарытм E па аснове 2 (прыкладна 1,442).</li>
+          <li><code>LOG10E</code>&nbsp;&mdash; лягарытм E па аснове 10 (прыкладна 0,434).</li>
+          <li><code>PI</code>&nbsp;&mdash; значэньне π (прыкладна 3,14159).</li>
+          <li><code>SQRT1_2</code>&nbsp;&mdash; квадратны корань 1/2 (прыкладна 0,707).</li>
+          <li><code>SQRT2</code>&nbsp;&mdash; квадратны корань 2 (прыкладна 1,414).</li>
+        </ul>
+
+        <h3><a name="CoreObjects_Math_Methods" href="#CoreObjects_Math_Methods">Мэтады</a></h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Мэтад(-ы)</th>
+              <th>Апісаньне</th>
+              <th width="40%">Прыклад</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>abs</code></td>
+              <td>Вяртае абсалютнае значэньне аргумэнту.</td>
+              <td><code>Math.abs(-5); //=> 5</code></td>
+            </tr>
+            <tr>
+              <td><code>acos</code> <br /> <code>asin</code> <br /> <code>atan</code> <br /> <code>atan2</code></td>
+              <td>Зваротныя трыганамэтрычныя функцыі. Вяртаюць значэньні ў радыянах.</td>
+              <td><code>Math.acos(1); //=> 3.141592653589793</code></td>
+            </tr>
+            <tr>
+              <td><code>ceil</code></td>
+              <td>Вяртае найменшы цэлы лік, большы ці роўны аргумэнту.</td>
+              <td><code>Math.ceil(45.25); //=> 46</code> <br /> <code>Math.ceil(-45.25); //=> -45</code></td>
+            </tr>
+            <tr>
+              <td><code>cos</code> <br /> <code>sin</code> <br /> <code>tan</code></td>
+              <td>Прамыя трыганамэтрычныя функцыі. Вяртаюць значэньні ў радыянах.</td>
+              <td><code>Math.cos(Math.PI); //=> -1</code></td>
+            </tr>
+            <tr>
+              <td><code>exp</code></td>
+              <td>Падвышае значэньне <code>E</code> да перададзенай ступені.</td>
+              <td><code>Math.exp(2); //=> 7.389</code></td>
+            </tr>
+            <tr>
+              <td><code>floor</code></td>
+              <td>Вяртае найбольшы цэлы лік, меншы ці роўны аргумэнту.</td>
+              <td><code>Math.ceil(45.95); //=> 45</code> <br /> <code>Math.ceil(-45.95); //=> -46</code></td>
+            </tr>
+            <tr>
+              <td><code>log</code></td>
+              <td>Вяртае значэньне натуральнага лягарытму ад аргумэнту.</td>
+              <td><code>Math.log(10); //=> 2.302585092994046</code> <br />
+                <code>Math.log(0); //=> -Infinity</code> <br />
+                <code>Math.log(-1); //=> NaN</code> <br />
+                <code>Math.log(100)/Math.LN10 // log<sub>10</sub>(100)</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>max</code> <br /> <code>min</code></td>
+              <td>Вяртаюць адпаведна найбольшае й найменшае сярод сваіх аргумэнтаў (адвольная колькасьць).</td>
+              <td><code>Math.min(1,3); //=> 1</code><br />
+                <code>Math.max(1,8,3) //=> 8</code><br />
+                <code>Math.min() //=> Infinity</code><br />
+                <code>Math.max() //=> -Infinity</code><br />
+                <code>Math.max(1, "a") //=> NaN</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>pow</code></td>
+              <td>Вяртае значэньне першага свайго аргумэнту, падвышанае ў ступень другога свайго аргумэнту.</td>
+              <td><code>Math.pow(7,2) //=> 49 (7<sup>2</sup>)</code></td>
+            </tr>
+            <tr>
+              <td><code>random</code></td>
+              <td>Вяртае выпадковае рэчаіснае значэньне ў дыяпазоне ад 0 (уключна) да 1 (ня ўключна).</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>round</code></td>
+              <td>Вяртае бліжэйшае цэлае значэньне па правілам скругленьня.</td>
+              <td><code>Math.round(25.49) //=> 25</code> <br />
+                <code>Math.round(25.5) //=> 26</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>sqrt</code></td>
+              <td>Вяртае значэньне квадратнага кораню аргумэнту.</td>
+              <td><code>Math.sqrt(9) //=> 3</code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>У дадатак да вышэйпералічаных мэтадаў разгледзем некалькі сытуацыяў, якія выходзяць за межы магчымасьцяў гэтых мэтадаў, але зьяўляюцца даволі распаўсюджанымі.</p>
+        <p>Па-першае, лягарытмы адвольных значэньняў па аснове 2 і 10.</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          Math.log(100)/Math.LN10 // лягарытм 100 па аснове 10
+          Math.log(512)/Math.LN2 // лягарытм 512 па аснове 2
+        ]]></script>
+        <p>Далей, каб атрымаць выпадковае рэчаіснае значэньне ў <strong>адвольным дыяпазоне</strong> можна скарыстацца ўласнай функцыяй:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+          }
+        ]]></script>
+        <p>Каб атрымаць выпадковае <strong>цэлае</strong> значэньне ў адвольным дыяпазоне можна скарыстацца наступнай функцыяй:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          function getRandomInt(min, max) {
+            Math.floor(Math.random() * (max - min + 1)) + min;
+          }
+        ]]></script>
+
+        <h2><a name="CoreObjects_NaN" href="#CoreObjects_NaN"><code>NaN</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/NaN">Reference</a></li>
+          </ul>
+        </div>
+        <aside><sup>2</sup> Трэба заўважыць, што вынікам <a href="#Number_NaN"><code>Number.NaN</code></a> будзе толькі дзяленьне <code>0/0</code>, а, напрыклад, <code>1/0</code> верне <a href="#Number_PositiveInfinity">дадатную бясконцасьць</a>.</aside>
+        <p>Адмысловы аб&#39;ект для прадстаўленьня нялічбавых значэньняў,&nbsp;&mdash; напрыклад, вынікі некарэктных артымэтычных апэрацыяў (як то дзяленьне на нуль<sup>2</sup>). Тое ж самае, што і <a href="#Number_NaN"><code>Number.NaN</code></a>.</p>
+
+        <h2><a name="CoreObjects_Number" href="#CoreObjects_Number"><code>Number</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Number_Object">Guide</a></li>
             <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number">Reference</a></li>
           </ul>
         </div>
 
-        <h3><a name="BasicObjects_Number_Props" href="#BasicObjects_Number_Props">Атрыбуты</a></h3>
+        <h3><a name="CoreObjects_Number_Props" href="#CoreObjects_Number_Props">Атрыбуты</a></h3>
         <ul>
-          <li><code class="attr">MAX_VALUE</code>&nbsp;&mdash; найбольшы дадатны лік, які можа быць прадстаўлены ў <i>JavaScript</i> (прыкладна 1,79e+308). Значэньні, большыя за гэтае, будуць прадстаўленыя як <a href="#Number_PositiveInfinity">дадатная бясконцасьць</a>. Найменшы адмоўны лік, які можа быць прадстаўлены,&mdash; гэта <code>-</code><code class="attr">MAX_VALUE</code>. Значэньні, меншыя за гэтае, будуць прадстаўленыя як <a href="#Number_NegativeInfinity">адмоўная бясконцасьць</a>.</li>
-          <li><code class="attr">MIN_VALUE</code>&nbsp;&mdash; найменшы але ня роўны 0 дадатны лік, які можа быць прадстаўлены ў <i>JavaScript</i> (прыкладна 5e-324). Значэньні, меншыя за гэтае, будуць прадстаўленыя як 0. Найбольшы адмоўны лік, які можа быць прадстаўлены,&mdash; гэта <code>-</code><code class="attr">MIN_VALUE</code>.</li>
-          <li><a name="Number_PositiveInfinity"><code class="attr">POSITIVE_INFINITY</code></a>&nbsp;&mdash; адмысловае значэньне, каторае прадстаўляе дадатную бясконцасьць, якая ўтвараецца пры перапаўненьні (пры перавышэньні максымальна магчымага значэньня).</li>
-          <li><a name="Number_NegativeInfinity"><code class="attr">NEGATIVE_INFINITY</code></a>&nbsp;&mdash; адмысловае значэньне, каторае прадстаўляе адмоўную бясконцасьць, якая ўтвараецца пры перапаўненьні (значэньні менш мінімальна магчымага адмоўнага).</li>
-          <li><a name="Number_NaN"><code class="attr">NaN</code></a>&nbsp;&mdash; адмысловае значэньне &laquo;ня лічба&raquo;, якое прадстаўляе, напрыклад, вынікі некарэктных артымэтычных апэрацыяў (як то дзяленьне на нуль).</li>
+          <li><code>MAX_VALUE</code>&nbsp;&mdash; найбольшы дадатны лік, які можа быць прадстаўлены ў <i>JavaScript</i> (прыкладна 1,79e+308). Значэньні, большыя за гэтае, будуць прадстаўленыя як <a href="#Number_PositiveInfinity">дадатная бясконцасьць</a>. Найменшы адмоўны лік, які можа быць прадстаўлены,&mdash; гэта <code>-</code><code>MAX_VALUE</code>. Значэньні, меншыя за гэтае, будуць прадстаўленыя як <a href="#Number_NegativeInfinity">адмоўная бясконцасьць</a>.</li>
+          <li><code>MIN_VALUE</code>&nbsp;&mdash; найменшы але ня роўны 0 дадатны лік, які можа быць прадстаўлены ў <i>JavaScript</i> (прыкладна 5e-324). Значэньні, меншыя за гэтае, будуць прадстаўленыя як 0. Найбольшы адмоўны лік, які можа быць прадстаўлены,&mdash; гэта <code>-</code><code>MIN_VALUE</code>.</li>
+          <li><a name="Number_PositiveInfinity"><code>POSITIVE_INFINITY</code></a>&nbsp;&mdash; адмысловае значэньне, каторае прадстаўляе дадатную бясконцасьць, якая ўтвараецца пры перапаўненьні (пры перавышэньні максымальна магчымага значэньня).</li>
+          <li><a name="Number_NegativeInfinity"><code>NEGATIVE_INFINITY</code></a>&nbsp;&mdash; адмысловае значэньне, каторае прадстаўляе адмоўную бясконцасьць, якая ўтвараецца пры перапаўненьні (значэньні менш мінімальна магчымага адмоўнага).</li>
+          <li><a name="Number_NaN"><code>NaN</code></a>&nbsp;&mdash; адмысловае значэньне &laquo;ня лічба&raquo;, якое прадстаўляе, напрыклад, вынікі некарэктных артымэтычных апэрацыяў (як то дзяленьне на нуль<sup>2</sup>). Тое ж самае, што і базавы аб&#39;ект <a href="#CoreObjects_NaN"><code>NaN</code></a>.</li>
         </ul>
 
-        <h4><a name="BasicObjects_Number_Props_Examples" href="#BasicObjects_Number_Props_Examples">Прыклады</a></h4>
+        <h4><a name="CoreObjects_Number_Props_Examples" href="#CoreObjects_Number_Props_Examples">Прыклады</a></h4>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var aNumber = (-Number.MAX_VALUE) * 2;
           if (aNumber == Number.NEGATIVE_INFINITY) {
-            aNumber = -Number.MAX_VALUE;  // aNumber утрымлівае значэньне, якое немагчыма выкарыстоўваць
-                                          // у арытмэтычных апэрацыях, таму прызначаем яму аналягічнае,
-                                          // але карэктнае значэньне.
+            aNumber = -Number.MAX_VALUE;  // aNumber утрымлівае значэньне, якое немагчыма
+                                          // выкарыстоўваць у арытмэтычных апэрацыях, таму
+                                          // прызначаем яму аналягічнае, але карэктнае значэньне.
           }
           aNumber = aNumber / 0;          // вынікам будзе Number.NaN
         ]]></script>
 
-        <h3><a name="BasicObjects_Number_Methods" href="#BasicObjects_Number_Methods">Мэтады</a></h3>
+        <h3><a name="CoreObjects_Number_Methods" href="#CoreObjects_Number_Methods">Мэтады</a></h3>
         <ul>
-          <li><code class="method">toExponential</code>&nbsp;&mdash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у экспанэнцыяльнай натацыі. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі. Калі парамэтар не пазначаны, будзе адлюстравана столькі лічбаў пасьля рэчаіснай кропкі, колькі патрэбна. Прыклады:</li>
+          <li><code>toExponential</code>&nbsp;&mdash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у экспанэнцыяльнай натацыі. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі. Калі парамэтар не пазначаны, будзе адлюстравана столькі лічбаў пасьля рэчаіснай кропкі, колькі патрэбна. Прыклады:</li>
           <script type="syntaxhighlighter" class="brush: js"><![CDATA[
             var num=77.1234;
 
-            alert("num.toExponential() is " + num.toExponential());         // адлюструе 7.71234e+1
-            alert("num.toExponential(4) is " + num.toExponential(4));       // адлюструе 7.7123e+1
-            alert("num.toExponential(2) is " + num.toExponential(2));       // адлюструе 7.71e+1
-            alert("77.1234.toExponential() is " + 77.1234.toExponential()); // адлюструе 7.71234e+1
-            alert("77 .toExponential() is " + 77 .toExponential());         // адлюструе 7.7e+1
+            alert("num.toExponential() is " + num.toExponential());        // адлюструе 7.71234e+1
+            alert("num.toExponential(4) is " + num.toExponential(4));      // адлюструе 7.7123e+1
+            alert("num.toExponential(2) is " + num.toExponential(2));      // адлюструе 7.71e+1
+            alert("77.1234.toExponential() is " + 77.1234.toExponential());// адлюструе 7.71234e+1
+            alert("77 .toExponential() is " + 77 .toExponential());        // адлюструе 7.7e+1
           ]]></script>
-          <li><code class="method">toFixed</code>&nbsp;&mdash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у натацыі з фіксаванай кропкай. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі (ад 0 да 20). Калі парамэтар не пазначаны, лічбы пасьля рэчаіснай кропкі будуць адкінутыя ўвогуле. Прыклады:</li>
+          <li><code>toFixed</code>&nbsp;&mdash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у натацыі з фіксаванай кропкай. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі (ад 0 да 20). Калі парамэтар не пазначаны, лічбы пасьля рэчаіснай кропкі будуць адкінутыя ўвогуле. Прыклады:</li>
           <script type="syntaxhighlighter" class="brush: js"><![CDATA[
             var n = 12345.6789;
 
-            n.toFixed();            // вярне "12346": ня проста адкіне дроб, але акругліць значэньне
+            n.toFixed();            // вярне "12346": ня проста адкіне дроб,
+                                    // але акругліць значэньне
             n.toFixed(1);           // вярне "12345.7": таксама акругліць значэньне
             n.toFixed(6);           // вярне "12345.678900": дадасьць нулі
             (1.23e+20).toFixed(2);  // вярне "123000000000000000000.00"
             (1.23e-10).toFixed(2);  // вярне "0.00"
             2.34.toFixed(1);        // вярне "2.3"
-            -2.34.toFixed(1);       // вярне -2.3: не чарада, але лік, з-за парадку апрацоўкі апэрацыяў
-            (-2.24).toFixed(1);     // вярне "-2.3": пасьля абгортваньня ў дужкі - сымбальная чарада
+            -2.34.toFixed(1);       // вярне -2.3: не чарада, але лік, з-за парадку
+                                    // апрацоўкі апэрацыяў
+            (-2.24).toFixed(1);     // вярне "-2.3": пасьля абгортваньня
+                                    // ў дужкі - сымбальная чарада
           ]]></script>
-          <li><code class="method">toLocaleString</code>&nbsp;&mdash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, з улікам лякальных асаблівасьцяў. Прыклад:</li>
+          <li><code>toLocaleString</code>&nbsp;&mdash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, з улікам лякальных асаблівасьцяў. Прыклад:</li>
           <script type="syntaxhighlighter" class="brush: js"><![CDATA[
             var number = 3500;
             console.log(number.toLocaleString()); // адлюструе "3,500" у ангельскай лякалі
           ]]></script>
-          <li><code class="method">toPrecision</code>&nbsp;&mdash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, альбо ў экспанэнцыяльнай натацыі, альбо ў натацыі з фіксаванай кропкай у залежнасьці ад неабходнай дакладнасьці. У якасьці парамэтру можа перадавацца неабходная дакладнасьць&nbsp;&mdash; колькасьць вартасных лічбаў. Калі парамэтар не пазначаны, мэтад вядзе сябе гэтак сама, як мэтад <a href="#Number_toString"><code class="method">toString</code></a>. Калі ў якасьці парамэтру будзе ўжыта ня цэлае значэньне, яно будзе акруглена. Пасьля агругленьня, калі значэньне парамэтру будзе выходзіць за межы дыяпазону ад 1 да 100, будзе згенэравана <a href="#BasicObjects_RangeError"><code class="class">RangeError</code></a>. Прыклады:</li>
+          <li><code>toPrecision</code>&nbsp;&mdash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, альбо ў экспанэнцыяльнай натацыі, альбо ў натацыі з фіксаванай кропкай у залежнасьці ад неабходнай дакладнасьці. У якасьці парамэтру можа перадавацца неабходная дакладнасьць&nbsp;&mdash; колькасьць вартасных лічбаў. Калі парамэтар не пазначаны, мэтад вядзе сябе гэтак сама, як мэтад <a href="#Number_toString"><code>toString</code></a>. Калі ў якасьці парамэтру будзе ўжыта ня цэлае значэньне, яно будзе акруглена. Пасьля агругленьня, калі значэньне парамэтру будзе выходзіць за межы дыяпазону ад 1 да 100, будзе згенэравана <a href="#CoreObjects_RangeError"><code>RangeError</code></a>. Прыклады:</li>
           <script type="syntaxhighlighter" class="brush: js"><![CDATA[
             var num = 5.123456;
             console.log("num.toPrecision() is " + num.toPrecision());   // адлюструе 5.123456
@@ -744,7 +1098,7 @@
             console.log("num.toPrecision(2) is " + num.toPrecision(2)); // адлюструе 5.1
             console.log("num.toPrecision(1) is " + num.toPrecision(1)); // адлюструе 5
           ]]></script>
-          <li><a name="Number_toString"><code class="method">toString</code></a>&nbsp;&mdash; вяртае сымбальнае прадстаўленьне дадзенага ліку. У якасьці парамэтру можа перадавацца базіс ліку для адлюстраваньня (ад 2 да 36). Калі парамэтар не пазначаны, бярэцца базіс 10. Калі парамэтар знаходзіцца па-за межамі дыяпазону ад 2 да 36, будзе згенэравана памылка. Прыклады:</li>
+          <li><a name="Number_toString"><code>toString</code></a>&nbsp;&mdash; вяртае сымбальнае прадстаўленьне дадзенага ліку. У якасьці парамэтру можа перадавацца базіс ліку для адлюстраваньня (ад 2 да 36). Калі парамэтар не пазначаны, бярэцца базіс 10. Калі парамэтар знаходзіцца па-за межамі дыяпазону ад 2 да 36, будзе згенэравана памылка. Прыклады:</li>
           <script type="syntaxhighlighter" class="brush: js"><![CDATA[
             var count = 10;
             console.log(count.toString());   // адлюструе "10"
@@ -753,29 +1107,673 @@
             var x = 7;
             console.log(x.toString(2));      // адлюструе дваічнае "111"
           ]]></script>
-          <li><code class="method">valueOf</code>&nbsp;&mdash; вяртае прымітыўнае лікавае прадстаўленьне дадзенага лікавага аб&#39;екту.</li>
+          <li><code>valueOf</code>&nbsp;&mdash; вяртае прымітыўнае лікавае прадстаўленьне дадзенага лікавага аб&#39;екту.</li>
         </ul>
 
-        <h2><a name="BasicObjects_RangeError" href="#BasicObjects_RangeError"><code class="class">RangeError</code></a></h2>
+        <h2><a name="CoreObjects_Object" href="#CoreObjects_Object"><code>Object</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="CoreObjects_RegExp" href="#CoreObjects_RegExp"><code>RegExp</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#RegExp_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/RegExp">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="CoreObjects_String" href="#CoreObjects_String"><code>String</code></a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#String_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String">Reference</a></li>
+          </ul>
+        </div>
+
       </section>
 
       <section>
         <h1><a name="Operators" href="#Operators">Апэрацыі</a></h1>
 
+        <h2><a name="Operators_Assignments" href="#Operators_Assignments">Прысваеньня</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Assignment_Operators">Reference</a></li>
+          </ul>
+        </div>
+        <p>Апэрацыі прысваеньня даволі інтуітыўна зразумелыя, але варта спыніцца на некаторых асаблівасьцях. Гэтыя апэрацыі зьяўляюцца права-асацыятыўнымі, а значэньнем выразу прысваеньня зьяўляецца правы апэранд апэрацыі. Таму дазваляецца наступнае:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          i = j = k = 0;      // прысвоіць усім 3 зьменным значэньне 0
+          x = (i = (k = 0));  // эквівалентна папярэдняму з пазнакай парадку прысваеньня
+        ]]></script>
+        <p>Таксама апэрацыі прысваеньня можна выкарыстоўваць у складаных выразах кшталту:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          (a = b) == 0;       // спачатку значэньне b будзе прысвоена зьменнай a, а потым
+                              // значэньне зьменнай a будзе параўнана з 0
+        ]]></script>
+
+        <h3><a name="Operators_Assignments_Shortened" href="#Operators_Assignments_Shortened">Скарочаныя формы прысваеньняў</a></h3>
+        <p>Скарочаныя формы прысваеньняў камбінуюць прысваеньне з іншай апэрацыяй:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          a OP= b
+        ]]></script>
+        <p>дзе <code>OP</code> гэта пэўная апэрацыя, што эквівалентна:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          a = a OP b
+        ]]></script>
+        <p>Поўны сьпіс гэных апэрацыяў:</p>
+        <table style="width: 400px;">
+          <thead>
+            <tr>
+              <th>Апэрацыя</th>
+              <th>Прыклад</th>
+              <th>Эквівалент</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>+=</code></td>
+              <td><code>a += b</code></td>
+              <td><code>a = a + b</code></td>
+            </tr>
+            <tr>
+              <td><code>-=</code></td>
+              <td><code>a -= b</code></td>
+              <td><code>a = a - b</code></td>
+            </tr>
+            <tr>
+              <td><code>*=</code></td>
+              <td><code>a *= b</code></td>
+              <td><code>a = a * b</code></td>
+            </tr>
+            <tr>
+              <td><code>/=</code></td>
+              <td><code>a /= b</code></td>
+              <td><code>a = a / b</code></td>
+            </tr>
+            <tr>
+              <td><code>%=</code></td>
+              <td><code>a %= b</code></td>
+              <td><code>a = a % b</code></td>
+            </tr>
+            <tr>
+              <td><code>&lt;&lt;=</code></td>
+              <td><code>a &lt;&lt;= b</code></td>
+              <td><code>a = a &lt;&lt; b</code></td>
+            </tr>
+            <tr>
+              <td><code>&gt;&gt;=</code></td>
+              <td><code>a &gt;&gt;= b</code></td>
+              <td><code>a = a &gt;&gt; b</code></td>
+            </tr>
+            <tr>
+              <td><code>&gt;&gt;&gt;=</code></td>
+              <td><code>a &gt;&gt;&gt;= b</code></td>
+              <td><code>a = a &gt;&gt;&gt; b</code></td>
+            </tr>
+            <tr>
+              <td><code>&amp;=</code></td>
+              <td><code>a &amp;= b</code></td>
+              <td><code>a = a &amp; b</code></td>
+            </tr>
+            <tr>
+              <td><code>|=</code></td>
+              <td><code>a |= b</code></td>
+              <td><code>a = a | b</code></td>
+            </tr>
+            <tr>
+              <td><code>^=</code></td>
+              <td><code>a ^= b</code></td>
+              <td><code>a = a ^ b</code></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2><a name="Operators_Comparison" href="#Operators_Comparison">Параўнаньня</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators">Reference</a></li>
+          </ul>
+        </div>
+        <p>Апэрацыі праверкі ці першы аргумэнт роўны/няроўны другому і праверкі адносінаў большы/меншы паміж імі. Табліца ніжэй утрымлівае апісаньне апэрацыяў параўнаньня, прымаючы, што ў праграме маюцца наступныя аб&#39;яўленьні:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var var1 = 3, var2 = 4;
+        ]]></script>
+        <table>
+          <thead>
+            <tr>
+              <th>Апэрацыя</th>
+              <th>Апісаньне</th>
+              <th style="width: 250px;">Прыклады, якія вяртаюць <code>true</code></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>==</code></td>
+              <td><em>Роўнасьць</em>. Вяртае <code>true</code>, калі апэранды роўныя адзін другому.</td>
+              <td>
+                <code>3 == var1</code> <br />
+                <code>"3" == var1</code> <br />
+                <code>3 == '3'</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>!=</code></td>
+              <td><em>Няроўнасьць</em>. Вяртае <code>true</code>, калі апэранды ня роўныя адзін другому.</td>
+              <td>
+                <code>var1 != 4</code> <br />
+                <code>var2 != "3"</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>===</code></td>
+              <td><em>Строгая роўнасьць</em>. Вяртае <code>true</code>, калі апэранды роўныя адзін другому і маюць аднолькавы тып.</td>
+              <td>
+                <code>3 === var1</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>!==</code></td>
+              <td><em>Строгая няроўнасьць</em>. Вяртае <code>true</code>, калі апэранды ня роўныя адзін другому і/ці маюць адрозныя тыпы.</td>
+              <td>
+                <code>var1 !== "3"</code> <br />
+                <code>3 !== '3'</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>&gt;</code></td>
+              <td><em>Больш</em>. Вяртае <code>true</code>, калі левы апэранд большы за правы.</td>
+              <td>
+                <code>var2 &gt; var1</code> <br />
+                <code>"12" &gt; 2</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>&gt;=</code></td>
+              <td><em>Больш ці роўна</em>. Вяртае <code>true</code>, калі левы апэранд большы ці роўны праваму.</td>
+              <td>
+                <code>var2 &gt;= var1</code> <br />
+                <code>var1 &gt;= 3</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>&lt;</code></td>
+              <td><em>Менш</em>. Вяртае <code>true</code>, калі левы апэранд меншы за правы.</td>
+              <td>
+                <code>var1 &lt; var2</code> <br />
+                <code>"12" &lt; "2"</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>&lt;=</code></td>
+              <td><em>Менш ці роўна</em>. Вяртае <code>true</code>, калі левы апэранд меншы ці роўны праваму.</td>
+              <td>
+                <code>var1 &lt;= var2</code> <br />
+                <code>var2 &lt;= 5</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
         <h2><a name="Operators_Arithmetic" href="#Operators_Arithmetic">Арытмэтычныя</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Arithmetic_Operators">Reference</a></li>
+          </ul>
+        </div>
+        <p>Арытмэтычныя апэрацыі падзяляюцца на ўнарныя (з удзелам аднаго апэранду) і бінарныя (з удзелам 2 апэрандаў).</p>
+
+        <h3><a name="Operators_Arithmetic_Unary" href="#Operators_Arithmetic_Unary">Унарныя</a></h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Апэрацыя</th>
+              <th>Апісаньне</th>
+              <th style="width: 200px;">Прыклады</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>+</code></td>
+              <td><em>Унарны плюс</em>. Пераўтварае апэранд у лік (ці <a href="#CoreObjects_NaN"><code>NaN</code></a>) і вяртае вынік. Калі ж апэрандам зьяўляецца лік, ня робіць нічога.</td>
+              <td>
+                <code>+"2"; //=> 2 </code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>-</code></td>
+              <td><em>Унарны мінус</em>. Пераўтварае апэранд у лік, калі патрэбна, і зьмяняе яго знак на адваротны.</td>
+              <td>
+                <code>-2; //=> -2 </code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>++</code></td>
+              <td><em>Інкрымэнт</em>. Павялічвае апэранд (які павінны быць <i>lvalue</i>) на адзінку.</td>
+              <td>
+                <code>a++; //=> a = a + 1 </code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>--</code></td>
+              <td><em>Дэкрымэнт</em>. Памяншае апэранд (які павінны быць <i>lvalue</i>) на адзінку.</td>
+              <td>
+                <code>a--; //=> a = a - 1 </code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Значэньне, якое вяртаюць апэрацыі інкрымэнту і дэкрымэнту, залежыць ад пазыцыі апэрацыі адносна апэранду. Калі апэрацыя зьмяшчаецца перад апэрандам, будзе вернута паменшанае ці павялічанае на адзінку значэньне апэранду. Калі ж апэрацыя зьмешчана пасьля апэранду, будзе вернута нязьменнае значэньне апэранду:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var i = 1, j = ++i; // абедзьве зьменныя i, j роўныя 2
+          var i = 1, j = i++; // i роўная 2, j роўная 1
+        ]]></script>
+
+        <h3><a name="Operators_Arithmetic_Binary" href="#Operators_Arithmetic_Binary">Бінарныя</a></h3>
+        <table style="width: 450px;">
+          <thead>
+            <tr>
+              <th>Апэрацыя</th>
+              <th>Апісаньне</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>+</code></td>
+              <td><em>Складаньне</em>.</td>
+            </tr>
+            <tr>
+              <td><code>-</code></td>
+              <td><em>Адыманьне</em>.</td>
+            </tr>
+            <tr>
+              <td><code>*</code></td>
+              <td><em>Памнажэньне</em>.</td>
+            </tr>
+            <tr>
+              <td><code>/</code></td>
+              <td><em>Дзяленьне</em>.</td>
+            </tr>
+            <tr>
+              <td><code>%</code></td>
+              <td><em>Знаходжаньне астачы цэлалікавага дзяленьня</em>.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2><a name="Operators_Bitwise" href="#Operators_Bitwise">Бітавыя</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Bitwise_Operators">Reference</a></li>
+          </ul>
+        </div>
+        <p>Гэтыя апэрацыі ажыцьцяўляюць маніпуляцыі з бітамі лікаў у іх бінарным прадстаўленьні:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Апэрацыя</th>
+              <th>Апісаньне</th>
+              <th style="width: 300px;">Прыклады</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>&amp;</code></td>
+              <td><em>Бітавы AND</em>. Ужывае лягічную апэрацыю AND да ўсіх адпаведных бітаў кожнага з апэрандаў.</td>
+              <td>
+                <code>0x1234 &amp; 0x00FF //=> 0x0034</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>|</code></td>
+              <td><em>Бітавы OR</em>. Ужывае лягічную апэрацыю OR да ўсіх адпаведных бітаў кожнага з апэрандаў.</td>
+              <td>
+                <code>0x1234 | 0x00FF //=> 0x12FF</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>^</code></td>
+              <td><em>Бітавы выключны OR (XOR)</em>. Ужывае лягічную апэрацыю XOR да ўсіх адпаведных бітаў кожнага з апэрандаў.</td>
+              <td>
+                <code>0xFF00 ^ 0xF0F0 //=> 0x0FF0</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>~</code></td>
+              <td><em>Бітавы NOT</em>. Ужывае лягічную апэрацыю NOT да бітаў <strong>адзінага</strong> свайго апэранду. Знак апэрацыі зьмяшчаецца перад апэрандам.</td>
+              <td>
+                <code>~0x0F //=> 0xFFFFFFF0</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>&lt;&lt;</code></td>
+              <td><em>Бітавы зрух улева</em>. Зрушвае біты свайго першага апэранду ўлева на колькасьць бітавых пазыцыяў, пазначаных у другім апэрандзе, які павінен быць у межах ад 0 да 31. Пры зруху на адзін біт улева старэйшы (самы левы) біт губляецца, а месца вызваленага малодшага (самага правага) запаўняецца 0. Апэрацыя бітавага зруху ўлева на 1 біт эквівалентна памнажэньню адпаведнага цэлага ліку на 2, зрух на 2 біты&nbsp;&mdash; памнажэньню на 4 і г.д. (2 у адпаведнай ступені)</td>
+              <td>
+                <code>0x000F &lt;&lt; 4  //=> 0x00F0</code>
+                <p>што эквівалентна:</p>
+                <code>15 * 2<sup>4</sup> //=> 15 * 16 = 240</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>&gt;&gt;</code></td>
+              <td><em>Бітавы зрух управа з захаваньнем знаку</em>. Зрушвае біты свайго першага апэранду ўправа на колькасьць бітавых пазыцыяў, пазначаных у другім апэрандзе, які павінен быць у межах ад 0 да 31. Пры зруху на адзін біт управа малодшы (самы правы) біт губляецца, а месца вызваленага старэйшага (самага левага) запаўняецца 0 ці 1 у залежнасьці ад знаку першапачатковага ліку (0 у выпадку дадатнага ліку і 1 у выпадку адмоўнага ліку). Апэрацыя бітавага зруху дадатнага ліку ўправа на 1 біт эквівалентна дзяленьню адпаведнага цэлага ліку на 2 з адкіданьнем дробнай часткі, зрух на 2 біты&nbsp;&mdash; дзяленьню на 4 і г.д. (2 у адпаведнай ступені).</td>
+              <td>
+                <code>0x00FF &gt;&gt; 4  //=> 0x000F</code>
+                <p>што эквівалентна:</p>
+                <code>255 / 2<sup>4</sup> //=> 255 / 16 = 15</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code>&gt;&gt;&gt;</code></td>
+              <td><em>Бітавы зрух управа без захаваньня знаку</em>. Аналягічны бітаваму зруху ўправа з захаваньнем знаку, але адрозьніваецца тым, што на месца вызваленых бітаў зьлева падстаўляецца заўсёды 0.</td>
+              <td>
+                <code>−1 &gt;&gt; 4 //=> −1</code>
+                <p>але:</p>
+                <code>−1 &gt;&gt;&gt; 4 //=> 0x0FFFFFFF</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2><a name="Operators_Logical" href="#Operators_Logical">Лягічныя</a></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Logical_Operators">Reference</a></li>
+          </ul>
+        </div>
+        <p>Лягічныя апэрацыі ажыцьцяўляюць апэрацыі булевай альгебры над сваімі (звычайна лягічнага тыпу) апэрандамі:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Апэрацыя</th>
+              <th>Апісаньне</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>&amp;&amp;</code></td>
+              <td><em>Лягічны AND</em>. Вяртае першы з сваіх апэрандаў, калі той можа быць пераўтвораны ў значэньне <code>false</code>, альбо другі апэранд у адваротным выпадку. Адпаведна, калі ўжываецца да апэрандаў лягічнага тыпу, верне <code>true</code> калі абодва апэранда маюць значэньне <code>true</code>, інакш верне <code>false</code>.</td>
+            </tr>
+            <tr>
+              <td><code>||</code></td>
+              <td><em>Лягічны OR</em>. Вяртае першы з сваіх апэрандаў, калі той можа быць пераўтвораны ў значэньне <code>true</code>, альбо другі апэранд у адваротным выпадку. Адпаведна, калі ўжываецца да апэрандаў лягічнага тыпу, верне <code>true</code> калі хаця б адзін з апэрандаў мае значэньне <code>true</code>, калі ж абодва маюць значэньне <code>false</code>, вынікам будзе таксама <code>false</code>.</td>
+            </tr>
+            <tr>
+              <td><code>!</code></td>
+              <td><em>Лягічны NOT</em>. Верне <code>false</code>, калі адзіны яго апэранд можа быць пераўтвораны ў <code>true</code>, інакш верне <code>true</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3><a name="Operators_Logical_Examples" href="#Operators_Logical_Examples">Прыклады</a></h3>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          true  && true;     // true  && true  => true
+          true  && false;    // true  && false => false
+          false && true;     // false && true  => false
+          false && (3 == 4); // false && false => false
+          "Cat" && "Dog";    // true  && true  => "Dog"
+          false && "Cat";    // false && true  => false
+          "Cat" && false;    // true  && false => false
+
+          true  || true;     // true  || true  => true
+          false || true;     // false || true  => true
+          true  || false;    // true  || false => true
+          false || (3 == 4); // false || false => false
+          "Cat" || "Dog";    // true  || true  => "Cat"
+          false || "Cat";    // false || true  => "Cat"
+          "Cat" || false;    // true  || false => "Cat"
+
+          !true;             // !true  => false
+          !false;            // !false => true
+          !"Cat";            // !true  => false
+        ]]></script>
+
+        <h2><a name="Operators_Special" href="#Operators_Special">Асаблівыя</a></h2>
+
+        <h3><a name="Operators_Special_PropertyAccess" href="#Operators_Special_PropertyAccess">Доступу да атрыбутаў</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Member_Operators">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_Conditional" href="#Operators_Special_Conditional">Умоўны</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Conditional_Operator">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_Comma" href="#Operators_Special_Comma">Апэратар-коска</a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comma_Operator">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_delete" href="#Operators_Special_delete"><code>delete</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/delete">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_get" href="#Operators_Special_get"><code>get</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/get">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_in" href="#Operators_Special_in"><code>in</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/in">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_instanceof" href="#Operators_Special_instanceof"><code>instanceof</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/instanceof">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_new" href="#Operators_Special_new"><code>new</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/new">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_set" href="#Operators_Special_set"><code>set</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/set">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_this" href="#Operators_Special_this"><code>this</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/this">Reference</a></li>
+          </ul>
+        </div>
+        <p>У <i>JavaScript</i>, як і ў бальшыні іншых аб&#39;ектна-арыентаваных мовах праграмаваньня, ключавое слова <code>this</code> служыць для таго, каб можна было спасылацца знутры функцыі да аб&#39;екту, які гэтую функцыю утрымлівае. Але існуе некалькі ўласьцівых <i>JavaScript</i> асаблівасьцяў, на якіх варта спыніцца. Каб вызначыць, на што спасылаецца <code>this</code>, трэба кіравацца наступным альгарытмам:</p>
+        <ul>
+          <li>Калі выклік функцыі адбыўся пры дапамозе <a href="#CoreObjects_Function_Methods_apply"><code>apply</code></a>, <a href="#CoreObjects_Function_Methods_bind"><code>bind</code></a> ці <a href="#CoreObjects_Function_Methods_call"><code>call</code></a>, <code>this</code> будзе роўны першаму аргумэнту, які быў перададзены <code>apply</code>/<code>bind</code>/<code>call</code>. Калі ж першым аргумэнтам быў перададзены <code>null</code> ці <code>undefined</code>, <code>this</code> будзе спасылацца на глябальны аб&#39;ект (<code>window</code> у выпадку браўзэра).</li>
+          <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+            var myObject = {
+              sayHello : function() {
+                console.log('Hi! My name is ' + this.myName);
+              },
+
+              myName : 'Rebecca'
+            };
+
+            var secondObject = {
+              myName : 'Colin'
+            };
+
+            myObject.sayHello();                  // Вывядзе ў лог 'Hi! My name is Rebecca'
+            myObject.sayHello.call(secondObject); // Вывядзе ў лог 'Hi! My name is Colin'
+          ]]></script>
+          <li>Калі выклік функцыі адбыўся ў якасьці апрацоўшчыка падзеі (не знутры апрацоўшчыка падзеі, а менавіта як апрацоўшчык падзеі), тады <code>this</code> будзе спасылацца на аб&#39;ект, для якога гэтая падзея спрацавала.</li>
+          <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+            function bluify(e) {
+              this.style.backgroundColor = '#A5D9F3'; // Пры кліку на пэўным элемэнце зробіць
+            }                                         // яго колер блакітным
+            // Атрымліваем сьпіс усіх элемэнтаў дакумэнту
+            var elements = document.getElementsByTagName('*');
+
+            // ... і дадаем да іх у якасьці апрацоўшчыку клікаў функцыю bluify
+            for(var i = 0 ; i < elements.length ; i++){
+              elements[i].addEventListener('click', bluify, false);
+            }
+          ]]></script>
+          <li>Калі функцыя выклікана як мэтад аб&#39;екту, тады <code>this</code> будзе спасылацца на гэты аб&#39;ект.</li>
+          <li>Інакш <code>this</code> будзе спасылацца на глябальны аб&#39;ект.</li>
+        </ul>
+
+        <h3><a name="Operators_Special_typeof" href="#Operators_Special_typeof"><code>typeof</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/typeof">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Operators_Special_void" href="#Operators_Special_void"><code>void</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/void">Reference</a></li>
+          </ul>
+        </div>
+
 			</section>
 
       <section>
         <h1><a name="Statements" href="#Statements">Апэратары</a></h1>
+
+        <h2><a name="Statements_Declarations" href="#Statements_Declarations">Аб&#39;яўленьняў</a></h2>
+
+        <h3><a name="Statements_Declarations_function" href="#Statements_Declarations_function"><code>function</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/function">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Declarations_var" href="#Statements_Declarations_var"><code>var</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/var">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="Statements_Conditional" href="#Statements_Conditional">Умоўныя</a></h2>
+
+        <h3><a name="Statements_Conditional_if...else" href="#Statements_Conditional_if...else"><code>if...else</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/if...else">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Conditional_switch" href="#Statements_Conditional_switch"><code>switch</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/switch">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="Statements_Loops" href="#Statements_Loops">Цыклю</a></h2>
+
+        <h3><a name="Statements_Loops_do...while" href="#Statements_Loops_do...while"><code>do...while</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/do...while">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Loops_for" href="#Statements_Loops_for"><code>for</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/for">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Loops_for...in" href="#Statements_Loops_for...in"><code>for...in</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/for...in">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Loops_while" href="#Statements_Loops_while"><code>while</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/while">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="Statements_Jumps" href="#Statements_Jumps">Пераходаў</a></h2>
+
+        <h3><a name="Statements_Jumps_break" href="#Statements_Jumps_break"><code>break</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/break">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Jumps_continue" href="#Statements_Jumps_continue"><code>continue</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/continue">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Jumps_return" href="#Statements_Jumps_return"><code>return</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/return">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Jumps_throw" href="#Statements_Jumps_throw"><code>throw</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/throw">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3><a name="Statements_Jumps_try...catch" href="#Statements_Jumps_try...catch"><code>try...catch</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/try...catch">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2><a name="Statements_Miscellaneous" href="#Statements_Miscellaneous">Іншыя</a></h2>
+
+        <h3><a name="Statements_Miscellaneous_with" href="#Statements_Miscellaneous_with"><code>with</code></a></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/with">Reference</a></li>
+          </ul>
+        </div>
+
 			</section>
 
       <section>
-        <h1><a name="Multithreading" href="#Multithreading">Multithreading</a></h1>
+        <h1><a name="Multithreading" href="#Multithreading">Шматпатокавасьць</a></h1>
         <p>WebWorkers: <a href="https://developer.mozilla.org/En/Using_web_workers">https://developer.mozilla.org/En/Using_web_workers</a></p>
       </section>
 
       <section>
-        <h1><a name="LoggingDebugTesting" href="#LoggingDebugTesting">Лагіраваньне, дэбаг і тэставаньне</a></h1>
+        <h1><a name="LoggingDebugTesting" href="#LoggingDebugTesting">Лагіраваньне і тэставаньне</a></h1>
 
         <h2><a name="LoggingDebug" href="#LoggingDebug">Лагіраваньне і дэбаг</a></h2>
         <p>Прасьцейшы спосаб рабіць лагіраваньне і дэбаг у <i>JavaScript</i>&nbsp;&mdash; вывад інфармацыі ў кансоль <a href="http://getfirebug.com/" title="Хатняя старонка Firebug"><i>Firebug</i></a>:</p>
@@ -858,7 +1856,7 @@
           <li>доступ і маніпуляцыі з элемэнтамі <a href="http://ru.wikipedia.org/wiki/Document_Object_Model" title="Document Object Model"><span class="term">DOM</span></a>;</li>
           <li>вызначэньне рэакцый на <i>JavaScript</i>-падзеі.</li>
           <li>выкананьне <a href="#Technology_AJAX" title="Asynchronous Javascript and XML"><span class="term">AJAX</span></a>-запытаў;</li>
-          <li>выкананьне <i>JavaScript</i>-эфэктаў.</li>
+          <li>выкананьне <i>JavaScript</i>-эфэктаў (анімацыі).</li>
         </ul>
         <p>Бібліятэка надзвычай папулярная, як вынік над ёй працуюць шмат прафісыйных адмыслоўцаў, якія адточваюць яе да дасканаласьці. Адпаведна, нягледзячы на мінусы (напрыклад, дадатковая вага старонак, якія ўтрымліваюць бібліятэку), яе адназначна ёсьць сэнс выкарыстоўваць:</p>
         <ul>
@@ -903,7 +1901,7 @@
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var lis = $("ul li");
         ]]></script>
-        <p>У гэтых прыкладах зьменная <code>lis</code> будзе ўтрымліваць масіў усіх элемэнтаў <a href="../htmlRef/index.html#li"><span class="elem">li</span></a> <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-дакумэнту, у якіх сярод бацькоўскіх элемэнтаў ёсьць элемэнт <a href="../htmlRef/index.html#ul"><span class="elem">ul</span></a>.</p>
+        <p>У гэтых прыкладах зьменная <code>lis</code> будзе ўтрымліваць масіў усіх элемэнтаў <a href="../htmlRef/index.html#li"><code>li</code></a> <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-дакумэнту, у якіх сярод бацькоўскіх элемэнтаў ёсьць элемэнт <a href="../htmlRef/index.html#ul"><code>ul</code></a>.</p>
         <p><i>jQuery</i>-код амаль заўсёды маніпулюе з элемэнтамі дакумэнту, таму важна, каб ён выканаўся не ў адвольны момант часу, але менавіта пасьля таго моманту, калі дакумэнт будзе цалкам загружаны ў акно браўзэра. Для гэтага <i>jQuery</i> прадстаўляе адмысловы мэханізм:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $(document).ready(function() {
@@ -919,13 +1917,13 @@
             <li><a href="http://api.jquery.com/find/">find</a></li>
           </ul>
         </div>
-        <p>Атрымаць усе непасрэдныя дзіцячыя элемэнты можна пры дапамозе функцыі <code class="method">children</code>. У наступны прыкладзе:</p>
+        <p>Атрымаць усе <strong>непасрэдныя</strong> дзіцячыя элемэнты можна пры дапамозе функцыі <code>children</code>. У наступным прыкладзе:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $(document).ready(function() {
             var lis = $("ul.emphasis").children("li");
           });
         ]]></script>
-        <p>зьменная <code>lis</code> будзе ўтрымліваць усе наўпроставыя дзіцячыя элемэнты <a href="../htmlRef/index.html#li"><span class="elem">li</span></a> элемэнту <a href="../htmlRef/index.html#ul"><span class="elem">ul</span></a>, чыя кляса пазначана як <code class="value">emphasis</code>, адзначаныя ў радках 2, 3 і 4 у прыкладзе ніжэй:</p>
+        <p>зьменная <code>lis</code> будзе ўтрымліваць усе наўпроставыя дзіцячыя элемэнты <a href="../htmlRef/index.html#li"><code>li</code></a> элемэнту <a href="../htmlRef/index.html#ul"><code>ul</code></a>, чыя кляса пазначана як <code>emphasis</code>, адзначаныя ў радках 2, 3 і 4 у прыкладзе ніжэй:</p>
         <script type="syntaxhighlighter" class="brush: html; highlight: [2, 3, 4]"><![CDATA[
           <ul>
             <li>first</li>
@@ -938,13 +1936,13 @@
           </ul>
         ]]></script>
         <p><i>jQuery</i>-выраз <code>$("ul.emphasis").children("li")</code> эквівалентны <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<a href="../cssRef/index.html#Selectors"><span class="term">сэлектару</span></a> <code>ul.emphasis > li</code>.</p>
-        <p>Атрымаць усе дзіцячыя элемэнты незалежна ад герархіі можна пры дапамозе функцыі <code class="method">find</code>. У наступны прыкладзе:</p>
+        <p>Атрымаць <strong>усе</strong> дзіцячыя элемэнты <strong>незалежна ад герархіі</strong> можна пры дапамозе функцыі <code>find</code>. У наступны прыкладзе:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $(document).ready(function() {
             var lis = $("ul.emphasis").find("li");
           });
         ]]></script>
-        <p>зьменная <code>lis</code> будзе ўтрымліваць усе дзіцячыя элемэнты <a href="../htmlRef/index.html#li"><span class="elem">li</span></a> элемэнту <a href="../htmlRef/index.html#ul"><span class="elem">ul</span></a>, чыя кляса пазначана як <code class="value">emphasis</code>, адзначаныя ў радках 2, 3, 4 і 6 у прыкладзе ніжэй:</p>
+        <p>зьменная <code>lis</code> будзе ўтрымліваць усе дзіцячыя элемэнты <a href="../htmlRef/index.html#li"><code>li</code></a> элемэнту <a href="../htmlRef/index.html#ul"><code>ul</code></a>, чыя кляса пазначана як <code>emphasis</code>, адзначаныя ў радках 2, 3, 4 і 6 у прыкладзе ніжэй:</p>
         <script type="syntaxhighlighter" class="brush: html; highlight: [2, 3, 4, 6]"><![CDATA[
           <ul>
             <li>first</li>
@@ -966,7 +1964,12 @@
             <li><a href="http://api.jquery.com/closest/">closest</a></li>
           </ul>
         </div>
-        <p>Аналягічна функцыям доступу да дзіцячых элемэнтаў сярод функцыяў доступу да бацькоўскіх ёсьць: <code class="method">parent</code>, якая вяртае <strong>наўпроставага</strong> бацьку ў герархіі; <code class="method">parents</code>, якая вяртае <strong>ўсе</strong> бацькоўскія элемэнты адпаведна пазначанаму <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<a href="../cssRef/index.html#Selectors"><span class="term">сэлектару</span></a>, незалежна ад герархіі; а таксама <code class="method">closest</code>, якая вяртае <strong>бліжэйшы</strong> элемэнт у бацькоўскай герархіі, <strong>улучна з самім элемэнтам</strong>, у якога гэта функцыя выклікаецца.</p>
+        <p>Аналягічна функцыям доступу да дзіцячых элемэнтаў сярод функцыяў доступу да бацькоўскіх ёсьць:</p>
+        <ul>
+          <li><code>parent</code>, якая вяртае <strong>наўпроставага</strong> бацьку ў герархіі;</li>
+          <li><code>parents</code>, якая вяртае <strong>ўсе</strong> бацькоўскія элемэнты адпаведна пазначанаму <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<a href="../cssRef/index.html#Selectors">сэлектару</a>, <strong>незалежна ад герархіі</strong>;</li>
+          <li>а таксама <code>closest</code>, якая вяртае <strong>бліжэйшы</strong> элемэнт у бацькоўскай герархіі, <strong>улучна з самім элемэнтам</strong>, у якога гэта функцыя выклікаецца.</li>
+        </ul>
 
         <h4><a name="Frameworks_jQuery_Querying_SameLevel" href="#Frameworks_jQuery_Querying_SameLevel">Доступ да элемэнтаў аднаго ўзроўню</a></h4>
         <div class="refs">
@@ -988,13 +1991,13 @@
             concole.log($(this).text());
           });
         ]]></script>
-        <p>У выніку, у кансоль браўзэра будзе выведзена імя націснутай кнопкі. Для таго, каб атрымаць усе элемэнты таго ж узроўню, маецца функцыя <code class="method">siblings</code>:</p>
+        <p>У выніку, у кансоль браўзэра будзе выведзена імя націснутай кнопкі. Для таго, каб атрымаць усе элемэнты таго ж узроўню, маецца функцыя <code>siblings</code>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $(".buttons button").on("click", function() {
             $(this).siblings().text("siblings");
           });
         ]]></script>
-        <p>У выніку пры націсканьні на адну з кнопак тэкст усіх будзе выстаўлены як &laquo;siblings&raquo;.</p>
+        <p>У выніку пры націсканьні на адну з кнопак тэкст <strong>астатніх</strong> (але не націснутай) будзе выстаўлены як &laquo;siblings&raquo;.</p>
 
         <h4><a name="Frameworks_jQuery_Querying_Narrowing" href="#Frameworks_jQuery_Querying_Narrowing">Звужэньне набору элемэнтаў</a></h4>
         <div class="refs">
@@ -1005,32 +2008,38 @@
             <li><a href="http://api.jquery.com/filter/">filter</a></li>
           </ul>
         </div>
-        <p>У выпадку, калі пэўны <i>jQuery</i>-запыт вярнуў шэраг элемэнтаў, маюцца функцыі звужэньня гэтага набору: функцыя <code class="method">first</code> верне першы элемэнт шэрагу (альбо масіву); <code class="method">last</code> верне апошні элемэнт; функцыя <code class="method">eq</code> верне адвольны элемэнт па ягонаму індэксу (пачынаючы з 0); а функцыя <code class="method">filter</code> звузіць набор да тых элемэнтаў, якія задаволяць перададзенаму ёй <a href="../cssRef/index.html"><span class="term">CSS</span></a>-крытэру:</p>
+        <p>У выпадку, калі пэўны <i>jQuery</i>-запыт вярнуў шэраг элемэнтаў, маюцца функцыі звужэньня гэтага набору:</p>
+        <ul>
+          <li>функцыя <code>first</code> верне <strong>першы</strong> элемэнт шэрагу (альбо масіву);</li>
+          <li><code>last</code> верне <strong>апошні</strong> элемэнт шэрагу;</li>
+          <li>функцыя <code>eq</code> верне адвольны элемэнт <strong>па ягонаму індэксу</strong> (пачынаючы з 0);</li>
+          <li>а функцыя <code>filter</code> звузіць набор да тых элемэнтаў, якія <strong>задаволяць</strong> перададзенаму ёй <a href="../cssRef/index.html"><span class="term">CSS</span></a>-<strong>крытэру</strong>.</li>
+        </ul>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var second = $(".buttons").find("button").eq(1);
           var last = $(".buttons").find("button").filter(":last-child");
           // апошняе эквівалентна (менавіта ў дадзеным выпадку):
           var last = $(".buttons").find("button").last();
         ]]></script>
-        <p>У выніку мы атрымаем ня ўсе кнопкі кантэйнэра <code>buttons</code>, але толькі другую ў першым радку і апошнюю ў другім і чацьвертым радку. Яшчэ адзін прыклад выкарыстаньня функцыі <code class="method">filter</code>:</p>
+        <p>У выніку, у апошнім прыкладзе, мы атрымаем ня ўсе кнопкі кантэйнэра <code>buttons</code>, але толькі другую ў першым радку і апошнюю ў другім і чацьвертым радку. Яшчэ адзін прыклад выкарыстаньня функцыі <code>filter</code>:</p>
         <script type="syntaxhighlighter" class="brush: html; highlight: [5, 7, 9, 11]"><![CDATA[
           <dl>
             <dt>What are your hours?</dt>
             <dd>We are open 24/7.</dd>
             <dt>What are your hours?</dt>
-            <dd>We are open 24/7.</dd>
+            <dd class="hidden">We are open 24/7.</dd>
             <dt>What are your hours?</dt>
-            <dd>We are open 24/7.</dd>
+            <dd class="hidden">We are open 24/7.</dd>
             <dt>What are your hours?</dt>
-            <dd>We are open 24/7.</dd>
+            <dd class="hidden">We are open 24/7.</dd>
             <dt>What are your hours?</dt>
-            <dd>We are open 24/7.</dd>
+            <dd class="hidden">We are open 24/7.</dd>
           </dl>
         ]]></script>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          $("dd").filter(":nth-child(n+4)").addClass("hidden"); // дадасьць клясу hidden толькі да тых dd, якія
-                                                                // зьяўляюцца ня менш як 4мі дзіцячымі элемэнтамі
-                                                                // свайго бацькі, то бок пачынаючы з 2га dd
+          // Дадасьць клясу hidden толькі да тых dd, якія зьяўляюцца ня менш як 4мі
+          // дзіцячымі элемэнтамі свайго бацькі, то бок пачынаючы з 2га dd:
+          $("dd").filter(":nth-child(n+4)").addClass("hidden");
         ]]></script>
 
         <h4><a name="Frameworks_jQuery_Querying_Navigation" href="#Frameworks_jQuery_Querying_Navigation">Перамяшчэньне па наборы элемэнтаў</a></h4>
@@ -1040,7 +2049,7 @@
             <li><a href="http://api.jquery.com/next/">next</a></li>
           </ul>
         </div>
-        <p>Таксама інсуюць функцыі перамяшчэньня па масіву элемэнтаў. У прыкладзе вышэй мы атрымалі другую кнопку кантэйнэра <code class="class">buttons</code>. Цяпер мы можам атрымаць доступ да папярэдняй ці наступнай кнопцы ў гэтым наборы праз функцыі <code class="method">prev</code> і <code class="method">next</code>:</p>
+        <p>Таксама інсуюць функцыі перамяшчэньня па масіву элемэнтаў. У прыкладзе вышэй мы атрымалі другую кнопку кантэйнэра <code class="class">buttons</code>. Цяпер мы можам атрымаць доступ да папярэдняй ці наступнай кнопцы ў гэтым наборы праз функцыі <code>prev</code> і <code>next</code>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var first = $(".buttons").find("button").eq(1).prev();
         ]]></script>
@@ -1055,7 +2064,7 @@
             <li><a href="http://api.jquery.com/end/">end</a></li>
           </ul>
         </div>
-        <p>Кожная <i>jQuery</i>-функцыя вяртае <i>jQuery</i>-аб&#39;ект, які абгортвае адпаведны(-я) <i>JavaScript</i>-аб&#39;ект(-ы). Гэта дазваляе запісваць выклікі функцый у ланцуг, як можна было зразумець з папярэдніх прыкладаў. Калі ў такім ланцугу прысутнічаюць функцыі доступу да элемэнтаў, фільтрацыі набору элемэнтаў, ці перамяшчэньня па наборы, адмяніць вынік працы папярэдняй такой функцыі можна пры дапамозе функцыі <code class="method">end</code>:</p>
+        <p>Кожная <i>jQuery</i>-функцыя вяртае <i>jQuery</i>-аб&#39;ект, які абгортвае адпаведны(-я) <i>JavaScript</i>-аб&#39;ект(-ы). Гэта дазваляе запісваць выклікі функцый у ланцуг, як можна было зразумець з папярэдніх прыкладаў. Калі ў такім ланцугу прысутнічаюць функцыі доступу да элемэнтаў, фільтрацыі набору элемэнтаў, ці перамяшчэньня па наборы, адмяніць вынік працы папярэдняй такой функцыі можна пры дапамозе функцыі <code>end</code>:</p>
         <script type="syntaxhighlighter" class="brush: html"><![CDATA[
           <div class="buttons">
             <button>першая</button>
@@ -1068,10 +2077,44 @@
             $(this)                   // вяртае націснутую кнопку
               .siblings()             // вяртае ўсе элемэнты таго ж узроўню, то бок усе кнопкі
               .removeAttr("disabled") // выдаляе атрыбут disabled ува ўсіх кнопак
-            .end()                    // адмяняе вынік працы апошняй функцыі доступу - siblings, то бок звужаем набор,
-                                      // у выніку jQuery-аб&#39; будзе ўтрымліваць спасылку толькі на націснутую кнопку
+            .end()                    // адмяняе вынік працы апошняй функцыі доступу - siblings,
+                                      // то бок звужаем набор, у выніку jQuery-аб&#39; будзе
+                                      // ўтрымліваць спасылку толькі на націснутую кнопку
             .attr("disabled", "disabled"); // дадаем атрыбут disabled да гэтай націснутай кнопкі
           });
+        ]]></script>
+        <p>Вынікам будзе наступны эфэкт (панаціскайце на кнопкі):</p>
+        <div id="end_example" class="example">
+          <div class="example_content">
+            <div class="buttons">
+              <button>першая</button>
+              <button>другая</button>
+              <button>трэцяя</button>
+            </div>
+          </div>
+        </div>
+
+        <h4><a name="Frameworks_jQuery_Querying_this" href="#Frameworks_jQuery_Querying_this"><code>this</code></a></h4>
+        <p>У дадатак да таго, што ўжо апісана <a href="#Operators_Special_this">вышэй</a> у дачыненьні да <i>JavaScript</i>, у <i>jQuery</i> існуе яшчэ адна магчымасьць пазначыць кантэкст функцыі (злучыць <code>this</code> унутры функцыі з пэўным аб&#39;ектам)&nbsp;&mdash; гэта мэтад <code>$.proxy</code>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var myFunction = function() { console.log(this); };
+          var myObject = { foo : 'bar' };
+
+          myFunction(); // Вывядзе аб&#39;ект window
+
+          var myProxyFunction = $.proxy(myFunction, myObject);
+          myProxyFunction(); // Вывядзе аб&#39;ект myObject
+        ]]></script>
+        <p>ці так:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var myObject = {
+              myFn : function() {
+                  console.log(this);
+              }
+          };
+
+          $('#foo').click(myObject.myFn); // Вывядзе элемэнт з id 'foo'
+          $('#foo').click($.proxy(myObject, 'myFn')); // Вывядзе аб&#39;ект myObject
         ]]></script>
 
         <h3><a name="Frameworks_jQuery_Manipulating" href="#Frameworks_jQuery_Manipulating">Маніпуляцыі з элемэнтамі</a></h3>
@@ -1084,10 +2127,12 @@
             <li><a href="http://api.jquery.com/removeAttr/">removeAttr</a></li>
           </ul>
         </div>
-        <p>Атрымаць і зьмяніць значэньне атрыбуту пэўнага <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-элемэнту можна пры дапамозе варыянтаў функцыі <code class="method">attr</code>. Варыянт з адным парамэтрам (назвай атрыбуту) верне значэньне атрыбуту. Варыянт з двума парамэтрамі (першы&nbsp;&mdash; назва атрыбуту, другі&nbsp;&mdash; яго значэнье) альбо дадасьць новы атрыбут з пазначаным значэньнем, альбо зьменіць значэньне існага атрыбуту на пазначанае:</p>
+        <p>Атрымаць і зьмяніць значэньне атрыбуту пэўнага <a href="../htmlRef/index.html"><span class="term">HTML</span></a>-элемэнту можна пры дапамозе варыянтаў функцыі <code>attr</code>. Варыянт з адным парамэтрам (назвай атрыбуту) верне значэньне атрыбуту. Варыянт з двума парамэтрамі (першы&nbsp;&mdash; назва атрыбуту, другі&nbsp;&mdash; яго значэнье) альбо дадасьць новы атрыбут з пазначаным значэньнем, альбо зьменіць значэньне існага атрыбуту на пазначанае:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          $("#elem").attr("title", "Some title");   // Прызначаем атрыбуту title элемэнту з id роўным "elem" значэньне "Some title"
-          concole.log($("#elem").attr("title"));    // Выводзім прызначанае ў папярэднім выразе значэньне атрыбуту title
+          $("#elem").attr("title", "Some title");   // Знаходзім элемэнт з id "elem" і прызначаем
+                                                    // яго атрыбуту title значэньне "Some title"
+          concole.log($("#elem").attr("title"));    // Выводзім у кансоль прызначанае ў папярэднім
+                                                    // выразе значэньне атрыбуту title
         ]]></script>
         <p>Таксама існуе варыянт функцыі, у якім можна адначасна зьмяняць значэньні некалькіх атрыбутаў:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
@@ -1106,16 +2151,119 @@
         <script type="syntaxhighlighter" class="brush: html"><![CDATA[
           <button data-file="day">Day</button>
         ]]></script>
-        <p>Для доступу да такіх атрыбутаў у <i>jQuery</i> ёсьць адмысловая аліас-функцыя <code class="method">data</code>:</p>
+        <p>Для доступу да такіх атрыбутаў у <i>jQuery</i> ёсьць адмысловая аліас-функцыя <code>data</code>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $("button").data("file");
           // што эквівалентна:
           $("button").attr("data-file");
         ]]></script>
-        <p>Цалкам выдаліць пэўны атрыбут з элемэнту можна пры дапамозе функцыі <code class="method">removeAttr</code>:</p>
+        <p>Цалкам выдаліць пэўны атрыбут з элемэнту можна пры дапамозе функцыі <code>removeAttr</code>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           $('#greatphoto').removeAttr('title');
         ]]></script>
+
+        <h4><a name="Frameworks_jQuery_Manipulating_Content" href="#Frameworks_jQuery_Manipulating_Content">Даданьне зьместу</a></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://api.jquery.com/append/">append</a></li>
+            <li><a href="http://api.jquery.com/appendTo/">appendTo</a></li>
+            <li><a href="http://api.jquery.com/prepend/">prepend</a></li>
+            <li><a href="http://api.jquery.com/prependTo/">prependTo</a></li>
+            <li><a href="http://api.jquery.com/after/">after</a></li>
+            <li><a href="http://api.jquery.com/insertAfter/">insertAfter</a></li>
+            <li><a href="http://api.jquery.com/before/">before</a></li>
+            <li><a href="http://api.jquery.com/insertBefore/">insertBefore</a></li>
+          </ul>
+        </div>
+        <p>У <i>jQuery</i> існуе шэраг функцыяў, пры дапамозе якіх можна дадаць зьмест да старонкі. Уявім, што ў нас маецца наступны фрагмэнт дакумэнту:</p>
+        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
+          <article>
+            <h1>Загаловак</h1>
+            <p>Параграф 1.</p>
+            <p>Параграф 2.</p>
+          </article>
+        ]]></script>
+        <p>Які будзе выглядаць наступным чынам:</p>
+        <div class="example manipulating_content_example">
+          <div class="example_content">
+            <div>
+              <h1>Загаловак</h1>
+              <p>Параграф 1.</p>
+              <p>Параграф 2.</p>
+            </div>
+          </div>
+        </div>
+        <p>Дадаць зьмест <strong>у пачатак</strong> альбо <strong>канец</strong> пэўнага элемэнту можна пры дапамозе функцыяў <code>prepend</code> і <code>append</code> адпаведна. Напрыклад, наступны скрыпт:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("p").last().append(" Трохі тэксту ў параграф.");
+        ]]></script>
+        <p>Дадасьць тэкст &laquo; Трохі тэксту ў параграф.&raquo; у канец апошняга (2-га) параграфу:</p>
+        <div id="append_example" class="example manipulating_content_example">
+          <div class="example_content">
+            <div>
+              <h1>Загаловак</h1>
+              <p>Параграф 1.</p>
+              <p>Параграф 2.</p>
+            </div>
+          </div>
+        </div>
+        <p>Дадаць зьмест <strong>перад</strong> альбо <strong>пасьля</strong> пэўнага элемэнту можна пры дапамозе функцыяў <code>before</code> і <code>after</code> адпаведна. Напрыклад, наступны скрыпт:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("p").last().before("Трохі тэксту перад параграфам.");
+        ]]></script>
+        <p>Дадасьць тэкст &laquo;Трохі тэксту перад параграфам.&raquo; перад апошнім параграфам:</p>
+        <div id="before_example" class="example manipulating_content_example">
+          <div class="example_content">
+            <div>
+              <h1>Загаловак</h1>
+              <p>Параграф 1.</p>
+              <p>Параграф 2.</p>
+            </div>
+          </div>
+        </div>
+        <p>Як можна заўважыць фарматаваньне дададзенага фрагмэнту адрозьніваецца ад фарматаваньня параграфаў. Гэта таму, што тэкст быў дададзены як звычайны тэкст наўпрост у артыкул, што ў большасьці выпадкаў не зусім правільна. Правільней было б стварыць новы элемэнт параграфу з тэкстам унутры і ўставіць яго ў дакумэнт. Для гэтага існуюць функцыі <code>appendTo</code>, <code>prependTo</code>, <code>insertBefore</code> і <code>appendTo</code>. Напрыклад, папярэдні прыклад больш правільна было б рэалізаваць наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("<p>Новы параграф.</p>").insertBefore($('p').last());
+        ]]></script>
+        <div id="insertBefore_example" class="example manipulating_content_example">
+          <div class="example_content">
+            <div>
+              <h1>Загаловак</h1>
+              <p>Параграф 1.</p>
+              <p>Параграф 2.</p>
+            </div>
+          </div>
+        </div>
+        <p>Па-першае, зьвярніце ўвагу на тое, што выкарыстаньне гэтых апошніх чатырох функцыяў іншае ў параўнаньні зь першымі чатырма. У гэтыя функцыі перадаецца ня новы зьмест, а існыя элемэнты, у якія (ці пасьля/перад якімі) трэба ўставіць зьмест.</p>
+        <p>Па-другое, зьвярніце ўвагу на тое, што код <code>$("&lt;p&gt;Новы параграф.&lt;/p&gt;")</code> будзе не шукаць элемэнт на старонцы, а створыць цалкам новы элемэнт, які пасьля дадзенага выкліку будзе існаваць адно толькі ў памяці кампутара, і толькі пасьля выкліку функцыі <code>insertBefore</code> будзе ўстаўлены ў дакумэнт.</p>
+        <p>Таксама трэба заўважыць, што фрагмэнт <code>$("&lt;p&gt;Новы параграф.&lt;/p&gt;")</code> не зусім адпавядае добрай практыцы напісаньня <i>JavaScript</i>. Лепш яго перапісаць наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("<p></p>", {
+            text: "Новы параграф."
+          })
+        ]]></script>
+        <p>Для большай нагляднасьці пашырым гэты прыклад, каб пазначыць <code>class</code> і <code>id</code> новага элемэнту:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("<p></p>", {
+            text: "Новы параграф.",
+            class: "myClass",
+            id: "myId"
+          })
+        ]]></script>
+        <p>Варта закрануць яшчэ адзін нечаканы эфэкт ужываньня функцыяў <code>appendTo</code>, <code>prependTo</code>, <code>insertBefore</code> і <code>appendTo</code>. Калі яны выклікаюцца ня ў створанага элемэнту, але ў існага, адбываецца перанос гэтага элемэнту з першапачатковай пазыцыі на старонцы ў новую пазыцыю. Наступны код:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("h1").insertAfter($('p').last());
+        ]]></script>
+        <p>Прывядзе да пераносу загалоўку з пачатку артыкула ў яго канец:</p>
+        <div id="insertAfter_example" class="example manipulating_content_example">
+          <div class="example_content">
+            <div>
+              <h1>Загаловак</h1>
+              <p>Параграф 1.</p>
+              <p>Параграф 2.</p>
+            </div>
+          </div>
+        </div>
 
         <h3><a name="Frameworks_jQuery_EventsHandling" href="#Frameworks_jQuery_EventsHandling">Апрацоўка падзеяў</a></h3>
         <div class="refs">
@@ -1130,12 +2278,148 @@
             <li><a href="http://api.jquery.com/undelegate/"><span class="deprecated">undelegate</span></a></li>
           </ul>
         </div>
-        <p></p>
+        <p>Функцыі <code>bind</code> і <code>unbind</code> прызначаліся раней для усталёўкі і зьняцьця апрацоўшчыкаў падзеяў на і з пэўных элемэнтаў, якія на дадзены момант знаходзяцца ў дакумэнце. Адпаведна, элемэнты, якія былі дададзеныя да дакумэнту пазьней, ня мелі гэтага апрацоўшчыка. Пазьней зьявіўся мэтад, які пазбаўляўся ад гэтага недахопу&nbsp;&mdash; <code>live</code>, і парны для яго <code>die</code>. Ён дадаваў пазначаны апрацоўшчык падзеі ня толькі да існых элемэнтаў, адпавядаючых крытэру, але і да ўсіх тых, якія зьўляліся ў дакумэнце пазьней. Потым зьявіліся <code>delegate</code>/<code>undelegate</code>. Ідэя апошніх была ў тым, што ў выпадку, калі ў дакумэнце існуе шмат ідэнтычных элемэнтаў, і ўсе яны павінны аднолькава рэагаваць на пэўную падзею, усталёўваць на іх усіх адзін і той жа апрацоўшчык нямэтазгодна, асабліва калі такіх элемэнтаў можа быць сотні ці тысячы&nbsp;&mdash; гэта можа вельмі значна запаволіць працу старонкі. Замест гэтага лепш усталяваць адзін апрацоўшчык, на іх бацькоўскіх элемэнт, і каб ён <em>дэлегаваў</em> апрацоўку сваім адпаведным даччыным элемэнтам. Адсюль і назва мэтаду. Трэба заўважыць, што тое ж самае можна было зрабіць і з дапамогай функцыі <code>live</code>, але <code>delegate</code> ня проста меў такую магчымасьць, яго назва і сынтакс накіроўвалі распрацоўшчыкаў у бок лепшай практыкі.</p>
+        <p>Але, гэта ўсё перадгісторыя, на самай справе ў <i>jQuery</i>, пачынаючы з вэрсіі 1.7, былі ізноў уведзены новыя функцыі&nbsp;&mdash; <code>on</code> і <code>off</code>, якія павінны былі ўвасобіць у сабе самае лепшае сваіх папярэднікаў, а ўсе вышэйпералічаныя былі пазначаныя як непажаданыя да выкарыстаньня. Яны засталіся ў бібліятэцы, але зьяўляюцца на дадзены момант нічым іншым як аліас-функцыямі да актуальных <code>on</code> і <code>off</code>.</p>
+        <p>Разгледзем навочны прыклад. Возьмем элемэнт <a href="../htmlRef/index.html#dl"><code>dl</code></a> з прыкладу вышэй, дзе 5 разоў зьмяшчаецца тэрмін <code>What are your hours?</code> і яго вызначэньне <code>We are open 24/7.</code> Пры дапамозе наступнага коду:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          $("dd").filter(":nth-child(n+4)").addClass("hidden");
+          $("dl").on("mouseenter", "dt", function() {
+              $(this)
+                  .next() // пераходзім з "спрацаваўшага" dt на яго dd
+                  .slideDown(200) // паказваем гэты dd з эфэктам slideDown
+                      .siblings("dd") // атрымліваем астатнія dd элемэнты
+                      .slideUp(200); // і хаваем іх з эфэктам slideUp
+          });
+        ]]></script>
+        <p>можна дасягнуць наступнага выніку (панаводзьце курсар мышы на розныя элемэнты):</p>
+        <div id="on_example" class="example">
+          <div class="example_content">
+            <dl>
+              <dt>What are your hours?</dt>
+              <dd>We are open 24/7.</dd>
+              <dt>What are your hours?</dt>
+              <dd>We are open 24/7.</dd>
+              <dt>What are your hours?</dt>
+              <dd>We are open 24/7.</dd>
+              <dt>What are your hours?</dt>
+              <dd>We are open 24/7.</dd>
+              <dt>What are your hours?</dt>
+              <dd>We are open 24/7.</dd>
+            </dl>
+          </div>
+        </div>
+        <p>Апрацоўшчык падзеі <code>mouseenter</code> (кажучы мовай <a href="../cssRef/index.html"><span class="term">CSS</span></a>&nbsp;&mdash; <i>hover</i>) будзе ўсталяваны не на кожны элемэнт <a href="../htmlRef/index.html#dt"><code>dt</code></a>, але на ўвесь сьпіс <a href="../htmlRef/index.html#dl"><code>dl</code></a>, прычым апрацоўку падзеі сьпіс будзе дэлегаваць адпаведнаму элемэнту <a href="../htmlRef/index.html#dt"><code>dt</code></a> (на які быў наведзены курсар мышы). Дэлегаваць не ў наўпроставым сэнсе, а ў тым, што <code>$(this)</code> у апрацоўшчыку будзе спасылацца на адпаведны <a href="../htmlRef/index.html#dt"><code>dt</code></a>-элемэнт.</p>
 
+        <h4><a name="Frameworks_jQuery_EventsHandling_EventTypes" href="#Frameworks_jQuery_EventsHandling_EventTypes">Тыпы падзеяў</a></h4>
+        <p>У табліцы ніжэй прыведзеныя магчымыя тыпы падзеяў.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Тып падзеі</th>
+              <th>Апісаньне</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="http://api.jquery.com/blur/"><code>blur</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі той губляе фокус. Раней падзея ўжывалася толькі для элемэнтаў формаў, зараз&nbsp;&mdash; да любых элемэнтаў старонкі. Парная падзея да падзеі <code>focus</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/change/"><code>change</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі зьмяняецца яго значэньне. Ужываньне абмежаванае элемэнтамі <a href="../htmlRef/index.html#input"><code>input</code></a>, <a href="../htmlRef/index.html#textarea"><code>textarea</code></a> і <a href="../htmlRef/index.html#select"><code>select</code></a>. У выпадку чэкбоксаў, радыёкнопак і сэлектбоксаў падзея дасылаецца адразу ж пасьля зьмены значэньня. У выпадку астатніх элемэнтаў падзея дасылаецца толькі пасьля таго, як зь іх сыйдзе фокус.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/click/"><code>click</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі над элемэнтам знаходзіцца курсар мышы і была націснутая (падзея <code>mousedown</code>) і вызвалена (падзея <code>mouseup</code>) яе кнопка. Для спрацоўваньня гэтай падзеі патрэбна менавіта пасьлядоўнасьць гэтых дзьвюх апэрацыяў, а не асобныя зь іх. Ужываецца да любых элемэнтаў старонкі.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/dblclick/"><code>dblclick</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі над элемэнтам знаходзіцца курсар мышы і была пасьлядоўна 2 разы націснутая і вызвалена яе кнопка. На адзін і той жа элемэнт не рэкамэндуецца ўсталёўваць адначасова апрацоўшчыкі падзеяў <code>click</code> і <code>dblclick</code>. Ужываецца да любых элемэнтаў старонкі.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/error/"><code>error</code></a></td>
+              <td>Падзея дасылаецца элемэнту, напрыклад выяве, калі яго рэсурс ня можа быць згружаны звонку (няправільная спасылка, тып рэсурсу альбо памылка выкананьня скрыпту).</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/focus/"><code>focus</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі той атрымлівае фокус. Па змоўчаньні фокус могуць атрымаць толькі элемэнты формы і спасылкі, але элемэнту любога тыпу можна пазначыць атрыбут <code>tabindex</code>, тады ён таксама будзе здольны атрымаць фокус. Парная падзея да падзеі <code>blur</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/focusin/"><code>focusin</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі ён альбо адзін з яго даччыных элемэнтаў атрымлівае фокус. Парная падзея да падзеі <code>focusout</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/focusout/"><code>focusout</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі ён альбо адзін з яго даччыных элемэнтаў губляе фокус. Парная падзея да падзеі <code>focusin</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/keydown/"><code>keydown</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі карыстальнік націскае нейкую кнопку клавіятуры, але толькі ў тым выпадку, калі гэты элемэнт утрымлівае фокус. Парная падзея да падзеі <code>keyup</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/keypress/"><code>keypress</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі браўзэр рэгіструе націсканьне кнопкі клавіятуры, але толькі ў тым выпадку, калі гэты элемэнт утрымлівае фокус. Падзея падобная да <code>keydown</code>. Адрозьненьні ў тым, што пры націсканьні й утрымліваньні націснутай пэўнай кнопкі клавіятуры <code>keydown</code> спрацуе адзін раз, а <code>keypress</code> тым часам спрацуе столькі разоў, колькі будзе пры гэтым ўстаўлена сымбаляў (напрыклад, у тэкставае поле). Таксама адрозьненьні ў тым, што пры націсканьні мадыфікацыйных кнопак (<i>Shift</i>, <i>Ctrl</i> і г.д.) падзея <code>keydown</code> спрацуе, а <code>keypress</code>&nbsp;&mdash; не.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/keyup/"><code>keyup</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі карыстальнік адпускае раней націснутую кнопку клавіятуры, але толькі ў тым выпадку, калі гэты элемэнт утрымлівае фокус. Парная падзея да падзеі <code>keydown</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/load/"><code>load</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі яго зьмест і ўсіх яго даччыных элемэнтаў цалкам запампаваны ў старонку. Ужываецца толькі для тых элемэнтаў, якія могуць быць зьвязаны з <a href="http://ru.wikipedia.org/wiki/URL" title="Uniform Resource Locator">URL</a>'ам: выявы, скрыпты, фрэймы і вокны.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/mousedown/"><code>mousedown</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі націснулі кнопку мышы і пры гэтым курсар мышы знаходзіўся над гэтым элемэнтам. Ужываецца да любых элемэнтаў старонкі. Парная падзея да падзеі <code>mouseup</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/mouseenter/"><code>mouseenter</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі курсар мышы &laquo;заходзіць&raquo; на яго. У адрозьненьні ад падзеі <code>mouseover</code> <strong>ня</strong> будзе дасланая бацькоўскаму элемэнту, калі курсар мышы &laquo;зойдзе&raquo; на яго даччыны элемэнт, які графічна знаходзіцца ў межах гэтага бацькоўскага элемэнту, над ім. Ужываецца да любых элемэнтаў старонкі. Парная падзея да падзеі <code>mouseleave</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/mouseleave/"><code>mouseleave</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі курсар мышы &laquo;сыходзіць&raquo; зь яго. У адрозьненьні ад падзеі <code>mouseout</code> <strong>ня</strong> будзе дасланая бацькоўскаму элемэнту, калі курсар мышы &laquo;сыйдзе&raquo; зь яго даччынага элемэнту, які графічна знаходзіцца ў межах гэтага бацькоўскага элемэнту, над ім. Ужываецца да любых элемэнтаў старонкі. Парная падзея да падзеі <code>mouseenter</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/mousemove/"><code>mousemove</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі курсар мышы рухаецца над гэтым элемэнтам, пры гэтым незалежна ад таго, наўпрост над ім, альбо над адным зь яго дзіцячых элемэнтаў. Ужываецца да любых элемэнтаў старонкі.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/mouseout/"><code>mouseout</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі курсар мышы &laquo;сыходзіць&raquo; зь яго. У адрозьненьні ад падзеі <code>mouseleave</code> <strong>будзе</strong> дасланая бацькоўскаму элемэнту, нават калі курсар мышы &laquo;сыйдзе&raquo; зь яго даччынага элемэнту, які графічна знаходзіцца ў межах гэтага бацькоўскага элемэнту, над ім. Ужываецца да любых элемэнтаў старонкі. Парная падзея да падзеі <code>mouseover</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/mouseover/"><code>mouseover</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі курсар мышы &laquo;заходзіць&raquo; на яго. У адрозьненьні ад падзеі <code>mouseenter</code> <strong>будзе</strong> дасланая бацькоўскаму элемэнту, нават калі курсар мышы &laquo;зойдзе&raquo; на яго даччыны элемэнт, які графічна знаходзіцца ў межах гэтага бацькоўскага элемэнту, над ім. Ужываецца да любых элемэнтаў старонкі. Парная падзея да падзеі <code>mouseout</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/mouseup/"><code>mouseup</code></a></td>
+              <td>Падзея дасылаецца элемэнту, калі адпусьцілі кнопку мышы і пры гэтым курсар мышы знаходзіўся над гэтым элемэнтам. Парная падзея да падзеі <code>mousedown</code>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/resize/"><code>resize</code></a></td>
+              <td>Падзея дасылаецца элемэнту <code>window</code>, калі зьмяняецца памер акна браўзэра.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/scroll/"><code>scroll</code></a></td>
+              <td>Падзея дасылаецца аконным, фрэймавым элемэнтам, ці любым іншым, чый <a href="../cssRef/index.html"><span class="term">CSS</span></a>-атрыбут <code>overflow</code> мае значэньне <code>scroll</code>, калі пазыцыя яго скролінгу зьмяняецца.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/select/"><code>select</code></a></td>
+              <td>Падзея дасылаецца элемэнтам, калі карыстальнік зьмяняе абраньне тэксту ў ім. Падзея ўжываецца толькі для элемэнтаў <a href="../htmlRef/index.html#input_text"><code>input type="text"</code></a> і <a href="../htmlRef/index.html#textarea"><code>textarea</code></a>.</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/submit/"><code>submit</code></a></td>
+              <td>Падзея дасылаецца элемэнту <a href="../htmlRef/index.html#form"><code>form</code></a>, калі адбываецца спроба яе сабміту (дасылкі даных).</td>
+            </tr>
+            <tr>
+              <td><a href="http://api.jquery.com/unload/"><code>unload</code></a></td>
+              <td>Падзея дасылаецца элемэнту <code>window</code>, калі адбываецца зьмена адрасу старонкі. Падзея генэрыцца ня толькі пры наўпроставай зьмене адрасу: кнопкі &laquo;назад&raquo; і &laquo;ўперад&raquo; браўзэра, пераход па спасылцы, увод новага адрасу ў адрасны радок, але таксама пры ўскосным дзеяньні: перагрузка той жа самай старонкі і нават закрыцьцё акна ці ўстаўкі браўзэра.</td>
+            </tr>
+          </tbody>
+        </table>
 
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/20-helpful-jquery-methods-you-should-be-using/">20 Helpful jQuery Methods you Should be Using</a></p>
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-the-difference-between-live-and-delegate/">The Difference Between Live() and Delegate()</a></p>
-        <p><a href="http://www.learningjquery.com/2010/03/using-delegate-and-undelegate-in-jquery-1-4-2/">Using Delegate and Undelegate in jQuery 1.4.2</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-an-introduction-to-jquery-templating/">An Introduction to jQuery Templating</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/fun-with-jquery-templating-and-ajax/">jQuery Templating and AJAX</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-display-elements-sequentially-with-jquery/">Display Elements Sequentially with jQuery</a></p>
@@ -1411,10 +2695,16 @@
   <!-- GetSatisfaction feedback button END -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.4.2.js"%3E%3C/script%3E'))</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
-  <script src="../js/libs/mktree.js"></script>
+  <script src="../js/libs/jquery.tree.js"></script>
+
+  <script src="../js/libs/waypoints.min.js"></script>
+  <script src="../js/ref.js"></script>
+
+  <script src="../js/js.js"></script>
+
   <script src="../js/libs/xregexp.js"></script>
   <script src="../js/libs/shCore.js"></script>
   <script src="../js/libs/shAutoloader.js"></script>

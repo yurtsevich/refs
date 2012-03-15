@@ -1,0 +1,43 @@
+/* line 1, ../sass/js.scss */
+.example {
+  margin: 20px 0;
+}
+
+/* line 2, ../sass/js.scss */
+.example_content {
+  background-color: #EEEEEE;
+  border: 1px dashed #AAAAAA;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+/* line 5, ../sass/js.scss */
+#on_example {
+  min-height: 400px;
+}
+/* line 6, ../sass/js.scss */
+#on_example dt {
+  background: #DDDDDD;
+  border-bottom: 1px solid #999999;
+  border-top: 1px solid white;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 2em;
+}
+/* line 7, ../sass/js.scss */
+#on_example dd {
+  padding: 1em 0;
+}
+
+/* line 10, ../sass/js.scss */
+#main .manipulating_content_example h1 {
+  margin: 0 0 20px -10px;
+}
+/* line 11, ../sass/js.scss */
+#main .manipulating_content_example p {
+  margin-left: 10px;
+  text-align: left;
+}
