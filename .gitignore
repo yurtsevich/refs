@@ -1,0 +1,11 @@
+.svn/
+publish/
+build/buildinfo.properties
+.sass-cache/**
+nbproject/**
+.DS_Store
+*project
+*Project
+.htaccess
+*workspace
+*TODO.txt

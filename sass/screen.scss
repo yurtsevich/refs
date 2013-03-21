@@ -13,7 +13,7 @@ p {margin-top: 10px;}
 q {font-style: italic;}
 blockquote {color: #666; margin: 10px 30px 10px;}
 
-code {color: #222222; padding: 0 3px; @include text-shadow(rgba(0, 0, 0, 0.4) 1px 1px 1px);}
+code {color: #111; padding: 0 3px; @include text-shadow(rgba(0, 0, 0, 0.4) 0 0 1px);}
 .syntaxhighlighter code {@include text-shadow(none);}
 code.elem, code.at_rule, code.keyword {color: #006699;}
 code.attr, code.local_var {color: #76923c;}
@@ -22,7 +22,8 @@ code.method {color: #558;}
 code.const {color: #858;}
 code.var {color: #FFAA3A;}
 
-.term {color: #1c346a;}
+abbr {color: #000;}
+/*.term {color: #000;}*/
 .deprecated {text-decoration: line-through;}
 .todo {color: red;}
 
@@ -103,8 +104,8 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
 
   ol, ul {margin-bottom: 0.5em; margin-top: 0.5em;}
 
-  aside {background: #eee; border: 1px solid #BBBBBB; @include border-radius(2px); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); float: right;
-      margin: 10px 5px 10px 20px; padding: 20px; width: 300px;
+  aside {background: #eee; border: 1px solid #BBBBBB; @include border-radius(2px); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); float: right; font-size: 0.85em; margin: 10px 5px 10px 20px; padding: 20px; width: 300px;
+
     &.warn {background: #fbb;}
     &.intro {background-color: #f4c288; font: 0.65em $lucida-grande-font-stack;}
   }
@@ -214,8 +215,8 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   span.obsolete_in_html5 {color: #00b0f0;}
 
   .refs {background: #EEEEEE; border: 1px solid #BBBBBB; @include border-radius(1px);
-      @include box-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px); font-size: x-small; float: left;
-      margin: -10px 10px 0 -60px; padding: 4px 8px;
+      @include box-shadow(rgba(0, 0, 0, 0.3) 1px 1px 2px); font-size: 12px; float: left;
+      margin: 0 10px 0 -60px; padding: 4px 2px;
     ul {list-style: none outside none; margin: 0;
       li {border-top: 1px solid #BFC7DD;
         &:first-child {border-top: none;}
@@ -229,9 +230,6 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
       font-size: x-small; float: right; margin: -35px 5px 10px 10px; min-width: 90%; padding: 4px;
   }
 
-  .two_column_code_example {width: 100%;
-    td {background-color: #1B2426; border: #888 1px dashed; padding: 0 50px 0 10px;}
-  }
 }
 
 footer {display: inline-block; font-family: $lucida-grande-font-stack; font-size: 0.65em; margin: 6em 0;

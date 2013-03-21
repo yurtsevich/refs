@@ -69,16 +69,16 @@
         <ul class="tree">
           <li><a href="#Links">Карысныя спасылкі</a>
             <ul>
-              <li><a href="#Links_home">Хатняя старонка</a></li>
-              <li><a href="#Links_docs">Дакумэнтацыя</a></li>
-              <li><a href="#Links_api">API</a></li>
-              <li><a href="#Links_refs">Даведнікі і кнігі</a>
+              <li><a href="#Links_Home">Хатняя старонка</a></li>
+              <li><a href="#Links_Docs">Дакумэнтацыя</a></li>
+              <li><a href="#Links_API">API</a></li>
+              <li><a href="#Links_Refs">Даведнікі і кнігі</a>
                 <ul>
-                  <li><a href="#Links_refs_beginners">Пачаткоўцам</a></li>
-                  <li><a href="#Links_refs_intermediate">Адмыслоўцам</a></li>
+                  <li><a href="#Links_Refs_Beginners">Пачаткоўцам</a></li>
+                  <li><a href="#Links_Refs_Intermediate">Адмыслоўцам</a></li>
                 </ul>
               </li>
-              <li><a href="#Links_gems">Gems</a></li>
+              <li><a href="#Links_Gems">Gems</a></li>
             </ul>
           </li>
 
@@ -89,15 +89,38 @@
             </ul>
           </li>
 
+          <li class="liOpen"><a href="#StructureExecution">Структура і выкананьне</a>
+            <ul>
+              <li class="liOpen"><a href="#StructureExecution_Lexic">Лексычная структура</a>
+                <ul>
+                  <li><a href="#StructureExecution_Lexic_Comments">Камэнтары</a>
+                    <ul>
+                      <li><a href="#StructureExecution_Lexic_Comments_EmbeddedDocuments">Убудаваныя дакумэнты</a></li>
+                      <li><a href="#StructureExecution_Lexic_Comments_ForDocumentation">Камэнтары для дакумэнтацыі</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#StructureExecution_Lexic_Literals">Літаралы</a></li>
+                  <li><a href="#StructureExecution_Lexic_Punctuation">Пунктуацыя</a></li>
+                  <li><a href="#StructureExecution_Lexic_Identifiers">Ідэнтыфікатары</a>
+                    <ul>
+                      <li><a href="#StructureExecution_Lexic_Identifiers_Punctuation">Пунктуацыя ў ідэнтыфікатарах</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#StructureExecution_Lexic_Keywords">Ключавыя словы</a></li>
+                  <li><a href="#StructureExecution_Lexic_Whitespaces">Прагалы</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
           <li class="liOpen"><a href="#LangParts">Часткі мовы</a>
             <ul>
-              <li><a href="#LangParts_Keywords">Ключавыя словы</a></li>
               <li><a href="#LangParts_Expressions">Выразы</a></li>
               <li><a href="#LangParts_Variables">Зьменныя</a>
                 <ul>
-                  <li><a href="#LangParts_InstanceVar">Зьменныя экзэмпляраў</a></li>
-                  <li><a href="#LangParts_ClassVar">Зьменныя клясаў</a></li>
-                  <li><a href="#LangParts_GlobalVar">Глябальныя зьменныя</a></li>
+                  <li><a href="#LangParts_Variables_InstanceVar">Зьменныя экзэмпляраў</a></li>
+                  <li><a href="#LangParts_Variables_ClassVar">Зьменныя клясаў</a></li>
+                  <li><a href="#LangParts_Variables_GlobalVar">Глябальныя зьменныя</a></li>
                 </ul>
               </li>
               <li><a href="#LangParts_Consts">Канстанты</a></li>
@@ -238,6 +261,13 @@
               <li><a href="#Types_BooleanNil">true, false, nil</a></li>
             </ul>
           </li>
+
+          <li class="liOpen"><a href="#Methods">Мэтады, працэдуры, лямбды</a>
+            <ul>
+              <li><a href="#Methods_">...</a></li>
+            </ul>
+          </li>
+
               <li class="liOpen"><a href="#Types_Regexp">Рэгулярныя выразы</a>
                 <!--ul>
                   <li><a href="#Types_Ranges_AsSequences">Як пасьлядоўнасьці</a></li>
@@ -262,161 +292,492 @@
         Даведнік па Ruby
       </header>
 
+      <p><a href="http://rubysource.com/using-a-graph-database-with-ruby-part-i-introduction/?utm_medium=email&utm_campaign=RubySource+June+26+2012&utm_content=RubySource+June+26+2012+CID_060309c63435e60d57d8bbf94d827e8e&utm_source=Newsletter&utm_term=Using+a+Graph+Database+with+Ruby+Part+I">Using a Graph Database with Ruby. Part I: Introduction</a></p>
+
+
       <section>
         <aside class="warn">Дадзены даведнік разглядае працу з <i>Ruby</i> вэрсіі <code>1.9.2</code> у <i>Windows</i>-асяродку. Будзьце ўважлівы!</aside>
-        <h1><a name="Links">Карысныя спасылкі</a></h1>
-        <h2><a name="Links_home">Хатняя старонка</a></h2>
+        <h1><a name="Links" href="#Links">Карысныя спасылкі</a></h1>
+        <h2><a name="Links_Home" href="#Links_Home">Хатняя старонка</a></h2>
         <p><a href="http://www.ruby-lang.org/">http://www.ruby-lang.org</a></p>
 
-        <h2><a name="Links_docs">Дакумэнтацыя</a></h2>
-        <p><a href="http://ruby-doc.org/">http://ruby-doc.org</a>&nbsp;&mdash; афіцыйная старонка, на якой сабраныя спасылкі да рознага кшталту дакумэнтацыі і літаратуры.</p>
+        <h2><a name="Links_Docs" href="#Links_Docs">Дакумэнтацыя</a></h2>
+        <p><a href="http://ruby-doc.org/">http://ruby-doc.org</a>&nbsp;&ndash; афіцыйная старонка, на якой сабраныя спасылкі да рознага кшталту дакумэнтацыі і літаратуры.</p>
 
-        <h2><a name="Links_api">API</a></h2>
+        <h2><a name="Links_API" href="#Links_API">API</a></h2>
         <p>Ядро мовы: <a href="http://ruby-doc.org/ruby-1.9/index.html">http://ruby-doc.org/ruby-1.9/index.html</a></p>
-        <p>Стандартныя бібліятэкі (StdLib):
+        <p>Стандартныя бібліятэкі (<i>StdLib</i>):
           <ul>
             <li><a href="http://www.rubydoc.info/stdlib/">http://www.rubydoc.info/stdlib</a></li>
             <li><a href="http://www.ruby-doc.org/stdlib/">http://www.ruby-doc.org/stdlib</a></li>
           </ul>
         </p>
-        <p>Ruby + Rails (вельмі добра рэалізаваны пошук): <a href="http://railsapi.com/doc/rails-v3.0.1_ruby-v1.9.2/">http://railsapi.com/doc/rails-v3.0.1_ruby-v1.9.2</a></p>
+        <p><i>Ruby + Rails</i> (вельмі добра рэалізаваны пошук): <a href="http://railsapi.com/doc/rails-v3.0.1_ruby-v1.9.2/">http://railsapi.com/doc/rails-v3.0.1_ruby-v1.9.2</a></p>
 
-        <h2><a name="Links_refs">Даведнікі і кнігі</a></h2>
-        <h3><a name="Links_refs_beginners">Пачаткоўцам</a></h3>
+        <h2><a name="Links_Refs" href="#Links_Refs">Даведнікі і кнігі</a></h2>
+        <h3><a name="Links_Refs_Beginners" href="#Links_Refs_Beginners">Пачаткоўцам</a></h3>
         <p><a href="http://www.rubyist.net/~slagell/ruby/">Ruby user's guide</a></p>
         <p><a href="http://rubylearning.com/satishtalim/tutorial.html">Core Ruby Programming</a></p>
-        <p><a href="http://mislav.uniqpath.com/poignant-guide/">Poignant-guide</a>&nbsp;&mdash; сьцёбны, арыгінальны, але прыдатны толькі для першапачатковага паглыбленьня ў мову вучэбнік.</p>
+        <p><a href="http://mislav.uniqpath.com/poignant-guide/">Poignant-guide</a>&nbsp;&ndash; сьцёбны, арыгінальны, але прыдатны толькі для першапачатковага паглыбленьня ў мову вучэбнік.</p>
 
-        <h3><a name="Links_refs_intermediate">Адмыслоўцам</a></h3>
-        <p><a href="http://www.ruby-doc.org/docs/ProgrammingRuby/">Programming Ruby</a>&nbsp;&mdash; электронны варыянт першага выданьня адпаведнай кнігі ад <a href="http://pragprog.com/">The Pragmatic Programmers</a>.</p>
-        <p><a href="http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177">The Ruby Programming Language</a> (першае выданьне папяровай кнігі, напісанай <a href="http://www.amazon.com/David-Flanagan/e/B000APEZR4" title="Старонка, прысьвечаная Дэвіду Флэнэгэну на Amazon.com">Дэвідам Флэнэгэнам</a> і <a href="http://www.amazon.com/Yukihiro-Matsumoto/e/B001IGNN6I" title="Старонка, прысьвечаная Юкіхіро Мацумото на Amazon.com">Юкіхіро Мацумото</a> ад выдавецтва <a href="http://oreilly.com/" title="Хатняя старонка выдавецтва O&#39;Reilly">O&#39;Reilly</a>&nbsp;&mdash; на мой погляд лепшая крыніца, з тых што мне трапляліся, паглыбленага вывучэньня <i>Ruby</i>, але на жаль электроннага варыянту няма ў вольным доступе).</p>
+        <h3><a name="Links_Refs_Intermediate" href="#Links_Refs_Intermediate">Адмыслоўцам</a></h3>
+        <p><a href="http://www.ruby-doc.org/docs/ProgrammingRuby/">Programming Ruby</a>&nbsp;&ndash; электронны варыянт першага выданьня адпаведнай кнігі ад <a href="http://pragprog.com/">The Pragmatic Programmers</a>.</p>
+        <p><a href="http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177">The Ruby Programming Language</a> (першае выданьне папяровай кнігі, напісанай <a href="http://www.amazon.com/David-Flanagan/e/B000APEZR4" title="Старонка, прысьвечаная Дэвіду Флэнэгэну на Amazon.com">Дэвідам Флэнэгэнам</a> і <a href="http://www.amazon.com/Yukihiro-Matsumoto/e/B001IGNN6I" title="Старонка, прысьвечаная Юкіхіро Мацумото на Amazon.com">Юкіхіро Мацумото</a> ад выдавецтва <a href="http://oreilly.com/" title="Хатняя старонка выдавецтва O&#39;Reilly">O&#39;Reilly</a>&nbsp;&ndash; на мой погляд лепшая крыніца, з тых што мне трапляліся, паглыбленага вывучэньня <i>Ruby</i>, але на жаль электроннага варыянту няма ў вольным доступе).</p>
 
-        <h2><a name="Links_gems">Gems</a></h2>
+        <h2><a name="Links_Courses" href="#Links_Courses">Курсы</a></h2>
+        <p>Курс на <a href="http://www.codecademy.com/">codecademy.com</a>: <a href="http://www.codecademy.com/tracks/ruby">http://www.codecademy.com/tracks/ruby</a></p>
+
+        <h2><a name="Links_Blogs" href="#Links_Blogs">Блогі</a></h2>
+        <p>Апошнія <i>Ruby &amp; Rails</i> навіны на <b>envylabs.com</b>: <a href="http://ruby5.envylabs.com/">http://ruby5.envylabs.com/</a></p>
+
+        <h2><a name="Links_Gems" href="#Links_Gems">Gems</a></h2>
         <p>Хатняя старонка: <a href="http://rubygems.org/">http://rubygems.org</a></p>
         <p>Як шукаць і ўсталёўваць бібліятэкі: <a href="http://www.ruby-lang.org/en/libraries/">http://www.ruby-lang.org/en/libraries</a></p>
         <p>Bundler: <a href="http://gembundler.com/">http://gembundler.com</a></p>
       </section>
 
       <section>
-        <h1><a name="Intro">Што такое Ruby?</a></h1>
+        <h1><a name="Intro" href="#Intro">Што такое Ruby?</a></h1>
 
-        <h2><a name="Intro_OOP">Аб&#8217;ектна-арыентаваная мова</a></h2>
-        <p>Ruby зьяўляецца цалкам аб&#8217;ектна-арыентаванай мовай праграмаваньня ў клясычным выглядзе. Усё, чым апэрыруе праграма на Ruby, зьяўляецца аб&#8217;ектам, і вынікі гэтых апэрацый таксама зьяўляюцца аб&#8217;ектамі. Аб&#8217;ектна-арыентаванае праграмаваньне характаразуецца тым, што распрацоўшчык спрабуе смадэляваць аб&#8217;ект рэальнага сьвету (возьмем у прыклад песьню) ў кодзе. У Ruby гэтыя аб&#8217;екты прадстаўляюцца клясамі. Клясы ўяўляюць зь сябе камбінацыю з стану (напр., назва песьні) і мэтадаў, каторыя апэрыруюць гэтым станам (напр., мэтад, каторы прайграе песьню).</p>
-        <p>Калі аб&#8217;ект смадэляваны і адпаведная кляса напісаная, можна ствараць экзэмпляры гэтай клясы. Гэта адбываецца праз выклік канструктара&nbsp;&mdash; адмысловага мэтаду клясы, каторы звычайна называецца <code class="keyword">new</code>.</p>
+        <h2><a name="Intro_OOP" href="#Intro_OOP">Аб'ектна-арыентаваная мова</a></h2>
+        <p><i>Ruby</i> зьяўляецца цалкам аб'ектна-арыентаванай мовай праграмаваньня ў клясычным выглядзе. Усё, чым апэрыруе праграма на <i>Ruby</i>, зьяўляецца аб'ектам, і вынікі гэтых апэрацый таксама зьяўляюцца аб'ектамі. Аб'ектна-арыентаванае праграмаваньне характаразуецца тым, што распрацоўшчык спрабуе смадэляваць аб'ект рэальнага сьвету (возьмем у прыклад песьню) ў кодзе. У <i>Ruby</i> гэтыя аб'екты прадстаўляюцца клясамі. Клясы ўяўляюць зь сябе камбінацыю з стану (напр., назва песьні) і мэтадаў, якія апэрыруюць гэтым станам (напр., мэтад, каторы прайграе песьню).</p>
+        <p>Калі аб'ект смадэляваны і адпаведная кляса напісаная, можна ствараць экзэмпляры гэтай клясы. Гэта адбываецца праз выклік канструктара&nbsp;&ndash; адмысловага мэтаду клясы, які звычайна называецца <code>new</code>.</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         song1 = Song.new("Ruby Tuesday")
         song2 = Song.new("Enveloped in Python")
         ]]></script>
-        <p>Абедзьве зьменныя <code class="local_var">song1</code> і <code class="local_var">song2</code> зьяўляюцца экзэплярамі адной і той жа клясы <code class="class">Song</code>, але маюць унікальныя характарыстыкі. Па-першае, кожны аб&#8217;ект (экзэмпляр нейкай клясы) у Ruby мае ўнікальны ідэнтыфікатар (<i>object id</i>). Па-другое, кляса можа ўтрымліваць зьменныя экзэмпляру, каторыя будуць утрымліваць унікальныя для кожнага экзэмпляру значэньні. Гэтыя зьменныя і выражаюць пазначаны вышэй <i>стан</i> аб&#8217;екта. Напрыклад, кляса <code class="class">Song</code> можа ўтрымліваць зьменную, якая захоўвае назву песьні.</p>
-        <p>Акрамя гэтага кожная кляса можа вызначаць мэтады экзэмпляраў&nbsp;&mdash; пэўны функцыянал, каторы можа выклікацца як знутры клясы, так і, пры пэўных акалічнасьцях,&nbsp;&mdash; звонку. Гэтыя мэтады маюць доступ да зьменных экзэмпляраў і могуць маніпуляваць імі. Мэтады могуць таксама называцца паведамленьнямі ці запытамі да аб&#8217;екта.</p>
+        <p>Абедзьве зьменныя <code>song1</code> і <code>song2</code> зьяўляюцца экзэплярамі адной і той жа клясы <code>Song</code>, але маюць унікальныя характарыстыкі. Па-першае, кожны аб'ект (экзэмпляр нейкай клясы) у <i>Ruby</i> мае ўнікальны ідэнтыфікатар (<i>object id</i>). Па-другое, кляса можа ўтрымліваць зьменныя экзэмпляру, якія будуць утрымліваць унікальныя для кожнага экзэмпляру значэньні. Гэтыя зьменныя і выражаюць пазначаны вышэй <i>стан</i> аб'екта. Напрыклад, кляса <code>Song</code> можа ўтрымліваць зьменную, якая захоўвае назву песьні.</p>
+        <p>Акрамя гэтага кожная кляса можа вызначаць мэтады экзэмпляраў&nbsp;&ndash; пэўны функцыянал, каторы можа выклікацца як знутры клясы, так і, пры пэўных акалічнасьцях,&nbsp;&ndash; звонку. Гэтыя мэтады маюць доступ да зьменных экзэмпляраў і могуць маніпуляваць імі. Мэтады могуць таксама называцца паведамленьнямі ці запытамі да аб'екта.</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         "gin joint".length      #=> 9
         "Rick".index("c")       #=> 2
         -1942.abs               #=> 1942
         sam.play(aSong)         #=> "duh dum, da dum de dum ..."
         ]]></script>
-        <p>Тое, што стаіць да кропкі, называецца <i>атрымальнікам</i> паведамленьня/запыту. Пасьля кропкі ідзе мэтад, каторы павінен быць выкліканы. Першы з прыкладаў вышэй пытаецца пра дліну (мэтад <code class="method">length</code>) радка (<code>"gin joint"</code>). У другім прыкладзе ў іншага радка пытаецца пра індэкс літары <code>"c"</code> у ім. У трэцім прыкладзе мы пытаемся ў лічбы пра яе абсалютнае значэньне, а ў чацьвёртым просім <code>sam</code>&#8217;а, каб ён прапеў (мэтад <code class="method">play</code>) нам песьню (перададзены ў якасьці парамэтру аб&#8217;ект <code class="local_var">aSong</code>).</p>
+        <p>Тое, што стаіць да кропкі, называецца <i>атрымальнікам</i> паведамленьня/запыту. Пасьля кропкі ідзе мэтад, які павінен быць выкліканы. Першы з прыкладаў вышэй пытаецца пра даўжыню (мэтад <code>length</code>) радка («<i>gin joint</i>»). У другім прыкладзе ў іншага радка пытаецца пра індэкс літары «<i>c</i>» у ім. У трэцім прыкладзе мы пытаемся ў лічбы пра яе абсалютнае значэньне, а ў чацьвёртым просім <code>sam</code>&#8217;а, каб ён прапеў (мэтад <code>play</code>) нам песьню (перададзены ў якасьці парамэтру аб'ект <code>aSong</code>).</p>
 
-        <h2><a name="Intro_IntuitiveNotation">Інтуітыўная натацыя</a></h2>
+        <h2><a name="Intro_IntuitiveNotation" href="#Intro_IntuitiveNotation">Інтуітыўная натацыя</a></h2>
         <p>Ruby створаны такім чынам, каб код, напісаны на ім, быў інтуітыўна зразумелы. Напрыклад, наступны выраз:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         5.times { print "Odelay!" }
         ]]></script>
-        <p>азначае &laquo;пяць (<code>5</code>) разоў (анг. <code class="method">times</code>) надрукуй (анг. <code class="method">print</code>) "Odelay!"&raquo;. А выраз:</p>
+        <p>азначае «пяць (<code>5</code>) разоў (анг. <code>times</code>) надрукуй (анг. <code>print</code>) <code>"Odelay!"</code>». А выраз:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         exit unless "restaurant".include? "aura"
         ]]></script>
-        <p>азначае, што &laquo;праграмма павінна скончыць сваё дзеяньне (анг. <code class="method">exit</code>), калі радок "restaurant" не (анг. <code class="keyword">unless</code>) утрымлівае (анг. <code class="method">include</code>) радок "aura"&raquo;. А выраз:</p>
+        <p>азначае, што «праграмма павінна скончыць сваё дзеяньне (анг. <code>exit</code>), калі радок <code>"restaurant"</code> не (анг. <code>unless</code>) утрымлівае (анг. <code>include</code>) радок <code>"aura"</code>». А выраз:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         ['toast', 'cheese', 'wine'].each { |food| print food.capitalize }
         ]]></script>
-        <p>азначае &laquo;з кожным (анг. <code class="method">each</code>) словам 'toast', 'cheese', 'wine' зрабіць наступнае: пачатковую літару зрабіць вялікай (анг. <code class="method">capitalize</code>) і надрукаваць вынік (анг. <code class="method">print</code>).</p>
+        <p>азначае «з кожным (анг. <code>each</code>) словам <code>'toast'</code>, <code>'cheese'</code>, <code>'wine'</code> зрабіць наступнае: пачатковую літару зрабіць вялікай (анг. <code>capitalize</code>) і надрукаваць вынік (анг. <code>print</code>)».</p>
       </section>
 
       <section>
-        <h1><a name="LangParts">Часткі мовы</a></h1>
-        <p>Любая мова, у тым ліку і праграмаваньня, складаецца з пэўных частак. Разгледзем часткі, зь якіх складаецца Ruby.</p>
+        <h1><a name="StructureExecution" href="#StructureExecution">Структура і выкананьне</a></h1>
 
-        <h2><a name="LangParts_Keywords">Ключавыя словы</a></h2>
-        <p>Перш за ўсё гэта ключавыя словы, у каторыя закладзены пэўны сэнс. Поўны іх сьпіс:</p>
+        <h2><a name="StructureExecution_Lexic" href="#StructureExecution_Lexic">Лексычная структура</a></h2>
+        <p>Інтэрпрэтатар <i>Ruby</i> разьбірае ўвесь тэкст <i>Ruby</i>-праграмы на <i>лексэмы</i> (ці <i>tokens</i>). Лексэмы ўключаюць камэнтары, літаралы, пунктуацыю, ідэнтыфікатары і ключавыя словы. Разгледзім больш падрабязна кожную з гэтых групаў, а таксама зь якіх сымбаляў яны складаюцца.</p>
+
+        <h3><a name="StructureExecution_Lexic_Comments" href="#StructureExecution_Lexic_Comments">Камэнтары</a></h3>
+        <p>Камэнтары ў <i>Ruby</i> пачынаюцца са знака <code>#</code> і працягваюцца да канца радку. Сам знак <code>#</code> і ўсё, што ідзе за ім, ігнаруецца інтэрпрэтатарам. Калі знак <code>#</code> сустракаецца ў сымбальнай чарадзе альбо ў рэгулярным выразе, тады ён зьяўляецца часткай чарады ці рэгулярнага выразу і не пачынае камэнтар.</p>
+        <p>Камэнтары на шмат радкоў робяцца праз зьмяшчэньне знаку <code>#</code> у пачатку кожнага радку:</p>
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+        #
+        # This class represents a Complex number
+        # Despite its name, it is not complex at all.
+        #
+        ]]></script>
+        <p>У <i>Ruby</i> няма эквіваленту ўнутрырадковага <i>C</i>-падобнага камэнтару: <code>/*...*/</code>.</p>
+
+        <h4><a name="StructureExecution_Lexic_Comments_EmbeddedDocuments" href="#StructureExecution_Lexic_Comments_EmbeddedDocuments">Убудаваныя дакумэнты</a></h4>
+        <p><i>Ruby</i> падтрымлівае яшчэ адзін спосаб рабіць шматрадковыя камэнтары, які завецца <i>убудаваныя дакумэнты</i> (<i>embedded documents</i>). Такі камэнтар пачынаецца радком, які ў самым сваім пачатку зьмяшчае <code>=begin</code>, а сканчаецца радком, які ў самым сваім пачатку зьмяшчае <code>=end</code>:</p>
+        <p>Камэнтары для дакумэнтацыі павінны зьмяшчацца непасрэдна перад модулем, клясай альбо мэтадам, які яны апісваюць, і маюць адмысловыя правілы фарматаваньня, некаторыя зь якіх глядзі ў прыкладзе:</p>
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+        =begin Someone needs to fix the broken code below!
+        Any code here is commented out
+        =end
+        ]]></script>
+        <p>Прычым знак роўнасьці абавязкова павінен быць першым знакам адпаведных радкоў. Як вынікае з назвы гэтыя камэнтары прызначаны ў тым ліку для ўстаўкі вялікіх фрагмэнтаў дакумэнтацыі альбо для ўбудаваньня фрагмэнтаў зь іншых моваў праграмаваньня (як <code><i><a href="../htmlRef/index.html">HTML</a></i></code> альбо <i>SQL</i>). Гэтыя ўбудаваныя дакумэнты звычайна прызначаныя для апрацоўкі староньнімі прыладамі ці дадаткамі, якія апрацоўваюць зыходны код <i>Ruby</i>, а пасьля лексэмы <code>=begin</code> звычайна пазначаецца ідэнтыфікатар, які кажа для якой прылады ці дадатку прызначаецца дакумэнт.</p>
+
+        <h4><a name="StructureExecution_Lexic_Comments_ForDocumentation" href="#StructureExecution_Lexic_Comments_ForDocumentation">Камэнтары для дакумэнтацыі</a></h4>
+        <p>У <i>Ruby</i> маецца магчымасьць вымаць камэнтары з тэксту праграмы, каб ствараць дакумэнтацыю па праграме. <mark>Спасылка на <i>rdoc</i></mark></p>
+        <p>Камэнтары для дакумэнтацыі павінны зьмяшчацца непасрэдна перад модулем, клясай альбо мэтадам, які яны апісваюць, і маюць адмысловыя правілы фарматаваньня, некаторыя зь якіх глядзі ў прыкладзе:</p>
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+          #
+          # Rdoc comments use a simple markup grammar like those used in wikis.
+          #
+          # Separate paragraphs with a blank line.
+          #
+          # = Headings
+          #
+          # Headings begin with an equals sign
+          #
+          # == Sub-Headings
+          # The line above produces a subheading.
+          # === Sub-Sub-Heading
+          # And so on.
+          #
+          # = Examples
+          #
+          # Indented lines are displayed verbatim in code font.
+          # Be careful not to indent your headings and lists, though.
+          #
+          # = Lists and Fonts
+          #
+          # List items begin with * or -. Indicate fonts with punctuation or HTML:
+          # * _italic_ or <i>multi-word italic</i>
+          # * *bold* or <b>multi-word bold</b>
+          # * +code+ or <tt>multi-word code</tt>
+          #
+          # 1. Numbered lists begin with numbers.
+          # 99. Any number will do; they do not have to be sequential.
+          # 1. There is no way to do nested lists.
+          #
+          # The terms of a description list are bracketed:
+          # [item 1] This is a description of item 1
+          # [item 2] This is a description of item 2
+          #
+        ]]></script>
+
+        <h3><a name="StructureExecution_Lexic_Literals" href="#StructureExecution_Lexic_Literals">Літаралы</a></h3>
+        <p>Літаралы&nbsp;&ndash; гэта значэньні, якія сустракаюцца непасрэдна ў тэксьце праграмы. Гэта ўключае лікі, сымбальныя чароды і рэгулярныя выразы. (Іншыя літаралы, як масівы альбо хэшы, не зьяўляюцца асобнымі лексэмамі, але зьяўляюцца больш складанымі выразамі.) Сынтаксіс лічбавых і сымбальных літаралаў у <i>Ruby</i> насамрэч даволі складаны (<mark>глядзі разьдзел ....</mark>), але на дадзеным этапе дастаткова атрымаць спрошчанае іх разуменьне:</p>
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+        1       # Цэлалікавы літарал
+        1.0     # Рэчаісны літарал
+        'one'   # Сымбальны літарал
+        "two"   # Яшчэ адзін сымбальны літарал
+        /three/ # Літарал рэгулярнага выразу
+        ]]></script>
+
+        <h3><a name="StructureExecution_Lexic_Punctuation" href="#StructureExecution_Lexic_Punctuation">Пунктуацыя</a></h3>
+        <p>У гэтую групу ўваходзяць ня толькі самі знакі пунктуацыі, як коска, кропка, двукроп'е і іншыя, якія служаць для групаваньня альбо аддзяленьня выразаў, аргумэнтаў мэтадаў, індэксаў масіваў, а таксама для абмежаваньня сымбальных чародаў, рэгулярных выразаў і іншага. Уваходзяць сюды і розныя знакі <mark>апэрацыяў</mark>.</p>
+
+        <h3><a name="StructureExecution_Lexic_Identifiers" href="#StructureExecution_Lexic_Identifiers">Ідэнтыфікатары</a></h3>
+        <p>Ідэнтыфікатар&nbsp;&ndash; гэта інакш імя. <i>Ruby</i> выкарыстоўвае ідэнтыфікатары, каб даваць імёны зьменным, мэтадам, клясам і іншаму. Яны могуць складацца з літараў, лічбаў і знаку падкрэсьліваньня, пры гэтым у якасьці яго першага сымбалю ня можа быць лічба. Калі ідэнтыфікатар пачынаецца з вялікай літары, інтэрпрэтатар <i>Ruby</i> аўтаматычна ўспрыме яго за імя канстанты. Ніжэй прыводзяцца прыклады розных ідэнтыфікатараў:</p>
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+        i
+        x2
+        old_value
+        _internal   # Могуць пачынацца са знаку падкрэсьліваньня
+        PI          # Канстанта
+        ]]></script>
+        <p>Па дамоўленасьці, калі ідэнтыфікатар (не канстанта) складаецца зь некалькіх словаў, тады паміж словамі зьмяшчаецца знак падкрэсьліваньня: <code>like_this</code>, а канстанты запісваюцца так: <code>LikeThis</code>, альбо так: <code>LIKE_THIS</code>.</p>
+        <p>Як можна было зразумець з вышэйсказанага, у <i>Ruby</i> малыя і вялікія літары маюць адрозьненьне. Напрыклад, ключавое слова <code>end</code> гэта ня тое ж самае, што ключавое слова <code>END</code>.</p>
+
+        <h4><a name="StructureExecution_Lexic_Identifiers_Punctuation" href="#StructureExecution_Lexic_Identifiers_Punctuation">Пунктуацыя ў ідэнтыфікатарах</a></h4>
+        <p>У пачатку ці ў канцы ідэнтыфікатараў могуць стаяць знакі пунктуацыі (альбо адмысловыя сымбалі), якія маюць наступнае значэньне:</p>
+        <table>
+          <tr>
+            <td style="width: 30px;"><code>$</code></td>
+            <td>Глябальныя зьменныя маюць прэфікс у выглядзе знаку даляру. <i>Ruby</i> вызначае шэраг глябальных зьменных, у якіх дадаткова прысутнічаюць яшчэ іншыя знакі, як <code>$_</code> альбо <code>$-</code>. Па поўны сьпіс прадвызначаных адмысловых глябальных зьменных глядзі <mark>разьдзел 10.2.3</mark>.</td>
+          </tr>
+          <tr>
+            <td style="width: 30px;"><code>@</code></td>
+            <td>Зьменныя экзэмпляру клясы маюць прэфікс у выглядзе адзіночнага <i>at</i>-знаку, а зьменныя клясы&nbsp;&ndash; у выглядзе падвойнага <i>at</i>-знаку. Па больш дэталёвую інфармацыю глядзі <mark>разьдзел 7.3.5, 7.3.6</mark>.</td>
+          </tr>
+          <tr>
+            <td style="width: 30px;"><code>?</code></td>
+            <td>Па дамоўленасьці імёны мэтадаў, якія вяртаюць значэньні <mark><i>Boolean</i></mark>, сканчаюцца пытальнікам.</td>
+          </tr>
+          <tr>
+            <td style="width: 30px;"><code>!</code></td>
+            <td>Па дамоўленасьці імёны мэтадаў, якія павінны ўжывацца з асьцярогаю, сканчаюцца клічнікам. Такім чынам адзначаюцца мэтады, якія зьмяняюць стан аб'екту, у якога яны былі выкліканыя. У адрозьненьне ад тых мэтадаў, якія вяртаюць зьмененую копію зыходнага аб'екту.</td>
+          </tr>
+          <tr>
+            <td style="width: 30px;"><code>=</code></td>
+            <td>Па дамоўленасьці імёны мэтадаў, якія прызначаны для прысваеньня значэньняў, сканчаюцца знакам роўнасьці.</td>
+          </tr>
+        </table>
+        <p>Вось прыклады ідэнтыфікатараў, якія ўтрымліваюць гэтыя адмысловыя знакі:</p>
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+        $files      # Глябальная зьменная
+        @data       # Зьменная экзэмпляру
+        @@counter   # Зьменная клясы
+        empty?      # Мэтад, які вяртае булеўскае значэньне
+        sort!       # Мэтад сартуе зьмест зыходнага аб&#8217;екту,
+                    # а не вяртае адсартаваную копію яго
+        timeout=    # Мэтад для прысваеньня значэньня
+        ]]></script>
+        <p>Заўважце таксама, што некаторыя <mark>апэрацыі</mark> <i>Ruby</i> рэалізаваныя як мэтады, каб клясы маглі перавызначаць іх пад свае ўласныя патрэбы.</p>
+
+        <h3><a name="StructureExecution_Lexic_Keywords" href="#StructureExecution_Lexic_Keywords">Ключавыя словы</a></h3>
+        <p>Наступныя ключавыя словы маюць адмысловае значэньне ў <i>Ruby</i> і будуць асаблівым чынам апрацаваныя яго парсэрам:</p>
         <table class="list" id="keywords">
           <tbody>
             <tr>
-              <td><code class="keyword">alias</code></td>
-              <td><code class="keyword">and</code></td>
-              <td><code class="keyword">BEGIN</code></td>
-              <td><code class="keyword">begin</code></td>
-              <td><code class="keyword">break</code></td>
-              <td><code class="keyword">case</code></td>
+              <td><code>__LINE__</code></td>
+              <td><code>begin</code></td>
+              <td><code>else</code></td>
+              <td><code>in</code></td>
+              <td><code>rescue</code></td>
+              <td><code>undef</code></td>
             </tr>
             <tr>
-              <td><code class="keyword">class</code></td>
-              <td><code class="keyword">def</code></td>
-              <td><code class="keyword">defined</code></td>
-              <td><code class="keyword">do</code></td>
-              <td><code class="keyword">else</code></td>
-              <td><code class="keyword">elsif</code></td>
+              <td><code>__ENCODING__</code></td>
+              <td><code>break</code></td>
+              <td><code>elsif</code></td>
+              <td><code>module</code></td>
+              <td><code>retry</code></td>
+              <td><code>unless</code></td>
             </tr>
             <tr>
-              <td><code class="keyword">END</code></td>
-              <td><code class="keyword">end</code></td>
-              <td><code class="keyword">ensure</code></td>
-              <td><code class="keyword">false</code></td>
-              <td><code class="keyword">for</code></td>
-              <td><code class="keyword">if</code></td>
+              <td><code>__FILE__</code></td>
+              <td><code>case</code></td>
+              <td><code>end</code></td>
+              <td><code>next</code></td>
+              <td><code>return</code></td>
+              <td><code>until</code></td>
             </tr>
             <tr>
-              <td><code class="keyword">in</code></td>
-              <td><code class="keyword">module</code></td>
-              <td><code class="keyword">next</code></td>
-              <td><code class="keyword">nil</code></td>
-              <td><code class="keyword">not</code></td>
-              <td><code class="keyword">or</code></td>
+              <td><code>BEGIN</code></td>
+              <td><code>class</code></td>
+              <td><code>ensure</code></td>
+              <td><code>nil</code></td>
+              <td><code>self</code></td>
+              <td><code>when</code></td>
             </tr>
             <tr>
-              <td><code class="keyword">redo</code></td>
-              <td><code class="keyword">rescue</code></td>
-              <td><code class="keyword">retry</code></td>
-              <td><code class="keyword">return</code></td>
-              <td><code class="keyword">self</code></td>
-              <td><code class="keyword">super</code></td>
+              <td><code>END</code></td>
+              <td><code>def</code></td>
+              <td><code>false</code></td>
+              <td><code>not</code></td>
+              <td><code>super</code></td>
+              <td><code>while</code></td>
             </tr>
             <tr>
-              <td><code class="keyword">then</code></td>
-              <td><code class="keyword">true</code></td>
-              <td><code class="keyword">undef</code></td>
-              <td><code class="keyword">unless</code></td>
-              <td><code class="keyword">until</code></td>
-              <td><code class="keyword">when</code></td>
+              <td><code>alias</code></td>
+              <td><code>defined?</code></td>
+              <td><code>for</code></td>
+              <td><code>or</code></td>
+              <td><code>then</code></td>
+              <td><code>yield</code></td>
             </tr>
             <tr>
-              <td><code class="keyword">while</code></td>
-              <td><code class="keyword">yield</code></td>
-              <td><code class="keyword"></code></td>
-              <td><code class="keyword"></code></td>
-              <td><code class="keyword"></code></td>
-              <td><code class="keyword"></code></td>
+              <td><code>and</code></td>
+              <td><code>do</code></td>
+              <td><code>if</code></td>
+              <td><code>redo</code></td>
+              <td><code>true</code></td>
+              <td><code></code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>У дапаўненьне маюцца яшчэ 3 лексэмы, падобныя да ключавых словаў:</p>
+        <table class="list" id="keywords">
+          <tbody>
+            <tr>
+              <td><code>=begin</code></td>
+              <td><code>=end</code></td>
+              <td><code>__END__</code></td>
+              <td><code></code></td>
+              <td><code></code></td>
+              <td><code></code></td>
+            </tr>
+          </tbody>
+        </table>
+        <p>2 зь якіх <code>=begin</code> і <code>=end</code> ужо згадваліся вышэй&nbsp;&ndash; яны адкрываюць і закрываюць так званыя <a href="#StructureExecution_Lexic_Comments_EmbeddedDocuments">убудаваныя дакумэнты</a> (альбо шматрадковыя камэнтары). А лексэма <code>__END__</code> пазначае канец праграмы (і пачатак сэкцыі з данымі), калі яна зьмяшчаецца ў самым пачатку радку, прычым пасьля яе на гэтым радку таксама нічога не павінна зьмяшчацца, нават прагалы.</p>
+        <p>Акрамя вышэйазначанага шмат важных асаблівасьцяў і магчымасьцяў <i>Ruby</i> рэалізаваныя як мэтады клясаў <code>Kernel</code>, <code>Module</code>, <code>Class</code> і <code>Object</code>. Такім чынам, добрай практыкай будзе падыход, пры якім яны лічацца таксама зарэзэрваванымі словамі з асаблівым сэнсам і не выкарыстоўваюцца для ўласнага найменьня:</p>
+        <table class="list" id="keywords">
+          <caption>Гэта мэтады, якія выглядаюць як выразы ці ключавыя словы</caption>
+          <tbody>
+            <tr>
+              <td><code>at_exit</code></td>
+              <td><code>attr_reader</code></td>
+              <td><code>include</code></td>
+              <td><code>loop</code></td>
+              <td><code>protected</code></td>
+              <td><code>require</code></td>
+            </tr>
+            <tr>
+              <td><code>attr</code></td>
+              <td><code>attr_writer</code></td>
+              <td><code>lambda</code></td>
+              <td><code>private</code></td>
+              <td><code>public</code></td>
+              <td><code>throw</code></td>
+            </tr>
+            <tr>
+              <td><code>attr_accessor</code></td>
+              <td><code>catch</code></td>
+              <td><code>load</code></td>
+              <td><code>proc</code></td>
+              <td><code>raise</code></td>
+              <td><code></code></td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="list" id="keywords">
+          <caption>Гэта найбольш ужываныя глябальныя мэтады</caption>
+          <tbody>
+            <tr>
+              <td><code>Array</code></td>
+              <td><code>block_given?</code></td>
+              <td><code>exit</code></td>
+              <td><code>iterator?</code></td>
+              <td><code>readline</code></td>
+              <td><code>sub!</code></td>
+            </tr>
+            <tr>
+              <td><code>Float</code></td>
+              <td><code>callcc</code></td>
+              <td><code>exit!</code></td>
+              <td><code>load</code></td>
+              <td><code>readlines</code></td>
+              <td><code>syscall</code></td>
+            </tr>
+            <tr>
+              <td><code>Integer</code></td>
+              <td><code>caller</code></td>
+              <td><code>fail</code></td>
+              <td><code>open</code></td>
+              <td><code>scan</code></td>
+              <td><code>system</code></td>
+            </tr>
+            <tr>
+              <td><code>String</code></td>
+              <td><code>chomp</code></td>
+              <td><code>fork</code></td>
+              <td><code>p</code></td>
+              <td><code>select</code></td>
+              <td><code>test</code></td>
+            </tr>
+            <tr>
+              <td><code>URI</code></td>
+              <td><code>chomp!</code></td>
+              <td><code>format</code></td>
+              <td><code>print</code></td>
+              <td><code>sleep</code></td>
+              <td><code>trap</code></td>
+            </tr>
+            <tr>
+              <td><code>abort</code></td>
+              <td><code>chop</code></td>
+              <td><code>getc</code></td>
+              <td><code>printf</code></td>
+              <td><code>split</code></td>
+              <td><code>warn</code></td>
+            </tr>
+            <tr>
+              <td><code>autoload</code></td>
+              <td><code>chop!</code></td>
+              <td><code>gets</code></td>
+              <td><code>putc</code></td>
+              <td><code>sprintf</code></td>
+              <td><code></code></td>
+            </tr>
+            <tr>
+              <td><code>autoload?</code></td>
+              <td><code>eval</code></td>
+              <td><code>gsub</code></td>
+              <td><code>puts</code></td>
+              <td><code>srand</code></td>
+              <td><code></code></td>
+            </tr>
+            <tr>
+              <td><code>binding</code></td>
+              <td><code>exec</code></td>
+              <td><code>gsub!</code></td>
+              <td><code>rand</code></td>
+              <td><code>sub</code></td>
+              <td><code></code></td>
+            </tr>
+          </tbody>
+        </table>
+        <table class="list" id="keywords">
+          <caption>А гэта найбольш ужываныя мэтады аб'ектаў</caption>
+          <tbody>
+            <tr>
+              <td><code>allocate</code></td>
+              <td><code>equal?</code></td>
+              <td><code>inherited</code></td>
+              <td><code>methods</code></td>
+              <td><code>superclass</code></td>
+              <td><code>untaint</code></td>
+            </tr>
+            <tr>
+              <td><code>clone</code></td>
+              <td><code>extend</code></td>
+              <td><code>inspect</code></td>
+              <td><code>new</code></td>
+              <td><code>taint</code></td>
+              <td><code></code></td>
+            </tr>
+            <tr>
+              <td><code>display</code></td>
+              <td><code>freeze</code></td>
+              <td><code>instance_of?</code></td>
+              <td><code>nil?</code></td>
+              <td><code>tainted?</code></td>
+              <td><code></code></td>
+            </tr>
+            <tr>
+              <td><code>dup</code></td>
+              <td><code>frozen?</code></td>
+              <td><code>is_a?</code></td>
+              <td><code>object_id</code></td>
+              <td><code>to_a</code></td>
+              <td><code></code></td>
+            </tr>
+            <tr>
+              <td><code>enum_for</code></td>
+              <td><code>hash</code></td>
+              <td><code>kind_of?</code></td>
+              <td><code>respond_to?</code></td>
+              <td><code>to_enum</code></td>
+              <td><code></code></td>
+            </tr>
+            <tr>
+              <td><code>eql?</code></td>
+              <td><code>id</code></td>
+              <td><code>method</code></td>
+              <td><code>send</code></td>
+              <td><code>to_s</code></td>
+              <td><code></code></td>
             </tr>
           </tbody>
         </table>
 
+        <h3><a name="StructureExecution_Lexic_Whitespaces" href="#StructureExecution_Lexic_Whitespaces">Прагалы</a></h3>
+        <p>Прагалы, знакі табуляцыі, пераносы радку&nbsp;&ndash; усе яны не зьяўляюцца лексэмамі, але падзяляюць лексэмы адну ад другой, якія б інакш зьліліся ў адну лексэму. Акрамя гэтай функцыі ў агульным выпадку прагалы ігнаруюцца інтэрпрэтатарам, але некаторыя зь іх выконваюць яшчэ дадатковыя, пры гэтым важныя функцыі. <i>Ruby</i> мае выразную, але і складаную граматыку, і існуюць выпадкі, калі ўстаўка ці выдаленьне некаторых відаў прагалаў можа зьмяніць сэнс праграмы. Хаця гэтых выпадкаў і ня шмат, іх трэба ведаць.</p>
+
+        <h4><a name="StructureExecution_Lexic_Whitespaces_Newlines" href="#StructureExecution_Lexic_Whitespaces_Newlines">Пераносы радку</a></h4>
+        <p>Найбольш важная залежнасьць ад прагалаў&nbsp;&ndash; гэта пераносы радку ў якасьці маркераў канца выразаў. У мовах праграмаваньня як <i>C</i> ці <i>Java</i> кожны выраз павінен сканчацца кропкай з коскай. Гэтак жа можна рабіць і ў <i>Ruby</i>, але гэта абавязкова толькі ў выпадку, калі патрэбна зьмясьціць некалькі выразаў у адным радку. Інакш, па дамоўленасьці, кропка з коскай не павінна ўжывацца. Але без кропкі з коскай інтэрпрэтатар павінен сам нейкім чынам зразумець дзе знаходзіцца канец выразу. Таму, калі фрагмэнт коду на адным радку можа быць сынтаксічна завершаным выразам, <i>Ruby</i> трактуе знак пераносу радку як азнаку канца выразу. Інакш ён працягвае аналізаваць код на наступным радку.</p>
+        <p>Калі кожны выраз зьмяшчаецца на асобным радку, тады ня ўзьнікне праблемаў, але калі ёсьць выразы, якія займаюць больш аднаго радку, трэба зрабіць перанос выразу такім чынам, каб <i>Ruby</i> ня здолеў інтэрпрэтаваць фрагмэнт на першым з гэтых радкоў як асобны выраз. Напрыклад, наступны код складзе <code>x</code> з <code>y</code> і назначыць суму зьменнай <code>total</code>:</p>
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+          total = x +   # Няпоўны выраз, таму пераходзім на наступны радок, каб скончыць яго
+            y
+        ]]></script>
+        <p>А вось наступны код назначыць значэньне зьменнай <code>x</code> зьменнай <code>total</code>, а потым вылічыць значэньне зьменнай <code>y</code> і нічога з гэтым ня зробіць:</p>
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+          total = x     # Поўны выраз. Перанос радку трактуецца як маркер канца выразу.
+            + y         # Хаця і безсэнсоўны, але поўны выраз.
+        ]]></script>
+
+      </section>
+
+      <section>
+        <h1><a name="LangParts">Часткі мовы</a></h1>
+        <p>Любая мова, у тым ліку і праграмаваньня, складаецца з пэўных частак. Разгледзім часткі, зь якіх складаецца <i>Ruby</i>.</p>
+
+
         <h2><a name="LangParts_Expressions">Выразы</a></h2>
-        <p>Сынтакс Ruby цэнтруецца вакол выразаў. Напрыклад, элемэнты кіраваньня плыньню праграмы, кшталту <code class="keyword">if</code> у любой іншай мове праграмаваньня называюцца апэратарамі (умоўным апэратарам у дадзеным выпадку), а ў Ruby гэта таксама выразы. Яны таксама вяртаюць значэньні:</p>
+        <p>Сынтакс <i>Ruby</i> цэнтруецца вакол выразаў. Напрыклад, элемэнты кіраваньня плыньню праграмы, кшталту <code>if</code> у любой іншай мове праграмаваньня называюцца апэратарамі (умоўным апэратарам у дадзеным выпадку), а ў <i>Ruby</i> гэта таксама выразы і яны вяртаюць значэньні:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           minimum = if x < y then x else y end
         ]]></script>
-        <p>Хаця ня ўсе зь іх вяртаюць зьмястоўныя значэньні. Напрыклад, апэратар цыклю <code class="keyword">while</code> ці вызначэньне <a href="#LangParts_Methods">мэтаду</a> вяртаюць <code class="keyword">nil</code>.</p>
+        <p>Хаця ня ўсе зь іх вяртаюць зьмястоўныя значэньні. Напрыклад, апэратар цыклю <code>while</code> ці вызначэньне <a href="#LangParts_Methods">мэтаду</a> вяртаюць <code>nil</code>.</p>
 
         <h2><a name="LangParts_Variables">Зьменныя</a></h2>
         <p>Зьменныя&nbsp;&mdash; гэта імёны аб&#8217;ектаў ці значэньняў. Яны могуць састаяць з літараў, лічбаў і знака падкрэсьліваньня. Прыклад:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           single_fee = 2.50                       #=> даем імя значэньню кошта ўваходнага білета
           attendees = 4                           #=> даем імя колькасьці наведнікаў
-          overall_fee = single_fee * attendees    #=> разьлічваем агульны кошт уваходу групы наведнікаў,
-                                                  #=> пры гэтым зьвяртаемся да значэньняў кошту ўваходнага білета
-                                                  #=> і колькасьці наведнікаў у групе праз іх імёны
+          overall_fee = single_fee * attendees    #=> разьлічваем агульны кошт уваходу групы
+                                                  #=> наведнікаў, пры гэтым зьвяртаемся да
+                                                  #=> значэньняў кошту ўваходнага білета і колькасьці
+                                                  #=> наведнікаў у групе праз іх імёны
         ]]></script>
-        <p><strong>УВАГА!</strong> Зьменныя больш нізкага ўзроўню ня проста перакрываюць зьменныя з тым жа імем больш высокага ўзроўню (як, напрыклад, у <a href="../javaRef/index.html"><span class="term">Java</span></a>):</p>
+        <p><strong>УВАГА!</strong> Зьменныя больш нізкага ўзроўню ня проста перакрываюць зьменныя з тым жа імем больш высокага ўзроўню (як, напрыклад, у <a href="../javaRef/index.html"><i>Java</i></a>):</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           verb = 'rescued'
           ['sedated', 'sprinkled', 'electrocuted'].each do |verb|
@@ -439,21 +800,21 @@
           print b                 # NameError: не існуе такой зьменнай ці мэтаду
         ]]></script>
 
-        <h3><a name="LangParts_Variables_InstanceVar">Зьменныя экзэмпляраў</a></h3>
+        <h3><a name="LangParts_Variables_InstanceVar" href="#LangParts_Variables_InstanceVar">Зьменныя экзэмпляраў</a></h3>
         <p>Зьменныя, каторыя пачынаюцца са знака &#64;, зьяўляюцца зьменнымі <strong>экзэмпляраў</strong> <a href="#LangParts_Classes">клясаў</a>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         @x, @y
         ]]></script>
         <p>Яны пазначаюць характарыстыку гэтага асабістага экзэмпляру. Напрыклад, каб пазначыць шырыню ўваходных дзьвярэй трэба ўвесьці зьменную <code class="var">&#64;width</code> у экзэмпляр <code class="local_var">front_door</code> клясы <code class="class">Door</code>.</p>
 
-        <h3><a name="LangParts_Variables_ClassVar">Зьменныя клясаў</a></h3>
+        <h3><a name="LangParts_Variables_ClassVar" href="#LangParts_Variables_ClassVar">Зьменныя клясаў</a></h3>
         <p>Зьменныя яшчэ больш высокага ўзроўню (у параўнаньні зь лякальнымі і экзэплярнымі)&nbsp;&mdash; зьменныя <strong><a href="#LangParts_Classes">клясаў</a></strong>. Яны пачынаюцца з падвойнага знака &#64;:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         @@x, @@y
         ]]></script>
         <p>І пазначаюць характарыстыку ўсёй клясы (усіх экзэмпляраў гэтай клясы). Зьяўляюцца аналягамі статычных зьменных у <a href="../javaRef/index.html"><span class="term">Java</span></a>.</p>
 
-        <h3><a name="LangParts_Variables_GlobalVar">Глябальныя зьменныя</a></h3>
+        <h3><a name="LangParts_Variables_GlobalVar" href="#LangParts_Variables_GlobalVar">Глябальныя зьменныя</a></h3>
         <p>Ну і зьменнымі найбольш высокага ўзроўню зьяўляюцца глябальныя зьменныя. Яны пачынаюцца са знака &#36; і даступны зь любога месца праграмы:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         $x, $y
@@ -515,7 +876,7 @@
         <h3><a name="LangParts_Operators_Ranges">Дыяпазону: <code>..</code> i <code>...</code></a></h3>
         <p>Гэтая апэрацыя служыць для стварэньня <a href="#Types_Ranges">дыяпазонаў</a> як аб&#39;ектаў, дыяпазонных выразаў, а таксама ўмоўных дыяпазонаў.</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          1..10                 # новы Range аб'ект, аналяг: Range.new(1,10)
+          1..10                 # новы Range аб#39;ект, аналяг: Range.new(1,10)
           x+1..x*x              # дыяпазонны выраз
           x==3..x==5            # умоўны дыяпазон
         ]]></script>
@@ -720,6 +1081,7 @@
         <h2><a name="LangParts_Classes">Клясы</a></h2>
 
         <h2><a name="LangParts_Methods">Мэтады</a></h2>
+        <p><a href="http://rubysource.com/functional-programming-techniques-with-ruby-part-ii/?utm_medium=email&utm_campaign=RubySource+3rd+April&utm_content=RubySource+3rd+April+CID_29d66d58498d41d09092a4ead0696666&utm_source=Newsletter&utm_term=Functional+Programming+Techniques+With+Ruby+Part+2">Functional Programming Techniques With Ruby</a></p>
         <p>Як ужо пазначалася вышэй мэтады&nbsp;&mdash; гэта запыты да аб&#8217;ектаў. Каб зрабіць выклік мэтаду, пазначаецца <a href="#LangParts_Variables">зьменная</a> ці <a href="#LangParts_Consts">канстанта</a>, пасьля каторай ставіцца кропка і потым імя мэтаду:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           front_door.open
@@ -1738,6 +2100,11 @@
         <p>Трэба памятаць, што <code class="keyword">true</code>, <code class="keyword">false</code> і <code class="keyword">nil</code>&nbsp;&mdash; аб&#39;екты, не лічбы. Гэта азначае, што <code class="keyword">false</code> і <code class="keyword">nil</code> ня тое ж самае, што <code>0</code>, а <code class="keyword">true</code> ня тое ж самае, што <code>1</code>. У месцах, дзе патрабуецца булеўскае значэньне, <code class="keyword">nil</code> трактуецца як <code class="keyword">false</code>, а значэньні адрозныя ад <code class="keyword">nil</code> і <code class="keyword">false</code> трактуюцца як <code class="keyword">true</code>.</p>
       </section>
 
+      <section>
+        <h1><a name="Methods" href="#Methods">Мэтады, працэдуры, лямбды</a></h1>
+        <p><i>RSpec</i>&nbsp;&ndash; гэта фрэймворк <i>Unit</i>-тэставаньня і функцыянальнага тэставаньня для <i>Ruby</i>. </p>
+      </section>
+
 <!--TODO-->
         <h2><a name="Types_Regexp">Рэгулярныя выразы</a></h2>
         <p>Рэгулярныя выразы (<i>regexp</i>)&nbsp;&mdash; пасьлядоўнасьць сымбаляў, заключаных паміж слэшаў:</p>
@@ -1748,6 +2115,37 @@
 <!--TODO-->
 
       <section>
+        <h1><a name="RSpec" href="#RSpec">RSpec</a></h1>
+        <p><i>RSpec</i>&nbsp;&ndash; гэта фрэймворк <i>Unit</i>-тэставаньня і функцыянальнага тэставаньня для <i>Ruby</i>. </p>
+
+блёк describe апісвае паводзіны клясы
+<br />
+тэсты запісваюцца пры дапамозе блёку it
+<br />
+блёкі before і after - выконваюцца да і пасьля тэстаў. :all - аднойчы перад усімі тэстамі, :each - перад кожным тэстам
+
+        <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
+          describe MyClass do
+            describe ".class_method_1" do
+            end
+
+            describe "#instance_method_1" do
+            end
+          end
+        ]]></script>
+
+
+        <p><a href="http://marakana.com/s/post/1145/efficient_rail_test-driven_development_course">http://marakana.com/s/post/1145/efficient_rail_test-driven_development_course</a></p>
+        <p><a href="http://betterspecs.org/">http://betterspecs.org/</a></p>
+        <p><a href="http://benscheirman.com/2011/05/dry-up-your-rspec-files-with-subject-let-blocks">http://benscheirman.com/2011/05/dry-up-your-rspec-files-with-subject-let-blocks</a></p>
+        <p><a href="http://eggsonbread.com/2010/03/28/my-rspec-best-practices-and-tips/">http://eggsonbread.com/2010/03/28/my-rspec-best-practices-and-tips/</a></p>
+        <p><a href="http://blog.emson.co.uk/2008/06/understanding-rspec-stories-a-tutorial/">http://blog.emson.co.uk/2008/06/understanding-rspec-stories-a-tutorial/</a></p>
+        <p><a href="http://blog.davidchelimsky.net/category/rspec/">http://blog.davidchelimsky.net/category/rspec/</a></p>
+        <p><a href="http://rubydoc.info/gems/rspec-core">http://rubydoc.info/gems/rspec-core</a></p>
+        <p><a href="http://rubydoc.info/find/github?q=RSpec">http://rubydoc.info/find/github?q=RSpec</a></p>
+      </section>
+
+      <section>
         <h1><a name="Gems">Gems</a></h1>
         <div class="refs">
           <ul>
@@ -1755,6 +2153,19 @@
             <li><a href="http://docs.rubygems.org/">Docs</a></li>
           </ul>
         </div>
+        <p><a href="http://rubygems.org/gems/airbrake">airbrake - Send your application errors to our hosted service and reclaim your inbox.</a></p>
+        <p>Pry: адладка тэстаў. </p>
+        <script type="syntaxhighlighter" class="brush: ruby; highlight: [2,4]"><![CDATA[
+          describe 'System Status (Resource Monitor)' do
+            require 'pry'
+            before(:all) do
+              binding.pry
+              @data = $dut.execute_ok('support_info', 'status', {})
+              @info = @data[:info]
+            end
+          ...
+        ]]></script>
+        <p>Выкананьне тэсту спыніцца на 4 радку з прапановай irb.</p>
 
         <h2><a name="Gems_DevKit">DevKit</a></h2>
         <div class="refs">
