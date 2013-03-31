@@ -13,7 +13,7 @@ p {margin-top: 10px;}
 q {font-style: italic;}
 blockquote {color: #666; margin: 10px 30px 10px;}
 
-code {color: #111; padding: 0 3px; @include text-shadow(rgba(0, 0, 0, 0.4) 0 0 1px);}
+code {background-color: #EEE; @include border-radius(4px); color: #000; padding: 0 5px;}
 .syntaxhighlighter code {@include text-shadow(none);}
 code.elem, code.at_rule, code.keyword {color: #006699;}
 code.attr, code.local_var {color: #76923c;}
@@ -93,7 +93,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
 #main {left: 378px; margin-bottom: 20px; padding-right: 20px; position: absolute; top: 20px; z-index: -100;
   header {color: #222222; font: 50pt $goudy-old-style-font-stack; text-align: center; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);}
 
-  h1, h2, h3, h4 {color: #222222; font-weight: normal; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+  h1, h2, h3, h4, h5 {color: #222222; font-weight: normal; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
     a, a:active, a:visited { color: #222222; }
     a:hover { color: #222222; }
   }
@@ -101,6 +101,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   h2 {border-bottom: 1px solid #222222; font-size: 32pt; font-variant: small-caps; margin: 40px 0 20px -30px;}
   h3 {font-size: 24pt; margin: 30px 0 15px -30px;}
   h4 {font-size: 18pt; margin: 25px 0 10px 0;}
+  h5 {font-size: 14pt; margin: 20px 0 0 0;}
 
   ol, ul {margin-bottom: 0.5em; margin-top: 0.5em;}
 
