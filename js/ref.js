@@ -4,10 +4,10 @@
       content_subsections = content_sections.find("li"),
       sections = $("article#main").find("section");
 
-  sections.find("h1 a").waypoint(function(event, direction) {
+  sections.find("h1").waypoint(function(event, direction) {
     if (direction === "down") {
-      var name = $(this).attr("name");
-      activateContentSection($("ul.tree a[href='#" + name + "']").parent("li"));
+      var id = $(this).attr("id");
+      activateContentSection($("ul.tree a[href='#" + id + "']").parent("li"));
     }
   }, {
     offset: "80%"
@@ -15,26 +15,26 @@
 
   sections.waypoint(function(event, direction) {
     if (direction === "up") {
-      var name = $(this).find("h1 a").attr("name");
-      activateContentSection($("ul.tree a[href='#" + name + "']").parent("li"));
+      var id = $(this).find("h1").attr("id");
+      activateContentSection($("ul.tree a[href='#" + id + "']").parent("li"));
     }
   }, {
     offset: "bottom-in-view"
   });
 
-  sections.find("h2 a, h3 a, h4 a").waypoint(function(event, direction) {
+  sections.find("h2, h3, h4").waypoint(function(event, direction) {
     if (direction === "down") {
-      var name = $(this).attr("name");
-      activateContentSubsection($("ul.tree a[href='#" + name + "']").parent("li"));
+      var id = $(this).attr("id");
+      activateContentSubsection($("ul.tree a[href='#" + id + "']").parent("li"));
     }
   }, {
     offset: "60%"
   });
 
-  sections.find("h2 a, h3 a, h4 a").waypoint(function(event, direction) {
+  sections.find("h2, h3, h4").waypoint(function(event, direction) {
     if (direction === "up") {
-      var name = $(this).attr("name");
-      activateContentSubsection($("ul.tree a[href='#" + name + "']").parent("li"));
+      var id = $(this).attr("id");
+      activateContentSubsection($("ul.tree a[href='#" + id + "']").parent("li"));
     }
   }, {
     offset: "20%"
