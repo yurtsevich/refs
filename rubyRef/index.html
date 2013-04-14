@@ -41,249 +41,7 @@
 </head>
 
 <body>
-
   <div id="container">
-    <div id="index">
-      <div id="main_index">
-        <ul>
-          <li><a href="../htmlRef/index.html">HTML</a></li>
-          <li><a href="../cssRef/index.html">CSS</a></li>
-          <li><a href="../jsRef/index.html">JS</a></li>
-          <li><a href="../webRef/index.html">Web</a></li>
-        </ul>
-        <ul>
-          <li class="active"><a href="../rubyRef/index.html">Ruby</a></li>
-          <li><a href="../railsRef/index.html">Rails</a></li>
-        </ul>
-        <ul>
-          <li><a href="../gitRef/index.html">Git</a></li>
-        </ul>
-        <div class="zip_link"><a href="../Manuals.zip" title="Архіў усіх даведнікаў адным файлам (~9 Mb)"></a></div>
-        <div class="github_link"><a href="https://github.com/yurtsevich/Manuals" title="Зыходнікі ўсіх даведнікаў на GitHub"></a></div>
-      </div>
-
-      <div id="content">
-        <ul class="tree">
-          <li><a href="#Links">Карысныя спасылкі</a>
-            <ul>
-              <li><a href="#Links_Home">Хатняя старонка</a></li>
-              <li><a href="#Links_Docs">Дакумэнтацыя</a></li>
-              <li><a href="#Links_API">API</a></li>
-              <li><a href="#Links_Refs">Даведнікі і кнігі</a>
-                <ul>
-                  <li><a href="#Links_Refs_Beginners">Пачаткоўцам</a></li>
-                  <li><a href="#Links_Refs_Intermediate">Адмыслоўцам</a></li>
-                </ul>
-              </li>
-              <li><a href="#Links_Gems">Gems</a></li>
-            </ul>
-          </li>
-
-          <li><a href="#Intro">Што такое Ruby?</a>
-            <ul>
-              <li><a href="#Intro_OOP">Аб&#8217;ектна-арыентаваная мова</a></li>
-              <li><a href="#Intro_IntuitiveNotation">Інтуітыўная натацыя</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#StructureExecution">Структура і выкананьне</a>
-            <ul>
-              <li class="liOpen"><a href="#StructureExecution_Lexic">Лексычная структура</a>
-                <ul>
-                  <li><a href="#StructureExecution_Lexic_Comments">Камэнтары</a>
-                    <ul>
-                      <li><a href="#StructureExecution_Lexic_Comments_EmbeddedDocuments">Убудаваныя дакумэнты</a></li>
-                      <li><a href="#StructureExecution_Lexic_Comments_ForDocumentation">Камэнтары для дакумэнтацыі</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#StructureExecution_Lexic_Literals">Літаралы</a></li>
-                  <li><a href="#StructureExecution_Lexic_Punctuation">Пунктуацыя</a></li>
-                  <li><a href="#StructureExecution_Lexic_Identifiers">Ідэнтыфікатары</a>
-                    <ul>
-                      <li><a href="#StructureExecution_Lexic_Identifiers_Punctuation">Пунктуацыя ў ідэнтыфікатарах</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#StructureExecution_Lexic_Keywords">Ключавыя словы</a></li>
-                  <li><a href="#StructureExecution_Lexic_Whitespaces">Прагалы</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#LangParts">Часткі мовы</a>
-            <ul>
-              <li><a href="#LangParts_Expressions">Выразы</a></li>
-              <li><a href="#LangParts_Variables">Зьменныя</a>
-                <ul>
-                  <li><a href="#LangParts_Variables_InstanceVar">Зьменныя экзэмпляраў</a></li>
-                  <li><a href="#LangParts_Variables_ClassVar">Зьменныя клясаў</a></li>
-                  <li><a href="#LangParts_Variables_GlobalVar">Глябальныя зьменныя</a></li>
-                </ul>
-              </li>
-              <li><a href="#LangParts_Consts">Канстанты</a></li>
-              <li><a href="#LangParts_Operators">Апэрацыі</a>
-                <ul>
-                  <li><a href="#LangParts_Operators_UnaryMinus">Унарныя <code>+</code> і <code>-</code></a></li>
-                  <li><a href="#LangParts_Operators_Exponentiation">Cтупеняваньне</a></li>
-                  <li><a href="#LangParts_Operators_Arithmetic">Арытмэтычныя</a></li>
-                  <li><a href="#LangParts_Operators_ShiftAppend">Зрух і дадаваньне</a></li>
-                  <li><a href="#LangParts_Operators_Bitwise">Бітавыя</a></li>
-                  <li><a href="#LangParts_Operators_Comparison">Параўнаньне</a></li>
-                  <li><a href="#LangParts_Operators_Equality">Роўнасьць</a></li>
-                  <li><a href="#LangParts_Operators_Boolean">Лягічныя</a></li>
-                  <li><a href="#LangParts_Operators_Ranges">Дыяпазону</a></li>
-                  <li><a href="#LangParts_Operators_Conditional">Умоўная</a></li>
-                  <li><a href="#LangParts_Operators_Defined">Праверка вызначэньня</a></li>
-                  <li><a href="#LangParts_Operators_Assignments">Прысваеньня</a>
-                    <ul>
-                      <li><a href="#LangParts_Operators_Assignments_LocalVars">Прысваеньне лякальным зьменным</a></li>
-                      <li><a href="#LangParts_Operators_Assignments_AttrsArrays">Прысваеньне атрыбутам і масівам</a></li>
-                      <li><a href="#LangParts_Operators_Assignments_Abbreviated">Скарочаныя формы прысваеньняў</a></li>
-                      <li><a href="#LangParts_Operators_Assignments_Parallel">Паралельныя прысваеньні</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#LangParts_Statements">Апэратары</a>
-                <ul>
-                  <li><a href="#LangParts_Statements_Blocks">Блёкі</a></li>
-                  <li><a href="#LangParts_Statements_BlockArguments">Аргумэнты блёкаў і ітэратары</a></li>
-                  <li><a href="#LangParts_Statements_Conditional">Умоўныя</a></li>
-                  <li><a href="#LangParts_Statements_Loops">Цыкляў</a></li>
-                  <li><a href="#LangParts_Statements_AlteringControlFlow">Зьмены струменю праграмы</a></li>
-                </ul>
-              </li>
-              <li><a href="#LangParts_Classes">Клясы</a></li>
-              <li><a href="#LangParts_Methods">Мэтады</a>
-                <ul>
-                  <li><a href="#LangParts_Methods_redo">redo</a></li>
-                </ul>
-              </li>
-              <li><a href="#LangParts_MethodArguments">Аргумэнты мэтадаў</a></li>
-              <li><a href="#LangParts_ClassMethods">Мэтады клясаў</a></li>
-              <li><a href="#LangParts_Blocks">Блёкі</a></li>
-              <li><a href="#LangParts_BlockArguments">Аргумэнты блёкаў</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#Types">Стандартныя тыпы</a>
-            <ul>
-              <li class="liOpen"><a href="#Types_Object">Object</a>
-                <ul>
-                  <li><a href="#Types_Object_Methods">Мэтады</a>
-                    <ul>
-                      <li><a href="#Types_Object_Methods_ID">Вызначэньне ID</a></li>
-                      <li><a href="#Types_Object_Methods_Class">Вызначэньне клясы</a></li>
-                      <li><a href="#Types_Object_Methods_InstanceOf">Прыналежнасьць да клясаў</a></li>
-                      <li><a href="#Types_Object_Methods_Compare">Апэрацыі параўнаньня</a></li>
-                      <li><a href="#Types_Object_Methods_nil">Праверка на <code class="keyword">nil</code></a></li>
-                      <li><a href="#Types_Object_Methods_Clone">Кланаваньне</a></li>
-                      <li><a href="#Types_Object_Methods_Freeze">Замарозка</a></li>
-                      <li><a href="#Types_Object_Methods_StrRepr">Радковае прадстаўленьне</a></li>
-                      <li><a href="#Types_Object_Methods_ClassStructure">Інспэкцыя структуры клясы</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="liOpen"><a href="#Types_Numbers">Лікі</a>
-                <ul>
-                  <li><a href="#Types_Numbers_Integers">Цэлыя</a></li>
-                  <li><a href="#Types_Numbers_Float">Рэчаісныя</a></li>
-                  <li><a href="#Types_Numbers_Methods">Мэтады</a>
-                    <ul>
-                      <li><a href="#Types_Numbers_Methods_Math">Матэматычныя апэрацыі</a></li>
-                      <li><a href="#Types_Numbers_Methods_Binary">Бінарныя апэрацыі</a></li>
-                      <li><a href="#Types_Numbers_Methods_Compare">Апэрацыі параўнаньня</a></li>
-                      <li><a href="#Types_Numbers_Methods_CriteriaCheck">Адпавяданьне пэўнаму крытэру</a></li>
-                      <li><a href="#Types_Numbers_Methods_NumberTransform">Лікавыя трасфармацыі</a></li>
-                      <li><a href="#Types_Numbers_Methods_Iterators">Ітэратары</a></li>
-                      <li><a href="#Types_Numbers_Methods_TypeTransform">Трасфармацыі у іншыя тыпы</a></li>
-                      <li><a href="#Types_Numbers_Methods_DivideModulo">Дзяленьне і вызначэньне астачы</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="liOpen"><a href="#Types_Enumerable">Пералічэньне</a>
-                <ul>
-                  <li><a href="#Types_Enumerable_Methods">Мэтады</a>
-                    <ul>
-                      <li><a href="#Types_Enumerable_Methods_Checking">Праверка элемэнтаў</a></li>
-                      <li><a href="#Types_Enumerable_Methods_Search">Пошук элемэнтаў</a></li>
-                      <li><a href="#Types_Enumerable_Methods_Rundown">Перабор элемэнтаў</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="liOpen"><a href="#Types_Strings">Сымбальныя чароды</a>
-                <ul>
-                  <li><a href="#Types_Strings_Methods">Мэтады</a>
-                    <ul>
-                      <li><a href="#Types_Strings_Methods_Size">Памер чарады</a></li>
-                      <li><a href="#Types_Strings_Methods_Compare">Параўнаньне чародаў</a></li>
-                      <li><a href="#Types_Strings_Methods_Array">Паэлемэнтны доступ</a></li>
-                      <li><a href="#Types_Strings_Methods_ContentTransforms">Мадыфікацыя зьместу</a></li>
-                      <li><a href="#Types_Strings_Methods_CaseTransforms">Мадыфікацыя рэгістру літар</a></li>
-                      <li><a href="#Types_Strings_Methods_Rundown">Паэлемэнтны перабор</a></li>
-                      <li><a href="#Types_Strings_Methods_Analysis">Разбор чарады</a></li>
-                      <li><a href="#Types_Strings_Methods_Encoding">Кадоўка знакаў</a></li>
-                      <li><a href="#Types_Strings_Methods_TypeTransforms">Трансфармацыя ў іншыя тыпы</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="liOpen"><a href="#Types_Arrays">Масівы</a>
-                <ul>
-                  <li><a href="#Types_Arrays_Methods">Мэтады</a>
-                    <ul>
-                      <li><a href="#Types_Arrays_Methods_Common">Агульнага прызначэньня</a></li>
-                      <li><a href="#Types_Arrays_Methods_StackQueue">Stack / Queue</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li class="liOpen"><a href="#Types_Hashes">Хэшы</a>
-                <!--ul>
-                  <li><a href="#Types_Ranges_AsSequences">Як пасьлядоўнасьці</a></li>
-                </ul-->
-              </li>
-              <li class="liOpen"><a href="#Types_Ranges">Дыяпазоны</a>
-                <ul>
-                  <li><a href="#Types_Ranges_AsSequences">Як пасьлядоўнасьці</a></li>
-                  <li><a href="#Types_Ranges_AsConditions">Як умовы</a></li>
-                  <li><a href="#Types_Ranges_AsIntervals">Як інтэрвалы</a></li>
-                  <li><a href="#Types_Ranges_Methods">Мэтады</a></li>
-                </ul>
-              </li>
-              <li><a href="#Types_Symbols">Сымбалі</a></li>
-              <li><a href="#Types_BooleanNil">true, false, nil</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#Methods">Мэтады, працэдуры, лямбды</a>
-            <ul>
-              <li><a href="#Methods_">...</a></li>
-            </ul>
-          </li>
-
-              <li class="liOpen"><a href="#Types_Regexp">Рэгулярныя выразы</a>
-                <!--ul>
-                  <li><a href="#Types_Ranges_AsSequences">Як пасьлядоўнасьці</a></li>
-                </ul-->
-              </li>
-
-          <li class="liOpen"><a href="#Gems">Gems</a>
-            <ul>
-              <li><a href="#Gems_DevKit">DevKit</a>
-                <ul>
-                  <li><a href="#Gems_DevKit_install">Усталёўка</a></li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-
     <article id="main">
       <header>
         Даведнік па Ruby
@@ -294,14 +52,14 @@
 
       <section>
         <aside class="warn">Дадзены даведнік разглядае працу з <i>Ruby</i> вэрсіі <code>1.9.2</code> у <i>Windows</i>-асяродку. Будзьце ўважлівы!</aside>
-        <h1><a name="Links" href="#Links">Карысныя спасылкі</a></h1>
-        <h2><a name="Links_Home" href="#Links_Home">Хатняя старонка</a></h2>
+        <h1 id="Links">Карысныя спасылкі</h1>
+        <h2 id="Links_Home">Хатняя старонка</h2>
         <p><a href="http://www.ruby-lang.org/">http://www.ruby-lang.org</a></p>
 
-        <h2><a name="Links_Docs" href="#Links_Docs">Дакумэнтацыя</a></h2>
+        <h2 id="Links_Docs">Дакумэнтацыя</h2>
         <p><a href="http://ruby-doc.org/">http://ruby-doc.org</a>&nbsp;&ndash; афіцыйная старонка, на якой сабраныя спасылкі да рознага кшталту дакумэнтацыі і літаратуры.</p>
 
-        <h2><a name="Links_API" href="#Links_API">API</a></h2>
+        <h2 id="Links_API">API</h2>
         <p>Ядро мовы: <a href="http://ruby-doc.org/ruby-1.9/index.html">http://ruby-doc.org/ruby-1.9/index.html</a></p>
         <p>Стандартныя бібліятэкі (<i>StdLib</i>):
           <ul>
@@ -311,32 +69,32 @@
         </p>
         <p><i>Ruby + Rails</i> (вельмі добра рэалізаваны пошук): <a href="http://railsapi.com/doc/rails-v3.0.1_ruby-v1.9.2/">http://railsapi.com/doc/rails-v3.0.1_ruby-v1.9.2</a></p>
 
-        <h2><a name="Links_Refs" href="#Links_Refs">Даведнікі і кнігі</a></h2>
-        <h3><a name="Links_Refs_Beginners" href="#Links_Refs_Beginners">Пачаткоўцам</a></h3>
+        <h2 id="Links_Refs">Даведнікі і кнігі</h2>
+        <h3 id="Links_Refs_Beginners">Пачаткоўцам</h3>
         <p><a href="http://www.rubyist.net/~slagell/ruby/">Ruby user's guide</a></p>
         <p><a href="http://rubylearning.com/satishtalim/tutorial.html">Core Ruby Programming</a></p>
         <p><a href="http://mislav.uniqpath.com/poignant-guide/">Poignant-guide</a>&nbsp;&ndash; сьцёбны, арыгінальны, але прыдатны толькі для першапачатковага паглыбленьня ў мову вучэбнік.</p>
 
-        <h3><a name="Links_Refs_Intermediate" href="#Links_Refs_Intermediate">Адмыслоўцам</a></h3>
+        <h3 id="Links_Refs_Intermediate">Адмыслоўцам</h3>
         <p><a href="http://www.ruby-doc.org/docs/ProgrammingRuby/">Programming Ruby</a>&nbsp;&ndash; электронны варыянт першага выданьня адпаведнай кнігі ад <a href="http://pragprog.com/">The Pragmatic Programmers</a>.</p>
         <p><a href="http://www.amazon.com/Ruby-Programming-Language-David-Flanagan/dp/0596516177">The Ruby Programming Language</a> (першае выданьне папяровай кнігі, напісанай <a href="http://www.amazon.com/David-Flanagan/e/B000APEZR4" title="Старонка, прысьвечаная Дэвіду Флэнэгэну на Amazon.com">Дэвідам Флэнэгэнам</a> і <a href="http://www.amazon.com/Yukihiro-Matsumoto/e/B001IGNN6I" title="Старонка, прысьвечаная Юкіхіро Мацумото на Amazon.com">Юкіхіро Мацумото</a> ад выдавецтва <a href="http://oreilly.com/" title="Хатняя старонка выдавецтва O&#39;Reilly">O&#39;Reilly</a>&nbsp;&ndash; на мой погляд лепшая крыніца, з тых што мне трапляліся, паглыбленага вывучэньня <i>Ruby</i>, але на жаль электроннага варыянту няма ў вольным доступе).</p>
 
-        <h2><a name="Links_Courses" href="#Links_Courses">Курсы</a></h2>
+        <h2 id="Links_Courses">Курсы</h2>
         <p>Курс на <a href="http://www.codecademy.com/">codecademy.com</a>: <a href="http://www.codecademy.com/tracks/ruby">http://www.codecademy.com/tracks/ruby</a></p>
 
-        <h2><a name="Links_Blogs" href="#Links_Blogs">Блогі</a></h2>
+        <h2 id="Links_Blogs">Блогі</h2>
         <p>Апошнія <i>Ruby &amp; Rails</i> навіны на <b>envylabs.com</b>: <a href="http://ruby5.envylabs.com/">http://ruby5.envylabs.com/</a></p>
 
-        <h2><a name="Links_Gems" href="#Links_Gems">Gems</a></h2>
+        <h2 id="Links_Gems">Gems</h2>
         <p>Хатняя старонка: <a href="http://rubygems.org/">http://rubygems.org</a></p>
         <p>Як шукаць і ўсталёўваць бібліятэкі: <a href="http://www.ruby-lang.org/en/libraries/">http://www.ruby-lang.org/en/libraries</a></p>
         <p>Bundler: <a href="http://gembundler.com/">http://gembundler.com</a></p>
       </section>
 
       <section>
-        <h1><a name="Intro" href="#Intro">Што такое Ruby?</a></h1>
+        <h1 id="Intro">Што такое Ruby?</h1>
 
-        <h2><a name="Intro_OOP" href="#Intro_OOP">Аб'ектна-арыентаваная мова</a></h2>
+        <h2 id="Intro_OOP">Аб'ектна-арыентаваная мова</h2>
         <p><i>Ruby</i> зьяўляецца цалкам аб'ектна-арыентаванай мовай праграмаваньня ў клясычным выглядзе. Усё, чым апэрыруе праграма на <i>Ruby</i>, зьяўляецца аб'ектам, і вынікі гэтых апэрацый таксама зьяўляюцца аб'ектамі. Аб'ектна-арыентаванае праграмаваньне характаразуецца тым, што распрацоўшчык спрабуе смадэляваць аб'ект рэальнага сьвету (возьмем у прыклад песьню) ў кодзе. У <i>Ruby</i> гэтыя аб'екты прадстаўляюцца клясамі. Клясы ўяўляюць зь сябе камбінацыю з стану (напр., назва песьні) і мэтадаў, якія апэрыруюць гэтым станам (напр., мэтад, каторы прайграе песьню).</p>
         <p>Калі аб'ект смадэляваны і адпаведная кляса напісаная, можна ствараць экзэмпляры гэтай клясы. Гэта адбываецца праз выклік канструктара&nbsp;&ndash; адмысловага мэтаду клясы, які звычайна называецца <code>new</code>.</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -353,7 +111,7 @@
         ]]></script>
         <p>Тое, што стаіць да кропкі, называецца <i>атрымальнікам</i> паведамленьня/запыту. Пасьля кропкі ідзе мэтад, які павінен быць выкліканы. Першы з прыкладаў вышэй пытаецца пра даўжыню (мэтад <code>length</code>) радка («<i>gin joint</i>»). У другім прыкладзе ў іншага радка пытаецца пра індэкс літары «<i>c</i>» у ім. У трэцім прыкладзе мы пытаемся ў лічбы пра яе абсалютнае значэньне, а ў чацьвёртым просім <code>sam</code>&#8217;а, каб ён прапеў (мэтад <code>play</code>) нам песьню (перададзены ў якасьці парамэтру аб'ект <code>aSong</code>).</p>
 
-        <h2><a name="Intro_IntuitiveNotation" href="#Intro_IntuitiveNotation">Інтуітыўная натацыя</a></h2>
+        <h2 id="Intro_IntuitiveNotation">Інтуітыўная натацыя</h2>
         <p>Ruby створаны такім чынам, каб код, напісаны на ім, быў інтуітыўна зразумелы. Напрыклад, наступны выраз:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         5.times { print "Odelay!" }
@@ -370,12 +128,12 @@
       </section>
 
       <section>
-        <h1><a name="StructureExecution" href="#StructureExecution">Структура і выкананьне</a></h1>
+        <h1 id="StructureExecution">Структура і выкананьне</h1>
 
-        <h2><a name="StructureExecution_Lexic" href="#StructureExecution_Lexic">Лексычная структура</a></h2>
+        <h2 id="StructureExecution_Lexic">Лексычная структура</h2>
         <p>Інтэрпрэтатар <i>Ruby</i> разьбірае ўвесь тэкст <i>Ruby</i>-праграмы на <i>лексэмы</i> (ці <i>tokens</i>). Лексэмы ўключаюць камэнтары, літаралы, пунктуацыю, ідэнтыфікатары і ключавыя словы. Разгледзім больш падрабязна кожную з гэтых групаў, а таксама зь якіх сымбаляў яны складаюцца.</p>
 
-        <h3><a name="StructureExecution_Lexic_Comments" href="#StructureExecution_Lexic_Comments">Камэнтары</a></h3>
+        <h3 id="StructureExecution_Lexic_Comments">Камэнтары</h3>
         <p>Камэнтары ў <i>Ruby</i> пачынаюцца са знака <code>#</code> і працягваюцца да канца радку. Сам знак <code>#</code> і ўсё, што ідзе за ім, ігнаруецца інтэрпрэтатарам. Калі знак <code>#</code> сустракаецца ў сымбальнай чарадзе альбо ў рэгулярным выразе, тады ён зьяўляецца часткай чарады ці рэгулярнага выразу і не пачынае камэнтар.</p>
         <p>Камэнтары на шмат радкоў робяцца праз зьмяшчэньне знаку <code>#</code> у пачатку кожнага радку:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -386,7 +144,7 @@
         ]]></script>
         <p>У <i>Ruby</i> няма эквіваленту ўнутрырадковага <i>C</i>-падобнага камэнтару: <code>/*...*/</code>.</p>
 
-        <h4><a name="StructureExecution_Lexic_Comments_EmbeddedDocuments" href="#StructureExecution_Lexic_Comments_EmbeddedDocuments">Убудаваныя дакумэнты</a></h4>
+        <h4 id="StructureExecution_Lexic_Comments_EmbeddedDocuments">Убудаваныя дакумэнты</h4>
         <p><i>Ruby</i> падтрымлівае яшчэ адзін спосаб рабіць шматрадковыя камэнтары, які завецца <i>убудаваныя дакумэнты</i> (<i>embedded documents</i>). Такі камэнтар пачынаецца радком, які ў самым сваім пачатку зьмяшчае <code>=begin</code>, а сканчаецца радком, які ў самым сваім пачатку зьмяшчае <code>=end</code>:</p>
         <p>Камэнтары для дакумэнтацыі павінны зьмяшчацца непасрэдна перад модулем, клясай альбо мэтадам, які яны апісваюць, і маюць адмысловыя правілы фарматаваньня, некаторыя зь якіх глядзі ў прыкладзе:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -396,7 +154,7 @@
         ]]></script>
         <p>Прычым знак роўнасьці абавязкова павінен быць першым знакам адпаведных радкоў. Як вынікае з назвы гэтыя камэнтары прызначаны ў тым ліку для ўстаўкі вялікіх фрагмэнтаў дакумэнтацыі альбо для ўбудаваньня фрагмэнтаў зь іншых моваў праграмаваньня (як <code><i><a href="../htmlRef/index.html">HTML</a></i></code> альбо <i>SQL</i>). Гэтыя ўбудаваныя дакумэнты звычайна прызначаныя для апрацоўкі староньнімі прыладамі ці дадаткамі, якія апрацоўваюць зыходны код <i>Ruby</i>, а пасьля лексэмы <code>=begin</code> звычайна пазначаецца ідэнтыфікатар, які кажа для якой прылады ці дадатку прызначаецца дакумэнт.</p>
 
-        <h4><a name="StructureExecution_Lexic_Comments_ForDocumentation" href="#StructureExecution_Lexic_Comments_ForDocumentation">Камэнтары для дакумэнтацыі</a></h4>
+        <h4 id="StructureExecution_Lexic_Comments_ForDocumentation">Камэнтары для дакумэнтацыі</h4>
         <p>У <i>Ruby</i> маецца магчымасьць вымаць камэнтары з тэксту праграмы, каб ствараць дакумэнтацыю па праграме. <mark>Спасылка на <i>rdoc</i></mark></p>
         <p>Камэнтары для дакумэнтацыі павінны зьмяшчацца непасрэдна перад модулем, клясай альбо мэтадам, які яны апісваюць, і маюць адмысловыя правілы фарматаваньня, некаторыя зь якіх глядзі ў прыкладзе:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -436,7 +194,7 @@
           #
         ]]></script>
 
-        <h3><a name="StructureExecution_Lexic_Literals" href="#StructureExecution_Lexic_Literals">Літаралы</a></h3>
+        <h3 id="StructureExecution_Lexic_Literals">Літаралы</h3>
         <p>Літаралы&nbsp;&ndash; гэта значэньні, якія сустракаюцца непасрэдна ў тэксьце праграмы. Гэта ўключае лікі, сымбальныя чароды і рэгулярныя выразы. (Іншыя літаралы, як масівы альбо хэшы, не зьяўляюцца асобнымі лексэмамі, але зьяўляюцца больш складанымі выразамі.) Сынтаксіс лічбавых і сымбальных літаралаў у <i>Ruby</i> насамрэч даволі складаны (<mark>глядзі разьдзел ....</mark>), але на дадзеным этапе дастаткова атрымаць спрошчанае іх разуменьне:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         1       # Цэлалікавы літарал
@@ -446,10 +204,10 @@
         /three/ # Літарал рэгулярнага выразу
         ]]></script>
 
-        <h3><a name="StructureExecution_Lexic_Punctuation" href="#StructureExecution_Lexic_Punctuation">Пунктуацыя</a></h3>
+        <h3 id="StructureExecution_Lexic_Punctuation">Пунктуацыя</h3>
         <p>У гэтую групу ўваходзяць ня толькі самі знакі пунктуацыі, як коска, кропка, двукроп'е і іншыя, якія служаць для групаваньня альбо аддзяленьня выразаў, аргумэнтаў мэтадаў, індэксаў масіваў, а таксама для абмежаваньня сымбальных чародаў, рэгулярных выразаў і іншага. Уваходзяць сюды і розныя знакі <mark>апэрацыяў</mark>.</p>
 
-        <h3><a name="StructureExecution_Lexic_Identifiers" href="#StructureExecution_Lexic_Identifiers">Ідэнтыфікатары</a></h3>
+        <h3 id="StructureExecution_Lexic_Identifiers">Ідэнтыфікатары</h3>
         <p>Ідэнтыфікатар&nbsp;&ndash; гэта інакш імя. <i>Ruby</i> выкарыстоўвае ідэнтыфікатары, каб даваць імёны зьменным, мэтадам, клясам і іншаму. Яны могуць складацца з літараў, лічбаў і знаку падкрэсьліваньня, пры гэтым у якасьці яго першага сымбалю ня можа быць лічба. Калі ідэнтыфікатар пачынаецца з вялікай літары, інтэрпрэтатар <i>Ruby</i> аўтаматычна ўспрыме яго за імя канстанты. Ніжэй прыводзяцца прыклады розных ідэнтыфікатараў:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         i
@@ -461,7 +219,7 @@
         <p>Па дамоўленасьці, калі ідэнтыфікатар (не канстанта) складаецца зь некалькіх словаў, тады паміж словамі зьмяшчаецца знак падкрэсьліваньня: <code>like_this</code>, а канстанты запісваюцца так: <code>LikeThis</code>, альбо так: <code>LIKE_THIS</code>.</p>
         <p>Як можна было зразумець з вышэйсказанага, у <i>Ruby</i> малыя і вялікія літары маюць адрозьненьне. Напрыклад, ключавое слова <code>end</code> гэта ня тое ж самае, што ключавое слова <code>END</code>.</p>
 
-        <h4><a name="StructureExecution_Lexic_Identifiers_Punctuation" href="#StructureExecution_Lexic_Identifiers_Punctuation">Пунктуацыя ў ідэнтыфікатарах</a></h4>
+        <h4 id="StructureExecution_Lexic_Identifiers_Punctuation">Пунктуацыя ў ідэнтыфікатарах</h4>
         <p>У пачатку ці ў канцы ідэнтыфікатараў могуць стаяць знакі пунктуацыі (альбо адмысловыя сымбалі), якія маюць наступнае значэньне:</p>
         <table>
           <tr>
@@ -497,7 +255,7 @@
         ]]></script>
         <p>Заўважце таксама, што некаторыя <mark>апэрацыі</mark> <i>Ruby</i> рэалізаваныя як мэтады, каб клясы маглі перавызначаць іх пад свае ўласныя патрэбы.</p>
 
-        <h3><a name="StructureExecution_Lexic_Keywords" href="#StructureExecution_Lexic_Keywords">Ключавыя словы</a></h3>
+        <h3 id="StructureExecution_Lexic_Keywords">Ключавыя словы</h3>
         <p>Наступныя ключавыя словы маюць адмысловае значэньне ў <i>Ruby</i> і будуць асаблівым чынам апрацаваныя яго парсэрам:</p>
         <table class="list" id="keywords">
           <tbody>
@@ -734,10 +492,10 @@
           </tbody>
         </table>
 
-        <h3><a name="StructureExecution_Lexic_Whitespaces" href="#StructureExecution_Lexic_Whitespaces">Прагалы</a></h3>
+        <h3 id="StructureExecution_Lexic_Whitespaces">Прагалы</h3>
         <p>Прагалы, знакі табуляцыі, пераносы радку&nbsp;&ndash; усе яны не зьяўляюцца лексэмамі, але падзяляюць лексэмы адну ад другой, якія б інакш зьліліся ў адну лексэму. Акрамя гэтай функцыі ў агульным выпадку прагалы ігнаруюцца інтэрпрэтатарам, але некаторыя зь іх выконваюць яшчэ дадатковыя, пры гэтым важныя функцыі. <i>Ruby</i> мае выразную, але і складаную граматыку, і існуюць выпадкі, калі ўстаўка ці выдаленьне некаторых відаў прагалаў можа зьмяніць сэнс праграмы. Хаця гэтых выпадкаў і ня шмат, іх трэба ведаць.</p>
 
-        <h4><a name="StructureExecution_Lexic_Whitespaces_Newlines" href="#StructureExecution_Lexic_Whitespaces_Newlines">Пераносы радку</a></h4>
+        <h4 id="StructureExecution_Lexic_Whitespaces_Newlines">Пераносы радку</h4>
         <p>Найбольш важная залежнасьць ад прагалаў&nbsp;&ndash; гэта пераносы радку ў якасьці маркераў канца выразаў. У мовах праграмаваньня як <i>C</i> ці <i>Java</i> кожны выраз павінен сканчацца кропкай з коскай. Гэтак жа можна рабіць і ў <i>Ruby</i>, але гэта абавязкова толькі ў выпадку, калі патрэбна зьмясьціць некалькі выразаў у адным радку. Інакш, па дамоўленасьці, кропка з коскай не павінна ўжывацца. Але без кропкі з коскай інтэрпрэтатар павінен сам нейкім чынам зразумець дзе знаходзіцца канец выразу. Таму, калі фрагмэнт коду на адным радку можа быць сынтаксічна завершаным выразам, <i>Ruby</i> трактуе знак пераносу радку як азнаку канца выразу. Інакш ён працягвае аналізаваць код на наступным радку.</p>
         <p>Калі кожны выраз зьмяшчаецца на асобным радку, тады ня ўзьнікне праблемаў, але калі ёсьць выразы, якія займаюць больш аднаго радку, трэба зрабіць перанос выразу такім чынам, каб <i>Ruby</i> ня здолеў інтэрпрэтаваць фрагмэнт на першым з гэтых радкоў як асобны выраз. Напрыклад, наступны код складзе <code>x</code> з <code>y</code> і назначыць суму зьменнай <code>total</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -753,18 +511,18 @@
       </section>
 
       <section>
-        <h1><a name="LangParts">Часткі мовы</a></h1>
+        <h1 id="LangParts">Часткі мовы</h1>
         <p>Любая мова, у тым ліку і праграмаваньня, складаецца з пэўных частак. Разгледзім часткі, зь якіх складаецца <i>Ruby</i>.</p>
 
 
-        <h2><a name="LangParts_Expressions">Выразы</a></h2>
+        <h2 id="LangParts_Expressions">Выразы</h2>
         <p>Сынтакс <i>Ruby</i> цэнтруецца вакол выразаў. Напрыклад, элемэнты кіраваньня плыньню праграмы, кшталту <code>if</code> у любой іншай мове праграмаваньня называюцца апэратарамі (умоўным апэратарам у дадзеным выпадку), а ў <i>Ruby</i> гэта таксама выразы і яны вяртаюць значэньні:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           minimum = if x < y then x else y end
         ]]></script>
         <p>Хаця ня ўсе зь іх вяртаюць зьмястоўныя значэньні. Напрыклад, апэратар цыклю <code>while</code> ці вызначэньне <a href="#LangParts_Methods">мэтаду</a> вяртаюць <code>nil</code>.</p>
 
-        <h2><a name="LangParts_Variables">Зьменныя</a></h2>
+        <h2 id="LangParts_Variables">Зьменныя</h2>
         <p>Зьменныя&nbsp;&mdash; гэта імёны аб&#8217;ектаў ці значэньняў. Яны могуць састаяць з літараў, лічбаў і знака падкрэсьліваньня. Прыклад:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           single_fee = 2.50                       #=> даем імя значэньню кошта ўваходнага білета
@@ -797,27 +555,27 @@
           print b                 # NameError: не існуе такой зьменнай ці мэтаду
         ]]></script>
 
-        <h3><a name="LangParts_Variables_InstanceVar" href="#LangParts_Variables_InstanceVar">Зьменныя экзэмпляраў</a></h3>
+        <h3 id="LangParts_Variables_InstanceVar">Зьменныя экзэмпляраў</h3>
         <p>Зьменныя, каторыя пачынаюцца са знака &#64;, зьяўляюцца зьменнымі <strong>экзэмпляраў</strong> <a href="#LangParts_Classes">клясаў</a>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         @x, @y
         ]]></script>
         <p>Яны пазначаюць характарыстыку гэтага асабістага экзэмпляру. Напрыклад, каб пазначыць шырыню ўваходных дзьвярэй трэба ўвесьці зьменную <code class="var">&#64;width</code> у экзэмпляр <code class="local_var">front_door</code> клясы <code class="class">Door</code>.</p>
 
-        <h3><a name="LangParts_Variables_ClassVar" href="#LangParts_Variables_ClassVar">Зьменныя клясаў</a></h3>
+        <h3 id="LangParts_Variables_ClassVar">Зьменныя клясаў</h3>
         <p>Зьменныя яшчэ больш высокага ўзроўню (у параўнаньні зь лякальнымі і экзэплярнымі)&nbsp;&mdash; зьменныя <strong><a href="#LangParts_Classes">клясаў</a></strong>. Яны пачынаюцца з падвойнага знака &#64;:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         @@x, @@y
         ]]></script>
         <p>І пазначаюць характарыстыку ўсёй клясы (усіх экзэмпляраў гэтай клясы). Зьяўляюцца аналягамі статычных зьменных у <a href="../javaRef/index.html"><span class="term">Java</span></a>.</p>
 
-        <h3><a name="LangParts_Variables_GlobalVar" href="#LangParts_Variables_GlobalVar">Глябальныя зьменныя</a></h3>
+        <h3 id="LangParts_Variables_GlobalVar">Глябальныя зьменныя</h3>
         <p>Ну і зьменнымі найбольш высокага ўзроўню зьяўляюцца глябальныя зьменныя. Яны пачынаюцца са знака &#36; і даступны зь любога месца праграмы:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         $x, $y
         ]]></script>
 
-        <h2><a name="LangParts_Consts">Канстанты</a></h2>
+        <h2 id="LangParts_Consts">Канстанты</h2>
         <p>Канстанты як зьменныя, але пачынаюцца зь вялікай літары і не павінны зьмяняць сваё значэньня цягам працы праграмы. Хаця апошняе строга не забаронена&nbsp;&mdash; пры зьмене значэньня канстанты інтэрпрэтатар Ruby выдасьць толькі папярэджаньне. Акрамя гэтага ёсьць яшчэ адна асаблівасьць&nbsp;&mdash; імя канстант вядзецца запісваць ня проста зь вялікай літары, а ўсімі вялікімі літарамі:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           EMPIRE_STATE_BUILDING = "350 5th Avenue, NYC, NY"
@@ -831,21 +589,21 @@
           ::ARGV                                # Зьвяртаньне да глябальнай канстанты ARGV
         ]]></script>
 
-        <h2><a name="LangParts_Operators">Апэрацыі</a></h2>
+        <h2 id="LangParts_Operators">Апэрацыі</h2>
         <p>Апэрацыі выкарыстоўваюцца ў праграме для выкананьня матэматычных і лягічных апэрацый, для параўнаньня і інш. Шмат зь іх рэалізваныя праз <a href="#LangParts_Methods">мэтады</a>, і <a href="#LangParts_Classes">клясы</a> могуць вызначаць (ці перавызначаць) іх на свой капыл. Напрыклад, апэрацыі <code>+</code> і <code>*</code> дзейнічаюць па-рознаму для <a href="#Types_Numbers">лікаў</a> і <a href="#Types_Strings">сымбальных чародаў</a>. А ўва ўласных варыянтах гэтых клясаў можна ўвогуле вызначыць свае варыянты гэтых мэтадаў. Іншы прыклад, каторы ілюструе гэты падыход&nbsp;&mdash; апэрацыя <code>&lt;&lt;</code>. Лікавыя клясы <code class="class">Fixnum</code> і <code class="class">Bignum</code> рэалізуюць яе для бітавага зруху ўлева, у той час як іншыя клясы (<a href="#Types_Strings">сымбальныя чароды</a>, <a href="#Types_Arrays">масівы</a>) рэалізуюць яе як дадаваньне зьместу.</p>
 
-        <h3><a name="LangParts_Operators_UnaryMinus">Унарныя <code>+</code> і <code>-</code></a></h3>
+        <h3 id="LangParts_Operators_UnaryMinus">Унарныя <code>+</code> і <code>-</code></h3>
         <p>Унарная апэрацыя <code>-</code>, каторая зьмяшчаецца перад лікам, зьмяняе яго знак на адваротны. Унарны <code>+</code> перад лікам таксама дазваляецца, але ён не аказвае ніякага ўзьдзеяньня. Каб адрозьніваць гэтыя апэрацыя ад адпаведных арытмэтычных, мэтады, якія вызначаюць гэтыя апэрацыі, маюць назвы <code class="method">-@</code> і <code class="method">+@</code>.</p>
 
-        <h3><a name="LangParts_Operators_Exponentiation">Cтупеняваньне: <code>**</code></a></h3>
+        <h3 id="LangParts_Operators_Exponentiation">Cтупеняваньне: <code>**</code></h3>
         <p>Апэрацыя <code>**</code> падвышае першы аргумэнт у ступень другога. Другі аргумэнт можа быць дробавым (кубічны корань ад <code>x</code>: <code>x**(1.0/3.0)</code>), а таксама адмоўным (<code>x**-y</code> эквівалентна <code>1/(x**y)</code>).</p>
 
-        <h3><a name="LangParts_Operators_Arithmetic">Арытмэтычныя: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> і <code>%</code></a></h3>
+        <h3 id="LangParts_Operators_Arithmetic">Арытмэтычныя: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> і <code>%</code></h3>
         <p>Апэрацыя <code>+</code>, <code>-</code>, <code>*</code> і <code>/</code> выконваюць адпаведна арытмэтычнае складаньне, адніманьне, памнажэньне і дзяленьне сваіх лікавых аргумэнтаў. Цэлалікавае дзяленьне дае заўсёды цэлалікавы вынік, а астача адкідваецца. Астачу цэлалікавага дзяленьня можна вызначыць пры дапамозе апэрацыі <code>%</code>.</p>
         <p>Сымбальныя чароды выкарыстоўваюць апэрацыю <code>+</code> для спалучэньня некалькіх чародаў, апэрацыю <code>*</code> для паўтарэньня чародаў і апэрацыю <code>%</code> у якасьці аргумэнту мэтаду <code class="method">sprintf</code>.</p>
         <p>У выпадку масіваў апэрацыя <code>+</code> спалучае масівы, апэрацыя <code>-</code> аднімае масівы. Паводзіны апэрацыі <code>*</code> залежаць ад другога аргумэнту. Калі другім аргумэнтам зьяўляецца лік, тады у выніку атрымліваецца іншы масіў, у каторым першапачатковы паўтараецца столькі разоў, як гэты лік. Калі ж другі аргумэнт&nbsp;&mdash; сымбальная чарада, тады гэтая апэрацыя эквівалентна мэтаду <code class="method">join</code>.</p>
 
-        <h3><a name="LangParts_Operators_ShiftAppend">Зрух і дадаваньне: <code>&lt;&lt;</code> і <code>&gt;&gt;</code></a></h3>
+        <h3 id="LangParts_Operators_ShiftAppend">Зрух і дадаваньне: <code>&lt;&lt;</code> і <code>&gt;&gt;</code></h3>
         <p>Апэрацыі <code>&lt;&lt;</code> і <code>&gt;&gt;</code> у выпадку лікавых апэрандаў робяць бітавы зрух першага апэранду адпаведна ўлева і ўправа на колькасьць бітаў, пазначаных другім апэрандам.</p>
         <p>У выпадку сымбальных чародаў і масіваў апэрацыя <code>&lt;&lt;</code> дадае да левага свайго апэранду зьмест правага апэранду:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -855,22 +613,22 @@
           messages << message     #=> ["hello world"]
         ]]></script>
 
-        <h3><a name="LangParts_Operators_Bitwise">Бітавыя: <code>~</code>, <code>&amp;</code>, <code>|</code> і <code>^</code></a></h3>
+        <h3 id="LangParts_Operators_Bitwise">Бітавыя: <code>~</code>, <code>&amp;</code>, <code>|</code> і <code>^</code></h3>
         <p>Лягічныя пабітавыя апэрацыі (адпаведна) NOT, AND, OR і XOR.</p>
 
-        <h3><a name="LangParts_Operators_Comparison">Параўнаньне: <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> і <code>&lt;=&gt;</code></a></h4>
+        <h3 id="LangParts_Operators_Comparison">Параўнаньне: <code>&gt;</code>, <code>&gt;=</code>, <code>&lt;</code>, <code>&lt;=</code> і <code>&lt;=&gt;</code></h4>
         <p>Апэрацыі праверкі ці першы аргумэнт (адпаведна) большы за другі, большы альбо роўны другому, меншы другога, меншы альбо роўны другому. Апошняя з гэтых апэрацыяў (<code>&lt;=&gt;</code>) мае трохі адрознае значэньне. Гэта ўнівэрсальная апэрацыя параўнаньня: калі левы апэранд меньшы за правы, яна вяртае <code>-1</code>, калі левы апэранд большы за правы, яна вяртае <code>1</code>, і калі яны роўныя, вяртае <code>0</code>.</p>
 
-        <h3><a name="LangParts_Operators_Equality">Роўнасьць: <code>==</code>, <code>!=</code>, <code>=~</code>, <code>!~</code> і <code>===</code></a></h3>
+        <h3 id="LangParts_Operators_Equality">Роўнасьць: <code>==</code>, <code>!=</code>, <code>=~</code>, <code>!~</code> і <code>===</code></h3>
         <p>Апэрацыя <code>==</code> правярае ці яе апэранды &laquo;роўныя&raquo; (у разуменьні левага апэранду). Апэрацыя <code>!=</code> вяртае супрацьлеглае значэньне апэрацыі <code>==</code>.</p>
         <p>Апэрацыя <code>=~</code> правярае ці сымбальная чарада адпавядае шаблёну (<i>Regexp</i>), а апэрацыя <code>!~</code> робіць адваротнае.</p>
         <p>Апэрацыя <code>===</code> правярае ці ўваходзіць пэўнае значэньне ў пазначаны дыяпазон.</p>
 
-        <h3><a name="LangParts_Operators_Boolean">Лягічныя: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>, <code>and</code>, <code>or</code>, <code>not</code></a></h3>
+        <h3 id="LangParts_Operators_Boolean">Лягічныя: <code>&amp;&amp;</code>, <code>||</code>, <code>!</code>, <code>and</code>, <code>or</code>, <code>not</code></h3>
         <p>Вынікам апэрацыі <code>&amp;&amp;</code> будзе <code class="keyword">true</code>, калі абодва яе аргумэнта маюць значэньне <code class="keyword">true</code>, інакш вынікам будзе <code class="keyword">false</code>. Вынікам апэрацыі <code>||</code> будзе <code class="keyword">true</code>, калі хаця б адзін зь яе аргумэнтаў мае значэньне <code class="keyword">true</code>, а вынікам <code class="keyword">false</code> будзе толькі тады, калі абодва аргумэнта таксама маюць значэньне <code class="keyword">false</code>. Апэрацыя <code>!</code> робіць булеўскае адмаўленьне свайго адзінага аргумэнта, то бок вяртае <code class="keyword">false</code>, калі аргумэнт мае значэньне <code class="keyword">true</code>, і, наадварот, вяртае <code class="keyword">true</code>, калі калі аргумэнт мае значэньне <code class="keyword">false</code>.</p>
         <p>Апэрацыі <code>and</code>, <code>or</code> і <code>not</code> зьяўляюцца меньш прыярытэтнымі эквівалентамі адпаведна апэрацый <code>&amp;&amp;</code>, <code>||</code> і <code>!</code>.</p>
 
-        <h3><a name="LangParts_Operators_Ranges">Дыяпазону: <code>..</code> i <code>...</code></a></h3>
+        <h3 id="LangParts_Operators_Ranges">Дыяпазону: <code>..</code> i <code>...</code></h3>
         <p>Гэтая апэрацыя служыць для стварэньня <a href="#Types_Ranges">дыяпазонаў</a> як аб&#39;ектаў, дыяпазонных выразаў, а таксама ўмоўных дыяпазонаў.</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           1..10                 # новы Range аб#39;ект, аналяг: Range.new(1,10)
@@ -883,7 +641,7 @@
           1...10                # значэньні ад 1 да 9 уключна (без уліку апошняга значэньня)
         ]]></script>
 
-        <h3><a name="LangParts_Operators_Conditional">Умоўная: <code>?:</code></a></h3>
+        <h3 id="LangParts_Operators_Conditional">Умоўная: <code>?:</code></h3>
         <p>Гэта адзіная тэрнарная (мае 3 апэранда) апэрацыя ў Ruby. Першы апэранд зьмяшчаецца перад пытальнікам, другі&nbsp;&mdash; паміж пытальнікам і двукроп&#39;ем, а трэці&nbsp;&mdash; пасьля двукроп&#39;я. Апэрацыя спачатку вылічвае свой першы апэранд, калі ён ня роўны <code class="keyword">false</code> ці <code class="keyword">nil</code>, тады апэрацыя вяртае другі свой апэранд, у адваротным выпадку&nbsp;&mdash; свой трэці апэранд. Можна сказаць, што гэтая апэрацыя зьяўляецца кароткай формай <a href="#LangParts_Statements_Conditional">ўмоўнага апэратара</a> (<code>if/then/else</code>). Прыклады:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           "You have #{n} #{n==1 ? 'message' : 'messages'}"
@@ -899,7 +657,7 @@
           max = x>y ? (x>z ? x : z) : (y>z ? y : z)   # Эквівалентна папярэдняму
         ]]></script>
 
-        <h3><a name="LangParts_Operators_Defined">Праверка вызначэньня: <code class="keyword">defined</code><code>?</code></a></h3>
+        <h3 id="LangParts_Operators_Defined">Праверка вызначэньня: <code class="keyword">defined</code><code>?</code></h3>
         <p>Апэрацыя правярае ці вызначаны яе адзіны апэранд. </p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           # Прысвойвае значэньне f(x) зьменнай y, але толькі ў тым выпадку, калі
@@ -907,14 +665,14 @@
           y = f(x) if defined? f(x)
         ]]></script>
 
-        <h3><a name="LangParts_Operators_Assignments">Прысваеньня</a></h3>
+        <h3 id="LangParts_Operators_Assignments">Прысваеньня</h3>
         <p>Апэрацыі прысваеньня звычайна даволі інтуітыўна зразумелыя, але што тычыцца гэтых апэрацыяў у Ruby, трэба спыніцца на некалькіх асаблівасьцях. Па-першае, значэньнем выразу прысваеньня зьяўляецца правы апэранд апэрацыі. Па-другое, апэрацыя прысваеньня зьяўляецца права-асацыятыўнай. Гэтыя дзьве асаблівасьці прыводзяць да таго, што выразы наступнага выгляду дазваляльныя ў Ruby:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           x = y = z = 0           # Прысвойвае значэньне 0 зьменным x, y, і z
           x = (y = (z = 0))       # Эквівалентна папярэдняму з пазнакай парадку прысваеньня
         ]]></script>
 
-        <h4><a name="LangParts_Operators_Assignments_LocalVars">Прысваеньне лякальным зьменным</a></h4>
+        <h4 id="LangParts_Operators_Assignments_LocalVars">Прысваеньне лякальным зьменным</h4>
         <p>Наступнай асаблівасьцю зьяўляецца той факт, што ў Ruby няма яўных мэханізмаў у сынтаксе адрозьніць <a href="#LangParts_Variables">зьменную</a> ад <a href="#LangParts_Methods">мэтаду</a>. Гэта прыводзіць да таго, што выраз <code>x</code> у Ruby можа зьвяртацца да аднайменнай лякальнай зьменнай, альбо да аднайменнага мэтаду. Каб вырашыць гэтую неадназначнасьць, Ruby трактуе такі выраз як зьвяртаньне да лякальнай зьменнай, калі да гэтага было прысваеньне гэтай зьменнай:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Ambiguous
@@ -937,7 +695,7 @@
           end
         ]]></script>
 
-        <h4><a name="LangParts_Operators_Assignments_AttrsArrays">Прысваеньне атрыбутам і масівам</a></h4>
+        <h4 id="LangParts_Operators_Assignments_AttrsArrays">Прысваеньне атрыбутам і масівам</h4>
         <p>Прысваеньне <mark>атрыбутам</mark> і <a href="#Types_Arrays">масівам</a> у Ruby зьяўляецца на самай справе кароткай формай выклікаў адпаведных мэтадаў. Уявім, што аб&#39;ект <code>o</code> мае аб&#39;яўленьне мэтаду <code class="method">m=</code>, тады выраз <code>o.m</code> можа зьяўляцца левым апэрандам апэрацыі прысваеньня:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           o.m = v
@@ -956,7 +714,7 @@
           o.[]=(x,y,z)
         ]]></script>
 
-        <h4><a name="LangParts_Operators_Assignments_Abbreviated">Скарочаныя формы прысваеньняў</a></h4>
+        <h4 id="LangParts_Operators_Assignments_Abbreviated">Скарочаныя формы прысваеньняў</h4>
         <p>Скарочаныя формы прысваеньняў камбінуюць прысваеньне з іншай апэрацыяй. Найбольш ужываныя з такіх прысваеньняў&nbsp;&mdash; гэта апэрацыі інкрымэнту і дэкрымэнту:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           x += 1            # Эквівалентна x = x + 1
@@ -972,7 +730,7 @@
         ]]></script>
         <p>Такі выраз прывядзе да таго, што калі <code class="var">results</code> роўны <code class="keyword">nil</code>, будзе выкананы правы апэранд булеўскай апэрацыі <code>||</code> і <code class="var">results</code> будзе праініцыялізаваны пустым масівам. Інакш, калі ён ня роўны <code class="keyword">nil</code> (то бок ужо праініцыялізваны раней), ён застанецца нязьменным.</p>
 
-        <h4><a name="LangParts_Operators_Assignments_Parallel">Паралельныя прысваеньні</a></h4>
+        <h4 id="LangParts_Operators_Assignments_Parallel">Паралельныя прысваеньні</h4>
         <p>Гэта прысваеньні, у каторых альбо cправа, альбо зьлева, альбо і там, і там больш чым адзін апэранд. Гэтыя множныя апэранды падзяляюцца паміж сабой коскамі, і перад некаторымі зь іх можа стаяць зорачка (тлумачэньне будзе ніжэй).</p>
         <p>Некаторыя варыянты такіх прысваеньняў даволі відавочныя, але ёсьць і складаныя. Таму разгледзем такія прысваеньні больш падрабязна:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -1014,9 +772,9 @@
           x,(y,z) = 1,[2,3]         # З дужкамі: x=1; y=2; z=3
         ]]></script>
 
-        <h2><a name="LangParts_Statements">Апэратары</a></h2>
+        <h2 id="LangParts_Statements">Апэратары</h2>
 
-        <h3><a name="LangParts_Statements_Blocks">Блёкі</a></h3>
+        <h3 id="LangParts_Statements_Blocks">Блёкі</h3>
         <p>Пэўны код, заключаны ў фігурныя дужкі альбо паміж ключавымі словамі <code class="keyword">do</code> і <code class="keyword">end</code>, называецца блёкам. Блёкі неабходны для групаваньня некалькіх інструкцыяў:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         2.times {
@@ -1045,7 +803,7 @@
         In the block
         ]]></script>
 
-        <h3><a name="LangParts_Statements_BlockArguments">Аргумэнты блёкаў і ітэратары</a></h3>
+        <h3 id="LangParts_Statements_BlockArguments">Аргумэнты блёкаў і ітэратары</h3>
         <p>У блёкі могуць перадавацца аргумэнты. У гэтым выпадку яны зьмяшчаюцца ў самым пачатку блёку, заключаюцца ў знакі вертыкальных ліній і падзяляюцца коскамі:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         { |x, y| x + y }
@@ -1066,18 +824,18 @@
         elk
         ]]></script>
 
-        <h3><a name="LangParts_Statements_Conditional">Умоўныя</a></h3>
+        <h3 id="LangParts_Statements_Conditional">Умоўныя</h3>
 
-        <h3><a name="LangParts_Statements_Loops">Цыкляў</a></h3>
+        <h3 id="LangParts_Statements_Loops">Цыкляў</h3>
 
-        <h3><a name="LangParts_Statements_AlteringControlFlow">Зьмены струменю праграмы</a></h3>
-
-
+        <h3 id="LangParts_Statements_AlteringControlFlow">Зьмены струменю праграмы</h3>
 
 
-        <h2><a name="LangParts_Classes">Клясы</a></h2>
 
-        <h2><a name="LangParts_Methods">Мэтады</a></h2>
+
+        <h2 id="LangParts_Classes">Клясы</h2>
+
+        <h2 id="LangParts_Methods">Мэтады</h2>
         <p><a href="http://rubysource.com/functional-programming-techniques-with-ruby-part-ii/?utm_medium=email&utm_campaign=RubySource+3rd+April&utm_content=RubySource+3rd+April+CID_29d66d58498d41d09092a4ead0696666&utm_source=Newsletter&utm_term=Functional+Programming+Techniques+With+Ruby+Part+2">Functional Programming Techniques With Ruby</a></p>
         <p>Як ужо пазначалася вышэй мэтады&nbsp;&mdash; гэта запыты да аб&#8217;ектаў. Каб зрабіць выклік мэтаду, пазначаецца <a href="#LangParts_Variables">зьменная</a> ці <a href="#LangParts_Consts">канстанта</a>, пасьля каторай ставіцца кропка і потым імя мэтаду:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -1097,7 +855,7 @@
         ]]></script>
         <p>Як гэта працуе? У Ruby на самым версе герархіі клясаў знаходзіцца кляса <code class="class">Object</code>. Усе мэтады гэтай клясы, адпаведна, калі не перавызначыныя яўна, успадкоўваюцца ўсімі іншымі клясамі. Дык вось у <code class="class">Object</code> <mark>дамешваецца</mark> модуль <code class="class">Kernel</code> (<i>kernel</i> па ангельску азначае <i>ядро</i>). Адпаведна, <a href="http://www.ruby-doc.org/core/classes/Kernel.html">усе мэтады ядра мовы</a> даступны глябальна і без патрэбы пазначаць экземпляр нейкай клясы.</p>
 
-        <h3><a name="LangParts_Methods_redo">redo</a></h3>
+        <h3 id="LangParts_Methods_redo">redo</h3>
         <p>Выклік <code class="keyword">redo</code> у мэтадзе прыводзіць да яго ж выкліку яшчэ раз:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class LotteryTicket
@@ -1127,7 +885,7 @@
         ]]></script>
         <p>Калі ў выпадку выкліку <code>LotteryTicket.new_random</code> будуць згенерэны хаця б дзьве аднолькавыя лічбы, тады <code>picks.uniq.length != 3</code> прывядзе да кіданьня памылкі, але <code>rescue ArgumentError</code> зловіць яе, а <code class="keyword">redo</code> выкліча мэтад <code class="method">new_random</code> яшчэ раз і гэта ўсё столькі разоў, пакуль усе 3 лічбы ня будуць унікальнымі.</p>
 
-        <h2><a name="LangParts_MethodArguments">Аргумэнты мэтадаў</a></h2>
+        <h2 id="LangParts_MethodArguments">Аргумэнты мэтадаў</h2>
         <p>Некаторыя мэтады патрабуюць дадатковую інфармацыю, каб выканаць свае дзеяньні. Гэтую інфармацыю ім перадаюць пры дапамозе аргумэнтаў, каторыя ідуць пасьля імені мэтаду, заключаюцца ў дужкі (не абавязкова) і падзяляюцца коскамі:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         front_door.paint(3, :red)
@@ -1141,7 +899,7 @@
         end
         ]]></script>
 
-        <h2><a name="LangParts_ClassMethods">Мэтады клясаў</a></h2>
+        <h2 id="LangParts_ClassMethods">Мэтады клясаў</h2>
         <p>Мэтады клясаў (аналяг статычных мэтадаў у <a href="../javaRef/index.html"><span class="term">Java</span></a>) гэта запыты да клясаў, а не іх экзэмпляраў. Выклік адбываецца праз пазначэньне імені клясы, за каторым ідзе падвойнае двукропье і потым імя мэтаду:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           Door::new(:oak)
@@ -1151,7 +909,7 @@
 
         <!-- TODO!!!! -->
 
-        <h2><a name="Basics_classes_attrs">Атрыбуты</a></h2>
+        <h2 id="Basics_classes_attrs">Атрыбуты</h2>
         <p>Уводзіць у клясу зьменныя <code class="local_var">a</code> і <code class="local_var">b</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         attr :a, :b
@@ -1169,7 +927,7 @@
         attr_writer :a, :b
         ]]></script>
 
-        <h2><a name="Basics_classes_extending">Пашырэньне</a></h2>
+        <h2 id="Basics_classes_extending">Пашырэньне</h2>
         <p>Любая кляса, нават базавая, можа быць пашыраная:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class String
@@ -1190,13 +948,13 @@
 
 
       <section>
-        <h1><a name="Types">Стандартныя тыпы</a></h1>
+        <h1 id="Types">Стандартныя тыпы</h1>
         <p>Стандартныя тыпы, як лікі, радкі сымбаляў і інш.&nbsp;&mdash; гэта базавыя цаглінкі, з каторых будуецца Ruby-праграма.</p>
 
-        <h2><a name="Types_Object">Object</a></h2>
+        <h2 id="Types_Object">Object</h2>
         <p><code class="class">Object</code> у Ruby зьяўляецца базавай для астатніх клясаў, каторыя ўскосна ўспадкоўваюць ад яе. Хаця сама знаходзіцца не ў самым версе герархіі клясаў, а зьяўляецца спадчыннай ад клясы <code class="class">BasicObject</code>.</p>
 
-        <h3><a name="Types_Object_Methods">Мэтады</a></h3>
+        <h3 id="Types_Object_Methods">Мэтады</h3>
         <div class="refs">
           <ul>
             <li><a href="http://ruby-doc.org/ruby-1.9/classes/Object.html">Object</a></li>
@@ -1204,19 +962,19 @@
         </div>
         <p>Разгледзем у гэтым разьдзеле асноўныя мэтады, каторыя вызначаюцца ў <code class="class">Object</code>. Пры разглядзе іншых клясаў мэтады, прыведзеныя тут і сэнс каторых у тых клясах не зьмяняецца, рязглядацца ня будуць.</p>
 
-        <h4><a name="Types_Object_Methods_ID">Вызначэньне ID аб&#8217;екта</a></h4>
+        <h4 id="Types_Object_Methods_ID">Вызначэньне ID аб&#8217;екта</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # ніякія з любых двух аб'ектаў ня маюць аднолькавага ID
         "Hello".object_id #=> напр. 22628100
         ]]></script>
 
-        <h4><a name="Types_Object_Methods_Class">Вызначэньне клясы аб&#8217;екта</a></h4>
+        <h4 id="Types_Object_Methods_Class">Вызначэньне клясы аб&#8217;екта</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         1.class           #=> Fixnum
         "Hello".class     #=> String
         ]]></script>
 
-        <h4><a name="Types_Object_Methods_InstanceOf">Праверка прыналежнасьці да клясаў</a></h4>
+        <h4 id="Types_Object_Methods_InstanceOf">Праверка прыналежнасьці да клясаў</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         module M;    end
         class A
@@ -1236,7 +994,7 @@
         ]]></script>
         <p><code class="method">instance_of?</code>&nbsp;&mdash; строгая праверка прыналежнасьці аб&#8217;екта да пэўнай клясы (без уліку герархіі і ўключаных модуляў). <code class="method">kind_of?</code> (альбо <code class="method">is_a?</code>)&nbsp;&mdash; мяккая праверка прыналежнасьці аб&#8217;екта да клясы, то бок ня толькі непасрэднай клясы, але і ўсёй герархіі клясаў альбо ўключаных модуляў (гл. прыклад вышэй). Будзьце ўважлівымі тыя, хто пераходзіць да вывучэньня Ruby з <a href="../javaRef/index.html"><span class="term">Java</span></a>. Той сэнс, каторы рэалізаваны яваўскім <code class="method">instance_of</code>, у Ruby рэалізуецца мэтадам <code class="method">kind_of?</code> (альбо <code class="method">is_a?</code>), а не <code class="method">instance_of?</code>.</p>
 
-        <h4><a name="Types_Object_Methods_Compare">Апэрацыі параўнаньня</a></h4>
+        <h4 id="Types_Object_Methods_Compare">Апэрацыі параўнаньня</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # правярае ці спасылаюцца ідэнтыфікатары (зьменныя) на тыя ж самыя аб'екты
         a = "Hello"
@@ -1254,7 +1012,7 @@
         2 <=> 1           #=> 1
         ]]></script>
 
-        <h4><a name="Types_Object_Methods_nil">Праверка на <code class="keyword">nil</code></a></h4>
+        <h4 id="Types_Object_Methods_nil">Праверка на <code class="keyword">nil</code></h4>
         <p>Аб&#8217;ект, каторы нікуды не спасылаецца, ня проста "нішто", як напрыклад у <a href="../javaRef/index.html"><span class="term">Java</span></a>, але пусты аб&#8217;ект, у каторага можна выклікаць пэўныя мэтады. Адным з такіх мэтадаў і зьяўляецца праверка на тое, пусты аб&#8217;ект ці не:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         nil.nil?          #=> true
@@ -1265,7 +1023,7 @@
         a.nil?            #=> true
         ]]></script>
 
-        <h4><a name="Types_Object_Methods_Clone">Кланаваньне</a></h4>
+        <h4 id="Types_Object_Methods_Clone">Кланаваньне</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class Klass
             attr_accessor :str
@@ -1278,7 +1036,7 @@
         ]]></script>
         <p>Мэтады <code class="method">clone</code> і <code class="method">dup</code> у <code class="class">Object</code> падобны&nbsp;&mdash; яны капіруюць зьменныя аднаго экзэмпляру ў іншы. Пры гэтым капіруюцца спасылкі, а не значэньні. Але адрозьніваюцца яны тым, што мэтад <code class="method">clone</code> акрамя гэтага капіруе яшчэ і <a href="#Types_Object_Methods_Freeze"><code class="method">frozen</code></a>-стан экзэмпляру, а <code class="method">dup</code> гэтага ня робіць.</p>
 
-        <h4><a name="Types_Object_Methods_Freeze">Замарозка</a></h4>
+        <h4 id="Types_Object_Methods_Freeze">Замарозка</h4>
         <p>Мэтад <code class="method">freeze</code> прадухіляе аб&#8217;ект ад далейшых зьменаў.</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         a = [ "a", "b", "c" ]
@@ -1288,7 +1046,7 @@
                             #=> from prog.rb:4
         ]]></script>
 
-        <h4><a name="Types_Object_Methods_StrRepr">Радковае прадстаўленьне аб&#8217;ектаў</a></h4>
+        <h4 id="Types_Object_Methods_StrRepr">Радковае прадстаўленьне аб&#8217;ектаў</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class Klass
             attr_accessor :str
@@ -1300,7 +1058,7 @@
         ]]></script>
         <p>Мэтад <code class="method">inspect</code> вяртае радок, які ўтрымлівае чытэльнае чалавекам прадстаўленьне аб&#8217;екта. Мэтад <code class="method">to_s</code>, вызначаны ў <code class="class">Object</code>, вяртае імя клясы і ID аб&#8217;екта.</p>
 
-        <h4><a name="Types_Object_Methods_ClassStructure">Мэтады інспэкцыі структуры клясы</a></h4>
+        <h4 id="Types_Object_Methods_ClassStructure">Мэтады інспэкцыі структуры клясы</h4>
         <p>Асобнай групай стаяць мэтады інспэкцыі структуры клясы&nbsp;&mdash; вызначэнье якія ёсьць у аб&#8217;екта зьменныя, мэтады і іншыя атрыбуты:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class Klass
@@ -1338,14 +1096,14 @@
         instance_variable_defined?(:@b)       #=> false
         ]]></script>
 
-        <h2><a name="Types_Numbers">Лікі</a></h2>
+        <h2 id="Types_Numbers">Лікі</h2>
         <figure style="float: right;">
           <img alt="Герархія ўбудаваных лікавых клясаў" title="Герархія ўбудаваных лікавых клясаў" src="../images/ruby_numeric_types.png"/>
           <figcaption class="imgcaption">Герархія ўбудаваных лікавых клясаў</figcaption>
         </figure>
         <p>Ruby утрымлівае 5 убудаваных клясаў для прадстаўленьня цэлых і рэчаісных лікаў (гл. схему).</p>
 
-        <h3><a name="Types_Numbers_Integers">Цэлыя</a></h3>
+        <h3 id="Types_Numbers_Integers">Цэлыя</h3>
         <p>Цэлыя лікі (экзэмпляры базавай для ўсіх цэлых лічбаў клясы <code class="class">Integer</code>) складаюцца з пасьлядоўнасьці лічбаў, перад каторымі <i>можа</i> стаяць знак плюсу ці мінусу:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         1, 23, -10000
@@ -1384,7 +1142,7 @@
         ?\n             # код пераводу радка (0x0a)
         ]]></script>
 
-        <h3><a name="Types_Numbers_Float">Рэчаісныя</a></h3>
+        <h3 id="Types_Numbers_Float">Рэчаісныя</h3>
         <p>Рэчаісныя лікі (экзэмпляры клясы <code class="class">Float</code>) складаюцца з пасьлядоўнасьці лічбаў і нефіксаванай кропкі ці навуковай натацыі:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         3.14, -808.08, 12.043e-04
@@ -1394,7 +1152,7 @@
         1.e3            # у гэтым выпадку Ruby паспрабуе выклікаць мэтад e3 у цэлага 1
         ]]></script>
 
-        <h3><a name="Types_Numbers_Methods">Мэтады</a></h3>
+        <h3 id="Types_Numbers_Methods">Мэтады</h3>
         <div class="refs">
           <ul>
             <li><a href="http://ruby-doc.org/ruby-1.9/classes/Numeric.html">Numeric</a></li>
@@ -1407,7 +1165,7 @@
         </div>
         <p>Коратка пра мэтады, каторыя прадстаўляюцца лікамі (поўныя сьпісы і тлумачэньні даступныя па спасылкам зьлева):</p>
 
-        <h4><a name="Types_Numbers_Methods_Math">Матэматычныя апэрацыі</a></h4>
+        <h4 id="Types_Numbers_Methods_Math">Матэматычныя апэрацыі</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         1 + 2             #=> 3 (складаньне)
         5 - 3             #=> 2 (адніманьне)
@@ -1418,7 +1176,7 @@
         1.next            #=> 2 (інкрэмэнт, тое ж што і 1.succ)
         ]]></script>
 
-        <h4><a name="Types_Numbers_Methods_Binary">Бінарныя апэрацыі</a></h4>
+        <h4 id="Types_Numbers_Methods_Binary">Бінарныя апэрацыі</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         1 & 2             #=> 3 (бінарнае AND)
         1 ^ 5             #=> 4 (бінарнае XOR)
@@ -1429,7 +1187,7 @@
         4 << 1            #=> 8 (бінарны зрух улева, "хуткае памнажэньне на адпаведную ступень 2")
         ]]></script>
 
-        <h4><a name="Types_Numbers_Methods_Compare">Апэрацыі параўнаньня</a></h4>
+        <h4 id="Types_Numbers_Methods_Compare">Апэрацыі параўнаньня</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         1 < 2             #=> true (строгае меньш)
         1 > 2             #=> false (строгае больш)
@@ -1447,7 +1205,7 @@
         (1.0).eql?(1.0)   #=> true
         ]]></script>
 
-        <h4><a name="Types_Numbers_Methods_CriteriaCheck">Праверкі адпавяданьня пэўнаму крытэру</a></h4>
+        <h4 id="Types_Numbers_Methods_CriteriaCheck">Праверкі адпавяданьня пэўнаму крытэру</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # правярае ці лік цэлы:
         1.integer?        #=> true
@@ -1466,7 +1224,7 @@
         1.odd?            #=> true
         ]]></script>
 
-        <h4><a name="Types_Numbers_Methods_NumberTransform">Мэтады лікавых трасфармацый</a></h4>
+        <h4 id="Types_Numbers_Methods_NumberTransform">Мэтады лікавых трасфармацый</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # модуль ліку:
         -12.abs           #=> 12
@@ -1484,7 +1242,7 @@
         1.5.truncate      #=> 1 (тое ж што і to_i, to_int для рэчаісных лікаў)
         ]]></script>
 
-        <h4><a name="Types_Numbers_Methods_Iterators">Ітэратары</a></h4>
+        <h4 id="Types_Numbers_Methods_Iterators">Ітэратары</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         5.times { |i| print i, " " }        #=>0 1 2 3 4
         5.downto(1) { |i| print i, " " }    #=>5 4 3 2 1
@@ -1492,7 +1250,7 @@
         50.step(80, 5) { |i| print i, " " } #=>50 55 60 65 70 75 80
         ]]></script>
 
-        <h4><a name="Types_Numbers_Methods_TypeTransform">Мэтады трасфармацый у іншыя тыпы</a></h4>
+        <h4 id="Types_Numbers_Methods_TypeTransform">Мэтады трасфармацый у іншыя тыпы</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # трансфармацыя ў сымбаль, чый код прадстаўляе лік:
         65.chr                      #=> "A"
@@ -1512,7 +1270,7 @@
 
         ]]></script>
 
-        <h4><a name="Types_Numbers_Methods_DivideModulo">Мэтады дзяленьня і знаходжаньня астачы</a></h4>
+        <h4 id="Types_Numbers_Methods_DivideModulo">Мэтады дзяленьня і знаходжаньня астачы</h4>
         <p>Асобна спынімся на мэтадах дзяленьня і знаходжаньня астачы (рэшты) ад цэлага дзяленьня. Заўважым, што мэтад <code class="method">divmod</code> вяртае не адно, а масіў значэньняў. Прычым, калі <code>q, r = x.divmod(y)</code>, тады:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         q = floor(float(x)/float(y))
@@ -1539,10 +1297,10 @@
            -11.5 | -4 | &nbsp;&nbsp;2, &nbsp;-3.5 &nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.875 &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-3.5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp;-3.5
         </pre>
 
-        <h2><a name="Types_Enumerable">Пералічэньне</a></h2>
+        <h2 id="Types_Enumerable">Пералічэньне</h2>
         <p><mark>Модуль</mark> <code class="class">Enumerable</code> не зьяўляецца самастойнай клясай, але <mark>дамешкам</mark> да іншых клясаў, каб надаць ім уласьцівасьці калекцыяў аб&#39;ектаў.</p>
 
-        <h3><a name="Types_Enumerable_Methods">Мэтады</a></h3>
+        <h3 id="Types_Enumerable_Methods">Мэтады</h3>
         <div class="refs">
           <ul>
             <li><a href="http://ruby-doc.org/ruby-1.9/classes/Enumerable.html">Enumerable</a></li>
@@ -1550,7 +1308,7 @@
         </div>
         <p>Коратка пра мэтады, каторыя прадстаўляюцца пералічэньнямі (поўны сьпіс і тлумачэньне даступныя па спасылцы зьлева).</p>
 
-        <h4><a name="Types_Enumerable_Methods_Checking">Праверка элемэнтаў</a></h4>
+        <h4 id="Types_Enumerable_Methods_Checking">Праверка элемэнтаў</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           # правярае ці ўсе элемэнты задавальняюць умове;
           # калі ўмова не задана, правярае ці ўсе элемэнты не nil (і не false):
@@ -1576,7 +1334,7 @@
           ["ant", "bear", "cat"].include?("cat")                    #=> true
         ]]></script>
 
-        <h4><a name="Types_Enumerable_Methods_Search">Пошук элемэнтаў</a></h4>
+        <h4 id="Types_Enumerable_Methods_Search">Пошук элемэнтаў</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           # перадае кожны элемэнт пералічэньня ў блёк і вяртае першы зь іх, для каторага блёк вяртае true;
           # калі ніводнага не было знойдзена, вяртаецца nil:
@@ -1600,14 +1358,14 @@
           a.min                                                     #=> 1
         ]]></script>
 
-        <h4><a name="Types_Enumerable_Methods_Rundown">Перабор элемэнтаў</a></h4>
+        <h4 id="Types_Enumerable_Methods_Rundown">Перабор элемэнтаў</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           # выклікае ўнутраны блёк для кожнага элемэнту пералічэньня,
           # вяртае масіў, які ўтрымлівае вынік выкананьня блёку для кожнага з элемэнтаў:
           (1..4).collect {|i| i*i }                                 #=> [1, 4, 9, 16]
         ]]></script>
 
-        <h2><a name="Types_Strings">Сымбальныя чароды</a></h2>
+        <h2 id="Types_Strings">Сымбальныя чароды</h2>
         <p>Сымбальныя чароды&nbsp;&mdash; гэта пасьлядоўнасьць любых сымбаляў (літараў, лічбаў, знакаў прыпынку), якія ўзяты ў апострафы ці двукосьсе. Уключаюць у сябе <mark>дамешак</mark> <a href="#Types_Enumerable"><code class="class">Enumerable</code></a>.</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         "sealab", '2021', ці "These cartoons are hilarious!"
@@ -1628,7 +1386,7 @@
         "hello".index(?e)               #=> 1
         ]]></script>
 
-        <h3><a name="Types_Strings_Methods">Мэтады</a></h3>
+        <h3 id="Types_Strings_Methods">Мэтады</h3>
         <div class="refs">
           <ul>
             <li><a href="http://ruby-doc.org/ruby-1.9/classes/String.html">String</a></li>
@@ -1636,7 +1394,7 @@
         </div>
         <p>Коратка пра мэтады, каторыя прадстаўляюцца чародамі (поўны сьпіс і тлумачэньне даступныя па спасылцы зьлева).</p>
 
-        <h4><a name="Types_Strings_Methods_Size">Памер чарады</a></h4>
+        <h4 id="Types_Strings_Methods_Size">Памер чарады</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # правярае ці пустая чарада:
         "hello".empty?      #=> false
@@ -1647,7 +1405,7 @@
         "hi".size           #=> 2
         ]]></script>
 
-        <h4><a name="Types_Strings_Methods_Compare">Параўнаньне чародаў</a></h4>
+        <h4 id="Types_Strings_Methods_Compare">Параўнаньне чародаў</h4>
         <p>Акрамя <a href="#Types_Object_Methods_Compare">стандартных мэтадаў параўнаньня</a>, у <code class="class">String</code> яшчэ існуе мэтад параўнаньня чародаў аналягічны мэтаду <code class="class"><String>&lt;=&gt;</code>, але без уліку рэгістру літар:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         "abcdef".casecmp("abcde")     #=> 1
@@ -1656,7 +1414,7 @@
         "abcdef".casecmp("ABCDEF")    #=> 0
         ]]></script>
 
-        <h4><a name="Types_Strings_Methods_Array">Паэлемэнтны доступ</a></h4>
+        <h4 id="Types_Strings_Methods_Array">Паэлемэнтны доступ</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         a = "hello there"
         a[1]                  #=> "e" (доступ да сымбалю з індэксам 1)
@@ -1675,7 +1433,7 @@
         ]]></script>
         <p>Акрамя формы а-ля масіў, прыведзенай у прыкладзе вышэй, можна яшчэ ўжываць мэтад <code class="method">slice</code>&nbsp;&mdash; бязь зьмены зыходнай чарады, ці <code class="method">slice!</code>&nbsp;&mdash; са зьменай зыходнай чарады.</p>
 
-        <h4><a name="Types_Strings_Methods_ContentTransforms">Мадыфікацыя зьместу</a></h4>
+        <h4 id="Types_Strings_Methods_ContentTransforms">Мадыфікацыя зьместу</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # "абнуленьне" чарады:
         s = "Hello!"            #=> "Hello!"
@@ -1726,7 +1484,7 @@
         "hello".gsub(/(?<foo>[aeiou])/, '{\k<foo>}')  #=> "h{e}ll{o}"
         ]]></script>
 
-        <h4><a name="Types_Strings_Methods_CaseTransforms">Мадыфікацыя рэгістру літар</a></h4>
+        <h4 id="Types_Strings_Methods_CaseTransforms">Мадыфікацыя рэгістру літар</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # першая літара чарады - з вялікай літары, астатнія - малыя (існуе форма з !):
         "hello world".capitalize    #=> "Hello world"
@@ -1744,7 +1502,7 @@
         "cYbEr_PuNk11".swapcase     #=> "CyBeR_pUnK11"
         ]]></script>
 
-        <h4><a name="Types_Strings_Methods_Rundown">Паэлемэнтны перабор</a></h4>
+        <h4 id="Types_Strings_Methods_Rundown">Паэлемэнтны перабор</h4>
         <p>Існуюць 4 мэтады: <code class="method">bytes</code>, <code class="method">chars</code>, <code class="method">codepoints</code> і <code class="method">lines</code>, а таксама іх аналягі з прэфіксам <code>each_</code>. Першыя чатыры, калі ім перадаецца блёк, аналягічныя апошнім чатыром. Калі ж яны выклікаюцца бяз блёку, то проста вяртаюць пералічэньне з байтаў, сымбаляў, кодаў ці радкоў адпаведна.</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         "hello".bytes.to_a                      #=> [104, 101, 108, 108, 111]
@@ -1757,7 +1515,7 @@
         "hello\u0639".each_codepoint {|c| print c, ' ' }    #=> 104 101 108 108 111 1593
         ]]></script>
 
-        <h4><a name="Types_Strings_Methods_Analysis">Разбор чарады</a></h4>
+        <h4 id="Types_Strings_Methods_Analysis">Разбор чарады</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # ці пачынаецца чарада з пазначанай падчарады:
         "Hello".start_with?("He")       #=> true
@@ -1795,7 +1553,7 @@
         'hello'.match('(.)\1')          #=> #<MatchData "ll" 1:"l">
         ]]></script>
 
-        <h4><a name="Types_Strings_Methods_Encoding">Кадоўка знакаў</a></h4>
+        <h4 id="Types_Strings_Methods_Encoding">Кадоўка знакаў</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         # атрыманьне цяперашняй кадоўкі знакаў чарады:
         "Hello".encoding                #=> #<Encoding:IBM866> (аб'ект клясы Encoding)
@@ -1809,7 +1567,7 @@
         "\x80".force_encoding("UTF-8").valid_encoding?        #=> false
         ]]></script>
 
-        <h4><a name="Types_Strings_Methods_TypeTransforms">Трансфармацыя ў іншыя тыпы</a></h4>
+        <h4 id="Types_Strings_Methods_TypeTransforms">Трансфармацыя ў іншыя тыпы</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           # у рэчаісны лік:
           "123.45e1".to_f         #=> 1234.5
@@ -1825,7 +1583,7 @@
           "1100101".to_i(16)      #=> 17826049
         ]]></script>
 
-        <h2><a name="Types_Arrays">Масівы</a></h2>
+        <h2 id="Types_Arrays">Масівы</h2>
         <p>Масівы&nbsp;&mdash; гэта пасьлядоўнасьць значэньняў (неабавязкова аднолькавага тыпу), доступ да каторых можна атрымаць па іх парадкаваму нумару (індэксу). Нумарацыя элемэнтаў ў масіве пачынаецца з нуля. Нумараваць элемэнты можна ў тым ліку з канца, у гэтым выпадку індэкс будзе мець негатыўнае значэньне (<code>-1</code> адпавядае апошняму элемэнту, <code>-2</code>&nbsp;&mdash; перадапошняму і г.д.). Масівы ўключаюць у сябе дамешак <a href="#Types_Enumerable"><code class="class">Enumerable</code></a></p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           [1, 2, 3]                         # масіў лічбаў 1, 2, 3
@@ -1833,7 +1591,7 @@
           [1, 'coat', 5, 7, 'snowboard']    # разнародны масіў
         ]]></script>
 
-        <h3><a name="Types_Arrays_Methods">Мэтады</a></h3>
+        <h3 id="Types_Arrays_Methods">Мэтады</h3>
         <div class="refs">
           <ul>
             <li><a href="http://ruby-doc.org/ruby-1.9/classes/Array.html">Array</a></li>
@@ -1841,7 +1599,7 @@
         </div>
         <p>Коратка пра мэтады, уласьцівыя масівам (поўны сьпіс і тлумачэньне даступныя па спасылцы зьлева).</p>
 
-        <h4><a name="Types_Arrays_Methods_Common">Агульнага прызначэньня</a></h4>
+        <h4 id="Types_Arrays_Methods_Common">Агульнага прызначэньня</h4>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           a = [0, 1, 4, 9, 16]                  #=> [0, 1, 4, 9, 16]
           a[0] = "zero"                         #=> ["zero", 1, 4, 9, 16]
@@ -1908,7 +1666,7 @@
           a.insert(-2, 1, 2, 3)                 #=> ["a", "b", 99, "c", 1, 2, 3, "d"]
         ]]></script>
 
-        <h4><a name="Types_Arrays_Methods_StackQueue">Stack / Queue</a></h4>
+        <h4 id="Types_Arrays_Methods_StackQueue">Stack / Queue</h4>
         <p>Асобна прывядзем мэтады масіваў, каторыя мадэлююць зь іх чэргі, стэкі і сьпісы. А спачатку дыяграма гэтых мэтадаў для нагляднага азнаямленьня:</p>
         <figure>
           <img alt="Дыяграма стэкавых мэтадаў" title="Дыяграма стэкавых мэтадаў" src="../images/ruby_stack_methods.png"/>
@@ -1945,7 +1703,7 @@
           a.unshift(1, 2)                       #=> [ 1, 2, "a", "b", "c", "d"]
         ]]></script>
 
-        <h2><a name="Types_Hashes">Хэшы</a></h2>
+        <h2 id="Types_Hashes">Хэшы</h2>
         <div class="refs">
           <ul>
             <li><a href="http://ruby-doc.org/ruby-1.9/classes/Hash.html">Hash</a></li>
@@ -1958,10 +1716,10 @@
         <p>Хэшы ўключаюць у сябе дамешак <a href="#Types_Enumerable"><code class="class">Enumerable</code></a>.</p>
         <p>У адрозьненьне ад масіваў значэньні хэшаў утрымліваюцца <strong>не</strong>пасьлядоўна і доступ да іх адбываецца не па парадкаваму нумару, а па яго ключу.</p>
 
-        <h2><a name="Types_Ranges">Дыяпазоны</a></h2>
+        <h2 id="Types_Ranges">Дыяпазоны</h2>
         <p>Дыяпазоны паўсюдна сустракаюцца ў штодзённым жыцьці: са студзеня па люты, ад 0 да 9, радкі з 57 па 60 і г.д. Ruby падтрымлівае гэтыя існасьці праз тып <code class="class">Range</code>. Прычым у Ruby гэты тып выкарыстоўваецца для прадстаўленьня <i>пасьлядоўнасьцей</i>, <i>умоваў</i> і <i>інтэрвалаў</i>. Дыяпазоны ўключаюць у сябе дамешак <a href="#Types_Enumerable"><code class="class">Enumerable</code></a>.</p>
 
-        <h3><a name="Types_Ranges_AsSequences">Як пасьлядоўнасьці</a></h3>
+        <h3 id="Types_Ranges_AsSequences">Як пасьлядоўнасьці</h3>
         <p>Найбольш натуральнае выкарыстаньне дыяпазонаў&nbsp;&mdash; для прадстаўленьня пасьлядоўнасьцяў. Запісваюцца яны праз пазначэньне пачатковага значэньня, потым ідзе <a href="#LangParts_Operators_Ranges">апэрацыя дыяпазону</a>, пасьля каторай пазначаецца канцавое значэньне пасьлядоўнасьці. Апэрацыя дыяпазону можа быць альбо <code>..</code> (з уключэньнем апошняга пазначанага значэньня пасьлядоўнасьці), альбо <code>...</code> (без уключэньня апошняга значэньня):</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         'a'..'z'                # пасьлядоўнасьць усіх радковых літар лацінскага альфабэту
@@ -2006,7 +1764,7 @@
         m.include?(VU.new(3))        #=> false
         ]]></script>
 
-        <h3><a name="Types_Ranges_AsConditions">Як умовы</a></h3>
+        <h3 id="Types_Ranges_AsConditions">Як умовы</h3>
         <p>Акрамя пасьлядоўнасьцяў дыяпазоны ўжываюцца ў якасьці ўмоўных выразаў:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         while input = gets
@@ -2014,7 +1772,7 @@
         end
         ]]></script>
 
-        <h3><a name="Types_Ranges_AsIntervals">Як інтэрвалы</a></h3>
+        <h3 id="Types_Ranges_AsIntervals">Як інтэрвалы</h3>
         <p>А яшчэ дыяпазоны ўжываюцца для праверкі ці ўваходзіць значэньне ў пэўны інтэрвал пры дапамозе апэрацыі <code>===</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         (1..10) === 5              #=> true    (5 уваходзіць у інтэрвал значэньняў ад 1 да 10
@@ -2033,7 +1791,7 @@
         end                         #=> "Pass with Merit"
         ]]></script>
 
-        <h3><a name="Types_Ranges_Methods">Мэтады</a></h3>
+        <h3 id="Types_Ranges_Methods">Мэтады</h3>
         <div class="refs">
           <ul>
             <li><a href="http://ruby-doc.org/ruby-1.9/classes/Range.html">Range</a></li>
@@ -2071,7 +1829,7 @@
           (1..9).reject { |i| i < 5 } #=> [5, 6, 7, 8, 9]
         ]]></script>
 
-        <h2><a name="Types_Symbols">Сымбалі</a></h2>
+        <h2 id="Types_Symbols">Сымбалі</h2>
         <p>Інтэпрэтатар Ruby рэалізуе табліцу так званых сымбаляў (<i>Symbols</i>), у каторай ён захоўвае імёны ўсіх клясаў, мэтадаў і зьменных. Гэта дазваляе пазьбегнуць некаторых цяжкіх апэрацыяў параўнаньня сымбальных чародаў (<i>Strings</i>): інтэрпрэтатар атрымлівае доступ да, напрыклад, мэтаду па яго парадкаваму нумару ў табліцы, а не па яго імені.</p>
         <p>У Ruby ідэя сымбаляў рэалізавана нават яшчэ на крок далей&nbsp;&mdash; да сымбаляў можна зьвяртацца ў самой праграме. Яны выглядаюць амаль як лякальныя зьменныя, але перад імі ставіцца двукроп&#8217;е і азначаюць яны палегчаныя радкі&nbsp;&mdash; стварыўшыся аднойчы, яны застаюцца ў памяці да канца працы праграмы і пры наступным выкарыстаньні проста бяруцца з памяці, а не ствараюцца па-новай. Вобласьць іх ужываньня&nbsp;&mdash; унутры праграмы, то бок гэта ня тыя радкі, каторыя прызначаныя для паказу карыстальніку. Прыклады:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -2092,18 +1850,18 @@
         ]]></script>
         <p>Важнай асаблівасьцю зьяўляецца тое, што дзьве сымбальныя чароды могуць утрымліваць аднолькавы зьмест, але зьяўляцца двумя рознымі аб&#39;ектамі, а для сымбаляў гэта ня так. Два радкі з аднолькавым зьместам пры канвертацыі ў сымбаль дадуць адзін і той жа аб&#39;ект.</p>
 
-        <h2><a name="Types_BooleanNil"><code class="keyword">true</code>, <code class="keyword">false</code>, <code class="keyword">nil</code></a></h2>
+        <h2 id="Types_BooleanNil"><code class="keyword">true</code>, <code class="keyword">false</code>, <code class="keyword">nil</code></h2>
         <p>Ключавыя словы <code class="keyword">true</code> і <code class="keyword">false</code> прадстаўляюць булеўскія значэньні. Прычым асобнай клясы <code class="class">Boolean</code> у Ruby не існуе. Выкарыстаньне <code class="keyword">true</code> эквівалентна выкарыстаньню <i>singleton</i>-экзэпляра клясы <code class="class">TrueClass</code>, а выкарыстаньне <code class="keyword">false</code> эквівалентна выкарыстаньню <i>singleton</i>-экзэпляра клясы <code class="class">FalseClass</code>. <code class="keyword">nil</code>&nbsp;&mdash; гэта адмысловы <i>singleton</i>-экзэпляр клясы <code class="class">NilClass</code>, каторы прадстаўляе пусты ці &laquo;неіснуючы&raquo; аб&#39;ект.</p>
         <p>Трэба памятаць, што <code class="keyword">true</code>, <code class="keyword">false</code> і <code class="keyword">nil</code>&nbsp;&mdash; аб&#39;екты, не лічбы. Гэта азначае, што <code class="keyword">false</code> і <code class="keyword">nil</code> ня тое ж самае, што <code>0</code>, а <code class="keyword">true</code> ня тое ж самае, што <code>1</code>. У месцах, дзе патрабуецца булеўскае значэньне, <code class="keyword">nil</code> трактуецца як <code class="keyword">false</code>, а значэньні адрозныя ад <code class="keyword">nil</code> і <code class="keyword">false</code> трактуюцца як <code class="keyword">true</code>.</p>
       </section>
 
       <section>
-        <h1><a name="Methods" href="#Methods">Мэтады, працэдуры, лямбды</a></h1>
+        <h1 id="Methods">Мэтады, працэдуры, лямбды</h1>
         <p><i>RSpec</i>&nbsp;&ndash; гэта фрэймворк <i>Unit</i>-тэставаньня і функцыянальнага тэставаньня для <i>Ruby</i>. </p>
       </section>
 
 <!--TODO-->
-        <h2><a name="Types_Regexp">Рэгулярныя выразы</a></h2>
+        <h2 id="Types_Regexp">Рэгулярныя выразы</h2>
         <p>Рэгулярныя выразы (<i>regexp</i>)&nbsp;&mdash; пасьлядоўнасьць сымбаляў, заключаных паміж слэшаў:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         /ruby/, /[0-9]+/ ці /^\d{3}-\d{3}-\d{4}/
@@ -2112,7 +1870,7 @@
 <!--TODO-->
 
       <section>
-        <h1><a name="RSpec" href="#RSpec">RSpec</a></h1>
+        <h1 id="RSpec">RSpec</h1>
         <p><i>RSpec</i>&nbsp;&ndash; гэта фрэймворк <i>Unit</i>-тэставаньня і функцыянальнага тэставаньня для <i>Ruby</i>. </p>
 
 блёк describe апісвае паводзіны клясы
@@ -2143,7 +1901,7 @@
       </section>
 
       <section>
-        <h1><a name="Gems">Gems</a></h1>
+        <h1 id="Gems">Gems</h1>
         <div class="refs">
           <ul>
             <li><a href="http://rubygems.org/">Home</a></li>
@@ -2164,7 +1922,7 @@
         ]]></script>
         <p>Выкананьне тэсту спыніцца на 4 радку з прапановай irb.</p>
 
-        <h2><a name="Gems_DevKit">DevKit</a></h2>
+        <h2 id="Gems_DevKit">DevKit</h2>
         <div class="refs">
           <ul>
             <li><a href="http://rubyinstaller.org/add-ons/devkit/">Home</a></li>
@@ -2173,7 +1931,7 @@
         </div>
         <p>Большасьць гемаў даступны ў бінарным выглядзе і для іх усталёўкі дастаткова набраць <code>gem install &lt;GEM_NAME&gt;</code>. Але гэта тычыцца ня ўсіх гемаў. Некаторыя зь іх, так называемыя натыўныя, даступны толькі ў выглядзе зыходнікаў (напр. на C/C++) і для іх "зборкі" патрэбна пашырэньне да <i>Ruby</i> пад назвай <i>Development Kit</i> (скарочана <i>DevKit</i>).</p>
 
-        <h3><a name="Gems_DevKit_install">Усталёўка</a></h3>
+        <h3 id="Gems_DevKit_install">Усталёўка</h3>
         <p>Па-першае спампоўваем архіў усталёўшчыка <code>DevKit-tdm-32-4.5.1-20101214-1400-sfx.exe</code> (ці больш актуальную вэрсію) на старонцы <a href="https://github.com/oneclick/rubyinstaller/downloads/">https://github.com/oneclick/rubyinstaller/downloads</a>.</p>
         <p>Запускаем спампаваны файл і пазначаем тэчку для распакоўкі, напр. <code>&lt;RUBY_HOME&gt;\devkit</code>.</p>
         <p>Адкрываем акно каманднага радку <code>cmd</code> і пераходзім у ім у пазначаную вышэй для распакоўкі тэчку.</p>
@@ -2197,7 +1955,7 @@
         <p>Вынік каторай будзе прыкладна такім:</p>
         <p><img alt="ruby dk.rb install" title="ruby dk.rb install" width="920px" src="../images/devkit3.png"/></p>
 
-        <h3><a name="Gems_DevKit_Check">Праверка</a></h3>
+        <h3 id="Gems_DevKit_Check">Праверка</h3>
         <p>Запусьціць усталёўку натыўнага гема і тым самым спраўдзіць ці правільна ўсталяваўся <code>DevKit</code> можна наступным чынам:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         gem install ruby-debug19 --platform=ruby
@@ -2214,19 +1972,8 @@
       </section>
 
       <footer>
-        <div id="powered">
-          <h5>Падзякі</h5>
-          <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
-            <ul>
-              <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
-              <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
-              <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
-              <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
-            </ul>
-          </p>
-        </div>
         <div id="copyright">
-          <p>Copyright &copy; 2010-2011 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>Copyright &copy; 2010-2013 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
           <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
               <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
@@ -2266,6 +2013,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
+  <script src="../js/index.js"></script>
   <script src="../js/libs/jquery.tree.js"></script>
 
   <script src="../js/libs/waypoints.min.js"></script>

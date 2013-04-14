@@ -42,235 +42,7 @@
 </head>
 
 <body>
-
   <div id="container">
-    <div id="index">
-      <div id="main_index">
-        <ul>
-          <li><a href="../htmlRef/index.html">HTML</a></li>
-          <li><a href="../cssRef/index.html">CSS</a></li>
-          <li><a href="../jsRef/index.html">JS</a></li>
-          <li><a href="../webRef/index.html">Web</a></li>
-        </ul>
-        <ul>
-          <li><a href="../rubyRef/index.html">Ruby</a></li>
-          <li class="active"><a href="../railsRef/index.html">Rails</a></li>
-        </ul>
-        <ul>
-          <li><a href="../gitRef/index.html">Git</a></li>
-        </ul>
-        <div class="zip_link"><a href="../Manuals.zip" title="Архіў усіх даведнікаў адным файлам (~9 Mb)"></a></div>
-        <div class="github_link"><a href="https://github.com/yurtsevich/Manuals" title="Зыходнікі ўсіх даведнікаў на GitHub"></a></div>
-      </div>
-
-      <div id="content">
-        <ul class="tree">
-
-          <li><a href="#Links">Карысныя спасылкі</a>
-            <ul>
-              <li><a href="#Links_Home">Хатняя старонка</a></li>
-              <li><a href="#Links_API">API</a></li>
-              <li><a href="#Links_Refs">Даведнікі і кнігі</a></li>
-              <li><a href="#Links_Casts">Railscast</a></li>
-              <li><a href="#Links_Blogs">Блогі</a></li>
-              <li><a href="#Links_UpgradeTo32">Апгрэйд да вэрсіі 3.2</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#GettingStarted">Пачынаем</a>
-            <ul>
-              <li class="liOpen"><a href="#GettingStarted_WhatIsRails">Што такое Rails?</a>
-                <ul>
-                  <li><a href="#GettingStarted_WhatIsRails_MVC">Архітэктура MVC</a>
-                    <ul>
-                      <li><a href="#GettingStarted_WhatIsRails_MVC_Models">Мадэлі</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_MVC_Views">Вью</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_MVC_Controllers">Кантролеры</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#GettingStarted_WhatIsRails_REST">REST</a></li>
-                  <li><a href="#GettingStarted_WhatIsRails_Components">Кампанэнты Rails</a>
-                    <ul>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActionPack">Action Pack</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActionController">Action Controller</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActionView">Action View</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActionDispatch">Action Dispatch</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActionMailer">Action Mailer</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActiveModel">Active Model</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActiveRecord">Active Record</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActiveResource">Active Resource</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_ActiveSupport">Active Support</a></li>
-                      <li><a href="#GettingStarted_WhatIsRails_Components_Railties">Railties</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#GettingStarted_NewProject">Стварэньне новага праекту</a>
-                <ul>
-                  <li><a href="#GettingStarted_NewProject_InstallingRails">Усталяваньне Rails</a></li>
-                  <li><a href="#GettingStarted_NewProject_BlogProject">Стварэньне блогу</a></li>
-                  <li><a href="#GettingStarted_NewProject_InstallingGems">Усталяваньне патрэбных гемаў</a></li>
-                  <li><a href="#GettingStarted_NewProject_ConfiguringDB">Наладжваньне базы даных</a></li>
-                  <li><a href="#GettingStarted_NewProject_CreatingDB">Стварэньне базы даных</a></li>
-                  <li><a href="#GettingStarted_NewProject_StartingApp">Запуск праграмы</a></li>
-                </ul>
-              </li>
-              <li><a href="#GettingStarted_Git">Кантроль вэрсій з Git</a></li>
-              <li><a href="#GettingStarted_Deploying">Разгортваньне праграмы ў вытворчым асяродку</a></li>
-              <li><a href="#GettingStarted_FastDevelopment">Хуткая распрацоўка</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#Models">Мадэлі</a>
-            <ul>
-              <li class="liOpen"><a href="#Models_Migrations">Міграцыі</a>
-                <ul>
-                  <li><a href="#Models_Migrations_Creating">Стварэньне</a></li>
-                  <li><a href="#Models_Migrations_Writing">Састаўленьне</a>
-                    <ul>
-                      <li><a href="#Models_Migrations_Writing_CreatingTable">Стварэньне табліцаў</a></li>
-                      <li><a href="#Models_Migrations_Writing_ChangingTable">Зьмена табліцаў</a></li>
-                      <li><a href="#Models_Migrations_Writing_Helpers">Дапаможнікі</a></li>
-                      <li><a href="#Models_Migrations_Writing_DownMethod">Мэтад down</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#Models_Migrations_Running">Выкананьне</a>
-                    <ul>
-                      <li><a href="#Models_Migrations_Running_Rollback">Адкат</a></li>
-                      <li><a href="#Models_Migrations_Running_Reset">Reset</a></li>
-                      <li><a href="#Models_Migrations_Running_Verbose">Вывад інфармацыі а хадзе міграцыі</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#Models_Migrations_UsingModels">Выкарыстаньне мадэляў</a></li>
-                  <li><a href="#Models_Migrations_Dumps">Адбіткі схемаў</a></li>
-                </ul>
-              </li>
-              <li><a href="#Models_RakeCommands">Rake-каманды</a></li>
-              <li><a href="#Models_NewRecords">Новыя экзэмпляры</a></li>
-              <li><a href="#Models_TrackingChanges">Сачэньне за зьменамі</a></li>
-              <li><a href="#Models_Validations">Валідацыя даных</a>
-                <ul>
-                  <li><a href="#Models_Validations_WhenHappen">Калі адбываецца валідацыя?</a></li>
-                  <li><a href="#Models_Validations_Checking">valid? і invalid?</a></li>
-                  <li><a href="#Models_Validations_Builtin">Убудаваныя валідатары</a>
-                    <ul>
-                      <li><a href="#Models_Validations_Builtin_acceptance">validates_acceptance_of</a></li>
-                      <li><a href="#Models_Validations_Builtin_confirmation">validates_confirmation_of</a></li>
-                      <li><a href="#Models_Validations_Builtin_exclusion">validates_exclusion_of</a></li>
-                      <li><a href="#Models_Validations_Builtin_format">validates_format_of</a></li>
-                      <li><a href="#Models_Validations_Builtin_inclusion">validates_inclusion_of</a></li>
-                      <li><a href="#Models_Validations_Builtin_length">validates_length_of</a></li>
-                      <li><a href="#Models_Validations_Builtin_numericality">validates_numericality_of</a></li>
-                      <li><a href="#Models_Validations_Builtin_presence">validates_presence_of</a></li>
-                      <li><a href="#Models_Validations_Builtin_uniqueness">validates_uniqueness_of</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#Models_Validations_Custom">Уласныя валідатары</a>
-                    <ul>
-                      <li><a href="#Models_Validations_Custom_Attributes">Валідацыя атрыбутаў</a></li>
-                      <li><a href="#Models_Validations_Custom_Instances">Валідацыя экзэмпляраў</a></li>
-                      <li><a href="#Models_Validations_Custom_Methods">Мэтады-валідатары</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#Models_Validations_Conditional">Умоўная валідацыя</a></li>
-                  <li><a href="#Models_Validations_ErrorMessages">Паведамленьні аб памылках валідацыі</a></li>
-                </ul>
-              </li>
-              <li><a href="#Models_Callbacks">Зваротныя выклікі</a>
-                <ul>
-                  <li><a href="#Models_Callbacks_Types">Тыпы зваротных выклікаў</a>
-                    <ul>
-                      <li><a href="#Models_Callbacks_Types_CreatingObject">Стварэньне аб'екту</a></li>
-                      <li><a href="#Models_Callbacks_Types_UpdatingObject">Абнаўленьне аб'екту</a></li>
-                      <li><a href="#Models_Callbacks_Types_DestroyingObject">Выдаленьне аб'екту</a></li>
-                      <li><a href="#Models_Callbacks_Types_InitializingObject">after_initialize і after_find</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#Models_Callbacks_RunningCallbacks">Калі выконваюцца зваротныя выклікі</a></li>
-                  <li><a href="#Models_Callbacks_HaltingExecution">Адкат транзакцыі</a></li>
-                  <li><a href="#Models_Callbacks_Conditional">Умоўныя выклікі</a></li>
-                </ul>
-              </li>
-              <li><a href="#Models_Associations">Асацыяцыі</a></li>
-              <li><a href="#Models_Querying">Састаўленьне запытаў</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#Views">Вью</a>
-            <ul>
-              <li><a href="#Views_LayoutsRendering">Макеты і візуалізацыя ў Rails</a></li>
-              <li><a href="#Views_FormHelpers">Дапаможнікі формаў</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#Controllers">Кантролеры</a>
-            <ul>
-              <li><a href="#Controllers_Routing">Разводка</a></li>
-              <li><a href="#Controllers_Parameters">Парамэтры</a>
-                <ul>
-                  <li><a href="#Controllers_Parameters_HashesAndArrays">Хэшы і масівы ў якасьці парамэтраў</a></li>
-                  <li><a href="#Controllers_Parameters_Routing">Парамэтры разводкі</a></li>
-                  <li><a href="#Controllers_Parameters_Default">Змоўчныя</a></li>
-                </ul>
-              </li>
-              <li><a href="#Controllers_Cookies">Cookies</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#Security">Бясьпека</a>
-            <ul>
-              <li><a href="#Security_Sessions">Сэсіі</a>
-                <ul>
-                  <li><a href="#Security_Sessions_Settings">Наладжваньне</a></li>
-                  <li><a href="#Security_Sessions_TurnOff">Ігнараваньне</a></li>
-                  <li><a href="#Security_Sessions_Flashes">Бліскаўкі</a>
-                    <ul>
-                      <li><a href="#Security_Sessions_Flashes_Now"><code class="method">flash.now</code></a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#Security_Authentication">Ідэнтыфікацыя карыстальніка</a>
-
-              </li>
-              <li><a href="#Security_Authorization">Аўтарызацыя</a>
-
-              </li>
-              <li><a href="#Security_RequestForgery">Падробка запытаў</a>
-                <ul>
-                  <li><a href="#Security_RequestForgery_Protection">Абарона</a></li>
-                </ul>
-              </li>
-              <li><a href="#Security_SSL">Бясьпечная перадача даных</a>
-                <ul>
-                  <li><a href="#Security_SSL_ConfiguringWEBrick">Наладка SSL для WEBrick</a>
-                    <ul>
-                      <li><a href="#Security_SSL_ConfiguringWEBrick_Certificate">Генерацыя сэртыфікату</a></li>
-                      <li><a href="#Security_SSL_ConfiguringWEBrick_ActivatingSSL">Актывацыя SSL у WEBrick</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#Mailer">Пошта</a>
-          </li>
-
-          <li class="liOpen"><a href="#WebServices">Вэб-сэрвісы</a>
-          </li>
-
-          <li class="liOpen"><a href="#RSS">RSS</a>
-          </li>
-
-          <li class="liOpen"><a href="#Optimization">Аптымізацыя</a>
-            <ul>
-              <li><a href="#Optimization_Scalability">Маштабіруемасьць</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
 
     <article id="main">
       <header>
@@ -290,7 +62,7 @@
       <p><a href="http://blog.55minutes.com/2012/01/getting-compass-to-work-with-rails-31-and-32/">Getting Compass to Work With Rails 3.1 (and 3.2)</a></p>
 
       <section>
-        <h1><a name="CMS">CMS</a></h1>
+        <h1 id="CMS">CMS</h1>
         <p><a href="http://refinerycms.com/">Refinery</a></p>
         <p><a href="http://www.locomotivecms.com/">Locomotive</a></p>
         <p><a href="http://webiva.org/">Webiva</a></p>
@@ -302,44 +74,44 @@
 
       <aside class="warn">Гэты даведнік апісвае Rails 3.0. Некаторыя асаблівасьці, прыведзеныя тут, могуць не адпавядаць ранейшым вэрсіям Rails (а прыклады могуць не працаваць). Акрамя гэтага, для 3й вэрсіі Rails неабходна, каб быў усталяваны <a href="../rubyRef/index.html">Ruby</a> вэрсіі не ніжэй за 1.9.2. Будзьце ўважлівы!</aside>
       <section>
-        <h1><a name="Links" href="#Links">Карысныя спасылкі</a></h1>
-        <h2><a name="Links_Home" href="#Links_Home">Хатняя старонка</a></h2>
+        <h1 id="Links">Карысныя спасылкі</h1>
+        <h2 id="Links_Home">Хатняя старонка</h2>
         <p><a href="http://rubyonrails.org/">http://rubyonrails.org</a></p>
 
         <aside>У якасьці IDE рэкамэндуецца карыстацца <a href="http://aptana.com/products/studio3/">Aptana Studio</a> (больш комплексная падтрымка Rails асяродку, але пакуль бэта і напрыклад кантэкстная дапамога працуе кепска) альбо <a href="http://netbeans.org/downloads/index.html">NetBeans</a> (на дадзены момант мусіць найлепшая падтрымка сярод бясплатных сродкаў).</aside>
-        <h2><a name="Links_API" href="#Links_API">API</a></h2>
+        <h2 id="Links_API">API</h2>
         <p>Ruby + Rails (вельмі добра рэалізаваны пошук): <a href="http://railsapi.com/doc/rails-v3.0.8rc1_ruby-v1.9.2/">http://railsapi.com/doc/rails-v3.0.8rc1_ruby-v1.9.2/</a></p>
         <p><a href="http://api.rubyonrails.org/">http://api.rubyonrails.org</a></p>
         <p><a href="http://www.rubydoc.info/docs/rails/3.0.0/frames/">http://www.rubydoc.info/docs/rails/3.0.0/frames</a></p>
         <p><a href="http://apidock.com/rails/">http://apidock.com/rails</a></p>
 
-        <h2><a name="Links_Refs" href="#Links_Refs">Даведнікі і кнігі</a></h2>
+        <h2 id="Links_Refs">Даведнікі і кнігі</h2>
         <p><a href="http://guides.rubyonrails.org/">Галоўная старонка афіцыйных даведнікаў</a></p>
         <p><a href="http://railsapps.github.com/rails.html">RailsApps project</a></p>
         <p><a href="http://railstutorial.org/book/">Вельмі добры вучэбнік</a></p>
 
         <p>http://www.bigfatrails.com/book/</p>
 
-        <h2><a name="Links_Casts" href="#Links_Casts">Railscast (відэа-урокі)</a></h2>
+        <h2 id="Links_Casts">Railscast (відэа-урокі)</h2>
         <p><a href="http://railscasts.com/">http://railscasts.com</a></p>
 
-        <h2><a name="Links_Blogs" href="#Links_Blogs">Блогі</a></h2>
+        <h2 id="Links_Blogs">Блогі</h2>
         <p>Апошнія Ruby і Rails навіны на <b>envylabs.com</b>: <a href="http://ruby5.envylabs.com/">http://ruby5.envylabs.com/</a></p>
 
-        <h2><a name="Links_UpgradeTo32" href="#Links_UpgradeTo32">Апгрэйд да вэрсіі 3.2</a></h2>
+        <h2 id="Links_UpgradeTo32">Апгрэйд да вэрсіі 3.2</h2>
         <p><a href="http://railsapps.github.com/installing-rails.html">http://railsapps.github.com/installing-rails.html</a></p>
         <p><a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html">http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html</a></p>
       </section>
 
       <section>
-        <h1><a name="GettingStarted" href="#GettingStarted">Пачынаем</a></h1>
+        <h1 id="GettingStarted">Пачынаем</h1>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/getting_started.html">Guide</a></li>
           </ul>
         </div>
 
-        <h2><a name="GettingStarted_WhatIsRails" href="#GettingStarted_WhatIsRails">Што такое Rails?</a></h2>
+        <h2 id="GettingStarted_WhatIsRails">Што такое Rails?</h2>
         <p>Rails&nbsp;&mdash; гэта фрэймворк распрацоўкі сеціўных праграмаў, напісаны на мове праграмаваньня <a href="../rubyRef/index.html">Ruby</a>. Ён спраектаваны такім чынам, каб зрабіць працэс стварэньня сеціўных праграмаў прасьцейшым, улічваючы тыя аспэкты, зь якімі вымушаны сутыкацца бальшыня распрацоўшчыкаў. Rails дазваляе пісаць менш коду, рашаючы пры тым больш задачаў, чым іншыя мовы ці фрэймворкі.</p>
         <p>Дадзены фрэймворк грунтуецца на дапушчэньні, што ў шэрагу магчымых рашэньняў заўсёды існуюць найлепшыя, і ён &laquo;заахвочвае&raquo; распрацоўшчыка да карыстаньня імі, і часам нават робіць &laquo;перашкоды&raquo; на шляху карыстаньня ня лепшымі з рашэньняў.</p>
         <p>Філязофія Rails уключае такія прынцыпы, як:
@@ -350,7 +122,7 @@
           </ul>
         </p>
 
-        <h3><a name="GettingStarted_WhatIsRails_MVC" href="#GettingStarted_WhatIsRails_MVC">Архітэктура MVC</a></h3>
+        <h3 id="GettingStarted_WhatIsRails_MVC">Архітэктура MVC</h3>
         <div class="refs">
           <ul>
             <li><a href="http://ofps.oreilly.com/titles/9780596521424/rails.html#mvc-request-lifecycle">Rails 3 in a Nutshell</a></li>
@@ -379,17 +151,17 @@
           <li>кантролер дасылае вынік браўзэру.</li>
         </ol>
 
-        <h4><a name="GettingStarted_WhatIsRails_MVC_Models" href="#GettingStarted_WhatIsRails_MVC_Models">Мадэлі</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_MVC_Models">Мадэлі</h4>
         <p>Мадэль утрымлівае бізнэс-лёгіку і прадстаўляе даныя праграмы. Для прыняцьця рашэньняў мадэль зьвяртаецца да базы даных. Яна адказвае за атрыманьне, стварэньне, зьмяненьне, выдаленьне даных з БД, а таксама сочыць за цэласнасьцю гэтых даных. У выпадку Rails асноўнае выкарыстаньне мадэляў&nbsp;&mdash; кіраваньне правіламі атрыманьня інфармацыі з БД. У бальшыні выпадкаў адна мадэль праграмы будзе адпавядаць адной табліцы базы даных.</p>
         <p>Больш дэталёва пра мадэлі глядзі <a href="#Models">ніжэй</a>.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_MVC_Views" href="#GettingStarted_WhatIsRails_MVC_Views">Вью</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_MVC_Views">Вью</h4>
         <p>Вью прадстаўляюць інтэрфэйс праграмы.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_MVC_Controllers" href="#GettingStarted_WhatIsRails_MVC_Controllers">Кантролеры</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_MVC_Controllers">Кантролеры</h4>
         <p>Кантролеры зьяўляюцца &laquo;клеям&raquo; паміж мадэлямі і вью. У Rails яны адказваюць за апрацоўку запытаў ад браўзэраў, атрыманьне ў адпаведнасьці з тымі запытамі даных з мадэляў, і перадачу гэтых даных у вью для прадстаўленьня карыстальніку.</p>
 
-        <h3><a name="GettingStarted_WhatIsRails_REST" href="#GettingStarted_WhatIsRails_REST">REST</a></h3>
+        <h3 id="GettingStarted_WhatIsRails_REST">REST</h3>
         <div class="refs">
           <ul>
             <li><a href="http://www.petefreitag.com/item/431.cfm">REST vs SOAP</a></li>
@@ -407,7 +179,7 @@
         <p>будзе зразумелы ў Rails як зьвяртаньне да фота-рэсурсу з ідэнтыфікатарам 17 і пазначэньне пры гэтым пажаданай апэрацыі&nbsp;&mdash; выдаленьне гэтага рэсурсу.</p>
         <p>REST зьяўляецца натуральным стылем для архітэктуры сеціўных праграмаў і Rails рэалізуе яго ў сваім нутры даволі празрыста і пазбаўляе распрацоўшчыка ад неабходнасьці паглыбляцца ў складаныя аспэкты RESTful-архітэктуры.</p>
 
-        <h3><a name="GettingStarted_WhatIsRails_Components" href="#GettingStarted_WhatIsRails_Components">Кампанэнты Rails</a></h3>
+        <h3 id="GettingStarted_WhatIsRails_Components">Кампанэнты Rails</h3>
         <p>Rails уключае ў сябе шэраг асобных кампанэнтаў:
           <ul>
             <li>Action Pack
@@ -426,45 +198,45 @@
           </ul>
         </p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActionPack" href="#GettingStarted_WhatIsRails_Components_ActionPack">Action Pack</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActionPack">Action Pack</h4>
         <p>Гэта <a href="../rubyRef/index.html#Gems">гем</a>, каторы ўтрымлівае <a href="#GettingStarted_WhatIsRails_Components_ActionController"><cite>Action Controller</cite></a>, <a href="#GettingStarted_WhatIsRails_Components_ActionView"><cite>Action View</cite></a> і <a href="#GettingStarted_WhatIsRails_Components_ActionDispatch"><cite>Action Dispatch</cite></a>&nbsp;&mdash; &laquo;VC&raquo; частку з &laquo;<a href="#GettingStarted_WhatIsRails_MVC">MVC</a>&raquo;.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActionController" href="#GettingStarted_WhatIsRails_Components_ActionController">Action Controller</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActionController">Action Controller</h4>
         <p>Гэта кампанэнт, які кіруе <a href="#GettingStarted_WhatIsRails_MVC_Controllers">кантролерамі</a>. Апрацоўвае запыты да Rails-праграмы, вымае зь іх парамэтры і накіроўвае запыты да адпаведных дзеяў (<i>actions</i>&nbsp;&mdash; пад такім агульным паняцьцем разумеюцца мэтады кантролераў). Таксама прадстаўляе такія сэрвісы, як кіраваньне сэсіямі і перанакіраваньнямі, візуалізацыя шаблёнаў.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActionView" href="#GettingStarted_WhatIsRails_Components_ActionView">Action View</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActionView">Action View</h4>
         <p>Кіруе <a href="#GettingStarted_what_is_MVC_Views">вью</a> праграмы. Па-змоўчаньні можа ствараць <a href="../htmlRef/index.html">HTML</a>- і <abbr class="term" title="eXtensible Markup Language">XML</abbr>-вынік. Кіруе шіблёнамі вью, улучна з укладзенымі шаблёнамі (<mark><i>nested templates</i>-спасылка на разьдзел</mark>) і часткамі-шаблёнамі (<mark><i>partial templates</i>-спасылка на разьдзел</mark>), а таксама ўключае ў сябе ўбудаваную падтрымку <a href="http://en.wikipedia.org/wiki/AJAX">AJAX</a>.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActionDispatch" href="#GettingStarted_WhatIsRails_Components_ActionDispatch">Action Dispatch</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActionDispatch">Action Dispatch</h4>
         <p>Адказвае за разводку вэб-запытаў і накаріваньне іх па жаданьню распрацоўшчыка.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActionMailer" href="#GettingStarted_WhatIsRails_Components_ActionMailer">Action Mailer</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActionMailer">Action Mailer</h4>
         <p>Фрэймворк для пабудовы паштовага сэрвісу. Адказвае за атрыманьне, апрацоўку ўваходных лістоў, а таксама за адсылку простых ці складаных лістоў на базе гнуткіх шаблёнаў.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActiveModel" href="#GettingStarted_WhatIsRails_Components_ActiveModel">Active Model</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActiveModel">Active Model</h4>
         <p>Забяспечвае інтрэрфэйс паміж сэрвісамі <a href="#GettingStarted_WhatIsRails_Components_ActionPack"><cite>Action Pack</cite></a> і <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a>-гемамі, як напр. <a href="#GettingStarted_WhatIsRails_Components_ActiveRecord"><cite>Active Record</cite></a>.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActiveRecord" href="#GettingStarted_WhatIsRails_Components_ActiveRecord">Active Record</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActiveRecord">Active Record</h4>
         <p>Зьяўляецца базай для пабудовы <a href="#GettingStarted_WhatIsRails_MVC_Models">мадэляў</a>. Забяспечвае незалежнасьць ад пэўнай рэалізацыі базы даных, базавую <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>-функцыянальнасьць, пашыраныя магчымасьці пошуку, магчымасьці злучаць мадэлі паміж сабой і іншыя.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActiveResource" href="#GettingStarted_WhatIsRails_Components_ActiveResource">Active Resource</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActiveResource">Active Resource</h4>
         <p>Прадстаўляе фрэймворк сувязі паміж бізнэс-аб&#8217;ектамі і RESTful вэб-сэрвісамі праз <a href="http://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>-сэмантыку.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_ActiveSupport" href="#GettingStarted_WhatIsRails_Components_ActiveSupport">Active Support</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_ActiveSupport">Active Support</h4>
         <p>Пашыраная бібліятэка дапаможных клясаў Ruby, каторыя выкарыстоўваюцца як ядром Rails, так і праграмай.</p>
 
-        <h4><a name="GettingStarted_WhatIsRails_Components_Railties" href="#GettingStarted_WhatIsRails_Components_Railties">Railties</a></h4>
+        <h4 id="GettingStarted_WhatIsRails_Components_Railties">Railties</h4>
         <p>Ядро Rails, каторае спалучае разам розныя фрэймворкі і ўбудовы.</p>
 
-        <h2><a name="GettingStarted_NewProject">Стварэньне новага праекту</a></h2>
+        <h2 id="GettingStarted_NewProject">Стварэньне новага праекту</h2>
 
-        <h3><a name="GettingStarted_NewProject_InstallingRails">Усталяваньне Rails</a></h3>
+        <h3 id="GettingStarted_NewProject_InstallingRails">Усталяваньне Rails</h3>
         <p>Перад тым, як ствараць Rails-праект, трэба ўсталяваць уласна Rails:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         $ gem install rails
         ]]></script>
 
-        <h3><a name="GettingStarted_NewProject_BlogProject">Стварэньне блогу</a></h3>
+        <h3 id="GettingStarted_NewProject_BlogProject">Стварэньне блогу</h3>
         <p>Пасьля ўсталяваньня Rails можна ствараць новую праграму, напрыклад блог, папярэдне перайшоўшы ў тэчку, прызначаную для Rails-праектаў:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         $ mkdir projects
@@ -497,13 +269,13 @@
           </table>
         </p>
 
-        <h3><a name="GettingStarted_NewProject_InstallingGems">Усталяваньне патрэбных гемаў</a></h3>
+        <h3 id="GettingStarted_NewProject_InstallingGems">Усталяваньне патрэбных гемаў</h3>
         <p>Rails-праграмы па змоўчаньні кіруюць <a href="../rubyRef/index.html#Gems">гемамі</a> і іх залежнасьцямі праз <a href="http://gembundler.com/">Bundler</a>. Як нам ня трэба ніякіх гемаў больш за тыя, што пазначаныя ў змоўчаным <code>Gemfile</code>, можна проста запусьціць наступную каманду, каб усталяваць іх:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         $ bundle install
         ]]></script>
 
-        <h3><a name="GettingStarted_NewProject_ConfiguringDB">Наладжваньне базы даных</a></h3>
+        <h3 id="GettingStarted_NewProject_ConfiguringDB">Наладжваньне базы даных</h3>
         <p>Мала якія Rails-праграмы могуць абысьціся без базы даных. Аднак, перад тым, як Active Record зможа быць выкарыстаны і праявіць сваё ORM-чараўніцтва, трэба яму сказаць зь якой базай даных будзе весьціся праца і якім чынам зь ёй наладзіць сувязь. Адпаведныя наладкі пазначаюцца ў файле канфігурацыі <code>config/database.yml</code>, які пасьля генэрацыі новай праграмы выглядае наступным чынам:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           # SQLite version 3.x
@@ -575,7 +347,7 @@
             encoding: utf8
         ]]></script>
 
-        <h3><a name="GettingStarted_NewProject_CreatingDB">Стварэньне базы даных</a></h3>
+        <h3 id="GettingStarted_NewProject_CreatingDB">Стварэньне базы даных</h3>
         <p>Базы даных адрозныя ад <a href="http://www.sqlite.org/">SQLite</a> часьцей за ўсё ствараюцца ўручную адміністратарам/праграмістам, але трэба памятаць, што Rails прадстаўляе мэханізм для аўтаматычнага стварэньня базы даных&nbsp;&ndash; пры дапамозе наступнай каманды:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
           rake db:create
@@ -585,7 +357,7 @@
           rake db:create:all
         ]]></script>
 
-        <h3><a name="GettingStarted_NewProject_StartingApp">Запуск праграмы</a></h3>
+        <h3 id="GettingStarted_NewProject_StartingApp">Запуск праграмы</h3>
         <p>Засталося запусьціць вэб-сэрвер, каб пабачыць стартавую старонку аўтаматычна створанай па-змоўчаньні праграмы:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
           $ rails server
@@ -594,13 +366,13 @@
         <img alt="Start page of Rails default application" title="Start page of Rails default application" src="../images/StartPageOfRoRDefaultApp.png"/>
         <p>Гэта ўсяго толькі статычная старонка, прызначэньнем якой зьяўляецца паказаць, што падрыхтоўчыя крокі зроблены правільна і пасьпяхова. Калі вас не цікавяць пытаньні <a href="#GettingStarted_Git">кантролю вэрсій</a> і <a href="#GettingStarted_Deploying">разгортваньня праграмы ў вытворчым асяродку</a>, можаце адразу перайсьці да разьделу <a href="#GettingStarted_FastDevelopment">хуткай распрацоўкі праграмы</a>.</p>
 
-        <h2><a name="GettingStarted_Git">Кантроль вэрсій з Git</a></h2>
+        <h2 id="GettingStarted_Git">Кантроль вэрсій з Git</h2>
         <p><strong>TODO</strong>: <a href="http://ruby.railstutorial.org/chapters/beginning#sec:version_control">http://ruby.railstutorial.org/chapters/beginning#sec:version_control</a></p>
 
-        <h2><a name="GettingStarted_Deploying">Разгортваньне праграмы ў вытворчым асяродку</a></h2>
+        <h2 id="GettingStarted_Deploying">Разгортваньне праграмы ў вытворчым асяродку</h2>
         <p><strong>TODO</strong>: <a href="http://ruby.railstutorial.org/chapters/modeling-and-viewing-users-two#sec:heroku_deploy">http://ruby.railstutorial.org/chapters/modeling-and-viewing-users-two#sec:heroku_deploy</a></p>
 
-        <h3><a name="GettingStarted_Deploying_HerokuMultipleAccounts">Праца зь некалькімі рахункамі на <i>Heroku</i></a></h3>
+        <h3 id="GettingStarted_Deploying_HerokuMultipleAccounts">Праца зь некалькімі рахункамі на <i>Heroku</i></h3>
         <p>Гэта не трывіяльная задача, таму што па змоўчаньні гем ад <i>Heroku</i> працуе з адзіным рахункам. Але гэтая задача моцна спрашчаецца пры выкарыстаньні дадатку <a href="https://github.com/ddollar/heroku-accounts" title="Хатняя старонка heroku-accounts на GitHub"><code>heroku-accounts</code></a>.</p>
         <p>Дадатак удзяляе літаральна некалькі простых у выкарыстаньні дапаможных камандаў, якія вычарпальна апісаныя на хатняй старонцы дадатку, таму ня буду яшчэ раз спыняцца на апісаньні. Адзінае, што варта адмыслова адзначыць, у код дадатку варта ўнесьці адну зьмену пры жаданьні ўжываць яго ў <i>Windows</i>-асяродку. Гэтая зьмена будзе працаваць толькі пачынаючы з <i>Rails</i> 3-й вэрсіі, але наш даведнік разглядае менавіта гэтую вэрсію, таму скарыстаемся ёй. Праблема тычыцца хатняй тэчкі карыстальніка ў <i>Windows</i>, пэўныя каманды дадатку не працуюць з-за таго, што ў ім выкарыстоўваецца ўласны спосаб вызначэньня гэтай тэчкі, відаць не зусім правільны. Такім чынам, зьмену трэба ўнесьці ў файл <code>&lt;USER_HOME&gt;\.heroku\plugins\heroku-accounts\lib\ext\heroku\command\accounts.rb</code>, у мэтадзе <code class="method">accounts_directory</code> выраз:</p>
         <script type="syntaxhighlighter" class="brush: rails"><![CDATA[
@@ -611,7 +383,7 @@
           directory = File.join(Dir.home, ".heroku", "accounts")
         ]]></script>
 
-        <h2><a name="GettingStarted_FastDevelopment">Хуткая распрацоўка</a></h2>
+        <h2 id="GettingStarted_FastDevelopment">Хуткая распрацоўка</h2>
         <div class="refs">
           <ul>
             <li><a href="http://ruby.railstutorial.org/chapters/a-demo-app#top">Book</a></li>
@@ -634,7 +406,7 @@
           root :to => "home#index"
         ]]></script>
 
-        <h3><a name="GettingStarted_FastDevelopment_Scaffolding">Scaffolding</a></h3>
+        <h3 id="GettingStarted_FastDevelopment_Scaffolding">Scaffolding</h3>
         <p>Акрамя генерацыі асобных кампанэнтаў, прыладай <i>scaffold</i> можна згенерыць поўную сукупнасьць неабходных кампанэнтаў для працы з пэўным рэсурсам. Уявім, што ў нашай праграме павінен існаваць рэсурс допісаў у блогу (<i>Post</i>), экзэмпляры якога карыстальнік можа ствараць, рэдагаваць і выдаляць. Напрыклад, наступная каманда:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         $ rails generate scaffold Post name:string title:string content:text
@@ -677,7 +449,7 @@
         <img alt="Posts index" title="Posts index" src="../images/posts_index.png"/>
         <p>Гэта змоўчнае адлюстраваньне допісаў. У базе яшчэ няма ніводнага, але калі націснуць на &laquo;New post&raquo;, можна стварыць першы. Пасьля стварэньня допісу, вы пабачыце, што яго можна праглядаць, рэдагаваць і выдаляць, і ўсё гэта было створана аўтаматычна прыладай <i>scaffold</i>.</p>
 
-        <h4><a name="GettingStarted_FastDevelopment_Scaffolding_Model">Мадэль</a></h4>
+        <h4 id="GettingStarted_FastDevelopment_Scaffolding_Model">Мадэль</h4>
         <p>Створаная пры дапамозе <i>scaffold</i> мадэль (<code>app/models/post.rb</code>) пустая:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class Post < ActiveRecord::Base
@@ -693,7 +465,7 @@
         ]]></script>
         <p>Гэты код будзе правяраць ці мае допіс імя і загаловак, каторы пры гэтым павінен утрымліваць мінімум 5 сымбаляў, перад тым, як гэты допіс захаваць у базу.</p>
 
-        <h4><a name="GettingStarted_FastDevelopment_Scaffolding_ListingResources">Адлюстраваньне рэсурсаў</a></h4>
+        <h4 id="GettingStarted_FastDevelopment_Scaffolding_ListingResources">Адлюстраваньне рэсурсаў</h4>
         <p>Код, каторы <i>scaffold</i> уставіў у мэтад <code class="method">index</code> кантролеру <code>app/controllers/posts_controller.rb</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         def index
@@ -744,11 +516,11 @@
 
 
       <section>
-        <h1><a name="Models" href="#Models">Мадэлі</a></h1>
+        <h1 id="Models" data-content-item-open>Мадэлі</h1>
         <p>Змоўчны спосаб захаваньня даных у Rails&nbsp;&mdash; праз базу даных і змоўчным кампанэнтам для гэтых мэтаў зьяўляецца <a href="http://railsapi.com/doc/rails-v3.0.8rc1/files/activerecord/README_rdoc.html">Active Record</a> (рэалізацыя <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a> у Rails). Ён прадстаўляе шмат мэтадаў для стварэньня, захаваньня і пошуку аб&#8217;ектаў даных і ўсё гэта без неабходнасьці выкарыстоўваць (а адпаведна і ведаць) <abbr title="Structured Query Language">SQL</abbr>. Больш таго, пры дапамозе <a href="#Models_Migrations">міграцыяў</a>, апісаньне данных можна рабіць на чыстым Ruby, без неабходнасьці ведаць SQL <i>Data Definition Language (DDL)</i>. У выніку распрацоўшчык у Rails у агульным выпадку можа абстрагавацца ад асаблівасьцяў і дэталяў сродкаў захаваньня даных, якія будуць ужывацца. То бок у распрацоўшчыцкім асяродку можа выкарыстоўвацца <a href="http://www.sqlite.org/">SQLite</a>, у тэставым асяродку&nbsp;&mdash; <a href="http://mysql.com/">MySQL</a>, а ў вытворчым&nbsp;&mdash; <a href="http://www.postgresql.org/">PostgreSQL</a>, і на самой праграме гэта ніяк не адаб&#8217;ецца.</p>
         <p>Яшчэ адзін кампанэнт, які прадстаўляе мадэлі ў Rails&nbsp;&mdash; гэта <a href="http://railsapi.com/doc/rails-v3.0.8rc1/files/activeresource/README_rdoc.html">Active Resource</a>. Падрабязьней пра яго глядзі разьдзел <a href="file:///D:/_Buisiness/Manuals/railsRef/index.html#WebServices">Вэб-сэрвісы</a>.</p>
 
-        <h2><a name="Models_Migrations" href="#Models_Migrations">Міграцыі</a></h2>
+        <h2 id="Models_Migrations">Міграцыі</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/migrations.html">Guide</a></li>
@@ -793,7 +565,7 @@
         <p>Пры патрэбе зьмяніць міграцыю, каторая ўжо была выканана, не магчыма проста ўнесьці ў яе зьмены і выканаць ізноў&nbsp;&mdash; Rails у адпаведнасьці з запісамі ў сваім журнале пабачыць, што такая міграцыя ўжо выконвалася і нічога ня зробіць у выпадку запуску каманды <code>rake db:migrate</code>. Трэба спачатку адмяніць міграцыю (<code>rake db:rollback</code>), унесьці неабходныя зьмены і потым ізноў выканаць яе.</p>
         <p>Пры гэтым памятайце, што калі зьявілася неабходнасьць зьмяніць ужо існую міграцыю&nbsp;&mdash; ці то праз памылку, ці то праз новыя акалічнасьці, дазваляецца рабіць гэта толькі ў выпадках, калі яна ўяўляе зь сябе лякальную вэрсію&nbsp;&mdash; не запісана яшчэ ў сыстэму кантролю вэрсій для каманднага карыстаньня, ці, што асабліва важна, не была шчэ ўжыта ў вытворчым асяродку. Калі ж міграцыя ўсё ж была ўжыта, лепш стварыць новую міграцыю, у якую прапісаць неабходныя зьмены.</p>
 
-        <h3><a name="Models_Migrations_Creating" href="#Models_Migrations_Creating">Стварэньне міграцыяў</a></h3>
+        <h3 id="Models_Migrations_Creating">Стварэньне міграцыяў</h3>
         <p>Пры стварэньні мадэляў ці пры карыстаньні <i>scaffold</i>-генератарамі міграцыі будуць створаны аўтаматычна. Напрыклад, у выніку выкананьня каманды:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         $ rails generate model Product name:string description:text
@@ -849,7 +621,7 @@
         end
         ]]></script>
 
-        <h3><a name="Models_Migrations_Writing" href="#Models_Migrations_Writing">Састаўленьне міграцыяў</a></h3>
+        <h3 id="Models_Migrations_Writing">Састаўленьне міграцыяў</h3>
         <div class="refs">
           <ul>
             <li><a href="http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html">Мэтады</a></li>
@@ -857,7 +629,7 @@
         </div>
         <p>Па спасылцы зьлева можна даведацца пра ўсе мэтады, каторыя даступны ў мэтадах <code>up</code> і <code>down</code> міграцыяў.</p>
 
-        <h4><a name="Models_Migrations_Writing_CreatingTable" href="#Models_Migrations_Writing_CreatingTable">Стварэньне табліцаў</a></h4>
+        <h4 id="Models_Migrations_Writing_CreatingTable">Стварэньне табліцаў</h4>
         <div class="refs">
           <ul>
             <li><a href="http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/TableDefinition.html">Мэтады</a></li>
@@ -945,7 +717,7 @@
         end
         ]]></script>
 
-        <h4><a name="Models_Migrations_Writing_ChangingTable" href="#Models_Migrations_Writing_ChangingTable">Зьмена табліцаў</a></h4>
+        <h4 id="Models_Migrations_Writing_ChangingTable">Зьмена табліцаў</h4>
         <div class="refs">
           <ul>
             <li><a href="http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/Table.html">Мэтады</a></li>
@@ -968,7 +740,7 @@
         rename_column :products, :upccode, :upc_code
         ]]></script>
 
-        <h4><a name="Models_Migrations_Writing_Helpers" href="#Models_Migrations_Writing_Helpers">Дапаможнікі</a></h4>
+        <h4 id="Models_Migrations_Writing_Helpers">Дапаможнікі</h4>
         <p>Існуе шэраг мэтадаў-дапаможнікаў, якія спрашчаюць напісаньне міграцыяў. Напрыклад, згаданы вышэй <code>timestamps</code>, які дадае ў табліцу аб&#8217;яўленьні калёнак <code>created_at</code> і <code>updated_at</code>. Яшчэ адзін мэтад-дапаможнік&nbsp;&mdash; <code>references</code>, у якога існуе псэўданім <code>belongs_to</code>. Ён дадае апісаньне калёнкі, якая зьяўляецца зьнешнім ключом да іншай табліцы. Наступны прыклад:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         create_table :products do |t|
@@ -983,7 +755,7 @@
         end
         ]]></script>
 
-        <h4><a name="Models_Migrations_Writing_DownMethod" href="#Models_Migrations_Writing_DownMethod">Мэтад <code>down</code></a></h4>
+        <h4 id="Models_Migrations_Writing_DownMethod">Мэтад <code>down</code></h4>
         <p>Мэтад <code>down</code> міграцыі павінен адкаціць тое, што было зроблена мэтадам <code>up</code>. Іншымі словамі стан базы павінен застацца нязьменным у выніку пасьлядоўнага выкананьня мэтадаў <code>up</code> і <code>down</code>. Прычым апошні павінен рабіць адкат зьменаў у зваротным парадку ў параўнаньні з тым, які быў ў мэтадзе <code>up</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class ExampleMigration < ActiveRecord::Migration
@@ -1015,7 +787,7 @@
         ]]></script>
         <p>Часам дзеяньні міграцыяў могуць быць незваротнымі&nbsp;&mdash; напрыклад, выдаленьне пэўных даных. У такім разе, мэтад <code>down</code> нічога не павінен рабіць, а толькі кідаць выключэньне <code>IrreversibleMigration</code>.</p>
 
-        <h3><a name="Models_Migrations_Running" href="#Models_Migrations_Running">Выкананьне міграцыяў</a></h3>
+        <h3 id="Models_Migrations_Running">Выкананьне міграцыяў</h3>
         <p>Rake-каманда <code>db:migrate</code> запускае ўсе міграцыі, якія шчэ не былі выкананыя. Яна ў сваю чаргу запусьціць каманду <code>db:schema:dump</code>, якая зьменіць файл <code>db/schema.rb</code>, каб ён адпавядаў новай структуры базы. Для выкананьня ня проста ўсіх новых міграцыяў, але для пераходу да пэўнага стану, трэба пазначыць адпаведную вэрсію:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         $ rake db:migrate VERSION=20080906120000
@@ -1027,7 +799,7 @@
         ]]></script>
         <p>Прычым Rails сам правярае ці карэктная гэта каманда. То бок, калі пэўная міграцыя ўжо была выканана і мы спрабуем для яе запусьціць каманду <code>db:migrate:up</code>, ці, калі пэўная міграцыя яшчэ не была выканана і мы спрабуем для яе запусьціць каманду <code>db:migrate:down</code>, то ў абодвух выпадках нічога ня будзе зроблена.</p>
 
-        <h4><a name="Models_Migrations_Running_Rollback" href="#Models_Migrations_Running_Rollback">Адкат</a></h4>
+        <h4 id="Models_Migrations_Running_Rollback">Адкат</h4>
         <p>Для адкату апошняй(-іх) міграцыі(-яў) ёсьць дапаможны мэтад <code>rollback</code>. Наступная каманда зробіць адкат апошняй выкананай міграцыі:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         $ rake db:rollback
@@ -1037,10 +809,10 @@
         $ rake db:rollback STEP=3
         ]]></script>
 
-        <h4><a name="Models_Migrations_Running_Reset" href="#Models_Migrations_Running_Reset">Reset</a></h4>
+        <h4 id="Models_Migrations_Running_Reset">Reset</h4>
         <p>І яшчэ адна дапаможная каманда: <code>db:reset</code>. Яна выдаліць базу, створыць яе зноўку і загрузіць туды актуальную <a href="#Models_Migrations_Dumps">схему</a> (але гэта ня тое ж самае, што пасьлядоўна выканаць усе міграцыі).</p>
 
-        <h4><a name="Models_Migrations_Running_Verbose" href="#Models_Migrations_Running_Verbose">Вывад інфармацыі а хадзе міграцыі</a></h4>
+        <h4 id="Models_Migrations_Running_Verbose">Вывад інфармацыі а хадзе міграцыі</h4>
         <p>Па змоўчаньні пры выкананьні міграцыі ў кансоль будзе вывадзіцца трасіровачная інфармацыя а хадзе міграцыі. Нешта кшталту:</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         20080906170109 CreateProducts: migrating
@@ -1094,7 +866,7 @@
         ]]></script>
         <p>Калі ж вы жадаеце, каб міграцыя ўвогуле не рабіла ніякага вываду, запускаць яе трэба з опцыяй <code>VERBOSE=false</code>.</p>
 
-        <h3><a name="Models_Migrations_UsingModels" href="#Models_Migrations_UsingModels">Выкарыстаньне мадэляў у міграцыях</a></h3>
+        <h3 id="Models_Migrations_UsingModels">Выкарыстаньне мадэляў у міграцыях</h3>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/migrations.html#using-models-in-your-migrations">Чаму не?</a></li>
@@ -1102,7 +874,7 @@
         </div>
         <p>Гэтага рабіць вельмі не пажадана! Чаму і якія існуюць рашэньні абыходу праблемы глядзі па спасылцы зьлева.</p>
 
-        <h3><a name="Models_Migrations_Dumps" href="#Models_Migrations_Dumps">Адбіткі схемаў</a></h3>
+        <h3 id="Models_Migrations_Dumps">Адбіткі схемаў</h3>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/migrations.html#schema-dumping-and-you">Dumps</a></li>
@@ -1110,7 +882,7 @@
         </div>
         <p>Што такое <code>db/schema.rb</code> і як рабіць міграцыю цалкам усёй схемы глядзі па спасылцы зьлева.</p>
 
-        <h2><a name="Models_RakeCommands" href="#Models_RakeCommands">Rake-каманды</a></h2>
+        <h2 id="Models_RakeCommands">Rake-каманды</h2>
         <div class="refs">
           <ul>
             <li><a href="http://www.tutorialspoint.com/ruby-on-rails/rails-and-rake.htm">Tutorialspoint.com</a></li>
@@ -1196,7 +968,7 @@
           </tbody>
         </table>
 
-        <h2><a name="Models_NewRecords" href="#Models_NewRecords">Новыя экзэмпляры</a></h2>
+        <h2 id="Models_NewRecords">Новыя экзэмпляры</h2>
         <p>Новы экзэмпляр пэўнай мадэлі можна стварыць пры дапамозе мэтаду <code>new</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           p = Person.new(:name => "John Doe")
@@ -1209,7 +981,7 @@
         ]]></script>
 
 
-        <h2><a name="Models_TrackingChanges" href="#Models_TrackingChanges">Сачэньне за зьменамі</a></h2>
+        <h2 id="Models_TrackingChanges">Сачэньне за зьменамі</h2>
         <div class="refs">
           <ul>
             <li><a href="http://ofps.oreilly.com/titles/9780596521424/active-model.html">Nutshell</a></li>
@@ -1248,7 +1020,7 @@
         ]]></script>
         <p></p>
 
-        <h2><a name="Models_Validations" href="#Models_Validations">Валідацыя даных</a></h2>
+        <h2 id="Models_Validations">Валідацыя даных</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/active_record_validations_callbacks.html">Guide</a></li>
@@ -1283,7 +1055,7 @@
         ]]></script>
         <p>Мэтад <code>validate</code> выклікае мэтад-валідатар, імя якога было яму перададзена. Апошні ў сваю чаргу робіць патрэбныя праверкі і ў выпадку, калі экзэмпляр не праходзіць валідацыю, дадае ў яго калекцыю памылак адпаведнае паведамленьне з адпаведным ключом (<code>embeded</code> у прыкладзе вышэй).</p>
 
-        <h3><a name="Models_Validations_WhenHappen" href="#Models_Validations_WhenHappen">Калі адбываецца валідацыя?</a></h3>
+        <h3 id="Models_Validations_WhenHappen">Калі адбываецца валідацыя?</h3>
         <p>Валідацыя ў мадэлі адбываецца непасрэдна перад выклікам адпаведных SQL <code>INSERT...</code> альбо <code>UPDATE...</code> у залежнасьці ад таго, гэта <a href="#Models_NewRecords">новы экзэмпляр</a> ці ўжо існуючы. Але валідацыю запускаюць ня ўсе мэтады мадэлі, якія прыводзяць да захаваньня экзэмпляру ў базе даных. Мэтады, якія запускаюць валідацыю:</p>
         <ul>
           <li><code>create</code></li>
@@ -1313,7 +1085,7 @@
           save(:validate => false)
         ]]></script>
 
-        <h3><a name="Models_Validations_Checking" href="#Models_Validations_Checking"><code>valid?</code> і <code>invalid?</code></a></h3>
+        <h3 id="Models_Validations_Checking"><code>valid?</code> і <code>invalid?</code></h3>
         <p>Rails унутры сябе для праверкі валіднасьці выкарыстоўвае мэтады <code>valid?</code> і <code>invalid?</code>, якія могуць быць выкарыстаныя і на ўласныя мэты:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Person < ActiveRecord::Base
@@ -1345,7 +1117,7 @@
                                 #         Validation failed: Name cant be blank
         ]]></script>
 
-        <h3><a name="Models_Validations_Builtin" href="#Models_Validations_Builtin">Убудаваныя валідатары</a></h3>
+        <h3 id="Models_Validations_Builtin">Убудаваныя валідатары</h3>
         <p>Мадэлі ў Rails маюць шэраг убудаваных валідатараў, кожны зь якіх мае дзьве формы запісу&nbsp;&ndash; поўную:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           validates :name, :presence => true
@@ -1374,7 +1146,7 @@
         </ul>
         <p>Ніжэй асобна разгледзім кожны з убудаваных валідатараў больш дэталёва.</p>
 
-        <h4><a name="Models_Validations_Builtin_acceptance" href="#Models_Validations_Builtin_acceptance"><code>validates_acceptance_of</code></a></h4>
+        <h4 id="Models_Validations_Builtin_acceptance"><code>validates_acceptance_of</code></h4>
         <p>Правярае ці быў абраны пэўны чэкбокс (у агульным выпадку) пры сабміце формы. Звычайна гэтая валідацыя выкарыстоўваецца, калі карыстальнік павінен згадзіцца з умовамі сэрвісу, пацьвердзіць прачытаньне нейкага тэксту ці ў іншых падобных выпадках. Часта факт &laquo;прыняцьця&raquo; правяраецца толькі ў момант сабміту формы і не маецца патрэбы захоўваць гэтую інфармацыю ў базе даных, таму ў выпадку адсутнасьці адпаведнага атрыбуту мадэлі валідатар створыць віртуальны атрыбут:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Person < ActiveRecord::Base
@@ -1399,7 +1171,7 @@
         </ul>
         <p>Змоўчны тэкст паведамленьня для гэтага валідатара: <code>"must be accepted"</code>.</p>
 
-        <h4><a name="Models_Validations_Builtin_confirmation" href="#Models_Validations_Builtin_confirmation"><code>validates_confirmation_of</code></a></h4>
+        <h4 id="Models_Validations_Builtin_confirmation"><code>validates_confirmation_of</code></h4>
         <p>Валідацыя зручна для праверкі значэньняў, якія на вью павінны быць уведзеныя карыстальнікам двойчы для выключэньня памылкі ўводу, напрыклад, значэньне паролю ці адрасу электроннай пошты:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Person < ActiveRecord::Base
@@ -1420,7 +1192,7 @@
         ]]></script>
         <p>Змоўчны тэкст паведамленьня для гэтага валідатара: <code>"doesn’t match confirmation"</code>.</p>
 
-        <h4><a name="Models_Validations_Builtin_exclusion" href="#Models_Validations_Builtin_exclusion"><code>validates_exclusion_of</code></a></h4>
+        <h4 id="Models_Validations_Builtin_exclusion"><code>validates_exclusion_of</code></h4>
         <p>Правярае, каб атрыбут мадэлі не прымаў значэньні з пэўнага шэрагу:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Account < ActiveRecord::Base
@@ -1436,7 +1208,7 @@
         </ul>
         <p>Змоўчны тэкст паведамленьня для гэтага валідатара: <code>"is reserved"</code>.</p>
 
-        <h4><a name="Models_Validations_Builtin_format" href="#Models_Validations_Builtin_format"><code>validates_format_of</code></a></h4>
+        <h4 id="Models_Validations_Builtin_format"><code>validates_format_of</code></h4>
         <p>Правярае, каб значэньне атрыбуту мадэлі адпавядала (альбо наадварот, НЕ адпавядала) пэўнаму рэгулярнаму выразу:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class User < ActiveRecord::Base
@@ -1466,7 +1238,7 @@
           end
         ]]></script>
 
-        <h4><a name="Models_Validations_Builtin_inclusion" href="#Models_Validations_Builtin_inclusion"><code>validates_inclusion_of</code></a></h4>
+        <h4 id="Models_Validations_Builtin_inclusion"><code>validates_inclusion_of</code></h4>
         <p>Правярае, каб атрыбут мадэлі прымаў значэньні толькі з пэўнага шэрагу:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class User < ActiveRecord::Base
@@ -1483,7 +1255,7 @@
         </ul>
         <p>Змоўчны тэкст паведамленьня для гэтага валідатара: <code>"is not included in the list"</code>.</p>
 
-        <h4><a name="Models_Validations_Builtin_length" href="#Models_Validations_Builtin_length"><code>validates_length_of</code> (ці <code>validates_size_of</code>)</a></h4>
+        <h4 id="Models_Validations_Builtin_length"><code>validates_length_of</code> (ці <code>validates_size_of</code>)</h4>
         <p>Правярае, каб атрыбут мадэлі прымаў значэньні пэўнай даўжыні (роўна, больш/менш, альбо дыяпазону даўжынь):</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Person < ActiveRecord::Base
@@ -1519,7 +1291,7 @@
         </ul>
         <p>Для вызначэньня агульнага (для ўсіх выпадкаў) паведамленьня як і звычайна можна выкарыстоўваць парамэтар <code>:message</code>.</p>
 
-        <h4><a name="Models_Validations_Builtin_numericality" href="#Models_Validations_Builtin_numericality"><code>validates_numericality_of</code></a></h4>
+        <h4 id="Models_Validations_Builtin_numericality"><code>validates_numericality_of</code></h4>
         <p>Правярае, каб атрыбут мадэлі прымаў толькі лічбавыя значэньні:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Player < ActiveRecord::Base
@@ -1546,7 +1318,7 @@
         </ul>
         <p>Змоўчны тэкст паведамленьня для астатніх выпадкаў: <code>"is not a number"</code>.</p>
 
-        <h4><a name="Models_Validations_Builtin_presence" href="#Models_Validations_Builtin_presence"><code>validates_presence_of</code></a></h4>
+        <h4 id="Models_Validations_Builtin_presence"><code>validates_presence_of</code></h4>
         <p>Правярае, каб атрыбут быў не пустым (быў запоўненым):</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Person < ActiveRecord::Base
@@ -1567,7 +1339,7 @@
         <p>Змоўчны тэкст паведамленьня для гэтай валідацыі: <code>"can’t be empty"</code>.</p>
 
         <aside>Трэба памятаць, што праверка ўнікальнасьці адбываецца не за конт канстрэйнта базы даных і цалкам магчыма, што розныя канэкшэны да базы даных адначасова створаць запісы з аднолькавым значэньнем у такім полі. Таму гэтую валідацыю варта заўсёды суправаджаць адпаведным канстрэйнтам базы даных.</aside>
-        <h4><a name="Models_Validations_Builtin_uniqueness" href="#Models_Validations_Builtin_uniqueness"><code>validates_uniqueness_of</code></a></h4>
+        <h4 id="Models_Validations_Builtin_uniqueness"><code>validates_uniqueness_of</code></h4>
         <p>Правярае, каб атрыбут меў унікальнае значэньне (сярод усіх запісаў ці па дадатковай умове):</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Account < ActiveRecord::Base
@@ -1594,10 +1366,10 @@
         </ul>
         <p>Змоўчны тэкст паведамленьня для гэтай валідацыі: <code>"has already been taken"</code>.</p>
 
-        <h3><a name="Models_Validations_Custom" href="#Models_Validations_Custom">Уласныя валідатары</a></h3>
+        <h3 id="Models_Validations_Custom">Уласныя валідатары</h3>
         <p>Акрамя ўбудаваных валідатараў, калі яны ня здольныя вырашыць пастаўленую задачу, можна скарыстацца уласнымі.</p>
 
-        <h4><a name="Models_Validations_Custom_Attributes" href="#Models_Validations_Custom_Attributes">Валідацыя атрыбутаў</a></h4>
+        <h4 id="Models_Validations_Custom_Attributes">Валідацыя атрыбутаў</h4>
         <p>Уласная валідацыя асобных атрыбутаў магчымая, па-першае, праз стварэньне клясаў-валідатараў, спадчыньнікаў ад <code>ActiveModel::EachValidator</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class EmailValidator < ActiveModel::EachValidator
@@ -1622,7 +1394,7 @@
           end
         ]]></script>
 
-        <h4><a name="Models_Validations_Custom_Instances" href="#Models_Validations_Custom_Instances">Валідацыя экзэмпляраў</a></h4>
+        <h4 id="Models_Validations_Custom_Instances">Валідацыя экзэмпляраў</h4>
         <p>Для праверкі цалкам усяго экзэмпляру можна скарыстацца макрасам <code>validates_with</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
           class Person < ActiveRecord::Base
@@ -1653,7 +1425,7 @@
           end
         ]]></script>
 
-        <h4><a name="Models_Validations_Custom_Methods" href="#Models_Validations_Custom_Methods">Мэтады-валідатары</a></h4>
+        <h4 id="Models_Validations_Custom_Methods">Мэтады-валідатары</h4>
         <p>Таксама ўласную валідацыю можна стварыць праз звычайны мэтад мадэлі:</p>
         <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
           class Invoice < ActiveRecord::Base
@@ -1674,7 +1446,7 @@
           end
         ]]></script>
 
-        <h3><a name="Models_Validations_Conditional" href="#Models_Validations_Conditional">Умоўная валідацыя</a></h3>
+        <h3 id="Models_Validations_Conditional">Умоўная валідацыя</h3>
         <p>Як ужо адзначалася вышэй, кожны з валідатараў можа прымаць парамэтры <code>:if</code> і <code>:unless</code>, якія ўплываюць на тое, пры якіх умовах валідатары будуць выкананыя ці праігнараваныя. Значэньнем гэтых парамэтраў можа быць <a href="../rubyRef/index.html#Types_Symbols">сымбаль</a>, які павінен адпавядаць імені аднаго з мэтадаў:</p>
         <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
           class Order < ActiveRecord::Base
@@ -1708,7 +1480,7 @@
           end
         ]]></script>
 
-        <h3><a name="Models_Validations_ErrorMessages" href="#Models_Validations_ErrorMessages">Паведамленьні аб памылках валідацыі</a></h3>
+        <h3 id="Models_Validations_ErrorMessages">Паведамленьні аб памылках валідацыі</h3>
         <p>Атрыбут мадэляў <code>errors</code> зьяўляецца экзэмплярам клясы <code>ActiveModel::Errors</code> і ўтрымлівае ўсе паведамленьні аб памылках валідацыі:</p>
         <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
           class Person < ActiveRecord::Base
@@ -1742,7 +1514,7 @@
         ]]></script>
         <p>Акрамя паведамленьняў аб памылках для пэўных атрыбутаў, <code>errors</code> утрымлівае паведамленьні аб памылках, якія адносяцца да ўсяго экзэмпляру мадэлі, пад адмысловым ключом <code>:base</code>.</p>
 
-        <h2><a name="Models_Callbacks" href="#Models_Callbacks">Зваротныя выклікі</a></h2>
+        <h2 id="Models_Callbacks">Зваротныя выклікі</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/active_record_validations_callbacks.html">Guide</a></li>
@@ -1778,10 +1550,10 @@
         ]]></script>
         <p>Лічыцца добрай практыкай мэтады, якія ўжываюцца як зваротныя выклікі, рабіць <code>private</code> ці <code>protected</code>.</p>
 
-        <h3><a name="Models_Callbacks_Types" href="#Models_Callbacks_Types">Тыпы зваротных выклікаў</a></h3>
+        <h3 id="Models_Callbacks_Types">Тыпы зваротных выклікаў</h3>
         <p>Ніжэй пералічаны тыпы зваротных выклікаў у той пасьлядоўнасьці (у межах адпаведнай апэрацыі), у якой яны будуць выклікацца, незалежна ад той пасьлядоўнасьці, у якой яны зьмешчаны ў кодзе праграмы.</p>
 
-        <h4><a name="Models_Callbacks_Types_CreatingObject" href="#Models_Callbacks_Types_CreatingObject">Стварэньне аб&#39;екту</a></h4>
+        <h4 id="Models_Callbacks_Types_CreatingObject">Стварэньне аб&#39;екту</h4>
         <ul>
           <li><code>before_validation</code></li>
           <li><code>after_validation</code></li>
@@ -1793,7 +1565,7 @@
           <li><code>after_save</code></li>
         </ul>
 
-        <h4><a name="Models_Callbacks_Types_UpdatingObject" href="#Models_Callbacks_Types_UpdatingObject">Абнаўленьне аб'екту</a></h4>
+        <h4 id="Models_Callbacks_Types_UpdatingObject">Абнаўленьне аб'екту</h4>
         <ul>
           <li><code>before_validation</code></li>
           <li><code>after_validation</code></li>
@@ -1805,14 +1577,14 @@
           <li><code>after_save</code></li>
         </ul>
 
-        <h4><a name="Models_Callbacks_Types_DestroyingObject" href="#Models_Callbacks_Types_DestroyingObject">Выдаленьне аб'екту</a></h4>
+        <h4 id="Models_Callbacks_Types_DestroyingObject">Выдаленьне аб'екту</h4>
         <ul>
           <li><code>before_destroy</code></li>
           <li><code>around_destroy</code></li>
           <li><code>after_destroy</code></li>
         </ul>
 
-        <h4><a name="Models_Callbacks_Types_InitializingObject" href="#Models_Callbacks_Types_InitializingObject"><code>after_initialize</code> і <code>after_find</code></a></h4>
+        <h4 id="Models_Callbacks_Types_InitializingObject"><code>after_initialize</code> і <code>after_find</code></h4>
         <p>Зваротны выклік <code>after_initialize</code> выклікаецца кожны раз, калі экзэмпляр ствараецца ў памяці кампутара&nbsp;&ndash; альбо праз наўпроставае ініцыіраваньне (выклік мэтаду <code>new</code>), альбо праз загрузку яго з базы даных.</p>
         <p>Зваротны выклік <code>after_find</code> выклікаецца кожны раз, калі Active Record вычытвае запіс з базы даных. Ён выклікаецца да выкліку <code>after_initialize</code>, калі абодва зарэгістраваныя:</p>
         <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
@@ -1836,7 +1608,7 @@
           => #<User id: 1>
         ]]></script>
 
-        <h3><a name="Models_Callbacks_RunningCallbacks" href="#Models_Callbacks_RunningCallbacks">Калі выконваюцца зваротныя выклікі</a></h3>
+        <h3 id="Models_Callbacks_RunningCallbacks">Калі выконваюцца зваротныя выклікі</h3>
         <p>Наступныя мэтады мадэляў прыводзяць да запуску адпаведных зваротных выклікаў:</p>
         <ul>
           <li><code>create</code></li>
@@ -1882,10 +1654,10 @@
           <li><code>update_counters</code></li>
         </ul>
 
-        <h3><a name="Models_Callbacks_HaltingExecution" href="#Models_Callbacks_HaltingExecution">Адкат транзакцыі</a></h3>
+        <h3 id="Models_Callbacks_HaltingExecution">Адкат транзакцыі</h3>
         <p>Усе валідатары і зваротныя выклікі, якія тычыцца пэўнай каманды мадэлі, зьмяшчаюцца ў чараду для выкананьня. Гэтая чарада абгортваецца транзакцыяй базы даных (калі база падтрымлівае транзакцыі). У выпадку, калі <i>before</i>-выклік вяртае <code>false</code> ці кідае выключэньне, уся транзакцыя будзе адкочаная. Але <i>after</i>-выклік прывядзе да адкату толькі ў выпадку кіданьня выключэньня.</p>
 
-        <h3><a name="Models_Callbacks_Conditional" href="#Models_Callbacks_Conditional">Умоўныя выклікі</a></h3>
+        <h3 id="Models_Callbacks_Conditional">Умоўныя выклікі</h3>
         <p>Як і ў выпадку <a href="#Models_Validations_Conditional">валідатараў</a> выкананьне зваротных выклікаў можна абстаўляць пэўнымі ўмовамі. Праз падабенства ўжываньня з валідатарамі падрабязна спыняцца ня будзем, а проста прывядзем шэраг прыкладаў:</p>
         <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
           class Order < ActiveRecord::Base
@@ -1906,14 +1678,14 @@
 
 
 
-        <h2><a name="Models_Associations" href="#Models_Associations">Асацыяцыі</a></h2>
+        <h2 id="Models_Associations">Асацыяцыі</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/association_basics.html">Guide</a></li>
           </ul>
         </div>
 
-        <h2><a name="Models_Querying" href="#Models_Querying">Састаўленьне запытаў</a></h2>
+        <h2 id="Models_Querying">Састаўленьне запытаў</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/active_record_querying.html">Guide</a></li>
@@ -1922,7 +1694,7 @@
       </section>
 
       <section>
-        <h1><a name="Views">Вью</a></h1>
+        <h1 id="Views" data-content-item-open>Вью</h1>
 
         <p>Вью&nbsp;&mdash; гэта тое, што карыстальнік праграмы бачыць і чаго &laquo;кранаецца&raquo;. У агульным выпадку вью адлюстроўвае даныя мадэлі альбо формы, аднак можа вывадзіць і XML для RSS-рыдэраў ці JSON для пэўнага API.</p>
         <p>Rails прадстаўляе гэты прэзэнтацыйны ўзровень пры дапамозе кампанэнта Action View, які ўключае сыстэму шаблёнаў, якая завецца <i>embedded Ruby</i> (ERB) і выдатна падыходзіць для стварэньня <a href="../htmlRef/index.html">HTML</a>-дакумэнтаў:</p>
@@ -1947,14 +1719,14 @@
         ]]></script>
         <p><code>distance_of_time_in_words_to_now</code>&nbsp;&mdash; ідзін з <a href="http://api.rubyonrails.org/classes/ActionView/Helpers.html">дапаможных мэтадаў</a>, якія ўключае ў сябе Action View.</p>
 
-        <h2><a name="Views_LayoutsRendering">Макеты і візуалізацыя ў Rails</a></h2>
+        <h2 id="Views_LayoutsRendering">Макеты і візуалізацыя ў Rails</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Guide</a></li>
           </ul>
         </div>
 
-        <h2><a name="Views_FormHelpers">Дапаможнікі формаў</a></h2>
+        <h2 id="Views_FormHelpers">Дапаможнікі формаў</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/form_helpers.html">Guide</a></li>
@@ -1964,7 +1736,7 @@
       </section>
 
       <section>
-        <h1><a name="Controllers">Кантролеры</a></h1>
+        <h1 id="Controllers" data-content-item-open>Кантролеры</h1>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Overview</a></li>
@@ -1993,7 +1765,7 @@
         <p>Калі прыходзіць запыт на URI <code>http://some-app.com/people/index.html</code> мэтад <code>index</code> кантролеру <code>PeopleController</code> будзе шукаць шаблён з такім жа імем і фарматам: <code>index.html.erb</code></p>
         <p>Што яшчэ больш цікава і зручна, гэта што Action Controller можа адказваць тым жа самым мэтадам (дзеяй) на запыты розных фарматаў: на URI <code>http://some-app.com/people/index.json</code> той жа самы мэтад <code>index</code> кантролеру <code>PeopleController</code> з прыкладу вышэй адкажа JSON-дакумэнтам.</p>
 
-        <h2><a name="Controllers_Routing">Разводка</a></h2>
+        <h2 id="Controllers_Routing">Разводка</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
@@ -2019,7 +1791,7 @@
         ]]></script>
         <p>Гэты радок зьяўляецца нічым іншым, як выклікам мэтаду, які наладжвае стандартную RESTful-разводку для відэа-рэсурсаў праграмы.</p>
 
-        <h2><a name="Controllers_Parameters">Парамэтры</a></h2>
+        <h2 id="Controllers_Parameters">Парамэтры</h2>
         <p>Часам у кантролерах трэба мець доступ да даных, пераданых карыстальнікам, ці да іншых парамэтраў праграмы. Існуе 2 віды парамэтраў, даступныя ў любой сеціўнай праграме. Першыя&nbsp;&mdash; дасылаемые ў складзе <abbr class="term" title="Uniform Resource Locator">URL</abbr>'а (<i>query string parameters</i>). Гэтыя парамэтры пазначаюцца ў адрасным радку праз пытальнік пасьля ўласна адрасу. Другі від парамэтраў перадаецца як частка <code>POST</code>-запыту і зьяўляецца звычайна данымі, каторыя карыстальнік увёў у <a href="../htmlRef/index.html">HTML</a>-форму. Нягледзячы на дзьве розныя прыроды гэтых парамэтраў, Rails не падзяляе іх і прадстаўляе аднолькавы да іх доступ&nbsp;&mdash; праз <a href="../rubyRef/index.html#Types_Hashes">Hash</a>-зьменную <code>params</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class ClientsController < ActionController::Base
@@ -2051,7 +1823,7 @@
         end
         ]]></script>
 
-        <h3><a name="Controllers_Parameters_HashesAndArrays">Хэшы і масівы ў якасьці парамэтраў</a></h3>
+        <h3 id="Controllers_Parameters_HashesAndArrays">Хэшы і масівы ў якасьці парамэтраў</h3>
         <p>У якасьці парамэтраў могуць быць ня толькі дыскрэтныя значэньні, але і <a href="../rubyRef/index.html#Types_Hashes">хэшы</a> ды <a href="../rubyRef/index.html#Types_Arrays">масівы</a>. Каб пазначыць, што ў якасьці парамэтру перадаецца масіў, трэба да імені парамэтру дадаць "<code>[]</code>":</p>
         <script type="syntaxhighlighter" class="brush: text"><![CDATA[
         GET /clients?ids[]=1&ids[]=2&ids[]=3
@@ -2068,7 +1840,7 @@
         ]]></script>
         <p>Калі пазначаная форма будзе дасланая, значэньне <code>params[:client]</code> будзе <code>{"name" => "Acme", "phone" => "12345", "address" => {"postcode" => "12345", "city" => "Carrot City"}}</code>. Зьвярніце ўвагу на наяўнасьць у дадзеным прыкладзе укладзенага хэшу <code>params[:client][:address]</code>.</p>
 
-        <h3><a name="Controllers_Parameters_Routing">Парамэтры разводкі</a></h3>
+        <h3 id="Controllers_Parameters_Routing">Парамэтры разводкі</h3>
         <p>Хэш <code>params</code> акрамя іншага заўсёды будзе ўтрымліваць значэньні ключоў <code>:controller</code> і <code>:action</code>, пры гэтым пераважным спосабам атрыманьня адпаведных значэньняў зьяўляюцца мэтады <code>controller_name</code> і <code>action_name</code>. Іншыя парамэтры, якія вызначаюцца разводкай, як напрыклад <code>:id</code>, таксама будуць даступныя. Напрыклад, нам патрэбна вывадзіць сьпіс актыўных і неактыўных кліентаў, тады можна вызначыць разводку наступным чынам, уключыўшы ў яе статус кліента:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         map.connect "/clients/:status",
@@ -2078,7 +1850,7 @@
         ]]></script>
         <p>У гэтым выпадку, калі карыстальнік набірае ў адрасным радку <code>/clients/active</code>, значэньнем <code>params[:status]</code> будзе <code>"active"</code>. Адпаведна, калі спрацуе гэтая разводка, <code>params[:foo]</code> будзе ўтрымліваць значэньне <code>"bar"</code> (гэтак жа сама, калі б парамэтар быў перададзены як <i>query string parameter</i>).</p>
 
-        <h3><a name="Controllers_Parameters_Default">Змоўчныя</a></h3>
+        <h3 id="Controllers_Parameters_Default">Змоўчныя</h3>
         <p>У Rails маецца мэханізм, які дазваляе пазначыць парамэтры, каторыя будуць ужывацца пры кожным запыце да пэўнага ці да ўсіх кантролераў&nbsp;&mdash; пры дапамозе мэтаду <code>default_url_options</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class ApplicationController < ActionController::Base
@@ -2089,7 +1861,7 @@
         end
         ]]></script>
 
-        <h2><a name="Controllers_Cookies">Cookies</a></h2>
+        <h2 id="Controllers_Cookies">Cookies</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/action_controller_overview.html#cookies">Guide</a></li>
@@ -2123,14 +1895,14 @@
         ]]></script>
         <p>У адрозьненьні ж ад працы з <a href="#Security_Sessions">сэсіямі</a>, каб выдаліць пэўнае значэньне з <i>cookie</i>, недастаткова пазначыць у якасьці новага значэньня <code>nil</code>, але трэба карыстацца выклікам кшталту <code>cookies.delete(:key)</code>.</p>
 
-        <h2><a name="Controllers_Filters">Фільтры</a></h2>
+        <h2 id="Controllers_Filters">Фільтры</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/action_controller_overview.html#filters">Guide</a></li>
           </ul>
         </div>
 
-        <h2><a name="Controllers_Verification">Спраўджаньне ўмоваў дзеі</a></h2>
+        <h2 id="Controllers_Verification">Спраўджаньне ўмоваў дзеі</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/action_controller_overview.html#verification">Guide</a></li>
@@ -2142,7 +1914,7 @@
       </section>
 
       <section>
-        <h1><a name="Security">Бясьпека</a></h1>
+        <h1 id="Security">Бясьпека</h1>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/security.html">Guide</a></li>
@@ -2151,7 +1923,7 @@
         <p><a href="http://rubysource.com/techniques-to-secure-your-website-with-ruby-on-rails-part-1/?utm_medium=email&utm_campaign=RubySource+NL+June+12+2012&utm_content=RubySource+NL+June+12+2012+CID_f9e425d234de9486edbde880a89d6bd9&utm_source=Newsletter&utm_term=Secure+Your+Website+with+Ruby+on+Rails+Part+1">Techniques to Secure Your Website with Ruby On Rails (Part 1)</a></p>
         <p>Кожны фрэймворк распрацоўкі сеціўных праграм прадстаўляе распрацоўшчыку шэраг магчымасьцяў для ўмацаваньня бясьпекі ствараемай праграмы. Не выключэньне з гэтага правіла і Rails. Аднак, трэба заўважыць, што бясьпека праграмы не ўсталёўваецца і не падтрымліваецца ў належным стане сама па сабе. У любым выпадку апошняе залежыць ад распрацоўшчыкаў&nbsp;&mdash; як яны выкарыстоўваюць фрэймворк, а часам і ад тых мэтадаў, каторымі яны карыстаюцца пры распрацоўцы.</p>
 
-        <h2><a name="Security_Sessions">Сэсіі</a></h2>
+        <h2 id="Security_Sessions">Сэсіі</h2>
         <div class="refs">
           <ul>
             <li><a href="http://www.symantec.com/connect/articles/basic-web-session-impersonation">Symantec</a></li>
@@ -2188,7 +1960,7 @@
         ]]></script>
 
         <aside><sup>6</sup> Пры зьмене сакрэтнага ключу (атрымаць чарговы ключ можна праз каманду <code>rake secret</code>) усе ранейшыя сэсіі стануць несапраўднымі.</aside>
-        <h3><a name="Security_Sessions_Settings">Наладжваньне</a></h3>
+        <h3 id="Security_Sessions_Settings">Наладжваньне</h3>
         <p>Як наладжваць кожны з мэханізмаў захаваньня даных сэсій глядзіце <a href="http://errtheblog.com/posts/22-sessions-n-such">Err The Blog</a>. Тут жа пазначым толькі агульныя асаблівасьці ды тыя зь іх, якія тычацца <code class="class">CookieStore</code>, як больш пажаданага мэханізму.</p>
         <p>Які мэханізм ужываць, а таксама ключ сэсіі (імя <i>cookie</i>), каторы выкарыстоўваецца пры подпісе даных сэсіі, пазначаецца ў файле <code>config/initializers/session_store.rb</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
@@ -2199,7 +1971,7 @@
         YourApp::Application.config.secret_token = '49d3f3de9ed86c74b94ad6bd0...'
         ]]></script>
 
-        <h3><a name="Security_Sessions_TurnOff">Ігнараваньне</a></h3>
+        <h3 id="Security_Sessions_TurnOff">Ігнараваньне</h3>
         <div class="refs">
           <ul>
             <li><a href="http://errtheblog.com/posts/22-sessions-n-such">Err The Blog</a></li>
@@ -2225,7 +1997,7 @@
         end
         ]]></script>
 
-        <h3><a name="Security_Sessions_Flashes">Бліскаўкі</a></h3>
+        <h3 id="Security_Sessions_Flashes">Бліскаўкі</h3>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/action_controller_overview.html#the-flash">Guide</a></li>
@@ -2279,7 +2051,7 @@
         end
         ]]></script>
 
-        <h4><a name="Security_Sessions_Flashes_Now"><code class="method">flash.now</code></a></h4>
+        <h4 id="Security_Sessions_Flashes_Now"><code class="method">flash.now</code></h4>
         <p>Часам нейкае паведамленьне трэба адлюстраваць у межах таго ж самага запыту, без перанакіраваньня. Напрыклад, калі пэўная дзея пры памылцы дасылае да іншай дзеі таго ж кантролеру. У гэтым выпадку звычайнымі бліскаўкамі скарыстацца няма магчымасьці, таму што доступ ёсьць толькі да паведамленьняў з папярэдняга запыту. Тады трэба карыстацца <code class="method">flash.now</code>:</p>
         <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
         class ClientsController < ApplicationController
@@ -2295,7 +2067,7 @@
         end
         ]]></script>
 
-        <h2><a name="Security_Authentication">Ідэнтыфікацыя карыстальніка</a></h2>
+        <h2 id="Security_Authentication">Ідэнтыфікацыя карыстальніка</h2>
         <!--div class="refs">
           <ul>
             <li><a href="http://www.symantec.com/connect/articles/basic-web-session-impersonation">Symantec</a></li>
@@ -2320,24 +2092,24 @@
           <a href="http://www.tonyamoyal.com/2010/07/28/rails-authentication-with-devise-and-cancan-customizing-devise-controllers/">http://www.tonyamoyal.com/2010/07/28/rails-authentication-with-devise-and-cancan-customizing-devise-controllers/</a>
         </p>
 
-        <h2><a name="Security_Authorization">Аўтарызацыя</a></h2>
+        <h2 id="Security_Authorization">Аўтарызацыя</h2>
         <p>CanCan: <a href="https://github.com/ryanb/cancan">https://github.com/ryanb/cancan</a></p>
 
-        <h2><a name="Security_RequestForgery">Падробка запытаў</a></h2>
+        <h2 id="Security_RequestForgery">Падробка запытаў</h2>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf">Guide</a></li>
           </ul>
         </div>
 
-        <h3><a name="Security_RequestForgery_Protection">Абарона</a></h3>
+        <h3 id="Security_RequestForgery_Protection">Абарона</h3>
         <div class="refs">
           <ul>
             <li><a href="http://guides.rubyonrails.org/action_controller_overview.html#request-forgery-protection">Guide</a></li>
           </ul>
         </div>
 
-        <h2><a name="Security_SSL">Бясьпечная перадача даных</a></h2>
+        <h2 id="Security_SSL">Бясьпечная перадача даных</h2>
         <p><a href="http://devcenter.heroku.com/articles/ssl">SSL on Heroku</a></p>
         <p><a href="http://stackoverflow.com/questions/3634100/rails-3-ssl-deprecation">Rails 3 SSL Deprecation</a></p>
         <p><a href="http://stackoverflow.com/questions/3993651/rails-3-ssl-routing-redirects-from-https-to-http">Rails 3 SSL routing redirects from https to http</a></p>
@@ -2347,10 +2119,10 @@
         <p>Rails and SSL: <a href="http://siannopollo.blogspot.com/2007/08/rails-and-ssl-https.html">http://siannopollo.blogspot.com/2007/08/rails-and-ssl-https.html</a></p>
         <p>ssl_requirement: <a href="https://github.com/retr0h/ssl_requirement">https://github.com/retr0h/ssl_requirement</a>, <a href="http://rubygems.org/gems/ssl_requirement">http://rubygems.org/gems/ssl_requirement</a></p>
 
-        <h3><a name="Security_SSL_ConfiguringWEBrick">Наладка SSL для WEBrick</a></h3>
+        <h3 id="Security_SSL_ConfiguringWEBrick">Наладка SSL для WEBrick</h3>
         <p>Па змоўчаньні стандартны вэб-сэрвер распрацоўшчыцкага асяродку (<a href="http://oldwiki.rubyonrails.org/rails/pages/WEBrick"><i>WEBrick</i></a>) апрацоўвае толькі <i>http</i>-запыты. Каб &laquo;прымусіць&raquo; яго апрацоўваць і <i>https</i>-запыты, патрабуецца прыкласьці трохі высілкаў.</p>
 
-        <h4><a name="Security_SSL_ConfiguringWEBrick_Certificate">Генерацыя сэртыфікату</a></h4>
+        <h4 id="Security_SSL_ConfiguringWEBrick_Certificate">Генерацыя сэртыфікату</h4>
         <div class="refs">
           <ul>
             <li><a href="http://www.parorrey.com/blog/webmaster-tasks/configuring-webrick-to-serve-redmine-over-ssl-using-openssl-certificate/">parorrey.com</a></li>
@@ -2405,7 +2177,7 @@
         ]]></script>
         <p>У выніку атрымаем файл падпісанага сэртыфікату <code>server.cert.crt</code>.</p>
 
-        <h4><a name="Security_SSL_ConfiguringWEBrick_ActivatingSSL">Актывацыя SSL у WEBrick</a></h4>
+        <h4 id="Security_SSL_ConfiguringWEBrick_ActivatingSSL">Актывацыя SSL у WEBrick</h4>
         <div class="refs">
           <ul>
             <li><a href="http://www.nearinfinity.com/blogs/chris_rohr/configuring_webrick_to_use_ssl.htm/">nearinfinity.com</a></li>
@@ -2453,7 +2225,7 @@
       </section>
 
       <section>
-        <h1><a name="Mailer">Пошта</a></h1>
+        <h1 id="Mailer">Пошта</h1>
         <div class="refs">
           <ul>
             <li><a href="http://ofps.oreilly.com/titles/9780596521424/actionmailer_id326030.html">in a Nutshell</a></li>
@@ -2464,7 +2236,7 @@
       </section>
 
       <section>
-        <h1><a name="WebServices">Вэб-сэрвісы</a></h1>
+        <h1 id="WebServices">Вэб-сэрвісы</h1>
         <div class="refs">
           <ul>
             <li><a href="http://ofps.oreilly.com/titles/9780596521424/activeresource_id59243.html">in a Nutshell</a></li>
@@ -2475,7 +2247,7 @@
       </section>
 
       <section>
-        <h1><a name="RSS">RSS</a></h1>
+        <h1 id="RSS">RSS</h1>
         <p>Каб дадаць у праграму магчымасьць адказваць на запыты RSS-чытальнікаў, дастаткова ў дзею кантролера дадаць яшчэ адзін, адпаведны фармат вью (радок 7):</p>
         <script type="syntaxhighlighter" class="brush: ruby; highlight: [7]"><![CDATA[
           def index
@@ -2517,10 +2289,10 @@
       </section>
 
       <section>
-        <h1><a name="Optimization">Аптымізацыя</a></h1>
+        <h1 id="Optimization">Аптымізацыя</h1>
         <p><a href="https://devcenter.heroku.com/articles/http-caching-ruby-rails?utm_medium=email&utm_campaign=October+2012+Newsletter&utm_content=October+2012+Newsletter+CID_57270a88281760fc540ac59ffb6c8a66&utm_source=Email%20Blast&utm_term=This%20article%20by%20Vincent%20Spehner">HTTP Caching in Ruby with Rails</a></p>
 
-        <h2><a name="Optimization_Scalability">Маштабіруемасьць</a></h2>
+        <h2 id="Optimization_Scalability">Маштабіруемасьць</h2>
         <div class="refs">
           <ul>
             <li><a href="http://railslab.newrelic.com/scaling-rails">Casts на newrelic.com</a></li>
@@ -2531,7 +2303,7 @@
       </section>
 
       <section>
-        <h1><a name="Money">Money in Rails</a></h1>
+        <h1 id="Money">Money in Rails</h1>
         <p>Money values:
           <ul>
             <li><a href="https://github.com/RubyMoney/money">money-library</a></li>
@@ -2539,12 +2311,12 @@
           </ul>
         </p>
 
-        <h1><a name="Payment">Плацежныя сыстэмы ў Rails</a></h1>
+        <h1 id="Payment">Плацежныя сыстэмы ў Rails</h1>
         <p><a href="http://activemerchant.org/" title="ActiveMerchant">ActiveMerchant&nbsp;&mdash; дадатак і <i>gem</i></a>.</p>
         <p><a href="http://habrahabr.ru/company/skydns/blog/124058/">Enlarge your payment, или паранойя платежных систем</a>.</p>
       </section>
       <section>
-        <h1><a name="JS">Інтэграцыя з JavaScript</a></h1>
+        <h1 id="JS">Інтэграцыя з JavaScript</h1>
         <p>Праблема выкарыстаньня jQuery у Rails. Канфлікты з іншымі фрэймворкамі і шляхі іх разьвязваньня:
           <ul>
             <li><a href="http://errtheblog.com/posts/73-the-jskinny-on-jquery">The jSkinny on jQuery</a></li>
@@ -2576,19 +2348,8 @@
       </section>
 
       <footer>
-        <div id="powered">
-          <h5>Падзякі</h5>
-          <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
-            <ul>
-              <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
-              <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
-              <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
-              <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
-            </ul>
-          </p>
-        </div>
         <div id="copyright">
-          <p>Copyright &copy; 2010-2011 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>Copyright &copy; 2010-2013 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
           <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
               <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
@@ -2628,6 +2389,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
+  <script src="../js/index.js"></script>
   <script src="../js/libs/jquery.tree.js"></script>
 
   <script src="../js/libs/waypoints.min.js"></script>

@@ -42,60 +42,30 @@
 
 <body>
   <div id="container">
-    <div id="index">
-      <div id="main_index">
-        <ul>
-          <li><a href="../htmlRef/index.html">HTML</a></li>
-          <li><a href="../cssRef/index.html">CSS</a></li>
-          <li><a href="../jsRef/index.html">JS</a></li>
-          <li><a href="../webRef/index.html">Web</a></li>
-        </ul>
-        <ul>
-          <li><a href="../rubyRef/index.html">Ruby</a></li>
-          <li><a href="../railsRef/index.html">Rails</a></li>
-        </ul>
-        <ul>
-          <li class="active"><a href="../gitRef/index.html">Git</a></li>
-        </ul>
-        <div class="zip_link"><a href="../Manuals.zip" title="Архіў усіх даведнікаў адным файлам (~9 Mb)"></a></div>
-        <div class="github_link"><a href="https://github.com/yurtsevich/Manuals" title="Зыходнікі ўсіх даведнікаў на GitHub"></a></div>
-      </div>
-
-      <div id="content">
-        <ul class="tree">
-          <li><a href="#Links">Карысныя спасылкі</a></li>
-
-          <li><a href="#Configuration">Наладкі</a>
-            <ul>
-              <li><a href="#Configuration_identity">Асабістыя даныя</a></li>
-              <li><a href="#Configuration_merge">Прылада параўнаньня</a></li>
-              <li><a href="#Configuration_list">Прагляд наладкаў</a></li>
-            </ul>
-          </li>
-
-          <li class="liOpen"><a href="#Repo">Стварэньне рэпазыторыяў</a>
-            <ul>
-              <li><a href="#Repo_init">Ініцыіяваньне новага</a></li>
-              <li><a href="#Repo_clone">Кланаваньне адлеглага</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-
     <article id="main">
       <header>
         Даведнік па Git
       </header>
 
       <section>
-        <h1><a name="Links">Карысныя спасылкі</a></h1>
+        <h1 id="Links">Карысныя спасылкі</h1>
         <p>Усталёўшчык Git можна спампаваць: <a href="http://git-scm.com/download/">http://git-scm.com/download</a></p>
         <p>Афіцыйны навучальны дапаможнік (<strong>пачаткоўцам</strong>): <a href="http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html">http://www.kernel.org/pub/software/scm/git/docs/gittutorial.html</a></p>
         <p>Афіцыйны даведнік (<strong>адмыслоўцам</strong>): <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">http://www.kernel.org/pub/software/scm/git/docs/user-manual.html</a></p>
-        <p>Вольная электронная кніга <cite>Pro Git</cite>: <a href="http://progit.org/book/">http://progit.org/book</a></p>
+        <p>Даведнік па камандах: <a href="http://git-scm.com/docs">http://git-scm.com/docs</a></p>
+        <p>Шпаргалка па асноўных камандах (у <i>PDF</i>): <a href="https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf">https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf</a></p>
+        <p>Вольная электронная кніга «<cite>Pro Git</cite>»: <a href="http://git-scm.com/book/ru">http://git-scm.com/book/ru</a></p>
+      </section>
 
-        <h1><a name="Configuration">Наладкі</a></h1>
+      <section>
+        <h1 id="Intro">Уводзіны</h1>
+
+        <h2 id="Intro_AboutVersionControl">Пра кантроль вэрсіяў</h2>
+        <p>Сыстэма кантролю вэрсіяў&nbsp;&ndash; гэта сыстэма, якая рэгіструе зьмены ў адным ці некалькіх файлах з тым, каб у далейшым можна было вярнуцца да былых вэрсіяў (калі пэўныя зьмены прывялі праект у непрацоўны выгляд і выправіць іх прынамсі хутка не ўяўляецца магчымым; ці калі стала зразумелым, што пэўныя зьмены былі непатрэбныя) альбо проста праглядзець гісторыю зьменаў (напрыклад, высьветліць хто і чаму ўнёс памылку ў праграму).</p>
+      </section>
+
+      <section>
+        <h1 id="Configuration">Наладкі</h1>
         <div class="refs">
           <ul>
             <li><a href="http://progit.org/book/ch1-5.html">ProGit</a></li>
@@ -109,22 +79,22 @@
           </ul>
         </p>
 
-        <h2><a name="Configuration_identity">Асабістыя даныя карыстальніка</a></h2>
+        <h2 id="Configuration_identity">Асабістыя даныя карыстальніка</h2>
         <p>Перш за ўсё пазначце свае ідэнтыфікацыйныя даныя:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
           git config --global user.name "Alesj Zagorski"
           git config --global user.email a.zagorski@example.com
         ]]></script>
 
-        <h2><a name="Configuration_merge">Прылада параўнаньня (merge tool)</a></h2>
+        <h2 id="Configuration_merge">Прылада параўнаньня (merge tool)</h2>
         <p>Акрамя гэтага можна пазначыць сваю ўлюбёную прыладу параўнаньня файлаў:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
           git config --global merge.tool winmerge
           git config --global mergetool.winmerge.cmd WinMergeU.exe \"$LOCAL\" \"$BASE\" \"$REMOTE\" \"$MERGED\"
-        ]]></script>
+        ]]></script><!--"-->
         <p>Пры гэтым папярэдне дадаўшы ў пераменную асяродка <code>PATH</code> шлях да WinMergeU.exe</p>
 
-        <h2><a name="Configuration_list">Прагляд наладкаў</a></h2>
+        <h2 id="Configuration_list">Прагляд наладкаў</h2>
         <p>Праглядзець усе цяперашнія наладкі можна камандай:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
           git config --list
@@ -148,7 +118,7 @@
         git config user.name
         ]]></script>
 
-        <h1><a name="Repo">Стварэньне рэпазыторыяў</a></h1>
+        <h1 id="Repo">Стварэньне рэпазыторыяў</h1>
         <div class="refs">
           <ul>
             <li><a href="http://progit.org/book/ch2-1.html">ProGit</a></li>
@@ -156,14 +126,14 @@
         </div>
         <p>Існуюць дзьве галоўныя магчымасьці, каб стварыць рэпазыторый. Першая&nbsp;&mdash; ініцыіраваць новы рэпазыторый ў лякальнай тэчцы (ў пустой, ці з ужо існуючым праектам). Другая&nbsp;&mdash; кланіраваць існуючы "аддалены" рэпазыторый.</p>
 
-        <h2><a name="Repo_init">Ініцыіяваньне новага рэпазыторыю</a></h2>
+        <h2 id="Repo_init">Ініцыіяваньне новага рэпазыторыю</h2>
         <p>Для таго, каб ініцыіраваць новы рэпазыторый, трэба ў тэчцы праекту (ці ў пустой тэчцы, у каторай плянуецца стварыць праект) запусьціць каманду:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
         git init
         ]]></script>
         <p>У выніку будзе створана схаваная тэчка рэпазыторыю <code>.git</code></p>
 
-        <h2><a name="Repo_clone">Кланаваньне адлеглага рэпазыторыю</a></h2>
+        <h2 id="Repo_clone">Кланаваньне адлеглага рэпазыторыю</h2>
         <p>"Аддалены" ў дадзеным выпадку дастаткова адноснае разуменьне, таму што такім рэпазыторыям можа быць і існуючы у лякальнай файлавай сыстэме (хаця гэта і ня вельмі верагодны выпадак). Але галоўнае для гэтага мэтаду&nbsp;&mdash; што "эталонны" рэпазыторый ужо павінен недзе існаваць:</p>
         <script type="syntaxhighlighter" class="brush: shell"><![CDATA[
         git clone &lt;ШЛЯХ_ДА_РЭПАЗЫТОРЫЮ&gt; [&lt;ІМЯ_ЛЯКАЛЬНАГА_РЭПАЗЫТОРЫЮ&gt;]
@@ -173,22 +143,14 @@
         git clone git://github.com/schacon/grit.git mygrit
         ]]></script>
         <p>у цяперашняй тэчцы будзе створана тэчка <code>mygrit</code>, у каторую будзе кланіраван рэпазэторый, які знаходзіца па адрасе <code>github.com/schacon/grit.git</code> з выкарыстаньне пратаколу <code>git://</code>. Магчымыя таксама пратакол <code>http(s)://</code> ці ўвогуле без пратаколу ў выпадку лякальнага зьмяшчэньня "аддаленага" рэпазыторыю. Калі імя ствараемага рэпазыторыю (апошні парамэтар) не пазначана, будзе ўжыта імя "аддаленага" рэпазыторыю.</p>
+        <br />
+        <br />
+        <p>http://ignar.name/articles/git-create-remote-branch.html</p>
       </section>
 
       <footer>
-        <div id="powered">
-          <h5>Падзякі</h5>
-          <p>Пры састаўленьні даведніка выкарыстоўваліся наступныя скрыпты, за якія аўтар выказвае свае падзякі іх аўтарам:
-            <ul>
-              <li><a href="http://jquery.com/">jQuery</a>&nbsp;&mdash; унівэрсальная JavaScript-бібліятэка</li>
-              <li><a href="http://xregexp.com/">XRegExp</a>&nbsp;&mdash; JavaScript-бібліятэка для рэгулярных выразаў (regexp)</li>
-              <li><a href="http://www.mattkruse.com/javascript/mktree/">DHTML Tree</a>&nbsp;&mdash; скрыпт для пабудовы герархічнага дрэва разьдзелаў даведніка злева.</li>
-              <li><a href="http://alexgorbatchev.com/SyntaxHighlighter/">SyntaxHighlighter</a>&nbsp;&mdash; скрыпт для каляроўкі фрагмэнтаў коду пэўных моваў/скрыптоў.</li>
-            </ul>
-          </p>
-        </div>
         <div id="copyright">
-          <p>Copyright &copy; 2010-2011 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>Copyright &copy; 2010-2013 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
           <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
               <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
@@ -228,6 +190,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
+  <script src="../js/index.js"></script>
   <script src="../js/libs/jquery.tree.js"></script>
 
   <script src="../js/libs/waypoints.min.js"></script>
