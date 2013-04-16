@@ -1,4 +1,4 @@
-# Беларускамоўныя даведнікі па некаторых мовах праграмаваньня і ня толькі. 
+# Беларускамоўныя даведнікі па некаторых мовах праграмаваньня і ня толькі.
 
 Цалкам (зразумела, з пэўным допускам) зроблены толькі даведнік па HTML, некаторыя даробленыя часткова, некаторыя амаль пустыя ці ў выглядзе сьпісу пэўных крыніцаў. Дапаўняюцца па меры вольнага часу аўтара.
 
@@ -15,10 +15,6 @@ Ruby/Rails:
 
  * [Ruby](https://github.com/yurtsevich/Manuals/tree/master/rubyRef/)
  * [Rails](https://github.com/yurtsevich/Manuals/tree/master/railsRef/)
-
-Java:
-
- * [Java](https://github.com/yurtsevich/Manuals/tree/master/javaRef/)
 
 Git:
 
