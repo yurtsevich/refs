@@ -1,6 +1,7 @@
 /* Basic styles of manuals */
 /* line 7, ../sass/screen.scss */
 body {
+  background: url("../images/bg.jpg");
   font: 94% Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
@@ -37,7 +38,7 @@ blockquote {
 
 /* line 16, ../sass/screen.scss */
 code {
-  background-color: #EEE;
+  background-color: #E8E8E8;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -733,35 +734,40 @@ figcaption.imgcaption {
   font-family: "AlegreyaSCRegular";
 }
 /* line 204, ../sass/screen.scss */
+#main table.centered th, #main table.centered td {
+  text-align: center;
+  width: 100px;
+}
+/* line 207, ../sass/screen.scss */
 #main abbr.changed_in_html5, #main abbr.new_in_html5, #main abbr.obsolete_in_html5 {
   font-size: x-small;
   vertical-align: super;
 }
-/* line 205, ../sass/screen.scss */
+/* line 208, ../sass/screen.scss */
 #main abbr.changed_in_html5 {
   color: #00b050;
 }
-/* line 206, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 #main abbr.new_in_html5 {
   color: #c00000;
 }
-/* line 207, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 #main abbr.obsolete_in_html5 {
   color: #00b0f0;
 }
-/* line 209, ../sass/screen.scss */
+/* line 212, ../sass/screen.scss */
 #main span.changed_in_html5 {
   color: #00b050;
 }
-/* line 210, ../sass/screen.scss */
+/* line 213, ../sass/screen.scss */
 #main span.new_in_html5 {
   color: #c00000;
 }
-/* line 211, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 #main span.obsolete_in_html5 {
   color: #00b0f0;
 }
-/* line 213, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 #main .new_changed {
   float: right;
   font-size: x-small;
@@ -769,7 +775,7 @@ figcaption.imgcaption {
   padding: 5px;
   width: 400px;
 }
-/* line 215, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 #main .refs {
   background: #EEEEEE;
   border: 1px solid #BBBBBB;
@@ -786,30 +792,30 @@ figcaption.imgcaption {
   margin: 0 10px 0 -60px;
   padding: 4px 2px;
 }
-/* line 218, ../sass/screen.scss */
+/* line 221, ../sass/screen.scss */
 #main .refs ul {
   list-style: none outside none;
   margin: 0;
 }
-/* line 219, ../sass/screen.scss */
+/* line 222, ../sass/screen.scss */
 #main .refs ul li {
   border-top: 1px solid #BFC7DD;
 }
-/* line 220, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 #main .refs ul li:first-child {
   border-top: none;
 }
-/* line 221, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 #main .refs ul li a {
   line-height: 1.5;
   padding: 0 8px;
   text-decoration: none;
 }
-/* line 225, ../sass/screen.scss */
+/* line 228, ../sass/screen.scss */
 #main .example {
   margin: 20px 0;
 }
-/* line 226, ../sass/screen.scss */
+/* line 229, ../sass/screen.scss */
 #main .example_content {
   background-color: #EEEEEE;
   border: 1px dashed #AAAAAA;
@@ -818,100 +824,145 @@ figcaption.imgcaption {
   text-align: center;
   width: 300px;
 }
-/* line 227, ../sass/screen.scss */
+/* line 230, ../sass/screen.scss */
 #main .example_content.left_aligned {
   text-align: left;
 }
-/* line 229, ../sass/screen.scss */
+/* line 232, ../sass/screen.scss */
 #main .example_content.example_with_form fieldset {
   border: 1px solid #bbb;
   padding: 10px;
 }
-/* line 230, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 #main .example_content.example_with_form label {
   float: left;
 }
-/* line 231, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 #main .example_content.example_with_form input {
   clear: left;
   float: left;
   margin-top: 5px;
 }
-/* line 232, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 #main .example_content.example_with_form input[type="checkbox"] {
   margin-right: 7px;
 }
-/* line 233, ../sass/screen.scss */
+/* line 236, ../sass/screen.scss */
 #main .example_content.example_with_form li {
   list-style-type: none;
 }
-/* line 234, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 #main .example_content.example_with_form p {
   clear: both;
 }
-/* line 238, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 #main #figure_example .example_content, #main #tfoot_example .example_content, #main #th_example .example_content, #main #wbr_example .example_content {
   width: 500px;
 }
-/* line 241, ../sass/screen.scss */
+/* line 244, ../sass/screen.scss */
 #main #wbr_example1 .example_content {
   width: 400px;
 }
-/* line 244, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 #main #wbr_example2 .example_content {
   width: 350px;
 }
-/* line 247, ../sass/screen.scss */
+/* line 250, ../sass/screen.scss */
 #main #tfoot_example td {
   text-align: left;
 }
-/* line 250, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 #main #th_example table {
   border: none;
 }
-/* line 251, ../sass/screen.scss */
+/* line 254, ../sass/screen.scss */
 #main #th_example th, #main #th_example td {
   border: 1px solid #222;
 }
-
 /* line 256, ../sass/screen.scss */
+#main .gallery {
+  display: block;
+  margin: 2px;
+  padding: 2px;
+  text-align: center;
+  width: 800px;
+}
+/* line 257, ../sass/screen.scss */
+#main .gallerybox {
+  display: inline-block;
+  margin: 15px 5px 5px;
+  width: 250px;
+}
+/* line 258, ../sass/screen.scss */
+#main .gallerybox img {
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  width: 100%;
+}
+/* line 259, ../sass/screen.scss */
+#main .gallerybox p {
+  margin-top: 0;
+}
+/* line 261, ../sass/screen.scss */
+#main .gallerybox.shop {
+  border-top: 1px solid #999;
+  margin-top: 40px;
+  padding-top: 40px;
+  width: 790px;
+}
+/* line 262, ../sass/screen.scss */
+#main .gallerybox.shop:first-child {
+  border-top: none;
+  margin-top: 20px;
+  padding-top: 0;
+}
+/* line 264, ../sass/screen.scss */
+#main .gallerytext {
+  margin-top: 5px;
+}
+/* line 265, ../sass/screen.scss */
+#main .gallerytext .rub_cost {
+  font-weight: bold;
+}
+
+/* line 270, ../sass/screen.scss */
 footer {
   display: inline-block;
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   font-size: 0.65em;
   margin: 20em 0 6em;
 }
-/* line 257, ../sass/screen.scss */
+/* line 271, ../sass/screen.scss */
 footer #copyright {
   width: 60%;
 }
 
-/* line 260, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 :target {
   -webkit-animation: highlight 1s ease-out;
   -moz-animation: highlight 1s ease-out;
 }
 
 @-webkit-keyframes highlight {
-  /* line 265, ../sass/screen.scss */
+  /* line 279, ../sass/screen.scss */
   from {
     background: #ff9;
   }
 
-  /* line 266, ../sass/screen.scss */
+  /* line 280, ../sass/screen.scss */
   to {
-    background: white;
+    background: transparent;
   }
 }
 
 @-moz-keyframes highlight {
-  /* line 269, ../sass/screen.scss */
+  /* line 283, ../sass/screen.scss */
   from {
     background: #ff9;
   }
 
-  /* line 270, ../sass/screen.scss */
+  /* line 284, ../sass/screen.scss */
   to {
-    background: white;
+    background: transparent;
   }
 }

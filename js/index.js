@@ -22,11 +22,16 @@
 function main_index(active_page) {
   var main_index = $("<div id='main_index'>");
 
-  main_index.append(web_ul());
-  main_index.append(ruby_rails_ul());
-  main_index.append(vcs_ul());
-  main_index.append(zip());
-  main_index.append(github());
+  if (isPublic(active_page)) {
+    main_index.append(web_ul());
+    main_index.append(ruby_rails_ul());
+    main_index.append(vcs_ul());
+    main_index.append(zip());
+    main_index.append(github());
+  } else {
+    main_index.append(private_work_ul());
+    main_index.append(private_personal_ul());
+  }
 
   main_index.find("a").each(function() {
     var link = $(this);
@@ -113,6 +118,28 @@ function ruby_rails_ul() {
 
 function vcs_ul() {
   return new_ul().append(new_li().append($("<a href='../gitRef/index.html' title='Даведнік па Git'>Git</a>")));
+}
+
+function private_work_ul() {
+  var ul = new_ul();
+
+  ul.append(new_li().append($("<a href='../ftsRef/index.html' title='Праект Fujitsu'>FTS</a>")));
+  ul.append(new_li().append($("<a href='../tadRef/index.html' title='Праект Tandberg'>TAD</a>")));
+
+  return ul;
+}
+
+function private_personal_ul() {
+  var ul = new_ul();
+
+  ul.append(new_li().append($("<a href='../chinaRef/index.html' title='Пакупкі ў Кітаі'>China</a>")));
+
+  return ul;
+}
+
+
+function isPublic(active_page) {
+  return active_page === "html" || active_page === "css" || active_page === "web" || active_page === "js" || active_page === "ruby" || active_page === "rails" || active_page === "git";
 }
 
 function new_ul() {
