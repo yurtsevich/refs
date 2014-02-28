@@ -6,7 +6,7 @@ css_dir = "css"
 sass_dir = "sass"
 images_dir = "images"
 javascripts_dir = "js"
-additional_import_paths = ["../../_Tools/Ruby/lib/ruby/gems/1.9.1/gems/font-stack-0.1.1/lib/stylesheets/"]
+additional_import_paths = ["/home/yurtsevich/.rvm/gems/ruby-2.1.0/gems/font-stack-0.1.2/lib/stylesheets/"]
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

@@ -5,7 +5,7 @@
 @import "font-stack";
 
 body {background: url("../images/bg.jpg"); font: 94% $optima-font-stack;}
-section, header, footer {max-width: 800px;}
+section, header, footer {max-width: 900px;}
 h1, h2, h3, h4, h5, h6 {font-family: $goudy-old-style-font-stack;
   a {text-decoration: none; /*excluding text underlying of links inside of headers*/}
 }
@@ -18,7 +18,7 @@ code {background-color: #E8E8E8; @include border-radius(4px); color: #000; paddi
 }
 code.elem, code.at_rule, code.keyword {color: #006699;}
 .syntaxhighlighter code {@include text-shadow(none);}
-
+ 
 abbr {color: #000;}
 .deprecated {text-decoration: line-through;}
 .todo {color: red;}
@@ -31,10 +31,10 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
 #index {float: left; width: 320px;
   #main_index {background-color: #BBBBBB; @include box-shadow(rgba(0,0,0,0.2) -2px 0 2px inset); font-size: 0.70em;
       left: 0px; height: 100%; min-height: 550px; padding-top: 20px; position: fixed; text-align: right; top: 0px;
-      width: 40px; z-index: 50;
+      width: 50px; z-index: 50;
 
     ul {background-color: #CCCCCC; list-style: none outside none; margin-left: 0; margin-top: 40px;
-      li {border-top: 1px solid #BBBBBB; width: 40px; overflow: hidden;
+      li {border-top: 1px solid #BBBBBB; width: 50px; overflow: hidden;
         a:link, a:visited, a:active {color: #444444; display: block; line-height: 1.4em; padding: 10px 5px; text-decoration: none;}
         &:hover {background: #DDDDDD;
           a {color: #111111; @include text-shadow(rgba(0, 0, 0, 0.5) 1px 1px 2px);}
@@ -54,7 +54,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
       a {background-image: url("../images/zip.png");}
     }
   }
-  #content {background: #eee; left: 40px; max-height: 100%; max-width: 280px; min-height: 100%; min-width: 280px; padding: 20px 10px 180px -10px;
+  #content {background: #eee; left: 50px; max-height: 100%; max-width: 300px; min-height: 100%; min-width: 300px; padding: 20px 10px 180px -10px;
       overflow: scroll; position: fixed;
 
     ul.tree {margin-left: 0;
@@ -86,7 +86,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   }
 }
 
-#main {left: 378px; margin-bottom: 20px; padding-right: 20px; position: absolute; top: 20px; z-index: -100;
+#main {left: 405px; margin-bottom: 20px; padding-right: 20px; position: absolute; top: 20px; z-index: -100;
   header {color: #222222; font: 50pt $goudy-old-style-font-stack; text-align: center; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);}
 
   h1, h2, h3, h4, h5 {color: #222222; font-weight: normal; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
@@ -114,6 +114,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     th:first-child {padding-left: 0;}
     td {border-bottom: 1px solid #EEEEEE; border-left: 1px solid #EEEEEE; color: #666666; font: 14px/1.4em $segoe-font-stack;}
     td:first-child {border-left: none; padding-left: 0;}
+    td.underlined {border-bottom: 1px solid #AAA;}
   }
   td.file_folder {width: 140px;}
   table.list td {border: none;}
@@ -266,9 +267,15 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   }
 }
 
+#disqus_thread {margin: 5em 0;}
 
-footer {display: inline-block; font-family: $lucida-grande-font-stack; font-size: 0.65em; margin: 20em 0 6em;
+footer {display: inline-block; font-family: $lucida-grande-font-stack; font-size: 0.65em; margin: 2em 0 10em;
   #copyright {width: 60%;}
+}
+
+#comments_link {
+  right: 80px; bottom: 20px;
+  a {background: url(../images/comments.png) center left no-repeat; display: inline-block; width: 48px; height: 48px;}
 }
 
 :target {

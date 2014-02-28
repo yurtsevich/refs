@@ -67,6 +67,7 @@
 
         <h2 id="Links_Lessons">Урокі</h2>
         <p><i>Інтэрактыўныя ўрокі</i> для пачаткоўцаў на <b>CodeCademy.com</b>: <a href="http://www.codecademy.com/courses/javascript-intro/">http://www.codecademy.com/courses/javascript-intro</a></p>
+        <p><i>Інтэрактыўныя ўрокі</i> для пачаткоўцаў на <b>LearnStreet.com</b>: <a href="http://www.learnstreet.com/lessons/study/javascript">http://www.learnstreet.com/lessons/study/javascript</a></p>
         <p><i>Відэа-ўрокі</i> для пачаткоўцаў на <b>appendTo.com</b>: <a href="http://learn.appendto.com/lessons">http://learn.appendto.com/lessons</a></p>
         <p>Бясплатны 30-дзённы <i>відэа-курс</i> па <a href="#Frameworks_jQuery"><i>jQuery</i></a> на <b>Tuts+ Premium</b>: <a href="http://tutsplus.com/course/30-days-to-learn-jquery/">http://tutsplus.com/course/30-days-to-learn-jquery/</a></p>
 
@@ -77,6 +78,9 @@
         <p>Разьдзел <i>AJAX</i> на <b>noupe.com</b>: <a href="http://www.noupe.com/category/ajax">http://www.noupe.com/category/ajax</a></p>
         <p>Разьдзел <i>jQuery</i> на <b>AddyOsmani.com</b>: <a href="http://addyosmani.com/blog/?s=jQuery">http://addyosmani.com/blog/?s=jQuery</a></p>
         <p><a href="http://net.tutsplus.com/articles/web-roundups/30-developers-you-must-subscribe-to-as-a-javascript-junkie/">«33 Developers you MUST Subscribe to as a JavaScript Junkie»</a></p>
+
+        <h2 id="Links_Etc">Рознае</h2>
+        <p><a href="http://youmightnotneedjquery.com/">YOU MIGHT NOT NEED JQUERY</a>&nbsp;&ndash; крыніца, якая тлумачыць, як той ці іншы код на <i>jQuery</i> напісаць на чыстым <i>JavaScript</i>.</p>
       </section>
 
       <section>
@@ -100,10 +104,9 @@
         <p>Больш падрабязна пра розьніцу паміж <i>JavaScript</i> і <a href="../javaRef/index.html"><i>Java</i></a>, а таксама пра аб'ектную мадэль у <i>JavaScript</i> глядзіце разьдзел <a href="#ObjectModel">«Аб'ектная мадэль»</a>.</p>
 
         <h2 id="Overview_JavaScriptAndECMAScript"><i>JavaScript</i> і <i>ECMAScript</i></h2>
-        <aside><sup>1</sup> Падрабязьней у ангельскай Вікіпэдыі: <a href="http://en.wikipedia.org/wiki/JavaScript#Versions">JavaScript</a>, <a href="http://en.wikipedia.org/wiki/ECMAScript#Version_correspondence">ECMAScript</a></aside>
         <p><a href="http://www.ecma-international.org/" title="Афіцыйны сайт Ecma International">Ecma International</a> працуе над стандартаванай вэрсіяй <i>JavaScript</i>, якая завецца <a href="http://en.wikipedia.org/wiki/ECMAScript" title="Пра ECMAScript у ангельскай Вікіпэдыі"><i>ECMAScript</i></a>. Стандарт <i>ECMAScript</i> задакумэнтаваны ў <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" title="ECMA-262 спэцыфікацыя">спэцыфікацыі <i>ECMA-262</i></a> (<i>ISO-16262</i>), першая рэдакцыя якой (па-анг. <i>Edition 1</i>), была зроблена на аснове <i>JavaScript</i> вэрсіі 1.1 (<i>Netscape Navigator 3.0</i>).</p>
         <table>
-          <caption>Суадносіны паміж вэрсіямі <i>JavaScript</i> і <i>ECMAScript</i>, і якімі браўзэрамі яны падтрымліваюцца<sup>1</sup></caption>
+          <caption>Суадносіны паміж вэрсіямі <i>JavaScript</i> і <i>ECMAScript</i>, і якімі браўзэрамі яны падтрымліваюцца <sup><a href="#Ref_ScriptsVersions">1</a></sup></caption>
           <thead>
             <tr>
               <th>Вэрсія <i>JavaScript</i></th>
@@ -459,15 +462,15 @@
       </section>
 
       <section>
-        <h1 id="TypesValues" data-content-item-open>Тыпы даных і значэньні</h1>
-        <p>Тыпы значэньняў, якія могуць быць прадстаўлены і апрацаваны ў мове праграмаваньня, вядомы як <i>тыпы даных</i>, і адной з фундамэнтальных характарыстыкаў любой мовы праграмаваньня зьяўляецца набор тыпаў даных, якія ёю падтрымліваюцца. <i>JavaScript</i> дазваляе працаваць з трыма элемэнтарнымі тыпамі даных: лікамі, сымбальнымі чародамі і лягічнымі значэньнямі. Таксама маецца 2 адмысловых значэньня: <code>null</code> і <code>undefined</code>.</p>
+        <h1 id="TypesValues" data-content-item-open>Тыпы даных, значэньні і зьменныя</h1>
+        <p>Тыпы значэньняў, якія могуць быць прадстаўлены і апрацаваны ў мове праграмаваньня, вядомы як <i>тыпы даных</i>, і адной з фундамэнтальных характарыстыкаў любой мовы праграмаваньня зьяўляецца набор тыпаў даных, якія ёю падтрымліваюцца. <i>JavaScript</i> дазваляе працаваць з трыма элемэнтарнымі тыпамі даных: <a href="TypesValues_Numbers">лікамі</a>, <a href="TypesValues_Strings">сымбальнымі чародамі</a> і <a href="TypesValues_Booleans">лягічнымі значэньнямі</a>. Таксама маецца 2 адмысловых элемэнтарных значэньня: <a href="TypesValues_null"><code>null</code></a> і <a href="TypesValues_undefined"><code>undefined</code></a>.</p>
         <p>У дадатак да гэтых элемэнтарных тыпаў <i>JavaScript</i> падтрымлівае састаўны тып, вядомы як <i>аб'ект</i>. Аб'ект уяўляе зь сябе калекцыю значэньняў (альбо элемэнтарных, альбо іншых аб'ектаў). Гэта можа быць неўпарадкаваная калекцыя іменных, альбо ўпарадкаваныя калекцыя безназоўных, але пранумараваных значэньняў. У апошнім выпадку аб'ект называецца <i>масівам</i>.</p>
         <p>Таксама маецца яшчэ адзін адмысловы аб'ект&nbsp;&ndash; <i>функцыя</i>. Гэта аб'ект, зь якім злучаны код. Адпаведна, функцыя можа выклікацца для выкананьня гэтага коду.</p>
         <p>Акрамя масіваў і функцыяў у ядры мовы вызначана яшчэ шэраг адмысловых аб'ектаў. Яны ўяўляюць зь сябе не дадатковыя тыпы даных, але толькі новыя клясы аб'ектаў:</p>
         <ul>
-          <li><code>Date</code>&nbsp;&ndash; аб'екты, які прадстаўляюць даты;</li>
-          <li><code>Error</code>&nbsp;&ndash; аб'екты, які прадстаўляюць памылкі сынтаксісу і часу выкананьня;</li>
-          <li><code>RegExp</code>&nbsp;&ndash; аб'екты, які прадстаўляюць рэгулярныя выразы;</li>
+          <li><code>Date</code>&nbsp;&ndash; аб'екты, якія прадстаўляюць даты;</li>
+          <li><code>Error</code>&nbsp;&ndash; аб'екты, якія прадстаўляюць памылкі сынтаксісу і часу выкананьня;</li>
+          <li><code>RegExp</code>&nbsp;&ndash; аб'екты, якія прадстаўляюць рэгулярныя выразы;</li>
           <li><code>Math</code>&nbsp;&ndash; дапаможны аб'ект для выкананьня арытмэтычных апэрацыяў.</li>
           <li><code>Boolean</code>, <code>Number</code>, <code>String</code>&nbsp;&ndash; аб'екты-абгорткі элемэнтарных значэньняў.</li>
         </ul>
@@ -489,10 +492,10 @@
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var S = new String("Hello World"); // Аб'ект String
         ]]></script>
-        <p>Аўтаматычнае пераўтварэньне чародаў у аб'екты String мае і зваротны напрамак&nbsp;&ndash; аб'екты String там, дзе патрэбна, аўтаматычна будуць пераўтвораны ў адпаведныя сымбальныя чароды.</p>
-        <p>Напрыканцы адзначым, што любыя чароды, лікі ці лягічныя значэньні могуць быць пераўтвораны ў адпаведны абект-абгортку з дапамогай функцыі Object():</p>
+        <p>Аўтаматычнае пераўтварэньне чародаў у аб'екты <code>String</code> мае і зваротны напрамак&nbsp;&ndash; аб'екты <code>String</code> там, дзе патрэбна, аўтаматычна будуць пераўтвораны ў адпаведныя сымбальныя чароды.</p>
+        <p>Напрыканцы адзначым, што любыя чароды, лікі ці лягічныя значэньні могуць быць пераўтвораны ў адпаведны аб'ект-абгортку з дапамогай канструктару Object():</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          var number_wrapper = Object(3);
+          var number_wrapper = new Object(3);
         ]]></script>
 
         <h2 id="TypesValues_Numbers">Лікі</h2>
@@ -501,7 +504,7 @@
 						<li><a href="https://developer.mozilla.org/en/A_re-introduction_to_JavaScript#Numbers">re-Introduction</a></li>
 					</ul>
 				</div>
-        <p>У <i>JavaScript</i> усе лікі (і цэлыя, і рэчаісныя) прадстаўляюцца адно праз 64-бітавыя рэчаісныя значэньні падвойнай дакладнасьці ў фармаце, вызначаным стандартам <a href="http://en.wikipedia.org/wiki/IEEE_754-2008" title="Апісаньне стандарту IEEE 754 у ангельскай Вікіпэдыі">IEEE 754</a>. Гэты фармат здольны прадстаўляць лікі ў дыяпазоне ад &plusmn;1,7976931348623157&#215;10<sup>308</sup> да &plusmn;5&#215;10<sup>-324</sup>. У <i>JavaScript</i> існуе базавы аб'ект-абгортка для лікаў: <a href="#CoreObjects_Number">Number</a>. Лік, які ўтрымліваецца наўпрост у кодзе <i>JavaScript</i>-праграмы, называецца лікавым літаралам.</p>
+        <p>У <i>JavaScript</i> усе лікі (і цэлыя, і рэчаісныя) прадстаўляюцца адно праз 64-бітавыя рэчаісныя значэньні падвойнай дакладнасьці ў фармаце, вызначаным стандартам <a href="http://en.wikipedia.org/wiki/IEEE_754-2008" title="Апісаньне стандарту IEEE 754 у ангельскай Вікіпэдыі">IEEE 754</a>. Гэты фармат здольны прадстаўляць лікі ў дыяпазоне ад &plusmn;1,7976931348623157&#215;10<sup>308</sup> да &plusmn;5&#215;10<sup>-324</sup>. У <i>JavaScript</i> існуе базавы аб'ект-абгортка для лікаў: <a href="#TypesValues_Numbers_Wrapper"><code>Number</code></a>. Лік, які ўтрымліваецца наўпрост у кодзе <i>JavaScript</i>-праграмы, называецца лікавым літаралам.</p>
 
         <h3 id="TypesValues_Numbers_Integers">Цэлыя літаралы</h3>
         <div class="refs">
@@ -565,10 +568,10 @@
           <li><code>MIN_VALUE</code>&nbsp;&ndash; найменшы але ня роўны 0 дадатны лік, які можа быць прадстаўлены ў <i>JavaScript</i> (прыкладна 5e-324). Значэньні, меншыя за гэтае, будуць прадстаўленыя як 0. Найбольшы адмоўны лік, які можа быць прадстаўлены,&ndash; гэта <code>-MIN_VALUE</code>.</li>
           <li><a name="TypesValues_Numbers_Wrapper_Props_PositiveInfinity"><code>POSITIVE_INFINITY</code></a>&nbsp;&ndash; адмысловае значэньне, каторае прадстаўляе дадатную бясконцасьць, якая ўтвараецца пры перапаўненьні (пры перавышэньні максымальна магчымага значэньня).</li>
           <li><a name="TypesValues_Numbers_Wrapper_Props_NegativeInfinity"><code>NEGATIVE_INFINITY</code></a>&nbsp;&ndash; адмысловае значэньне, каторае прадстаўляе адмоўную бясконцасьць, якая ўтвараецца пры перапаўненьні (значэньні менш мінімальна магчымага адмоўнага).</li>
-          <li><a name="TypesValues_Numbers_Wrapper_Props_NaN"><code>NaN</code></a>&nbsp;&ndash; адмысловае значэньне «ня-лік», якое прадстаўляе, напрыклад, вынікі некарэктных арытмэтычных апэрацыяў (як то дзяленьне на нуль<sup>2</sup>). Тое ж самае, што і базавы аб'ект <a href="#TypesValues_Numbers_NaN"><code>NaN</code></a>.</li>
+          <li><a name="TypesValues_Numbers_Wrapper_Props_NaN"><code>NaN</code></a>&nbsp;&ndash; адмысловае значэньне «ня-лік», якое прадстаўляе, напрыклад, вынікі некарэктных арытмэтычных апэрацыяў (як то дзяленьне на нуль <sup><a href="#Ref_DevisionByZero">2</a></sup>). Тое ж самае, што і базавы аб'ект <a href="#TypesValues_Numbers_NaN"><code>NaN</code></a>.</li>
         </ul>
 
-        <h5><a name="TypesValues_Numbers_Wrapper_Props_Examples">Прыклады</h4>
+        <h5 id="TypesValues_Numbers_Wrapper_Props_Examples">Прыклады</h4>
         <p>Доступ да гэтых значэньняў адбываецца заўсёды цераз прадвызначаны глябальны аб'ект <code>Number</code> як у прыкладзе ніжэй, а не праз аб'екты <code>Number</code>, якія вы ствараеце самі:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var aNumber = (-Number.MAX_VALUE) * 2;
@@ -581,7 +584,7 @@
         ]]></script>
 
         <h4 id="TypesValues_Numbers_Wrapper_Methods">Мэтады</h3>
-        <p>Таксама <mark>прататып аб'екта <code>Number</code> (спасылка на аб'ектную мадэль)</mark> вызначае шэраг мэтадаў, якія даступны да ўсіх аб'ектаў <code>Number</code>:</p>
+        <p>Таксама <a href="#ObjectModel">прататып аб'екта</a> (<mark>магчыма ўдакладніць спасылку да даччынага разьдзелу</mark>) <code>Number</code> вызначае шэраг мэтадаў, якія даступны да ўсіх аб'ектаў <code>Number</code>:</p>
         <ul>
           <li><code>toExponential</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у экспанэнцыяльнай натацыі. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі. Калі парамэтар не пазначаны, будзе адлюстравана столькі лічбаў пасьля рэчаіснай кропкі, колькі патрэбна. Прыклады:</li>
           <script type="syntaxhighlighter" class="brush: js"><![CDATA[
@@ -640,11 +643,10 @@
             <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/NaN">Reference</a></li>
           </ul>
         </div>
-        <aside><sup>2</sup> Трэба заўважыць, што вынікам <a href="#TypesValues_Numbers_Wrapper_Props_NaN"><code>Number.NaN</code></a> будзе толькі дзяленьне <code>0/0</code>, а, напрыклад, <code>1/0</code> верне <a href="#TypesValues_Numbers_Wrapper_Props_PositiveInfinity">дадатную бясконцасьць</a>.</aside>
-        <p>Акрамя <a href="#TypesValues_Numbers_Wrapper">аб'екту-абгортцы</a> існуе адмысловы аб'ект для прадстаўленьня некарэктных лікавых значэньняў,&nbsp;&ndash; напрыклад, вынік дзяленьня на нуль<sup>2</sup>. Тое ж самае, што і <a href="#TypesValues_Numbers_Wrapper_Props_NaN"><code>Number.NaN</code></a>.</p>
+        <p>Акрамя <a href="#TypesValues_Numbers_Wrapper">аб'екту-абгортцы</a> існуе адмысловы аб'ект для прадстаўленьня некарэктных лікавых значэньняў,&nbsp;&ndash; напрыклад, вынік дзяленьня на нуль <sup><a href="#Ref_DevisionByZero">2</a></sup>. Тое ж самае, што і <a href="#TypesValues_Numbers_Wrapper_Props_NaN"><code>Number.NaN</code></a>.</p>
 
         <h3 id="TypesValues_Numbers_WorkingWith">Праца з лікамі</h3>
-        <p>Для выкананьня арытмэтычных дзеяў над лікамі ў <i>JavaScript</i> існуюць <a href="#Operators_Arithmetic">арытмэтычныя апэратары</a>: <code>+</code> для складаньня, <code>-</code> для адніманьня, <code>*</code> для памнажэньня, <code>/</code> для дзяленьня і <code>%</code> для вызначэньня астачы цэлалікавага дзяленьня.</p>
+        <p>Для выкананьня арытмэтычных дзеяў над лікамі ў <i>JavaScript</i> існуюць <a href="#Operators_Arithmetic">арытмэтычныя апэрацыі</a>: <code>+</code> для складаньня, <code>-</code> для адніманьня, <code>*</code> для памнажэньня, <code>/</code> для дзяленьня і <code>%</code> для вызначэньня астачы цэлалікавага дзяленьня.</p>
 
         <h4 id="TypesValues_Numbers_WorkingWith_MathObject">Аб'ект <code>Math</code></h4>
         <div class="refs">
@@ -653,7 +655,7 @@
             <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Math">Reference</a></li>
           </ul>
         </div>
-        <p>Акрамя арытмэтычных апэратараў <i>JavaScript</i> падтрымлівае выкананьне болей складаных матэматычных апэрацыяў пры дапамозе вялікай колькасьці матэматычных функцыяў. Для зручнасьці гэтыя функцыі сабраныя ў адзін дапаможны аб'ект <code>Math</code>.</p>
+        <p>Акрамя арытмэтычных апэрацыяў <i>JavaScript</i> падтрымлівае выкананьне болей складаных матэматычных апэрацыяў пры дапамозе вялікай колькасьці матэматычных функцыяў. Для зручнасьці гэтыя функцыі сабраныя ў адзін дапаможны аб'ект <code>Math</code>.</p>
 
         <h5>Атрыбуты</h5>
         <ul>
@@ -750,7 +752,7 @@
             </tr>
           </tbody>
         </table>
-        <p>У дадатак да вышэйпералічаных мэтадаў разгледзем некалькі сытуацыяў, якія выходзяць за межы магчымасьцяў гэтых мэтадаў, але зьяўляюцца даволі распаўсюджанымі.</p>
+        <p>У дадатак да вышэйпералічаных мэтадаў разгледзім некалькі сытуацыяў, якія выходзяць за межы магчымасьцяў гэтых мэтадаў, але зьяўляюцца даволі распаўсюджанымі.</p>
         <p>Па-першае, лягарытмы адвольных значэньняў па аснове 2 і 10.</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           Math.log(100)/Math.LN10 // лягарытм 100 па аснове 10
@@ -839,6 +841,11 @@
         <p>Для праверкі ці зьяўляецца значэньне пэўным лікам (не бясконцасьцю) існуе функцыя верхняга ўзроўню <code>isFinite</code>. Калі ў якасьці аргумэнту ёй перададзеныя <a href="#TypesValues_Numbers_NaN"><code>NaN</code></a>, <a href="#TypesValues_Numbers_Wrapper_Props_PositiveInfinity">дадатная</a> ці <a href="#TypesValues_Numbers_Wrapper_Props_NegativeInfinity">адмоўная бясконцасьць</a>, яна верне <code>false</code>, у астатніх выпадках&nbsp;&ndash; <code>true</code>.</p>
 
         <h2 id="TypesValues_Strings">Сымбальныя чароды</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript#Strings">re-Introduction</a></li>
+          </ul>
+        </div>
         <p>Сымбальная чарада ўяўляе зь сябе пасьлядоўнасьць літар, лічбаў, знакаў пунктуацыі і іншых <i><a href="http://be-x-old.wikipedia.org/wiki/%D0%AE%D0%BD%D1%96%D0%BA%D0%BE%D0%B4" title="Пра Unicode у беларускай Вікіпэдыі">Unicode</a></i>-сымбаляў і зьяўляецца тыпам даных <i>JavaScript</i> для прадстаўленьня тэкстаў. Зьвярніце ўвагу, што ў <i>JavaScript</i> няма сымбальнага тыпу даных, як <code>char</code> у мовах праграмаваньня <i>C</i>, <i>C++</i> альбо <i>Java</i>. Адзінкавы сымбаль прадстаўляецца праз чараду адзінкавай даўжыні.</p>
 
         <h3 id="TypesValues_Strings_Literals">Літаралы</h3>
@@ -856,7 +863,7 @@
                         // значэньняў: "\ud835\udc52"
         ]]></script>
         <p>Пустая чарада мае даўжыню 0. Доступ да сымбаляў чарады адбываецца пры дапамозе індэксу, пачынаючы з 0.</p>
-        <p>Для пазначэньня сымбальнай чарады ў праграме патрэбны тэкст абгортваецца двукосьсем ці адзіночнымі апострафамі. Пры гэтым у чарадзе, якая абгортваецца двукосьсем, могуць сустракацца сымбалі апострафаў. І, адпаведна, у чарадзе, які абгортваецца апострафамі, могуць сустракацца сымбалі двукосься. Сымбальная чарада таксама можа ўтрымліваць <i>escape</i>-пасьлядоўнасьці, <i>backslash</i> за якім ідзе пэўны сымбаль,&nbsp;&ndash; для прадстаўленьня ня-тэкставых ці адмысловых сымбаляў, а таксама для прадстаўленьня любых сымбаляў праз іх <i>Unicode</i>-значэньне.</p>
+        <p>Для пазначэньня сымбальнай чарады ў праграме патрэбны тэкст абгортваецца двукосьсем ці адзіночнымі апострафамі. Пры гэтым у чарадзе, якая абгортваецца двукосьсем, могуць сустракацца сымбалі апострафаў. І, адпаведна, у чарадзе, якая абгортваецца апострафамі, могуць сустракацца сымбалі двукосься. Сымбальная чарада таксама можа ўтрымліваць <i>escape</i>-пасьлядоўнасьці, <i>backslash</i> за якім ідзе пэўны сымбаль,&nbsp;&ndash; для прадстаўленьня ня-тэкставых ці адмысловых сымбаляў, а таксама для прадстаўленьня любых сымбаляў праз іх <i>Unicode</i>-значэньне.</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           ""  // Пустая чарада
           'testing'
@@ -901,7 +908,7 @@
             </tr>
             <tr>
               <td>\r</td>
-              <td>Сымбаль вяртаньня карэтки (\u000D)</td>
+              <td>Сымбаль вяртаньня карэткі (\u000D)</td>
             </tr>
             <tr>
               <td>\"</td>
@@ -980,7 +987,7 @@
           msg = "Hello, " + "world";      // У выніку атрымліваем "Hello, world"
           greeting = "Welcome to my blog," + " " + name;
         ]]></script>
-        <p>Для параўнаньня чародаў ня трэба выкарыстоўваць адмысловыя функцыі (як у мовах <i>C</i> альбо <i>Java</i>), дастаткова скарыстацца <a href="#Operators_Comparison">апэратарамі параўнаньня</a>:</p>
+        <p>Для параўнаньня чародаў ня трэба выкарыстоўваць адмысловыя функцыі (як у мовах <i>C</i> альбо <i>Java</i>), дастаткова скарыстацца <a href="#Operators_Comparison">апэрацыямі параўнаньня</a>:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var a = "a";
           var b = "b";
@@ -1005,6 +1012,11 @@
         ]]></script>
 
         <h2 id="TypesValues_Booleans">Лягічныя значэньні</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript#Other_types">re-Introduction</a></li>
+          </ul>
+        </div>
         <p>Лікавыя і сымбальныя тыпы даных маюць вялікую ці бясконцую колькасьць магчымых значэньняў. Лягічны тып даных, наадварот, мае толькі 2 магчымых значэньні, якія прадстаўляюцца літараламі <code>true</code> (<i>праўда</i>, ці <i>ісьціна</i>) і <code>false</code> (<i>няпраўда</i>). Лягічныя значэньні кажуць аб праўдзівасьці чаго-небудзь і ўяўляюць зь сябе звычайна вынік параўнаньня, напрыклад:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           x == 5
@@ -1040,159 +1052,329 @@
           <li><a href="#TypesValues_null"><code>null</code></a></li>
           <li><a href="#TypesValues_undefined"><code>undefined</code></a></li>
         </ul>
-        <p>Усе астатнія значэньні будуць інтэрпрэтавацца як <code>true</code>. Заўважце, што аб'ект <code>Boolean</code>, які ўтрымлівае лягічнае значэньне <code>false</code>, не падпадае ані пад адно з пералічаных вышэй значэньняў, якія трактуюцца як <code>false</code>, таму будзе трактаваны як <code>true</code>.</p>
+        <p>Усе астатнія значэньні будуць інтэрпрэтавацца як <code>true</code>. <strong>Заўважце, што аб'ект <code>Boolean</code>, які ўтрымлівае лягічнае значэньне <code>false</code>, не падпадае ані пад адно з пералічаных вышэй значэньняў, якія трактуюцца як <code>false</code>, таму будзе трактаваны як <code>true</code>.</strong></p>
 
         <h2 id="TypesValues_null">Значэньне <code>null</code></h2>
+        <p><code>null</code>&nbsp;&ndash; гэта <a href="#Lexic_Keywords">ключавое слова</a> ў <i>JavaScript</i>, якое пазначае адсутнасьць значэньня (напрыклад, у зьменнай, не важна элемэнтарнага ці аб'ектнага тыпу).</p>
+        <p><code>null</code>&nbsp;&ndash; гэта нармальная альбо чаканая адсутнасьць значэньня ў зьменнай, у адрозьненьні ад <a href="#TypesValues_undefined"><code>undefined</code></a>. Калі пэўную зьменную трэба абнуліць альбо перадаць у функцыю пустое значэньне, трэба скарыстацца менавіта значэньнем <code>null</code>.</p>
 
 				<h2 id="TypesValues_undefined">Значэньне <code>undefined</code></h2>
+        <p>У <i>JavaScript</i> маецца яшчэ адно адмысловае значэньне <code>undefined</code>, якое таксама пазначае адсутнасьць значэньня, але гэта яшчэ больш глыбокі ўзровень адсутнасьці значэньня&nbsp;&ndash; яно азначае, што зьменнай ўвогуле ніколі не прысвойвалася ніякае значэньне. Яно атрымліваецца, калі мы зьвяртаемся да неіснуючага атрыбуту аб'екта альбо неіснуючага элемэнту масіву, і вяртаецца функцыямі, якія не вяртаюць значэньняў.</p>
+
+        <p><code>undefined</code>&nbsp;&ndash; гэта нечаканая альбо памылка-падобная адсутнасьць значэньня ў зьменнай. Звычайна яно выкарыстоўваецца у праграме наўпрост толькі пры выкананьні нейкіх праверак, каб прадухіліць нечаканыя сытуацыі.</p>
+
+        <h2 id="TypesValues_Conversions">Пераўтварэньні тыпаў</h2>
+        <p>Як мы ўжо бачылі вышэй <i>JavaScript</i> ня ўскладвае занадта вялікіх патрабаваньняў да тыпу значэньняў, калі апэруе імі. Напрыклад, што тычыцца лягічнага тыпу, мы <a href="#TypesValues_Booleans_Transformations">адзначалі вышэй</a>, што якое б мы значэньне ня выкарысталі ў кантэксьце, у якім чакаецца лягічны тып, <i>JavaScript</i> аўтаматычна пераўтворыць яго менавіта ў лягічны тып. Тое ж самае тычыцца іншых тыпаў, напрыклад:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          10 + " objects"   // => "10 objects". Лік 10 будзе аўтаматычна пераўтвораны ў чараду
+          "7" * "4"         // => 28: абедзьве чарады будуць аўтаматычна пераўтвораны ў лікі
+          var n = 1 - "x";  // => NaN: чарада "x" ня можа быць пераўтворана ў лік
+          n + " objects"    // => "NaN objects": лік NaN будзе пераўтвораны ў чараду "NaN"
+        ]]></script>
+        <p>У табліцы ніжэй прыведзены правілы аўтаматычнага пераўтварэньня тыпаў:</p>
+        <table>
+          <caption>Пераўтварэньні тыпаў</caption>
+          <thead>
+            <tr>
+              <th rowspan="2">Зыходнае значэньне</th>
+              <th colspan="4">Аўтаматычнае пераўтварэньне ў:</th>
+            </tr>
+            <tr>
+              <th>Чараду</th>
+              <th>Лік</th>
+              <th>Лягічнае значэньне</th>
+              <th>Аб'ект</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>undefined</code></td>
+              <td><code>"undefined"</code></td>
+              <td><code>NaN</code></td>
+              <td><code>false</code></td>
+              <td>будзе кінута памылка <code>TypeError</code></td>
+            </tr>
+            <tr>
+              <td class="underlined"><code>null</code></td>
+              <td class="underlined"><code>"null"</code></td>
+              <td class="underlined"><code>0</code></td>
+              <td class="underlined"><code>false</code></td>
+              <td class="underlined">будзе кінута памылка <code>TypeError</code></td>
+            </tr>
+            <tr>
+              <td><code>true</code></td>
+              <td><code>"true"</code></td>
+              <td><code>1</code></td>
+              <td></td>
+              <td><code>new Boolean(true)</code></td>
+            </tr>
+            <tr>
+              <td class="underlined"><code>false</code></td>
+              <td class="underlined"><code>"false"</code></td>
+              <td class="underlined"><code>0</code></td>
+              <td class="underlined"></td>
+              <td class="underlined"><code>new Boolean(false)</code></td>
+            </tr>
+            <tr>
+              <td><code>""</code> (пустая чарада)</td>
+              <td></td>
+              <td><code>0</code></td>
+              <td><code>false</code></td>
+              <td><code>new String("")</code></td>
+            </tr>
+            <tr>
+              <td><code>"1.2"</code> (утрымлівае лік)</td>
+              <td></td>
+              <td><code>1.2</code></td>
+              <td><code>true</code></td>
+              <td><code>new String("1.2")</code></td>
+            </tr>
+            <tr>
+              <td class="underlined"><code>"one"</code> (утрымлівае ня лік)</td>
+              <td class="underlined"></td>
+              <td class="underlined"><code>NaN</code></td>
+              <td class="underlined"><code>true</code></td>
+              <td class="underlined"><code>new String("one")</code></td>
+            </tr>
+            <tr>
+              <td><code>0</code></td>
+              <td><code>"0"</code></td>
+              <td></td>
+              <td><code>false</code></td>
+              <td><code>new Number(0)</code></td>
+            </tr>
+            <tr>
+              <td><code>-0</code></td>
+              <td><code>"-0"</code></td>
+              <td></td>
+              <td><code>false</code></td>
+              <td><code>new Number(-0)</code></td>
+            </tr>
+            <tr>
+              <td><code>NaN</code></td>
+              <td><code>"NaN"</code></td>
+              <td></td>
+              <td><code>false</code></td>
+              <td><code>new Number(NaN)</code></td>
+            </tr>
+            <tr>
+              <td><code>Infinity</code></td>
+              <td><code>"Infinity"</code></td>
+              <td></td>
+              <td><code>true</code></td>
+              <td><code>new Number(Infinity)</code></td>
+            </tr>
+            <tr>
+              <td><code>-Infinity</code></td>
+              <td><code>"-Infinity"</code></td>
+              <td></td>
+              <td><code>true</code></td>
+              <td><code>new Number(-Infinity)</code></td>
+            </tr>
+            <tr>
+              <td class="underlined"><code>1</code> (канечны лік, ня нуль)</td>
+              <td class="underlined"><code>"1"</code></td>
+              <td class="underlined"></td>
+              <td class="underlined"><code>true</code></td>
+              <td class="underlined"><code>new Number(1)</code></td>
+            </tr>
+            <tr>
+              <td><code>{}</code> (любы аб'ект)</td>
+              <td></td>
+              <td></td>
+              <td><code>true</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>[]</code> (пусты масіў)</td>
+              <td><code>""</code></td>
+              <td><code>0</code></td>
+              <td><code>true</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>[9]</code> (адзіны лікавы элемэнт)</td>
+              <td><code>"9"</code></td>
+              <td><code>9</code></td>
+              <td><code>true</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>['a']</code> (любы іншы масіў)</td>
+              <td>вынік мэтаду <code>join()</code></td>
+              <td><code>NaN</code></td>
+              <td><code>true</code></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><code>function(){}</code> (любая функцыя)</td>
+              <td>вынік мэтаду <code>join()</code></td>
+              <td><code>NaN</code></td>
+              <td><code>true</code></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 id="TypesValues_Conversions_Equality">Пераўтварэньні і роўнасьць</h3>
+        <p>З-за таго, што <i>JavaScript</i> гнутка пераўтварае адны тыпы ў іншыя, яго <a href="#Operators_Comparison">апэрацыя роўнасьці</a> <code>==</code> таксама гнуткая ў вызначэньні ці роўныя яе апэранды. Напрыклад, усе наступныя параўнаньні вяртаюць <code>true</code>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          null == undefined   // Гэтыя значэньні трактуюцца як роўныя.
+          "0" == 0            // Чарада пераўтвараецца ў лік перад параўнаньнем.
+          0 == false          // Лягічнае значэньне пераўтвараецца ў лік перад параўнаньнем.
+          "0" == false        // Абодва апэранды пераўтвараюцца ў лікі перад параўнаньнем.
+        ]]></script>
+
+        <h3 id="TypesValues_Conversions_ObjectsToPrimitives">Пераўтварэньні аб'ектаў у элемэнтарныя тыпы</h3>
+        <p>Гэтую тэму пакінем па-за межамі дадзенага даведніку. Пры жаданьні можна зьвярнуцца да адпаведнага разьдзелу 3.8.3 шостага выданьня кнігі <a href="http://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527"><i>David Flanagan. «JavaScript. The Definitive Guide. Activate Your Web Pages».</i></a></p>
+
+        <h2 id="TypesValues_MutableObjectsAndImmutablePrimitives">Зьменныя аб'екты і нязьменныя элемэнтарныя значэньні</h2>
+        <p>У <i>JavaScript</i> існуе прынцыповае адрозьненьне паміж элемэнтарнымі тыпамі і аб'ектамі (уключаючы масівы і функцыі). Значэньні элемэнтарных тыпаў нязьменныя. Праілюструем гэта на прыкладзе з чарадой:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var s = "hello";  // Прысвоім чарадзе пэўны тэкст
+          s.toUpperCase();  // Дадзены выклік вяртае "HELLO",
+                            // АЛЕ зьменена была КОПІЯ зыходнай чарады
+          s                 // => "hello": Зыходная чарада пры гэтым засталася бяз зьменаў
+        ]]></script>
+        <p>Аб'екты ж у <i>JavaScript</i> могуць зьмяняцца:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var o = { x:1 };    // Пачнём зь нейкага аб'екту
+          o.x = 2;            // Зьменім яго шляхам зьмены яго атрыбуту
+          o.y = 3;            // Яшчэ раз зьменім шляхам дабаўленьня новага атрыбуту
+
+          var a = [1,2,3]     // Масівы таксама зьменныя
+          a[0] = 0;           // Зьменім значэньне пэўнага элемэнту масіву
+          a[3] = 4;           // Дададзім новы элемэнт да масіву
+        ]]></script>
+        <p>Яшчэ аб'екты параўноўваюцца не па значэньні. Нават калі 2 аб'екты маюць адзін і той жа набор атрыбутаў і усе яны маюць аднолькавыя значэньні, гэтыя аб'екты ня будуць лічыцца роўнымі:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var o = {x:1}, p = {x:1};   // Два аб'екты з аднолькавымі атрыбутамі
+          o === p                     // => false: розныя аб'екты ніколі ня будуць роўнымі
+          var a = [], b = [];         // Два пустых масіва
+          a === b                     // => false: тое ж тычыцца і масіваў, 2 розных масіваў
+                                      // ня будуць роўныя, нават утрымліваючы аднолькавыя элемэнты
+        ]]></script>
+        <p>Аб'екты яшчэ завуцца спасылачным тыпам (у адрозьненьні ад элемэнтарных тыпаў), таму што значэньні аб'ектаў&nbsp;&ndash; гэта спасылкі на аб'екты. Таму 2 спасылкі толькі тады роўныя, калі спасылаюцца на адзін і той жа аб'ект:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var a = [];   // Зьменная a спасылаецца на пусты масіў.
+          var b = a;    // Цяпер b спасылаецца на той жа самы масіў.
+          b[0] = 1;     // Зьменім масіў, на які спасылаецца b.
+          a[0]          // => 1: гэтая зьмена відна і праз спасылку a.
+          a === b       // => true: зьменныя a і b спасылаюцца на адзін і той жа аб'ект,
+                        // таму яны роўныя.
+        ]]></script>
+        <p>З прыкладу вышэй відаць, што прысваеньне зьменнай нейкага аб'екту ня робіць копіі гэтага аб'екту, а захоўвае ў зьменнай спасылкі на гэты аб'ект. Калі ж вы жадаеце зрабіць менавіта копію, тады трэба яўным чынам скапіяваць кожны з атрыбутаў зыходнага аб'екту (масіву):</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var a = ['a','b','c'];    // Масіў, копію якога мы жадаем зрабіць
+          var b = [];               // Іншы масіў, у які мы жадаем зьмясьціць копію зыходнага
+          for(var i = 0; i < a.length; i++) { // Для кожнага індэксу масіву a[]
+            b[i] = a[i];            // Зьмяшчаем копію элемэнту масіву a у масіў b
+          }
+        ]]></script>
+        <p>Гэткім жа чынам, пры жаданьні параўнаць 2 аб'екты ці масівы, трэба пасьлядоўна параўнаць усе іх атрыбуты/элемэнты.</p>
+
+        <h2 id="TypesValues_Variables">Зьменныя</h2>
+        <p>Зьменная&nbsp;&ndash; гэта імя, злучанае са значэньнем. Кажуць, што значэньне ўтрымліваецца ці захоўваецца ў зьменнай. Зьменныя дазваляюць захоўваць даныя ў праграме і працаваць зь імі. Напрыклад, наступны радок коду прысвойвае значэньне <code>2</code> зьменнай зь імем <code>i</code>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          i = 2;
+        ]]></script>
+        <p>А ў наступным прыкладзе значэньне <code>3</code> дадаецца да значэньня зьменнай зь імем <code>i</code>, а вынік прысвойваецца зьменнай зь імем <code>sum</code>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          sum = 3 + i;
+        ]]></script>
+        <p><i>JavaScript</i> не зьяўляецца строга тыпізаванай мовай, таму адна і тая ж зьменная ў розныя часы можа захоўваць значэньні розных тыпаў:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          i = "дзесяць";
+          i = 10;
+        ]]></script>
+        <p>У <i>Java</i>, <i>C</i>, <i>C++</i> ці іншай тыпізаванай мове праграмаваньня такі код немагчымы, таму што ў гэтых мовах зьменная можа ўтрымліваць значэньні толькі пэўнага тыпу, які быў зададзены пры яе аб'яўленьні.</p>
+
+        <h3 id="TypesValues_Variables_Declaration">Аб'яўленьні</h3>
+        <p>Перад выкарыстаньнем зьменную трэба аб'явіць. Гэта робіцца пры дапамозе <a href="Lexic_Keywords">ключавога слова</a> <code>var</code> наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var i;
+        ]]></script>
+        <p>Калі трэба запар зрабіць некалькі аб'яўленьняў, іх можна аб'яднаць у адно аб'яўленьне:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var i;    // можна
+          var j;    // паасобку
+
+          var i, j; // а можна аб'яднаць у адно аб'яўленьне праз коску
+        ]]></script>
+        <p>Адначасова з аб'яўленьнем можна праініцыяваць зьменную:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var message = "hello";
+          var i = 0, j = 0, k = 0;
+        ]]></script>
+        <p>Калі пры аб'яўленьні зьменнай не прысвойваецца значэньне, яна будзе ўтрымліваць значэньне <a href="#TypesValues_undefined"><code>undefined</code></a> да таго часу, пакуль ня будзе яўным чынам праініцыяваная.</p>
+
+        <h3 id="TypesValues_Variables_Scope">Вобласьць бачнасьці</h3>
+        <p>Вобласьць бачнасьці (<i>scope</i>) зьменнай&nbsp;&ndash; гэта частка коду праграмы, у якой гэтая зьменнай аб'яўлена і, адпаведна, бачна. <i>Глябальныя</i> зьменныя маюць глябальную вобласьць бачнасьці і бачны ў любым месцы вашай <i>JavaScript</i>-праграмы. Вобласьцю бачнасьці зьменных, якія былі аб'яўлены ўнутры функцыі, зьяўляецца цела гэтай функцыі. У апошнім выпадку пра зьменную кажуць, што яна <i>лякальная</i>. Парамэтры функцыі таксама лічацца лякальнымі зьменнымі і бачны толькі ў межах сваёй функцыі.</p>
+        <p>Унутры цела функцыі лякальная зьменная мае перавагу перад глябальнай з такім жа імем. Такім чынам, аб'явіўшы ў функцыі зьменную зь імем як у нейкай глябальнай зьменнай, вы згубіце доступ да той глябальнай зьменнай:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var scope = "global";   // Аб'яўляем глябальную зьменную
+
+          function checkscope() {
+            var scope = "local";  // Аб'яўляем лякальную зьменную з такім жа імем
+            return scope;         // Вяртаецца значэньне лякальнай зьменнай. Пасьля аб'яўленьня
+                                  // лякальнай зьменнай мы не маем доступу да глябальнай.
+          }
+          checkscope()            // => "local"
+        ]]></script>
+        <p>Вызначэньні функцыяў могуць быць укладзенымі адна ў адну. Кожная функцыя мае сваю ўласную лякальную вобласьць бачнасьці, такім чынам у дадзеным выпадку будуць некалькі ўкладзеным абласьцей бачнасьці:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var scope = "global scope";     // Глябальная зьменная
+
+          function checkscope() {
+            var scope = "local scope";    // Лякальная зьменная
+
+            function nested() {
+              var scope = "nested scope"; // Больш глыбокі (укладзены) ўзровень лякальнасьці
+              return scope;               // Вяртаецца лякальная зьменная самага ўкладзенага ўзроўню
+            }
+
+            return nested();
+          }
+
+          checkscope();                   // => "nested scope"
+        ]]></script>
+        <p>У <i>C</i>-падобных мовах праграмаваньня кожны блёк (заключаны ў фігурныя дужкі) мае сваю ўласную лякальную вобласьць бачнасьці і да зьменнай, аб'яўленай ў блёку, няма доступу па-за межамі гэтага блёку. Гэта завецца блёчнай вобласьцю бачнасьці і <i>JavaScript</i> яе <strong>ня мае</strong>. У <i>JavaScript</i> лякальныя вобласьці заўсёды абмежаваны функцыямі: лякальныя зьменныя бачны ўва ўсім целе функцыі, у якой яны аб'яўлены, і ўва ўсіх іншых функцыях, якія ўкладзены/вызначаны ў гэтай функцыі. У наступным прыкладзе ўсе лякальныя зьменныя аб'яўлены ў розных месцах функцыі, але ўсе яны маюць адну і тую ж вобласьць бачнасьці&nbsp;&ndash; цела гэтай функцыі:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          function test(o) {
+            var i = 0;
+            if (typeof o == "object") {
+              var j = 0;                  // j вызначана для ўсёй функцыі, ня толькі для блёку
+              for(var k=0; k < 10; k++) { // k вызначана для ўсёй функцыі, ня толькі для цыклю
+                console.log(k);           // друкуе лікі ад 0 да 9
+              }
+              console.log(k);             // k усё яшчэ бачна: друкуе 10
+            }
+            console.log(j);               // j усё яшчэ бачна, але можа быць нявызначанай
+          }
+        ]]></script>
+        <p>Той факт, што зьменныя бачны ўва ўсёй функцыі незалежна ад месцу іх аб'яўленьня, азначае што яны могуць быць бачны да свайго аб'яўленьня:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var scope = "global";
+
+          function f() {
+            console.log(scope);   // Надрукуе "undefined", не "global"
+            var scope = "local";  // У гэтым месцы зьменнай прысвойваецца значэньне,
+                                  // але вызначана яна ўсюды ў функцыі.
+            console.log(scope);   // Надрукуе "local"
+          }
+        ]]></script>
+        <p>Кажуць, што аб'яўленьні лякальных зьменных у <i>JavaScript</i> як бы «усплываюць» да верху функцыі. Вызначэньне функцыі ў папярэднім прыкладзе эквівалентнае наступнаму:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var scope = "global";
+
+          function f() {
+            var scope;          // Аб'яўляем лякальную зьменную
+            console.log(scope); // Яна існуе, але яшчэ ня мае значэньня, таму надрукуецца "undefined"
+            scope = "local";    // Прысвойваем ёй значэньне
+            console.log(scope); // Будзе надрукавана "local"
+          }
+        ]]></script>
 			</section>
-
-      <section>
-        <h1 id="CoreObjects">Базавыя аб'екты</h1>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects">Guide</a></li>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects">Reference</a></li>
-          </ul>
-        </div>
-        <p>У <i>JavaScript</i> існуюць базавыя ці, інакш кажучы, глябальныя аб'екты (у тым сэнсе, што даступныя ў глябальнай прасторы імёнаў). Ніжэй прыведзена больш падрабязная інфармацыя па кожнаму зь іх.</p>
-
-        <h2 id="CoreObjects_Array"><code>Array</code></h2>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Array_Object">Guide</a></li>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array">Reference</a></li>
-          </ul>
-        </div>
-
-        <h2 id="CoreObjects_Date"><code>Date</code></h2>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Date_Object">Guide</a></li>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Reference</a></li>
-          </ul>
-        </div>
-
-        <h2 id="CoreObjects_Error"><code>Error</code></h2>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Error">Reference</a></li>
-          </ul>
-        </div>
-
-        <h3 id="CoreObjects_RangeError"><code>RangeError</code></h3>
-
-        <h2 id="CoreObjects_Function"><code>Function</code></h2>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Function_Object">Guide</a></li>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function">Reference</a></li>
-          </ul>
-        </div>
-        <p>Любая функцыя ў <i>JavaScript</i> зьяўляецца экзэмплярам базавага аб'екту <code>Function</code>. Па-першае, функцыю можна стварыць праз канструктар:</p>
-        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          new Function ([arg1[, arg2[, ... argN]],] functionBody)
-        ]]></script>
-        <p>Выклікаючы канструктар, спачатку перадаецца сьпіс імёнаў неабавязковых аргумэнтаў, а апошнім ідзе сымбальная чарада, якая ўтрымлівае выразы для выкананьня, напрыклад:</p>
-        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          // Стварае функцыю, якая прымае два аргумэнты і вяртае іх суму,
-          // прызначае зьменнай adder спасылку на створаную функцыю
-          var adder = new Function("a", "b", "return a + b");
-
-          // Выклік створанай функцыі
-          adder(2, 6);  //=> 8
-        ]]></script>
-        <p>Часам, для вырашэньня пэўных задачаў, немагчыма абмінуць стварэньне функцыяў праз канструктар, але звычайна, ў астатніх выпадках, трэба пазьбягаць гэтага, таму што такія функцыі ствараюцца пры кожным сваім выкліку наноў. Замест гэтага ў большасьці выпадкаў трэба аб'яўляць функцыю і выклікаць яе ў тэксьце праграмы:</p>
-        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          // Аб'яўленьне функцыі
-          function sayHello() {
-            console.log("Hello there!");
-          };
-
-          // Выклік аб'яўленай функцыі
-          sayHello(); // Вывядзе чараду "Hello there!" у кансоль
-        ]]></script>
-        <p>Функцыя можа быць прызначана зьменнай:</p>
-        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
-          var sayHi = function() {
-            console.log("Hi there!");
-          };
-
-          // Выклік аб'яўленай функцыі
-          sayHi(); // Вывядзе чараду "Hi there!" у кансоль
-        ]]></script>
-        <p>Гэта вельмі падобна да звычайнага аб'яўленьня функцыі, але трэба ведаць, што:</p>
-        <ul>
-          <li>калі функцыя ствараецца праз выраз кшталту <code>var adder = new Function("...")</code>, <code>adder</code> зьяўляецца зьменнай, якая у дадзены момант спасылаецца на аб'ект <code>Function</code> (а ў іншы момант можа спасылацца на іншы аб'ект, у тым ліку іншага тыпу),</li>
-          <li>калі ж функцыя ствараецца праз выраз <code>function sayHello() {...}</code>, <code>sayHello</code> зьяўляецца імем функцыі, а ня зьменнай.</li>
-        </ul>
-        <p>Функцыі таксама можна аб'яўляць унутры іншых функцыяў. Укладзеныя (унутраныя) функцыі абмежаваны для выкарыстаньня толькі сваімі абымаючымі (зьнешнімі) функцыямі. Пры гэтым унутраныя функцыі могуць мець доступ да аргумэнтаў і зьменных сваіх зьнешніх функцыяў, але зьнешнія функцыі ня могуць мець доступ да аргумэнтаў і зьменных сваіх унутраных функцыяў.</p>
-
-        <h3 id="CoreObjects_Function_Props">Атрыбуты</h3>
-        <p>У  аб'ектаў <code>Function</code> маецца адзін атрыбут, які дазваляе пашыраць/зьмяняць усе экзэмпляры адпаведных аб'ектаў:</p>
-
-        <h4 id="CoreObjects_Function_Props_prototype">prototype</h4>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/prototype">Reference</a></li>
-          </ul>
-        </div>
-
-        <h3 id="CoreObjects_Function_Methods">Мэтады</h3>
-        <p>Разгледзем мэтады, якія даступны экзэмплярам <code>Function</code>.</p>
-
-        <h4 id="CoreObjects_Function_Methods_apply"><code>apply</code></h4>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/apply">Reference</a></li>
-          </ul>
-        </div>
-
-        <h4 id="CoreObjects_Function_Methods_bind"><code>bind</code></h4>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind">Reference</a></li>
-          </ul>
-        </div>
-
-        <h4 id="CoreObjects_Function_Methods_call"><code>call</code></h4>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/call">Reference</a></li>
-          </ul>
-        </div>
-
-        <h4 id="CoreObjects_Function_Methods_isGenerator"><code>isGenerator</code></h4>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/isGenerator">Reference</a></li>
-          </ul>
-        </div>
-
-        <h4 id="CoreObjects_Function_Methods_toString"><code>toString</code></h4>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/toString">Reference</a></li>
-          </ul>
-        </div>
-
-        <h2 id="CoreObjects_Object"><code>Object</code></h2>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Reference</a></li>
-          </ul>
-        </div>
-
-        <h2 id="CoreObjects_RegExp"><code>RegExp</code></h2>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#RegExp_Object">Guide</a></li>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/RegExp">Reference</a></li>
-          </ul>
-        </div>
-
-
-      </section>
 
       <section>
         <h1 id="Operators">Апэрацыі</h1>
@@ -1598,6 +1780,11 @@
             <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Operators/Member_Operators">Reference</a></li>
           </ul>
         </div>
+        <p>Апэрацыя доступу да атрыбутаў дазваляе атрымаць ці прысвоіць значэньне атрыбуту аб'екта альбо элемэнту масіву. Існуе 2 варыянты гэтай апэрацыі. У першым зь іх імя атрыбуту ідзе праз кропку пасьля ідэнтыфікатару аб'екта, у другім &nbsp;&ndash; заключана ў прамавугольныя дужкі пасьля ідэнтыфікатару:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          object_name . attribute_name
+          object_name [ attribute_name ]
+        ]]></script>
 
         <h3 id="Operators_Special_Conditional">Умоўны</h3>
         <div class="refs">
@@ -1711,7 +1898,7 @@
           </ul>
         </div>
 
-			</section>
+      </section>
 
       <section>
         <h1 id="Statements">Апэратары</h1>
@@ -1824,7 +2011,154 @@
           </ul>
         </div>
 
-			</section>
+      </section>
+
+      <section>
+        <h1 id="CoreObjects">Базавыя аб'екты</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects">Reference</a></li>
+          </ul>
+        </div>
+        <p>У <i>JavaScript</i> існуюць базавыя ці, інакш кажучы, глябальныя аб'екты (у тым сэнсе, што даступныя ў глябальнай прасторы імёнаў). Ніжэй прыведзена больш падрабязная інфармацыя па кожнаму зь іх.</p>
+
+        <h2 id="CoreObjects_Array"><code>Array</code></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Array_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Array">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2 id="CoreObjects_Date"><code>Date</code></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Date_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2 id="CoreObjects_Error"><code>Error</code></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Error">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3 id="CoreObjects_RangeError"><code>RangeError</code></h3>
+
+        <h2 id="CoreObjects_Function"><code>Function</code></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#Function_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function">Reference</a></li>
+          </ul>
+        </div>
+        <p>Любая функцыя ў <i>JavaScript</i> зьяўляецца экзэмплярам базавага аб'екту <code>Function</code>. Па-першае, функцыю можна стварыць праз канструктар:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          new Function ([arg1[, arg2[, ... argN]],] functionBody)
+        ]]></script>
+        <p>Выклікаючы канструктар, спачатку перадаецца сьпіс імёнаў неабавязковых аргумэнтаў, а апошнім ідзе сымбальная чарада, якая ўтрымлівае выразы для выкананьня, напрыклад:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          // Стварае функцыю, якая прымае два аргумэнты і вяртае іх суму,
+          // прызначае зьменнай adder спасылку на створаную функцыю
+          var adder = new Function("a", "b", "return a + b");
+
+          // Выклік створанай функцыі
+          adder(2, 6);  //=> 8
+        ]]></script>
+        <p>Часам, для вырашэньня пэўных задачаў, немагчыма абмінуць стварэньне функцыяў праз канструктар, але звычайна, ў астатніх выпадках, трэба пазьбягаць гэтага, таму што такія функцыі ствараюцца пры кожным сваім выкліку наноў. Замест гэтага ў большасьці выпадкаў трэба аб'яўляць функцыю і выклікаць яе ў тэксьце праграмы:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          // Аб'яўленьне функцыі
+          function sayHello() {
+            console.log("Hello there!");
+          };
+
+          // Выклік аб'яўленай функцыі
+          sayHello(); // Вывядзе чараду "Hello there!" у кансоль
+        ]]></script>
+        <p>Функцыя можа быць прызначана зьменнай:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var sayHi = function() {
+            console.log("Hi there!");
+          };
+
+          // Выклік аб'яўленай функцыі
+          sayHi(); // Вывядзе чараду "Hi there!" у кансоль
+        ]]></script>
+        <p>Гэта вельмі падобна да звычайнага аб'яўленьня функцыі, але трэба ведаць, што:</p>
+        <ul>
+          <li>калі функцыя ствараецца праз выраз кшталту <code>var adder = new Function("...")</code>, <code>adder</code> зьяўляецца зьменнай, якая у дадзены момант спасылаецца на аб'ект <code>Function</code> (а ў іншы момант можа спасылацца на іншы аб'ект, у тым ліку іншага тыпу),</li>
+          <li>калі ж функцыя ствараецца праз выраз <code>function sayHello() {...}</code>, <code>sayHello</code> зьяўляецца імем функцыі, а ня зьменнай.</li>
+        </ul>
+        <p>Функцыі таксама можна аб'яўляць унутры іншых функцыяў. Укладзеныя (унутраныя) функцыі абмежаваны для выкарыстаньня толькі сваімі абымаючымі (зьнешнімі) функцыямі. Пры гэтым унутраныя функцыі могуць мець доступ да аргумэнтаў і зьменных сваіх зьнешніх функцыяў, але зьнешнія функцыі ня могуць мець доступ да аргумэнтаў і зьменных сваіх унутраных функцыяў.</p>
+
+        <h3 id="CoreObjects_Function_Props">Атрыбуты</h3>
+        <p>У  аб'ектаў <code>Function</code> маецца адзін атрыбут, які дазваляе пашыраць/зьмяняць усе экзэмпляры адпаведных аб'ектаў:</p>
+
+        <h4 id="CoreObjects_Function_Props_prototype">prototype</h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/prototype">Reference</a></li>
+          </ul>
+        </div>
+
+        <h3 id="CoreObjects_Function_Methods">Мэтады</h3>
+        <p>Разгледзем мэтады, якія даступны экзэмплярам <code>Function</code>.</p>
+
+        <h4 id="CoreObjects_Function_Methods_apply"><code>apply</code></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/apply">Reference</a></li>
+          </ul>
+        </div>
+
+        <h4 id="CoreObjects_Function_Methods_bind"><code>bind</code></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/bind">Reference</a></li>
+          </ul>
+        </div>
+
+        <h4 id="CoreObjects_Function_Methods_call"><code>call</code></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/call">Reference</a></li>
+          </ul>
+        </div>
+
+        <h4 id="CoreObjects_Function_Methods_isGenerator"><code>isGenerator</code></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/isGenerator">Reference</a></li>
+          </ul>
+        </div>
+
+        <h4 id="CoreObjects_Function_Methods_toString"><code>toString</code></h4>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Function/toString">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2 id="CoreObjects_Object"><code>Object</code></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Object">Reference</a></li>
+          </ul>
+        </div>
+
+        <h2 id="CoreObjects_RegExp"><code>RegExp</code></h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Guide/Predefined_Core_Objects#RegExp_Object">Guide</a></li>
+            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/RegExp">Reference</a></li>
+          </ul>
+        </div>
+
+
+      </section>
 
       <section>
         <h1 id="ObjectModel">Аб'ектная мадэль</h1>
@@ -1881,6 +2215,7 @@
         <p><a href="http://vintagejs.com/">Add retro-look to your images</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/the-essentials-of-writing-high-quality-javascript/">The Essentials of Writing High Quality JavaScript</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/closures-front-to-back/">Closures: Front to Back</a></p>
+        <p><a href="http://ablogaboutcode.com/2011/06/14/how-javascript-loading-works-domcontentloaded-and-onload/">How Javascript Loading Works</a></p>
 
         <h1 id="JavaScript_Plugins">Дадаткі і бібліятэкі</h1>
         <p><a href="http://www.javascriptkit.com/cutpastejava.shtml">Сьпіс плагінаў</a></p>
@@ -1893,6 +2228,8 @@
         <p><a href="http://leaflet.cloudmade.com/">A Modern, Lightweight Open-Source JavaScript Library for Interactive Maps by CloudMade</a></p>
         <p><a href="https://github.com/tommoor/tinycon">Tinycon&nbsp;&ndash; library for manipulating the favicon, in particular adding alert bubbles and changing images</a></p>
         <p><a href="https://github.com/hakimel/avgrund">Avgrund</a>&nbsp;&ndash; A modal concept which aims to give a sense of depth between the page and modal layers.</p>
+        <p><a href="http://quojs.tapquo.com/">Quo.js</a>&nbsp;&ndash; Micro JavaScript Library for mobile web projects.</p>
+        <p><a href="http://createjs.com/#!/PreloadJS">PreloadJS</a>&nbsp;&ndash; A Javascript library that lets you manage and co-ordinate the loading of assets.</p>
 
         <h2 id="JavaScript_Plugins_Table">Табліцы</h2>
         <p>Бібліятэка, якая надае табліцам магчымасьць упарадкоўваць даныя: <a href="http://www.kryogenix.org/code/browser/sorttable/">sorttable</a></p>
@@ -1917,6 +2254,12 @@
         <p>Бібліятэка для фарматаваньня, маніпуляваньня і парсынгу датаў: <a href="http://git.aaronlumsden.com/tidytime.js/">tidyTime.js</a></p>
         <p>Бібліятэка для фарматаваньня, маніпуляваньня і парсынгу датаў: <a href="http://arshaw.com/xdate/">xDate</a>
 
+        <h2 id="JavaScript_Plugins_TextFields">Тэкставыя палі</h2>
+        <p>Вызначэньне месца зьмяшчэньня ці водступу карэткі ў тэкставым полі: <a href="https://github.com/ichord/Caret.js">Caret.js</a></p>
+
+        <h2 id="JavaScript_Plugins_Autocomplete">Аўтаматычная падстаноўка</h2>
+        <p>Аўтаматычная падстаноўка фрагмэнту тэксту па гарачай клавішы: <a href="https://github.com/ichord/At.js">At.js</a></p>
+
         <h2 id="JavaScript_Plugins_PDF">PDF</h2>
         <p>Стварэньне ўбудаваных на старонцы <i>PDF</i>-дакумэнтаў лётма на кліенцкім баку: <a href="http://parall.ax/products/jspdf">jsPDF</a></p>
       </section>
@@ -1930,6 +2273,7 @@
             <li><a href="http://api.jquery.com/">API</a></li>
             <li><a href="http://overapi.com/jquery/">OverAPI</a></li>
             <li><a href="http://tutsplus.com/course/30-days-to-learn-jquery/" title="30-дзённы курс вывучэньня jQuery ад Jeffrey Way">Відэа-курс</a></li>
+            <li><a href="http://try.jquery.com/" title="Інтэрактыўны курс ад CodeSchool">CodeSchool</a></li>
           </ul>
         </div>
         <p><i>jQuery</i>&nbsp;&ndash; гэта <i>JavaScript</i>-бібліятэка, якая спрашчае:</p>
@@ -2527,6 +2871,7 @@
         </div>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/whats-changed-in-jquery-ui-1-8-plus-free-books/">What’s Changed in jQuery UI 1.8</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/coding-your-first-jquery-ui-plugin/">Coding your First jQuery UI Plugin</a></p>
+        <p><a href="https://courses.tutsplus.com/courses/jquery-ui-101-the-essentials">jQuery UI 101: The Essentials</a></p>
 
         <h3 id="Frameworks_jQuery_Plugins">Дадаткі і бібліятэкі</h3>
         <div class="refs">
@@ -2668,6 +3013,8 @@
           <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/">This Time, You’ll Learn Node.js</a></li>
           <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-scrape-web-pages-with-node-js-and-jquery/">How to Scrape Web Pages with Node.js and jQuery</a></li>
           <li><a href="https://github.com/visionmedia/jade/">Jade - robust, elegant, feature rich template engine for node.js</a></li>
+          <li><a href="http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018">Testing in Node.js</a></li>
+          <li><a href="http://code.tutsplus.com/tutorials/introduction-to-html5-desktop-apps-with-node-webkit--net-36296">Introduction to HTML5 Desktop Apps With Node-Webkit</a></li>
         </ul>
 
         <h2 id="Frameworks_Backbone.js">Backbone.js</h2>
@@ -2685,6 +3032,8 @@
           </ul>
         </div>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-into-ember-js/">Getting Into Ember.js</a></p>
+        <p><a href="https://courses.tutsplus.com/courses/lets-learn-ember">Let's Learn Ember</a></p>
+        <p><a href="http://ember.codeschool.com/">Warming Up With Ember.js</a></p>
 
         <h2 id="Frameworks_SproutCore">SproutCore</h2>
         <div class="refs">
@@ -2707,6 +3056,7 @@
             <li><a href="http://knockoutjs.com/">Home</a></li>
           </ul>
         </div>
+
       </section>
 
       <section>
@@ -2725,6 +3075,10 @@
           <li>ajax:complete – completion of ajax call (after ajax:success and ajax:failure)</li>
           <li>ajax:after – after ajax call is sent (note: not after it returns)</li>
         </ul>
+
+        <h2 id="Technology_JSON">JSON</h2>
+        <p><a href="http://www.copterlabs.com/blog/json-what-it-is-how-it-works-how-to-use-it/">JSON: What It Is, How It Works, and How to Use It</a></p>
+
       </section>
 
       <section>
@@ -2762,9 +3116,21 @@
 
       </section>
 
+      <section>
+        <h1 id="References">Крыніцы і заўвагі</h1>
+        <ol>
+          <li id="Ref_ScriptsVersions">Падрабязьней пра вэрсіі <i>JavaScript</i> і <i>ECMAScript</i>, а таксама іх суадносіны глядзіце ў ангельскай Вікіпэдыі: <a href="http://en.wikipedia.org/wiki/JavaScript#Version_history">JavaScript</a>, <a href="http://en.wikipedia.org/wiki/ECMAScript#Version_correspondence">ECMAScript</a>.</li>
+          <li id="Ref_DevisionByZero">Трэба заўважыць, што вынікам <a href="#TypesValues_Numbers_Wrapper_Props_NaN"><code>Number.NaN</code></a> будзе толькі дзяленьне <code>0/0</code>, а, напрыклад, <code>1/0</code> верне <a href="#TypesValues_Numbers_Wrapper_Props_PositiveInfinity">дадатную бясконцасьць</a>.</li>
+        </ol>
+      </section>
+
+<div id="disqus_thread"></div>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
       <footer>
        <div id="copyright">
-          <p>Copyright &copy; 2010-2013 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>Copyright &copy; 2010-2014 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
           <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
               <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
@@ -2874,5 +3240,18 @@
 
   <script src="http://static.getclicky.com/js" type="text/javascript"></script>
   <script type="text/javascript">clicky.init(17136);</script>
+
+  <!-- DISQUS code -->
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'html-be'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
 </body>
 </html>

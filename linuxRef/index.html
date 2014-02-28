@@ -1,0 +1,351 @@
+<!doctype html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="be-tarask" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Даведнік па Linux</title>
+  <meta name="description" content="Даведнік па Linux">
+  <meta name="author" content="Юрцэвіч Дзьмітры">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+  <!-- CSS : implied media="all" -->
+  <link rel="stylesheet" href="../css/boilerplate.css?v=2">
+  <link rel="stylesheet" href="../css/screen.css?v=1">
+  <link rel="stylesheet" href="../css/shCore.css?v=1">
+  <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="../js/libs/modernizr-1.6.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- For example need -->
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+  <div id="container">
+    <article id="main">
+      <header>
+        Даведнік па Linux
+      </header>
+
+      <section>
+        <h1 id="Comparison">Параўнаньне</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://distrowatch.com/">distrowatch.com</a></li>
+            <li><a href="http://en.wikipedia.org/wiki/Comparison_of_Linux_distributions">Wiki</a></li>
+          </ul>
+        </div>
+
+        <p>Увогуле дыстрыбутываў <i>Linux</i> незьлічонае мноства, адны зь якіх зьяўляюцца спадкаемцамі іншых. Прывядзем тут параўнаньне адносна папулярных і істотных зь іх (у парадку зьмяншэньня <a href="http://distrowatch.com/dwres.php?resource=popularity">папулярнасьці</a> зьлева направа):</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Парамэтар \ Сыстэма</th>
+              <th><a href="http://linuxmint.com/">Mint</a></th>
+              <th><a href="http://www.debian.org/">Debian</a></th>
+              <th><a href="http://www.ubuntu.com/">Ubuntu</a></th>
+              <th><a href="http://fedoraproject.org/">Fedora</a></th>
+              <th><a href="http://www.opensuse.org/">openSUSE</a></th>
+              <th><a href="http://www.redhat.com/">RedHat Enterprise</a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Спадкаемца</td>
+              <td>Ubuntu</td>
+              <td>-</td>
+              <td>Debian</td>
+              <td>-</td>
+              <td>Slackware</td>
+              <td>Fedora</td>
+            </tr>
+            <tr>
+              <td><a href="http://en.wikipedia.org/wiki/Desktop_environment">Графічны інтэрфэйс</a></td>
+              <td><a href="http://en.wikipedia.org/wiki/Cinnamon_(software)">Cinnamon</a> (<a href="http://en.wikipedia.org/wiki/GNOME">GNOME</a>)</td>
+              <td>GNOME</td>
+              <td><a href="http://en.wikipedia.org/wiki/Unity_(user_interface)">Unity</a> (GNOME)</td>
+              <td>GNOME</td>
+              <td><a href="http://en.wikipedia.org/wiki/KDE">KDE</a></td>
+              <td>GNOME</td>
+            </tr>
+            <tr>
+              <td><a href="http://en.wikipedia.org/wiki/Package_management_system">Кіраваньне пакетамі</a></td>
+              <td><a href="http://en.wikipedia.org/wiki/Dpkg">dpkg</a> (<a href="http://en.wikipedia.org/wiki/Advanced_Packaging_Tool">APT</a>)</td>
+              <td>dpkg (APT)</td>
+              <td>dpkg (APT)</td>
+              <td><a href="http://en.wikipedia.org/wiki/RPM_Package_Manager">RPM</a> (<a href="http://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified">YUM</a>)</td>
+              <td>RPM (<a href="http://en.wikipedia.org/wiki/ZYpp">ZYpp</a>)</td>
+              <td>RPM (YUM)</td>
+            </tr>
+            <tr>
+              <td>Частотнасьць рэлізаў,<br/>1 раз на...</td>
+              <td>6 месяцаў</td>
+              <td>2 гады</td>
+              <td>6 месяцаў</td>
+              <td>6 месяцаў</td>
+              <td>8 месяцаў</td>
+              <td>2 гады</td>
+            </tr>
+            <tr>
+              <td>Асаблівасьці</td>
+              <td>больш прыязны да карыстальніка, найбольш выкарыстоўваемыя рэчы ўжо перадустаноўлены</td>
+              <td>стабільнасьць і кансэрватыўнасьць, не заўсёды самыя сучасныя тэхналёгіі</td>
+              <td>больш прыязны да карыстальніка, але часта зьмяняюцца прынцыповыя рэчы</td>
+              <td>інавацыйны, высокая бясьпека, больш для карпаратыўнага карыстаньня</td>
+              <td>добрая дакумэнтацыя і адміністратыўная прылада, цяжкі і марудны UI</td>
+              <td>найбольш папулярная карпаратыўная вэрсія, добрая падтрымка і дакумэнтацыя, бясьпека</td>
+            </tr>
+          </tbody>
+        </table>
+        <img title="Спрошчаная гісторыя разьвіцьця і ўзаемасувязь вэрсіяў Linux" alt="Спрошчаная гісторыя разьвіцьця і ўзаемасувязь вэрсіяў Linux" src="linux_distro_timeline.png">  
+        
+
+      </section>
+
+      <section>
+        <h1 id="Search">Лінкі на дэсктопе</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.linuxjournal.com/content/shortcut-creating-shortcuts">linuxjournal.com</a></li>
+          </ul>
+        </div>
+        <p>Пры жаданьні стварыць на дэсктопе лінк да файла ці тэчкі, можна скарыстацца камандай лінкаваньня <code>ln -s</code>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          ln -s <TARGET> <LINK>
+        ]]></script>
+        <p>дзе ў якасьці <code>&lt;TARGET&gt;</code> пазначаецца шлях да файла/тэчкі, а ў якасьці <code>&lt;LINK&gt;</code>&nbsp;&ndash; элемэнт дэсктопу (інакш кажучы іконка), які будзе злучаны з target-файлам/тэчкай. Напрыклад:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          ln -s /usr/bin/eclipse /home/my_home/Desktop/eclipse
+        ]]></script>
+        <p>У выніку на дэсктопе зьявіцца іконка запуску экліпсы.
+      </section>
+
+      <section>
+        <h1 id="Search">Пошук файлаў і тэчак</h1>
+        <p>Па-першае, шукаць можна ў праз стандартны файлавы мэнэджэр </p>
+        <p>
+          <img src="img001.png">
+          <img src="img002.png">
+          <img src="img003.png">
+        </p>
+        <p>Перавагай гэтага мэтаду зьяўляецца яго прастата і візуалізацыя, нязручнасьцю&nbsp;&ndash; нягнуткасьць і тое, што вынікі пошуку адлюстроўваюцца ў плоскім выглядзе, без герархіі, не зразумела дзе дакладна ўнутры цяперашняй тэчцы знаходзіцца той ці іншы файл:</p>
+        <p><img src="img004.png"></p>
+        <p>Больш магутны сродак пошуку&nbsp;&ndash; сыстэмная каманда <code>find</code>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          find .
+        ]]></script>
+        <img src="img005png">
+        <p></p>
+      </section>
+
+      <section>
+        <h1 id="Register">Рэгістрацыя праграмы з архіву</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://askubuntu.com/questions/26632/how-to-install-eclipse">askubuntu.com</a></li>
+          </ul>
+        </div>
+        <p>Калі праграма пастаўляецца ня ў выглядзе пакету, але ў выглядзе архіву, які трэба распакаваць і запусьціць праграму як ёсьць, тады трэба яе прадставіць сыстэме, інакш апошняя ня будзе ведаць пра яе існаваньне:</p>
+        <ol>
+          <li>Загружаем архіў і распакоўваем яго ў тэчку па жаданьні. Напрыклад, загружаем <a href="eclipse.org"><i>Eclipse</i></a> і распакоўваем у <code>/usr/lib</code></li>
+          <li>Ствараем выконваемы файл:
+            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+              sudo touch /usr/bin/eclipse
+              sudo chmod 755 /usr/bin/eclipse
+            ]]></script>
+            Адчыняем файл пры дапамозе тэкставага рэдактару і ўстаўляем туды наступны скрыпт:
+            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+              #!/bin/sh    
+              export ECLIPSE_HOME="/usr/lib/eclipse"
+              $ECLIPSE_HOME/eclipse $*
+            ]]></script>
+            і захоўваем.
+          </li>
+          <li>Ствараем пункт мэню для <i>Gnome</i>. Для гэтага ствараем файл <code>eclipse.desktop</code> у тэчцы <code>/usr/share/applications/</code>, ўстаўляем у яго наступны тэкст:
+            <script type="syntaxhighlighter" class="brush: text"><![CDATA[
+              [Desktop Entry]
+              Encoding=UTF-8
+              Name=Eclipse
+              Comment=Eclipse IDE
+              Exec=eclipse
+              Icon=/usr/lib/icon.xpm
+              Terminal=false
+              Type=Application
+              Categories=GNOME;Application;Development;
+              StartupNotify=true
+            ]]></script>
+            і захоўваем.
+          </li>
+        </ol>
+        <p>Усё, цяпер праграму можна запускаць праз мэню.</p>
+      </section>
+
+      <section>
+        <h1 id="FoldersSorting">Зьмена змоўчнага сартаваньня тэчак</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://askubuntu.com/questions/239371/how-do-i-list-folders-with-underscores-first">askubuntu.com</a></li>
+          </ul>
+        </div>
+        <p>Правілы змоўчнага сартаваньня тэчак ігнаруюць адмысловыя сымбалі, якія некаторыя <i>Windows</i>-карыстальнікі выкарыстоўваюць для асобнага групаваньня пэўных тэчак, напрыклад знак падкрэсьліваньня. Каб праверыць які мэтад сартаваньня выкарыстоўвае сыстэма, трэба ў кансолі запусьціць каманду <code>locale</code>, якая выдасьць падобны вынік:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          LANG=en_US.UTF-8
+          LANGUAGE=
+          LC_CTYPE="en_US.UTF-8"
+          LC_NUMERIC=be_BY.UTF-8
+          LC_TIME=be_BY.UTF-8
+          LC_COLLATE="en_US.UTF-8"
+          LC_MONETARY=be_BY.UTF-8
+          LC_MESSAGES="en_US.UTF-8"
+          LC_PAPER=be_BY.UTF-8
+          LC_NAME=be_BY.UTF-8
+          LC_ADDRESS=be_BY.UTF-8
+          LC_TELEPHONE=be_BY.UTF-8
+          LC_MEASUREMENT=be_BY.UTF-8
+          LC_IDENTIFICATION=be_BY.UTF-8
+          LC_ALL=
+        ]]></script>
+        <p>Значэньне атрыбуту <code>LC_COLLATE</code> можна зьмяніць на <code>C</code>, тады мэтад сартаваньня зьменіцца і адмысловыя сымбалі ўжо будуць улічвацца, хаця і не цалкам так жа, як у <i>Windows</i>. Робіцца гэта пры дапамозе наступнай каманды:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          update-locale LC_COLLATE=C
+        ]]></script>
+      </section>
+
+      
+ 
+      <footer>
+        <div id="copyright">
+          <p>Copyright &copy; 2010-2014 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
+              <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
+                  style="border-style: none;" alt="Common Creatives. Attribution + Noncommercial (by-nc)" />
+            </a>
+          </p>
+          <p><cite>Тэхнічны даведнік па Linux</cite> публікуецца пад ліцэнзіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://www.yurtsevich.info/refs/linuxRef/index.html">крыніцы</a></strong> матэрыялу.</p>
+        </div>
+      </footer>
+    </article>
+  </div> <!--! end of #container -->
+
+
+  <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- GetSatisfaction feedback button BEGIN -->
+  <script type="text/javascript" charset="utf-8">
+    var is_ssl = ("https:" == document.location.protocol);
+    var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+    document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+
+  <script type="text/javascript" charset="utf-8">
+    var feedback_widget_options = {};
+
+    feedback_widget_options.display = "overlay";
+    feedback_widget_options.company = "yurtsevich";
+    feedback_widget_options.placement = "right";
+    feedback_widget_options.color = "#222";
+    feedback_widget_options.style = "problem";
+
+    var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+  </script>
+  <!-- GetSatisfaction feedback button END -->
+
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+
+  <script src="../js/index.js"></script>
+  <script src="../js/libs/jquery.tree.js"></script>
+
+  <script src="../js/libs/waypoints.min.js"></script>
+  <script src="../js/ref.js"></script>
+
+  <script src="../js/libs/xregexp.js"></script>
+  <script src="../js/libs/shCore.js"></script>
+  <script src="../js/libs/shAutoloader.js"></script>
+  <script type="text/javascript">
+    function path()
+    {
+      var args = arguments,
+          result = []
+          ;
+
+      for(var i = 0; i < args.length; i++)
+          result.push(args[i].replace('@', '../js/libs/'));
+
+      return result
+    };
+
+    SyntaxHighlighter.autoloader.apply(null, path(
+      'applescript            @shBrushAppleScript.js',
+      'actionscript3 as3      @shBrushAS3.js',
+      'bash shell             @shBrushBash.js',
+      'coldfusion cf          @shBrushColdFusion.js',
+      'cpp c                  @shBrushCpp.js',
+      'c# c-sharp csharp      @shBrushCSharp.js',
+      'css                    @shBrushCss.js',
+      'delphi pascal          @shBrushDelphi.js',
+      'diff patch pas         @shBrushDiff.js',
+      'erl erlang             @shBrushErlang.js',
+      'groovy                 @shBrushGroovy.js',
+      'java                   @shBrushJava.js',
+      'jfx javafx             @shBrushJavaFX.js',
+      'js jscript javascript  @shBrushJScript.js',
+      'perl pl                @shBrushPerl.js',
+      'php                    @shBrushPhp.js',
+      'text plain             @shBrushPlain.js',
+      'py python              @shBrushPython.js',
+      'ruby rails ror rb      @shBrushRuby.js',
+      'sass scss              @shBrushSass.js',
+      'scala                  @shBrushScala.js',
+      'sql                    @shBrushSql.js',
+      'vb vbnet               @shBrushVb.js',
+      'xml xhtml xslt html    @shBrushXml.js'
+    ));
+
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+  </script>
+
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
+       change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', 'UA-18077954-1'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+
+  <script src="http://static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">clicky.init(17136);</script>
+</body>
+</html>

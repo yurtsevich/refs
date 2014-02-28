@@ -32,13 +32,16 @@
         <include name="/css/**"/>
         <include name="/images/**"/>
         <include name="/js/**"/>
+        <include name="/codingRef/**"/>
         <include name="/cssRef/**"/>
         <include name="/gitRef/**"/>
         <include name="/htmlRef/**"/>
         <include name="/javaRef/**"/>
         <include name="/jsRef/**"/>
+        <include name="/linuxRef/**"/>
         <include name="/railsRef/**"/>
         <include name="/rubyRef/**"/>
+        <include name="/sublimeRef/**"/>
         <include name="/webRef/**"/>
         <exclude name="/webRef/fonts/**/specimen_files/**"/>
         <exclude name="/webRef/fonts/**/*.html"/>
@@ -61,6 +64,10 @@
         <exclude name="**/${dir.test}/**"/>
         <exclude name="**/${dir.netbeans}/**"/>
         <exclude name="**/${dir.sass}/**"/>
+        <exclude name="chinaRef/**"/>
+        <exclude name="ftsRef/**"/>
+        <exclude name="ikeaRef/**"/>
+        <exclude name="tadRef/**"/>
       </fileset>
     </copy>
   </target> 

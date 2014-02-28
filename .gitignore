@@ -9,3 +9,7 @@ nbproject/**
 .htaccess
 *workspace
 *TODO.txt
+chinaRef/
+ftsRef/
+tadRef/
+china.js

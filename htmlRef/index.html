@@ -72,6 +72,7 @@
         <p><i>Даведнік</i> па HTML5 на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en/HTML/Element">https://developer.mozilla.org/en/HTML/Element</a> (<mark>TODO: праставіць спасылкі на элемэнты</mark>)</p>
         <p>Інтэрактыўная шпаргалка па элемэнтах на <b>OverAPI</b>: <a href="http://overapi.com/html/">http://overapi.com/html/</a></p>
         <p>Інтэрактыўная шпаргалка па <i>DOM</i> на <b>OverAPI</b>: <a href="http://overapi.com/html-dom/">http://overapi.com/html-dom/</a></p>
+        <p>Інтэрактыўны курс па <i>HTML5</i> і <i>CSS3</i> на <b>CodeSchool</b>: <a href="http://frontend.codeschool.com/">http://frontend.codeschool.com/</a></p>
         <p><i>Даведнік</i> па HTML4 на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/html/">http://reference.sitepoint.com/html</a></p>
         <p><i>Даведнік</i> на <b>DocHub</b>: <a href="http://dochub.io/#html/">http://dochub.io/#html/</a></p>
         <p>Кніга па асаблівасьцях HTML5 <cite>&laquo;Dive into HTML5&raquo;</cite>: <a href="http://diveintohtml5.org/">http://diveintohtml5.org</a></p>
@@ -93,9 +94,6 @@
         <p><a href="../jsRef/index.html"><span class="term"><i>JavaScript</i></span></a>, які вызначае ці падтрымліваюцца агентам пэўныя асаблівасьці <i>HTML5</i>: <a href="http://www.modernizr.com/">http://www.modernizr.com</a></p>
         <p><a href="../jsRef/index.html"><span class="term"><i>JavaScript</i></span></a>, які &laquo;дапамагае&raquo; <i>Internet Explorer</i>&#39;у разумець <i>HTML5</i> элемэнты: <a href="http://code.google.com/p/html5shiv/">http://code.google.com/p/html5shiv</a></p>
         <p>Дапаможнік па выкарыстаньні пазначаных скрыптоў: <a href="http://net.tutsplus.com/tutorials/html-css-techniques/html5-and-css3-without-guilt/">HTML5 and CSS3 Without Guilt</a>.</p>
-
-        <h2 id="Links_forms">Формы</h2>
-        <p>Генэратар коду <i>вэб-формаў</i>: <a href="http://www.phpform.org/">http://www.phpform.org</a></p>
       </section>
 
       <section>
@@ -4652,9 +4650,12 @@
         </table>
       </section>
 
+
+
+
       <footer>
         <div id="copyright">
-          <p>Copyright &copy; 2010-2013 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>Copyright &copy; 2010-2014 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
           <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
               <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
@@ -4664,30 +4665,59 @@
           <p><cite>Тэхнічны даведнік па HTML</cite> публікуецца пад ліцэнзіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://www.yurtsevich.info/refs/htmlRef/index.html">крыніцы</a></strong> матэрыялу.</p>
         </div>
       </footer>
+
+      <!-- Disqus BEGIN -->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'html-be'; // required: replace example with your forum shortname
+
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      <!-- Disqus END -->
+
     </article>
   </div><!--! end of #container -->
 
+  <div id="comments_link" class="uv-icon"><a href="#disqus_thread" title="Перайсьці да блёку з камэнтамі"></a></div>
+
   <!-- Javascript at the bottom for fast page loading -->
 
-  <!-- GetSatisfaction feedback button BEGIN -->
-  <script type="text/javascript" charset="utf-8">
-    var is_ssl = ("https:" == document.location.protocol);
-    var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
-    document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+  <!-- Uservoice BEGIN -->
+  <script>
+    // Include the UserVoice JavaScript SDK (only needed once on a page)
+    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/Of84cKdV6fJsdTM8rZd0g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+    //
+    // UserVoice Javascript SDK developer documentation:
+    // https://www.uservoice.com/o/javascript-sdk
+    //
+
+    // Set colors
+    UserVoice.push(['set', {
+      accent_color: '#448dd6',
+      trigger_color: 'white',
+      trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+    }]);
+
+    // Add default trigger to the bottom-right corner of the window:
+    UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+    // Or, use your own custom trigger:
+    //UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
+
+    // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+    UserVoice.push(['autoprompt', {}]);
   </script>
+  <!-- Uservoice END -->
 
-  <script type="text/javascript" charset="utf-8">
-    var feedback_widget_options = {};
-
-    feedback_widget_options.display = "overlay";
-    feedback_widget_options.company = "yurtsevich";
-    feedback_widget_options.placement = "right";
-    feedback_widget_options.color = "#222";
-    feedback_widget_options.style = "problem";
-
-    var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
-  </script>
-  <!-- GetSatisfaction feedback button END -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
