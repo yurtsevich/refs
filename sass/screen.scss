@@ -115,6 +115,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     td {border-bottom: 1px solid #EEEEEE; border-left: 1px solid #EEEEEE; color: #666666; font: 14px/1.4em $segoe-font-stack;}
     td:first-child {border-left: none; padding-left: 0;}
     td.underlined {border-bottom: 1px solid #AAA;}
+    tr.lightgreyed td {color: #999;} 
   }
   td.file_folder {width: 140px;}
   table.list td {border: none;}
@@ -205,6 +206,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     th, td {text-align: center; width: 100px;}
   }
 
+
   abbr.changed_in_html5, abbr.new_in_html5, abbr.obsolete_in_html5 {font-size: x-small; vertical-align: super;}
   abbr.changed_in_html5 {color: #00b050;}
   abbr.new_in_html5 {color: #c00000;}
@@ -263,7 +265,12 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     &:first-child {border-top: none; margin-top: 20px; padding-top: 0;}
   }
   .gallerytext {margin-top: 5px;
-    .rub_cost {font-weight: bold;}
+    .rub_cost, .num {font-weight: bold;}
+    .warn {color: red;}
+    .good {color: green;}
+  }
+  figure {
+    .git_branching {text-align: left;}
   }
 }
 
