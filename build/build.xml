@@ -36,7 +36,6 @@
         <include name="/cssRef/**"/>
         <include name="/gitRef/**"/>
         <include name="/htmlRef/**"/>
-        <include name="/javaRef/**"/>
         <include name="/jsRef/**"/>
         <include name="/linuxRef/**"/>
         <include name="/railsRef/**"/>
