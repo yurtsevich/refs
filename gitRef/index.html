@@ -882,7 +882,15 @@
           nothing to commit, working directory clean
         ]]></script>
 
-        <h2 id="MergeAndRebase_Rebase" data-content-item-open>Перамяшчэньне</h2>
+        <h2 id="MergeAndRebase_CherryPick">Выбарачнае зьліцьцё</h2>
+        <p>Існуе яшчэ каманда выбарачнага зьліцьця асобных камітаў адной галіны ў іншую:</p>
+        <p><code>git cherry-pick 53212e5</code>&nbsp;&mdash; зьлівае каміт, хэш якога пазначаны апошнім у камандзе, зь іншай галіны ў цяперашнюю.</p>
+        <p><code>git cherry-pick --edit 53212e5</code>&nbsp;&mdash; тое ж самае, што і папярэдняя каманда, але ў дадатак адкрыецца акно для зьмены камэнтара каміту, які мы зьліваем.</p>
+        <p><code>git cherry-pick --no-commit 53212e5 55ae374</code>&nbsp;&mdash; адначасова зьлівае зьмены з двух камітаў іншай галіны ў цяперашнюю, пры гэтым зьлітыя зьмены не каміцяцца, але толькі індэксуюцца, каб пазьней закаміціць іх асобнай камандай.</p>
+        <p><code>git cherry-pick -x 53212e5</code>&nbsp;&mdash; пры зьліцьці каміту, дадае адпаведны камэнтар з пазначэньнем поўнага хэшу гэтага каміту (мае сэнс толькі калі адлеглы каміт зьліваецца ў лякальную галіну, інакш лякальны хэш ня будзе мець ніякага сэнсу для іншых удзельнікаў каманды).</p>
+        <p><code>git cherry-pick --signoff 53212e5</code>&nbsp;&mdash; пры зьліцьці каміту, дадае інфармацыю пра аўтара зыходнага каміту і пра аўтара зьліцьця.</p>
+        
+        <h2 id="MergeAndRebase_Rebase">Перамяшчэньне</h2>
         <p>Для перамяшчэньня характэрна тое, што месца адгалінаваньня пэўнай галіны перамяшчаецца з аднаго каміту ў іншы. Гэты спосаб эквівалентны зьліцьцю, у сэнсе таго, што ў выніку будзем мець той жа самы стан актыўнай галіны. Адрозьненьнем жа зьяўляецца тое, што гісторыя камітаў будзе выглядаць не разгалінаванай, але лінейнай:
           <figure class="git_branching">
             <img alt="Ілюстрацыя перамяшчэньня галінаў" title="Ілюстрацыя перамяшчэньня галінаў" src="rebase_1.png"/>
@@ -901,18 +909,71 @@
         <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
           $ git rebase --continue
         ]]></script>
-        <p>Наступная каманда прапануе інтэрактыўнае перамяшчэньне чатырох апошніх камітаў цяперашняй галіны.</p>
-        <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
-          $ git rebase -i HEAD~4
-        ]]></script>
 
-        <h2 id="MergeAndRebase_CherryPick">Выбарачнае зьліцьцё</h2>
-        <p>Існуе яшчэ каманда выбарачнага зьліцьця асобных камітаў адной галіны ў іншую:</p>
-        <p><code>git cherry-pick 53212e5</code>&nbsp;&mdash; зьлівае каміт, хэш якога пазначаны апошнім у камандзе, зь іншай галіны ў цяперашнюю.</p>
-        <p><code>git cherry-pick --edit 53212e5</code>&nbsp;&mdash; тое ж самае, што і папярэдняя каманда, але ў дадатак адкрыецца акно для зьмены камэнтара каміту, які мы зьліваем.</p>
-        <p><code>git cherry-pick --no-commit 53212e5 55ae374</code>&nbsp;&mdash; адначасова зьлівае зьмены з двух камітаў іншай галіны ў цяперашнюю, пры гэтым зьлітыя зьмены не каміцяцца, але толькі індэксуюцца, каб пазьней закаміціць іх асобнай камандай.</p>
-        <p><code>git cherry-pick -x 53212e5</code>&nbsp;&mdash; пры зьліцьці каміту, дадае адпаведны камэнтар з пазначэньнем поўнага хэшу гэтага каміту (мае сэнс толькі калі адлеглы каміт зьліваецца ў лякальную галіну, інакш лякальны хэш ня будзе мець ніякага сэнсу для іншых удзельнікаў каманды).</p>
-        <p><code>git cherry-pick --signoff 53212e5</code>&nbsp;&mdash; пры зьліцьці каміту, дадае інфармацыю пра аўтара зыходнага каміту і пра аўтара зьліцьця.</p>
+        <h2 id="MergeAndRebase_InteractiveRebase">Інтэрактыўная перабудова</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">ProGit</a></li>
+          </ul>
+        </div>
+        <p>Хаця для выкананьня перабудовы камітаў выкарыстоўваецца тая ж каманда <code>rebase</code>, я вынес апісаньне ў асобны разьдзел, таму што сутнасьць перабудовы зусім іншая ў параўнаньні з перамяшчэньнем. Наступная каманда прапануе інтэрактыўную перабудову двух апошніх камітаў цяперашняй галіны.</p>
+        <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
+          $ git rebase -i HEAD~2
+        ]]></script>
+        <p>У выніку ў новым тэкставым акне будзе выведзена наступная інфармацыя для магчымай праўкі:</p>
+        <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
+          pick f7f3f6d changed my name a bit
+          pick 310154e updated README formatting and added blame
+          pick a5f4a0d added cat-file
+
+          # Rebase 710f0f8..a5f4a0d onto 710f0f8
+          #
+          # Commands:
+          #  p, pick = use commit
+          #  r, reword = use commit, but edit the commit message
+          #  e, edit = use commit, but stop for amending
+          #  s, squash = use commit, but meld into previous commit
+          #  f, fixup = like "squash", but discard this commit log message
+          #  x, exec = run command (the rest of the line) using shell
+          #
+          # These lines can be re-ordered; they are executed from top to bottom.
+          #
+          # If you remove a line here THAT COMMIT WILL BE LOST.
+          #
+          # However, if you remove everything, the rebase will be aborted.
+          #
+          # Note that empty commits are commented out
+        ]]></script>
+        <p>Калі ўсё пакінуць як ёсьць (каманду <code>pick</code>), тады 2 апошніх каміта будуць ізноў ужыты па новай. Але ёсьць і іншыя магчымасьці (чытай ніжэй).</p>
+
+        <h3 id="MergeAndRebase_InteractiveRebase_ReorderAndExclude">Перастаноўка і выключэньне</h3>
+        <p>Самае простае, што можна зрабіць&nbsp;&mdash; гэта зьмяніць парадак камітаў ці ўвогуле выключыць які(-я)-небудзь зь іх. Для гэтага зьменім першыя тры радкі ў зьявіўшымся акне на наступнае:</p>
+        <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
+          pick 310154e updated README formatting and added blame
+          pick f7f3f6d changed my name a bit
+        ]]></script>
+        <p>У гэтым выпадку, калі захаваць зьмены ў акне і закрыць яго, каміты <code>310154e</code> і <code>f7f3f6d</code> будуць памененыя месцамі, а каміт <code>a5f4a0d</code> увогуле будзе выключаны і не ўжыты.</p>
+
+        <h3 id="MergeAndRebase_InteractiveRebase_Reword">Замена камэнтароў да камітаў</h3>
+        <p>Наступнае, што можна зрабіць&nbsp;&mdash; гэта зьмяніць камэнтар да камітаў. Для гэтага ужывем каманду <code>reword</code> для таго каміту, камэнтар якога жадаем зьмяніць:</p>
+        <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
+          reword f7f3f6d changed my name a bit
+          pick 310154e updated README formatting and added blame
+          pick a5f4a0d added cat-file
+        ]]></script>
+        <p>У гэтым выпадку, калі захаваць зьмены ў акне і закрыць яго, для каміта <code>f7f3f6d</code> будзе запытаны новы камэнтар.</p>
+
+        <h3 id="MergeAndRebase_InteractiveRebase_Squash">Злучэньне камітаў</h3>
+        <p>Таксама можна злучыць некалькі камітаў у адзін. Для гэтага ужывем каманду <code>squash</code>:</p>
+        <script type="syntaxhighlighter" class="brush: shell;"><![CDATA[
+          pick f7f3f6d changed my name a bit
+          squash 310154e updated README formatting and added blame
+          squash a5f4a0d added cat-file
+        ]]></script>
+        <p>У гэтым выпадку, калі захаваць зьмены ў акне і закрыць яго, зьмены камітаў <code>310154e</code> і <code>a5f4a0d</code> будуць злучаны са зьменамі каміту <code>f7f3f6d</code> і ўсе яны будуць ужыты як адзін каміт.</p>
+
+        <h3 id="MergeAndRebase_InteractiveRebase_Edit">Рэдагаваньне камітаў</h3>
+        <p>Пры дапамозе каманды <code>edit</code> асобныя каміты могуць быць разьбітыя на некалькі камітаў ці ўвогуле быць зьмененыя цалкам (больш падрабязна глядзі адпаведны <a href="http://git-scm.com/book/en/v2/Git-Tools-Rewriting-History">разьдзел кнігі <i>ProGit</i></a>)</p>
       </section>
 
       <section>
