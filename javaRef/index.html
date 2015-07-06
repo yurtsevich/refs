@@ -1,0 +1,1663 @@
+<!doctype html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="be-tarask" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Даведнік па Java</title>
+  <meta name="description" content="Даведнік па Java">
+  <meta name="author" content="Юрцэвіч Дзьмітры">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+  <!-- CSS : implied media="all" -->
+  <link rel="stylesheet" href="../css/boilerplate.css?v=2">
+  <link rel="stylesheet" href="../css/screen.css?v=2">
+  <link rel="stylesheet" href="../css/js.css?v=1">
+  <link rel="stylesheet" href="../css/shCore.css?v=1">
+  <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
+
+  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
+  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
+
+  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+  <script src="../js/libs/modernizr-1.6.min.js"></script>
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+
+  <div id="container">
+    <article id="main">
+      <header>
+        Даведнік па Java
+      </header>
+      <p><a href="http://www.oracle.com/technetwork/java/basicjava1-135508.html">Essentials of the Java Programming Language, Part 1</a></p>
+      <p><a href="http://www.oracle.com/technetwork/java/basicjava2-138746.html">Essentials of the Java Programming Language, Part 2</a></p>
+      <p><a href="http://docs.oracle.com/javase/tutorial/index.html">Oracle's Java Tutorials</a></p>
+      <p><a href="http://www.tutorialspoint.com/java_technology_tutorials.htm">TutorialsPoint's Java Tutorials</a></p>
+
+      <section>
+        <h1 id="JSE" data-content-item-open>JSE</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/">Guide</a></li>
+          </ul>
+        </div>
+
+        <aside>
+          <p><i>JSR-250</i>&nbsp;&ndash; стандарт "Common Annotations for the Java Platform"</p>
+          <p><a href="#Build_Maven_Dependencies_CommonAnnotation">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+        </aside>
+        <h2 id="JSE_CommonAnnotations">Common Annotations</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/common_annotations-1_2-mrel2-spec/jsr-250-1.2-final.pdf">JSR-250</a></li>
+          </ul>
+        </div>
+
+        <h3 id="JSE_CommonAnnotations_@Generated">@Generated</h3>
+        <p>Пазначае зыходны код, які быў згенераваны:</p>
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @Generated(“com.sun.xml.rpc.AProcessor”)
+          public interface StockQuoteService extends java.rmi.Remote {
+            this.context = context;
+          }
+        ]]></script>
+
+        <h3 id="JSE_CommonAnnotations_@ManagedBean">@ManagedBean</h3>
+        <p>Выкарыстоўваецца для пазначэньня аб'ектаў, якія могуць кіравацца кантэйнэрам:</p>
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @ManagedBean(“cart”)
+          public class ShoppingCart {
+            ...
+          }
+        ]]></script>
+
+        <h3 id="JSE_CommonAnnotations_@PostConstruct">@PostConstruct і @PreDestroy</h3>
+        <p><code>@PostConstruct</code> выкарыстоўваецца для пазначэньня мэтаду, які будзе выкліканы пасьля ўсіх іньекцый, але перад тым, як бін будзе прадстаўлены кантэйнэрам для выкарыстаньня. А <code>@PreDestroy</code> выкарыстоўваецца для пазначэньня мэтаду, які будзе выкліканы непасрэдна перад тым, як кантэйнэр вынішчыць бін, для вызваленьня папярэдне занятых рэсурсаў. Мэтады, пазначаныя гэтымі анатацыямі, павінны вяртаць <code>void</code>, не кідаць <i>checked</i> выключэньняў, не быць статычнымі, а таксама не прымаць аргумэнтаў, за выключэньнем <i>EJB</i>-інтэрсэптэраў, калі яны прымаюць аргумэнт <code>InvocationContext</code>.</p>
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          ...
+
+          @Resource
+          private void setMyDB(DataSource ds) {
+            myDB = ds;
+          }
+
+          @PostConstruct
+          private void initialize() {
+            // Initialize the connection object from the DataSource
+            connection = myDB.getConnection();
+          }
+
+          @PreDestroy
+          private void cleanup() {
+            // Close the connection to the DataSource.
+            connection.close();
+          }
+
+          private DataSource myDB;
+          private Connection connection;
+
+          ...
+        ]]></script>
+
+        <h3 id="JSE_CommonAnnotations_@Resource@Resources">@Resource і @Resources</h3>
+        <p><code>@Resource</code> выкарыстоўваецца для пазначэньня спасылкі на рэсурс. Калі выкарыстоўваецца перад полем альбо сэттэрам, кантэйнэр зробіць іньекцыю адпаведнага значэньня ў час ініцыіраваньня праграмы. Калі выкарыстоўваецца перад клясам, гэта азначае, што праграма будзе "шукаць" значэньне ў часе сваёй працы.</p>
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @Resource(name=”customerDB”)
+          private DataSource myDB;
+        ]]></script>
+        <p>Калі ж трэба пазначыць некалькі рэсурсаў, выкарыстоўваецца <code>@Resources</code>:</p>
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @Resources ({
+            @Resource(name=”myDB” type=javax.sql.DataSource),
+            @Resource(name=”myMQ” type=javax.jms.ConnectionFactory)
+          })
+          public class CalculatorBean {
+            //...
+          }
+        ]]></script>
+
+        <h3 id="JSE_CommonAnnotations_@DeclareRoles">@DeclareRoles</h3>
+        <p>Выкарыстоўваецца для аб'яўленьня роляў праграмы. (<mark>ня вельмі разумею сэнс</mark>)</p> 
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @DeclareRoles("BusinessAdmin")
+          public class Calculator {
+            public void convertCurrency() {
+              if (x.isUserInRole(“BusinessAdmin”)) {
+              ....
+              }
+            }
+            ...
+          }                    
+        ]]></script>
+
+        <h3 id="JSE_CommonAnnotations_@RolesAllowed">@RolesAllowed</h3>
+        <p>Выкарыстоўваецца для пазначэньня роляў, пад якімі дазваляецца выкананьне мэтадаў. Можа стаяць перад клясай і перад мэтадам. Калі ўжываецца перад клясай, ужываецца да ўсіх яе мэтадаў. Калі ўжываецца і перад клясай, і перад мэтадамі, тады анатацыя перад мэтадам перакрывае анатацыю перад клясай.</p> 
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @RolesAllowed("Users")
+          public class Calculator {
+
+            @RolesAllowed(“Administrator”)
+            public void setNewRate(int rate) {
+              ...
+            }
+
+            ...
+          }
+        ]]></script>
+
+        <h3 id="JSE_CommonAnnotations_@PermitAll">@PermitAll</h3>
+        <p>Выкарыстоўваецца каб пазначыць, што выкананьне мэтадаў дазваляецца любым ролям. Можа стаяць перад клясай і перад мэтадам.</p> 
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @RolesAllowed("Users")
+          public class Calculator {
+
+            @RolesAllowed(“Administrator”)
+            public void setNewRate(int rate) {
+              ...
+            }
+
+            @PermitAll
+            public long convertCurrency(long amount) {
+              ...
+            }
+
+            ...
+          }
+        ]]></script>
+
+        <h3 id="JSE_CommonAnnotations_@DenyAll">@DenyAll</h3>
+        <p>Выкарыстоўваецца каб пазначыць, што выкананьне мэтадаў забараняецца незалежна ад ролі. Можа стаяць перад клясай і перад мэтадам.</p> 
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @RolesAllowed("Users")
+          public class Calculator {
+
+            @RolesAllowed(“Administrator”)
+            public void setNewRate(int rate) {
+              ...
+            }
+
+            @DenyAll
+            public long convertCurrency(long amount) {
+              ...
+            }
+            
+            ...
+          }
+        ]]></script>
+
+        <h3 id="JSE_CommonAnnotations_@DataSourceDefinition@DataSourceDefinitions">@DataSourceDefinition і @DataSourceDefinitions</h3>
+        <p><code>@DataSourceDefinition</code> выкарыстоўваецца для аб'яўленьня <i>DataSource</i> кантэйнэра і для рэгістрацыі яго ў <i>JNDI</i>.</p>
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @DataSourceDefinition(name="java:global/MyApp/MyDataSource",
+              className="org.apache.derby.jdbc.ClientDataSource",
+              url="jdbc:derby://localhost:1527/myDB",
+              user="lance",
+              password="secret")
+
+        ]]></script>
+        <p>альбо:</p>
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @DataSourceDefinition(name="java:global/MyApp/MyDataSource",
+              className="com.foobar.MyDataSource",
+              portNumber=6689,
+              serverName="myserver.com",
+              user="lance",
+              password="secret")
+        ]]></script>
+        <p>Калі ж трэба аб'явіць некалькі <i>DataSource</i>, выкарыстоўваецца <code>@DataSourceDefinitions</code>:</p>
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          @DataSourceDefinitions ({
+            @DataSourceDefinition(name="java:global/MyApp/MyDataSource",
+                className="com.foobar.MyDataSource",
+                portNumber=6689,
+                serverName="myserver.com",
+                user="lance",
+                password="secret"),
+            @DataSourceDefinition(name="java:global/MyApp/MyDataSource",
+                className="org.apache.derby.jdbc.ClientDataSource",
+                url="jdbc:derby://localhost:1527/myDB",
+                user="lance",
+                password="secret")
+          })
+          public class CalculatorBean {
+            ...
+          }
+        ]]></script>
+
+        <aside>
+          <p><i>JSR-221</i>&nbsp;&ndash; стандарт "JDBC 4.0 API"</p>
+        </aside>
+        <h2 id="JSE_JDBC">JDBC</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/jdbc-4_2-mrel2-spec/jdbc4.2-fr-spec.pdf">JSR-221</a></li>
+            <li><a href="http://docs.oracle.com/javase/tutorial/jdbc/index.html">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <h2 id="JSE_JDBC">JNDI</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://docs.oracle.com/javase/tutorial/jndi/index.html">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <aside>
+          <p><i>JSR-206</i>&nbsp;&ndash; стандарт "Java API for XML Processing 1.3"</p>
+        </aside>
+        <h2 id="JSE_JAXP">JAXP</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/jaxp-1_6-mrel3-spec/JAXP1_6-FinalSpec.pdf">JSR-206</a></li>
+            <li><a href="http://docs.oracle.com/javase/tutorial/jaxp/index.html">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <aside>
+          <p><i>JSR-222</i>&nbsp;&ndash; стандарт "Java Architecture for XML Binding 2.0"</p>
+        </aside>
+        <h2 id="JSE_JAXB">JAXB</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/jaxb-2.0-fr-oth-JSpec/jaxb-2_0-fr-spec.pdf">JSR-222</a></li>
+            <li><a href="http://docs.oracle.com/javase/tutorial/jaxb/index.html">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <aside>
+          <p><i>JSR-173</i>&nbsp;&ndash; стандарт "Streaming API for XML"</p>
+        </aside>
+        <h2 id="JSE_StAX">StAX</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://jcp.org/en/jsr/detail?id=173">JSR-173</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <h2 id="JSE_JAAS">JAAS</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/jaas/tutorials/index.html">Tutorial</a></li>
+            <li><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/jaas/tutorials/GeneralAcnOnly.html">Auth Tutorial</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <aside>
+          <p><i>JSR-3</i>&nbsp;&ndash; стандарт "Java Management Extensions 1.4"</p>
+        </aside>
+        <h2 id="JSE_JMX">JMX</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/jmx-1_4-mrel4-spec/jsr3-jmx-1_4-mrel4-spec-FINAL-v1_0.pdf">JSR-3</a></li>
+            <li><a href="http://docs.oracle.com/javase/tutorial/jmx/index.html">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <aside>
+          <p><i>JSR-925</i>&nbsp;&ndash; стандарт "JavaBeans Activation Framework 1.1"</p>
+        </aside>
+        <h2 id="JSE_JAF">JAF</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/jaf-1.1-mrel-eval-oth-JPR/jaf-1.1-mrel.pdf">JSR-925</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </section>
+
+      <section>
+        <aside>
+          <p><i>JSR-342</i>&nbsp;&ndash; стандарт "Java EE 7"</p>
+        </aside>
+        <h1 id="JEE" data-content-item-open>JEE</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-spec/JavaEE_Platform_Spec.pdf">JSR-342</a></li>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-spec/WebProfile.pdf">JSR-342, Web Profile</a></li>
+            <li><a href="https://docs.oracle.com/javaee/7/JEETT.pdf">Tutorial</a></li>
+          </ul>
+        </div>
+        <p><a href="https://www.youtube.com/user/bienadam">Screencasts: Adam Bien</a> (<a href="http://tv.adam-bien.com/">у храналягічным парадку</a>)</p>
+        <p><a href="https://confluence.jetbrains.com/display/IDEADEV/JavaEE+7+Screencasts">IntelliJ IDEA: JavaEE 7 Screencasts</a></p>
+        <p><a href="https://github.com/javaee-samples/javaee7-samples">JavaEE 7 Samples</a></p>
+        <p><a href="https://www.youtube.com/user/koushks">Java Brains Screencasts</a></p>
+
+        <h2 id="JEE_Descriptors">Дэскрыптары разгортваньня</h2>
+        <pre>
+my-app
+`-- src
+    `-- main
+        |-- java
+        |    `...
+        |-- resources
+        |   |
+        |   `--META-INF
+        |      |-- application.xml           - JavaEE
+        |      |-- application-client.xml    - JavaEE
+        |      |-- persistence.xml           - JPA
+        |      `-- ra.xml                    - JCA
+        `-- webapp
+            |
+            `--WEB-INF
+               |-- beans.xml                 - CDI
+               |-- ejb-jar.xml               - EJB
+               |-- faces-config.xml          - JSF
+               |-- validation.xml            - Beans Validation
+               |-- web.xml                   - Servlet
+               |-- web-fragment.xml          - Servlet
+               `-- webservices.xml           - Web-services SOAP
+        </pre>
+
+        <h3 id="JEE_Descriptors_beans">beans.xml</h3>
+        <script type="syntaxhighlighter" class="brush: xml;"><![CDATA[
+          <beans xmlns="http://xmlns.jcp.org/xml/ns/javaee" 
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                  http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd" 
+              bean-discovery-mode="all">
+          </beans>
+        ]]></script>
+
+        <h3 id="JEE_Descriptors_jsf">faces-config.xml</h3>
+        <script type="syntaxhighlighter" class="brush: xml;"><![CDATA[
+          <faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                  http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+          </faces-config>
+        ]]></script>
+
+        <h3 id="JEE_Descriptors_persistence">persistence.xml</h3>
+        <script type="syntaxhighlighter" class="brush: xml;"><![CDATA[
+          <persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                  http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+             <persistence-unit name="primary">
+                <!-- If you are running in a production environment, add a managed 
+                  data source, this example data source is just for devleopment and testing! -->
+                <!-- The datasource is deployed as WEB-INF/hibernate4-quickstart-ds.xml, you can
+                  find it in the source at src/main/webapp/WEB-INF/hibernate4-quickstart-ds.xml -->
+                <jta-data-source>java:jboss/datasources/Hibernate4QuickstartDS</jta-data-source>
+                <properties>
+                   <!-- Properties for Hibernate -->
+                   <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+                   <property name="hibernate.show_sql" value="false" />
+                </properties>
+             </persistence-unit>
+          </persistence>
+        ]]></script>
+
+        <aside>
+          <p><i>JSR-299</i>&nbsp;&ndash; стандарт "Contexts and Dependency Injection for the Java EE platform"</p>
+          <p><i>Weld</i>&nbsp;&ndash; рэалізацыя <i>JSR-299</i> у <i>JBoss WildFly</i></p>
+          <p><a href="#Build_Maven_Dependencies_CDI">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+        </aside>
+        <h2 id="JEE_BeansAndCDI">Кампанэнты і CDI</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/web_beans-1.0-fr-oth-JSpec/web_beans-1_0-fr-spec.pdf">JSR-299</a></li>
+            <li><a href="http://docs.jboss.org/weld/reference/latest/en-US/html/index.html">Weld</a></li>
+          </ul>
+        </div>
+        <p><a href="http://java.dzone.com/articles/cdi-aop">CDI AOP Tutorial</a></p>
+
+        <h3 id="JEE_BeansAndCDI_LifeCycle">Жыцьцёвы цыкл кампанэнтаў</h3>
+        <img src="beans.png">
+
+        <h3 id="JEE_BeansAndCDI_ScopeAndContext">Вобласьці бачнасьці і кантэкст</h3>
+        <p>Кампанэнты маюць стан і жывуць выключна ў межах пэўнай вобласьці бачнасьці: запыту, сэансу, дыялёгу і ўсёй праграмы.</p>
+
+        <h3 id="JEE_BeansAndCDI_@Named">@Named</h3>
+        <p>Анатацыяй <code>@Named</code> пазначаюцца біны, да якіх павінны мець доступ вью па іх імёнах:</p>
+        <script type="syntaxhighlighter" class="brush: java; highlight: [1,3]"><![CDATA[
+          @Named
+          @SessionScoped
+          public class Game implements Serializable {
+            ...
+          }
+
+        ]]></script>
+        <script type="syntaxhighlighter" class="brush: html; highlight: [6,8,9,11,12]"><![CDATA[
+          <!DOCTYPE html>
+          <head>...</head>
+          <body>
+           <div>
+            Your guess:
+            <h:inputText id="inputGuess" value="#{game.guess}"
+               required="true" size="3"
+               disabled="#{game.number eq game.guess}"
+               validator="#{game.validateNumberRange}" />
+            <h:commandButton id="guessButton" value="Guess"
+               action="#{game.check}"
+               disabled="#{game.number eq game.guess}" />
+           </div>
+          </body>
+          </html>
+        ]]></script>
+
+        <h3 id="JEE_BeansAndCDI_@Default@Alternative">@Default і @Alternative</h3>
+        <p>Пры дапамозе анатацыі <code>@Default</code> пазначаецца змоўчная кляса для іньекцыі, а анатацыяй <code>@Alternative</code>&nbsp;&ndash; альтэрнатыўная/-ыя. </p>
+
+        <h3 id="JEE_BeansAndCDI_@Qualifier@Produces@Inject">@Qualifier, @Produces і @Inject</h3>
+        <p>Пры дапамозе анатацыі <code>@Qualifier</code> можна ствараць анатацыі-маркеры для пазначэньня мэтадаў-вытворцаў (<code>@Produces</code>) а таксама палёў, якія запаўняюцца значэньнямі (<code>@Inject</code>), якія вяртаюцца тымі мэтадамі-вытворцамі:</p>
+        <script type="syntaxhighlighter" class="brush: java; highlight: [4,5,12,21]"><![CDATA[
+          @Target({ TYPE, METHOD, PARAMETER, FIELD })
+          @Retention(RUNTIME)
+          @Documented
+          @Qualifier // Тут аб'яўляецца анатацыя-маркер Random
+          public @interface Random {}
+
+          @ApplicationScoped
+          public class Generator implements Serializable {
+            private java.util.Random random = new java.util.Random(System.currentTimeMillis());
+            private int maxNumber = 100;
+
+            @Produces @Random // Гэты мэтад стварае экзэмпляр Random
+            int next() {
+                return random.nextInt(maxNumber - 1) + 1;
+            }
+          }
+
+          @SessionScoped
+          public class Game implements Serializable {
+
+            @Inject @Random // У гэтае поле падстаўляецца папярэдне створаны экзэмпляр Random
+            Instance<Integer> randomNumber; // Instance - гэта сьпіс, які мае ітэратар. У агульным
+                                            // выпадку кандыдатаў на падстаноўку можа быць некалькі
+                                            // (некалькі @Default), тады сюды падставіцца не адно
+                                            // значэньне, а ўсе знойдзеныя. Можна рабіць так
+                                            // randomNumber.iterator().next()
+            ...
+          }
+        ]]></script>
+        <p>Пры аб'яўленьні і іньекцыі, анатацыі-маркеры можна камбінаваць, то бок пазначаць некалькі для выбару паміж некалькіх варыянтаў.</p>
+        <script type="syntaxhighlighter" class="brush: java; highlight: [10,13]"><![CDATA[
+          @Qualifier @Retention(RUNTIME) @Target({ TYPE, METHOD, PARAMETER, FIELD })
+          public @interface Request {}
+
+          @Qualifier @Retention(RUNTIME) @Target({ TYPE, METHOD, PARAMETER, FIELD })
+          public @interface Soap {}
+
+          @Qualifier @Retention(RUNTIME) @Target({ TYPE, METHOD, PARAMETER, FIELD })
+          public @interface Json {}
+
+          @Soap @Request
+          public class SoapRequest {...}
+
+          @Json @Request
+          public class JsonRequest {...}
+        ]]></script>
+        <p>Альбо для гэтых мэтаў можна ствараць анатацыі-маркеры с атрыбутамі (іх можа быць больш за 1):</p>
+        <script type="syntaxhighlighter" class="brush: java; highlight: [5,8,11]"><![CDATA[
+          public enum TransportType { JSON, SOAP, STANDARD; }
+
+          @Qualifier @Retention(RUNTIME) @Target({TYPE, METHOD, FIELD, PARAMETER})
+          public @interface Transport {
+            TransportType type() default TransportType.STANDARD;
+          }
+
+          @Transport(type=TransportType.SOAP)
+          public class SoapAtmTransport implements ATMTransport {...}
+
+          @Transport(type=TransportType.JSON)
+          public class JsonRestAtmTransport implements ATMTransport {...}
+        ]]></script>
+        <p><i>Produces</i>-мэтад можа ў якасьці аргумэнту прымаць <code>InjectionPoint</code>&nbsp;&ndash; доступ да асяродку іньекцыі:</p>        
+        <script type="syntaxhighlighter" class="brush: java;"><![CDATA[
+          class Loggers {
+            @Produces Logger getLogger(InjectionPoint injectionPoint) {
+              return Logger.getLogger( injectionPoint.getMember().getDeclaringClass().getSimpleName() );
+            }
+          }
+
+          @SessionScoped
+          public class Permissions implements Serializable {
+            @Inject Logger log; // Так можна рабіць у кожным месцы, дзе патрэбны логер
+                                // і кожны раз будзе стварацца логер для адпаведнай клясы
+            ...
+          }
+        ]]></script>
+
+        <h3 id="JEE_BeansAndCDI_@Any">@Any і выбар з альтэрнатываў</h3>
+        <script type="syntaxhighlighter" class="brush: java; highlight: [4,14]"><![CDATA[
+          @Named("atm")
+          public class AutomatedTellerMachineImpl implements AutomatedTellerMachine {
+
+              @Inject @Any
+              private Instance<ATMTransport> allTransports;
+              private ATMTransport transport;
+
+              private boolean useJSON = true;
+              private boolean behindFireWall = true;
+
+              @PostConstruct
+              protected void init() {
+                  ATMTransport soapTransport, jsonTransport, standardTransport;
+                  standardTransport = allTransports.select(new AnnotationLiteral<Soap>() {}).get();
+                  jsonTransport = allTransports.select(new AnnotationLiteral<Json>() {}).get();
+                  soapTransport = allTransports.select(new AnnotationLiteral<Default>() {}).get();
+
+                  if (!behindFireWall) {
+                      transport = standardTransport;
+                  } else {
+                      if (useJSON) {
+                          transport = jsonTransport;
+                      } else {
+                          transport = soapTransport;
+                      }
+                  }
+              }
+          }
+        ]]></script>
+
+        <aside>
+          <p><i>JSR-344</i>&nbsp;&ndash; стандарт "JavaServer Faces"</p>
+          <p><a href="#Build_Maven_Dependencies_JSF">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+        </aside>
+        <h2 id="JEE_JSF">JavaServer Faces</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://jcp.org/aboutJava/communityprocess/final/jsr344/index.html">JSR-344</a></li>
+          </ul>
+        </div>
+        <p><a href="http://www.ocpsoft.org/java/jsf-java/jsf2-how-to-create-a-global-ajax-status-indicator/">JSF2: How to Create a Global Ajax Status Indicator</a></p>
+
+        <aside>
+          <p><i>JSR-345</i>&nbsp;&ndash; стандарт "Enterprise JavaBeans"</p>
+          <p><a href="#Build_Maven_Dependencies_EJB">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+        </aside>
+        <h2 id="JEE_EJB">EJB</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-spec/ejb-3_2-core-fr-spec.pdf">JSR-345, Core</a></li>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-spec/ejb-3_2-optional-fr-spec.pdf">JSR-345, Optional</a></li>
+          </ul>
+        </div>
+        <p><a href="http://www.oracle.com/technetwork/articles/java/ejb-3-1-175064.html">Enterprise JavaBeans 3.1 with Contexts and Dependency Injection: The Perfect Synergy</a></p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <aside>
+          <p><i>JSR-338</i>&nbsp;&ndash; стандарт "Java Persistence API"</p>
+          <p><a href="#Build_Maven_Dependencies_JPA">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+        </aside>
+        <h2 id="JEE_JPA">JPA</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/persistence-2_1-fr-spec/JavaPersistence.pdf">JSR-338</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <aside>
+          <p><i>JSR-303</i>&nbsp;&ndash; стандарт "Bean Validation"</p>
+          <p><a href="#Build_Maven_Dependencies_BeanValidation">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+        </aside>
+        <h2 id="JEE_BeanValidation">Bean Validation</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/bean_validation-1.0-fr-oth-JSpec/bean_validation-1_0-final-spec.pdf">JSR-303</a></li>
+          </ul>
+        </div>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+
+        <aside>
+          <p><i>JSR-339</i>&nbsp;&ndash; стандарт "JAX-RS: Java API for RESTful Web Services"</p>
+          <p><i>RESTEasy</i>&nbsp;&ndash; рэалізацыя <i>JSR-339</i> ад <i>JBoss</i></p>
+          <p><a href="#Build_Maven_Dependencies_JAX-RS">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+        </aside>
+        <h2 id="JEE_JAX-RS">JAX-RS</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/jaxrs-2_0_rev_A-mrel-spec/jsr339-jaxrs-2.0-final-spec.pdf">JSR-339</a></li>
+            <li><a href="http://docs.jboss.org/resteasy/docs/3.0.9.Final/userguide/html_single/index.html">RESTEasy</a></li>
+          </ul>
+        </div>
+        <p>У ніжэй прыведзеным прыкладзе пры звароце да <i>RESTful</i> <i>GET</i>-рэсурсу адбудзецца аўтаматычнае канвэртацыя <i>Java</i>-аб'екту ў <i>JSON</i>-фармат пры дапамозе <i>RESTEasy</i>. Галоўнае, каб бін <code>Member</code> быў пазначаны <i>JAXB</i>-анатацыяй <code>@XmlRootElement</code>.</p>
+        <script type="syntaxhighlighter" class="brush: java"><![CDATA[
+          @GET
+          @Produces(MediaType.APPLICATION_JSON)
+          public List<Member> listAllMembers() {
+            return repository.findAllOrderedByName();
+          }
+        ]]></script>
+
+        <h2 id="JEE_Security">Security</h2>
+        <p><a href="http://www.ocpsoft.org/security/simple-java-ee-jsf-login-page-with-jboss-picketlink-security/">Simple Java EE (JSF) Login Page with JBoss PicketLink Security</a></p>
+        <p><a href="http://www.ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/">Is your web application secure? HTTP attacks are real, and dangerous</a></p>
+
+        <h2 id="JEE_Concurrency">Concurrency</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://download.oracle.com/otn-pub/jcp/concurrency-1_0-fr-spec/EE-Concurrency-Utilities-1.0-fr.pdf">JSR-236</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h1 id="Build" data-content-item-open>Зборка</h1>
+
+        <h2 id="Build_Ant">Ant</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://ant.apache.org/manual/">Manual</a></li>
+            <li><a href="http://www.tutorialspoint.com/ant/">Tutorial</a></li>
+          </ul>
+        </div>
+        <p><a href="http://javaxblog.ru/article/java-ant-1/">Java Ant. Часть 1 — Введение</a></p>
+
+        <h2 id="Build_Maven">Maven</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/guides/">Guides</a></li>
+            <li><a href="http://www.tutorialspoint.com/maven/">Tutorial</a></li>
+            <li><a href="http://mvnrepository.com/">Repo</a></li>
+          </ul>
+        </div>
+        <p><a href="http://www.scribd.com/doc/238927/Better-Builds-With-Maven">Кніга «Better Builds With Maven»</a></p>
+        <p><a href="http://books.sonatype.com/mvnex-book/reference/index.html">Кніга «Maven by Example»</a></p>
+        <p><a href="http://books.sonatype.com/mvnref-book/reference/index.html">Кніга «Maven: The Complete Reference»</a></p>
+
+        <h3 id="Build_Maven_Installation">Усталёўка</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/download.html#Installation">Download</a></li>
+          </ul>
+        </div>
+        <p>Перш за ўсё трэба каб на кампутары быў ужо ўсталяваны <i>JDK</i>.</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ echo $JAVA_HOME
+          /usr/lib/jvm/java-7-openjdk-i386
+        ]]></script>
+        <p>Пасьля гэтага <a href="http://maven.apache.org/download.html">спампоўваем дыстрыбутыў</a> і распакоўваем яго напрыклад сюды: <code>/usr/local/apache-maven</code>. Пры распакоўцы будзе створана тэчка з пазнакай вэрсіі, напрыклад: <code>apache-maven-3.0.5</code>.</p>
+        <p>Дадаем у асяродак зьменную <code>M2_HOME</code>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ export M2_HOME=/usr/local/apache-maven/apache-maven-3.0.5
+        ]]></script>
+        <p>Таксама дадаем шлях да <code>bin</code>-тэчкі мавена ў <code>PATH</code></p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ export PATH=$PATH:/usr/local/apache-maven/apache-maven-3.0.5/bin
+        ]]></script>
+        <p>Пры неабходнасьці дадаем зьменную асяродка <code>MAVEN_OPTS</code>, якая вызначае ява-парамэтры, зь якімі будзе запускацца мавен:.</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ export MAVEN_OPTS="-Xms256m -Xmx512m"
+        ]]></script>
+        <p>Усё, мавен усталяваны і гатовы для працы. Пераканацца ў гэтым можна так:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ mvn --version
+          Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 16:51:28+0300)
+          Maven home: /usr/local/apache-maven/apache-maven-3.0.5
+          Java version: 1.7.0_51, vendor: Oracle Corporation
+          Java home: /usr/lib/jvm/java-7-openjdk-i386/jre
+          Default locale: en_US, platform encoding: UTF-8
+          OS name: "linux", version: "3.8.0-19-generic", arch: "i386", family: "unix"
+        ]]></script>
+
+        <h3 id="Build_Maven_Settings">Наладкі</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/settings.html">Settings</a></li>
+          </ul>
+        </div>
+        <p>У агульным выпадку пасьля ўсталёўкі мавен цалкам гатовы для працы, але бываюць выпадкі, калі патрэбныя дадатковыя наладкі. Адным з такіх выпадкаў зьяўляецца наяўнасьць проксі-сэрвэра паміж працоўным кампутарам і інтэрнэтам.</p>
+        <p>Дадатковыя наладкі мавена зьмяшчаюцца ў файле <code>settings.xml</code>, які ў сваю чаргу можа зьмяшчацца ў двух розных месцах:</p>
+        <ul>
+          <li>Тэчка мавена: <code>$M2_HOME/conf/settings.xml</code></li>
+          <li>Тэчка карыстальніка: <code>${user.home}/.m2/settings.xml</code></li>
+        </ul>
+        <p>Першы зь іх завецца файлам глябальнай канфігурацыі, другі&nbsp;&ndash; канфігурацыяй карыстальніка. Калі існуюць абодва гэтыя файлы, тады выніковая канфігурацыя складаецца ў выніку іх зьліцьця, пры гэтым канфігурацыя карыстальніка мае перавагу па-над глябальнай.</p>
+        <p>Прыклад наладкі проксі-сэрвэру:</p>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                                http://maven.apache.org/xsd/settings-1.0.0.xsd">
+            <proxies>
+              <proxy>
+                <id>proxy</id>
+                <active>true</active>
+                <protocol>http</protocol>
+                <host>proxy.compony.com</host>
+                <port>8080</port>
+              </proxy>
+            </proxies>
+            
+          </settings>
+        ]]></script>
+
+        <h3 id="Build_Maven_CreateProject">Стварэньне праекту</h3>
+        <p>Стварыць новы праект можна наступным чынам (цяперашняй тэчкай павінна быць тэчка, у якой будуць зьмяшчацца вашы праекты):</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ mvn archetype:generate -DgroupId=com.company.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+        ]]></script>
+        <p>Гэтая каманда створыць тэчку <code>my-app</code> па значэньню парамэтра <code>artifactId</code>, а ў гэтай тэчцы наступную структуру:</p>
+        <pre>
+my-app
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- java
+    |       `-- com
+    |           `-- mycompany
+    |               `-- app
+    |                   `-- App.java
+    `-- test
+        `-- java
+            `-- com
+                `-- mycompany
+                    `-- app
+                        `-- AppTest.java          
+        </pre>
+
+        <h3 id="Build_Maven_Convention">Канвэнцыя па-над канфігурацыяй</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">Стандартная структура тэчак</a></li>
+          </ul>
+        </div>
+        <p><i>Maven</i> прытрымліваецца ідэалёгіі <i>канвэнцыя па-над канфігурацыяй</i>, якая азначае, што распрацоўшчыку ня трэба самому выдумляць нейкія базавыя рэчы, а <i>Maven</i> сам іх перадвызначае, напрыклад месцазнаходжаньне зыходнікаў, рэсурсаў, тэстаў, скампіляваных файлаў і <i>jar</i>-файлаў перадвызначана наступным чынам:</p>
+        <table>
+          <thead>
+            <th>Элемэнт</th>
+            <th>Перадвызначанае месцазнаходжаньне</th>
+          </thead>
+          <tr>
+            <td>Зыходныя файлы праекту</td>
+            <td><code>${basedir}/src/main/java</code></td>
+          </tr>
+          <tr>
+            <td>Рэсурсы</td>
+            <td><code>${basedir}/src/main/resources</code></td>
+          </tr>
+          <tr>
+            <td>Тэсты</td>
+            <td><code>${basedir}/src/test</code></td>
+          </tr>
+          <tr>
+            <td>Скампіляваныя файлы</td>
+            <td><code>${basedir}/target/classes</code></td>
+          </tr>
+          <tr>
+            <td><i>jar</i>-файлы</td>
+            <td><code>${basedir}/target</code></td>
+          </tr>
+        </table>
+
+        <h3 id="Build_Maven_POM">POM</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/pom.html">POM Reference</a></li>
+            <li><a href="http://maven.apache.org/xsd/maven-4.0.0.xsd">XML Schema</a></li>
+            <li><a href="http://www.tutorialspoint.com/maven/maven_pom.htm">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>Дэталі праекту, залежнасьцямі і зборкай якога кіруе <i>Maven</i>, знаходзяцца ў файле <code>pom.xml</code>, які павінен знаходзіцца ў корані праекту. Яго тыпічны зьмест наступны:</p>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <project xmlns="http://maven.apache.org/POM/4.0.0" 
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+                   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+            <!-- вэрсія мадэлі для POM-аў Maven 2.x заўсёды 4.0.0 -->
+            <modelVersion>4.0.0</modelVersion>
+            
+            <!-- даныя для ідэнтыфікацыі праекту, то бок набор значэньняў,
+               які дазваляе адназначна яго ідэнтыфікаваць -->
+            <groupId>com.companyname</groupId>
+            <artifactId>MavenExample</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            
+            <!-- залежнасьці ад бібліятэкаў -->
+            <dependencies>
+            
+              <dependency>
+                  <!-- даныя для ідэнтыфікацыі бібліятэкі -->
+                  <groupId>junit</groupId>
+                  <artifactId>junit</artifactId>
+                  <version>4.10</version>
+
+                  <!-- на якім этапе зборкі будзе выкарыстоўвацца, 
+                      у дадзеным выпадку - выключна для запуска і кампіляцыі тэстаў -->
+                  <scope>test</scope> 
+              </dependency>
+            </dependencies>
+            
+          </project>
+        ]]></script>
+
+        <h3 id="Build_Maven_Phases">Этапы</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">Build Lifecycle</a></li>
+          </ul>
+        </div>
+        <p>Запусьціць зборку праекта мавенам можна пры дапамозе кансольнай каманды <code>mvn &lt;ЭТАП&gt;</code> з месца, дзе знаходзіцца файл <code>pom.xml</code> (то бок знаходзячыся ў корані праекта). ЭТАП&nbsp;&ndash; гэта імя этапу жыцьцёвага цыкла зборкі праекта:</p>
+        <table>
+          <tr>
+            <td><code>validate</code></td>
+            <td>правярае карэктнасьць мэта-інфармацыі аб праекце</td>
+          </tr>
+          <tr>
+            <td><code>compile</code></td>
+            <td>кампіліруе зыходнікі</td>
+          </tr>
+          <tr>
+            <td><code>test</code></td>
+            <td>праганяе юніт-тэсты скампіляваных клясаў, якія атрымаліся на папярэднім этапе, выкарыстоўваючы падыходзячы тэставы фрэймворк</td>
+          </tr>
+          <tr>
+            <td><code>package</code></td>
+            <td>пакуе праект у лёгкаперамяшчаемы фармат (<i>JAR</i> альбо <i>WAR</i>)</td>
+          </tr>
+          <tr>
+            <td width="150em"><code>integration-test</code></td>
+            <td>адпраўляе запакаваны праект у асяродак інтэграцыйнага тэставаньня і праганяе інтэграцыйныя тэсты</td>
+          </tr>
+          <tr>
+            <td><code>verify</code></td>
+            <td>правярае упакаваны праект на карэктнасьць і задавальненьне крытэрам якасьці</td>
+          </tr>
+          <tr>
+            <td><code>install</code></td>
+            <td>зьмяшчае пакет у лякальны рэпазыторый мавена, адкуль ён будзе даступны іншым праектам у якасьці залежнасьці</td>
+          </tr>
+          <tr>
+            <td><code>deploy</code></td>
+            <td>зьмяшчае пакет на сэрвэр для рэальнай працы</td>
+          </tr>
+        </table>
+        <p>Пры гэтым этапы асноўнага жыцьцёвага цыкла зборкі зьяўляюцца пасьлядоўнымі, і калі напрыклад запусьціць каманду <code>mvn package</code>, то будуць пасьлядоўна выкананы этапы <code>validate</code>, <code>compile</code>, <code>test</code> і напрыканцы сам <code>package</code>.</p>
+        <p>Акрамя гэтага у мавене ёсьць самастойныя этапы, якія існуюць па-за межамі звычайнага жыцьцёвага цыкла мавена і іх выкананьне не прыводзіць да аўтаматычнага выкананьня іншых этапаў, гэта:</p>
+        <table>
+          <tr>
+            <td><code>clean</code></td>
+            <td>выдаляе вытворныя артэфакты, якія былі створаныя мавенам раней</td>
+          </tr>
+          <tr>
+            <td><code>site</code></td>
+            <td>стварае дакумэнтацыю для праекта</td>
+          </tr>
+        </table>
+
+        <h3 id="Build_Maven_Profiles">Профілі зборкі</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/guides/introduction/introduction-to-profiles.html">Guide</a></li>
+            <li><a href="http://www.tutorialspoint.com/maven/maven_build_profiles.htm">Tutorial</a></li>
+          </ul>
+        </div>
+
+        <h3 id="Build_Maven_Repos">Рэпазыторыі</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.tutorialspoint.com/maven/maven_repositories.htm">Tutorial</a></li>
+            <li><a href="http://javaxblog.ru/article/java-maven-2/">javaxblog.ru</a></li>
+          </ul>
+        </div>
+        <p>Рэпазыторый мавена&nbsp;&ndash; гэта пляцоўка, дзе захоўваюцца джаркі праектаў, залежнасьці, плагіны і іншыя артэфакты, якія патрэбныя мавену для зборкі. Рэпазыторыі бываюць:</p>
+        <ul>
+          <li><b>лякальны</b>&nbsp;&ndash; гэта тэчка на лякальным кампутары, па змоўчваньні <code>$HOME/.m2/repository</code>, але можа быць перавызначана ў <a href="#Build_Maven_Settings"><code>settings.xml</code></a>:</li>
+          <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+            <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                                  http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+              <localRepository>/my/special/path/to/repo</localRepository>
+              
+            </settings>
+          ]]></script>
+
+          <li><b>цэнтральны</b>&nbsp;&ndash; знаходзіцца па адрасе <a href="http://repo1.maven.org/maven2/">http://repo1.maven.org/maven2/</a>.</li>
+          <li><b>адлеглыя</b>&nbsp;&ndash; уласныя рэпазыторыі распрацоўшчыкаў. Гэтыя рэпазыторыі можна пазначаць непасрэдна ў <a href="Build_Maven_POM"><code>pom.xml</code></a>:</li>
+          <script type="syntaxhighlighter" class="brush: xml; highlight: [16,17,18,19,20,21,22,23,24,25]"><![CDATA[
+            <project xmlns="http://maven.apache.org/POM/4.0.0"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+               http://maven.apache.org/xsd/maven-4.0.0.xsd">
+               <modelVersion>4.0.0</modelVersion>
+               <groupId>com.companyname.projectgroup</groupId>
+               <artifactId>project</artifactId>
+               <version>1.0</version>
+               <dependencies>
+                  <dependency>
+                     <groupId>com.companyname.common-lib</groupId>
+                     <artifactId>common-lib</artifactId>
+                     <version>1.0.0</version>
+                  </dependency>
+               <dependencies>
+               <repositories>
+                  <repository>
+                     <id>companyname.lib1</id>
+                     <url>http://download.companyname.org/maven2/lib1</url>
+                  </repository>
+                  <repository>
+                     <id>companyname.lib2</id>
+                     <url>http://download.companyname.org/maven2/lib2</url>
+                  </repository>
+               </repositories>
+            </project>
+          ]]></script>
+        </ul>
+        <p>Калі мавену ў працэсе зборкі спатрэбіўся нейкі артэфакт, ён:</p>
+        <ol>
+          <li>спачатку пашукае яго ў лякальным рэпазыторыі, калі ён там ёсьць, возьме яго адтуль, інакш пяройдзе на кроку 2;</li>
+          <li>пашукае яго ў цэнтральным рэпазыторыі (патрэбны доступ у інтэрнэт), калі ён там ёсьць, загрузіць яго ў лякальны рэпазыторый і возьме адтуль, інакш пяройдзе да кроку 3;</li>
+          <li>калі пазначаная крыніца адлеглага рэпазыторыю, пашукае там, калі артэфакт там ёсьць, загрузіць яго ў лякальны рэпазыторый і возьме адтуль, інакш, калі патрэбнага артэфакту няма і ў адлеглым рэпазыторыі, альбо калі адлеглыя рэпазыторыі ўвогуле не пазначаныя, тады мавен спыніць працу з пазнакай памылкі.</li>
+        </ol>
+        <p>Рэдка, але бываюць сытуацыі, калі пэўнага артэфакту няма ні ў якім з вядомых рэпазыторыяў, але ён даступны для загрузкі. У гэтым выпадку можна яго загрузіць на лякальны кампутар і дадаць у лякальны рэпазыторый наступнай камандай:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
+        ]]></script>
+        <p>Напрыклад, jdbc-драйвэр для работы з СКБД Oracle вэрсіі 10.2.0.1, можна зарэгістраваць наступнай камандай:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          mvn install:install-file \
+            -Dfile=ojdbc14.jar \
+            -DgroupId=com.oracle \
+            -DartifactId=oracle \
+            -Dversion=10.2.0.1 \
+            -Dpackaging=jar \
+            -DgeneratePom=true
+        ]]></script>
+
+        <h3 id="Build_Maven_Plugins">Плагіны</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/plugins/">Plugins list</a></li>
+            <li><a href="http://maven.apache.org/guides/mini/guide-configuring-plugins.html">Configuring Plugins</a></li>
+            <li><a href="http://www.tutorialspoint.com/maven/maven_plugins.htm">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>Па сутнасьці сваёй мавен&nbsp;&ndash; гэта фрэймворк выкананьня плагінаў. І каб зьмяніць нешта ў працэсе зборкі, якую ён робіць, усё што трэба зрабіць&nbsp;&ndash; гэта дадаць нейкі плагін, альбо наладзіць ужо існуючы. Напрыклад, каб наладзіць ява-кампілятар такім чынам, каб былі дазволеныя зыходнікі вэсріі 5.0, трэба зрабіць наступнае:</p>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          ...
+          <build>
+            <plugins>
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                  <source>1.5</source>
+                  <target>1.5</target>
+                </configuration>
+              </plugin>
+            </plugins>
+          </build>
+          ...
+        ]]></script>
+
+        <p>Кожны плагін мае мэты (<i>goals</i>)&nbsp;&ndash; гэта пэўныя атамарныя апэрацыі, і ўсё, што робіць мавен (у межах <a href="#Build_Maven_Phases">этапаў зборкі</a>), ён робіць выконваючы пэўныя мэты розных плагінаў. Калі нейкая мэта плагіну не злучана ні зь якім этапам зборкі, яе можна выканаць непасрэдна праз плагін, а не праз этап зборкі:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ mvn <plugin-name>:<goal-name>
+        ]]></script>
+
+        <h4 id="Build_Maven_Plugins_Jetty">Jetty</h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html">Home</a></li>
+          </ul>
+        </div>
+        <p>Каб <i>Jetty</i> правяраў зьмяненьні ў праграме і аўтаматычна падгружаў іх, трэба зьмяніць змоўчнае значэньне парамэтру <code>scanIntervalSeconds</code> з 0 напрыклад на 1: </p>
+        <script type="syntaxhighlighter" class="brush: xml; highlight: [9]"><![CDATA[
+          ...
+          <build>
+            <plugins>
+              <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.3.v20140905</version>
+                <configuration>
+                    <scanIntervalSeconds>1</scanIntervalSeconds>
+                </configuration>
+              </plugin>
+            </plugins>
+          </build>
+          ...
+        ]]></script>
+        <p>Для таго, каб аўтаматычная падгрузка працавала як чакаецца, <i>Jetty</i> абавязкова павінен запускацца праз каманду <code>mvn jetty:run</code> (ні ў якім разе не <code>mvn jetty:run-exploded</code>; апошняя будзе прыводзіць да таго, што праграма будзе стартаваць з сабранага <code>war</code>-файла, і адпаведна будзе губляцца ўвесь сэнс хуткага фідбэку на зьмяненьні).</p>
+
+        <h3 id="Build_Maven_Dependencies">Залежнасьці</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies">Guide</a></li>
+            <li><a href="http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">Intro</a></li>
+            <li><a href="http://www.tutorialspoint.com/maven/maven_external_dependencies.htm">Tutorial</a></li>
+          </ul>
+        </div>
+        <p>У сэкцыі <code>dependencies</code> файла <a href="#Build_Maven_POM"><code>pom.xml</code></a> пералічваюцца ўсе зьнешнія залежнасьці, якія патрэбныя для таго, каб праект змог быць сабраным:</p>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <project xmlns="http://maven.apache.org/POM/4.0.0"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                                http://maven.apache.org/xsd/maven-4.0.0.xsd">
+            <modelVersion>4.0.0</modelVersion>
+
+            <groupId>com.mycompany.app</groupId>
+            <artifactId>my-app</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <packaging>jar</packaging>
+
+            <name>Maven Quick Start Archetype</name>
+            <url>http://maven.apache.org</url>
+
+            <dependencies>
+              <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.1</version>
+                <scope>test</scope>
+              </dependency>
+              <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.12</version>
+                <scope>compile</scope>
+              </dependency>
+            </dependencies>
+          </project>
+        ]]></script>
+        <p>Пры гэтым у элемэнце <code>scope</code> пазначаецца вобласьць (<i>scope</i>), для якой гэтая залежнасьць мае дачыненьне, а таксама ўплывае на <i>classpath</i>, які ўжываецца для розных задач мавена. Магчымыя вобласьці:</p>
+        <ul>
+          <li><b>compile</b>&nbsp;&ndash; гэта змоўчная вобласьць, яна ўжываецца ў тым ліку тады, калі яўна не была пазначаная. Залежнасьці пазначаныя такім чынам, даступныя ўва ўсіх <i>classpath</i> праекту, і больш таго, даступныя ў залежных праектах.</li>
+          <li><b>provided</b>&nbsp;&ndash; падобна да <b>compile</b>, але чакаецца, што <i>JDK</i>, альбо кантэйнэр самі прадставяць залежнасьці ў <i>runtime</i>. Напрыклад, гэта тычыцца <i>Servlet API</i>, які павінен прадставіць вэб-кантэйнэр.</li>
+          <li><b>runtime</b>&nbsp;&ndash; пазначае, што залежнасьць патрэбная не для кампіляцыі, але для выкананьня праекту. Будзе даданая ў тэставы і <i>runtime</i> <i>classpath</i>.</li>
+          <li><b>test</b>&nbsp;&ndash; пазначае, што залежнасьць не патрэбная для зборкі і працы праграмы, але толькі для кампіляцыі і выкананьня тэстаў.</li>
+          <li><b>system</b>&nbsp;&ndash; падобна да <b>provided</b>, але адрозьніваецца тым, што шлях да <i>jar</i>-файлу залежнасьці павінен быць яўна пазначаны.</li>
+          <li><b>import</b> (<i>maven 2.0.9+</i>)&nbsp;&ndash; ужываецца толькі для залежнасьцяў з тыпам <i>pom</i> у сэкцыі <code>&lt;dependencyManagement&gt;</code></li>
+        </ul>
+
+        <h4 id="Build_Maven_Dependencies_CommonAnnotation">Common Annotations API</h4>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <!-- 'provided' scope in case of JBoss WildFly as the API is included there -->
+          <dependency>
+              <groupId>org.jboss.spec.javax.annotation</groupId>
+              <artifactId>jboss-annotations-api_1.2_spec</artifactId>
+              <scope>provided</scope>
+          </dependency>
+        ]]></script>
+
+        <h4 id="Build_Maven_Dependencies_CDI">JavaEE CDI API</h4>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <!-- 'provided' scope in case of JBoss WildFly as the API is included there -->
+          <dependency>
+              <groupId>javax.enterprise</groupId>
+              <artifactId>cdi-api</artifactId>
+              <scope>provided</scope>
+          </dependency>
+        ]]></script>
+
+        <h4 id="Build_Maven_Dependencies_JSF">JavaServer Faces</h4>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <!-- 'provided' scope in case of JBoss WildFly as the API is included there -->
+          <dependency>
+              <groupId>org.jboss.spec.javax.faces</groupId>
+              <artifactId>jboss-jsf-api_2.2_spec</artifactId>
+              <scope>provided</scope>
+          </dependency>
+        ]]></script>
+        <p>Альбо больш <i>vendor independent</i>:</p>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <dependency>
+            <groupId>javax.faces</groupId>
+            <artifactId>javax.faces-api</artifactId>
+            <version>2.2</version>
+          </dependency>
+        ]]></script>
+
+        <h4 id="Build_Maven_Dependencies_EJB">EJB</h4>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <!-- 'provided' scope in case of JBoss WildFly as the API is included there -->
+          <dependency>
+              <groupId>org.jboss.spec.javax.ejb</groupId>
+              <artifactId>jboss-ejb-api_3.2_spec</artifactId>
+              <scope>provided</scope>
+          </dependency>
+        ]]></script>
+
+        <h4 id="Build_Maven_Dependencies_JPA">JPA API</h4>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <!-- 'provided' scope in case of JBoss WildFly as the API is included there -->
+          <dependency>
+              <groupId>org.hibernate.javax.persistence</groupId>
+              <artifactId>hibernate-jpa-2.1-api</artifactId>
+              <scope>provided</scope>
+          </dependency>
+
+          <!-- Annotation processor to generate the JPA 2.0 metamodel classes for 
+              typesafe criteria queries -->
+          <dependency>
+              <groupId>org.hibernate</groupId>
+              <artifactId>hibernate-jpamodelgen</artifactId>
+              <scope>provided</scope>
+          </dependency>
+
+          <!-- Annotation processor that raising compilation errors whenever constraint 
+              annotations are incorrectly used. -->
+          <dependency>
+              <groupId>org.hibernate</groupId>
+              <artifactId>hibernate-validator-annotation-processor</artifactId>
+              <scope>provided</scope>
+          </dependency>
+
+        ]]></script>
+
+        <h4 id="Build_Maven_Dependencies_BeanValidation">Bean Validation</h4>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <!-- 'provided' scope in case of JBoss WildFly as the API is included there -->
+          <dependency>
+              <groupId>org.hibernate</groupId>
+              <artifactId>hibernate-validator</artifactId>
+              <scope>provided</scope>
+              <exclusions> <!-- Гэта патрэбна, альбо только для гэтага пэўнага выпадку? -->
+                  <exclusion>
+                      <groupId>org.slf4j</groupId>
+                      <artifactId>slf4j-api</artifactId>
+                  </exclusion>
+              </exclusions>
+          </dependency>
+        ]]></script>
+
+        <h4 id="Build_Maven_Dependencies_JAX-RS">JAX-RS API</h4>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <!-- 'provided' scope in case of JBoss WildFly as the API is included there -->
+          <dependency>
+              <groupId>org.jboss.resteasy</groupId>
+              <artifactId>jaxrs-api</artifactId>
+              <scope>provided</scope>
+          </dependency>
+        ]]></script>
+
+        <h4 id="Build_Maven_Dependencies_Testing">Testing</h4>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <!-- Needed for running tests (you may also use TestNG) -->
+          <dependency>
+              <groupId>junit</groupId>
+              <artifactId>junit</artifactId>
+              <scope>test</scope>
+          </dependency>
+
+          <!-- Optional, but highly recommended -->
+          <!-- Arquillian allows you to test enterprise code such as EJBs and Transactional(JTA) 
+              JPA from JUnit/TestNG -->
+          <dependency>
+              <groupId>org.jboss.arquillian.junit</groupId>
+              <artifactId>arquillian-junit-container</artifactId>
+              <scope>test</scope>
+          </dependency>
+
+          <dependency>
+              <groupId>org.jboss.arquillian.protocol</groupId>
+              <artifactId>arquillian-protocol-servlet</artifactId>
+              <scope>test</scope>
+          </dependency>
+        ]]></script>
+      </section>
+
+      <section>
+        <h1 id="Logging">Лагіраваньне</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.slf4j.org/docs.html">SLF4J</a></li>
+            <li><a href="https://logging.apache.org/log4j/1.2/manual.html">Log4J</a></li>
+          </ul>
+        </div>
+        <p>Трэба дадаць залежнасьці ў <code>pom.xml</code>:</p>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          ...
+          <dependencies>
+            ...
+            <dependency>
+              <groupId>org.slf4j</groupId>
+              <artifactId>slf4j-api</artifactId>
+              <version>1.7.10</version>
+            </dependency>
+            <dependency>
+              <groupId>org.slf4j</groupId>
+              <artifactId>slf4j-log4j12</artifactId>
+              <version>1.7.10</version>
+            </dependency>
+            ...
+          </dependencies>
+          ...
+        ]]></script>
+        <p>Дадаць наладкі <i>Log4J</i> у файл <code>log4j.properties</code> па шляху <code>src/main/resources</code>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          #---  comment/uncomment needed lines to use for loging  -----------#
+          log4j.rootCategory=DEBUG, file
+          #------------------------------------------------------------------#
+
+          ##### Appenders area #####
+          log4j.appender.file=org.apache.log4j.RollingFileAppender
+          log4j.appender.file.File=logs/app.log
+          log4j.appender.file.MaxFileSize=2MB
+          log4j.appender.file.MaxBackupIndex=5
+          log4j.appender.file.layout=org.apache.log4j.PatternLayout
+          log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
+        ]]></script>
+      </section>
+
+      <section>
+        <h1 id="Testing" data-content-item-open>Тэставаньне</h1>
+
+        <h2 id="Testing_Unit">Unit-тэставаньне</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://junit.org/">JUnit</a></li>
+            <li><a href="http://mockito.org/">Mockito</a></li>
+            <li><a href="http://jmockit.org/">JMockit</a></li>
+          </ul>
+        </div>
+        <p><a href="http://site.mockito.org/mockito/docs/current/org/mockito/Mockito.html">Mockito JavaDoc</a></p>
+        <p><a href="http://jmockit.org/tutorial.html">The JMockit Testing Toolkit Tutorial</a></p>
+        <p><a href="https://github.com/jmockit/jmockit1/blob/master/samples/mockito/test/org/mockitousage/JavadocExamples_JMockit_Test.java">JMockit samples</a></p>
+
+        <h2 id="Testing_Functional">Функцыянальнае тэставаньне</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://arquillian.org/">Arquillian</a></li>
+          </ul>
+        </div>
+        <p><a href="http://habrahabr.ru/company/luxoft/blog/246465/">Интеграционное тестирование в Java EE</a></p>
+
+        <h2 id="Testing_UI">UI-тэставаньне</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://docs.seleniumhq.org/">Selenium</a></li>
+            <li><a href="http://www.fitnesse.org/">FitNesse</a></li>
+            <li><a href="http://xebia.github.io/Xebium/">Xebium</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h1 id="Spring" data-content-item-open>Spring</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://spring.io/">spring.io</a></li>
+          </ul>
+        </div>
+        <p><a href="https://www.youtube.com/user/SpringSourceDev">Spring Screencasts</a></p>
+
+        <p><a href="http://javaxblog.ru/article/java-spring-1/">Java Spring. Часть 1 — Введение</a></p>
+        <p><a href="http://javaxblog.ru/article/java-spring-2/">Java Spring. Часть 2 — Inversion of Control</a></p>
+        <p><a href="http://javaxblog.ru/article/java-spring-aop-1/">Java Spring AOP. Часть 1 — Advice</a></p>
+        <p><a href="http://javaxblog.ru/article/java-spring-aop-2/">JJava Spring AOP. Часть 2 — Pointcut, Advisor</a></p>
+        <p><a href="http://javaxblog.ru/article/java-spring-aop-3/">Java Spring AOP. Часть 3 — AspectJ</a></p>
+
+        <p><a href="http://www.tutorialspoint.com/spring/index.htm">tutorialspoint.com</a></p>
+
+        <p><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/">Spring Framework Reference Documentation</a></p>
+        <p><a href="http://docs.spring.io/docs/Spring-MVC-step-by-step/index.html">Developing a Spring Framework MVC application step-by-step</a></p>
+        <p><a href="http://spring.io/guides/gs/securing-web/">Securing a Web Application</a></p>
+        <p><a href="http://projects.spring.io/spring-security/">Spring Security</a></p>
+        <p><a href="http://projects.spring.io/spring-session/">Spring Session</a></p>
+        <p><a href="http://projects.spring.io/spring-integration/">Spring Integration</a></p>
+
+        <h2 id="Spring_Security">Security</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://projects.spring.io/spring-security/">Home</a></li>
+            <li><a href="http://docs.spring.io/autorepo/docs/spring-security/4.0.0.RELEASE/reference/html/">Reference</a></li>
+          </ul>
+        </div>
+        <p><a href="http://docs.spring.io/autorepo/docs/spring-security/4.0.0.RELEASE/guides/html5/">Spring Security Guides</a></p>
+
+
+        <h2 id="Spring_Boot">Boot</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://docs.spring.io/spring-boot/docs/1.2.3.RELEASE/reference/htmlsingle/">Reference</a></li>
+          </ul>
+        </div>
+        <p>Патрабаваньні для вэрсіі 1.2.3.RELEASE:</p>
+        <ul>
+          <li>Java 7+</li>
+          <li>Servlet 3.1+</li>
+          <li>Spring Framework 4.1.5+</li>
+          <li>Maven 3.2+</li>
+          <li>Jetty 9+</li>
+        </ul>
+        <p>Тыповая наладка ў <code>pom.xml</code>:</p>
+        <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
+          <?xml version="1.0" encoding="UTF-8"?>
+          <project xmlns="http://maven.apache.org/POM/4.0.0" 
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+              <modelVersion>4.0.0</modelVersion>
+
+              <groupId>com.example</groupId>
+              <artifactId>myproject</artifactId>
+              <version>0.0.1-SNAPSHOT</version>
+
+              <!-- Inherit defaults from Spring Boot -->
+              <parent>
+                  <groupId>org.springframework.boot</groupId>
+                  <artifactId>spring-boot-starter-parent</artifactId>
+                  <version>1.2.3.RELEASE</version>
+              </parent>
+
+              <!-- Add typical dependencies for a web application -->
+              <dependencies>
+                  <dependency>
+                      <groupId>org.springframework.boot</groupId>
+                      <artifactId>spring-boot-starter-web</artifactId>
+                  </dependency>
+              </dependencies>
+
+              <!-- Package as an executable jar -->
+              <build>
+                  <plugins>
+                      <plugin>
+                          <groupId>org.springframework.boot</groupId>
+                          <artifactId>spring-boot-maven-plugin</artifactId>
+                      </plugin>
+                  </plugins>
+              </build>
+
+          </project>
+        ]]></script>
+        <h3 id="Spring_Boot_CLI">Усталёўка CLI</h2>
+        <p>Спампоўваем <a href="http://repo.spring.io/release/org/springframework/boot/spring-boot-cli/">архіў</a> і распакоўваем яго ў адвольную тэчку, напрыклад у <code>/opt/spring-boot</code>.</p>
+        <p>Ладкуем асяродак, дадаўшы ў <code>~/.profile</code>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          SPRING_HOME=/opt/spring-boot
+          export SPRING_HOME
+
+          PATH=$PATH:$SPRING_HOME/bin
+          export PATH
+        ]]></script>
+        <p>Таксама ствараем сім-лінк :</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          ln -s /opt/spring-boot/shell-completion/bash/spring /etc/bash_completion.d/spring
+        ]]></script>
+
+        <h2 id="Spring_ViewTemplates">View templates</h2>
+
+        <h3 id="Spring_ViewTemplates_Thymeleaf">Thymeleaf</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.thymeleaf.org/index.html">Home</a></li>
+            <li><a href="http://www.thymeleaf.org/documentation.html">Docs</a></li>
+            <li><a href="https://github.com/thymeleaf/thymeleaf-testing">Testing</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h1 id="DB" data-content-item-open>Базы даных</h1>
+
+        <h2 id="DB_Hibernate">Hibernate</h2>
+
+        <p><a href="http://javaxblog.ru/article/java-hibernate-1/">Java Hibernate. Часть 1 — Введение</a></p>
+        <p><a href="http://javaxblog.ru/article/java-hibernate-2/">Java Hibernate. Часть 2 — Запросы</a></p>
+        <p><a href="http://javaxblog.ru/article/java-hibernate-3/">Java Hibernate. Часть 3 — Отношения</a></p>
+        <p><a href="http://javaxblog.ru/article/java-hibernate-4/">Java Hibernate. Часть 4 — Spring</a></p>
+
+        <p><a href="http://www.tutorialspoint.com/hibernate/index.htm">tutorialspoint.com</a></p>
+
+        <h2 id="DB_Migrations">Міграцыі</h2>
+        <p><a href="http://www.liquibase.org/">Liquibase</a></p>
+        <p><a href="http://stackoverflow.com/questions/12056139/running-db-migration-for-a-java-app">Running DB migration for a Java app</a></p>
+        <p><a href="http://www.hascode.com/2014/07/java-ee-7-database-migrations-with-liquibase-and-wildfly/">Java EE 7 Database Migrations with Liquibase and WildFly</a></p>
+
+
+      </section>
+
+      <section>
+        <h1 id="AsynchronousAndScalable">Асінхроннае і маштабуемае</h1>
+        
+        <p><a href="http://async-io.org/">async-io: Atmosphere framework</a></p>
+        <p><a href="http://akka.io/">akka.io: Build powerful concurrent and distributed applications more easily</a></p>
+      </section>
+
+      <section>
+        <h1 id="Libraries">Карысныя бібліятэкі</h1>
+        
+        <p><a href="https://github.com/google/guava">Guava: Google Core Libraries for Java</a></p>
+        <p><a href="http://www.ocpsoft.org/prettytime/">PrettyTime: intuitive Java date and timestamp formatting</a></p>
+        <p><a href="http://www.ocpsoft.org/prettyfaces/">PrettyFaces: URL-rewriting library with support for JSF</a></p>
+        <p><a href="http://www.ocpsoft.org/rewrite/">Rewrite: Routing and URL rewriting solution for JavaEE</a></p>
+      </section>
+
+      <section>
+        <h1 id="HowTos">HowTo's</h1>
+        
+        <p>Guide to Regular Expressions in Java: <a href="http://www.ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/">Part 1</a>, <a href="http://www.ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/">Part 2</a></p>
+      </section>
+
+      <section>
+        <h1 id="CodeAnalyzers">Аналізатары кода</h1>
+
+        <h2 id="CodeAnalyzers_SonarQube">SonarQube</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.sonarqube.org/">Home</a></li>
+            <li><a href="http://docs.sonarqube.org/display/SONAR/Documentation">Docs</a></li>
+          </ul>
+        </div>
+        <p>Змоўчны адміністратар: <code>admin/admin</code>.</p>
+        <p>Старт сэрвэра: <code>sudo bash /opt/sonarqube-5.0.1/bin/linux-x86-32/sonar.sh start</code></p>
+      </section>
+
+      <section>
+        <h1 id="Servers">Servers</h1>
+
+        <h2 id="Servers_Jetty">Jetty</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.eclipse.org/jetty/">Home</a></li>
+          </ul>
+        </div>
+
+        <h2 id="Servers_Jetty">WildFly</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://wildfly.org/">Home</a></li>
+            <li><a href="https://github.com/wildfly/quickstart">QuickStart</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h1 id="DeploymentInCloud">Воблачны хостынг</h1>
+
+        <h2 id="Heroku">Heroku</h2>
+
+        <p><a href="https://devcenter.heroku.com/categories/java">Java on Heroku</a></p>
+        <p><a href="https://devcenter.heroku.com/articles/java-learn-more">Learn More about Heroku for Java</a></p>
+        <p><a href="https://devcenter.heroku.com/articles/java-webapp-runner">Deploying Tomcat-based Java Web Applications with Webapp Runner</a></p>
+        <p><a href="https://devcenter.heroku.com/articles/play-java-websockets">Using WebSockets on Heroku with Java and the Play Framework</a></p>
+        <p><a href="https://github.com/heroku/devcenter-java-database">Connecting to Relational Databases on Heroku with Java</a></p>
+      </section>
+
+
+      <footer>
+       <div id="copyright">
+          <p>Copyright &copy; 2015 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
+              <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
+                  style="border-style: none;" alt="Common Creatives. Attribution + Noncommercial (by-nc)" />
+            </a>
+          </p>
+          <p><cite>Тэхнічны даведнік па Java</cite> публікуецца пад ліцэнзіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://yurtsevich.info/refs/jsRef/">крыніцы</a></strong> матэрыялу.</p>
+        </div>
+      </footer>
+
+      <!-- Disqus BEGIN -->
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//js-be.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Калі ласка, актывізуйце JavaScript каб бачыць <a href="http://disqus.com/?ref_noscript">камэнтары праз сыстэму Disqus.</a></noscript>
+      <!-- Disqus END -->
+    </article>
+
+
+  </div> <!--! end of #container -->
+
+  <!-- Javascript at the bottom for fast page loading -->
+
+  <!-- Uservoice BEGIN -->
+  <script>
+    // Include the UserVoice JavaScript SDK (only needed once on a page)
+    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/Of84cKdV6fJsdTM8rZd0g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+    //
+    // UserVoice Javascript SDK developer documentation:
+    // https://www.uservoice.com/o/javascript-sdk
+    //
+
+    // Set colors
+    UserVoice.push(['set', {
+      accent_color: '#448dd6',
+      trigger_color: 'white',
+      trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+    }]);
+
+    // Add default trigger to the bottom-right corner of the window:
+    UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+    // Or, use your own custom trigger:
+    //UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
+
+    // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+    UserVoice.push(['autoprompt', {}]);
+  </script>
+  <!-- Uservoice END -->
+
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+
+  <script src="../js/index.js"></script>
+  <script src="../js/libs/jquery.tree.js"></script>
+
+  <script src="../js/libs/waypoints.min.js"></script>
+  <script src="../js/ref.js"></script>
+
+  <script src="../js/js.js"></script>
+
+  <script src="../js/libs/xregexp.js"></script>
+  <script src="../js/libs/shCore.js"></script>
+  <script src="../js/libs/shAutoloader.js"></script>
+  <script type="text/javascript">
+    function path()
+    {
+      var args = arguments,
+          result = []
+          ;
+
+      for(var i = 0; i < args.length; i++)
+          result.push(args[i].replace('@', '../js/libs/'));
+
+      return result
+    };
+
+    SyntaxHighlighter.autoloader.apply(null, path(
+      'applescript            @shBrushAppleScript.js',
+      'actionscript3 as3      @shBrushAS3.js',
+      'bash shell             @shBrushBash.js',
+      'coldfusion cf          @shBrushColdFusion.js',
+      'cpp c                  @shBrushCpp.js',
+      'c# c-sharp csharp      @shBrushCSharp.js',
+      'css                    @shBrushCss.js',
+      'delphi pascal          @shBrushDelphi.js',
+      'diff patch pas         @shBrushDiff.js',
+      'erl erlang             @shBrushErlang.js',
+      'groovy                 @shBrushGroovy.js',
+      'java                   @shBrushJava.js',
+      'jfx javafx             @shBrushJavaFX.js',
+      'js jscript javascript  @shBrushJScript.js',
+      'perl pl                @shBrushPerl.js',
+      'php                    @shBrushPhp.js',
+      'text plain             @shBrushPlain.js',
+      'py python              @shBrushPython.js',
+      'ruby rails ror rb      @shBrushRuby.js',
+      'sass scss              @shBrushSass.js',
+      'scala                  @shBrushScala.js',
+      'sql                    @shBrushSql.js',
+      'vb vbnet               @shBrushVb.js',
+      'xml xhtml xslt html    @shBrushXml.js'
+    ));
+
+    SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();
+  </script>
+
+  <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
+       change the UA-XXXXX-X to be your site's ID -->
+  <script>
+   var _gaq = [['_setAccount', 'UA-18077954-1'], ['_trackPageview']];
+   (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.async = true;
+    g.src = ('https:' == location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g, s);
+   })(document, 'script');
+  </script>
+
+  <script src="http://static.getclicky.com/js" type="text/javascript"></script>
+  <script type="text/javascript">clicky.init(17136);</script>
+
+  <!-- DISQUS code -->
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'html-be'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function() {
+var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+</body>
+</html>

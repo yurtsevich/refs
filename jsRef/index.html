@@ -50,7 +50,11 @@
       </header>
 
       <section>
+
         <h1 id="Links">Карысныя спасылкі</h1>
+        <p>Блог і рэсурсы на <b>JavaScript.com</b>: <a href="https://www.javascript.com/">JavaScript.com</a></p>
+        <p><i>JSbooks</i>, збор спасылак на вольныя кнігі па <i>JavaScript</i>: <a href="http://jsbooks.revolunet.com/">jsbooks.revolunet.com</a></p>
+        <p><i>You Don't Know JS</i>, шэраг вольных кнігаў па <i>JavaScript</i>: <a href="https://github.com/getify/You-Dont-Know-JS">https://github.com/getify/You-Dont-Know-JS</a></p>
 
         <h2 id="Links_Docs">Комплексная дакумэнтацыя</h2>
         <p><i>JavaScript</i> на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en/JavaScript">https://developer.mozilla.org/en/JavaScript</a></p>
@@ -1999,71 +2003,300 @@
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else">Reference</a></li>
           </ul>
         </div>
+        <p>Гэта базавая канструкцыя ўмоўнага выкананьня. Сынтаксіс яе ў агульным выпадку наступны:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          if (expression) {
+            statement1
+          } else {
+            statement2
+          }
+        ]]></script>
+        <p>Калі ўмоўны <a href="#Expressions">выраз</a> <code>expression</code> верны, будзе выкананая інструкцыя <code>statement1</code>, інакш&nbsp;&ndash; інструкцыя <code>statement2</code>. Напрыклад:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          if (n == 1) {
+            console.log("У вас адно новае паведамленьне.");
+          } else {
+            console.log("У вас " + n + " новых паведамленьняў.");
+          }
+        ]]></script>
+        <p>Частка «інакш» (<code>else</code>) можа быць апушчаная (калі ўмова выконваецца зрабіць нешта, інакш нічога не рабіць):</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          // Калі імя роўнае null, undefined, false, 0, "", ці NaN, задаць новае імя
+          if (!username) {
+            username = "Alesj Zagorski";
+          }
+        ]]></script>
+        <p>Калі пэўная лёгіка мае не 1 ці 2 варыянты (верна/ня верна), а больш, умоўныя інструкцыі можна злучаць адна за адной наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          if (n == 1) {
+            // Выканаць блёк коду №1
+          } else if (n == 2) {
+            // Выканаць блёк коду №2
+          } else if (n == 3) {
+            // Выканаць блёк коду №3
+          } else {
+            // Калі ўсе вышэйпрыведзеныя ўмовы ня верныя, выканаць блёк коду №4
+          }
+        ]]></script>
 
         <h3 id="Statements_Conditional_switch"><code>switch</code></h3>
         <div class="refs">
           <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/switch">Reference</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch">Reference</a></li>
           </ul>
         </div>
+        <p>Калі ў чарадзе злучаных адна за адной <code>if...else</code>-інструкцыяў правяраецца адзін і той жа выраз (значэньне зьменнай <code>n</code> у апошнім прыкладзе папярэдняга разьдзелу), тады лепшым рашэньнем будзе выкарыстаць інструкцыю <code>switch</code>, хаця б для таго, каб не вылічваць значэньне аднаго і таго ж выразу некалькі разоў. Сынтаксіс гэтай інструкцыі ў агульным выпадку наступны:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          switch (expression) {
+            case value1:
+              // Інструкцыі, якія будуць выкананыя, калі выраз expression
+              // будзе мець значэньне value1
+              [break;]
+            case value2:
+              // Інструкцыі, якія будуць выкананыя, калі выраз expression
+              // будзе мець значэньне value2
+              [break;]
+            ...
+            case valueN:
+              // Інструкцыі, якія будуць выкананыя, калі выраз expression
+              // будзе мець значэньне valueN
+              [break;]
+            default:
+              // Інструкцыі, якія будуць выкананыя, калі сярод усіх пералічаных значэньняў
+              // ня будзе аніводнага, якія б супадаў са значэньнем выразу expression
+              [break;]
+          }
+        ]]></script>
+        <p>Тады перадапошні прыклад з чарадой <code>if...else</code>-інструкцыяў можна будзе запісаць наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          switch (n) {
+            case 1:                     // Пачаць тут, калі n == 1
+              // Выканаць блёк коду №1
+              break;                    // Спыніцца тут
+            case 2:                     // Пачаць тут, калі n == 2
+              // Выканаць блёк коду №2
+              break;                    // Спыніцца тут
+            case 3:                     // Пачаць тут, калі n == 3
+              // Выканаць блёк коду №3
+              break;                    // Спыніцца тут
+            default:                    // Інакш пачаць тут
+              // Калі ўсе вышэйпрыведзеныя ўмовы ня верныя, выканаць блёк коду №4
+              break;                    // Спыніцца тут
+          }
+        ]]></script>
+        <p>Зьвярніце ўвагу на меткі <code>break</code> у канцы кожнага блёку. Іх прысутнасьць тлумачыцца тым, што меткі <code>case</code> вызначаюць пачатак таго блёку, які павінен быць выкананы, але не вызначаюць яго канец. Для гэтай мэты і прызначаны меткі <code>break</code>. Калі інтэрпрэтатар сустракае іх, ён спыняе выкананьне інструкцыі <code>switch</code> і пераходзіць да інструкцыі, наступнай за <code>switch</code>.</p>
 
-        <h2 id="Statements_Loops">Цыклю</h2>
-
-        <h3 id="Statements_Loops_do...while"><code>do...while</code></h3>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/do...while">Reference</a></li>
-          </ul>
-        </div>
-
-        <h3 id="Statements_Loops_for"><code>for</code></h3>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/for">Reference</a></li>
-          </ul>
-        </div>
-
-        <h3 id="Statements_Loops_for...in"><code>for...in</code></h3>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/for...in">Reference</a></li>
-          </ul>
-        </div>
+        <h2 id="Statements_Loops">Цыклаў</h2>
+        <p>Інструкцыі цыкла дазваляюць выконваць адну ці некалькі інструкцыяў некалькі разоў пакуль выконваецца пэўная ўмова. Адзін з відавочных прыкладаў цыклічных інструкцыяў&nbsp;&ndash; выкананьне нейкай апэрацыі над усімі элемэнтамі пэўнага масіву. </p>
 
         <h3 id="Statements_Loops_while"><code>while</code></h3>
         <div class="refs">
           <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/while">Reference</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while">Reference</a></li>
           </ul>
         </div>
+        <p>Базавая інструкцыя цыкла&nbsp;&ndash; <code>while</code>. Яе сынтаксіс наступны:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          while (condition)
+            statement
+        ]]></script>
+        <p>Калі інтэрпрэтатар сустракае <code>while</code>-інструкцыю, ён спачатку разьлічвае выраз <code>condition</code>. Калі ў выніку атрымліваецца «ілжывае» значэньне, тады цела цыкла (інструкцыя <code>statement</code>) прапускаецца і выконваецца інструкцыя, якая ідзе за <code>while</code>. Калі ж значэньне выразу наадварот «вернае», тады выконваецца цела цыкла, а пасьля ізноў вылічваецца значэньне выразу <code>condition</code> і ўсё паўтараецца ізноў. Калі цела цыкла павінна ўтрымліваць некалькі інструкцыяў, іх трэба аб'яднаць у <a href="#Statements_EmptyAndCompound">састаўны блёк</a> <code>{...}</code>.</p>
+        <p>Прыклад ужываньня:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var n = 0;
+          var x = 0;
+
+          while (n < 3) {
+            n++;
+            x += n;
+          }
+        ]]></script>
+        <p>Вышэйпрыведзены цыкл будзе выконвацца да таго часу, пакуль значэньне зьменнай <code>n</code> меншае за 3. У кожным з «праходаў» цыкла значэньне зьменнай <code>n</code> павялічваецца на 1, а значэньне зьменнай <code>х</code> павялічваецца на значэньне зьменнай <code>n</code>. У выніку атрымаем наступнае:</p>
+        <ul>
+          <li>У канцы першага праходу: <code>n = 1</code>, <code>x = 1</code></li>
+          <li>У канцы другога праходу: <code>n = 2</code>, <code>x = 3</code></li>
+          <li>У канцы трэцяга праходу: <code>n = 3</code>, <code>x = 6</code></li>
+        </ul>
+
+        <h3 id="Statements_Loops_do...while"><code>do...while</code></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while">Reference</a></li>
+          </ul>
+        </div>
+        <p>Гэтая інструкцыя амаль цалкам падобная на <a href="#Statements_Loops_while">папярэднюю</a>, але ў ёй спачатку выконваецца цела цыкла, а ўжо потым правяраецца ўмова. Калі вынік умоўнага выразу верны, тады цела цыкла выконваецца ізноў, інакш выкананьне цыкла спыняецца і адбываецца пераход да інструкцыі, якая ідзе за цыклам. Такім чынам, цела цыкла будзе выканана прынамсі адзін раз, незалежна ад значэньня умоўнага выразу. Сынтаксіс інструкцыі ў агульным выпадку наступны:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          do
+            statement
+          while (condition);
+        ]]></script>
+        <p>Прыклад ужываньня:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var i = 0;
+          do {
+            i += 1;
+            console.log(i);
+          } while (i < 5);
+        ]]></script>
+        <p>У выніку выкананьня папярэдняга фрагмэнту коду ў кансоль будуць выведзеныя пасьлядоўна лічбы ад 1 да 5 уключна.</p>
+
+        <h3 id="Statements_Loops_for"><code>for</code></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">Reference</a></li>
+          </ul>
+        </div>
+        <p>Наступная інструкцыя цыкла&nbsp;&ndash; гэта інструкцыя <code>for</code>. Яе сынтаксіс у агульным выпадку наступны:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          for ([initialization]; [condition]; [increment])
+            statement
+        ]]></script>
+        <p>дзе:</p>
+        <ul>
+          <li><code>initialization</code>&nbsp;&ndash; выраз ініцыіраваньня цыкла. Ён выконваецца аднойчы ў самым пачатку, і выкарыстоўваецца звычайна для вызначэньня альбо ініцыіраваньня лічыльніка цыкла. </li>
+          <li><code>condition</code>&nbsp;&ndash; умоўны выраз, які выконваецца перад кожным праходам цыкла, у тым ліку перад першым. Калі яго значэньне вернае, тады выконваецца цела цыкла з інструкцыяй <code>statement</code>, інакш выкананьне цыкла спыняецца. Гэты выраз не абавязковы і калі не пазначаны, тады лічыцца, што ўмова выконваецца. У такім разе спыненьне выкананьня цыкла трэба арганізоўваць нейкім іншым чынам.</li>
+          <li><code>increment</code>&nbsp;&ndash; выраз, які выконваецца ў канцы кожнага праходу (перад наступнай праверкай умоўнага выразу) і выкарыстоўваецца звычайна для зьмяненьня лічыльніка.</li>
+          <li><code>statement</code>&nbsp;&ndash; інструкцыя, якая ўтварае цела цыклуаі выконваецца ў кожным праходзе цыкла да таго часу, пакуль выконваецца ўмова цыкла. Можа быць <a href="#Statements_EmptyAndCompound">састаўной інструкцыяй</a>.</li>
+        </ul>
+        <p>Прыклад ужываньня:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          for (var i = 0; i < 9; i++) {
+            console.log(i);
+          }
+        ]]></script>
+        <p>У выніку выкананьня папярэдняга фрагмэнту коду ў кансоль будуць выведзеныя пасьлядоўна лічбы ад 0 да 8 уключна.</p>
+
+        <h3 id="Statements_Loops_for...in"><code>for...in</code></h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">Reference</a></li>
+          </ul>
+        </div>
+        <p>Гэтая інструкцыя прызначана для перабору тых атрыбутаў пэўнага аб'екта, якія дазваляюцца для пераліку (зьяўляюцца «пералічваемымі»). Перабіраюцца атрыбуты як уласна самога аб'екта, так і тыя, якія ён спадкуе ад сваіх бацькоўскіх аб'ектаў. Ня ўсе атрыбуты пералічваюцца (і, адпаведна, ня будуць перабірацца гэтай інструкцыяй). Напрыклад, мэтад <code>indexOf()</code> аб'екта <a href="#TypesValues_Strings_Wrapper"><code>String</code></a> і мэтад <code>toString()</code> аб'екта <a href="#CoreObjects_Object"><code>Object</code></a> не зьяўляюцца «пералічваемымі».</p>
+        <p>Гэтаксама як пры дапамозе інструкцыі <a href="#Statements_Loops_for"><code>for</code></a> можна перабраць усе элемэнты масіву:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          for (var i = 0; i < a.length; i++) {
+            console.log(a[i]);
+          }
+        ]]></script>
+        <p>пры дапамозе інструкцыі <code>for...in</code> можна перабраць усе атрыбуты аб'екта:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          for(var p in o) {
+            console.log(o[p]);
+          }
+        ]]></script>
+        <p>Дадзены прыклад:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var obj = {a:1, b:2, c:3};
+              
+          for (var prop in obj) {
+            console.log("o." + prop + " = " + obj[prop]);
+          }
+        ]]></script>
+        <p>выведзе ў кансоль наступнае:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          o.a = 1
+          o.b = 2
+          o.c = 3
+        ]]></script>
+        <p>Акрамя гэтага можна скарыстацца мэтадам <code>hasOwnProperty()</code> для таго, каб сярод усіх перабіраемых атрыбутаў выбраць тыя, якія належаць ўласна самому аб'екту:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var triangle = {a:1, b:2, c:3};
+
+          function ColoredTriangle() {
+            this.color = "red";
+          }
+
+          ColoredTriangle.prototype = triangle;
+
+          var obj = new ColoredTriangle();
+
+          for (var prop in obj) {
+            if(obj.hasOwnProperty(prop)) {
+              console.log("o." + prop + " = " + obj[prop]);
+            } 
+          }
+        ]]></script>
+        <p>Дадзены прыклад выведзе ў кансоль наступнае:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          o.color = red
+        ]]></script>
 
         <h2 id="Statements_Jumps">Пераходаў</h2>
+        <p>Інструкцыі пераходаў кажуць інтэрпрэтатару перарваць звычайную хаду выкананьня праграмы і зрабіць пераход у нейкае іншае месца праграмы.</p>
 
         <h3 id="Statements_Jumps_break"><code>break</code></h3>
         <div class="refs">
           <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/break">Reference</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/break">Reference</a></li>
           </ul>
         </div>
+        <p>Гэтая інструкцыя цалкам перарывае выкананьне <a href="#Statements_Loops">цыкла</a> альбо інструкцыі <a href="#Statements_Conditional_switch"><code>switch</code></a> і кажа інтэрпрэтатару адразу ж перайсьці да наступнай за імі інструкцыі. Наступны мэтад перарывае цыкл <a href="#Statements_Loops_while"><code>while</code></a> (радок 6) у момант, калі <code>i</code> роўнае тром і пераходзіць да наступнай інструкцыі (радок 10), дзе вяртае значэньне <code>3 * x</code>:</p>
+        <script type="syntaxhighlighter" class="brush: bash; highlight: [6,10]"><![CDATA[
+          function testBreak(x) {
+            var i = 0;
+
+            while (i < 6) {
+              if (i == 3) {
+                break;
+              }
+              i += 1;
+            }
+            return i * x;
+          }
+        ]]></script>
 
         <h3 id="Statements_Jumps_continue"><code>continue</code></h3>
         <div class="refs">
           <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/continue">Reference</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/continue">Reference</a></li>
           </ul>
         </div>
+        <p>Дадзеная інструкцыя перарывае цяперашнюю ітэрацыю цыкла і пераходзіць да наступнай яго ітэрацыі&nbsp;&ndash; да праверкі ўмовы цыкла. Для інструкцыі <a href="#Statements_Loops_for"><code>for</code></a> дадаткова перад праверкай умовы цыкла будзе выкананы выраз <code>increment</code>, які звычайна выкарыстоўваецца для зьмяненьня лічыльніка цыкла.</p>
+        <p>У наступным прыкладзе інструкцыя <code>continue</code> (радок 6) перарве выкананьне той ітэрацыі цыкла, калі зьменная <code>i</code> будзе мець значэньне 3 (радок 5) і пяройдзе да чарговай праверкі ўмовы цыкла (радок 3). Такім чынам зьменная <code>n</code> па чарзе прыме значэньні 1, 3, 7, 12 (а не значэньні 1, 3, 6, 10, 15, якія б яна прыняла пры адсутнасьці інструкцыі <code>continue</code>):</p>
+        <script type="syntaxhighlighter" class="brush: bash; highlight: [6]"><![CDATA[
+          i = 0;
+          n = 0;
+          while (i < 5) {
+            i++;
+            if (i === 3) {
+              continue;
+            }
+            n += i;
+          }
+        ]]></script>
+        <p>У наступным прыкладзе інструкцыя <code>continue</code> (радок 2) перарве выкананьне той ітэрацыі цыкла, калі чарговы элемэнт масіву <code>data[i]</code> будзе мець значэньне <a href="#TypesValues_undefined"><code>undefined</code></a>, і пяройдзе да наступнага элемэнту масіву (альбо скончыць выкананьне цыкла, калі гэта быў апошні элемэнт):</p>
+        <script type="syntaxhighlighter" class="brush: bash; highlight: [2]"><![CDATA[
+          for(i = 0; i < data.length; i++) {
+            if (!data[i]) continue; // Элемэнт масіву мае значэньне undefined, прапускаем яго
+            total += data[i];
+          }
+        ]]></script>
 
         <h3 id="Statements_Jumps_return"><code>return</code></h3>
         <div class="refs">
           <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/return">Reference</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/return">Reference</a></li>
           </ul>
         </div>
+        <p>Дадзеная інструкцыя перарывае далейшае выкананьне функцыі і вызначае значэньне, якое будзе вернутае ў тое месца коду, якое выклікала гэтую функцыю.</p>
+        <script type="syntaxhighlighter" class="brush: bash;"><![CDATA[
+          function square(x) { return x*x; }  // Вызначаецца функцыя, якая вяртае значэньне.
+          square(2);                          // Гэты выклік верне значэньне 4.
+        ]]></script>
+        <p>Інструкцыя <code>return</code> можа таксама ўжывацца сама па сабе, без значэньня. У гэтым выпадку выклікаючаму коду будзе вернутае значэньне <a href="#TypesValues_undefined"><code>undefined</code></a>:</p>
+        <script type="syntaxhighlighter" class="brush: bash;"><![CDATA[
+          function display_object(obj) {
+            // Адразу выходзім з функцыі, калі ёй было перададзенае значэньне null ці undefined.
+            if (!obj) return;
+            // Інакш (калі значэньне оbj вызначанае) робім зь ім нешта... 
+          } 
+        ]]></script>
 
         <h3 id="Statements_Jumps_throw"><code>throw</code></h3>
         <div class="refs">
           <ul>
-            <li><a href="https://developer.mozilla.org/en/JavaScript/Reference/Statements/throw">Reference</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw">Reference</a></li>
           </ul>
         </div>
 
@@ -2366,6 +2599,7 @@
         <p><a href="https://developer.mozilla.org/En/Using_web_workers">Mozilla Developers Network</a></p>
         <p><a href="http://www.html5rocks.com/en/tutorials/workers/basics/">The Basics of Web Workers</a></p>
         <p><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/workers.html#workers">whatwg.org</a></p>
+        <p><a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/?mc_cid=31cc7c17cb&mc_eid=5b4e3f8de1">Introduction to Service Worker</a></p>
       </section>
 
       <section>
@@ -2408,6 +2642,8 @@
         <p><a href="http://conditionerjs.com/">conditioner.js</a>&nbsp;&ndash; A javascript library for loading and unloading behavior based on environment conditions.</p>
         <p><a href="https://github.com/gka/chroma.js">chroma.js</a>&nbsp;&ndash; JavaScript library for all kinds of color manipulations.</p>
         <p><a href="http://interactjs.io/">interact.js</a>&nbsp;&ndash; JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping.</p>
+        <p><a href="https://blog.engineyard.com/2015/taming-asynchronous-javascript-with-async">Taming Asynchronous JavaScript with <b>Async.js</b></a></p>
+        <p><a href="http://nexts.github.io/Clusterize.js/">Clusterize.js</a>&nbsp;&ndash; Tiny plugin to display large data sets easily</p>
 
         <h2 id="JavaScript_Plugins_Animation">Анімацыя</h2>
         <p>Declarative handling library for CSS animations: <a href="http://anijs.github.io/">AniJS</a></p>
@@ -2418,7 +2654,7 @@
 
         <h2 id="JavaScript_Plugins_Table">Табліцы</h2>
         <p>Бібліятэка, якая надае табліцам магчымасьць упарадкоўваць даныя: <a href="http://www.kryogenix.org/code/browser/sorttable/">sorttable</a></p>
-        <p>Бібліятэкі, якія надаюцю табліцам магчымасьць фільтраваць даныя:</p>
+        <p>Бібліятэкі, якія надаюць табліцам магчымасьць фільтраваць даныя:</p>
         <ul>
           <li><a href="http://www.javascriptkit.com/script/script2/tablefilter.shtml">HTML Table Filter</a></li>
           <li><a href="http://tablefilter.free.fr/">HTML Table Filter Generator</a></li>
@@ -2444,6 +2680,7 @@
 
         <h2 id="JavaScript_Plugins_TextFields">Тэкставыя палі</h2>
         <p>Вызначэньне месца зьмяшчэньня ці водступу карэткі ў тэкставым полі: <a href="https://github.com/ichord/Caret.js">Caret.js</a></p>
+        <p>Аўтазапаўненьне: <a href="http://leaverou.github.io/awesomplete/">Awesomplete</a></p>
 
         <h2 id="JavaScript_Plugins_DropdownFields">Выпадаючыя сьпісы</h2>
         <p><a href="http://robdel12.github.io/DropKick/">DropKick.js</a></p>
@@ -2459,6 +2696,8 @@
         <h1 id="Frameworks" data-content-item-open>Фрэймворкі</h1>
         <p><a href="http://www.benlesh.com/2014/04/embular-part-1-comparing-ember-and.html?spref=tw">Embular Part 1 - Comparing Ember and Angular</a></p>
         <p><a href="http://blog.codeschool.com/post/85819292538/angular-backbone-or-ember-which-is-best-for-your">Angular, Backbone, or Ember: Which is Best for your Build?</a></p>
+        <p><a href="http://aurelia.io/">Aurelia - next generation JavaScript client framework that leverages simple conventions to empower your creativity.</a></p>
+        <p><a href="http://ilikekillnerds.com/2015/01/aurelia-vs-angularjs-round-one-fight/">Aurelia vs AngularJS – Round One: FIGHT!</a></p>
 
         <h2 id="Frameworks_jQuery">jQuery</h2>
         <div class="refs">
@@ -3328,7 +3567,7 @@
 
       <footer>
        <div id="copyright">
-          <p>Copyright &copy; 2010-2014 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>Copyright &copy; 2010-2015 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
           <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
               <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"

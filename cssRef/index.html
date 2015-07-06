@@ -72,13 +72,13 @@
         <p><i>Дасканалы даведнік</i> на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/css/">http://reference.sitepoint.com/css</a></p>
         <p><i>Даведнік</i> на <b>DocHub</b>: <a href="http://dochub.io/#css/">http://dochub.io/#css/</a></p>
         <p>Інтэрактыўная шпаргалка на <b>OverAPI</b>: <a href="http://overapi.com/css/">http://overapi.com/css/</a></p>
-		    <p><mark>TODO (разабраць):</mark></p>
+        <p><mark>TODO (разабраць):</mark></p>
         <ul>
           <li>Комплексная дакумэнтацыя на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en-US/learn/css" title="&laquo;Learn CSS&raquo; на MDN">https://developer.mozilla.org/en-US/learn/css</a></li>
-	        <li><i>Hands on tutorial</i> на <b>westciv</b>: <a href="http://www.westciv.com/style_master/academy/hands_on_tutorial/index.html">http://www.westciv.com/style_master/academy/hands_on_tutorial/index.html</a></li>
+          <li><i>Hands on tutorial</i> на <b>westciv</b>: <a href="http://www.westciv.com/style_master/academy/hands_on_tutorial/index.html">http://www.westciv.com/style_master/academy/hands_on_tutorial/index.html</a></li>
           <li><i>Complete css guide</i> на <b>westciv</b>: <a href="http://www.westciv.com/style_master/academy/css_tutorial/introduction/index.html">http://www.westciv.com/style_master/academy/css_tutorial/introduction/index.html</a></li>
           <li><a href="http://www.css3files.com/">http://www.css3files.com/</a></li>
-		    </ul>
+        </ul>
 
         <h2 id="Links_Blogs">Блогі</h2>
         <p>Разьдзел <i>CSS</i> на <b>scriptjunkie{} (MSDN Magazine)</b>: <a href="http://msdn.microsoft.com/en-us/magazine/ff601772.aspx">http://msdn.microsoft.com/en-us/magazine/ff601772.aspx</a></p>
@@ -203,7 +203,6 @@
         <p><abbr class="term" title="Cascading Style Sheets">CSS</abbr> складаецца з набору выразаў (<i>statements</i>). Выразам можа быць альбо <a href="#At-rules"><i>at-rule</i></a>, якое складаецца з ключавога слова (сымбаль <code>&#64;</code>, за каторым ідзе <i>at-rule</i> імя), за каторым ідзе блёк (<code>{...}</code>) ці тэкст, які сканчваецца кропкай з коскай:
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           @import url(base.css);
-
           @media print {
             body {
               font-size: 12pt;
@@ -230,7 +229,6 @@
         <p>Камэнтары ў <abbr class="term" title="Cascading Style Sheets">CSS</abbr> пачынаюцца з <code>/*</code>, а сканчваюцца <code>*/</code> і могуць ахопліваць некалькі радкоў:
           <script type="syntaxhighlighter" class="brush: css"><![CDATA[
           /* This is a single-line comment */
-
           p {
             /* This is a comment that
                spans multiple lines */
@@ -308,26 +306,21 @@
           p.message {
             color: green;
           }
-
           #home #warning p.message {
             color: yellow;
           }
           #warning p.message {
             color: white;
           }
-
           body#home div#warning p.message {
             color: blue;
           }
-
           p {
             color: teal;
           }
-
           * body#home>div#warning p.message {
             color: red;
           }
-
           #warning p {
             color: black;
           }
@@ -431,12 +424,10 @@
           /* Зробіць імпарт файла /css/screen.css у выпадку ўжываньня ў
           дадзены момант манітору ці праектара. */
           @import url(/css/screen.css) screen, projection;
-
           html {
             background-color: #fff;
             color: #000;
           }
-
           /* Дадзеная дырэктыва будзе праігнаравана, таму што зьмешчана
           пасьля папярэдняга rule-set. */
           @import url("other.css");
@@ -756,7 +747,6 @@
           #nav {
             background: black; /* чорнага тла не відаць */
           }
-
           #nav li {
             float: left;
             padding-right: 10px;
@@ -792,7 +782,6 @@
           .clearfix {
             *zoom: 1; /* triggers hasLayout in older versions of iE */
           }
-
           .clearfix:after {
             content: " ";
             display: block;
@@ -815,7 +804,6 @@
         <p>Пры неабходнасьці задаць боксу множныя бордэры можна скарыстацца наступнай тэхнікай:</p>
         <script type="syntaxhighlighter" class="brush: css"><![CDATA[
         body { background: #d2d1d0; }
-
         #box {
           background: #f4f4f4;
           border: 1px solid #bbbbbb;
@@ -824,7 +812,6 @@
           margin: 60px auto;
           position: relative;
         }
-
         #box:before {
           border: 1px solid white;
           content: '';
@@ -832,7 +819,6 @@
           height: 198px;
           position: absolute;
         }
-
         #box:after {
           content: '';
           position: absolute;
@@ -988,7 +974,6 @@
              v2.0 | 20110126
              License: none (public domain)
           */
-
           html, body, div, span, applet, object, iframe,
           h1, h2, h3, h4, h5, h6, p, blockquote, pre,
           a, abbr, acronym, address, big, cite, code,
@@ -1009,30 +994,24 @@
             font: inherit;
             vertical-align: baseline;
           }
-
           /* HTML5 display-role reset for older browsers */
           article, aside, details, figcaption, figure,
           footer, header, hgroup, menu, nav, section {
             display: block;
           }
-
           body {
             line-height: 1;
           }
-
           ol, ul {
             list-style: none;
           }
-
           blockquote, q {
             quotes: none;
           }
-
           blockquote:before, blockquote:after, q:before, q:after {
             content: '';
             content: none;
           }
-
           table {
             border-collapse: collapse;
             border-spacing: 0;
@@ -1066,13 +1045,10 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Less */
-
                   @color: #4D926F;
-
                   #header {
                     color: @color;
                   }
-
                   h2 {
                     color: @color;
                   }
@@ -1081,11 +1057,9 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Compiled CSS */
-
                   #header {
                     color: #4D926F;
                   }
-
                   h2 {
                     color: #4D926F;
                   }
@@ -1105,17 +1079,14 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Less */
-
                   .rounded-corners (@radius: 5px) {
                     border-radius: @radius;
                     -webkit-border-radius: @radius;
                     -moz-border-radius: @radius;
                   }
-
                   #header {
                     .rounded-corners;
                   }
-
                   #footer {
                     .rounded-corners(10px);
                   }
@@ -1124,13 +1095,11 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Compiled CSS */
-
                   #header {
                     border-radius: 5px;
                     -webkit-border-radius: 5px;
                     -moz-border-radius: 5px;
                   }
-
                   #footer {
                     border-radius: 10px;
                     -webkit-border-radius: 10px;
@@ -1152,43 +1121,34 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Less */
-
                   #header {
                     h1 {
                       font-size: 26px;
                       font-weight: bold;
                     }
-
                     p {
                       font-size: 12px;
-
                       a {
                         text-decoration: none;
-
                         a:hover { border-width: 1px }
                       }
                     }
                   }
-
                   ]]></script>
                 </td>
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Compiled CSS */
-
                   #header h1 {
                     font-size: 26px;
                     font-weight: bold;
                   }
-
                   #header p {
                     font-size: 12px;
                   }
-
                   #header p a {
                     text-decoration: none;
                   }
-
                   #header p a:hover {
                     border-width: 1px;
                   }
@@ -1208,17 +1168,14 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Less */
-
                   @the-border: 1px;
                   @base-color: #111;
                   @red:        #842210;
-
                   #header {
                     color: @base-color * 3;
                     border-left: @the-border;
                     border-right: @the-border * 2;
                   }
-
                   #footer {
                     color: @base-color + #003300;
                     border-color: desaturate(@red, 10%);
@@ -1228,13 +1185,11 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Compiled CSS */
-
                   #header {
                     color: #333;
                     border-left: 1px;
                     border-right: 2px;
                   }
-
                   #footer {
                     color: #114411;
                     border-color: #7d2717;
@@ -1291,15 +1246,12 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Sass */
-
                   $blue: #3bbfce;
                   $margin: 16px;
-
                   .content-navigation {
                     border-color: $blue;
                     color: darken($blue, 9%);
                   }
-
                   .border {
                     padding: $margin / 2;
                     margin: $margin / 2;
@@ -1310,12 +1262,10 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Compiled CSS */
-
                   .content-navigation {
                     border-color: #3bbfce;
                     color: #2b9eab;
                   }
-
                   .border {
                     padding: 8px;
                     margin: 8px;
@@ -1337,7 +1287,6 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Sass */
-
                   @mixin table-base {
                     th {
                       text-align: center;
@@ -1345,12 +1294,10 @@
                     }
                     td, th {padding: 2px}
                   }
-
                   @mixin left($dist) {
                     float: left;
                     margin-left: $dist;
                   }
-
                   #data {
                     @include left(10px);
                     @include table-base;
@@ -1360,17 +1307,14 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Compiled CSS */
-
                   #data {
                     float: left;
                     margin-left: 10px;
                   }
-
                   #data th {
                     text-align: center;
                     font-weight: bold;
                   }
-
                   #data td, #data th {
                     padding: 2px;
                   }
@@ -1390,14 +1334,12 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Sass */
-
                   table.hl {
                     margin: 2em 0;
                     td.ln {
                       text-align: right;
                     }
                   }
-
                   li {
                     font: {
                       family: serif;
@@ -1410,15 +1352,12 @@
                 <td>
                   <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                   /* Compiled CSS */
-
                   table.hl {
                     margin: 2em 0;
                   }
-
                   table.hl td.ln {
                     text-align: right;
                   }
-
                   li {
                     font-family: serif;
                     font-weight: bold;
@@ -1439,7 +1378,6 @@
               <td>
                 <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                 /* Sass */
-
                 .error {
                   border: 1px #f00;
                   background: #fdd;
@@ -1448,7 +1386,6 @@
                   font-size: 1.3em;
                   font-weight: bold;
                 }
-
                 .badError {
                   @extend .error;
                   border-width: 3px;
@@ -1458,18 +1395,15 @@
               <td>
                 <script type="syntaxhighlighter" class="brush: css;"><![CDATA[
                 /* Compiled CSS */
-
                 .error, .badError {
                   border: 1px #f00;
                   background: #fdd;
                 }
-
                 .error.intrusion,
                 .badError.intrusion {
                   font-size: 1.3em;
                   font-weight: bold;
                 }
-
                 .badError {
                   border-width: 3px;
                 }
@@ -1525,13 +1459,11 @@
 
   <script type="text/javascript" charset="utf-8">
     var feedback_widget_options = {};
-
     feedback_widget_options.display = "overlay";
     feedback_widget_options.company = "yurtsevich";
     feedback_widget_options.placement = "right";
     feedback_widget_options.color = "#222";
     feedback_widget_options.style = "problem";
-
     var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
   </script>
   <!-- GetSatisfaction feedback button END -->
@@ -1555,13 +1487,10 @@
       var args = arguments,
           result = []
           ;
-
       for(var i = 0; i < args.length; i++)
           result.push(args[i].replace('@', '../js/libs/'));
-
       return result
     };
-
     SyntaxHighlighter.autoloader.apply(null, path(
       'applescript            @shBrushAppleScript.js',
       'actionscript3 as3      @shBrushAS3.js',
@@ -1588,7 +1517,6 @@
       'vb vbnet               @shBrushVb.js',
       'xml xhtml xslt html    @shBrushXml.js'
     ));
-
     SyntaxHighlighter.defaults['toolbar'] = false;
     SyntaxHighlighter.all();
   </script>

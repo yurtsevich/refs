@@ -24,11 +24,8 @@ function main_index(active_page) {
 
   if (isPublic(active_page)) {
     main_index.append(web_ul());
-    main_index.append(ruby_rails_ul());
     main_index.append(coding_ul());
-    main_index.append(vcs_ul());
-    main_index.append(linux_ul());
-    main_index.append(sublime_ul());
+    main_index.append(etc_ul());
     main_index.append(zip());
     main_index.append(github());
   } else {
@@ -110,29 +107,27 @@ function web_ul() {
   return ul;
 }
 
-function ruby_rails_ul() {
+function coding_ul() {
   var ul = new_ul();
 
+  ul.append(new_li().append($("<a href='../codingRef/index.html' title='Даведнік па тэорыі і прынцыпах праграмаваньня'>Coding</a>")));
+  ul.append(new_li().append($("<a href='../javaRef/index.html' title='Даведнік па Java'>Java</a>")));
+  ul.append(new_li().append($("<a href='../scalaRef/index.html' title='Даведнік па Scala'>Scala</a>")));
   ul.append(new_li().append($("<a href='../rubyRef/index.html' title='Даведнік па Ruby'>Ruby</a>")));
   ul.append(new_li().append($("<a href='../railsRef/index.html' title='Даведнік па Ruby-on-Rails'>Rails</a>")));
 
   return ul;
 }
 
-function coding_ul() {
-  return new_ul().append(new_li().append($("<a href='../codingRef/index.html' title='Даведнік па тэорыі і прынцыпах праграмаваньня'>Coding</a>")));
-}
+function etc_ul() {
+  var ul = new_ul();
 
-function vcs_ul() {
-  return new_ul().append(new_li().append($("<a href='../gitRef/index.html' title='Даведнік па Git'>Git</a>")));
-}
+  ul.append(new_li().append($("<a href='../linuxRef/index.html' title='Даведнік па Linux'>Linux</a>")));
+  ul.append(new_li().append($("<a href='../idesRef/index.html' title='Даведнік па асяродкам распрацоўкі'>IDEs</a>")));
+  ul.append(new_li().append($("<a href='../gitRef/index.html' title='Даведнік па Git'>Git</a>")));
+  ul.append(new_li().append($("<a href='../deployRef/index.html' title='Даведнік па разгортваньні праграм'>Deploy</a>")));
 
-function linux_ul() {
-  return new_ul().append(new_li().append($("<a href='../linuxRef/index.html' title='Даведнік па Linux'>Linux</a>")));
-}
-
-function sublime_ul() {
-  return new_ul().append(new_li().append($("<a href='../sublimeRef/index.html' title='Даведнік па SublimeText'>Sublime</a>")));
+  return ul;
 }
 
 function private_work_ul() {
@@ -140,7 +135,7 @@ function private_work_ul() {
 
   ul.append(new_li().append($("<a href='../ftsRef/index.html' title='Праект Fujitsu'>FTS</a>")));
   ul.append(new_li().append($("<a href='../tadRef/index.html' title='Праект Tandberg'>TAD</a>")));
-
+  
   return ul;
 }
 
@@ -155,7 +150,7 @@ function private_personal_ul() {
 
 
 function isPublic(active_page) {
-  return active_page === "html" || active_page === "css" || active_page === "web" || active_page === "js" || active_page === "ruby" || active_page === "rails" || active_page === "coding" || active_page === "git" || active_page === "linux" || active_page === "sublime";
+  return active_page === "html" || active_page === "css" || active_page === "web" || active_page === "js" || active_page === "ruby" || active_page === "rails" || active_page === "java" || active_page === "scala" || active_page === "coding" || active_page === "git" || active_page === "linux" || active_page === "ides" || active_page === "deploy";
 }
 
 function new_ul() {
