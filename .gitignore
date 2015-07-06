@@ -1,4 +1,6 @@
 .svn/
+.idea/
+*.iml
 publish/
 build/buildinfo.properties
 .sass-cache/**
