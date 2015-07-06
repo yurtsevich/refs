@@ -26,7 +26,6 @@ function main_index(active_page) {
     main_index.append(web_ul());
     main_index.append(coding_ul());
     main_index.append(etc_ul());
-    main_index.append(zip());
     main_index.append(github());
   } else {
     main_index.append(private_work_ul());
@@ -159,10 +158,6 @@ function new_ul() {
 
 function new_li() {
   return $("<li></li>");
-}
-
-function zip() {
-  return $("<div class='zip_link'><a href='../Manuals.zip' title='Архіў усіх даведнікаў адным файлам (~9 Mb)''></a></div>");
 }
 
 function github() {
