@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="New document 1">
+   sodipodi:docname="bean.svg">
   <defs
      id="defs4">
     <marker
@@ -80,16 +80,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.98994949"
-     inkscape:cx="207.3771"
+     inkscape:cx="81.613108"
      inkscape:cy="534.66332"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1680"
-     inkscape:window-height="1000"
-     inkscape:window-x="0"
+     inkscape:window-width="1920"
+     inkscape:window-height="1030"
+     inkscape:window-x="1680"
      inkscape:window-y="0"
      inkscape:window-maximized="1" />
   <metadata
@@ -139,8 +139,8 @@
        id="rect2985-7"
        width="290.61243"
        height="123.93724"
-       x="244.36014"
-       y="549.96704"
+       x="245.37029"
+       y="468.14468"
        ry="26.198116"
        inkscape:export-filename="/media/E/Personal/Manuals/javaRef/beans.png"
        inkscape:export-xdpi="63.860001"
@@ -148,8 +148,8 @@
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
-       x="389.67416"
-       y="599.51379"
+       x="390.68433"
+       y="517.69147"
        id="text2987-0"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/media/E/Personal/Manuals/javaRef/beans.png"
@@ -157,25 +157,25 @@
        inkscape:export-ydpi="63.860001"><tspan
          sodipodi:role="line"
          id="tspan2989-4"
-         x="389.67416"
-         y="599.51379"
+         x="390.68433"
+         y="517.69147"
          style="font-size:32px;text-align:center;text-anchor:middle">Гатовы да</tspan><tspan
          sodipodi:role="line"
-         x="389.67416"
-         y="639.51379"
+         x="390.68433"
+         y="557.69147"
          style="font-size:32px;text-align:center;text-anchor:middle"
          id="tspan3015">выкарыстаньня</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend);opacity:1"
-       d="m 292.94424,297.77823 0,251.52799"
+       style="fill:none;stroke:#000000;stroke-width:0.82576859px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m 292.94424,297.69111 0,167.85956"
        id="path3035"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/media/E/Personal/Manuals/javaRef/beans.png"
        inkscape:export-xdpi="63.860001"
        inkscape:export-ydpi="63.860001" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart);marker-end:none"
-       d="m 492.95444,297.77823 0,251.52799"
+       style="fill:none;stroke:#000000;stroke-width:0.8281244px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-start:url(#Arrow1Lstart);marker-end:none"
+       d="m 492.95444,297.69229 0,168.86736"
        id="path3035-9"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/media/E/Personal/Manuals/javaRef/beans.png"
@@ -184,8 +184,8 @@
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
-       x="-40.214146"
-       y="342.12057"
+       x="-33.143078"
+       y="361.31348"
        id="text2987-1"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/media/E/Personal/Manuals/javaRef/beans.png"
@@ -193,52 +193,52 @@
        inkscape:export-ydpi="63.860001"><tspan
          sodipodi:role="line"
          id="tspan2989-1"
-         x="-40.214146"
-         y="342.12057"
+         x="-33.143078"
+         y="361.31348"
          style="font-size:22px">1. Ствараецца новы экзэмпляр</tspan><tspan
          sodipodi:role="line"
-         x="-40.214146"
-         y="369.62057"
+         x="-33.143078"
+         y="388.81348"
          style="font-size:22px"
          id="tspan4852">2. Укараняюцца залежнасьці </tspan><tspan
          sodipodi:role="line"
-         x="-40.214146"
-         y="397.12057"
+         x="-33.143078"
+         y="416.31348"
          style="font-size:22px"
          id="tspan4854">3. @PostConstruct</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
-       x="442.82486"
-       y="763.14941"
+       x="443.83502"
+       y="681.32709"
        id="text2987-1-6"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/media/E/Personal/Manuals/javaRef/beans.png"
        inkscape:export-xdpi="63.860001"
        inkscape:export-ydpi="63.860001"><tspan
          sodipodi:role="line"
-         x="442.82486"
-         y="763.14941"
+         x="443.83502"
+         y="681.32709"
          style="font-size:22px"
          id="tspan4854-0">4. Выклік мэтаду(-аў)</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Droid Sans;-inkscape-font-specification:Droid Sans"
-       x="513.00439"
-       y="341.89499"
+       x="511.99423"
+       y="361.08789"
        id="text2987-1-6-1"
        sodipodi:linespacing="125%"
        inkscape:export-filename="/media/E/Personal/Manuals/javaRef/beans.png"
        inkscape:export-xdpi="63.860001"
        inkscape:export-ydpi="63.860001"><tspan
          sodipodi:role="line"
-         x="513.00439"
-         y="341.89499"
+         x="511.99423"
+         y="361.08789"
          style="font-size:22px"
          id="tspan4854-0-9">5. @PreDestroy</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;color:#000000;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;marker:none;marker-end:url(#Arrow1Lend);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
-       d="m 492.95444,675.57528 0,44.44672 105.05587,0 0,-114.14724 -63.63961,0"
+       style="color:#000000;fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0;marker:none;marker-end:url(#Arrow1Lend);visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+       d="m 493.96459,593.75292 0,44.44672 105.05587,0 0,-114.14724 -63.63961,0"
        id="path4937"
        inkscape:connector-curvature="0"
        inkscape:export-filename="/media/E/Personal/Manuals/javaRef/beans.png"

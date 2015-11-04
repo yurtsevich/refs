@@ -109,13 +109,20 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   table {border-collapse: separate; border-bottom: 1px solid #111111; border-top: 1px solid #111111; margin: 30px 0 40px; width: 100%;
     caption {font-style: italic; line-height: 3em;}
     thead {text-align: left;}
+    tr {
+      th {text-align: left;}
+    }
+    tbody tr {
+      th {font-weight: bold;}
+    }
     th, td {padding: 8px;}
     th {border-bottom: 1px solid #111111; color: #222222; font: 15px/2em $trebuchet-font-stack;}
     th:first-child {padding-left: 0;}
     td {border-bottom: 1px solid #EEEEEE; border-left: 1px solid #EEEEEE; color: #666666; font: 14px/1.4em $segoe-font-stack;}
     td:first-child {border-left: none; padding-left: 0;}
     td.underlined {border-bottom: 1px solid #AAA;}
-    tr.lightgreyed td {color: #999;} 
+    tr.lightgreyed td {color: #999;}
+    td.green_bg {background-color: #90ff90;}
   }
   td.file_folder {width: 140px;}
   table.list td {border: none;}
@@ -205,7 +212,10 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   table.centered {
     th, td {text-align: center; width: 100px;}
   }
-
+  tr.centered {
+    th, td {text-align: center;}
+  }
+  th.centered, td.centered {text-align: center;}
 
   abbr.changed_in_html5, abbr.new_in_html5, abbr.obsolete_in_html5 {font-size: x-small; vertical-align: super;}
   abbr.changed_in_html5 {color: #00b050;}
@@ -240,6 +250,10 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
       p {clear: both;}
     }
   }
+  .manipulating_content_example {
+    h1 {margin: 0 0 20px -10px;}
+    p {margin-left: 10px; text-align: left;}
+  }
   #figure_example, #tfoot_example, #th_example, #wbr_example {
     .example_content {width: 500px;}
   }
@@ -272,6 +286,11 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   figure {
     .git_branching {text-align: left;}
   }
+}
+
+#on_example {min-height: 400px;
+  dt {background: #DDDDDD; border-bottom: 1px solid #999999; border-top: 1px solid white; cursor: pointer; font-size: 1.5em; font-weight: bold; line-height: 2em;}
+  dd {padding: 1em 0;}
 }
 
 #disqus_thread {margin: 5em 0;}

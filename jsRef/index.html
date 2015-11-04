@@ -1,11 +1,6 @@
 <!doctype html>
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="be-tarask" class="no-js"> <!--<![endif]-->
+<html lang="be-tarask" class="no-js">
 <head>
   <meta charset="utf-8">
 
@@ -26,19 +21,9 @@
   <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/screen.css?v=2">
-  <link rel="stylesheet" href="../css/js.css?v=1">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
   <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
 
-  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
-  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
-
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="../js/libs/modernizr-1.6.min.js"></script>
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
 </head>
 
 <body>
@@ -93,8 +78,8 @@
             <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/JavaScript_Overview">Guide</a></li>
           </ul>
         </div>
-        <p><i>JavaScript</i>&nbsp;&ndash; гэта <a href="http://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%BE%D1%81%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5" title="«Кроссплатформенное программное обеспечение» ў расейскай Вікіпэдыі">міжплатформавая</a>, <a href="http://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="«Объектно-ориентированный язык программирования» ў расейскай Вікіпэдыі">аб'ектна-арыентаваная</a>, кампактная мова праграмаваньня, якая прызначана не для самастойнага ўжываньня, але для ўбудаваньня ў іншыя праграмы, напрыклад у браўзэр.</p>
-        <p>Ядро <i>JavaScript</i> утрымлівае <a href="#Types">стандартныя тыпы</a>, <a href="#CoreObjects">базавыя аб'екты</a>, такія, як <a href="#CoreObjects_Array"><code>Array</code></a>, <a href="#CoreObjects_Date"><code>Date</code></a>, <a href="#CoreObjects_Math"><code>Math</code></a> і набор базавых элемэнтаў мовы, такіх, як <a href="#Operators">апэрацыі</a> і <a href="#Statements">інструкцыі</a>. Ядро мовы можа быць пашырана шляхам дадаваньня новых аб'ектаў.</p>
+        <p><i>JavaScript</i>&nbsp;&ndash; гэта <a href="http://ru.wikipedia.org/wiki/%D0%9A%D1%80%D0%BE%D1%81%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D1%84%D0%BE%D1%80%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D0%B5%D1%81%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%B8%D0%B5" title="«Кроссплатформенное программное обеспечение» ў расейскай Вікіпэдыі">міжплатформавая</a>, <a href="http://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="«Объектно-ориентированный язык программирования» ў расейскай Вікіпэдыі">аб'ектна-арыентаваная</a>, кампактная мова праграмаваньня, якая прызначана як для самастойнага ўжываньня, так і для ўбудаваньня ў браўзэр.</p>
+        <p>Ядро <i>JavaScript</i> утрымлівае <a href="#TypesValues">стандартныя тыпы</a>, <a href="#CoreObjects">базавыя аб'екты</a>, такія, як <a href="#CoreObjects_Array"><code>Array</code></a>, <a href="#CoreObjects_Date"><code>Date</code></a>, <a href="#CoreObjects_Math"><code>Math</code></a> і набор базавых элемэнтаў мовы, такіх, як <a href="#Operators">апэрацыі</a> і <a href="#Statements">інструкцыі</a>. Ядро мовы можа быць пашырана шляхам дадаваньня новых аб'ектаў.</p>
         <p><i>JavaScript</i> быў створаны інжынэрам карпарацыі <a href="http://en.wikipedia.org/wiki/Netscape" title="Старонка пра Netscape у ангельскай Вікіпэдыі">Netscape</a> <a href="http://ru.wikipedia.org/wiki/%D0%90%D0%B9%D0%BA,_%D0%91%D1%80%D0%B5%D0%BD%D0%B4%D0%B0%D0%BD" title="Старонка пра Брэндана ў расейскай Вікіпэдыі">Брэнданам Айкам</a> у 1995 годзе, і выдадзены як складнік <a href="http://en.wikipedia.org/wiki/Netscape_%28web_browser%29" title="«Netscape Web Browser» у ангельскай Вікіпэдыі">Netscape 2</a> на пачатку 1996 году. Першапачаткова плянавалася яго назваць <i>LiveScript</i>, але ў выніку дзіўнага маркетынгавага кроку, спрабуючы скарыстацца папулярнасьцю мовы <a href="../javaRef/index.html"><i>Java</i></a>, быў пераназваны ў <i>JavaScript</i>. Нягледзячы на тое, што ў гэтых дзьвюх мовах ня вельмі шмат агульнага. Падабенства назваў гэтых моваў дагэтуль шмат каго бянтэжыць.</p>
 
         <h2 id="Overview_JavaScriptAndJava"><i>JavaScript</i> і <i>Java</i></h2>
@@ -109,7 +94,9 @@
             <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript">MDN</a></li>
           </ul>
         </div>
-        <aside><sup>1</sup> Падрабязьней пра вэрсіі <i>JavaScript</i> і <i>ECMAScript</i>, а таксама іх суадносіны глядзіце ў ангельскай Вікіпэдыі: <a href="http://en.wikipedia.org/wiki/JavaScript#Version_history">JavaScript</a>, <a href="http://en.wikipedia.org/wiki/ECMAScript#Version_correspondence">ECMAScript</a>.</aside>
+        <aside><sup>1</sup> Падрабязьней пра вэрсіі <i>JavaScript</i> і <i>ECMAScript</i>, а таксама іх суадносіны глядзіце ў ангельскай Вікіпэдыі: <a href="http://en.wikipedia.org/wiki/JavaScript#Version_history">JavaScript</a>, <a href="http://en.wikipedia.org/wiki/ECMAScript#Version_correspondence">ECMAScript</a>.
+        <br /><br />
+        З больш дакладнай табліцай рэалізацыі рознымі браўзэрамі сучасных стандартаў <i>ECMAScript</i> можна азнаёміцца <a href="http://kangax.github.io/compat-table/es6/">тут</a>.</aside>
         <p><a href="http://www.ecma-international.org/" title="Афіцыйны сайт Ecma International">Ecma International</a> працуе над стандартаванай вэрсіяй <i>JavaScript</i>, якая завецца <a href="http://en.wikipedia.org/wiki/ECMAScript" title="Пра ECMAScript у ангельскай Вікіпэдыі"><i>ECMAScript</i></a>. Стандарт <i>ECMAScript</i> задакумэнтаваны ў <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" title="ECMA-262 спэцыфікацыя">спэцыфікацыі <i>ECMA-262</i></a> (<i>ISO-16262</i>), першая рэдакцыя якой (па-анг. <i>Edition 1</i>), была зроблена на аснове <i>JavaScript</i> вэрсіі 1.1 (<i>Netscape Navigator 3.0</i>).</p>
         <table>
           <caption>Суадносіны паміж вэрсіямі <i>JavaScript</i> і <i>ECMAScript</i>, і якімі браўзэрамі яны падтрымліваюцца <sup>1</sup></caption>
@@ -163,7 +150,7 @@
             <tr>
               <td>1.4</td>
               <td></td>
-              <td>Edition 1</td>
+              <td><i>Edition 1</i></td>
               <td>Server</td>
               <td></td>
               <td></td>
@@ -174,7 +161,7 @@
             <tr>
               <td>1.5</td>
               <td>Лістапад 2000&nbsp;г.</td>
-              <td>Edition 3</td>
+              <td><i>Edition 3</i></td>
               <td>Navigator 6.0</td>
               <td>1.0</td>
               <td>5.5&ndash;8</td>
@@ -185,7 +172,7 @@
             <tr>
               <td>1.6</td>
               <td>Лістапад 2005&nbsp;г.</td>
-              <td>Edition 3 + пашыраныя магчымасьці</td>
+              <td><i>Edition 3</i> + пашыраныя магчымасьці</td>
               <td></td>
               <td>1.5</td>
               <td></td>
@@ -196,7 +183,7 @@
             <tr>
               <td>1.7</td>
               <td>Кастрычнік 2006&nbsp;г.</td>
-              <td>Edition 3 + пашыраныя магчымасьці</td>
+              <td><i>Edition 3</i> + пашыраныя магчымасьці</td>
               <td></td>
               <td>2.0</td>
               <td></td>
@@ -207,7 +194,7 @@
             <tr>
               <td>1.8</td>
               <td>Чэрвень 2008&nbsp;г.</td>
-              <td>Edition 3 + пашыраныя магчымасьці</td>
+              <td><i>Edition 3</i> + пашыраныя магчымасьці</td>
               <td></td>
               <td>3.0</td>
               <td></td>
@@ -218,7 +205,7 @@
             <tr>
               <td>1.8.1</td>
               <td></td>
-              <td>Edition 3 + пашыраныя магчымасьці</td>
+              <td><i>Edition 3</i> + пашыраныя магчымасьці</td>
               <td></td>
               <td>3.5</td>
               <td></td>
@@ -229,7 +216,7 @@
             <tr>
               <td>1.8.2</td>
               <td>Чэрвень 2009&nbsp;г.</td>
-              <td>Edition 3 + пашыраныя магчымасьці</td>
+              <td><i>Edition 3</i> + пашыраныя магчымасьці</td>
               <td></td>
               <td>3.6</td>
               <td></td>
@@ -240,7 +227,7 @@
             <tr>
               <td>1.8.5</td>
               <td>Ліпень 2010&nbsp;г.</td>
-              <td>Edition 5</td>
+              <td><i>Edition 5</i></td>
               <td></td>
               <td>4</td>
               <td>9</td>
@@ -251,7 +238,7 @@
             <tr>
               <td></td>
               <td>Чэрвень 2011&nbsp;г.</td>
-              <td>Edition 5.1</td>
+              <td><i>Edition 5.1</i></td>
               <td></td>
               <td></td>
               <td></td>
@@ -261,8 +248,8 @@
             </tr>
             <tr>
               <td></td>
-              <td>Заплянавана на сярэдзіну 2015&nbsp;г.</td>
-              <td>Edition 6</td>
+              <td><a href="http://www.infoworld.com/article/2937716/javascript/its-official-ecmascript-6-is-approved.html">Чэрвень 2015&nbsp;г.</a></td>
+              <td><i>Edition&nbsp;6</i> альбо проста <i>ES6</i></td>
               <td></td>
               <td></td>
               <td></td>
@@ -273,7 +260,7 @@
             <tr>
               <td></td>
               <td>У распрацоўцы</td>
-              <td>Edition 7</td>
+              <td><i>Edition&nbsp;7</i> альбо проста <i>ES7</i></td>
               <td></td>
               <td></td>
               <td></td>
@@ -2630,24 +2617,9 @@
         <p><a href="http://www.javascriptkit.com/cutpastejava.shtml">Сьпіс плагінаў</a></p>
         <p><a href="http://coding.smashingmagazine.com/2012/09/23/useful-javascript-libraries-jquery-plugins-web-developers/">Useful JavaScript Libraries and jQuery Plugins</a></p>
         <p><a href="http://www.smashingmagazine.com/2011/04/07/useful-javascript-and-jquery-tools-libraries-plugins/">Useful JavaScript and jQuery Tools, Libraries, Plugins</a></p>
-        <p><a href="http://markdalgleish.com/projects/fathom/">Fathom.js - прэзэнтацыі на JavaScript</a></p>
-        <p><a href="http://harvesthq.github.com/chosen/">Chosen - makes long select boxes much more user-friendly.</a></p>
-        <p><a href="http://knockoutjs.com/">Knockout.js - Simplify dynamic JavaScript UIs by applying the Model-View-View Model (MVVM).</a></p>
-        <p><a href="http://mozillapopcorn.org/">POPCORN - Popcorn makes video work like the web.</a></p>
-        <p><a href="http://leaflet.cloudmade.com/">A Modern, Lightweight Open-Source JavaScript Library for Interactive Maps by CloudMade</a></p>
-        <p><a href="https://github.com/tommoor/tinycon">Tinycon&nbsp;&ndash; library for manipulating the favicon, in particular adding alert bubbles and changing images</a></p>
-        <p><a href="https://github.com/hakimel/avgrund">Avgrund</a>&nbsp;&ndash; A modal concept which aims to give a sense of depth between the page and modal layers.</p>
-        <p><a href="http://quojs.tapquo.com/">Quo.js</a>&nbsp;&ndash; Micro JavaScript Library for mobile web projects.</p>
-        <p><a href="http://createjs.com/#!/PreloadJS">PreloadJS</a>&nbsp;&ndash; A Javascript library that lets you manage and co-ordinate the loading of assets.</p>
-        <p><a href="http://conditionerjs.com/">conditioner.js</a>&nbsp;&ndash; A javascript library for loading and unloading behavior based on environment conditions.</p>
-        <p><a href="https://github.com/gka/chroma.js">chroma.js</a>&nbsp;&ndash; JavaScript library for all kinds of color manipulations.</p>
-        <p><a href="http://interactjs.io/">interact.js</a>&nbsp;&ndash; JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping.</p>
-        <p><a href="https://blog.engineyard.com/2015/taming-asynchronous-javascript-with-async">Taming Asynchronous JavaScript with <b>Async.js</b></a></p>
-        <p><a href="http://nexts.github.io/Clusterize.js/">Clusterize.js</a>&nbsp;&ndash; Tiny plugin to display large data sets easily</p>
 
-        <h2 id="JavaScript_Plugins_Animation">Анімацыя</h2>
-        <p>Declarative handling library for CSS animations: <a href="http://anijs.github.io/">AniJS</a></p>
-        <p><a href="http://bouncejs.com/">bounce.js</a> lets you create tasty CSS3 powered animations in no time.</p>
+        <h2 id="JavaScript_Plugins_Favicons">Маніпуляцыі з Favicon</h2>
+        <p><a href="https://github.com/tommoor/tinycon">Tinycon&nbsp;&ndash; library for manipulating the favicon, in particular adding alert bubbles and changing images</a></p>
 
         <h2 id="JavaScript_Plugins_PageHeaders">Загалоўкі старонак</h2>
         <p>Бібліятэкі, якія хаваюць загаловак пры пракрутцы старонкі ўніз: <a href="http://codepen.io/anon/pen/mIheL">HeadsUp</a>, <a href="http://wicky.nillia.ms/headroom.js/">Headroom.js</a></p>
@@ -2659,19 +2631,8 @@
           <li><a href="http://www.javascriptkit.com/script/script2/tablefilter.shtml">HTML Table Filter</a></li>
           <li><a href="http://tablefilter.free.fr/">HTML Table Filter Generator</a></li>
         </ul>
+        <p><a href="http://nexts.github.io/Clusterize.js/">Clusterize.js</a>&nbsp;&ndash; Tiny plugin to display large data sets easily.</p>
         <p>Для наданьня табліцам адначасова магчымасьцяў і ўпарадкоўваць радкі, і фільтраваць іх, і пастаронкавую навігацыю, і шмат чаго іншага зьвярніце ўвагу на jQuery-дадатак <a href="#Frameworks_jQuery_Plugins_Tables">DataTables</a>.</p>
-
-        <h2 id="JavaScript_Plugins_Charts">Графікі</h2>
-        <p><a href="http://gionkunz.github.io/chartist-js/">Chartist.js</a>&nbsp;&ndash; simple responsive charts.</p>
-
-        <h2 id="JavaScript_Plugins_NumbersFormatting">Лікі, грошы, валюты</h2>
-        <p>Лякалізуемая бібліятэка для фарматаваньня лікаў, грошай і валютаў: <a href="http://josscrowcroft.github.com/accounting.js/">accounting.js</a></p>
-        <p>Бібліятэка для канвэртацыі валютаў: <a href="http://josscrowcroft.github.com/money.js/">money.js</a></p>
-        <p>Бібліятэка для адвольнага фарматаваньня лікаў: <a href="http://numeraljs.com/">numeral.js</a></p>
-        <br />
-        <p><a href="https://stripe.com/">stripe - payments for developers</a></p>
-        <p><a href="http://js.recurly.com/">recurly.js - Secure, PCI Compliant Transaction Forms With Fully Customizable CSS.</a></p>
-        <p><a href="http://kenkeiter.com/skeuocard/">Skeuocard - progressively enhances credit card inputs to provide a skeuomorphic interface</a></p>
 
         <h2 id="JavaScript_Plugins_DatesFormatting">Даты</h2>
         <p>Бібліятэка для фарматаваньня, маніпуляваньня і парсынгу датаў: <a href="http://momentjs.com/">moment.js</a></p>
@@ -2683,21 +2644,647 @@
         <p>Аўтазапаўненьне: <a href="http://leaverou.github.io/awesomplete/">Awesomplete</a></p>
 
         <h2 id="JavaScript_Plugins_DropdownFields">Выпадаючыя сьпісы</h2>
+        <p><a href="http://harvesthq.github.com/chosen/">Chosen - makes long select boxes much more user-friendly.</a></p>
         <p><a href="http://robdel12.github.io/DropKick/">DropKick.js</a></p>
+
+        <h2 id="JavaScript_Plugins_NumbersFormatting">Лікі, грошы, валюты</h2>
+        <p>Лякалізуемая бібліятэка для фарматаваньня лікаў, грошай і валютаў: <a href="http://josscrowcroft.github.com/accounting.js/">accounting.js</a></p>
+        <p>Бібліятэка для канвэртацыі валютаў: <a href="http://josscrowcroft.github.com/money.js/">money.js</a></p>
+        <p>Бібліятэка для адвольнага фарматаваньня лікаў: <a href="http://numeraljs.com/">numeral.js</a></p>
+        <br />
+        <p><a href="https://stripe.com/">stripe - payments for developers</a></p>
+        <p><a href="http://js.recurly.com/">recurly.js - Secure, PCI Compliant Transaction Forms With Fully Customizable CSS.</a></p>
+        <p><a href="http://kenkeiter.com/skeuocard/">Skeuocard - progressively enhances credit card inputs to provide a skeuomorphic interface</a></p>
+
+        <h2 id="JavaScript_Plugins_Tooltips">Падказкі</h2>
+        <p><a href="http://ytiurin.github.io/html5tooltipsjs/">html5tooltips.js</a>&nbsp;&ndash; Light and clean tooltips with CSS3 animation, No framework required</p>
 
         <h2 id="JavaScript_Plugins_Autocomplete">Аўтаматычная падстаноўка</h2>
         <p>Аўтаматычная падстаноўка фрагмэнту тэксту па гарачай клавішы: <a href="https://github.com/ichord/At.js">At.js</a></p>
 
+        <h2 id="JavaScript_Plugins_Maps">Мапы</h2>
+        <p><a href="https://www.mapbox.com/">MapBox</a></p>
+        <p><a href="http://leaflet.cloudmade.com/">A Modern, Lightweight Open-Source JavaScript Library for Interactive Maps by CloudMade</a></p>
+
+        <h2 id="JavaScript_Plugins_Dialogs">Дыялёгі</h2>
+        <p><a href="https://github.com/hakimel/avgrund">Avgrund</a>&nbsp;&ndash; A modal concept which aims to give a sense of depth between the page and modal layers.</p>
+
+        <h2 id="JavaScript_Plugins_PreLoading">Загрузка артэфактаў ці паводзінаў</h2>
+        <p><a href="http://requirejs.org/">RequireJS</a>&nbsp;&ndash; is a JavaScript file and module loader.</p>
+        <p><a href="http://createjs.com/#!/PreloadJS">PreloadJS</a>&nbsp;&ndash; A Javascript library that lets you manage and co-ordinate the loading of assets.</p>
+        <p><a href="http://conditionerjs.com/">conditioner.js</a>&nbsp;&ndash; A javascript library for loading and unloading behavior based on environment conditions.</p>
+
+        <h2 id="JavaScript_Plugins_Asynchronous">Асынхронная апрацоўка</h2>
+        <p><a href="https://blog.engineyard.com/2015/taming-asynchronous-javascript-with-async">Taming Asynchronous JavaScript with <b>Async.js</b></a></p>
+
+        <h2 id="JavaScript_Plugins_Animation">Анімацыя</h2>
+        <p>Declarative handling library for CSS animations: <a href="http://anijs.github.io/">AniJS</a></p>
+        <p><a href="http://bouncejs.com/">bounce.js</a> lets you create tasty CSS3 powered animations in no time.</p>
+
+        <h2 id="JavaScript_Plugins_Colors">Колеры</h2>
+        <p><a href="https://github.com/gka/chroma.js">chroma.js</a>&nbsp;&ndash; JavaScript library for all kinds of color manipulations.</p>
+
+        <h2 id="JavaScript_Plugins_MoveDragDropResize">Move, Drag&amp;Drop, Resize</h2>
+        <p><a href="http://interactjs.io/">interact.js</a>&nbsp;&ndash; JavaScript drag and drop, resizing and multi-touch gestures with inertia and snapping.</p>
+
+        <h2 id="JavaScript_Plugins_Video">Відэа</h2>
+        <p><a href="http://mozillapopcorn.org/">POPCORN - Popcorn makes video work like the web.</a></p>
+
+        <h2 id="JavaScript_Plugins_Charts">Графікі</h2>
+        <p><a href="http://gionkunz.github.io/chartist-js/">Chartist.js</a>&nbsp;&ndash; simple responsive charts.</p>
+
+        <h2 id="JavaScript_Plugins_Presentations">Прэзэнтацыі</h2>
+        <p><a href="http://markdalgleish.com/projects/fathom/">Fathom.js - прэзэнтацыі на JavaScript</a></p>
+
         <h2 id="JavaScript_Plugins_PDF">PDF</h2>
         <p>Стварэньне ўбудаваных на старонцы <i>PDF</i>-дакумэнтаў лётма на кліенцкім баку: <a href="http://parall.ax/products/jspdf">jsPDF</a></p>
+
+        <h2 id="JavaScript_Plugins_Mobile">Мабільныя прылады</h2>
+        <p><a href="http://quojs.tapquo.com/">Quo.js</a>&nbsp;&ndash; Micro JavaScript Library for mobile web projects.</p>
       </section>
 
       <section>
         <h1 id="Frameworks" data-content-item-open>Фрэймворкі</h1>
         <p><a href="http://www.benlesh.com/2014/04/embular-part-1-comparing-ember-and.html?spref=tw">Embular Part 1 - Comparing Ember and Angular</a></p>
         <p><a href="http://blog.codeschool.com/post/85819292538/angular-backbone-or-ember-which-is-best-for-your">Angular, Backbone, or Ember: Which is Best for your Build?</a></p>
-        <p><a href="http://aurelia.io/">Aurelia - next generation JavaScript client framework that leverages simple conventions to empower your creativity.</a></p>
         <p><a href="http://ilikekillnerds.com/2015/01/aurelia-vs-angularjs-round-one-fight/">Aurelia vs AngularJS – Round One: FIGHT!</a></p>
+
+        <h2 id="Frameworks_Node">Node.js</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://nodejs.org/">Home</a></li>
+            <li><a href="https://nodejs.org/en/docs/">Docs</a></li>
+          </ul>
+        </div>
+        <p>Фрэймворк для сэрвэраў. Прызначаны для выкананьня не на кліенцкім баку (у браўзэры), а на сэрверным баку. Зьяўляецца вельмі хуткім падзейна-арыентаваным фрэймворкам, які працуе на <a href="http://code.google.com/p/v8/">рухавіку V8 ад Гугла</a>.</p>
+
+        <h3 id="Frameworks_Node_Links">Карысныя спасылкі</h3>
+        <p><a href="http://code.tutsplus.com/tutorials/this-time-youll-learn-node-js--net-19448">Node.js Step by Step</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/">Learning Server-Side JavaScript with Node.js</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-scrape-web-pages-with-node-js-and-jquery/">How to Scrape Web Pages with Node.js and jQuery</a></p>
+        <p><a href="http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018">Testing in Node.js</a></p>
+        <p><a href="http://code.tutsplus.com/tutorials/introduction-to-html5-desktop-apps-with-node-webkit--net-36296">Introduction to HTML5 Desktop Apps With Node-Webkit</a></p>
+        <p><a href="https://blog.heroku.com/archives/2014/3/11/node-habits?utm_source=mkto&utm_medium=email&utm_campaign=marchnewsletter&mkt_tok=3RkMMJWWfF9wsRonuK%2FMZKXonjHpfsX54%2BwvXKSzlMI%2F0ER3fOvrPUfGjI4AScdnI%2BSLDwEYGJlv6SgFQrjAMapmyLgLUhE%3D">10 Habits of a Happy Node Hacker</a></p>
+        <p><a href="https://www.airpair.com/node.js/posts/nodejs-framework-comparison-express-koa-hapi">Node.js Framework Comparison: Express vs. Koa vs. Hapi</a></p>
+        <p><a href="http://www.webcodegeeks.com/javascript/node-js/node-js-full-application-example/">Node.js: Full application example</a></p>
+
+        <h3 id="Frameworks_Node_npm">npm</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.npmjs.com/">Home</a></li>
+            <li><a href="https://docs.npmjs.com/">Docs</a></li>
+          </ul>
+        </div>
+        <p>Усталяваць сам <i>Node.js</i> і <i>npm</i> (<i>Node Package Manager</i>) у сыстэму лепш за ўсё праз <i>nvm</i> (<i>Node Versions Manager</i>) наступным чынам. Спачатку ўсталюем сам <i>nvm</i>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+        ]]></script>
+        <p>Затым ужывем зьмены, якія усталёўшчык унёс у файл <code>.profile</code> у хатняй тэчцы:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ source ~&frasl;.profile
+        ]]></script>
+        <p>І напрыканцы ўсталюем апошнія стабільныя вэрсіі <i>Node.js</i> і <i>npm</i>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ nvm install stable
+          Downloading https://nodejs.org/dist/v4.2.1/node-v4.2.1-linux-x64.tar.xz...
+          ######################################################################## 100,0%
+          Now using node v4.2.1 (npm v2.14.7)
+        ]]></script>
+        <p>Усталяваць пакет лякальна можна наступным чынам:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ npm install &lt;PACKAGE_NAME&gt;
+        ]]></script>
+        <p>Стварыць праект у цяперашняй тэчцы (файл <code>package.json</code>):</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ npm init
+        ]]></script>
+        <p>У гэтым файле можна прапісаць залежнасьці рукамі і тады пры выкананьні каманды <code>npm install</code> <i>npm</i> сьцягне і усталюе ўсе пакеты, якія прапісаны як залежнасьці цяперашняга праекта. Каб не запаўняць гэты файл рукамі, можна адначасова ўсталяваць пакет і прапісаць яго залежнасьць у файле <code>package.json</code> (з пастаяннай прысутасьцю, то бок як у распрацоўшчыцкім, так і ў вытворчым асяродках):</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ npm install &lt;PACKAGE_NAME&gt; --save
+        ]]></script>
+        <p>Усталяваць праект як залежнасьць выключна распрацоўшчыцкага асяродку можна такім чынам:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ npm install &lt;PACKAGE_NAME&gt; --save-dev
+        ]]></script>
+
+        <h3 id="Frameworks_Node_Grunt">Grunt</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://gruntjs.com/">Home</a></li>
+            <li><a href="http://gruntjs.com/getting-started">Docs</a></li>
+            <li><a href="http://gruntjs.com/plugins">Plugins</a></li>
+          </ul>
+        </div>
+        <p>Пакет аўтаматычнага выкананьня задачаў (зборкі).</p>
+        <p><a href="http://www.sitepoint.com/setting-up-es6-project-using-babel-browserify/">Setting up an ES6 Project Using Babel and Browserify</a></p>
+        <p><a href="http://www.sitepoint.com/how-to-grunt-and-gulp-your-way-to-workflow-automation/">How to Grunt and Gulp Your Way to Workflow Automation</a></p>
+
+        <h3 id="Frameworks_Node_Gulp">Gulp</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://gulpjs.com/">Home</a></li>
+            <li><a href="https://github.com/gulpjs/gulp/tree/master/docs">Docs</a></li>
+            <li><a href="http://gulpjs.com/plugins/">Plugins</a></li>
+            <li><a href="http://www.sitepoint.com/introduction-gulp-js/">Intro</a></li>
+          </ul>
+        </div>
+        <p>Пакет аўтаматычнага выкананьня задачаў (зборкі).</p>
+        <p><a href="http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html">Browserify, Babelify and ES6</a></p>
+        <p><a href="http://www.sitepoint.com/simple-gulpy-workflow-sass/">A Simple Gulp’y Workflow For Sass</a></p>
+        <p><a href="http://fettblog.eu/gulp-browserify-multiple-bundles/">Gulp: Creating multiple bundles with Browserify</a></p>
+        <p>Сьцісканьне выяваў:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var gulp = require('gulp');
+          var changed = require('gulp-changed');
+          var imagemin = require('gulp-imagemin');
+
+          gulp.task('image-minify', function() {
+            var imgSrc = './src/images/**/*',
+                imgDst = './dist/images';
+
+            gulp.src(imgSrc)            // бяром выявы с зыходнага шляху
+              .pipe(changed(imgDst))    // выбяраем толькі тыя, якія не зьмяніліся з апошняга білду
+              .pipe(imagemin())         // сьціскаем іх 
+              .pipe(gulp.dest(imgDst)); // і зьмяшчаем ў выніковы шлях
+          });
+        ]]></script>
+        <p>Сьцісканьне <i>HTML</i>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var gulp = require('gulp');
+          var minifyHTML = require('gulp-minify-html');
+
+          gulp.task('html-minify', function() {
+            var htmlSrc = './src/*.html',
+                htmlDst = './dist';
+
+            gulp.src(htmlSrc)           // бяром HTML-файлы с зыходнага шляху
+              .pipe(changed(htmlDst))   // выбяраем толькі тыя, якія не зьмяніліся з апошняга білду
+              .pipe(minifyHTML())       // сьціскаем іх 
+              .pipe(gulp.dest(htmlDst));// і зьмяшчаем ў выніковы шлях
+          });
+        ]]></script>
+        <p>Сьцісканьне <i>CSS</i>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var gulp = require('gulp');
+          var concat = require('gulp-concat');
+          var autoprefix = require('gulp-autoprefixer');
+          var minifyCSS = require('gulp-minify-css');
+
+          gulp.task('css-minify', function() {
+            var stylesSrc = './src/styles/**/*',
+                stylesDst = './dist/styles';
+
+            gulp.src(stylesSrc)           // бяром усе СЫЫ-файлы с зыходнага шляху
+              .pipe(concat('styles.css')) // аб'ядноўваем іх у адзін файл
+              .pipe(autoprefix('last 2 versions')) // устаўляем vendor-specific прэфіксы
+              .pipe(minifyCSS())          // сьціскаем выніковы файл
+              .pipe(gulp.dest(stylesDst));// і зьмяшчаем у выніковы шлях
+          });
+        ]]></script>
+        <p>Сьцісканьне <i>JavaScript</i>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          var gulp = require('gulp');
+          var stripDebug = require('gulp-strip-debug');
+          var uglify = require('gulp-uglify');
+
+          gulp.task('js-minify', function() {
+            gulp.src('./bundle.js')       // бяром файл скрыпту пасьля browserify
+              .pipe(stripDebug())         // выразаем усё лагіраваньне
+              .pipe(uglify())             // сьціскаем
+              .pipe(gulp.dest('./bundle.js')); // і перапісваем паверх зыходнага
+          });
+        ]]></script>
+
+        <h3 id="Frameworks_Node_Browserify">Browserify</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://browserify.org/">Home</a></li>
+          </ul>
+        </div>
+        <p>Browserify lets you require('modules') in the browser by bundling up all of your dependencies.</p>
+        <p><a href="https://www.npmjs.com/package/watchify">Watchify</a>&nbsp;&ndash; сочыць за зьменамі ў файлах, каб запускаць білды Browserify.</p>
+        <p><a href="https://www.npmjs.com/package/reactify">Reactify</a>&nbsp;&ndash; Browserify transform for JSX.</p>
+
+        <h3 id="Frameworks_Node_Express">Express.js</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://expressjs.com/">Home</a></li>
+          </ul>
+        </div>
+        <p>Fast, unopinionated, minimalist web framework for Node.js</p>
+        <p><a href="http://www.webcodegeeks.com/javascript/node-js/node-js-express-tutorial/">Node.js: Express tutorial</a></p>
+
+
+        <h2 id="Frameworks_TypeScript" >TypeScript</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.typescriptlang.org/">Home</a></li>
+          </ul>
+        </div>
+        <p>TypeScript lets you write JavaScript the way you really want to. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.</p>
+        <p><a href="http://blog.wolksoftware.com/working-with-react-and-typescript">Working with React and TypeScript</a></p>
+        <p><a href="http://www.javacodegeeks.com/2015/10/8-steps-to-migrating-from-javascript-to-typescript.html">8 Steps to Migrating from JavaScript to TypeScript</a></p>
+
+
+        <h2 id="Frameworks_Meteor" >Meteor</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.meteor.com/">Home</a></li>
+            <li><a href="http://docs.meteor.com/#/full/">Docs</a></li>
+          </ul>
+        </div>
+
+        <h2 id="Frameworks_MEAN">MEAN</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.mean.io/">Home</a></li>
+          </ul>
+        </div>
+        <p><a href="http://code.tutsplus.com/tutorials/introduction-to-the-mean-stack--cms-19918">Introduction to the MEAN Stack</a></p>
+
+        <h2 id="Frameworks_React">React</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://facebook.github.io/react/index.html">Home</a></li>
+            <li><a href="http://facebook.github.io/react/docs/getting-started.html">Docs</a></li>
+            <li><a href="http://maketea.co.uk/2014/03/05/building-robust-web-apps-with-react-part-1.html">Tutorial 1</a></li>
+            <li><a href="http://buildwithreact.com/tutorial">Tutorial 2</a></li>
+            <li><a href="https://www.codementor.io/reactjs/tutorial/the-reactjs-quick-start-guide">Tutorial 3</a></li>
+            <li><a href="https://scotch.io/tutorials/learning-react-getting-started-and-concepts">Tutorial 4</a></li>
+            <li><a href="http://survivejs.com/webpack_react/introduction/">Tutorial 5</a></li>
+            <li><a href="http://learnreact.com/lessons">Tutorial 6</a></li>
+          </ul>
+        </div>
+
+        <p><a href="http://egorsmirnov.me/2015/05/22/react-and-es6-part1.html">"React and ES6" series.</a></p>
+        <p><a href="http://buildwithreact.com/">Articles in "Build with react"</a></p>
+        <p><a href="https://www.codementor.io/reactjs/tutorial">Different tutorials</a></p>
+        <p><a href="https://github.com/gajus/react-css-modules">React CSS Modules</a></p>
+        <p><a href="https://auth0.com/docs/quickstart/spa/react/java-spring-security">React + Spring Security Java API</a></p>
+        <p><a href="http://myshareoftech.com/2013/12/unit-testing-react-dot-js-with-jasmine-and-karma.html">Unit Testing React.js With Jasmine and Karma</a></p>
+        <p><a href="http://myshareoftech.com/2013/12/unit-testing-react-dot-js-with-jasmine-and-karma.html">Unit Testing React.js With Jasmine and Karma</a></p>
+
+        <h3 id="Frameworks_React_ComponentOrganisation">Арганізацыя коду кампанэнтаў</h3>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          React.createClass({
+
+              // Спачатку зьмяшчаем валідацыю атрыбутаў, якую лепш заўсёды зьмяшчаць,
+              // таму што гэта добрая дакумэнтацыя коду
+              propTypes: {},
+
+              // потым зьмяшчаем магчымыя дамешкі
+              mixins : [],
+
+              // Мэтады жыцьцёвага цыклу, якія выконваюцца да стварэньня экзэмпляру
+              getInitialState: function() {},
+              getDefaultProps: function() {},
+
+              // Мэтады жыцьцёвага цыклу, якія адносяцца да mounting/updating/unmounting
+              componentWillMount : function() {},
+              componentWillReceiveProps: function() {},
+              componentWillUnmount : function() {},
+
+              // Уласныя мэтады з "_"-прэфіксам
+              _parseData : function() {},
+              _onSelect : function() {},
+
+              // Стандартны мэтад "маляваньня" кампанэнту
+              render : function() {
+                var optionalElement;            // Пры наяўнасьці неабавязковых элемэнтаў
+                                                // пры "маляваньні", лепш аб'явіць зьменную,
+                if (this.props.condition) {     // якую запоўніць JSX-кодам толькі пры неабходнасьці
+                  optionalElement = (&lt;div&gt; … &lt;&frasl;div&gt;);
+                }
+
+                return (
+                  &lt;div&gt;               // Нават калі вяртаецца невялікі фрагмэнт JSX-коду,
+                    &lt;ComponentOne &frasl;&gt;  // лепш рабіць пераносы радка і водступы
+                    &lt;ComponentTwo &frasl;&gt;  // для лепшай чытальнасьці коду
+
+                    &lt;Component
+                      attribute={...}         // Калі пры "маляваньні" кампанэнту перадаецца
+                      anotherAttribute={...}  // сьпіс атрыбутаў, лепш зьмяшчаць іх на асобным
+                      attributeThree={...}    // радку
+                      …
+                    &frasl;&gt;
+                    …
+                    {optionalElement} // Калі неабавязковы элемэнт не быў запоўнены, 
+                    …                 // у гэтым месцы проста нічога не будзе ўстаўлена
+
+                    // Устаўку сьпісу ўкладзеных кампанэнтаў лепш рабіць in-line,
+                    // прынамсі калі выраз дастаткова просты
+                    {this.props.list.map(function(data, i) {
+                      return (&lt;Component data={data} key={i} frasl;&gt;)
+                    })}
+                  &lt;&frasl;div&gt;              
+                );
+              }
+
+          })
+        ]]></script>
+
+        <h3 id="Frameworks_React_ComponentProperties">Атрыбуты кампанэнтаў</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://facebook.github.io/react/docs/reusable-components.html">Docs</a></li>
+            <li><a href="https://medium.com/react-tutorials/react-properties-ef11cd55caa0">medium.com</a></li>
+          </ul>
+        </div>
+        <p>Атрыбуты кампанэнту перадаюцца пры яго канструяваньні, а зьвяртацца да атрыбутаў унутры кампанэнту можна пры дапамозе <code>this.props</code>:</p>
+        <script type="syntaxhighlighter" class="brush: js; highlight: [3, 8]"><![CDATA[
+          var InterfaceComponent = React.createClass({
+            render : function() {
+              return &lt;div&gt;hello {this.props.name}!&lt;&frasl;div&gt;;
+            }
+          });
+
+          React.renderComponent(
+            &lt;InterfaceComponent name="chris" &frasl;&gt;,
+            document.body
+          );
+        ]]></script>
+
+        <h4 id="Frameworks_React_ComponentProperties_Validation">Валідацыя</h4>
+        <p><i>React</i> прадстаўляе мэханізм валідацыі значэньняў атрыбутаў&nbsp;&ndash; <code>propTypes</code>:</p>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          React.createClass({
+            propTypes: {
+              // Па-першае, можна пазначыць, што атрыбут належыць да прымітыўных тыпаў. 
+              // Па-змоўчваньні, яны ўсе неабавязковыя.
+              optionalArray: React.PropTypes.array,
+              optionalBool: React.PropTypes.bool,
+              optionalFunc: React.PropTypes.func,
+              optionalNumber: React.PropTypes.number,
+              optionalObject: React.PropTypes.object,
+              optionalString: React.PropTypes.string,
+
+              // Усё, што можа быць адлюстравана: лікі, чароды, іншыя кампанэнты 
+              // альбо масівы гэтых тыпаў.
+              optionalNode: React.PropTypes.node,
+
+              // React-кампанэнт (альбо элемэнт у тэрміналёгіі React).
+              optionalElement: React.PropTypes.element,
+
+              // Можна таксама пазначыць, што атрыбут павінен зьяўляцца экзэмплярам пэўнай клясы.
+              optionalMessage: React.PropTypes.instanceOf(Message),
+
+              // Можна пазначыць непасрэдна значэньні, якія мае прымаць атрыбут.
+              optionalEnum: React.PropTypes.oneOf(['News', 'Photos']),
+
+              // Значэньне можа быць аб'ектам розных тыпаў. 
+              optionalUnion: React.PropTypes.oneOfType([
+                React.PropTypes.string,
+                React.PropTypes.number,
+                React.PropTypes.instanceOf(Message)
+              ]),
+
+              // Масіў пэўнага тыпу
+              optionalArrayOf: React.PropTypes.arrayOf(React.PropTypes.number),
+
+              // An object with property values of a certain type
+              optionalObjectOf: React.PropTypes.objectOf(React.PropTypes.number),
+
+              // An object taking on a particular shape
+              optionalObjectWithShape: React.PropTypes.shape({
+                color: React.PropTypes.string,
+                fontSize: React.PropTypes.number
+              }),
+
+              // Усё вышэйпералічанае можна дапоўніць 'isRequired' каб зрабіць атрыбут абавязковым.
+              requiredFunc: React.PropTypes.func.isRequired,
+
+              // Значэньне любога тыпу.
+              requiredAny: React.PropTypes.any.isRequired,
+
+              // Можна таксама пазначыць callback-мэтад для ўласнай праверкі значэньня. 
+              // Ён павінен вяртаць Error, калі праверка была няўдалай. 
+              // Не ўжывайце 'console.warn' альбо throw.
+              customProp: function(props, propName, componentName) {
+                if (!/matchme/.test(props[propName])) {
+                  return new Error('Validation failed!');
+                }
+              }
+
+              customBefore: function(props, propName, componentName) {
+                if (!(propName in props)) {
+                  throw new Error("before must be set.");
+                }
+
+                var now = new Date();
+
+                if (now.getTime() >= props[propName].getTime()) {
+                  throw new Error("before must be set to a later date.");
+                }
+              }
+            },
+            /* ... */
+          });
+        ]]></script>
+        <p>Калі валідацыя не прайшла ў рэжыме распрацоўкі (ужываецца не мініміфікаваная і аптымізаваная бібліатэка <i>React</i>), у кансоль будзе выведзена адпаведнае папярэджаньне. У вытворчым рэжыме валідацыя ўвогуле не будзе адбывацца для лепшай хуткадзейнасьці.</p>
+        <p>Дадатковай магчымасьцю, якую прадстаўляе <code>propTypes</code>, зьяўляецца праверка таго, што ў кампанэнт быў перададзены дакладна адзін укладзены кампанэнт:</p>
+        <script type="syntaxhighlighter" class="brush: js; highlight: [3]"><![CDATA[
+          var MyComponent = React.createClass({
+            propTypes: {
+              children: React.PropTypes.element.isRequired
+            },
+
+            render: function() {
+              return (
+                &lt;div&gt;
+                  {this.props.children} // This must be exactly one element or it will throw.
+                &lt;&frasl;div&gt;
+              );
+            }
+
+          });
+        ]]></script>
+
+        <h4 id="Frameworks_React_ComponentProperties_DefaultValues">Змоўчныя значэньні</h4>
+        <p>Можна пазначыць змоўчныя значэньні для атрыбутаў, калі яны не абавязковыя і не былі перададзеныя ў кампанэнт:</p>
+        <script type="syntaxhighlighter" class="brush: js; highlight: [4, 5, 18]"><![CDATA[
+          var InterfaceComponent = React.createClass({
+            getDefaultProps : function() {
+              return {
+                "firstName" : "Алесь",
+                "lastName"  : "Зарэцкі"
+              };
+            },
+            render : function() {
+              return (
+                &lt;div&gt;
+                  hello {this.props.firstName + " " + this.props.lastName}
+                &lt;&frasl;div&gt;
+              );
+            }
+          });
+
+          React.renderComponent(
+            &lt;InterfaceComponent &frasl;&gt;, // атрыбуты не былі перададзеныя, таму будуць ужытыя змоўчныя
+            document.body
+          );
+        ]]></script>
+
+        <h4 id="Frameworks_React_ComponentProperties_Transfer">Перадача па герархіі</h4>
+        <p>Бацькоўскія кампанэнты могуць перадаваць даччыным усе свае атрыбуты разам. Існуе 2 варыянты гэта рабіць.</p>
+        <ul>
+          <li>Варыянт 1
+            <script type="syntaxhighlighter" class="brush: js; highlight: [16]"><![CDATA[
+              var ChildComponent = React.createClass({
+                render : function() {
+                  return (
+                    &lt;div style={{
+                      color      : this.props.color,
+                      background : this.props.background
+                    }}&gt;
+                      I am {this.props.color}
+                    &lt;&frasl;div&gt
+                  );
+                }
+              });
+                
+              var ParentComponent = React.createClass({
+                render : function() {
+                  return this.transferPropsTo( // Усе атрыбуты будуць перададзеныя даччынаму
+                    &lt;ChildComponent background={null} &frasl;&gt; // акрамя "background"
+                  );
+                }
+              });
+
+              React.renderComponent(
+                &lt;ParentComponent color="blue" background="red" &frasl;&gt;,
+                document.body
+              );
+            ]]></script>
+          </li>
+          <li>Варыянт 2
+            <script type="syntaxhighlighter" class="brush: js; highlight: [4]"><![CDATA[
+              var CheckLink = React.createClass({
+                render: function() {
+                  // Атрыбуты CheckLink будуць перададзеныя ў <a>
+                  return &lt;a {...this.props}&gt;{'√ '}{this.props.children}&lt;&frasl;a&gt;;
+                }
+              });
+
+              React.render(
+                &lt;CheckLink href="/checked.html"&gt;
+                  Click here!
+                &lt;&frasl;CheckLink&gt;,
+                document.getElementById('example')
+              );
+            ]]></script>
+          </li>
+        </ul>
+
+        <h3 id="Frameworks_React_ComponentState">Стан кампанэнтаў</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://facebook.github.io/react/docs/thinking-in-react.html">Docs</a></li>
+            <li><a href="https://medium.com/react-tutorials/react-state-14a6d4f736f5">medium.com</a></li>
+          </ul>
+        </div>
+        <p>Асноўнае правіла адносна стану кампанэнтаў&nbsp;&ndash; ён павінен быць мінімальна неабходным. Ня трэба захоўваць тое, што можна дынамічна разьлічыць/атрымаць. Калі кампанэнт статычны і не залежыць ад зьнешніх фактараў, у яго не павінна быць стану&nbsp;&ndash; усё павінна разьлічвацца ў момант адлюстраваньня. Мэтад <code>getInitialState</code> вызначае зыходны стан, мэтад <code>setState</code> усталёўвае новае значэньне зьменным, а мэтад <code>replaceState</code> зацірае папярэдні стан (цалкам выдаляе значэньні <strong>ўсіх</strong> зьменных стану) і ўсталёўвае новыя значэньні.</p>
+        <script type="syntaxhighlighter" class="brush: js;"><![CDATA[
+          var InterfaceComponent = React.createClass({
+            getInitialState : function() {
+              return {
+                name : "chris"
+              };
+            },
+            handleClick : function() {
+              this.setState({
+                name : "bob"
+              });
+            },
+            render : function() {
+              return (
+                &lt;div onClick={this.handleClick}&gt;
+                  hello {this.state.name}
+                &lt;&frasl;div&gt;
+              );
+            }
+          });
+
+          React.renderComponent(
+            &lt;InterfaceComponent &frasl;&gt;,
+            document.body
+          );
+        ]]></script>
+        <a class="jsbin-embed" href="http://jsbin.com/zenusi/embed?js,output&height=500px">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.2"></script>
+
+        <h3 id="Frameworks_React_PubSub">Publisher-Subscriber pattern</h3>
+        <p><a href="https://msdn.microsoft.com/en-us/magazine/hh201955.aspx">Understanding the Publish/Subscribe Pattern for Greater JavaScript Scalability</a></p>
+        <p><a href="http://amplifyjs.com/api/pubsub/">AmplifyJS</a></p>
+        <p><a href="https://github.com/mroderick/PubSubJS">PubSubJS</a></p>
+
+        <h3 id="Frameworks_React_Addons">Add-ons і кампанэнты</h3>
+        <p><a href="https://facebook.github.io/react/docs/addons.html">Add-ons at React Docs</a></p>
+        <p><a href="http://react-components.com/">react-components.com</a></p>
+        <p><a href="http://www.reactjsx.com/">Search reusable React components</a></p>
+        <p><a href="http://react.rocks/">react.rocks</a></p>
+        <p><a href="https://github.com/chenglou/react-motion">react-motion</a></p>
+
+        <h4 id="Frameworks_React_Addons_MaterialUI">Material UI</h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://callemall.github.io/material-ui/#/">Home</a></li>
+          </ul>
+        </div>
+
+        <h3 id="Frameworks_React_Flux">Flux</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://facebook.github.io/flux/">Home</a></li>
+            <li><a href="https://facebook.github.io/flux/docs/overview.html#content">Docs</a></li>
+          </ul>
+        </div>
+
+        <h2 id="Frameworks_Aurelia">Aurelia</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://aurelia.io/">Home</a></li>
+          </ul>
+        </div>
+        <p><a href="http://aurelia.io/">Aurelia - next generation JavaScript client framework that leverages simple conventions to empower your creativity.</a></p>
+
+        <h2 id="Frameworks_Angular">Angular</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://angularjs.org/">Home</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/building-a-web-app-from-scratch-in-angularjs/">Building a Web App From Scratch in AngularJS</a></p>
+        <p><a href="http://toddmotto.com/rethinking-angular-js-controllers/">Rethinking AngularJS Controllers</a></p>
+        <p><a href="http://codetunes.com/2014/5-tips-on-how-to-use-angularjs-with-rails-that-changed-how-we-work/">5 tips on how to use AngularJS with Rails that changed how we work</a></p>
+
+        <h2 id="Frameworks_Ember.js">Ember.js</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://emberjs.com/">Home</a></li>
+            <li><a href="http://emberjs.com/guides/">Guides</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-into-ember-js/">Getting Into Ember.js</a></p>
+        <p><a href="https://courses.tutsplus.com/courses/lets-learn-ember">Let's Learn Ember</a></p>
+        <p><a href="http://ember.codeschool.com/">Warming Up With Ember.js</a></p>
+        <p><a href="http://robots.thoughtbot.com/emberjs-with-a-separate-rails-api">EmberJS with a Separate Rails API</a></p>
+        <p><a href="http://landongn.com/ember/things-i-wish-someone-had-told-me-when-i-was-learning-ember-js/">Things I wish someone had told me when I was learning Ember.js</a></p>
+
+        <h2 id="Frameworks_Backbone.js">Backbone.js</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://documentcloud.github.com/backbone/">Home</a></li>
+          </ul>
+        </div>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-backbone-js/">Getting Started with Backbone.js</a></p>
+        <p><a href="http://code.tutsplus.com/tutorials/single-page-todo-application-with-backbonejs--cms-21417">Single Page ToDo Application With Backbone.js</a></p>
+
+        <h2 id="Frameworks_KnockOut">KnockOut</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://knockoutjs.com/">Home</a></li>
+          </ul>
+        </div>
+        <p><a href="http://code.tutsplus.com/series/into-the-ring-with-knockoutjs--net-22038">Into the Ring with Knockout.js</a></p>
 
         <h2 id="Frameworks_jQuery">jQuery</h2>
         <div class="refs">
@@ -2724,29 +3311,29 @@
         </ul>
         <p>Падключыць у дакумэнт бібліятэку можна спаслаўшыся альбо на лякальную яе вэрсію, папярэдне спампаваўшы яе <a href="http://docs.jquery.com/Downloading_jQuery">адсюль</a>:</p>
         <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-          <html>
-            <head>
+          &lt;html&gt;
+            &lt;head&gt;
               ...
-            </head>
-            <body>
+            &lt;/head&gt;
+            &lt;body&gt;
               ...
 
-              <script src="jqueri-1.7.1.js">&lt;/script&gt;
-            </body>
-          </html>
+              &lt;script src="jqueri-1.7.1.js"&gt;&lt;/script&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
         ]]></script>
         <p>альбо на адзін з даступных <a href="http://en.wikipedia.org/wiki/Content_delivery_network" title="Content Delivery Network">CDN</a>, напрыклад гуглаўскі:</p>
         <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-          <html>
-            <head>
+          &lt;html&gt;
+            &lt;head&gt;
               ...
-            </head>
-            <body>
+            &lt;/head&gt;
+            &lt;body&gt;
               ...
 
-              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">&lt;/script&gt;
-            </body>
-          </html>
+              &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"&gt;&lt;/script&gt;
+            &lt;/body&gt;
+          &lt;/html&gt;
         ]]></script>
         <p>«1» у шляху, у апошнім прыкладзе азначае запыт на апошнюю вэрсію, калі патрэбна не апошняя, а пэўная вэрсія, трэба пазначыць яе замест, напрыклад: «1.7.1». Заўважце, што перавагай спасылкі на лякальную вэрсію зьяўляецца магчымасьць працаваць зь лякальнай вэрсіяй сайту, сеціўнай праграмы, ці займацца распрацоўкай нават ня маючы сувязі з інтэрнэтам. Перавагай жа спасылкі на <a href="http://en.wikipedia.org/wiki/Content_delivery_network" title="Content Delivery Network">CDN</a> зьяўляецца высокая верагоднасьць кэшаваньня файлу бібліятэкі і на сэрвэры, і ў лякальным браўзэры карыстальнікаў, што прывядзе да хутчэйшай загрузкі старонкі.</p>
 
@@ -3296,6 +3883,9 @@
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/using-jquery-to-manipulate-and-filter-data/">Using jQuery To Manipulate and Filter Data</a></p>
         <p><a href="http://www.jankoatwarpspeed.com/post/2008/06/09/Building-a-better-web-forms-Context-highlighting-using-jQuery.aspx">Building better web forms: Context highlighting using jQuery</a></p>
 
+        <h3 id="Frameworks_jQuery_toJS">From jQuery to JS</h3>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/">From jQuery to JavaScript: A Reference</a></p>
+
         <h3 id="Frameworks_jQuery_UI">jQuery UI</h3>
         <div class="refs">
           <ul>
@@ -3395,118 +3985,6 @@
         </div>
         <p>Мінімалістычны аналяг <i>jQuery</i> (амаль ідэнтычны API) з падтрымкай толькі сучасных браўзэраў.</p>
 
-        <h2 id="Frameworks_YUI">Yahoo UI</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://developer.yahoo.com/yui/">YUI</a></li>
-          </ul>
-        </div>
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-an-introduction-to-yui/">An Introduction to YUI</a></p>
-        <p><a href="http://net.tutsplus.com/articles/general/10-things-i-learned-while-interning-at-yui/">10 Things I Learned While Interning at YUI</a></p>
-
-        <h2 id="Frameworks_Prototype">Prototype</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://www.prototypejs.org/">Home</a></li>
-            <li><a href="http://api.prototypejs.org/">API</a></li>
-          </ul>
-        </div>
-        <p><a href="http://alternateidea.com/blog/articles/2006/2/8/working-with-events-in-prototype">http://alternateidea.com/blog/articles/2006/2/8/working-with-events-in-prototype</a></p>
-
-        <h2 id="Frameworks_MooTools">MooTools</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://mootools.net/">MooTools</a></li>
-          </ul>
-        </div>
-        <p><a href="http://davidwalsh.name/">David Walsh blog</a></p>
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/sexy-animated-tabs-using-mootools/">Sexy Animated Tabs Using MooTools</a></p>
-        <p><a href="http://davidwalsh.name/facebook-lightbox/">LightFace: Facebook Lightbox for MooTools</a></p>
-
-        <h2 id="Frameworks_Dojo">Dojo</h2>
-        <div class="refs">
-          <ul>
-          <li><a href="http://dojotoolkit.org/">Home</a></li>
-          </ul>
-        </div>
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/dig-into-dojo-dom-basics/">Dig into Dojo</a></p>
-
-        <h2 id="Frameworks_Node.js" >Node.js</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://nodejs.org/">Home</a></li>
-            <li><a href="https://github.com/joyent/node/wiki">Wiki</a></li>
-          </ul>
-        </div>
-        <p>Яшчэ адзін <i>JavaScript</i>-фрэймворк, але не ў клясычным разуменьні. Гэта фрэймворк для сэрвераў. Так-так, ён прызначаны для выкананьня не на кліенцкім баку (у браўзэры), а на сэрверным баку. Зьяўляецца вельмі хуткім падзейна-арыентаваным фрэймворкам, які працуе на <a href="http://code.google.com/p/v8/">рухавіку V8 ад Гугла</a>. Некаторыя ўводныя, тлумачальныя артыкулы:</p>
-        <ul>
-          <li><a href="http://simonwillison.net/2009/Nov/23/node/">Node.js is genuinely exciting</a></li>
-          <li><a href="http://debuggable.com/posts/understanding-node-js:4bd98440-45e4-4a9a-8ef7-0f7ecbdd56cb">Understanding node.js</a></li>
-          <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/learning-serverside-javascript-with-node-js/">Learning Server-Side JavaScript with Node.js</a></li>
-          <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/this-time-youll-learn-node-js/">This Time, You’ll Learn Node.js</a></li>
-          <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-scrape-web-pages-with-node-js-and-jquery/">How to Scrape Web Pages with Node.js and jQuery</a></li>
-          <li><a href="https://github.com/visionmedia/jade/">Jade - robust, elegant, feature rich template engine for node.js</a></li>
-          <li><a href="http://code.tutsplus.com/tutorials/testing-in-nodejs--net-35018">Testing in Node.js</a></li>
-          <li><a href="http://code.tutsplus.com/tutorials/introduction-to-html5-desktop-apps-with-node-webkit--net-36296">Introduction to HTML5 Desktop Apps With Node-Webkit</a></li>
-          <li><a href="https://blog.heroku.com/archives/2014/3/11/node-habits?utm_source=mkto&utm_medium=email&utm_campaign=marchnewsletter&mkt_tok=3RkMMJWWfF9wsRonuK%2FMZKXonjHpfsX54%2BwvXKSzlMI%2F0ER3fOvrPUfGjI4AScdnI%2BSLDwEYGJlv6SgFQrjAMapmyLgLUhE%3D">10 Habits of a Happy Node Hacker</a></li>
-          <li><a href="https://www.airpair.com/node.js/posts/nodejs-framework-comparison-express-koa-hapi">Node.js Framework Comparison: Express vs. Koa vs. Hapi</a></li>
-        </ul>
-
-        <h2 id="Frameworks_Backbone.js">Backbone.js</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://documentcloud.github.com/backbone/">Home</a></li>
-          </ul>
-        </div>
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-started-with-backbone-js/">Getting Started with Backbone.js</a></p>
-        <p><a href="http://code.tutsplus.com/tutorials/single-page-todo-application-with-backbonejs--cms-21417">Single Page ToDo Application With Backbone.js</a></p>
-
-        <h2 id="Frameworks_Ember.js">Ember.js</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://emberjs.com/">Home</a></li>
-            <li><a href="http://emberjs.com/guides/">Guides</a></li>
-          </ul>
-        </div>
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-into-ember-js/">Getting Into Ember.js</a></p>
-        <p><a href="https://courses.tutsplus.com/courses/lets-learn-ember">Let's Learn Ember</a></p>
-        <p><a href="http://ember.codeschool.com/">Warming Up With Ember.js</a></p>
-        <p><a href="http://robots.thoughtbot.com/emberjs-with-a-separate-rails-api">EmberJS with a Separate Rails API</a></p>
-        <p><a href="http://landongn.com/ember/things-i-wish-someone-had-told-me-when-i-was-learning-ember-js/">Things I wish someone had told me when I was learning Ember.js</a></p>
-
-        <h2 id="Frameworks_SproutCore">SproutCore</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://www.sproutcore.com/">Home</a></li>
-          </ul>
-        </div>
-
-        <h2 id="Frameworks_Angular">Angular</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://angularjs.org/">Home</a></li>
-          </ul>
-        </div>
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/building-a-web-app-from-scratch-in-angularjs/">Building a Web App From Scratch in AngularJS</a></p>
-        <p><a href="http://toddmotto.com/rethinking-angular-js-controllers/">Rethinking AngularJS Controllers</a></p>
-        <p><a href="http://codetunes.com/2014/5-tips-on-how-to-use-angularjs-with-rails-that-changed-how-we-work/">5 tips on how to use AngularJS with Rails that changed how we work</a></p>
-
-        <h2 id="Frameworks_MEAN">MEAN</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://www.mean.io/">Home</a></li>
-          </ul>
-        </div>
-        <p><a href="http://code.tutsplus.com/tutorials/introduction-to-the-mean-stack--cms-19918">Introduction to the MEAN Stack</a></p>
-
-        <h2 id="Frameworks_KnockOut">KnockOut</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://knockoutjs.com/">Home</a></li>
-          </ul>
-        </div>
-        <p><a href="http://code.tutsplus.com/series/into-the-ring-with-knockoutjs--net-22038">Into the Ring with Knockout.js</a></p>
-
       </section>
 
       <section>
@@ -3552,17 +4030,6 @@
         </div>
         <p>Прылада правярае ці адпавядае напісаны вамі скрыпт пэўным крытэрам «добрай практыкі».</p>
         <p><a href="http://www.jshint.com/">JSHint</a>&nbsp;&ndash; прыкладна тое ж самае.</p>
-      </section>
-
-      <section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/from-jquery-to-javascript-a-reference/">From jQuery to JavaScript: A Reference</a></p>
-        <p><a href="http://stackoverflow.com/questions/3674700/disable-all-page-elements-with-modal-feature-using-jquery">disable all page elements with modal feature using jquery</a></p>
-        <p><a href="http://yepnopejs.com/">http://yepnopejs.com/</a></p>
-        <p><a href="http://www.webstuffshare.com/2010/03/jquery-plugin-jconfirmaction/">jQuery Plugin : jConfirmAction</a></p>
       </section>
 
       <footer>
