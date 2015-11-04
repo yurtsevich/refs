@@ -27,6 +27,8 @@ function main_index(active_page) {
     main_index.append(coding_ul());
     main_index.append(etc_ul());
     main_index.append(github());
+  } else if (isSingle(active_page)) {
+    // No main index for detached single pages
   } else {
     main_index.append(private_work_ul());
     main_index.append(private_personal_ul());
@@ -147,9 +149,12 @@ function private_personal_ul() {
   return ul;
 }
 
-
 function isPublic(active_page) {
   return active_page === "html" || active_page === "css" || active_page === "web" || active_page === "js" || active_page === "ruby" || active_page === "rails" || active_page === "java" || active_page === "scala" || active_page === "coding" || active_page === "git" || active_page === "linux" || active_page === "ides" || active_page === "deploy";
+}
+
+function isSingle(active_page) {
+  return active_page === "music";
 }
 
 function new_ul() {
