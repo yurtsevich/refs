@@ -48,6 +48,97 @@
       </header>
 
       <section>
+        <h1 id="OpenShift" data-content-item-open>OpenShift</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.openshift.com/">Home</a></li>
+            <li><a href="https://openshift.redhat.com/app/console">Web console</a></li>
+          </ul>
+        </div>
+        <p><i>OpenShift</i>&nbsp;&ndash; <i>The Open Hybrid Cloud Application Platform by Red Hat</i>, іншымі словамі <i>PaaS</i> для аўтаматычнага разгортваньня праграм на воблачным хостынгу.</p>
+        <p>Падтрымлівае мовы:</p>
+        <ul>
+          <li><i>Java</i> (<i>JBoss AS 7</i>, <i>WildFly 8.2</i>, <i>Tomcat 6/7 via JBoss EWS</i>, <i>JBoss EAP 6.4</i>)</li>
+          <li><i>Ruby</i></li>
+          <li><i>Node.js</i></li>
+          <li><i>Python</i></li>
+          <li><i>Perl</i></li>
+          <li><i>PHP</i></li>
+          <li><i>Ceylon</i></li>
+          <li><i>DIY/Custom</i></li>
+        </ul>
+
+        <h2 id="OpenShift_ClientTools">Client tools</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developers.openshift.com/en/getting-started-debian-ubuntu.html">Install</a></li>
+            <li><a href="https://access.redhat.com/documentation/en-US/OpenShift_Online/2.0/html-single/User_Guide/index.html">Guide</a></li>
+          </ul>
+        </div>
+        <p>Акрамя <a href="https://openshift.redhat.com/app/console">вэб-кансолі</a> кіраваць праграмай можна праз <i>client tools</i> (<i>rhc</i>)&nbsp;&ndash; кансольную праграму, якая працуе на <i>Ruby</i>.</p>
+
+        <h2 id="OpenShift_CreateApp">Ствараем праграму</h2>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ rhc app-create myapp wildfly
+        ]]></script>
+        <p>Будзе створана загатоўка <i>JEE</i>-праграмы для працы з сэрвэрам <i>WildFly</i> наступнай структуры:</p>
+<pre>
+|-- deployments/       Location for built WARs
+|-- src/               Maven source structure
+|-- pom.xml            Maven build file
+`-- .openshift/        Location for OpenShift specific files
+   |-- config/         Location for configuration files such as standalone.xml
+   |-- action_hooks/   See the Action Hooks documentation 
+   `-- markers/        See the Markers documentation 
+</pre>
+        <p>Дадаем <i>PostgreSQL</i>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          $ rhc cartridge add postgresql-9.2 -a myapp
+        ]]></script>
+        <p>Адлеглыя <i>WildFly</i> і <i>PostgreSQL</i> будуць цалкам наладжаныя на працу. Застаецца наладзіць лякальныя <i>WildFly</i> і <i>PostgreSQL</i>.</p>
+
+        <h2 id="OpenShift_LocalConfig">Наладжваем лякальны асяродак</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.mastertheboss.com/jboss-server/jboss-datasource/configuring-a-datasource-with-postgresql-and-jboss-wildfly">Link 1</a></li>
+            <li><a href="http://www.quizful.net/post/datasource-in-wildfly-jboss-using-postgresql">Link 2</a></li>
+            <li><a href="http://devcolibri.com/4661">Link 3</a></li>
+          </ul>
+        </div>
+        <p><a href="https://jdbc.postgresql.org/download.html">Запампоўваем</a> <i>JDBC</i>-драйвэр для <i>PostgreSQL</i> той вэрсіі, якая лякальна ўсталяваная (няхай гэта будзе <code>postgresql-9.1-903.jdbc4.jar</code>), і зьмяшчаем яго ў тэчку <code>/tmp</code>. Далей запускаем кансоль кіраваньня <i>WildFly</i>:</p>
+        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+          /opt/wildfly-8.2.0/bin $ bash jboss-cli.sh
+        ]]></script>
+        <p>І пасьлядоўна наступныя каманды ў самой кансолі (для зручнасьці агляду тут устаўлены пераносы радку, але на самай справе рабіць іх ня трэба):</p>
+        <img style="margin-top: 10px;" src="wildfly_postgres.jpg">
+        <p>Юзэр <code>_USER_NAME_</code> з паролем <code>_PASSWORD_</code> і экзэмпляр базы <code>_DB_NAME_</code> ужо павінны быць створаныя ў лякальным <i>PostgreSQL</i>.</p>
+      </section>
+
+      <section>
+        <h1 id="Docker">Docker</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.docker.com/">Home</a></li>
+            <li><a href="https://docs.docker.com/">Docs</a></li>
+            <li><a href="https://hub.docker.com/account/welcome/">Hub</a></li>
+          </ul>
+        </div>
+        <p><a href="http://merrigrove.blogspot.co.uk/2015/10/visualizing-docker-containers-and-images.html?_tmc=Diy2bNEQqG5t8sSbcMW6T5Us4KCmgsInjBviObh0atg&mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4AS8VqI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Visualizing Docker Containers and Images</a></p>
+        <p><a href="http://www.brightball.com/devops/docker-is-the-heroku-killer">docker is the heroku killer</a></p>
+        <p><a href="http://blog.xebia.com/2015/08/31/making-amazon-ecs-container-service-as-easy-to-use-as-docker-run/?mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4ASMRhI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Making Amazon ECS Container Service As Easy To Use As Docker Run</a></p>
+        <p><a href="http://tech.grammarly.com/blog/posts/Making-Docker-Rock-at-Grammarly.html?mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4ASMNhI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Making Docker Rock at Grammarly</a></p>
+        <p><a href="https://www.shopify.com/technology/15934308-docker-at-shopify-how-we-built-containers-that-power-over-100-000-online-shops">Docker at Shopify: How we built containers that power over 100,000 online shops</a></p>
+        <p><a href="https://www.shopify.com/technology/26892292-secrets-at-shopify-introducing-ejson">Secrets at Shopify - Introducing EJSON</a></p>
+        <br />
+        <p><a href="https://docs.docker.com/linux/started/">Get Started with Docker for Linux</a></p>
+        <p><a href="https://github.com/boot2docker/boot2docker">Boot2Docker</a></p>
+        <p><a href="https://www.docker.com/toolbox">Docker Toolbox</a></p>
+        <p><a href="https://kitematic.com/">Kitematic</a></p>
+        <p><a href="http://www.javacodegeeks.com/2015/09/best-practices-for-multi-tier-java-application-deployments-on-docker-containers-on-any-cloud.html">Best Practices for Multi-Tier Java Application Deployments on Docker Containers on Any Cloud</a></p>
+        <p><a href="http://www.javacodegeeks.com/2015/10/docker-java-app-deployment-4-app-stacks-tomcat-glassfish-jetty-and-jboss.html">Docker Java App Deployment – 4 App Stacks: Tomcat, GlassFish, Jetty and JBoss</a></p>
+      </section>
+
+      <section>
         <h1 id="EC2">EC2</h1>
         <div class="refs">
           <ul>
