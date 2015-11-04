@@ -192,13 +192,59 @@
 
       <section>
         <h1 id="Idea" data-content-item-open>IntelliJ IDEA</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.jetbrains.com/idea/help/intellij-idea.html">Help home</a></li>
+          </ul>
+        </div>
 
         <h2 id="Idea_Shortcuts" data-content-item-open>Камбінацыі клявіш</h2>
-        <p><i>Double</i> <code>Shift</code>&nbsp;&ndash; паўсюдны пошук.</p>
-        <p><code>Ctrl</code> + <code>Shift</code> + <code>N</code>&nbsp;&ndash; адкрыць файл.</p>
-        <p><code>Ctrl</code> + <code>N</code>&nbsp;&ndash; адкрыць клясу.</p>
-        <p><code>Ctrl</code> + <code>E</code>&nbsp;&ndash; адкрыць нядаўнія файлы.</p>
-        <br />
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.jetbrains.com/idea/docs/IntelliJIDEA_ReferenceCard.pdf">Refcard</a></li>
+          </ul>
+        </div>
+
+        <h3 id="Idea_Shortcuts_EditingRefactoring">Рэдагаваньне і рэфактарынг</h3>
+        <p><code>Ctrl</code> + <code>/</code>&nbsp;&ndash; закамэнтарыць/раскамэнтарыць цяперашні радок.</p>
+        <p><code>Ctrl</code> + <code>Shift</code> + <code>/</code>&nbsp;&ndash; закамэнтарыць/раскамэнтарыць абраны фрагмэнт.</p>
+        <p><code>Ctrl</code> + <code>+</code>/<code>-</code>&nbsp;&ndash; згарнуць/разгарнуць цяперашні <i>folding</i>-фрагмэнт.</p>
+        <p><code>Ctrl</code> + <code>Shift</code> + <code>+</code>/<code>-</code>&nbsp;&ndash; згарнуць/разгарнуць усе <i>folding</i>-фрагмэнты.</p>
+        <p><code>Ctrl</code> + <code>Space</code> / <code>Ctrl</code> + <code>Shift</code> + <code>Space</code>&nbsp;&ndash; прастая і «разумная» аўтападстаноўка.</p>
+        <p><code>Ctrl</code> + <code>Alt</code> + <code>Space</code>&nbsp;&ndash; аўтападстаноўка незалежна ад імпартаў.</p>
+        <p><code>Alt</code> + <code>Enter</code>&nbsp;&ndash; сьпіс мяркуемых дзеяў.</p>
+        <p><code>Ctrl</code> + <code>O</code>&nbsp;&ndash; перавызначыць мэтад бацькоўскай клясы.</p>
+        <p><code>Alt</code> + <code>Insert</code>&nbsp;&ndash; генэратар коду (гэтэраў/сэтэраў, залежнасьцяў у <code>pom.xml</code> і г.д.).</p>
+        <p><code>Ctrl</code> + <code>J</code>&nbsp;&ndash; генэрацыя шаблённага коду (абыход ітэратарам і г.д.).</p>
+        <p><code>Ctrl</code> + <code>Alt</code> + <code>J</code>&nbsp;&ndash; абгортваньне фрагмэнту ў шаблённы код.</p>
+        <p><code>Ctrl</code> + <code>Alt</code> + <code>T</code>&nbsp;&ndash; абгортваньне фрагмэнту ў шаблённы код (у <code>Mint</code> перавызначана адкрыцьцём кансолі).</p>
+        <p><code>Shift</code> + <code>F6</code>&nbsp;&ndash; перайменаваньне элемэнту.</p>
+        <p><code>Ctrl</code> + <code>F6</code>&nbsp;&ndash; зьмена сыгнатуры мэтаду па ўсім кодзе.</p>
+        <p><code>F6</code>&nbsp;&ndash; перамясьціць мэтад, клясу, пакет.</p>
+        <p><code>Ctrl</code> + <code>Alt</code> + <code>M</code>/<code>V</code>/<code>F</code>/<code>C</code>/<code>P</code>&nbsp;&ndash; выдзяленьне мэтаду/зьменнай/атрыбуту/канстанты/аргумэнта мэтаду.</p>
+        <p><code>Ctrl</code> + <code>Shift</code> + <code>U</code>&nbsp;&ndash; перавесьці літары цяперашняга слова ў верхні/ніжні рэгістр.</p>
+
+        <h3 id="Idea_Shortcuts_SearchMove">Пошук, перамяшчэньне</h3>
+        <p><code>Ctrl</code> + <code>Shift</code> + <code>A</code>&nbsp;&ndash; хуткі пошук дзеяў і наладак.</p>
+        <p><i>Double</i> <code>Shift</code>&nbsp;&ndash; хуткі пошук па ўсім праекце.</p>
+        <p><code>Ctrl</code> + <code>Shift</code> + <code>F</code>&nbsp;&ndash; пошук па ўсім файлам.</p>
+        <p><code>Ctrl</code> + <code>F</code>&nbsp;&ndash; пошук у актыўным файле.</p>
+        <p><code>F3</code> / <code>Shift</code> + <code>F3</code>&nbsp;&ndash; наступнае/папярэдняе трапляньне пошукавай камбінацыі ў актыўным файле.</p>
+        <p><code>F2</code> / <code>Shift</code> + <code>F2</code>&nbsp;&ndash; пераход да наступнай/папярэдняй памылкі.</p>
+        <p><code>Alt</code> + <code>Up</code>/<code>Down</code>&nbsp;&ndash; пераход да папярэдняга/наступнага элемэнту (напрыклад мэтаду) ў актыўным файле.</p>
+        <p><code>Ctrl</code> + <code>G</code>&nbsp;&ndash; пераход да радка (пазыцыі ў радку) па нумару.</p>
+        <p><code>Ctrl</code> + <code>F12</code>&nbsp;&ndash; сьпіс мэтадаў з пераходам да іх.</p>
+        <p><code>Ctrl</code> + <code>B</code>&nbsp;&ndash; пераход да аб'яўленьня элемэнта, на якім знаходзіцца курсор (аналяг <code>Ctrl</code> + <i>клік мышы</i>).</p>
+        <p><code>Ctrl</code> + <code>Alt</code> + <code>B</code>&nbsp;&ndash; пераход да рэалізацыі.</p>
+
+        <p><code>Ctrl</code> + <code>Shift</code> + <code>N</code>&nbsp;&ndash; пошук файла па імені і пераход да яго.</p>
+        <p><code>Ctrl</code> + <code>N</code>&nbsp;&ndash; пошук клясы па імені і пераход да яе.</p>
+        <p><code>Ctrl</code> + <code>Shift</code> + <code>E</code>&nbsp;&ndash; сьпіс надоечы зьмененых файлаў з пераходам да іх.</p>
+        <p><code>Ctrl</code> + <code>E</code>&nbsp;&ndash; сьпіс надоечы адкрытых файлаў з пераходам да іх.</p>
+        <p><code>Ctrl</code> + <code>Alt</code> + <code>H</code>&nbsp;&ndash; герархія выклікаў абранага мэтаду.</p>
+        <p><code>Ctrl</code> + <code>H</code>&nbsp;&ndash; герархія насьледаваньня актыўнага файла і пераход па ёй.</p>
+
+        <h3 id="Idea_Shortcuts_WindowsTabs">Вокны і ўкладкі</h3>
         <p><code>Shift</code> + <code>Esc</code>&nbsp;&ndash; зачыніць актыўную бакавую панэль.</p>
         <p><code>Alt</code> + <code>1</code>&nbsp;&ndash; адкрыць бакавую панэль «Projects».</p>
         <p><code>Alt</code> + <code>2</code>&nbsp;&ndash; адкрыць бакавую панэль «Favorites».</p>
@@ -206,8 +252,12 @@
         <p><code>Alt</code> + <code>6</code>&nbsp;&ndash; адкрыць бакавую панэль «TODO».</p>
         <p><code>Alt</code> + <code>7</code>&nbsp;&ndash; адкрыць бакавую панэль «Structure».</p>
         <p><code>Alt</code> + <code>9</code>&nbsp;&ndash; адкрыць бакавую панэль «Version Control».</p>
+        <p><code>Alt</code> + <code>Left</code>/<code>Right</code>&nbsp;&ndash; перамяшчэньне па ўкладкам.</p>
 
-
+        <h3 id="Idea_Shortcuts_Etc">Іншае</h3>
+        <p><code>Ctrl</code> + <code>Alt</code> + <code>A</code>&nbsp;&ndash; дадаць у сыстэму кантролю вэрсіяў.</p>
+        <p><code>Ctrl</code> + <code>K</code>&nbsp;&ndash; зрабіць каміт у сыстэму кантролю вэрсіяў.</p>
+        <p><code>Ctrl</code> + <code>Shift</code> + <code>K</code>&nbsp;&ndash; зрабіць пуш у сыстэму кантролю вэрсіяў.</p>
       </section>
 
 
