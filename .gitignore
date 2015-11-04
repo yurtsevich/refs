@@ -3,6 +3,7 @@
 *.iml
 publish/
 build/buildinfo.properties
+node_modules/
 .sass-cache/**
 nbproject/**
 .DS_Store

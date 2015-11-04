@@ -1,0 +1,27 @@
+{
+  "name": "manuals",
+  "version": "1.0.0",
+  "description": "Development manuals in Belarusian",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurtsevich/Manuals.git"
+  },
+  "author": "Yurtsevich Dzmitry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yurtsevich/Manuals/issues"
+  },
+  "homepage": "https://github.com/yurtsevich/Manuals#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-compass": "^2.1.0",
+    "gulp-scss-lint": "^0.3.7"
+  }
+}
