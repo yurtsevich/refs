@@ -1,30 +1,29 @@
 // Basic styles of manuals
 
-@import "compass";
-@import "compass/css3";
-@import "font-stack";
+@import 'compass';
+@import 'compass/css3';
+@import 'libs/font-stack';
 
-body {background: url("../images/bg.jpg"); font: 94% $optima-font-stack;}
+body {background: url('../images/bg.jpg'); font: 94% $optima-font-stack;}
 section, header, footer {max-width: 900px;}
 h1, h2, h3, h4, h5, h6 {font-family: $goudy-old-style-font-stack;
-  a {text-decoration: none; /*excluding text underlying of links inside of headers*/}
+  a {text-decoration: none;} // excluding text underlying of links inside of headers
 }
-p {margin-top: 10px;}
+p, iframe {margin-top: 10px;}
 q {font-style: italic;}
 blockquote {color: #666; margin: 10px 30px 10px;}
 
-code {background-color: #E8E8E8; @include border-radius(4px); color: #000; padding: 0 5px;
-  span.elem, span.at_rule, span.keyword {color: #006699;}
-}
-code.elem, code.at_rule, code.keyword {color: #006699;}
+/*
+code {background-color: #E8E8E8; @include border-radius(4px); color: #000; padding: 0 5px;}
+.elem, .at_rule, .keyword {color: #006699;}
 .syntaxhighlighter code {@include text-shadow(none);}
- 
+*/
+
 abbr {color: #000;}
-.deprecated {text-decoration: line-through;}
-.todo {color: red;}
+.deprecated_link {text-decoration: line-through;}
 
 figure {margin: 20px;}
-figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: center; text-indent: 0;}
+.imgcaption {font-size: smaller; font-style: italic; text-align: center; text-indent: 0;}
 
 #container {float: left; width: 100%;}
 
@@ -48,13 +47,13 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
       a {background: no-repeat scroll 0 0 transparent; display: inline-block; height: 32px; width: 32px;}
     }
     .github_link {bottom: 50px;
-      a {background-image: url("../images/github.png");}
+      a {background-image: url('../images/github.png');}
     }
     .zip_link {bottom: 100px;
-      a {background-image: url("../images/zip.png");}
+      a {background-image: url('../images/zip.png');}
     }
   }
-  #content {background: #eee; left: 50px; max-height: 100%; max-width: 300px; min-height: 100%; min-width: 300px; padding: 20px 10px 180px -10px;
+  #table_of_content {background: #eee; left: 50px; max-height: 100%; max-width: 300px; min-height: 100%; min-width: 300px; padding: 20px 10px 180px -10px;
       overflow: scroll; position: fixed;
 
     ul.tree {margin-left: 0;
@@ -86,7 +85,7 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
   }
 }
 
-#main {left: 405px; margin-bottom: 20px; padding-right: 20px; position: absolute; top: 20px; z-index: -100;
+#content {left: 405px; margin-bottom: 20px; padding-right: 20px; position: absolute; top: 20px; z-index: -100;
   header {color: #222222; font: 50pt $goudy-old-style-font-stack; text-align: center; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);}
 
   h1, h2, h3, h4, h5 {color: #222222; font-weight: normal; text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
@@ -100,11 +99,17 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
 
   ol, ul {margin-bottom: 0.5em; margin-top: 0.5em;}
 
-  aside {background: #eee; border: 1px solid #BBBBBB; @include border-radius(2px); box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); float: right; font-size: 0.85em; margin: 10px 5px 10px 20px; padding: 20px; width: 300px;
+  aside {background: #eee; border-color: #aaa; border-left-width: 5px; border-left-style: solid; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); float: right; font-size: small; margin: 10px 0 10px 10px; padding: 15px 10px 15px 20px; width: 300px;
 
     &.warn {background: #fbb;}
     &.intro {background-color: #f4c288; font: 0.65em $lucida-grande-font-stack;}
   }
+
+  .usage_indicator {float: none; margin: 40px 0 -25px -30px; width: auto;}
+  .usage_new {background: #9CF49C; border-color: #5CB45C;}
+  .usage_warn {background: #fff4cc; border-color: #ffe070;}
+  .usage_deprecated {background: #fad7d4; border-color: #f08a81;}
+
 
   table {border-collapse: separate; border-bottom: 1px solid #111111; border-top: 1px solid #111111; margin: 30px 0 40px; width: 100%;
     caption {font-style: italic; line-height: 3em;}
@@ -169,45 +174,45 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     #tahoma_example {font-family: $tahoma-font-stack;}
     #monospace_example {font-family: $monospace-font-stack;}
     #handwritten_example {font-family: $cursive-font-stack;}
-    #aller_light_example {font-family: "AllerLightRegular";}
-    #aller_example {font-family: "AllerRegular";}
-    #cantarell_example {font-family: "CantarellRegular";}
-    #carto_gothic_example {font-family: "CartoGothicStdBook";}
-    #delicious_example {font-family: "DeliciousRoman";}
-    #fertigo_pro_example {font-family: "FertigoProRegular";}
-    #diavlo_medium_example {font-family: "DiavloMedium";}
-    #diavlo_light_example {font-family: "DiavloLight";}
-    #fontin_sans_example {font-family: "FontinSansCRRegular";}
-    #gentium_basic_example {font-family: "GentiumBasicRegular";}
-    #junction_example {font-family: "JunctionRegular";}
-    #mg_open_cosmetica_example {font-family: "MgOpenCosmeticaRegular";}
-    #museo_sans_example {font-family: "MuseoSans500";}
-    #nadia_serif_example {font-family: "NadiaSerifNormal";}
-    #nobile_example {font-family: "NobileRegular";}
-    #pt_sans_example {font-family: "PTSansRegular";}
-    #pt_sans_narrow_example {font-family: "PTSansNarrowRegular";}
-    #pt_sans_narrow_bold_example {font-family: "PTSansNarrowBold";}
-    #pt_sans_caption_example {font-family: "PTSansCaptionRegular";}
-    #open_sans_condensed_example {font-family: "OpenSansCondensedLight";}
-    #romeral_example {font-family: "RomeralRegular";}
-    #titillium_example {font-family: "TitilliumText22LRegular";}
-    #titillium_thin_example {font-family: "TitilliumText22LThin";}
-    #titillium_light_example {font-family: "TitilliumText22LLight";}
-    #sansation_example {font-family: "SansationRegular";}
-    #sansation_light_example {font-family: "SansationLight";}
-    #yanone_kaffeesatz_light_example {font-family: "YanoneKaffeesatzLight";}
-    #droid_sans_example {font-family: "DroidSansRegular";}
-    #hattori_hanzo_light_example {font-family: "HattoriHanzoLight";}
-    #district_thin_example {font-family: "DistrictThinRegular";}
-    #colaborate_thin_example {font-family: "ColaborateThinRegular";}
-    #quicksand_light_example {font-family: "QuicksandLight";}
-    #bonvenocf_light_example {font-family: "BonvenoCFLight";}
-    #lane_narrow_example {font-family: "LaneNarrowRegular";}
-    #ubuntu_light_example {font-family: "UbuntuLight";}
-    #greyscale_basic_example {font-family: "GreyscaleBasicRegular";}
-    #folks_light_example {font-family: "FolksLightRegular";}
-    #century_gothic_example {font-family: "CenturyGothicRegular";}
-    #alegreya_sc_regular_example {font-family: "AlegreyaSCRegular";}
+    #aller_light_example {font-family: 'AllerLightRegular';}
+    #aller_example {font-family: 'AllerRegular';}
+    #cantarell_example {font-family: 'CantarellRegular';}
+    #carto_gothic_example {font-family: 'CartoGothicStdBook';}
+    #delicious_example {font-family: 'DeliciousRoman';}
+    #fertigo_pro_example {font-family: 'FertigoProRegular';}
+    #diavlo_medium_example {font-family: 'DiavloMedium';}
+    #diavlo_light_example {font-family: 'DiavloLight';}
+    #fontin_sans_example {font-family: 'FontinSansCRRegular';}
+    #gentium_basic_example {font-family: 'GentiumBasicRegular';}
+    #junction_example {font-family: 'JunctionRegular';}
+    #mg_open_cosmetica_example {font-family: 'MgOpenCosmeticaRegular';}
+    #museo_sans_example {font-family: 'MuseoSans500';}
+    #nadia_serif_example {font-family: 'NadiaSerifNormal';}
+    #nobile_example {font-family: 'NobileRegular';}
+    #pt_sans_example {font-family: 'PTSansRegular';}
+    #pt_sans_narrow_example {font-family: 'PTSansNarrowRegular';}
+    #pt_sans_narrow_bold_example {font-family: 'PTSansNarrowBold';}
+    #pt_sans_caption_example {font-family: 'PTSansCaptionRegular';}
+    #open_sans_condensed_example {font-family: 'OpenSansCondensedLight';}
+    #romeral_example {font-family: 'RomeralRegular';}
+    #titillium_example {font-family: 'TitilliumText22LRegular';}
+    #titillium_thin_example {font-family: 'TitilliumText22LThin';}
+    #titillium_light_example {font-family: 'TitilliumText22LLight';}
+    #sansation_example {font-family: 'SansationRegular';}
+    #sansation_light_example {font-family: 'SansationLight';}
+    #yanone_kaffeesatz_light_example {font-family: 'YanoneKaffeesatzLight';}
+    #droid_sans_example {font-family: 'DroidSansRegular';}
+    #hattori_hanzo_light_example {font-family: 'HattoriHanzoLight';}
+    #district_thin_example {font-family: 'DistrictThinRegular';}
+    #colaborate_thin_example {font-family: 'ColaborateThinRegular';}
+    #quicksand_light_example {font-family: 'QuicksandLight';}
+    #bonvenocf_light_example {font-family: 'BonvenoCFLight';}
+    #lane_narrow_example {font-family: 'LaneNarrowRegular';}
+    #ubuntu_light_example {font-family: 'UbuntuLight';}
+    #greyscale_basic_example {font-family: 'GreyscaleBasicRegular';}
+    #folks_light_example {font-family: 'FolksLightRegular';}
+    #century_gothic_example {font-family: 'CenturyGothicRegular';}
+    #alegreya_sc_regular_example {font-family: 'AlegreyaSCRegular';}
   }
   table.centered {
     th, td {text-align: center; width: 100px;}
@@ -239,36 +244,10 @@ figcaption.imgcaption {font-size: smaller; font-style: italic; text-align: cente
     }
   }
   .example {margin: 20px 0;}
-  .example_content {background-color: #EEEEEE; border: 1px dashed #AAAAAA; margin: 0 auto; padding: 20px; text-align: center; width: 300px;
-    &.left_aligned {text-align: left;}
-    &.example_with_form {
-      fieldset {border: 1px solid #bbb; padding: 10px;}
-      label {float: left;}
-      input {clear: left; float: left; margin-top: 5px;}
-      input[type="checkbox"] {margin-right: 7px;}
-      li {list-style-type: none;}
-      p {clear: both;}
-    }
-  }
+  .example_content {background-color: #EEEEEE; border: 1px dashed #AAAAAA; margin: 0 auto; padding: 20px; text-align: center; width: 300px;}
   .manipulating_content_example {
     h1 {margin: 0 0 20px -10px;}
     p {margin-left: 10px; text-align: left;}
-  }
-  #figure_example, #tfoot_example, #th_example, #wbr_example {
-    .example_content {width: 500px;}
-  }
-  #wbr_example1 {
-    .example_content {width: 400px;}
-  }
-  #wbr_example2 {
-    .example_content {width: 350px;}
-  }
-  #tfoot_example {
-    td {text-align: left;}
-  }
-  #th_example {
-    table {border: none;}
-    th, td {border: 1px solid #222;}
   }
   .gallery {display: block; margin: 2px; padding: 2px; text-align: center; width: 800px;}
   .gallerybox {display: inline-block; margin: 15px 5px 5px; width: 250px;

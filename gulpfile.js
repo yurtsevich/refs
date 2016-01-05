@@ -1,4 +1,4 @@
-var scssSources = './sass/screen.scss';
+var scssSources = './sass/*.scss';
 
 var gulp = require('gulp');
 

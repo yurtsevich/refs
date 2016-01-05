@@ -4,35 +4,31 @@
 <head>
   <meta charset="utf-8">
 
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-       Remove this if you use the .htaccess -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
   <title>Даведнік па JavaScript</title>
   <meta name="description" content="Даведнік па JavaScript">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
-  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
-  <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/screen.css?v=2">
   <link rel="stylesheet" href="../css/shCore.css?v=1">
-  <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
-
+  <link rel="stylesheet" href="../css/shThemeRDark.css?v=2">
+  <link rel="stylesheet" href="../css/prism.css">
 </head>
 
 <body>
 
   <div id="container">
-    <article id="main">
+    <article id="content">
       <header>
         Даведнік па JavaScript
       </header>
+
+      <p><a href="http://www.wintellect.com/devcenter/nstieglitz/5-great-features-in-es6-harmony">5 Great Features In EcmaScript 6</a></p>
+      <p><a href="http://habrahabr.ru/post/252323/">ECMAScript 6</a></p>
+      <p><a href="http://habrahabr.ru/post/267639/">Тонкости модульной системы ECMAScript 2015 (ES6)</a></p>
+      <p><a href="http://es6-features.org/">ECMAScript 6 — New Features: Overview & Comparison</a></p>
 
       <section>
 
@@ -2580,13 +2576,16 @@
       </section>
 
       <section>
-        <h1 id="Multithreading">Шматпатокавасьць</h1>
+        <h1 id="Async">Асынхроннасьць</h1>
 
-        <h2 id="Multithreading_WebWorkers">Web workers</h2>
         <p><a href="https://developer.mozilla.org/En/Using_web_workers">Mozilla Developers Network</a></p>
         <p><a href="http://www.html5rocks.com/en/tutorials/workers/basics/">The Basics of Web Workers</a></p>
         <p><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/workers.html#workers">whatwg.org</a></p>
         <p><a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/?mc_cid=31cc7c17cb&mc_eid=5b4e3f8de1">Introduction to Service Worker</a></p>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a></p>
+        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/promise-based-validation/">Promise-Based Validation</a></p>
+        <p><a href="http://robotlolita.me/2015/11/15/how-do-promises-work.html?mc_cid=b2ece7659c&mc_eid=5b4e3f8de1">How do Promises Work?</a></p>
+        <p><a href="http://www.html5rocks.com/en/tutorials/es6/promises/?mc_cid=b2ece7659c&mc_eid=5b4e3f8de1">JavaScript Promises</a></p>
       </section>
 
       <section>
@@ -2665,6 +2664,9 @@
         <h2 id="JavaScript_Plugins_Maps">Мапы</h2>
         <p><a href="https://www.mapbox.com/">MapBox</a></p>
         <p><a href="http://leaflet.cloudmade.com/">A Modern, Lightweight Open-Source JavaScript Library for Interactive Maps by CloudMade</a></p>
+
+        <h2 id="JavaScript_Plugins_SplitPanes">Split panes</h2>
+        <p><a href="http://nathancahill.github.io/Split.js/">Split.js</a> is a lightweight, unopinionated utility for creating adjustable split views or panes.</p>
 
         <h2 id="JavaScript_Plugins_Dialogs">Дыялёгі</h2>
         <p><a href="https://github.com/hakimel/avgrund">Avgrund</a>&nbsp;&ndash; A modal concept which aims to give a sense of depth between the page and modal layers.</p>
@@ -2792,6 +2794,7 @@
         <p><a href="http://egorsmirnov.me/2015/05/25/browserify-babelify-and-es6.html">Browserify, Babelify and ES6</a></p>
         <p><a href="http://www.sitepoint.com/simple-gulpy-workflow-sass/">A Simple Gulp’y Workflow For Sass</a></p>
         <p><a href="http://fettblog.eu/gulp-browserify-multiple-bundles/">Gulp: Creating multiple bundles with Browserify</a></p>
+        <p><a href="http://stefanimhoff.de/2014/gulp-tutorial-4-css-generation-sass/">Introduction to Gulp.js</a></p>
         <p>Сьцісканьне выяваў:</p>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
           var gulp = require('gulp');
@@ -2990,18 +2993,21 @@
             <li><a href="https://medium.com/react-tutorials/react-properties-ef11cd55caa0">medium.com</a></li>
           </ul>
         </div>
-        <p>Атрыбуты кампанэнту перадаюцца пры яго канструяваньні, а зьвяртацца да атрыбутаў унутры кампанэнту можна пры дапамозе <code>this.props</code>:</p>
-        <script type="syntaxhighlighter" class="brush: js; highlight: [3, 8]"><![CDATA[
-          var InterfaceComponent = React.createClass({
-            render : function() {
-              return &lt;div&gt;hello {this.props.name}!&lt;&frasl;div&gt;;
-            }
-          });
+        <p>Атрыбуты кампанэнту перадаюцца пры яго канструяваньні, а зьвяртацца да атрыбутаў унутры кампанэнту можна пры дапамозе <code class="language-javascript">this.props</code>:</p>
+<pre data-line="3,8"><code class="language-jsx">
+var InterfaceComponent = React.createClass({
+  render : function() {
+    return &lt;div&gt;hello {this.props.name}!&lt;/div&gt;;
+  }
+});
 
-          React.renderComponent(
-            &lt;InterfaceComponent name="chris" &frasl;&gt;,
-            document.body
-          );
+React.renderComponent(
+  &lt;InterfaceComponent name="chris" /&gt;,
+  document.body
+);
+</code></pre>
+
+        <script type="syntaxhighlighter" class="brush: js; highlight: [3, 8]"><![CDATA[
         ]]></script>
 
         <h4 id="Frameworks_React_ComponentProperties_Validation">Валідацыя</h4>
@@ -3209,7 +3215,7 @@
             document.body
           );
         ]]></script>
-        <a class="jsbin-embed" href="http://jsbin.com/zenusi/embed?js,output&height=500px">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.2"></script>
+        <a class="jsbin-embed" href="http://jsbin.com/zenusi/embed?js,output&height=500px">JS Bin on jsbin.com</a>
 
         <h3 id="Frameworks_React_PubSub">Publisher-Subscriber pattern</h3>
         <p><a href="https://msdn.microsoft.com/en-us/magazine/hh201955.aspx">Understanding the Publish/Subscribe Pattern for Greater JavaScript Scalability</a></p>
@@ -3237,6 +3243,14 @@
             <li><a href="https://facebook.github.io/flux/docs/overview.html#content">Docs</a></li>
           </ul>
         </div>
+
+        <h3 id="Frameworks_React_Redux">Redux</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://redux.js.org/">Home</a></li>
+          </ul>
+        </div>
+        <p>Redux is a predictable state container for JavaScript apps.</p>
 
         <h2 id="Frameworks_Aurelia">Aurelia</h2>
         <div class="refs">
@@ -3715,12 +3729,12 @@
           <ul>
             <li><a href="http://api.jquery.com/on/">on</a></li>
             <li><a href="http://api.jquery.com/off/">off</a></li>
-            <li><a href="http://api.jquery.com/bind/"><span class="deprecated">bind</span></a></li>
-            <li><a href="http://api.jquery.com/unbind/"><span class="deprecated">unbind</span></a></li>
-            <li><a href="http://api.jquery.com/live/"><span class="deprecated">live</span></a></li>
-            <li><a href="http://api.jquery.com/die/"><span class="deprecated">die</span></a></li>
-            <li><a href="http://api.jquery.com/delegate/"><span class="deprecated">delegate</span></a></li>
-            <li><a href="http://api.jquery.com/undelegate/"><span class="deprecated">undelegate</span></a></li>
+            <li><a href="http://api.jquery.com/bind/" class="deprecated_link">bind</a></li>
+            <li><a href="http://api.jquery.com/unbind/" class="deprecated_link">unbind</a></li>
+            <li><a href="http://api.jquery.com/live/" class="deprecated_link">live</a></li>
+            <li><a href="http://api.jquery.com/die/" class="deprecated_link">die</a></li>
+            <li><a href="http://api.jquery.com/delegate/" class="deprecated_link">delegate</a></li>
+            <li><a href="http://api.jquery.com/undelegate/" class="deprecated_link">undelegate</a></li>
           </ul>
         </div>
         <p>Функцыі <code>bind</code> і <code>unbind</code> прызначаліся раней для усталёўкі і зьняцьця апрацоўшчыкаў падзеяў на і з пэўных элемэнтаў, якія на дадзены момант знаходзяцца ў дакумэнце. Адпаведна, элемэнты, якія былі дададзеныя да дакумэнту пазьней, ня мелі гэтага апрацоўшчыка. Пазьней зьявіўся мэтад, які пазбаўляўся ад гэтага недахопу&nbsp;&ndash; <code>live</code>, і парны для яго <code>die</code>. Ён дадаваў пазначаны апрацоўшчык падзеі ня толькі да існых элемэнтаў, адпавядаючых крытэру, але і да ўсіх тых, якія зьўляліся ў дакумэнце пазьней. Потым зьявіліся <code>delegate</code>/<code>undelegate</code>. Ідэя апошніх была ў тым, што ў выпадку, калі ў дакумэнце існуе шмат ідэнтычных элемэнтаў, і ўсе яны павінны аднолькава рэагаваць на пэўную падзею, усталёўваць на іх усіх адзін і той жа апрацоўшчык нямэтазгодна, асабліва калі такіх элемэнтаў можа быць сотні ці тысячы&nbsp;&ndash; гэта можа вельмі значна запаволіць працу старонкі. Замест гэтага лепш усталяваць адзін апрацоўшчык, на іх бацькоўскіх элемэнт, і каб ён <em>дэлегаваў</em> апрацоўку сваім адпаведным даччыным элемэнтам. Адсюль і назва мэтаду. Трэба заўважыць, што тое ж самае можна было зрабіць і з дапамогай функцыі <code>live</code>, але <code>delegate</code> ня проста меў такую магчымасьць, яго назва і сынтакс накіроўвалі распрацоўшчыкаў у бок лепшай практыкі.</p>
@@ -3993,7 +4007,6 @@
         <h2 id="Technology_AJAX">AJAX</h2>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/24-best-practices-for-ajax-implementations/">24 Best Practices for AJAX Implementations</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/quick-tip-cross-domain-ajax-request-with-yql-and-jquery/">Cross Domain AJAX Request with YQL and jQuery</a></p>
-        <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/promise-based-validation/">Promise-Based Validation</a></p>
         <p>AJAX-падзеі:</p>
         <ul>
           <li>ajax:before – right before ajax call</li>
@@ -4061,6 +4074,7 @@
 
 
   <!-- Javascript at the bottom for fast page loading -->
+  <script src="http://static.jsbin.com/js/embed.min.js?3.35.2"></script>
 
   <!-- Uservoice BEGIN -->
   <script>
@@ -4102,6 +4116,7 @@
 
   <script src="../js/js.js"></script>
 
+  <script src="../js/libs/prism.js"></script>
   <script src="../js/libs/xregexp.js"></script>
   <script src="../js/libs/shCore.js"></script>
   <script src="../js/libs/shAutoloader.js"></script>

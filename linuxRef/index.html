@@ -46,7 +46,7 @@
 <body>
 
   <div id="container">
-    <article id="main">
+    <article id="content">
       <header>
         Даведнік па Linux
       </header>
@@ -837,8 +837,19 @@
         <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
           $ sed -i 's/DEFAULT CURRENT_TIMESTAMP//g' SCRIPT.sql
         ]]></script>
+        <br/>
+        <script type="syntaxhighlighter" class="brush: sql"><![CDATA[
+          select name, round(1.0 * count(distinct order_id) /
+            count(distinct orders.delivered_to), 2) as reorder_rate
+          from order_items
+            join orders on
+              orders.id = order_items.order_id
+          group by 1
+          order by 2 desc;
+        ]]></script>
 
-        
+        <h2 id="DB_MongoDB">MongoDB</h2>
+        <p><a href="http://campus.codeschool.com/courses/the-magical-marvels-of-mongodb">"The magical marvels of MongoDB"&nbsp;&ndash; відэа-курс ад <i>CodeSchool</i></a>.</p>
       </section>
 
       <footer>

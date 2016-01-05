@@ -11,7 +11,7 @@
   index.append(main_index(active_page)).append(content());
   container.prepend(index);
 
-  $("#main").on("click", ":header", function() {
+  $("#content").on("click", ":header", function() {
     var id = $(this).attr("id");
     if (id) {
       $("#proxy_link").attr("href", "#" + id).get(0).click();
@@ -30,7 +30,7 @@ function main_index(active_page) {
   } else if (isSingle(active_page)) {
     // No main index for detached single pages
   } else {
-    main_index.append(private_work_ul());
+    // main_index.append(private_work_ul());
     main_index.append(private_personal_ul());
   }
 
@@ -45,10 +45,10 @@ function main_index(active_page) {
 }
 
 function content() {
-  var content = $("<div id='content'>"),
+  var content = $("<div id='table_of_content'>"),
       content_tree = $("<ul class='tree'></ul>");
 
-  $("#main section").each(function() {
+  $("#content section").each(function() {
     var section = $(this),
         last_level = 1,
         last_li = null,
