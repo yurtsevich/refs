@@ -151,7 +151,7 @@ function private_personal_ul() {
 }
 
 function isPublic(active_page) {
-  return active_page === "html" || active_page === "css" || active_page === "web" || active_page === "js" || active_page === "ruby" || active_page === "rails" || active_page === "java" || active_page === "scala" || active_page === "coding" || active_page === "git" || active_page === "linux" || active_page === "ides" || active_page === "deploy";
+  return active_page === null || active_page === "html" || active_page === "css" || active_page === "web" || active_page === "js" || active_page === "ruby" || active_page === "rails" || active_page === "java" || active_page === "scala" || active_page === "coding" || active_page === "git" || active_page === "linux" || active_page === "ides" || active_page === "deploy";
 }
 
 function isSingle(active_page) {
