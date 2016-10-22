@@ -6,17 +6,23 @@
 
 Web-распрацоўка:
 
- * [HTML](https://github.com/yurtsevich/Manuals/tree/master/htmlRef/)
- * [CSS](https://github.com/yurtsevich/Manuals/tree/master/cssRef/)
- * [JavaScript](https://github.com/yurtsevich/Manuals/tree/master/jsRef/)
- * [Распрацоўка сеціўных праграмаў і сайтаў](https://github.com/yurtsevich/Manuals/tree/master/webRef/)
+* [HTML](https://github.com/yurtsevich/Manuals/tree/master/htmlRef/)
+* [CSS](https://github.com/yurtsevich/Manuals/tree/master/cssRef/)
+* [JavaScript](https://github.com/yurtsevich/Manuals/tree/master/jsRef/)
+* [Распрацоўка сеціўных праграмаў і сайтаў](https://github.com/yurtsevich/Manuals/tree/master/webRef/)
 
-Ruby/Rails:
+Праграмаваньне:
 
- * [Ruby](https://github.com/yurtsevich/Manuals/tree/master/rubyRef/)
- * [Rails](https://github.com/yurtsevich/Manuals/tree/master/railsRef/)
+* [Агульныя прынцыпы](https://github.com/yurtsevich/Manuals/tree/master/codingRef/)
+* [Java](https://github.com/yurtsevich/Manuals/tree/master/javaRef/)
+* [Scala](https://github.com/yurtsevich/Manuals/tree/master/scalaRef/)
+* [Ruby](https://github.com/yurtsevich/Manuals/tree/master/rubyRef/)
+* [Rails](https://github.com/yurtsevich/Manuals/tree/master/railsRef/)
 
-Git:
+Рознае:
 
+* [Linus](https://github.com/yurtsevich/Manuals/tree/master/linuxRef/)
+* [IDEs](https://github.com/yurtsevich/Manuals/tree/master/linuxRef/)
 * [Git](https://github.com/yurtsevich/Manuals/tree/master/gitRef/)
+* [Разгортваньне праграм у працоўным асяродку](https://github.com/yurtsevich/Manuals/tree/master/gitRef/)
 
