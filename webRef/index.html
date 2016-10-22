@@ -3,28 +3,19 @@
 <html lang="be-tarask" class="no-js">
 <head>
   <meta charset="utf-8">
-
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-       Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Распрацоўка сайтаў і сеціўных праграмаў</title>
   <meta name="description" content="Распрацоўка сайтаў і сеціўных праграмаў">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
-  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
-  <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/screen.css?v=1">
+  <link rel="stylesheet" href="../css/prism.css">
   <link rel="stylesheet" href="fonts.css">
-  <link rel="stylesheet" href="../css/shCore.css?v=1">
-  <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
-
 </head>
 
 <body>
@@ -101,12 +92,15 @@
         <p><a href="http://style.codeforamerica.org/">Прыклад унутранага стайл-гайду</a></p>
         <p><a href="http://codepen.io/patterns/">Design Patterns</a></p>
         <p><a href="http://www.smashingmagazine.com/2011/11/10/redesigning-the-country-selector/">Redesigning The Country Selector</a></p>
+        <p><a href="http://html5up.net">html5up.net</a></p>
+        <p><a href="http://openshare.social/">OpenShare.social</a>&nbsp;&ndash; інтэграцыя з сацыяльнымі лінкамі.</p>
 
         <h2 id="DesignUI_Frameworks">Frameworks</h3>
         <p><a href="http://usablica.github.io/front-end-frameworks/compare.html">Front-end frameworks</a></p>
         <p><a href="http://cache.preserve.io/qmy3uwso/index.html">Front-end frameworks</a></p>
         <p><a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome&nbsp;&ndash; The iconic font designed for Bootstrap framework</a></p>
         <p><a href="http://onepcssgrid.mattimling.com/">One% CSS Grid</a></p>
+        <p><a href="https://github.com/KevinPy/Iceberg/">Iceberg</a></p>
 
         <h3 id="DesignUI_Frameworks_SemanticUI">Semantic UI</h3>
         <div class="refs">
@@ -121,6 +115,9 @@
             <li><a href="http://getbootstrap.com/">Bootstrap</a></li>
           </ul>
         </div>
+        <p><a href="https://ilovecoding.org/courses/learn-master-bootstrap-in-a-week">Learn &amp; Master Bootstrap in a Week</a></p>
+        <p><a href="https://wrapbootstrap.com/">Bootstrap themes and templates</a> (<a href="http://akveo.com/blur-admin/#/dashboard">AKVEO BlurAdmin Dashboard</a>)</p>
+        <p><a href="https://bootswatch.com/">Free themes for Bootstrap</a></p>
 
         <h3 id="DesignUI_Frameworks_Foundation">Foundation</h3>
         <div class="refs">
@@ -180,6 +177,7 @@
 
         <h2 id="DesignUI_PricingTables">Pricing tables</h2>
         <p><a href="http://tympanus.net/Development/PricingTablesInspiration/?mc_cid=41d8a26eaf&mc_eid=5b4e3f8de1">Inspiration for Pricing Tables</a></p>
+        <p><a href="http://www.pricingpages.xyz/">pricingpages.xyz</a></p>
 
         <h2 id="DesignUI_CompareTables">Comparison tables</h2>
         <p><a href="http://www.compareninja.com/index.php">Create beautiful HTML &amp; CSS comparison tables with Compare Ninja.</a></p>
@@ -255,6 +253,7 @@
         <h1 id="Typography">Тыпаграфіка</h1>
         <div class="refs">
           <ul>
+            <li><a href="http://nicewebtype.com/">NiceWebType.com</a></li>
             <li><a href="http://www.fontreach.com/">Most used</a></li>
             <li><a href="http://www.squidspot.com/Periodic_Table_of_Typefaces/Wallpapers/PeriodicTable_1920.jpg">Periodic Table</a></li>
             <li><a href="http://mrdouglaswood.files.wordpress.com/2010/04/soyouneedatypeface.jpg">Chart</a></li>
@@ -710,22 +709,23 @@
           </ul>
         </div>
         <p>Асобнай групай стаяць каталёгі шрыфтоў, якія не даюць магчымасьці спампаваць сам шрыфт, але толькі спаслацца адмысловай <a href="../htmlRef/index.html"><i>HTML</i></a>-інструкцыяй да гэтага шрыфту, які фізычна захоўваецца на магутнасьцях правайдэра. Адным з такіх правайдэраў зьяўляецца <i>Google</i>, праз яго сэрвіс <i>WebFonts</i>. Прыклад выкарыстаньня:</p>
-        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-        <html>
-        <head>
-          <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
-          <style>
-            body {
-              font-family: 'Tangerine', serif;
-              font-size: 48px;
-            }
-          </style>
-        </head>
-        <body>
-          <h1>Making the Web Beautiful!</h1>
-        </body>
-        </html>
-        ]]></script>
+
+<pre><code class="language-html">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine"&gt;
+  &lt;style&gt;
+    body {
+      font-family: 'Tangerine', serif;
+      font-size: 48px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Making the Web Beautiful!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
         <h4 id="Typography_NotSystemFonts_CatalogsStores_AdobeEdgeWebfonts">Adobe Edge Web Fonts</h4>
         <div class="refs">
@@ -734,22 +734,23 @@
           </ul>
         </div>
         <p>Яшчэ адзін сэрвіс падобны да <i>WebFonts</i> ад <i>Google</i>&nbsp;&ndash; гэта <i>Adobe Edge Web Fonts</i>. Прыклад выкарыстаньня:</p>
-        <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-        <html>
-        <head>
-          <script src="http://use.edgefonts.net/bree-serif.js">&lt;/script>
-          <style>
-            body {
-              font-family: bree-serif, serif;
-              font-size: 48px;
-            }
-          </style>
-        </head>
-        <body>
-          <h1>Making the Web Beautiful!</h1>
-        </body>
-        </html>
-        ]]></script>
+
+<pre><code class="language-html">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="http://use.edgefonts.net/bree-serif.js"&gt;&lt;/script&gt;
+  &lt;style&gt;
+    body {
+      font-family: bree-serif, serif;
+      font-size: 48px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Making the Web Beautiful!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
         <h3 id="Typography_NotSystemFonts_Selected">Абраныя несыстэмныя шрыфты</h3>
         <p><a href="http://www.behance.net/gallery/Shket-free-font/6548735">Shket multilingual free font</a></p>
@@ -1009,6 +1010,7 @@
         <h1 id="Images">Выявы</h1>
         <p><a href="http://www.ajaxload.info/">Генэратар анімацыйных малюнкаў AJAX-загрузкі</a></p>
         <p><a href="http://www.onextrapixel.com/2010/10/06/pixel-art-create-a-better-favicon-for-your-website/">Pixel Art: Create a Better Favicon For Your Website</a></p>
+        <p><a href="https://www.sitepoint.com/quick-tip-add-favicons-quickly-and-easily-to-your-html/?utm_medium=email&utm_campaign=SitePoint%20Premium%20Newsletter%20%20June%2023%202016&utm_content=SitePoint%20Premium%20Newsletter%20%20June%2023%202016+CID_a5c6682f06f81fee760b66fbff8b7a42&utm_source=CampaignMonitor%20SitePoint&utm_term=This%20week%20we%20look%20at%20a%20quick%20and%20easy%20way%20to%20add%20favicons%20to%20your%20site">Quick Tip: Add Favicons Quickly and Easily to Your HTML</a></p>
 
         <h2 id="Images_Compression">Сьцісканьне</h2>
         <div class="refs">
@@ -1050,11 +1052,26 @@
             <li><a href="http://clippingmagic.com/">ClippingMagic.com</a></li>
           </ul>
         </div>
+
+        <h2 id="Images_LoadingSpinner">Loading Spinner</h2>
+        <p><a href="http://pathgather.github.io/please-wait/">http://pathgather.github.io/please-wait/</a></p>
+        <p><a href="https://boguz.github.io/Spinners">https://boguz.github.io/Spinners</a></p>
+
+        <h2 id="Images_Effects">Эфэкты</h2>
+        <p data-height="400" data-theme-id="0" data-slug-hash="caFxz" data-default-tab="result" data-user="yurtsevich" class='codepen'>See the Pen <a href='http://codepen.io/vcurd/pen/caFxz/'>caFxz</a> on <a href='http://codepen.io'>CodePen</a>.</p>
       </section>
 
       <section>
         <h1 id="Menu">Мэню</h1>
+        <p><a href="http://tympanus.net/Development/HeaderEffects/">Header Effects</a></p>
+        <p><a href="http://tympanus.net/Tutorials/GoogleNexusWebsiteMenu/">Google Nexus Website Menu</a></p>
+        <p><a href="http://tympanus.net/Development/MultiLevelPushMenu/index.html">Multi-Level Push Menu</a></p>
+        <p><a href="http://tympanus.net/Development/SidebarTransitions/">Sidebar Menu Transitions</a></p>
+        <p><a href="http://tympanus.net/Tutorials/AnimatedBorderMenus/index.html">Animated Border Menus</a></p>
+        <p><a href="http://mmenu.frebsite.nl/">mMenu&nbsp;&ndash; mobile multilevel menu</a></p>
+        
         <p><a href="http://css3menu.com/">CSS3 menu generator</a></p>
+        <p><a href="http://tympanus.net/Development/OffCanvasMenuEffects/">Off-Canvas Menu Effects</a></p>
 
         <h2 id="Menu_Horizontal">Гарызантальныя</h2>
 
@@ -1105,41 +1122,63 @@
         <p><a href="http://www.formee.org/">Fresh baked forms for your websites!</a></p>
         <p><a href="http://sprawsm.com/uni-form/">uni-form</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-submit-a-form-with-control-enter/">How to Submit a Form with Control + Enter</a></p>
+        <p><a href="http://tympanus.net/Development/AnimatedCheckboxes/">Animated Checkboxes and Radio Buttons with SVG</a></p>
         <p><a href="http://formoid.com/">FORMOID - EASIEST FORM GENERATOR</a></p>
         <p>Генэратар коду <i>вэб-формаў</i>: <a href="http://www.phpform.org/">http://www.phpform.org</a></p>
+        <p><a href="https://bitsofco.de/form-validation-techniques/">Form Validation Techniques</a></p>
 
-        <h2 id="Forms_Buttons">Кнопкі</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/build-awesome-practical-css3-buttons/">NetTuts+</a></li>
-          </ul>
-        </div>
-        <p><a href="http://css-tricks.com/css3-button-maker/">CSS3 Button Maker</a></p>
+        <h1 id="Forms_CreditCard">Credit Card Checkout Form</h1>
+        <p data-height="800" data-theme-id="0" data-slug-hash="OMdPpW" data-default-tab="result" data-user="yurtsevich" class='codepen'>See the Pen <a href='http://codepen.io/supah/pen/OMdPpW'>OMdPpW</a> on <a href='http://codepen.io'>CodePen</a>.</p>
       </section>
 
       <section>
         <h1 id="SignupSignin">Рэгістрацыя і лагін</h1>
         <p><a href="http://uxdesign.smashingmagazine.com/2011/05/05/innovative-techniques-to-simplify-signups-and-logins/">Тэхнікі і рэкамэндацыі для спрашчэньня працэдур рэгістрацыі і лагіна.</a></p>
         <p><a href="http://uxdesign.smashingmagazine.com/2011/08/22/new-approaches-to-designing-login-forms/">New Approaches To Designing Log-In Forms</a></p>
+
+        <h2 id="SignupSignin_Auth0">Auth0</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://auth0.com/">Home</a></li>
+            <li><a href="https://auth0.com/docs">Docs</a></li>
+            <li><a href="https://manage.auth0.com/#/">Dashboard</a></li>
+          </ul>
+        </div>
+        <p>Single Sign On provider for web and mobile apps</p>
+        <p><a href="https://auth0-1.wistia.com/medias/27i80efy8c">Intro video</a></p>
       </section>
 
       <section>
-        <h1 id="TipsTricks">Tips &amp; Tricks</h1>
-        <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/learn-how-to-create-a-retro-animated-flip-down-clock/">Learn how to Create a Retro Animated Flip-Down Clock</a></p>
-        <p><a href="http://www.webdigi.co.uk/blog/2009/how-to-check-if-an-email-address-exists-without-sending-an-email/">How to check if an email address exists without sending an email?</a></p>
+        <h1 id="Tables">Табліцы</h1>
 
-        <h2 id="TipsTricks_Tables">Табліцы</h2>
-
-        <h3 id="TipsTricks_Tables_FixedHeader">Нерухомы загаловак</h3>
+        <h2 id="Tables_FixedHeader">Нерухомы загаловак</h2>
         <p><a href="http://salzerdesign.com/test/fixedTable.html">Pure CSS Fixed Header Variable Width Table</a></p>
         <p><a href="http://www.tablefixedheader.com/documentation/">Table fixed header</a></p>
         <p><a href="http://www.cssbakery.com/2010/12/css-scrolling-tables-with-fixed.html">CSS Scrolling Tables with Fixed Headings</a></p>
 
-        <h2 id="TipsTricks_Tabs">Табы</h2>
+      </section>
+
+      <section>
+        <h1 id="Tabs">Табы</h1>
         <p><a href="http://css-tricks.com/svg-tabs-using-svg-shape-template/">SVG Tabs (Using an SVG Shape as Template)</a></p>
 
-        <h2 id="TipsTricks_Menus">Мэню</h2>
-        <p><a href="http://tympanus.net/Development/OffCanvasMenuEffects/">Off-Canvas Menu Effects</a></p>
+      </section>
+
+      <section>
+        <h1 id="Buttons">Кнопкі</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/build-awesome-practical-css3-buttons/">NetTuts+</a></li>
+          </ul>
+        </div>
+        <p><a href="http://css-tricks.com/css3-button-maker/">CSS3 Button Maker</a></p>
+
+        <h2 id="Buttons_Hamburgers">Hamburgers</h2>
+        <p data-height="400" data-theme-id="0" data-slug-hash="VaQEME" data-default-tab="result" data-user="yurtsevich" class='codepen'>See the Pen <a href='http://codepen.io/yurtsevich/pen/VaQEME/'>VaQEME</a> by Dzmitry Yurtsevich (<a href='http://codepen.io/yurtsevich'>@yurtsevich</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+
+        <h2 id="Buttons_DCMorphButtons">DC MORPH BTNS</h2>
+        <p data-height="400" data-theme-id="0" data-slug-hash="LEryJK" data-default-tab="result" data-user="yurtsevich" class='codepen'>See the Pen <a href='http://codepen.io/digitalcraft/pen/LEryJK'>LEryJK</a> on <a href='http://codepen.io'>CodePen</a>.</p>
+
       </section>
 
       <section>
@@ -1166,6 +1205,7 @@
         <p><a href="https://developer.mozilla.org/en/Tips_for_Authoring_Fast-loading_HTML_Pages">Tips for authoring fast-loading HTML pages</a> ад <b>developer.mozilla.org</b></p>
         <p><a href="http://css-tricks.com/video-screencasts/114-lets-do-simple-stuff-to-make-our-websites-faster/">Let’s Do Simple Stuff to Make Our Websites Faster ад <b>css-tricks.com</b></p>
         <p><a href="http://www.bookofspeed.com/index.html">BOOK OF SPEED</a></p>
+        <p><a href="https://github.com/derekshull/nines/">A web performance tool aimed to help developers find critical performance issues.</a></p>
         <p><a href="http://www.incapsula.com/">Incapsula.com</a>&nbsp;&ndash; Maximum Security &amp; Performance For Any Website.</p>
         <br />
         <p><a href="http://www.javascriptkit.com/howto/robots.shtml">Introduction to robots.txt</a></p>
@@ -1189,9 +1229,10 @@
           </ul>
         </div>
         <p>Дырэктыва <code>DirectoryIndex</code> прызначана для таго, каб пазначыць старонку для адлюстраваньня, калі ў адрасным радку не пазначана аніякая (толькі дамэн і магчыма дырэкторыі):</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          DirectoryIndex welcome.html welcome.php
-        ]]></script>
+
+<pre><code class="language-bash">
+DirectoryIndex welcome.html welcome.php
+</code></pre>
 
         <h3 id="Optimization_Apache_ErrorPages">Старонкі памылак</h3>
         <div class="refs">
@@ -1200,9 +1241,11 @@
           </ul>
         </div>
         <p>Пры дапамозе дырэктывы <code>ErrorDocument</code> у выпадку памылкі можна перанакіраваць карыстальніка да пэўнай старонкі, якая гэтую памылку апісвае:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          ErrorDocument 404 error.html
-        ]]></script>
+
+<pre><code class="language-bash">
+ErrorDocument 404 error.html
+</code></pre>
+
         <p>Лік пасьля дырэктывы пазначае код памылкі <i>HTTP</i>, а пасьля&nbsp;&ndash; сама старонка.</p>
 
         <h3 id="Optimization_Apache_TimezoneCharsetLanguage">Часавая зона, кадоўка і мова</h3>
@@ -1214,11 +1257,12 @@
           </ul>
         </div>
         <p>Пры неабходнасьці ўсталяваць змоўчны часавы пас, кадоўку ці мову для <i>HTTP</i>-загалоўкаў можна скарыстацца наступнымі дырэктывамі:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          SetEnv TZ Europe/London
-          AddDefaultCharset UTF-8
-          DefaultLanguage en-GB
-        ]]></script>
+
+<pre><code class="language-bash">
+SetEnv TZ Europe/London
+AddDefaultCharset UTF-8
+DefaultLanguage en-GB
+</code></pre>
 
         <h3 id="Optimization_Apache_ControlAccess">Кантроль доступу</h3>
         <div class="refs">
@@ -1227,57 +1271,74 @@
           </ul>
         </div>
         <p>Наступным чынам можна забараніць ці дазволіць праглядаць зьмест дырэкторыяў:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          # забарона прагляду зьместу дырэкторыяў
-          Options All -Indexes
-          # дазвол прагляду зьместу дырэкторыяў
-          Options All +Indexes
-        ]]></script>
+
+<pre><code class="language-bash">
+# забарона прагляду зьместу дырэкторыяў
+Options All -Indexes
+# дазвол прагляду зьместу дырэкторыяў
+Options All +Indexes
+</code></pre>
+
         <p>Забараніць доступ да файлаў пэўнага дырэкторыю, можна зьмясьціўшы наступную дырэктыву ў <code>.htaccess</code>-файле у гэтай дырэкторыі:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          Deny from all
-        ]]></script>
+
+<pre><code class="language-bash">
+Deny from all
+</code></pre>
+
         <p>Можна таксама забараніць усім, акрамя пэўнага/-ых <i>IP</i>:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          Order Deny,Allow
-          Deny from all
-          Allow from XXX.XXX.XXX.XXX
-        ]]></script>
+
+<pre><code class="language-bash">
+Order Deny,Allow
+Deny from all
+Allow from XXX.XXX.XXX.XXX
+</code></pre>
+
         <p>...ці дамэну:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          Order Deny,Allow
-          Deny from all
-          Allow from apache.org
-        ]]></script>
+
+<pre><code class="language-bash">
+Order Deny,Allow
+Deny from all
+Allow from apache.org
+</code></pre>
+
         <p>...альбо дазволіць усім, акрамя пэўнага/-ых <i>IP</i>:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          Order Allow,Deny
-          Allow from all
-          Deny from 145.186.14.122
-          Deny from 124.15
-        ]]></script>
+
+<pre><code class="language-bash">
+Order Allow,Deny
+Allow from all
+Deny from 145.186.14.122
+Deny from 124.15
+</code></pre>
 
         <h3 id="Optimization_Apache_no-www">no-www</h3>
         <p>Па змоўчаньні сайт можа быць даступны і як <code>www.domain.com</code>, і як <code>domain.com</code>. Але, улічваючы што <i>Google</i> не ўхваляе гэтага па прычыне дубляваньня зьместу, неабходна прадухіляць доступ альбо да <code>www.domain.com</code>, альбо да <code>domain.com</code>. Робіцца гэта праз перанакіраваньне <a href="http://no-www.org/faq.php?q=class_b">звычайна</a> з <code>www.domain.com</code> да <code>domain.com</code>:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-          RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-        ]]></script>
+
+<pre><code class="language-bash">
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+</code></pre>
+
         <p>Іншы варыянт:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-          RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
-        ]]></script>
+
+<pre><code class="language-bash">
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+</code></pre>
+
         <p>Альбо, калі патрэбнае зваротнае перанакіраваньне:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          RewriteCond %{HTTP_HOST} !^www\. [NC]
-          RewriteRule ^(.*)$ http://www.%{HTTP_HOST}$1 [R=301,L]
-        ]]></script>
+
+<pre><code class="language-bash">
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}$1 [R=301,L]
+</code></pre>
+
         <p>Іншы варыянт:</p>
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
-          RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-        ]]></script>
+
+<pre><code class="language-bash">
+RewriteCond %{HTTP_HOST} !^www\..+$ [NC]
+RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</code></pre>
+
       </section>
 
       <section>
@@ -1366,7 +1427,7 @@
 
       <footer>
         <div id="copyright">
-          <p>Copyright &copy; 2010-2013 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>Copyright &copy; 2010-2016 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
           <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
               <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
@@ -1376,82 +1437,78 @@
           <p><cite>Тэхнічны даведнік па распрацоўцы сайтаў і сеціўных праграмаў</cite> публікуецца пад ліцэнзіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://yurtsevich.info/refs/webRef/">крыніцы</a></strong> матэрыялу.</p>
         </div>
       </footer>
+
+      <!-- Disqus BEGIN -->
+        <div id="disqus_thread"></div>
+        <script>
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+
+          s.src = '//web-be.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      <!-- Disqus END -->
+
     </article>
   </div> <!--! end of #container -->
 
+  <div id="comments_link" class="uv-icon"><a href="#disqus_thread" title="Перайсьці да блёку з камэнтамі"></a></div>
 
-  <!-- Javascript at the bottom for fast page loading -->
-
-  <!-- GetSatisfaction feedback button BEGIN -->
-  <script type="text/javascript" charset="utf-8">
-    var is_ssl = ("https:" == document.location.protocol);
-    var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
-    document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-
-  <script type="text/javascript" charset="utf-8">
-    var feedback_widget_options = {};
-    feedback_widget_options.display = "overlay";
-    feedback_widget_options.company = "yurtsevich";
-    feedback_widget_options.placement = "right";
-    feedback_widget_options.color = "#222";
-    feedback_widget_options.style = "problem";
-    var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
-  </script>
-  <!-- GetSatisfaction feedback button END -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+                                      Javascript at the bottom for fast page loading 
+   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
-  <script src="../js/index.js"></script>
+  <!-- 3rd party library to display tree-like table of content -->
   <script src="../js/libs/jquery.tree.js"></script>
-
+  <!-- Own script to build Refs index and article's table of content -->
+  <script src="../js/index.js"></script>
+  <!-- 3rd party library to fire scrolling events -->
   <script src="../js/libs/waypoints.min.js"></script>
+  <!-- Own script to highlight currently viewing section in table of content with help of waypoints-library -->
   <script src="../js/ref.js"></script>
+  <!-- 3rd party library to highlight code syntax -->
+  <script src="../js/libs/prism.js"></script>
 
-  <script src="../js/libs/xregexp.js"></script>
-  <script src="../js/libs/shCore.js"></script>
-  <script src="../js/libs/shAutoloader.js"></script>
-  <script type="text/javascript">
-    function path()
-    {
-      var args = arguments,
-          result = []
-          ;
-      for(var i = 0; i < args.length; i++)
-          result.push(args[i].replace('@', '../js/libs/'));
-      return result
-    };
-    SyntaxHighlighter.autoloader.apply(null, path(
-      'applescript            @shBrushAppleScript.js',
-      'actionscript3 as3      @shBrushAS3.js',
-      'bash shell             @shBrushBash.js',
-      'coldfusion cf          @shBrushColdFusion.js',
-      'cpp c                  @shBrushCpp.js',
-      'c# c-sharp csharp      @shBrushCSharp.js',
-      'css                    @shBrushCss.js',
-      'delphi pascal          @shBrushDelphi.js',
-      'diff patch pas         @shBrushDiff.js',
-      'erl erlang             @shBrushErlang.js',
-      'groovy                 @shBrushGroovy.js',
-      'java                   @shBrushJava.js',
-      'jfx javafx             @shBrushJavaFX.js',
-      'js jscript javascript  @shBrushJScript.js',
-      'perl pl                @shBrushPerl.js',
-      'php                    @shBrushPhp.js',
-      'text plain             @shBrushPlain.js',
-      'py python              @shBrushPython.js',
-      'ruby rails ror rb      @shBrushRuby.js',
-      'sass scss              @shBrushSass.js',
-      'scala                  @shBrushScala.js',
-      'sql                    @shBrushSql.js',
-      'vb vbnet               @shBrushVb.js',
-      'xml xhtml xslt html    @shBrushXml.js'
-    ));
-    SyntaxHighlighter.defaults['toolbar'] = false;
-    SyntaxHighlighter.all();
+  <!-- To display embedded JSBin examples -->
+  <script async src="http://static.jsbin.com/js/embed.min.js?3.35.2"></script>
+  <!-- To display embedded CodePen examples -->
+  <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+
+  <!-- Uservoice BEGIN -->
+  <script>
+    // Include the UserVoice JavaScript SDK (only needed once on a page)
+    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/Of84cKdV6fJsdTM8rZd0g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+    //
+    // UserVoice Javascript SDK developer documentation:
+    // https://www.uservoice.com/o/javascript-sdk
+    //
+
+    // Set colors
+    UserVoice.push(['set', {
+      accent_color: '#448dd6',
+      trigger_color: 'white',
+      trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+    }]);
+
+    // Add default trigger to the bottom-right corner of the window:
+    UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+    // Or, use your own custom trigger:
+    //UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
+
+    // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+    UserVoice.push(['autoprompt', {}]);
   </script>
+  <!-- Uservoice END -->
 
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
        change the UA-XXXXX-X to be your site's ID -->

@@ -145,6 +145,7 @@ function private_personal_ul() {
 
   ul.append(new_li().append($("<a href='../chinaRef/index.html' title='Пакупкі ў Кітаі'>China</a>")));
   ul.append(new_li().append($("<a href='../ikeaRef/index.html' title='Товары в Ikea'>Ikea</a>")));
+  ul.append(new_li().append($("<a href='../plantsRef/index.html' title='Plants'>Plants</a>")));
 
   return ul;
 }

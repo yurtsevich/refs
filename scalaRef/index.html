@@ -1,44 +1,20 @@
 <!doctype html>
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="be-tarask" class="no-js"> <!--<![endif]-->
+<html lang="be-tarask" class="no-js">
 <head>
   <meta charset="utf-8">
-
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-       Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Даведнік па Scala</title>
   <meta name="description" content="Даведнік па Scala">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
-  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
-  <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/screen.css?v=2">
-  <link rel="stylesheet" href="../css/js.css?v=1">
-  <link rel="stylesheet" href="../css/shCore.css?v=1">
-  <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
-
-  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
-  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
-
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="../js/libs/modernizr-1.6.min.js"></script>
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="../css/prism.css">
 </head>
 
 <body>
@@ -50,47 +26,112 @@
       </header>
 
       <section>
-        <p><a href="http://www.scala-lang.org/documentation/">Scala documentation</a></p>
-        <p><a href="http://www.scalacourses.com/">Scala courses</a></p>
-        <p><a href="https://github.com/spring-projects/spring-scala#readme">Spring Scala</a></p>
-        <p><a href="http://spring.io/blog/2011/08/01/spring-security-configuration-with-scala">Spring Security Configuration with Scala (састарэла?)</a></p>
-        <p><a href="http://pivotallabs.com/spring-4-mvc-scala/">Spring 4 MVC with Scala</a></p>
-        <p><a href="https://github.com/spring-projects/spring-integration-dsl-scala">Spring Integration Scala DSL</a></p>
+        <h1 id="Links">Карысныя спасылкі</h1>
 
+        <h2 id="Links_Home">Хатняя старонка</h2>
+        <p>Хатняя старонка: <a href="http://scala-lang.org">scala-lang.org</a></p>
+
+        <h2 id="Links_Docs">Дакумэнтацыя</h2>
+        <p>Афіцыйная дакумэнтацыя: <a href="http://scala-lang.org/documentation/">scala-lang.org/documentation/</a></p>
+        <p>Афіцыйны дапаможнік: <a href="http://docs.scala-lang.org/tutorials/tour/tour-of-scala.html">Tour of Scala</a></p>
+        <p>Scala-школа ад <b>Twitter</b>: <a href="http://twitter.github.io/scala_school/ru/index.html">twitter.github.io/scala_school/ru/index.html</a></p>
+
+        <h2 id="Links_Video">Відэа</h2>
+        <p>«<i>Scala for the Intrigued</i>» ад <i>Dr. Venkat Subramaniam</i>: <a href="https://www.youtube.com/watch?v=grvvKURwGNg">https://www.youtube.com/watch?v=grvvKURwGNg</a></p>
+
+        <h2 id="Links_Reactive">Reactive in Scala</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.lightbend.com/resources">Resources</a></li>
+          </ul>
+        </div>
+        <p><a href="https://www.lightbend.com">Lightbend</a>&nbsp;&ndash; кампанія, якая стаіць за распрацоўкай начыньня для рэактыўнага праграмаваньня на <i>Java</i>/<i>Scala</i>.</p>
+
+        <h3 id="Links_Reactive_Lightbend_Akka">Akka</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://akka.io/docs/">Docs</a></li>
+          </ul>
+        </div>
+        <p>Набор начыньня для рэактыўнага праграмаваньня на <i>Java</i>/<i>Scala</i>: <a href="http://akka.io/">akka.io</a></p>
+
+        <h3 id="Links_Reactive_Lightbend_Play">Play</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.playframework.com/documentation/">Docs</a></li>
+          </ul>
+        </div>
+        <p>Каркас для распрацоўцы сеціўных праграмаў на <i>Java</i>/<i>Scala</i>: <a href="https://www.playframework.com/">playframework.com</a></p>
+
+        <h3 id="Links_Reactive_Lightbend_Lagom">Lagom</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.lagomframework.com/documentation/">Docs</a></li>
+          </ul>
+        </div>
+        <p>Каркас для распрацоўцы мікрасэрвісаў на <i>Java</i>/<i>Scala</i>: <a href="https://www.lightbend.com/lagom">lightbend.com/lagom</a></p>
+
+        <h3 id="Links_Reactive_Lightbend_ConductR">ConductR</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.lightbend.com/product/conductr/developer">Getting Started</a></li>
+            <li><a href="https://conductr.lightbend.com/docs/">Docs</a></li>
+          </ul>
+        </div>
+        <p><a href="https://conductr.lightbend.com/">ConductR</a> is a solution for managing Lightbend Reactive Platform applications across a cluster of machines.</p>
+
+        <h3 id="Links_Reactive_Lightbend_Monitoring">Monitoring</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://monitoring.lightbend.com/docs/latest/home.html">Docs</a></li>
+          </ul>
+        </div>
+        <p><a href="https://www.lightbend.com/products/monitoring">Lightbend Monitoring</a> is a suite of insight tools for monitoring Lightbend Reactive Platform applications. </p>
+
+        <h2 id="Links_Snippets">Code Snippets</h2>
+        <p><a href="http://www.scala-js-fiddle.com/">scala-js-fiddle</a></p>
+        <p><a href="http://www.scalakata.com/">Scala Kata</a></p>
       </section>
 
       <section>
-        <h1 id="Typesafe">Typesafe</h1>
+
+        <h1 id="Activator">Activator і sbt</h1>
         <div class="refs">
           <ul>
-            <li><a href="http://www.typesafe.com/">Home</a></li>
-            <li><a href="http://go.typesafe.com/">Go</a></li>
-            <li><a href="http://www.typesafe.com/resources">Resources</a></li>
+            <li><a href="https://www.lightbend.com/community/core-tools/activator-and-sbt">Home</a></li>
           </ul>
         </div>
 
-        <h2 id="Typesafe_Activator">Activator</h2>
+        <h2 id="Activator_Activator">Activator</h2>
         <div class="refs">
           <ul>
-            <li><a href="http://www.typesafe.com/activator/docs">Docs</a></li>
+            <li><a href="https://www.lightbend.com/activator/download">Home</a></li>
+            <li><a href="http://www.lightbend.com/activator/docs">Docs</a></li>
           </ul>
         </div>
-        <p><a href="https://www.typesafe.com/community/core-tools/activator-and-sbt">Activator and SBT</a></p>
+        <p><a href="https://www.lightbend.com/activator/download">Activator</a> is the Lightbend Reactive Platform's build and tutorial tool.</p>
 
-        <h2 id="Typesafe_Akka">Akka</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://akka.io/">Home</a></li>
-          </ul>
-        </div>
-
-        <h2 id="Typesafe_SBT">SBT</h2>
+        <h2 id="Activator_sbt">sbt</h2>
         <div class="refs">
           <ul>
             <li><a href="http://www.scala-sbt.org/">Home</a></li>
             <li><a href="http://www.scala-sbt.org/documentation.html">Docs</a></li>
+            <li><a href="http://www.scala-sbt.org/download.html">Install</a></li>
           </ul>
         </div>
+
+        <p>Усталяваць <i>sbt</i> можна наступным чынам:</p>
+<pre><code class="language-bash">
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+sudo apt-get update
+sudo apt-get install sbt
+</code></pre>
+
+        <p>а запусьціць кансоль:</p>
+<pre><code class="language-bash">
+sbt console
+</code></pre>
       </section>
 
       <section>
@@ -98,6 +139,15 @@
         <p><a href="http://jstricks.com/scala-frameworks-web-developing/">Scala Frameworks for Web Developing</a></p>
 
         <h2 id="Frameworks_Play">Play</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.playframework.com/">Home</a></li>
+            <li><a href="https://www.playframework.com/documentation/">Docs</a></li>
+          </ul>
+        </div>
+        <p><a href="http://stackoverflow.com/questions/34033170/integrating-keycloak-into-play2-project">Integrating Keycloak into Play2 project</a></p>
+        <p><a href="http://www.lightbend.com/activator/template/play-oauth2-scala">Play Framework with OAuth2 API sample</a></p>
+        <p><a href="https://deadbolt-java.readme.io/">The Deadbolt for Java Developer Hub</a></p>
 
         <h2 id="Frameworks_Lift">Lift</h1>
         <div class="refs">
@@ -124,8 +174,6 @@
         <p><a href="http://sysgears.com/articles/building-rest-service-with-scala/">Building REST Service with Scala</a></p>
       </section>
 
-
-
       <footer>
        <div id="copyright">
           <p>Copyright &copy; 2015 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
@@ -142,10 +190,11 @@
       <!-- Disqus BEGIN -->
       <div id="disqus_thread"></div>
       <script type="text/javascript">
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//js-be.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = '//scala-be.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
         })();
       </script>
       <noscript>Калі ласка, актывізуйце JavaScript каб бачыць <a href="http://disqus.com/?ref_noscript">камэнтары праз сыстэму Disqus.</a></noscript>
@@ -155,12 +204,36 @@
 
   </div> <!--! end of #container -->
 
-  <!-- Javascript at the bottom for fast page loading -->
+  <div id="comments_link" class="uv-icon"><a href="#disqus_thread" title="Перайсьці да блёку з камэнтамі"></a></div>
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+                                      Javascript at the bottom for fast page loading 
+   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+
+  <!-- 3rd party library to display tree-like table of content -->
+  <script src="../js/libs/jquery.tree.js"></script>
+  <!-- Own script to build Refs index and article's table of content -->
+  <script src="../js/index.js"></script>
+  <!-- 3rd party library to fire scrolling events -->
+  <script src="../js/libs/waypoints.min.js"></script>
+  <!-- Own script to highlight currently viewing section in table of content with help of waypoints-library -->
+  <script src="../js/ref.js"></script>
+  <!-- 3rd party library to highlight code syntax -->
+  <script src="../js/libs/prism.js"></script>
+
+  <!-- To display embedded JSBin examples -->
+  <script async src="http://static.jsbin.com/js/embed.min.js?3.35.2"></script>
+  <!-- To display embedded CodePen examples -->
+  <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
 
   <!-- Uservoice BEGIN -->
   <script>
     // Include the UserVoice JavaScript SDK (only needed once on a page)
-    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/Of84cKdV6fJsdTM8rZd0g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='http://widget.uservoice.com/Of84cKdV6fJsdTM8rZd0g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
 
     //
     // UserVoice Javascript SDK developer documentation:
@@ -185,65 +258,6 @@
   </script>
   <!-- Uservoice END -->
 
-  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
-
-  <script src="../js/index.js"></script>
-  <script src="../js/libs/jquery.tree.js"></script>
-
-  <script src="../js/libs/waypoints.min.js"></script>
-  <script src="../js/ref.js"></script>
-
-  <script src="../js/js.js"></script>
-
-  <script src="../js/libs/xregexp.js"></script>
-  <script src="../js/libs/shCore.js"></script>
-  <script src="../js/libs/shAutoloader.js"></script>
-  <script type="text/javascript">
-    function path()
-    {
-      var args = arguments,
-          result = []
-          ;
-
-      for(var i = 0; i < args.length; i++)
-          result.push(args[i].replace('@', '../js/libs/'));
-
-      return result
-    };
-
-    SyntaxHighlighter.autoloader.apply(null, path(
-      'applescript            @shBrushAppleScript.js',
-      'actionscript3 as3      @shBrushAS3.js',
-      'bash shell             @shBrushBash.js',
-      'coldfusion cf          @shBrushColdFusion.js',
-      'cpp c                  @shBrushCpp.js',
-      'c# c-sharp csharp      @shBrushCSharp.js',
-      'css                    @shBrushCss.js',
-      'delphi pascal          @shBrushDelphi.js',
-      'diff patch pas         @shBrushDiff.js',
-      'erl erlang             @shBrushErlang.js',
-      'groovy                 @shBrushGroovy.js',
-      'java                   @shBrushJava.js',
-      'jfx javafx             @shBrushJavaFX.js',
-      'js jscript javascript  @shBrushJScript.js',
-      'perl pl                @shBrushPerl.js',
-      'php                    @shBrushPhp.js',
-      'text plain             @shBrushPlain.js',
-      'py python              @shBrushPython.js',
-      'ruby rails ror rb      @shBrushRuby.js',
-      'sass scss              @shBrushSass.js',
-      'scala                  @shBrushScala.js',
-      'sql                    @shBrushSql.js',
-      'vb vbnet               @shBrushVb.js',
-      'xml xhtml xslt html    @shBrushXml.js'
-    ));
-
-    SyntaxHighlighter.defaults['toolbar'] = false;
-    SyntaxHighlighter.all();
-  </script>
-
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
        change the UA-XXXXX-X to be your site's ID -->
   <script>
@@ -257,20 +271,8 @@
    })(document, 'script');
   </script>
 
+  <!-- GetClicky analytics -->
   <script src="http://static.getclicky.com/js" type="text/javascript"></script>
   <script type="text/javascript">clicky.init(17136);</script>
-
-  <!-- DISQUS code -->
-<script type="text/javascript">
-/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-var disqus_shortname = 'html-be'; // required: replace example with your forum shortname
-
-/* * * DON'T EDIT BELOW THIS LINE * * */
-(function() {
-var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-})();
-</script>
 </body>
 </html>

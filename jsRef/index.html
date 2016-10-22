@@ -29,6 +29,8 @@
       <p><a href="http://habrahabr.ru/post/252323/">ECMAScript 6</a></p>
       <p><a href="http://habrahabr.ru/post/267639/">Тонкости модульной системы ECMAScript 2015 (ES6)</a></p>
       <p><a href="http://es6-features.org/">ECMAScript 6 — New Features: Overview & Comparison</a></p>
+      <p><a href="https://code.tutsplus.com/tutorials/grokking-scope-in-javascript--cms-26259">Grokking Scope in JavaScript</a></p>
+      <p><a href="http://blog.avenuecode.com/lazy-loading-es2015-modules-in-the-browser/">Lazy-loading ES2015 modules in the browser</a></p>
 
       <section>
 
@@ -47,6 +49,7 @@
         <p>«<i>JavaScript Garden</i>»: <a href="http://bonsaiden.github.com/JavaScript-Garden/">http://bonsaiden.github.com/JavaScript-Garden</a></p>
         <p>Інтэрактыўныя шпаргалкі на <b>OverAPI</b>: <a href="http://overapi.com/javascript/">http://overapi.com/javascript/</a> і <a href="http://overapi.com/jquery/">http://overapi.com/jquery/</a></p>
         <p>«<i>Learning JavaScript Design Patterns</i>»: <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">http://addyosmani.com/resources/essentialjsdesignpatterns/book</a></p>
+        <p>«<i>Eloquent JavaScript</i>»: <a href="http://eloquentjavascript.net/">http://eloquentjavascript.net/</a></p>
         <p><a href="http://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527">JavaScript: The Definitive Guide. Activate Your Web Pages</a> (шостае выданьне вядомай папяровай кнігі, напісанай <a href="http://www.amazon.com/David-Flanagan/e/B000APEZR4" title="Старонка, прысьвечаная Дэвіду Флэнэгэну на Amazon.com">Дэвідам Флэнэгэнам</a> ад выдавецтва <a href="http://oreilly.com/" title="Хатняя старонка выдавецтва O'Reilly">O'Reilly</a>&nbsp;&ndash; на мой погляд лепшая крыніца, з тых што мне трапляліся, паглыбленага вывучэньня <i>JavaScript</i>, але на жаль электроннага варыянту няма ў вольным доступе). Ці перакладзенае на расейскую мову выданьне гэтай кнігі: <a href="http://www.ozon.ru/context/detail/id/19677670/">ozon.ru</a>.</p>
 
         <h2 id="Links_Lessons">Урокі</h2>
@@ -62,6 +65,9 @@
         <h2 id="Links_Etc">Рознае</h2>
           <p>Калекцыя артыкулаў, кніг і відэа на тэму стварэньня, тэставаньня і падтрымкі вялікага коду на JavaScript: <a href="http://superherojs.com/">superherojs.com</a></p>
           <p>Крыніца, якая тлумачыць, як той ці іншы код на <i>jQuery</i> напісаць на чыстым <i>JavaScript</i>: <a href="http://youmightnotneedjquery.com/">YOU MIGHT NOT NEED JQUERY</a></p>
+          <p><a href="https://plainjs.com/">PlainJS.com</a>&nbsp;&ndash; прыклады коду на чыстым <i>JavaScript</i> без неабходнасьці прыцягваць дадаткі.</p>
+          <p><a href="https://github.com/NamPNQ/You-Dont-Need-Javascript?mc_cid=e1ff606a1a&mc_eid=5b4e3f8de1">You-Dont-Need-Javascript</a>&nbsp;&ndash; прыклады коду на чыстым <i>CSS</i> без неабходнасьці ўжываць <i>JavaScript</i>.</p>
+          <p><a href="http://youmightnotneedjs.com/">You might not need JavaScript</a>&nbsp;&ndash; прыклады коду на чыстым <i>CSS</i> без неабходнасьці ўжываць <i>JavaScript</i>.</p>
       </section>
 
       <section>
@@ -2310,6 +2316,7 @@
         <p>«Prototypes and Inheritance in JavaScript» на scriptjunkie{}: <a href="http://msdn.microsoft.com/en-us/magazine/ff852808.aspx">http://msdn.microsoft.com/en-us/magazine/ff852808.aspx</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/whats-new-in-javascript-1-8-5/">What’s new in JavaScript 1.8.5</a></p>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/closures-front-to-back/">Closures: Front to Back</a></p>
+        <p><a href="https://www.webcodegeeks.com/javascript/javascript-properties-example/">Javascript Properties Example</a></p>
 
         <h3 id="Operators_Special_PropertyAccess">Доступу да атрыбутаў</h3>
         <div class="refs">
@@ -2612,10 +2619,118 @@
       </section>
 
       <section>
+        <h1 id="TipsTricks">Tips &amp; Tricks</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="https://blog.jscrambler.com/12-extremely-useful-hacks-for-javascript/">jscrambler</a></li>
+          </ul>
+        </div>
+
+        <h2 id="TipsTricks_ConvertingToBoolean">Пераўтварэньне ў <code class="language-js">boolean</code> праз <code class="language-js">!!</code></h2>
+        <p>Выраз <code class="language-js">!!variable</code> аўтаматычна перавядзе значэньне любога тыпу ў значэньне тыпу <code class="language-js">boolean</code>. У выніку <code class="language-js">false</code> атрымаецца толькі тады, калі зыходнае значэньне мела адно са значэньняў: <code class="language-js">0</code>, <code class="language-js">null</code>, <code class="language-js">""</code>, <code class="language-js">undefined</code> альбо <code class="language-js">NaN</code>, інакш атрымаецца <code class="language-js">true</code>. Напрыклад:</p>
+<pre><code class="language-js">
+function Account(cash) {
+    this.cash = cash;
+    this.hasMoney = !!cash;
+}
+var account = new Account(100.50);
+console.log(account.cash); // 100.50
+console.log(account.hasMoney); // true
+
+var emptyAccount = new Account(0);
+console.log(emptyAccount.cash); // 0
+console.log(emptyAccount.hasMoney); // false
+</code></pre>
+
+        <h2 id="TipsTricks_ConvertingToNumber">Пераўтварэньне ў лік праз <code class="language-js">+</code></h2>
+        <p>Простае пераўтварэньне сымбальнай чарады ў лік:</p>
+<pre><code class="language-js">
+function toNumber(strNumber) {
+    return +strNumber;
+}
+console.log(toNumber("1234")); // 1234
+console.log(toNumber("ACB")); // NaN
+</code></pre>
+
+        <h2 id="TipsTricks_DefaultValues">Змоўчныя значэньні праз <code class="language-js">||</code></h2>
+        <p>У <i>ES6</i> маецца магчымасьць пазначаць змоўчныя значэньні парамэтраў. У ранейшых вэрсіях <i>JavaScript</i> тое ж самае можна было рабіць наступным чынам:</p>
+<pre><code class="language-js">
+function User(name, age) {
+    this.name = name || "Oliver Queen";
+    this.age = age || 27;
+}
+var user1 = new User();
+console.log(user1.name); // Oliver Queen
+console.log(user1.age); // 27
+
+var user2 = new User("Barry Allen", 25);
+console.log(user2.name); // Barry Allen
+console.log(user2.age); // 25
+</code></pre>
+
+        <h2 id="TipsTricks_ShortCircuitsConditional">Замена ўмоўных інструкцыяў умоўнымі апэрацыямі</h2>
+        <p>Наступны фрагмэнт:</p>
+<pre><code class="language-js">
+if (user) {
+  user.login();
+}
+</code></pre>
+        <p>Можна замяніць больш кароткай формай:</p>
+<pre><code class="language-js">
+user && user.login();
+</code></pre>
+
+        <h2 id="TipsTricks_DetectingObjectProperties">Вызначэньне прысутнасьці атрыбутаў у аб'ектах</h2>
+        <p>Прысутнасьць атрыбутаў ці функцыяў у аб'ектах можна правяраць пры дапамозе апэрацыі <code class="language-js">in</code>:</p>
+<pre><code class="language-js">
+if ('querySelector' in document) {
+    document.querySelector("#id");
+} else {
+    document.getElementById("id");
+}
+</code></pre>
+
+        <h2 id="TipsTricks_LastItemInArray">Атрыманьне апошняга элемэнту масіву</h2>
+        <p>Пры дапамозе функцыі <code class="language-js">Array.prototype.slice(begin, end)</code> можна атрымліваць апошні элемэнт масіву пры:</p>
+<pre><code class="language-js">
+var array = [1,2,3,4,5,6];
+console.log(array.slice(-1)); // [6]
+console.log(array.slice(-2)); // [5,6]
+console.log(array.slice(-3)); // [4,5,6]
+</code></pre>
+
+        <h2 id="TipsTricks_ArrayTruncation">Уразаньне масіву</h2>
+        <p>Калі з сыходнага масіву трэба атрымаць першыя <i>n</i> яго элемэнтаў не клапоцячыся пра захаваньне зыходнага масіву, можна скарыстацца наступнай тэхнікай:</p>
+<pre><code class="language-js">
+var array = [1,2,3,4,5,6];
+console.log(array.length); // 6
+array.length = 3;
+console.log(array.length); // 3
+console.log(array); // [1,2,3]
+</code></pre>
+
+        <h2 id="TipsTricks_MergingArrays">Зьліцьцё масіваў</h2>
+        <p>Натуральны спосаб зьліцьця масіваў:</p>
+<pre><code class="language-js">
+var array1 = [1,2,3];
+var array2 = [4,5,6];
+console.log(array1.concat(array2)); // [1,2,3,4,5,6];
+</code></pre>
+        <p>Але недахоп такога мэтаду ў тым, што ён стварае новы масіў, спажываючы дадатковую памяць, што можа быць непажадана пры вялікіх масівах. Альтэрнатыўным і больш аптымальным з пункту гледжаньня спажываньня памяці зьяўляецца наступны спосаб:</p>
+<pre><code class="language-js">
+var array1 = [1,2,3];
+var array2 = [4,5,6];
+console.log(array1.push.apply(array1, array2)); // [1,2,3,4,5,6];
+</code></pre>
+
+      </section>
+
+      <section>
         <h1 id="JavaScript_Plugins">Дадаткі і бібліятэкі</h1>
         <p><a href="http://www.javascriptkit.com/cutpastejava.shtml">Сьпіс плагінаў</a></p>
         <p><a href="http://coding.smashingmagazine.com/2012/09/23/useful-javascript-libraries-jquery-plugins-web-developers/">Useful JavaScript Libraries and jQuery Plugins</a></p>
         <p><a href="http://www.smashingmagazine.com/2011/04/07/useful-javascript-and-jquery-tools-libraries-plugins/">Useful JavaScript and jQuery Tools, Libraries, Plugins</a></p>
+        <p><a href="http://multiple.js.org/">Multiple.js - An experiment in sharing background across multiple elements using CSS</a></p>
 
         <h2 id="JavaScript_Plugins_Favicons">Маніпуляцыі з Favicon</h2>
         <p><a href="https://github.com/tommoor/tinycon">Tinycon&nbsp;&ndash; library for manipulating the favicon, in particular adding alert bubbles and changing images</a></p>
@@ -2641,6 +2756,8 @@
         <h2 id="JavaScript_Plugins_TextFields">Тэкставыя палі</h2>
         <p>Вызначэньне месца зьмяшчэньня ці водступу карэткі ў тэкставым полі: <a href="https://github.com/ichord/Caret.js">Caret.js</a></p>
         <p>Аўтазапаўненьне: <a href="http://leaverou.github.io/awesomplete/">Awesomplete</a></p>
+        <p>Фарматаваньне: <a href="http://nosir.github.io/cleave.js/">cleave.js</a></p>
+        <p><a href="http://kushagragour.in/lab/superplaceholderjs/">superplaceholder.js</a></p>
 
         <h2 id="JavaScript_Plugins_DropdownFields">Выпадаючыя сьпісы</h2>
         <p><a href="http://harvesthq.github.com/chosen/">Chosen - makes long select boxes much more user-friendly.</a></p>
@@ -2657,6 +2774,7 @@
 
         <h2 id="JavaScript_Plugins_Tooltips">Падказкі</h2>
         <p><a href="http://ytiurin.github.io/html5tooltipsjs/">html5tooltips.js</a>&nbsp;&ndash; Light and clean tooltips with CSS3 animation, No framework required</p>
+        <p><a href="https://popper.js.org/">popper.js</a></p>
 
         <h2 id="JavaScript_Plugins_Autocomplete">Аўтаматычная падстаноўка</h2>
         <p>Аўтаматычная падстаноўка фрагмэнту тэксту па гарачай клавішы: <a href="https://github.com/ichord/At.js">At.js</a></p>
@@ -2678,6 +2796,9 @@
 
         <h2 id="JavaScript_Plugins_Asynchronous">Асынхронная апрацоўка</h2>
         <p><a href="https://blog.engineyard.com/2015/taming-asynchronous-javascript-with-async">Taming Asynchronous JavaScript with <b>Async.js</b></a></p>
+
+        <h2 id="JavaScript_Plugins_Push">Push</h2>
+        <p><a href="http://nickersoft.github.io/push.js">JavaScript notifications for every browser</a></p>
 
         <h2 id="JavaScript_Plugins_Animation">Анімацыя</h2>
         <p>Declarative handling library for CSS animations: <a href="http://anijs.github.io/">AniJS</a></p>
@@ -2710,6 +2831,7 @@
         <p><a href="http://www.benlesh.com/2014/04/embular-part-1-comparing-ember-and.html?spref=tw">Embular Part 1 - Comparing Ember and Angular</a></p>
         <p><a href="http://blog.codeschool.com/post/85819292538/angular-backbone-or-ember-which-is-best-for-your">Angular, Backbone, or Ember: Which is Best for your Build?</a></p>
         <p><a href="http://ilikekillnerds.com/2015/01/aurelia-vs-angularjs-round-one-fight/">Aurelia vs AngularJS – Round One: FIGHT!</a></p>
+        <p><a href="http://sennajs.com/">senna.js – A blazing-fast single page application engine</a></p>
 
         <h2 id="Frameworks_Node">Node.js</h2>
         <div class="refs">
@@ -2729,6 +2851,8 @@
         <p><a href="https://blog.heroku.com/archives/2014/3/11/node-habits?utm_source=mkto&utm_medium=email&utm_campaign=marchnewsletter&mkt_tok=3RkMMJWWfF9wsRonuK%2FMZKXonjHpfsX54%2BwvXKSzlMI%2F0ER3fOvrPUfGjI4AScdnI%2BSLDwEYGJlv6SgFQrjAMapmyLgLUhE%3D">10 Habits of a Happy Node Hacker</a></p>
         <p><a href="https://www.airpair.com/node.js/posts/nodejs-framework-comparison-express-koa-hapi">Node.js Framework Comparison: Express vs. Koa vs. Hapi</a></p>
         <p><a href="http://www.webcodegeeks.com/javascript/node-js/node-js-full-application-example/">Node.js: Full application example</a></p>
+        <p><a href="https://www.webcodegeeks.com/javascript/node-js/building-web-apps-with-node-js/">Node.js Tutorial: Building web apps</a></p>
+        <p><a href="http://keystonejs.com/">Node.js CMS &amp; Web Application Platform</a></p>
 
         <h3 id="Frameworks_Node_npm">npm</h3>
         <div class="refs">
@@ -2737,6 +2861,7 @@
             <li><a href="https://docs.npmjs.com/">Docs</a></li>
           </ul>
         </div>
+        <p><a href="https://nodesource.com/blog/eleven-npm-tricks-that-will-knock-your-wombat-socks-off/">11 Simple npm Tricks That Will Knock Your Wombat Socks Off</a></p>
         <p>Усталяваць сам <i>Node.js</i> і <i>npm</i> (<i>Node Package Manager</i>) у сыстэму лепш за ўсё праз <i>nvm</i> (<i>Node Versions Manager</i>) наступным чынам. Спачатку ўсталюем сам <i>nvm</i>:</p>
         <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
           $ sudo curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
@@ -2877,6 +3002,14 @@
         <p>Fast, unopinionated, minimalist web framework for Node.js</p>
         <p><a href="http://www.webcodegeeks.com/javascript/node-js/node-js-express-tutorial/">Node.js: Express tutorial</a></p>
 
+        <h2 id="Frameworks_Reactive">RxJS</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://github.com/Reactive-Extensions/RxJS">Home</a></li>
+          </ul>
+        </div>
+        <p>Сродак рэактыўнага праграмаваньня на <i>JavaScript</i></p>
+        <p><a href="https://auth0.com/blog/understanding-reactive-programming-and-rxjs/">Understanding Reactive Programming and RxJS</a></p>
 
         <h2 id="Frameworks_TypeScript" >TypeScript</h2>
         <div class="refs">
@@ -2919,6 +3052,7 @@
           </ul>
         </div>
 
+        <p><a href="http://academy.plot.ly/#react">Tutorial на <b>academy.plot.ly</b>.</a></p>
         <p><a href="http://egorsmirnov.me/2015/05/22/react-and-es6-part1.html">"React and ES6" series.</a></p>
         <p><a href="http://buildwithreact.com/">Articles in "Build with react"</a></p>
         <p><a href="https://www.codementor.io/reactjs/tutorial">Different tutorials</a></p>
@@ -2926,6 +3060,9 @@
         <p><a href="https://auth0.com/docs/quickstart/spa/react/java-spring-security">React + Spring Security Java API</a></p>
         <p><a href="http://myshareoftech.com/2013/12/unit-testing-react-dot-js-with-jasmine-and-karma.html">Unit Testing React.js With Jasmine and Karma</a></p>
         <p><a href="http://myshareoftech.com/2013/12/unit-testing-react-dot-js-with-jasmine-and-karma.html">Unit Testing React.js With Jasmine and Karma</a></p>
+        <p><a href="https://github.com/mxstbr/react-boilerplate?mc_cid=350132d979&mc_eid=5b4e3f8de1">react-boilerplate</a></p>
+        <p><a href="https://medium.com/@steedhelix/react-webpack-and-horizon-quick-start-b9335c1ece53#.fdbx2n8bz">React, Webpack, and Horizon Quick Start</a></p>
+        <p><a href="http://stack.formidable.com/radium/">Radium&nbsp;&ndash; set of tools to manage inline styles on React elements</a></p>
 
         <h3 id="Frameworks_React_ComponentOrganisation">Арганізацыя коду кампанэнтаў</h3>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
@@ -3223,6 +3360,7 @@ React.renderComponent(
         <p><a href="https://github.com/mroderick/PubSubJS">PubSubJS</a></p>
 
         <h3 id="Frameworks_React_Addons">Add-ons і кампанэнты</h3>
+        <p><a href="http://elemental-ui.com/">UI Toolkit for React.js Websites and Apps</a></p>
         <p><a href="https://facebook.github.io/react/docs/addons.html">Add-ons at React Docs</a></p>
         <p><a href="http://react-components.com/">react-components.com</a></p>
         <p><a href="http://www.reactjsx.com/">Search reusable React components</a></p>
@@ -3253,6 +3391,21 @@ React.renderComponent(
           </ul>
         </div>
         <p>Redux is a predictable state container for JavaScript apps.</p>
+        <p><a href="https://code.tutsplus.com/tutorials/how-to-use-the-react-redux-package--cms-27150">How to Use the react-redux Package</a>.</p>
+
+        <h3 id="Frameworks_React_Draftjs">Draft.js</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://facebook.github.io/draft-js/">Home</a></li>
+          </ul>
+        </div>
+        <p>Draft.js is a framework for building rich text editors in React</p>
+        <p>Іншыя рэалізацыі <i>rich text editors</i>:</p>
+        <ul>
+          <li><a href="http://alloyeditor.com/demo/">http://alloyeditor.com/demo/</a></li>
+          <li><a href="http://zenoamaro.github.io/react-quill/">http://zenoamaro.github.io/react-quill/</a></li>
+          <li><a href="http://tgecho.github.io/react-prosemirror/">http://tgecho.github.io/react-prosemirror/</a></li>
+        </ul>
 
         <h2 id="Frameworks_Aurelia">Aurelia</h2>
         <div class="refs">
@@ -3271,6 +3424,7 @@ React.renderComponent(
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/building-a-web-app-from-scratch-in-angularjs/">Building a Web App From Scratch in AngularJS</a></p>
         <p><a href="http://toddmotto.com/rethinking-angular-js-controllers/">Rethinking AngularJS Controllers</a></p>
         <p><a href="http://codetunes.com/2014/5-tips-on-how-to-use-angularjs-with-rails-that-changed-how-we-work/">5 tips on how to use AngularJS with Rails that changed how we work</a></p>
+        <p><a href="http://bandrzejczak.com/blog/2015/11/22/single-sign-on-with-keycloak-in-a-sigle-page-application-part-1-slash-2-angular-dot-js/">SSO for Your Single Page Application (Part 1/2 - AngularJS)</a></p>
 
         <h2 id="Frameworks_Ember.js">Ember.js</h2>
         <div class="refs">
@@ -3918,6 +4072,7 @@ React.renderComponent(
             <li><a href="http://plugins.jquery.com/">Home</a></li>
           </ul>
         </div>
+        <p><a href="http://jquerycards.com/">A repository of over 1000 quality jQuery plugins</a></p>
         <p><a href="http://www.tuttoaster.com/41-remarkable-and-useful-jquery-plugins/">41 Remarkable and useful jQuery Plugins</a></p>
         <p><a href="http://www.jquery4u.com/plugins/">Popular jQuery Plugins</a></p>
         <p><a href="http://www.jquery4u.com/plugins/jquery-plugins-2010/">Best jQuery Plugins for 2010</a></p>
@@ -4000,6 +4155,14 @@ React.renderComponent(
           </ul>
         </div>
         <p>Мінімалістычны аналяг <i>jQuery</i> (амаль ідэнтычны API) з падтрымкай толькі сучасных браўзэраў.</p>
+
+        <h2 id="Frameworks_Zepto">ExpandJS</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://expandjs.com/">ExpandJS</a></li>
+          </ul>
+        </div>
+        <p>Modular library with 100+ custom elements and 350+ utility functions to kickstart your Web Applications.</p>
 
       </section>
 

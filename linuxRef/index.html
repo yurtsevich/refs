@@ -1,46 +1,20 @@
 <!doctype html>
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="be-tarask" class="no-js"> <!--<![endif]-->
+<html lang="be-tarask" class="no-js">
 <head>
   <meta charset="utf-8">
-
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
-       Remove this if you use the .htaccess -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Даведнік па Linux</title>
   <meta name="description" content="Даведнік па Linux">
   <meta name="author" content="Юрцэвіч Дзьмітры">
 
-  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
   <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
-  <!-- CSS : implied media="all" -->
   <link rel="stylesheet" href="../css/boilerplate.css?v=2">
   <link rel="stylesheet" href="../css/screen.css?v=1">
-  <link rel="stylesheet" href="../css/shCore.css?v=1">
-  <link rel="stylesheet" href="../css/shThemeDefault.css?v=1">
-
-  <!-- Uncomment if you are specifically targeting less enabled mobile browsers
-  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=2">  -->
-
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="../js/libs/modernizr-1.6.min.js"></script>
-
-  <!--[if lt IE 9]>
-  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-  <!-- For example need -->
-  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../css/prism.css">
 </head>
 
 <body>
@@ -158,28 +132,37 @@
           </ul>
         </div-->
         <p>Выканаць нейкі скрыпт у цяперашнім кантэксьце (тэрмінальным акне) можна камандай <code>source</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ source .bash_profile
-        ]]></script>
+
+<pre><code class="language-bash">
+$ source .bash_profile
+</code></pre>
+
         <p>Стварыць скарот нейкай каманды можна пры дапамозе <code>alias</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ alias pd="pwd"
-        ]]></script>
+
+<pre><code class="language-bash">
+$ alias pd="pwd"
+</code></pre>
 
         <h2 id="Bash_PipingAndRedirection">Перакіраваньні ўводу і вываду</h2>
         <p><code>&gt;</code> перанакіроўвае вывад каманды ў файл:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ cat lakes.txt | sort > sorted-lakes.txt
-        ]]></script>
+
+<pre><code class="language-bash">
+$ cat lakes.txt | sort > sorted-lakes.txt
+</code></pre>
+
         <p><code>&gt;&gt;</code> тое ж самае, што і папярэдняе, пры гэтым не перазапісвае зьмесьціва файла але дадае ў яго.</p>
         <p><code>&lt;</code> бярэ зьмесьціва файла ў якасьці ўводу для каманды:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ cat < lakes.txt
-        ]]></script>
+
+<pre><code class="language-bash">
+$ cat < lakes.txt
+</code></pre>
+
         <p><code>|</code> перадае вывад адной каманды ў якасьці ўводу іншай:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ cat volcanoes.txt | wc
-        ]]></script>
+
+<pre><code class="language-bash">
+$ cat volcanoes.txt | wc
+</code></pre>
+
         <p>Тут вынік каманды <code>cat volcanoes.txt</code> будзе пераданы ў якасьці ўводу камандзе <code>wc</code>.</p>
         
       </section>
@@ -195,13 +178,17 @@
         </div>
         <p>Каб вывесьці сьпіс усіх зьменных асяродка, можна скарыстацца камандай <code>printenv</code>.</p>
         <p>Каб вывесьці значэньне толькі пэўнай зьменнай, трэба скарыстацца камандай <code>echo $&lt;Env_Var_Name&gt;</code>, напрыклад:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ echo $PATH
-        ]]></script>
+
+<pre><code class="language-bash">
+$ echo $PATH
+</code></pre>
+
         <p>Пры жаданьні пашырыць існую ці стварыць новую зьменную асяродка трэба скарыстацца камандай:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ export PATH=$PATH:/path/to/dir
-        ]]></script>
+
+<pre><code class="language-bash">
+$ export PATH=$PATH:/path/to/dir
+</code></pre>
+
         <p>якая дадасьць значэньне <code>/path/to/dir</code> у канец існага значэньня зьменнай <code>PATH</code>.</p>
         <p>Калі выканаць каманду ў тэрмінальным акне, то гэтая зьмена будзе мець сілу толькі ў гэтым акне. Каб яна мела сілу на працягу ўсёй сэсіі працы пэўнага карыстальніка, трэба дадаць гэтую каманду ў файл <code>.bash_profile</code> (калі актуальна толькі для <code>bash</code>-сэсій, альбо ў <code>.profile</code> для ўсяго астатняга) хатняй тэчкі гэтага карыстальніка. Каб гэтая зьмена была актуальна для сэсій усіх карыстальнікаў, каманду трэба дадаць у файл <code>/etc/profile</code>.</p>
       </section>
@@ -219,31 +206,37 @@
         <ol>
           <li>Загружаем архіў і распакоўваем яго ў тэчку па жаданьні. Напрыклад, загружаем <a href="eclipse.org"><i>Eclipse</i></a> і распакоўваем у <code>/usr/lib</code></li>
           <li>Ствараем выконваемы файл:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              sudo touch /usr/bin/eclipse
-              sudo chmod 755 /usr/bin/eclipse
-            ]]></script>
+
+<pre><code class="language-bash">
+$ sudo touch /usr/bin/eclipse
+$ sudo chmod 755 /usr/bin/eclipse
+</code></pre>
+
             Адчыняем файл пры дапамозе тэкставага рэдактару і ўстаўляем туды наступны скрыпт:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              #!/bin/sh    
-              export ECLIPSE_HOME="/usr/lib/eclipse"
-              $ECLIPSE_HOME/eclipse $*
-            ]]></script>
+
+<pre><code class="language-text">
+#!/bin/sh    
+export ECLIPSE_HOME="/usr/lib/eclipse"
+$ECLIPSE_HOME/eclipse $*
+</code></pre>
+
             і захоўваем.
           </li>
           <li>Ствараем пункт мэню для <i>Gnome</i>. Для гэтага ствараем файл <code>eclipse.desktop</code> у тэчцы <code>/usr/share/applications/</code>, ўстаўляем у яго наступны тэкст:
-            <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-              [Desktop Entry]
-              Encoding=UTF-8
-              Name=Eclipse
-              Comment=Eclipse IDE
-              Exec=eclipse
-              Icon=/usr/lib/eclipse/icon.xpm
-              Terminal=false
-              Type=Application
-              Categories=GNOME;Application;Development;
-              StartupNotify=true
-            ]]></script>
+
+<pre><code class="language-text">
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+Comment=Eclipse IDE
+Exec=eclipse
+Icon=/usr/lib/eclipse/icon.xpm
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Development;
+StartupNotify=true
+</code></pre>
+
             і захоўваем.
           </li>
         </ol>
@@ -257,53 +250,69 @@
         </div>
         <p><code>update-alternatives</code>&nbsp;&ndash; гэта цэлая падсыстэма, якая абслугоўвае сымбалічныя спасылкі, якія вызначаюць каманды, файлы і дырэкторыі, якія выкарыстоўваюцца па-змоўчваньні.</p>
         <p>Адлюстраваць усе альтэрнатыўныя шляхі пэўнай спасылкі можна наступным чынам:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ update-alternatives --list java
-          /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
-          /usr/lib/jvm/java-1.8.0_51-oraclejdk-x64/jre/bin/java
-          /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
-        ]]></script>
+
+<pre><code class="language-bash">
+$ update-alternatives --list java
+/usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
+/usr/lib/jvm/java-1.8.0_51-oraclejdk-x64/jre/bin/java
+/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+</code></pre>
+
         <p>Адлюстраваць усе альтэрнатывы для пэўнай спасылкі ўлучна з іх прыярытэтамі, а таксама з пазначэньнем якая зь іх зьяўляецца актыўнай на дадзены момант можна наступным чынам:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ update-alternatives --display java
-          java - manual mode
-            link currently points to /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
-          /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java - priority 0
-          /usr/lib/jvm/java-1.8.0_51-oraclejdk-x64/jre/bin/java - priority 0
-          /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java - priority 1071
-            slave java.1.gz: /usr/lib/jvm/java-7-openjdk-amd64/jre/man/man1/java.1.gz
-          Current 'best' version is '/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java'.
-        ]]></script>
+
+<pre><code class="language-bash">
+$ update-alternatives --display java
+java - manual mode
+  link currently points to /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
+/usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java - priority 0
+/usr/lib/jvm/java-1.8.0_51-oraclejdk-x64/jre/bin/java - priority 0
+/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java - priority 1071
+  slave java.1.gz: /usr/lib/jvm/java-7-openjdk-amd64/jre/man/man1/java.1.gz
+Current 'best' version is '/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java'.
+</code></pre>
+
         <p>Дадаць альтэрнатыўны шлях да пэўнай спасылкі можна наступным чынам:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ update-alternatives --install java /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
-        ]]></script>
+
+<pre><code class="language-bash">
+$ update-alternatives --install java /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
+</code></pre>
+
         <p>Выдаліць альтэрнатыву можна наступным чынам:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ update-alternatives --remove java /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
-        ]]></script>
+
+<pre><code class="language-bash">
+$ update-alternatives --remove java /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
+</code></pre>
+
         <p>Альбо выдаліць усе альтэрнатывы, то бок увогуле спасылку:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ update-alternatives --remove-all java
-        ]]></script>
+
+<pre><code class="language-bash">
+$ update-alternatives --remove-all java
+</code></pre>
+
         <p>Выбраць актыўную на дадзены момант альтэрнатыву можна наступным чынам:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ update-alternatives --config java
-        ]]></script>
+
+<pre><code class="language-bash">
+$ update-alternatives --config java
+</code></pre>
+
         <p>з наступным вынікам:</p>
         <img style="margin-top: 10px;" title="Вынік выкананьня каманды update-alternatives --config" alt="Вынік выкананьня каманды update-alternatives --config" src="update-alternatives01.jpg">
 
         <h2 id="Programs_pkg">Пакеты</h2>
         <p>Праглядзець сьпіс усталяваных сыстэмных пакетаў:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ dpkg --get-selections | grep node
-          node-less         install
-          nodejs            install
-        ]]></script>
+
+<pre><code class="language-bash">
+$ dpkg --get-selections | grep node
+node-less         install
+nodejs            install
+</code></pre>
+
         <p>Усталяваць новы пакет:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ sudo apt-get install npm
-        ]]></script>
+
+<pre><code class="language-bash">
+$ sudo apt-get install npm
+</code></pre>
+
       </section>
 
 
@@ -327,28 +336,31 @@
 
         <h3 id="FileSystem_Search_CLI">Праз камандны радок</h3>
         <p>Больш магутны сродак пошуку&nbsp;&ndash; сыстэмная каманда <code>find</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          find .
-        ]]></script>
+
+<pre><code class="language-bash">
+$ find .
+</code></pre>
+
         <img src="img005.png">
         <p><code>find -type l</code>&nbsp;&ndash; пералічыць усе сымлінкі (<i>symlinks</i>) цяперашняй тэчцы і ўва ўсіх укладзеных у яе.</p>
         <p></p>
 
         <h2 id="FileSystem_FilesInfo">Інфармацыя аб файлах</h2>
         <p>Каманда <code>file &lt;FILE_NAME&gt;</code> выводзіць інфармацыю пра тое, што зь сябе ўяўляе пэўны файл:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ file branching.svg 
-          branching.svg: SVG Scalable Vector Graphics image
 
-          $ file artifacts.xml 
-          artifacts.xml: XML  document text
+<pre><code class="language-bash">
+$ file branching.svg 
+branching.svg: SVG Scalable Vector Graphics image
 
-          $ file java
-          java: symbolic link to '/etc/alternatives/java'
+$ file artifacts.xml 
+artifacts.xml: XML  document text
 
-          $ file profile
-          profile: ASCII text
-        ]]></script>
+$ file java
+java: symbolic link to '/etc/alternatives/java'
+
+$ file profile
+profile: ASCII text
+</code></pre>
 
         <h2 id="FileSystem_LinksAtDesktop">Лінкі на дэсктопе</h2>
         <div class="refs">
@@ -357,13 +369,17 @@
           </ul>
         </div>
         <p>Пры жаданьні стварыць на дэсктопе лінк да файла ці тэчкі, можна скарыстацца камандай лінкаваньня <code>ln -s</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ ln -s <TARGET> <LINK>
-        ]]></script>
+
+<pre><code class="language-bash">
+$ ln -s <TARGET> <LINK>
+</code></pre>
+
         <p>дзе ў якасьці <code>&lt;TARGET&gt;</code> пазначаецца шлях да файла/тэчкі, а ў якасьці <code>&lt;LINK&gt;</code>&nbsp;&ndash; элемэнт дэсктопу (інакш кажучы іконка), які будзе злучаны з target-файлам/тэчкай. Напрыклад:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ ln -s /usr/bin/eclipse /home/my_home/Desktop/eclipse
-        ]]></script>
+
+<pre><code class="language-bash">
+$ ln -s /usr/bin/eclipse /home/my_home/Desktop/eclipse
+</code></pre>
+
         <p>У выніку на дэсктопе зьявіцца іконка запуску экліпсы.</p>
 
         <h2 id="FileSystem_FoldersContent">Зьмесьціва тэчак</h2>
@@ -376,47 +392,58 @@
           </ul>
         </div>
         <p>Правілы змоўчнага сартаваньня тэчак ігнаруюць адмысловыя сымбалі, якія некаторыя <i>Windows</i>-карыстальнікі выкарыстоўваюць для асобнага групаваньня пэўных тэчак, напрыклад знак падкрэсьліваньня. Каб праверыць які мэтад сартаваньня выкарыстоўвае сыстэма, трэба ў кансолі запусьціць каманду <code>locale</code>, якая выдасьць падобны вынік:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          LANG=en_US.UTF-8
-          LANGUAGE=
-          LC_CTYPE="en_US.UTF-8"
-          LC_NUMERIC=be_BY.UTF-8
-          LC_TIME=be_BY.UTF-8
-          LC_COLLATE="en_US.UTF-8"
-          LC_MONETARY=be_BY.UTF-8
-          LC_MESSAGES="en_US.UTF-8"
-          LC_PAPER=be_BY.UTF-8
-          LC_NAME=be_BY.UTF-8
-          LC_ADDRESS=be_BY.UTF-8
-          LC_TELEPHONE=be_BY.UTF-8
-          LC_MEASUREMENT=be_BY.UTF-8
-          LC_IDENTIFICATION=be_BY.UTF-8
-          LC_ALL=
-        ]]></script>
+
+<pre><code class="language-text">
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC=be_BY.UTF-8
+LC_TIME=be_BY.UTF-8
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY=be_BY.UTF-8
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER=be_BY.UTF-8
+LC_NAME=be_BY.UTF-8
+LC_ADDRESS=be_BY.UTF-8
+LC_TELEPHONE=be_BY.UTF-8
+LC_MEASUREMENT=be_BY.UTF-8
+LC_IDENTIFICATION=be_BY.UTF-8
+LC_ALL=
+</code></pre>
+
         <p>Значэньне атрыбуту <code>LC_COLLATE</code> можна зьмяніць на <code>C</code>, тады мэтад сартаваньня зьменіцца і адмысловыя сымбалі ўжо будуць улічвацца, хаця і не цалкам так жа, як у <i>Windows</i>. Робіцца гэта пры дапамозе наступнай каманды:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ update-locale LC_COLLATE=C
-        ]]></script>
+
+<pre><code class="language-bash">
+$ update-locale LC_COLLATE=C
+</code></pre>
 
         <h2 id="FileSystem_FilesContent">Зьмесьціва файлаў</h2>
         <p><code>sort</code>&nbsp;&ndash; сартуе радкі файлу ў альфабэтным парадку.</p>
         <p><code>uniq</code>&nbsp;&ndash; выдаляе дубліруючыя радкі і выводзіць толькі ўнікальныя.</p>
         <p><code>grep</code>&nbsp;&ndash; шукае ў пазначаных файлах супадзеньні па рэгулярных выразах:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ grep Mount mountains.txt
-        ]]></script>
+
+<pre><code class="language-bash">
+$ grep Mount mountains.txt
+</code></pre>
+
         <p>альбо без уліку рэгістру:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ grep -i Mount mountains.txt
-        ]]></script>
+
+<pre><code class="language-bash">
+$ grep -i Mount mountains.txt
+</code></pre>
+
         <p>Наступны варыянт шукае ўва ўсіх файлах пазначанай тэчкі (парамэтар <code>R</code>) і выводзіць толькі імёны файлаў (<code>l</code>), у якіх знайшлося супадзеньне:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ grep -Rl Arctic /home/ccuser/workspace/geography
-        ]]></script>
+
+<pre><code class="language-bash">
+$ grep -Rl Arctic /home/ccuser/workspace/geography
+</code></pre>
+
         <p><code>sed</code>&nbsp;&ndash; "знайсьці і замяніць":</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ sed -i 's/snow/rain/g' forests.txt
-        ]]></script>
+
+<pre><code class="language-bash">
+$ sed -i 's/snow/rain/g' forests.txt
+</code></pre>
+
         <p>Знойдзе ўсе словы <code>snow</code> у файле <code>forests.txt</code> і заменіць (<code>s</code>) на слова <code>rain</code>, прычым ня толькі першае трапляньне <code>snow</code> у радку, але ўсе трапляньні (<code>g</code>), пры тым і без уліку рэгістру (<code>-i</code>).</p>
 
         <h2 id="FileSystem_Compression">Сьцісканьне</h2>
@@ -428,17 +455,22 @@
           </ul>
         </div>
         <p>Сьціснуць файл/тэчку:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ tar -cvzf archive.tar.gz /path/to/file/or/directory
-        ]]></script>
+
+<pre><code class="language-bash">
+$ tar -cvzf archive.tar.gz /path/to/file/or/directory
+</code></pre>
+
         <p>Распакаваць архіў ў цяперашнюю тэчку без выдаленьня архіву:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ tar -xvzf archive.tar.gz
-        ]]></script>
+
+<pre><code class="language-bash">
+$ tar -xvzf archive.tar.gz
+</code></pre>
+
       </section>
 
       <section>
         <h1 id="Network" data-content-item-open>Сетка й злучэньні</h1>
+        <p><a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04">Initial Server Setup with Ubuntu 16.04</a></p>
 
         <h2 id="Network_Netmasks">Парамэтры для сеціўных масак</h2>
         <table class="centered" style="width: 60%;"><tbody>
@@ -488,64 +520,80 @@
         <p>Прывядзем некаторыя прыклады:</p>
         <ul>
           <li>Базавая інфармацыя пра трафік без асаблівых наладаў:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              $ tcpdump -nS
-            ]]></script>
+
+<pre><code class="language-bash">
+$ tcpdump -nS
+</code></pre>
+
           </li>
           <li>Больш разгорнутая інфармацыя пра трафік без вызначэньня імёнаў і партоў:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              $ tcpdump -nnvvS
-            ]]></script>
+
+<pre><code class="language-bash">
+$ tcpdump -nnvvS
+</code></pre>
+
           </li>
           <li>Больш разгорнутая інфармацыя пра трафік без вызначэньня імёнаў і партоў:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              $ tcpdump -nnvvS
-            ]]></script>
+
+<pre><code class="language-bash">
+$ tcpdump -nnvvS
+</code></pre>
+
           </li>
           <li>Дададзім <code>-X</code> для дадатковага вываду зьместу пакетаў:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              $ tcpdump -nnvvXS
-            ]]></script>
+
+<pre><code class="language-bash">
+$ tcpdump -nnvvXS
+</code></pre>
+
           </li>
           <li>Павялічваем памер вывадзімага зьместу пакетаў да 1514 байтаў:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              $ tcpdump -nnvvXSs 1514
-            ]]></script>
+
+<pre><code class="language-bash">
+$ tcpdump -nnvvXSs 1514
+</code></pre>
+
           </li>
           <li>Адсочваем дакладна 2 пакета пратаколу <i>ICMP</i> (пара <i>ping</i>- і <i>pong</i>-пакетаў каманды <code>ping</code>):
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              $ tcpdump -nnvvXSs 0 -c2 icmp
-            ]]></script>
+
+<pre><code class="language-bash">
+$ tcpdump -nnvvXSs 0 -c2 icmp
+</code></pre>
+
             вынік будзе прыкладна наступны:
             <img title="Вынік выкананьня каманды tcpdump" alt="Вынік выкананьня каманды tcpdump" src="tcpdump01.jpg" style="margin-top: 10px;">
           </li>
         </ul>
         <p>Акрамя прыведзеных вышэй опцыяў можна задаваць дадатковыя парамэтры (<code>host</code>, <code>src</code>, <code>dst</code>, <code>net</code>, <code>port</code>, <code>src port</code>, <code>dst port</code>), а таксама камбінаваць іх у лягічныя выразы праз <code>or</code> і <code>and</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ tcpdump host 1.2.3.4
+<pre><code class="language-bash">
+$ tcpdump host 1.2.3.4
 
-          $ tcpdump src 2.3.4.5
-          $ tcpdump dst 3.4.5.6
+$ tcpdump src 2.3.4.5
+$ tcpdump dst 3.4.5.6
 
-          $ tcpdump net 1.2.3.0/24
+$ tcpdump net 1.2.3.0/24
 
-          $ tcpdump port 3389
+$ tcpdump port 3389
 
-          $ tcpdump src port 1025 
-          $ tcpdump dst port 389
+$ tcpdump src port 1025 
+$ tcpdump dst port 389
 
-          $ tcpdump src port 1025 or src port 1026 
-          $ tcpdump udp and src port 53
-        ]]></script>
+$ tcpdump src port 1025 or src port 1026 
+$ tcpdump udp and src port 53
+</code></pre>
+
         <p>Таксама можна задаваць не адзін порт, але дыяпазон:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ tcpdump portrange 1025-1026
-        ]]></script>
+
+<pre><code class="language-bash">
+$ tcpdump portrange 1025-1026
+</code></pre>
+
         <p>І абмяжоўваць памер адсочваемых пакетаў:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ tcpdump less 32
-          $ tcpdump greater 128
-        ]]></script>
+
+<pre><code class="language-bash">
+$ tcpdump less 32
+$ tcpdump greater 128
+</code></pre>
 
         <h2 id="Network_SSH">SSH</h2>
 
@@ -556,17 +604,19 @@
             <li><a href="https://help.github.com/articles/generating-ssh-keys/">GitHub</a></li>
           </ul>
         </div>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-          Generating public/private rsa key pair.
-          Enter file in which to save the key (/home/you/.ssh/id_rsa): /home/you/.ssh/your_rsa
-          Enter passphrase (empty for no passphrase): 
-          Enter same passphrase again: 
-          Your identification has been saved in /home/you/.ssh/your_rsa.
-          Your public key has been saved in /home/you/.ssh/your_rsa.pub.
-          The key fingerprint is:
-          1e:b2:dd:ee:9b:61:ae:34:78:04:d1:26:2b:ad:24:24 your_email@example.com
-        ]]></script>
+
+<pre><code class="language-bash">
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/you/.ssh/id_rsa): /home/you/.ssh/your_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/you/.ssh/your_rsa.
+Your public key has been saved in /home/you/.ssh/your_rsa.pub.
+The key fingerprint is:
+1e:b2:dd:ee:9b:61:ae:34:78:04:d1:26:2b:ad:24:24 your_email@example.com
+</code></pre>
+
         <p>Шэраг магчымых опцыяў:</p>
         <ul>
           <li><code>-t</code>&nbsp;&ndash; тып ключа. Магчымыя значэньні <code>rsa1</code> для пратаколу вэрсіі 1 і <code>rsa</code>/<code>dsa</code> для пратаколу вэрсіі 2.</li>
@@ -579,14 +629,18 @@
         <p>Каб пабачыць <i>fingerprint</i> ключа, можна скарыстацца камандамі:</p>
         <ul>
           <li><i>fingerprint</i> публічнага ключа цяперашняга карыстальніка:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              $ ssh-add -l
-            ]]></script>
+
+<pre><code class="language-bash">
+$ ssh-add -l
+</code></pre>
+
           </li>
           <li><i>fingerprint</i> адвольнага ключа з пазначэньнем шляху да гэтага ключа:
-            <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-              $ ssh-keygen -lf ~/.ssh/id_rsa.pub
-            ]]></script>
+
+<pre><code class="language-bash">
+$ ssh-keygen -lf ~/.ssh/id_rsa.pub
+</code></pre>
+
           </li>
         </ul>
 
@@ -599,9 +653,11 @@
           </ul>
         </div>
         <p>Каб зрабіць <i>SSH</i>-тунэль, можна скарыстацца камандай:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ ssh -N -L &lt;LOCAL_PORT&gt;:&lt;REMOTE_HOST&gt;:&lt;REMOTE_PORT&gt; &lt;USER_NAME&gt;@&lt;SSH_SERVER&gt;
-        ]]></script>
+
+<pre><code class="language-bash">
+$ ssh -N -L &lt;LOCAL_PORT&gt;:&lt;REMOTE_HOST&gt;:&lt;REMOTE_PORT&gt; &lt;USER_NAME&gt;@&lt;SSH_SERVER&gt;
+</code></pre>
+
         <p>Тлумачэньне:</p>
         <ul>
           <li><code>-N</code>&nbsp;&ndash; вызначае, што злучэньне будзе не інтэрактыўным (<i>SSH</i>-кансоль адлеглага сэрвэру не будзе адкрытая).</li>
@@ -613,29 +669,38 @@
           <li><code>&lt;USER_NAME&gt;</code>&nbsp;&ndash; імя карыстальніка, які зарэгістраваны на <i>SSH</i>-сэрвэры.</li>
         </ul>
         <p>Прыклад:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ ssh -N -L 9022:10.1.22.16:22 yurtsevich@192.168.117.160
-        ]]></script>
+
+<pre><code class="language-bash">
+$ ssh -N -L 9022:10.1.22.16:22 yurtsevich@192.168.117.160
+</code></pre>
+
         <p>Калі такое злучэньне робіцца на рэгулярнай аснове, можна яго вынесьці ў наладкі, прысвоіць імя і злучацца па імені. Дадаем наступнае ў файл <code>~/.ssh/config</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
+
+<pre><code class="language-text">
           Host tunnel
               HostName 192.168.117.160
               IdentityFile ~/.ssh/id_rsa
               LocalForward 9022 10.1.22.16:22
               User yurtsevich
-        ]]></script>
+</code></pre>
+
         <p>Тады злучэньне можна будзе рабіць наступным скарочаным чынам:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ ssh -N tunnel
-        ]]></script>
+
+<pre><code class="language-bash">
+$ ssh -N tunnel
+</code></pre>
+
         <p>А калі дадаць аргумэнт <code>-f</code> тады кансоль не заліпне пасьля злучэньня:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ ssh -N -f tunnel
-        ]]></script>
+
+<pre><code class="language-bash">
+$ ssh -N -f tunnel
+</code></pre>
+
         <p>Пасьля гэтага можна зьвяртацца да лякальнага парта, быццам гэта порт адлеглага сэрвэру:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ git clone ssh://git@localhost:9022/project/repo
-        ]]></script>
+
+<pre><code class="language-bash">
+$ git clone ssh://git@localhost:9022/project/repo
+</code></pre>
 
         <h2 id="Network_SCP">SCP</h2>
         <div class="refs">
@@ -645,17 +710,23 @@
           </ul>
         </div>
         <p>Сьцягнуць файл <code>foobar.txt</code> з адлеглага хаста <code>remotehost.edu</code> у лякальную тэчку <code>/some/local/directory</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ scp your_username@remotehost.edu:foobar.txt /some/local/directory
-        ]]></script>
+
+<pre><code class="language-bash">
+$ scp your_username@remotehost.edu:foobar.txt /some/local/directory
+</code></pre>
+
         <p>Адправіць файл <code>foobar.txt</code> з цяперашняй тэчкі на адлеглы хост <code>remotehost.edu</code> у яго тэчку <code>/some/remote/directory</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ scp foobar.txt your_username@remotehost.edu:/some/remote/directory
-        ]]></script>
+
+<pre><code class="language-bash">
+$ scp foobar.txt your_username@remotehost.edu:/some/remote/directory
+</code></pre>
+
         <p>Адправіць файл <code>foobar.txt</code> з адлеглага хоста <code>rh1.edu</code> на іншы адлеглы хост <code>rh2.edu</code>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ scp you@rh1.edu:/some/remote/directory/foobar.txt you@rh2.edu:/some/remote/directory/
-        ]]></script>
+
+<pre><code class="language-bash">
+$ scp you@rh1.edu:/some/remote/directory/foobar.txt you@rh2.edu:/some/remote/directory/
+</code></pre>
+
         <p>Магчымыя опцыі:</p>
         <ul>
           <li><code>-r</code>&nbsp;&ndash; рэкурсіўна пераносіць усю тэчку.</li>
@@ -670,9 +741,10 @@
           </ul>
         </div>
         <p>Сьцягнуць файл <code>foobar.txt</code> з адлеглага хаста <code>remotehost.edu</code> у лякальную тэчку <code>/some/local/directory</code> з пазначэньнем альтэрнатыўнага парта (2222, у адрозьненьне ад змоўчнага 22):</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ rsync -av --partial -e "ssh -p 2222" you@remotehost.edu:foobar.txt /some/local/directory
-        ]]></script>
+
+<pre><code class="language-bash">
+$ rsync -av --partial -e "ssh -p 2222" you@remotehost.edu:foobar.txt /some/local/directory
+</code></pre>
 
         <h2 id="Network_GNUscreen">GNU screen</h2>
         <div class="refs">
@@ -682,9 +754,10 @@
           </ul>
         </div>
         <p>Робіць проксі паміж хастом і сэсіяй адлеглага карыстальніка да гэтага хаста. Што дазваляе камандам працягваць выконвацца на хасьце нават калі сэсія адлеглага карыстальніка перарываецца. Падключэньне да <code>screen</code> пасьля лагіну:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ screen -D -RR
-        ]]></script>
+
+<pre><code class="language-bash">
+$ screen -D -RR
+</code></pre>
 
         <h2 id="Network_Nginx">Nginx</h2>
         <p><a href="http://www.javacodegeeks.com/2015/09/introduction-to-nginx.html">Introduction to Nginx – Complete Tutorial</a></p>
@@ -703,82 +776,94 @@
         </div>
         <p>Пры дапамозе каманды <code>xinput</code> можна праглядаць і наладжваць прыстасаваньні ўводу.</p>
         <p>Праглядзець сьпіс прыстасаваньняў можна наступным чынам:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ xinput --list
-          ⎡ Virtual core pointer                          id=2  [master pointer  (3)]
-          ⎜   ↳ Virtual core XTEST pointer                id=4  [slave  pointer  (2)]
-          ⎜   ↳ DaKai 2.4G RX                             id=11 [slave  pointer  (2)]
-          ⎜   ↳ PS/2 Logitech Wheel Mouse                 id=15 [slave  pointer  (2)]
-          ⎣ Virtual core keyboard                         id=3  [master keyboard (2)]
-              ↳ Virtual core XTEST keyboard               id=5  [slave  keyboard (3)]
-              ↳ Power Button                              id=6  [slave  keyboard (3)]
-              ↳ Video Bus                                 id=7  [slave  keyboard (3)]
-              ↳ Video Bus                                 id=8  [slave  keyboard (3)]
-              ↳ Sleep Button                              id=9  [slave  keyboard (3)]
-              ↳ DaKai 2.4G RX                             id=10 [slave  keyboard (3)]
-              ↳ USB2.0 HD UVC WebCam                      id=12 [slave  keyboard (3)]
-              ↳ Asus WMI hotkeys                          id=13 [slave  keyboard (3)]
-              ↳ AT Translated Set 2 keyboard              id=14 [slave  keyboard (3)]
-        ]]></script>
+
+<pre><code class="language-bash">
+$ xinput --list
+⎡ Virtual core pointer                          id=2  [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4  [slave  pointer  (2)]
+⎜   ↳ DaKai 2.4G RX                             id=11 [slave  pointer  (2)]
+⎜   ↳ PS/2 Logitech Wheel Mouse                 id=15 [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3  [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5  [slave  keyboard (3)]
+    ↳ Power Button                              id=6  [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7  [slave  keyboard (3)]
+    ↳ Video Bus                                 id=8  [slave  keyboard (3)]
+    ↳ Sleep Button                              id=9  [slave  keyboard (3)]
+    ↳ DaKai 2.4G RX                             id=10 [slave  keyboard (3)]
+    ↳ USB2.0 HD UVC WebCam                      id=12 [slave  keyboard (3)]
+    ↳ Asus WMI hotkeys                          id=13 [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=14 [slave  keyboard (3)]
+</code></pre>
+
         <p>Праглядзець сьпіс атрыбутаў пэўнага прыстасаваньня можна наступным чынам (па <i>id</i> прыстасаваньня):</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ xinput --list-props 11
-          Device 'DaKai 2.4G RX':
-                  Device Enabled (154): 1
-                  Coordinate Transformation Matrix (156): 1.000000, 0.000000, 0.000000, 
+
+<pre><code class="language-bash">
+$ xinput --list-props 11
+Device 'DaKai 2.4G RX':
+        Device Enabled (154): 1
+        Coordinate Transformation Matrix (156): 1.000000, 0.000000, 0.000000, 
 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
-                  Device Accel Profile (282): 0
-                  Device Accel Constant Deceleration (283): 2.000000
-                  Device Accel Adaptive Deceleration (284): 2.500000
-                  Device Accel Velocity Scaling (285):  0.500000
-                  Device Product ID (273):  3727, 165
-                  Device Node (274):  "/dev/input/event7"
-                  Evdev Axis Inversion (286): 0, 0
-                  Evdev Axes Swap (288):  0
-                  Axis Labels (289):  "Rel X" (164), "Rel Y" (165), 
+        Device Accel Profile (282): 0
+        Device Accel Constant Deceleration (283): 2.000000
+        Device Accel Adaptive Deceleration (284): 2.500000
+        Device Accel Velocity Scaling (285):  0.500000
+        Device Product ID (273):  3727, 165
+        Device Node (274):  "/dev/input/event7"
+        Evdev Axis Inversion (286): 0, 0
+        Evdev Axes Swap (288):  0
+        Axis Labels (289):  "Rel X" (164), "Rel Y" (165), 
 "Rel Horiz Wheel" (280), "Rel Vert Wheel" (281)
-                  Button Labels (290):  "Button Left" (157), "Button Middle" (158), 
+        Button Labels (290):  "Button Left" (157), "Button Middle" (158), 
 "Button Right" (159), "Button Wheel Up" (160), "Button Wheel Down" (161), 
 "Button Horiz Wheel Left" (162), "Button Horiz Wheel Right" (163), "Button Side" (278), 
 "Button Extra" (279), "Button Unknown" (276), "Button Unknown" (276), 
 "Button Unknown"(276), "Button Unknown" (276)
-                  Evdev Middle Button Emulation (291):  1
-                  Evdev Middle Button Timeout (292):  50
-                  Evdev Third Button Emulation (293): 0
-                  Evdev Third Button Emulation Timeout (294): 1000
-                  Evdev Third Button Emulation Button (295):  3
-                  Evdev Third Button Emulation Threshold (296): 20
-                  Evdev Wheel Emulation (297):  0
-                  Evdev Wheel Emulation Axes (298): 0, 0, 4, 5
-                  Evdev Wheel Emulation Inertia (299):  10
-                  Evdev Wheel Emulation Timeout (300):  200
-                  Evdev Wheel Emulation Button (301): 4
-                  Evdev Drag Lock Buttons (302):  0
-        ]]></script>
-        <p>Аднак трэба памятаць, што спадзявацца на <i>id</i> ня варта, таму што сьпіс прыстасаваньняў можа зьмяніцца, а адпаведна і <i>id</i>. Таму тое ж самае можна зрабіць па імені прыстасаваньня.</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ xinput --list-props "DaKai 2.4G RX"
-          Warning: There are multiple devices matching 'DaKai 2.4G RX'.
-          To ensure the correct one is selected, please use the device ID, or prefix the
-          device name with 'pointer:' or 'keyboard:' as appropriate.
+        Evdev Middle Button Emulation (291):  1
+        Evdev Middle Button Timeout (292):  50
+        Evdev Third Button Emulation (293): 0
+        Evdev Third Button Emulation Timeout (294): 1000
+        Evdev Third Button Emulation Button (295):  3
+        Evdev Third Button Emulation Threshold (296): 20
+        Evdev Wheel Emulation (297):  0
+        Evdev Wheel Emulation Axes (298): 0, 0, 4, 5
+        Evdev Wheel Emulation Inertia (299):  10
+        Evdev Wheel Emulation Timeout (300):  200
+        Evdev Wheel Emulation Button (301): 4
+        Evdev Drag Lock Buttons (302):  0
+</code></pre>
 
-          unable to find device DaKai 2.4G RX
-        ]]></script>
+        <p>Аднак трэба памятаць, што спадзявацца на <i>id</i> ня варта, таму што сьпіс прыстасаваньняў можа зьмяніцца, а адпаведна і <i>id</i>. Таму тое ж самае можна зрабіць па імені прыстасаваньня.</p>
+
+<pre><code class="language-bash">
+$ xinput --list-props "DaKai 2.4G RX"
+Warning: There are multiple devices matching 'DaKai 2.4G RX'.
+To ensure the correct one is selected, please use the device ID, or prefix the
+device name with 'pointer:' or 'keyboard:' as appropriate.
+
+unable to find device DaKai 2.4G RX
+</code></pre>
+
         <p>Упс. Сыстэма паскардзілася, што прыстасаваньняў з такім імем некалькі і яна сама ня можа вызначыць які зь іх мы мелі на ўвазе, таму трэба быць больш дакладным:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ xinput --list-props "pointer:DaKai 2.4G RX"
-          Device 'DaKai 2.4G RX':
-                  Device Enabled (154): 1
-                  ...
-        ]]></script>
+
+<pre><code class="language-bash">
+$ xinput --list-props "pointer:DaKai 2.4G RX"
+Device 'DaKai 2.4G RX':
+        Device Enabled (154): 1
+        ...
+</code></pre>
+
         <p>Зьмяніць значэньне пэўнага атрыбуту прыстасаваньня, можна наступным чынам (па <i>id</i> прыстасаваньня і атрыбута):</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ xinput --set-prop 11 283 2.0
-        ]]></script>
+
+<pre><code class="language-bash">
+$ xinput --set-prop 11 283 2.0
+</code></pre>
+
         <p>Альбо тое ж самае па імені прыстасаваньня і атрыбута:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ xinput --set-prop "pointer:DaKai 2.4G RX" "Device Accel Constant Deceleration" 2.0
-        ]]></script>
+
+<pre><code class="language-bash">
+$ xinput --set-prop "pointer:DaKai 2.4G RX" "Device Accel Constant Deceleration" 2.0
+</code></pre>
+
         <p>Сэнс некаторых атрыбутаў прыстасаваньняў навядзеньня (мыш):</p>
         <ul>
           <li><i>Device Accel Constant Deceleration</i>&nbsp;&ndash; каэфіцыент замаруджваньня хуткасьці руху курсору пры звычайных рухах мышкай; чым вышэй значэньне, тым марудней будзе рухацца курсор пры тых жа рухах мышкай.</li>
@@ -801,52 +886,69 @@
           </ul>
         </div>
         <p>Падключыцца да базы:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ mysql -u USERNAME -p
-        ]]></script>
+
+<pre><code class="language-bash">
+$ mysql -u USERNAME -p
+</code></pre>
+
         <p>Пабачыць сьпіс усіх базаў у кансолі <i>mysql</i>:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          mysql> show databases;
-        ]]></script>
+
+<pre><code class="language-sql">
+mysql> show databases;
+</code></pre>
+
         <p>Стварыць новы экзэмпляр базы:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          mysql> create database DBNAME;
-        ]]></script>
+
+<pre><code class="language-sql">
+mysql> create database DBNAME;
+</code></pre>
+
         <p>Надзяліць пэўнага юзэра правамі доступу да пэўнай базы:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          mysql> grant all privileges on DBNAME.* to USER@"localhost" identified by 'PASSWORD';
-        ]]></script>
+
+<pre><code class="language-sql">
+mysql> grant all privileges on DBNAME.* to 'USER'@'localhost' identified by 'PASSWORD';
+</code></pre>
+
         <p>Падключыцца да пэўнай базы:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          mysql> use DBNAME;
-        ]]></script>
+
+<pre><code class="language-sql">
+mysql> use DBNAME;
+</code></pre>
+
         <p>Пасьля гэтага можна выконваць <i>SQL</i>-запыты да гэтай базы.</p>
         <p>Сьцягнуць дамп базы ў файл:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ mysql -u USERNAME -p DBNAME > dump.sql
-          # альбо
-          $ mysqldump -u USERNAME -p DBNAME > dump.sql
-        ]]></script>
+
+<pre><code class="language-bash">
+$ mysql -u USERNAME -p DBNAME > dump.sql
+# альбо
+$ mysqldump -u USERNAME -p DBNAME > dump.sql
+</code></pre>
+
         <p>Накаціць дамп базы з файла:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ mysql -u USERNAME -p DBNAME < dump.sql
-          # альбо ў кансолі базы
-          mysql> source /path/to/dump.sql
-        ]]></script>
+
+<pre><code class="language-bash">
+$ mysql -u USERNAME -p DBNAME < dump.sql
+# альбо ў кансолі базы
+mysql> source /path/to/dump.sql
+</code></pre>
+
         <p>Выдаліць таймстэмпы са скрыпта:</p>
-        <script type="syntaxhighlighter" class="brush: bash"><![CDATA[
-          $ sed -i 's/DEFAULT CURRENT_TIMESTAMP//g' SCRIPT.sql
-        ]]></script>
+
+<pre><code class="language-bash">
+$ sed -i 's/DEFAULT CURRENT_TIMESTAMP//g' SCRIPT.sql
+</code></pre>
+
         <br/>
-        <script type="syntaxhighlighter" class="brush: sql"><![CDATA[
-          select name, round(1.0 * count(distinct order_id) /
-            count(distinct orders.delivered_to), 2) as reorder_rate
-          from order_items
-            join orders on
-              orders.id = order_items.order_id
-          group by 1
-          order by 2 desc;
-        ]]></script>
+
+<pre><code class="language-sql">
+select name, round(1.0 * count(distinct order_id) /
+  count(distinct orders.delivered_to), 2) as reorder_rate
+from order_items
+  join orders on
+    orders.id = order_items.order_id
+group by 1
+order by 2 desc;
+</code></pre>
 
         <h2 id="DB_MongoDB">MongoDB</h2>
         <p><a href="http://campus.codeschool.com/courses/the-magical-marvels-of-mongodb">"The magical marvels of MongoDB"&nbsp;&ndash; відэа-курс ад <i>CodeSchool</i></a>.</p>
@@ -854,7 +956,7 @@
 
       <footer>
         <div id="copyright">
-          <p>Copyright &copy; 2010-2015 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
+          <p>Copyright &copy; 2010-2016 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>
           <p>
             <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/deed.be">
               <img src="http://i.creativecommons.org/l/by-nc/3.0/88x31.png"
@@ -864,88 +966,80 @@
           <p><cite>Тэхнічны даведнік па Linux</cite> публікуецца пад ліцэнзіяй <cite>Commons Creative Attribution-NonCommercial 3.0 Unported (CC BY-NC 3.0)</cite>. Вы вольны ў тым, як выкарыстоўваць гэтую працу, у тым ліку капіяваць, распаўсюджваць і зьмяняць яе на свой капыл. Але <strong>толькі ў некамэрцыйных мэтах</strong> і <strong>абавязкова з пазнакай <a href="http://yurtsevich.info/refs/linuxRef/">крыніцы</a></strong> матэрыялу.</p>
         </div>
       </footer>
+
+      <!-- Disqus BEGIN -->
+        <div id="disqus_thread"></div>
+        <script>
+          (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+
+          s.src = '//tekhnichny-davednik-pa-linux.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+        <noscript>Калі ласка, актывізуйце JavaScript каб бачыць <a href="http://disqus.com/?ref_noscript" rel="nofollow">камэнтары праз сыстэму Disqus.</a></noscript>
+      <!-- Disqus END -->
     </article>
+
   </div> <!--! end of #container -->
 
+  <div id="comments_link" class="uv-icon"><a href="#disqus_thread" title="Перайсьці да блёку з камэнтамі"></a></div>
 
-  <!-- Javascript at the bottom for fast page loading -->
-
-  <!-- GetSatisfaction feedback button BEGIN -->
-  <script type="text/javascript" charset="utf-8">
-    var is_ssl = ("https:" == document.location.protocol);
-    var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
-    document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
-  </script>
-
-  <script type="text/javascript" charset="utf-8">
-    var feedback_widget_options = {};
-
-    feedback_widget_options.display = "overlay";
-    feedback_widget_options.company = "yurtsevich";
-    feedback_widget_options.placement = "right";
-    feedback_widget_options.color = "#222";
-    feedback_widget_options.style = "problem";
-
-    var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
-  </script>
-  <!-- GetSatisfaction feedback button END -->
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+                                      Javascript at the bottom for fast page loading 
+   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 
   <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <script>!window.jQuery && document.write(unescape('%3Cscript src="../js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
-  <script src="../js/index.js"></script>
+  <!-- 3rd party library to display tree-like table of content -->
   <script src="../js/libs/jquery.tree.js"></script>
-
+  <!-- Own script to build Refs index and article's table of content -->
+  <script src="../js/index.js"></script>
+  <!-- 3rd party library to fire scrolling events -->
   <script src="../js/libs/waypoints.min.js"></script>
+  <!-- Own script to highlight currently viewing section in table of content with help of waypoints-library -->
   <script src="../js/ref.js"></script>
+  <!-- 3rd party library to highlight code syntax -->
+  <script src="../js/libs/prism.js"></script>
 
-  <script src="../js/libs/xregexp.js"></script>
-  <script src="../js/libs/shCore.js"></script>
-  <script src="../js/libs/shAutoloader.js"></script>
-  <script type="text/javascript">
-    function path()
-    {
-      var args = arguments,
-          result = []
-          ;
+  <!-- To display embedded JSBin examples -->
+  <script async src="http://static.jsbin.com/js/embed.min.js?3.35.2"></script>
+  <!-- To display embedded CodePen examples -->
+  <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
 
-      for(var i = 0; i < args.length; i++)
-          result.push(args[i].replace('@', '../js/libs/'));
+  <script src="../js/js.js"></script>
 
-      return result
-    };
+  <!-- Uservoice BEGIN -->
+  <script>
+    // Include the UserVoice JavaScript SDK (only needed once on a page)
+    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/Of84cKdV6fJsdTM8rZd0g.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
 
-    SyntaxHighlighter.autoloader.apply(null, path(
-      'applescript            @shBrushAppleScript.js',
-      'actionscript3 as3      @shBrushAS3.js',
-      'bash shell             @shBrushBash.js',
-      'coldfusion cf          @shBrushColdFusion.js',
-      'cpp c                  @shBrushCpp.js',
-      'c# c-sharp csharp      @shBrushCSharp.js',
-      'css                    @shBrushCss.js',
-      'delphi pascal          @shBrushDelphi.js',
-      'diff patch pas         @shBrushDiff.js',
-      'erl erlang             @shBrushErlang.js',
-      'groovy                 @shBrushGroovy.js',
-      'java                   @shBrushJava.js',
-      'jfx javafx             @shBrushJavaFX.js',
-      'js jscript javascript  @shBrushJScript.js',
-      'perl pl                @shBrushPerl.js',
-      'php                    @shBrushPhp.js',
-      'text plain             @shBrushPlain.js',
-      'py python              @shBrushPython.js',
-      'ruby rails ror rb      @shBrushRuby.js',
-      'sass scss              @shBrushSass.js',
-      'scala                  @shBrushScala.js',
-      'sql                    @shBrushSql.js',
-      'vb vbnet               @shBrushVb.js',
-      'xml xhtml xslt html    @shBrushXml.js'
-    ));
+    //
+    // UserVoice Javascript SDK developer documentation:
+    // https://www.uservoice.com/o/javascript-sdk
+    //
 
-    SyntaxHighlighter.defaults['toolbar'] = false;
-    SyntaxHighlighter.all();
+    // Set colors
+    UserVoice.push(['set', {
+      accent_color: '#448dd6',
+      trigger_color: 'white',
+      trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+    }]);
+
+    // Add default trigger to the bottom-right corner of the window:
+    UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+    // Or, use your own custom trigger:
+    //UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
+
+    // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+    UserVoice.push(['autoprompt', {}]);
   </script>
+  <!-- Uservoice END -->
 
   <!-- asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet
        change the UA-XXXXX-X to be your site's ID -->

@@ -221,6 +221,9 @@ figure {margin: 20px;}
     th, td {text-align: center;}
   }
   th.centered, td.centered {text-align: center;}
+  table.tiny {
+    td,th {line-height: 1; font-size: 12px; padding: 4px 0;}
+  }
 
   abbr.changed_in_html5, abbr.new_in_html5, abbr.obsolete_in_html5 {font-size: x-small; vertical-align: super;}
   abbr.changed_in_html5 {color: #00b050;}
@@ -266,7 +269,6 @@ figure {margin: 20px;}
     .git_branching {text-align: left;}
   }
 }
-
 #on_example {min-height: 400px;
   dt {background: #DDDDDD; border-bottom: 1px solid #999999; border-top: 1px solid white; cursor: pointer; font-size: 1.5em; font-weight: bold; line-height: 2em;}
   dd {padding: 1em 0;}
