@@ -194,6 +194,143 @@ $ export PATH=$PATH:/path/to/dir
       </section>
 
       <section>
+        <h1 id="Security" data-content-item-open>Бясьпека</h1>
+
+        <h2 id="Security_ID">UID, GID, Groups</h2>
+        <p>Каманда <code>id</code> паказвае <i>UID</i>, <i>GID</i> і <i>ID</i> групаў карыстальніка:</p>
+
+<pre><code class="language-bash">
+$ id carla
+uid=1000(carla) gid=1000(carla) groups=1000(carla), 4(adm),24(cdrom),27(sudo),30(dip),46(plugdev), 113(lpadmin),128(sambashare),999(docker)
+</code></pre>
+
+        <p>Потым гэтымі значэньнямі можна карыстацца ў іншых камандах, ці калі патрэбна пазначэньне карыстальніка. Напрыклад <a href="#FileSystem_Search_CLI">пошук файлаў</a>, якія належаць пэўнаму карыстальніку ў карнявой тэчцы <code>home</code>:</p>
+
+<pre><code class="language-bash">
+$ find /home -uid 1001 | tee 1001-files.txt
+</code></pre>
+
+
+        <h2 id="Security_UserGroups">Групы карыстальнікаў</h2>
+        <p>Вывесьці сьпіс усіх групаў у сыстэме можна наступным чынам:</p>
+
+<pre><code class="language-bash">
+$ cat /etc/group | sort
+</code></pre>
+
+        <p>Вывесьці сьпіс групаў, да якіх належыць цяперашні залагінены карыстальнік:</p>
+
+<pre><code class="language-bash">
+$ groups
+</code></pre>
+
+        <p>Дадаць, выдаліць і зьмяніць атрыбуты групы можна камандамі <code>groupadd</code>, <code>groupdel</code>, <code>groupmod</code>. А таксама аналягі першай і другой зь іх: <code>addgroup</code>, <code>delgroup</code> (у <i>Debian</i> і яго вытворных).</p>
+
+        <h2 id="Security_Users">Карыстальнікі</h2>
+        <p>Вывесьці імя цяперашняга залагіненага карыстальніка:</p>
+
+<pre><code class="language-bash">
+$ whoami
+</code></pre>
+
+        <p>Дадаць, выдаліць і зьмяніць атрыбуты карыстальніка можна камандамі <code>useradd</code>, <code>userdel</code>, <code>usermod</code>. А таксама аналягі першай і другой зь іх: <code>adduser</code>, <code>deluser</code> (у <i>Debian</i> і яго вытворных).</p>
+
+        <p>Дадаць цяперашняга залагіненага карыстальніка да пэўнай группы:</p>
+
+<pre><code class="language-bash">
+$ sudo usermod -G &lt;NAME_OF_GROUP&gt; -a $(whoami)
+</code></pre>
+
+        <p>Каманда <code>deluser</code> мае наступныя карысныя опцыі:</p>
+
+<pre><code class="language-bash">
+$ deluser --help
+deluser USER
+  remove a normal user from the system
+  example: deluser mike
+
+  --remove-home             remove the users home directory and mail spool
+  --remove-all-files        remove all files owned by user
+  --backup                  backup files before removing.
+  --backup-to <DIR>         target directory for the backups.
+                            Default is the current directory.
+  --system                  only remove if system user
+</code></pre>
+
+        <p>А каманда <code>userdel</code> наступныя:</p>
+
+<pre><code class="language-bash">
+$ userdel --help
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force removal of files,
+                                even if not owned by user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+</code></pre>
+
+
+        <h2 id="Security_Ownership">Валоданьне файламі і тэчкамі</h2>
+        <p>Даведацца хто валодае выключным правам на пэўны файл ці тэчку можна некалькімі спосабамі. Першы:</p>
+
+<pre><code class="language-bash">
+$ ls -l /path/to/file
+</code></pre>
+
+        <p>Другі:</p>
+
+<pre><code class="language-bash">
+$ stat /path/to/file
+
+$ stat py
+  File: `py'
+  Size: 32              Blocks: 8          IO Block: 4096   regular file
+Device: 801h/2049d      Inode: 429064      Links: 1
+Access: (0777/-rwxrwxrwx)  Uid: ( 1000/  razvan)   Gid: ( 1000/  razvan)
+Access: 2012-07-27 17:49:05.682143441 +0300
+Modify: 2012-07-01 03:58:02.848540175 +0300
+Change: 2012-08-01 21:12:57.129819212 +0300
+</code></pre>
+
+        <p>І апошні аналягічны папярэдняму, але замест падрабязнай інфармацыі выводзім толькі карыстальніка і групу:</p>
+
+<pre><code class="language-bash">
+$ stat -c "%U %G" /path/to/file
+</code></pre>
+
+        <p>Зьмяніць права валоданьня усіх файлаў і тэчкаў у тэчцы <code>/home/username</code> і ўва ўсіх яе ўкладзеных тэчках (аргумэнт <i>-R</i>) на карыстальніка <code>newuser</code> і групу з такім жа імем:</p>
+
+<pre><code class="language-bash">
+$ chown -R newuser:newuser /home/username
+</code></pre>
+
+        <p>Таксама можна прабегчыся па ўсім файлам сыстэмы і зьмяніць валоданьне з аднаго карыстальніка на іншага:</p>
+
+<pre><code class="language-bash">
+$ find / -uid 1003 -exec chown -v 1010:1010 {} \;
+</code></pre>
+
+        <h2 id="Security_Processes">Працэсы</h2>
+        <p>Праглядзець сьпіс працэсаў, якія былі запушчаныя пэўным карыстальнікам можна наступным чынам:</p>
+
+<pre><code class="language-bash">
+$ ps U username
+</code></pre>
+
+        <p>А "прыбіць" усе такія працэсы можна адмысловай камандай <code>slay</code>:</p>
+
+<pre><code class="language-bash">
+$ slay -clean username
+</code></pre>
+
+
+
+      </section>
+
+      <section>
         <h1 id="Programs" data-content-item-open>Праграмы</h1>
 
         <h2 id="Programs_RegisterFromArchive">Рэгістрацыя праграмы з архіву</h2>
