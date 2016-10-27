@@ -23,9 +23,9 @@ function main_index(active_page) {
   var main_index = $("<div id='main_index'>");
 
   if (isPublic(active_page)) {
-    main_index.append(web_ul());
-    main_index.append(coding_ul());
-    main_index.append(etc_ul());
+    main_index.append(web_ul(active_page));
+    main_index.append(coding_ul(active_page));
+    main_index.append(etc_ul(active_page));
     main_index.append(github());
   } else if (isSingle(active_page)) {
     // No main index for detached single pages
@@ -97,36 +97,58 @@ function content() {
   return content.append(content_tree);
 }
 
-function web_ul() {
+function web_ul(active_page) {
   var ul = new_ul();
 
-  ul.append(new_li().append($("<a href='../htmlRef/index.html' title='Даведнік па HTML'>HTML</a>")));
-  ul.append(new_li().append($("<a href='../cssRef/index.html' title='Даведнік па CSS'>CSS</a>")));
-  ul.append(new_li().append($("<a href='../jsRef/index.html' title='Даведнік па JavaScript'>JS</a>")));
-  ul.append(new_li().append($("<a href='../webRef/index.html' title='Распрацоўка сайтаў і сеціўных праграмаў'>Web</a>")));
+  if (active_page) {
+    ul.append(new_li().append($("<a href='../htmlRef/index.html' title='Даведнік па HTML'>HTML</a>")));
+    ul.append(new_li().append($("<a href='../cssRef/index.html' title='Даведнік па CSS'>CSS</a>")));
+    ul.append(new_li().append($("<a href='../jsRef/index.html' title='Даведнік па JavaScript'>JS</a>")));
+    ul.append(new_li().append($("<a href='../webRef/index.html' title='Распрацоўка сайтаў і сеціўных праграмаў'>Web</a>")));
+  } else {
+    ul.append(new_li().append($("<a href='htmlRef/index.html' title='Даведнік па HTML'>HTML</a>")));
+    ul.append(new_li().append($("<a href='cssRef/index.html' title='Даведнік па CSS'>CSS</a>")));
+    ul.append(new_li().append($("<a href='jsRef/index.html' title='Даведнік па JavaScript'>JS</a>")));
+    ul.append(new_li().append($("<a href='webRef/index.html' title='Распрацоўка сайтаў і сеціўных праграмаў'>Web</a>")));
+  }
 
   return ul;
 }
 
-function coding_ul() {
+function coding_ul(active_page) {
   var ul = new_ul();
 
-  ul.append(new_li().append($("<a href='../codingRef/index.html' title='Даведнік па тэорыі і прынцыпах праграмаваньня'>Coding</a>")));
-  ul.append(new_li().append($("<a href='../javaRef/index.html' title='Даведнік па Java'>Java</a>")));
-  ul.append(new_li().append($("<a href='../scalaRef/index.html' title='Даведнік па Scala'>Scala</a>")));
-  ul.append(new_li().append($("<a href='../rubyRef/index.html' title='Даведнік па Ruby'>Ruby</a>")));
-  ul.append(new_li().append($("<a href='../railsRef/index.html' title='Даведнік па Ruby-on-Rails'>Rails</a>")));
+  if (active_page) {
+    ul.append(new_li().append($("<a href='../codingRef/index.html' title='Даведнік па тэорыі і прынцыпах праграмаваньня'>Coding</a>")));
+    ul.append(new_li().append($("<a href='../javaRef/index.html' title='Даведнік па Java'>Java</a>")));
+    ul.append(new_li().append($("<a href='../scalaRef/index.html' title='Даведнік па Scala'>Scala</a>")));
+    ul.append(new_li().append($("<a href='../rubyRef/index.html' title='Даведнік па Ruby'>Ruby</a>")));
+    ul.append(new_li().append($("<a href='../railsRef/index.html' title='Даведнік па Ruby-on-Rails'>Rails</a>")));
+  } else {
+    ul.append(new_li().append($("<a href='codingRef/index.html' title='Даведнік па тэорыі і прынцыпах праграмаваньня'>Coding</a>")));
+    ul.append(new_li().append($("<a href='javaRef/index.html' title='Даведнік па Java'>Java</a>")));
+    ul.append(new_li().append($("<a href='scalaRef/index.html' title='Даведнік па Scala'>Scala</a>")));
+    ul.append(new_li().append($("<a href='rubyRef/index.html' title='Даведнік па Ruby'>Ruby</a>")));
+    ul.append(new_li().append($("<a href='railsRef/index.html' title='Даведнік па Ruby-on-Rails'>Rails</a>")));
+  }
 
   return ul;
 }
 
-function etc_ul() {
+function etc_ul(active_page) {
   var ul = new_ul();
 
-  ul.append(new_li().append($("<a href='../linuxRef/index.html' title='Даведнік па Linux'>Linux</a>")));
-  ul.append(new_li().append($("<a href='../idesRef/index.html' title='Даведнік па асяродкам распрацоўкі'>IDEs</a>")));
-  ul.append(new_li().append($("<a href='../gitRef/index.html' title='Даведнік па Git'>Git</a>")));
-  ul.append(new_li().append($("<a href='../deployRef/index.html' title='Даведнік па разгортваньні праграм'>Deploy</a>")));
+  if (active_page) {
+    ul.append(new_li().append($("<a href='../linuxRef/index.html' title='Даведнік па Linux'>Linux</a>")));
+    ul.append(new_li().append($("<a href='../idesRef/index.html' title='Даведнік па асяродкам распрацоўкі'>IDEs</a>")));
+    ul.append(new_li().append($("<a href='../gitRef/index.html' title='Даведнік па Git'>Git</a>")));
+    ul.append(new_li().append($("<a href='../deployRef/index.html' title='Даведнік па разгортваньні праграм'>Deploy</a>")));
+  } else {
+    ul.append(new_li().append($("<a href='linuxRef/index.html' title='Даведнік па Linux'>Linux</a>")));
+    ul.append(new_li().append($("<a href='idesRef/index.html' title='Даведнік па асяродкам распрацоўкі'>IDEs</a>")));
+    ul.append(new_li().append($("<a href='gitRef/index.html' title='Даведнік па Git'>Git</a>")));
+    ul.append(new_li().append($("<a href='deployRef/index.html' title='Даведнік па разгортваньні праграм'>Deploy</a>")));
+  }
 
   return ul;
 }
