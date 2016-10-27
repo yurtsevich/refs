@@ -25,83 +25,6 @@
       </header>
 
       <section>
-        <h1 id="OpenShift" data-content-item-open>OpenShift</h1>
-        <div class="refs">
-          <ul>
-            <li><a href="https://www.openshift.com/">Home</a></li>
-            <li><a href="https://openshift.redhat.com/app/console">Web console</a></li>
-          </ul>
-        </div>
-        <p><a href="http://www.first8.nl/blog/vertical-scaling-with-openshift/">VERTICAL SCALING WITH OPENSHIFT</a>.</p>
-        <p><a href="http://www.first8.nl/blog/horizontal-scaling-with-open-shift/">HORIZONTAL SCALING WITH OPENSHIFT</a>.</p>
-        <p><a href="http://www.first8.nl/blog/managing-multiple-gears-with-open-shift/">MANAGING MULTIPLE GEARS WITH OPEN SHIFT</a>.</p>
-
-        <p><i>OpenShift</i>&nbsp;&ndash; <i>The Open Hybrid Cloud Application Platform by Red Hat</i>, іншымі словамі <i>PaaS</i> для аўтаматычнага разгортваньня праграм на воблачным хостынгу.</p>
-        <p>Падтрымлівае мовы:</p>
-        <ul>
-          <li><i>Java</i> (<i>JBoss AS 7</i>, <i>WildFly 8.2</i>, <i>Tomcat 6/7 via JBoss EWS</i>, <i>JBoss EAP 6.4</i>)</li>
-          <li><i>Ruby</i></li>
-          <li><i>Node.js</i></li>
-          <li><i>Python</i></li>
-          <li><i>Perl</i></li>
-          <li><i>PHP</i></li>
-          <li><i>Ceylon</i></li>
-          <li><i>DIY/Custom</i></li>
-        </ul>
-
-        <h2 id="OpenShift_ClientTools">Client tools</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="https://developers.openshift.com/en/getting-started-debian-ubuntu.html">Install</a></li>
-            <li><a href="https://access.redhat.com/documentation/en-US/OpenShift_Online/2.0/html-single/User_Guide/index.html">Guide</a></li>
-          </ul>
-        </div>
-        <p>Акрамя <a href="https://openshift.redhat.com/app/console">вэб-кансолі</a> кіраваць праграмай можна праз <i>client tools</i> (<i>rhc</i>)&nbsp;&ndash; кансольную праграму, якая працуе на <i>Ruby</i>.</p>
-
-        <h2 id="OpenShift_CreateApp">Ствараем праграму</h2>
-
-<pre><code class="language-bash">
-$ rhc app-create myapp wildfly
-</code></pre>
-
-        <p>Будзе створана загатоўка <i>JEE</i>-праграмы для працы з сэрвэрам <i>WildFly</i> наступнай структуры:</p>
-<pre>
-|-- deployments/       Location for built WARs
-|-- src/               Maven source structure
-|-- pom.xml            Maven build file
-`-- .openshift/        Location for OpenShift specific files
-   |-- config/         Location for configuration files such as standalone.xml
-   |-- action_hooks/   See the Action Hooks documentation 
-   `-- markers/        See the Markers documentation 
-</pre>
-        <p>Дадаем <i>PostgreSQL</i>:</p>
-
-<pre><code class="language-bash">
-$ rhc cartridge add postgresql-9.2 -a myapp
-</code></pre>
-
-        <p>Адлеглыя <i>WildFly</i> і <i>PostgreSQL</i> будуць цалкам наладжаныя на працу. Застаецца наладзіць лякальныя <i>WildFly</i> і <i>PostgreSQL</i>.</p>
-
-        <h2 id="OpenShift_LocalConfig">Наладжваем лякальны асяродак</h2>
-        <div class="refs">
-          <ul>
-            <li><a href="http://www.mastertheboss.com/jboss-server/jboss-datasource/configuring-a-datasource-with-postgresql-and-jboss-wildfly">Link 1</a></li>
-            <li><a href="http://www.quizful.net/post/datasource-in-wildfly-jboss-using-postgresql">Link 2</a></li>
-            <li><a href="http://devcolibri.com/4661">Link 3</a></li>
-          </ul>
-        </div>
-        <p><a href="https://jdbc.postgresql.org/download.html">Запампоўваем</a> <i>JDBC</i>-драйвэр для <i>PostgreSQL</i> той вэрсіі, якая лякальна ўсталяваная (няхай гэта будзе <code>postgresql-9.1-903.jdbc4.jar</code>), і зьмяшчаем яго ў тэчку <code>/tmp</code>. Далей запускаем кансоль кіраваньня <i>WildFly</i>:</p>
-
-<pre><code class="language-bash">
-/opt/wildfly-8.2.0/bin $ bash jboss-cli.sh
-</code></pre>
-
-        <p>І пасьлядоўна наступныя каманды ў самой кансолі (для зручнасьці агляду тут устаўлены пераносы радку, але на самай справе рабіць іх ня трэба):</p>
-        <img style="margin-top: 10px;" src="wildfly_postgres.jpg">
-        <p>Юзэр <code>_USER_NAME_</code> з паролем <code>_PASSWORD_</code> і экзэмпляр базы <code>_DB_NAME_</code> ужо павінны быць створаныя ў лякальным <i>PostgreSQL</i>.</p>
-      </section>
-
-      <section>
         <h1 id="Docker">Docker</h1>
         <div class="refs">
           <ul>
@@ -113,23 +36,23 @@ $ rhc cartridge add postgresql-9.2 -a myapp
         </div>
         <p><a href="http://merrigrove.blogspot.co.uk/2015/10/visualizing-docker-containers-and-images.html?_tmc=Diy2bNEQqG5t8sSbcMW6T5Us4KCmgsInjBviObh0atg&mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4AS8VqI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Visualizing Docker Containers and Images</a></p>
         <p><a href="http://blog.xebia.com/2015/08/31/making-amazon-ecs-container-service-as-easy-to-use-as-docker-run/?mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4ASMRhI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Making Amazon ECS Container Service As Easy To Use As Docker Run</a></p>
-        <p><a href="http://tech.grammarly.com/blog/posts/Making-Docker-Rock-at-Grammarly.html?mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4ASMNhI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Making Docker Rock at Grammarly</a></p>
-        <p><a href="https://www.shopify.com/technology/15934308-docker-at-shopify-how-we-built-containers-that-power-over-100-000-online-shops">Docker at Shopify: How we built containers that power over 100,000 online shops</a></p>
-        <p><a href="https://www.shopify.com/technology/26892292-secrets-at-shopify-introducing-ejson">Secrets at Shopify - Introducing EJSON</a></p>
         <br />
-        <p><a href="http://www.javacodegeeks.com/2015/09/best-practices-for-multi-tier-java-application-deployments-on-docker-containers-on-any-cloud.html">Best Practices for Multi-Tier Java Application Deployments on Docker Containers on Any Cloud</a></p>
-        <p><a href="http://www.javacodegeeks.com/2015/10/docker-java-app-deployment-4-app-stacks-tomcat-glassfish-jetty-and-jboss.html">Docker Java App Deployment – 4 App Stacks: Tomcat, GlassFish, Jetty and JBoss</a></p>
-        <p><a href="http://www.javacodegeeks.com/2015/12/step-step-guide-dockerizing-managing-java-app-28-different-application-stacks.html">A Step by Step Guide for Dockerizing and Managing a Java App on 28 Different Application Stacks</a></p>
         <p><a href="http://www.javacodegeeks.com/2015/11/10-awesome-docker-tutorials-to-kick-start-your-devops-projects.html">10 Awesome Docker Tutorials to Kick-Start your DevOps Projects</a></p>
         <br />
         <br />
         <br />
-        <p><a href="https://docs.docker.com/engine/installation/linux/ubuntulinux/">Install Docker on Ubuntu</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04">How To Install and Use Docker on Ubuntu 16.04</a></p>
-        <p><a href="https://docs.docker.com/engine/getstarted/step_one/">Install Docker and run hello-world</a></p>
+        <p><a href="https://www.digitalocean.com/community/tutorials/how-to-work-with-docker-data-volumes-on-ubuntu-14-04">How To Work with Docker Data Volumes on Ubuntu 14.04</a></p>
         <p><a href="https://docs.docker.com/engine/admin/">Configuring and running Docker on various distributions</a></p>
         <p><a href="https://docs.docker.com/engine/reference/commandline/dockerd/">daemon</a></p>
         <p><a href="https://docs.docker.com/docker-cloud/installing-cli/">The Docker Cloud CLI</a></p>
         <p><a href="https://docs.docker.com/docker-cloud/infrastructure/byoh/">Use the Docker Cloud Agent</a></p>
+
+        <p><a href="https://www.youtube.com/watch?v=IgJXYU3GOM4">https://www.youtube.com/watch?v=IgJXYU3GOM4</a></p>
+        <p><a href="https://www.youtube.com/watch?v=aSATsLG59Zs">https://www.youtube.com/watch?v=aSATsLG59Zs</a></p>
+        <p><a href="https://www.youtube.com/watch?v=SK0sqfVn7l">https://www.youtube.com/watch?v=SK0sqfVn7ls</a></p>
+        <p><a href="https://www.youtube.com/watch?v=ZsIb5tkyncA">https://www.youtube.com/watch?v=ZsIb5tkyncA</a></p>
+        <p><a href="https://www.youtube.com/watch?v=ZNdc4-yFTeA">https://www.youtube.com/watch?v=ZNdc4-yFTeA</a></p>
+        <p><a href="https://www.youtube.com/watch?v=OzfmRMNBwlE">https://www.youtube.com/watch?v=OzfmRMNBwlE</a></p>
 
         <h2 id="Docker_Install">Усталяваньне</h2>
         <div class="refs">
@@ -232,8 +155,342 @@ $ sudo systemctl status docker
  Main PID: 1154 (dockerd)
 </code></pre>
 
+        <h3 id="Docker_Install_InvokeServiceWithoutSudo">Выкананьне без <code>sudo</code></h3>
+        <p><i>docker</i>-сэрвіс працуе праз <i>Unix-socket</i>, якім валодае <i>root</i>-карыстальнік, таму астатнія карыстальнікі могуць выконваць каманду <code>docker</code> толькі праз каманду адміністраваньня сыстэмы <code>sudo</code>. Для зручнасьці можна пазбавіцца ад такой неабходнасьці, для гэтага трэба дадаць карыстальніка пад якім вы працуеце ў <code>docker</code>-групу:</p>
 
-      </section>
+<pre><code class="language-bash">
+$ sudo usermod -G docker -a $(whoami)
+</code></pre>
+
+        <h2 id="Docker_Basics">Асновы</h2>
+
+        <h3 id="Docker_Basics_Commands">Каманды</h3>
+        <p>У агульным выпадку каманда <i>docker</i>-сэрвісу выконваецца наступным чынам:</p>
+
+<pre><code class="language-bash">
+$ docker [option] [command] [arguments]
+</code></pre>
+
+        <p>Вывесьці сьпіс усіх даступных каманд можна такім чынам:</p>
+
+<pre><code class="language-bash">
+$ docker
+Usage: docker [OPTIONS] COMMAND [arg...]
+       docker [ --help | -v | --version ]
+
+A self-sufficient runtime for containers.
+
+Options:
+
+  --config=~/.docker              Location of client config files
+  -D, --debug                     Enable debug mode
+  -H, --host=[]                   Daemon socket(s) to connect to
+  -h, --help                      Print usage
+  -l, --log-level=info            Set the logging level
+  --tls                           Use TLS; implied by --tlsverify
+  --tlscacert=~/.docker/ca.pem    Trust certs signed only by this CA
+  --tlscert=~/.docker/cert.pem    Path to TLS certificate file
+  --tlskey=~/.docker/key.pem      Path to TLS key file
+  --tlsverify                     Use TLS and verify the remote
+  -v, --version                   Print version information and quit
+
+Commands:
+    attach    Attach to a running container
+    build     Build an image from a Dockerfile
+    commit    Create a new image from a containers changes
+    cp        Copy files/folders between a container and the local filesystem
+    create    Create a new container
+    diff      Inspect changes on a containers filesystem
+    events    Get real time events from the server
+    exec      Run a command in a running container
+    export    Export a containers filesystem as a tar archive
+    history   Show the history of an image
+    images    List images
+    import    Import the contents from a tarball to create a filesystem image
+    info      Display system-wide information
+    inspect   Return low-level information on a container, image or task
+    kill      Kill one or more running containers
+    load      Load an image from a tar archive or STDIN
+    login     Log in to a Docker registry.
+    logout    Log out from a Docker registry.
+    logs      Fetch the logs of a container
+    network   Manage Docker networks
+    node      Manage Docker Swarm nodes
+    pause     Pause all processes within one or more containers
+    port      List port mappings or a specific mapping for the container
+    ps        List containers
+    pull      Pull an image or a repository from a registry
+    push      Push an image or a repository to a registry
+    rename    Rename a container
+    restart   Restart a container
+    rm        Remove one or more containers
+    rmi       Remove one or more images
+    run       Run a command in a new container
+    save      Save one or more images to a tar archive (streamed to STDOUT by default)
+    search    Search the Docker Hub for images
+    service   Manage Docker services
+    start     Start one or more stopped containers
+    stats     Display a live stream of container(s) resource usage statistics
+    stop      Stop one or more running containers
+    swarm     Manage Docker Swarm
+    tag       Tag an image into a repository
+    top       Display the running processes of a container
+    unpause   Unpause all processes within one or more containers
+    update    Update configuration of one or more containers
+    version   Show the Docker version information
+    volume    Manage Docker volumes
+    wait      Block until a container stops, then print its exit code
+
+Run 'docker COMMAND --help' for more information on a command.
+</code></pre>
+
+        <h3 id="Docker_Basics_Images">Вобразы</h3>
+        <p><i>docker</i>-кантэйнэры запускаюцца з вобразаў, якія захоўваюцца на <i>Docker Hub</i>. Любы чалавек можа стварыць і захаваць свой вобраз на гэтым рэсурсе. Каб праверыць ці ёсьць у вас доступ да <i>Docker Hub</i>, выканайце наступную каманду:</p>
+
+<pre><code class="language-bash">
+$ docker run hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+&hellip;
+</code></pre>
+
+        <p>Шукаць даступныя вобразы можна ў тым ліку пры дапамозе пад-каманды <code>search</code> докера:</p>
+
+<pre><code class="language-bash">
+$ docker search ubuntu
+
+NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+ubuntu                            Ubuntu is a Debian-based Linux operating s...   4903      [OK]       
+ubuntu-upstart                    Upstart is an event-based replacement for ...   67        [OK]       
+rastasheep/ubuntu-sshd            Dockerized SSH service, built on top of of...   45                   [OK]
+ubuntu-debootstrap                debootstrap --variant=minbase --components...   28        [OK]       
+torusware/speedus-ubuntu          Always updated official Ubuntu docker imag...   27                   [OK]
+nickistre/ubuntu-lamp             LAMP server on Ubuntu                           10                   [OK]
+nuagebec/ubuntu                   Simple always updated Ubuntu docker images...   9                    [OK]
+nickistre/ubuntu-lamp-wordpress   LAMP on Ubuntu with wp-cli installed            6                    [OK]
+nimmis/ubuntu                     This is a docker images different LTS vers...   5                    [OK]
+maxexcloo/ubuntu                  Base image built on Ubuntu with init, Supe...   2                    [OK]
+admiringworm/ubuntu               Base ubuntu images based on the official u...   1                    [OK]
+darksheer/ubuntu                  Base Ubuntu Image -- Updated hourly             1                    [OK]
+jordi/ubuntu                      Ubuntu Base Image                               1                    [OK]
+lynxtp/ubuntu                     https://github.com/lynxtp/docker-ubuntu         0                    [OK]
+konstruktoid/ubuntu               Ubuntu base image                               0                    [OK]
+datenbetrieb/ubuntu               custom flavor of the official ubuntu base ...   0                    [OK]
+webhippie/ubuntu                  Docker images for ubuntu                        0                    [OK]
+widerplan/ubuntu                  Our basic Ubuntu images.                        0                    [OK]
+esycat/ubuntu                     Ubuntu LTS                                      0                    [OK]
+labengine/ubuntu                  Images base ubuntu                              0                    [OK]
+ustclug/ubuntu                    ubuntu image for docker with USTC mirror        0                    [OK]
+dorapro/ubuntu                    ubuntu image                                    0                    [OK]
+uvatbc/ubuntu                     Ubuntu images with unprivileged user            0                    [OK]
+smartentry/ubuntu                 ubuntu with smartentry                          0                    [OK]
+teamrock/ubuntu                   TeamRock's Ubuntu image configured with AW...   0                    [OK]
+</code></pre>
+
+        <p><i>OK</i> у калёнцы <i>OFFICIAL</i> азначае, што вобраз зроблены і падтрымліваецца кампаніяй, якая "валодае" альбо стаіць за праектам. Калі пры выкананьні пад-каманды <i>run</i> (запуску кантэйнэра з пэўнага вобраза), станецца што такога вобразу няма на лякальнай машыне, ён будзе спачатку спампаваны з <i>Docker Hub</i> і потым застартаваны. Каб праглядзець, якія вобразы ужо захоўваюцца лякальна, можна скарыстацца камандай:</p>
+
+<pre><code class="language-bash">
+$ docker images
+
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              c54a2cc56cbb        3 months ago        1.848 kB
+</code></pre>
+
+        <h3 id="Docker_Basics_Containers">Кантэйнэры</h3>
+        <p>Запуск кантэйнэру адбываецца наступным чынам (парамэтры <code>-i</code> і <code>t</code> дазваляюць атрымаць доступ да інтэрактыўнай кансолі застартованага кантэйнэру):</p>
+
+<pre><code class="language-bash">
+$ docker run -it ubuntu
+Unable to find image 'ubuntu:latest' locally
+latest: Pulling from library/ubuntu
+
+6bbedd9b76a4: Pull complete 
+fc19d60a83f1: Pull complete 
+de413bb911fd: Pull complete 
+2879a7ad3144: Pull complete 
+668604fde02e: Pull complete 
+Digest: sha256:2d44ae143feeb36f4c898d32ed2ab2dffeb3a573d2d8928646dfc9cb7deb1315
+Status: Downloaded newer image for ubuntu:latest
+root@504d5f9b2c66:/#
+</code></pre>
+
+        <p>Камандны радок павінен будзе зьмяніцца, адлюстроўваючы той факт, што зараз кансоль не вашага кампутара, але кантэйнэра (сымбальна-лікавы ID пасьля <code>root@</code>&nbsp;&ndash; гэта <i>ID</i> кантэйнэра):</p>
+
+<pre><code class="language-bash">
+root@504d5f9b2c66:/#
+</code></pre>
+        
+        <p>Можна напрыклад аднавіць базу даных <i>apt-get</i> <i>Ubuntu</i>, якая працуе ў кантэйнэры:</p>
+
+<pre><code class="language-bash">
+root@504d5f9b2c66:/# apt-get update
+Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [95.7 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial-security InRelease [94.5 kB]
+Get:4 http://archive.ubuntu.com/ubuntu xenial/main Sources [1103 kB]
+Get:5 http://archive.ubuntu.com/ubuntu xenial/restricted Sources [5179 B]
+Get:6 http://archive.ubuntu.com/ubuntu xenial/universe Sources [9802 kB]
+Get:7 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1558 kB]                                                                                                        
+Get:8 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]                                                                                                  
+Get:9 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9827 kB]                                                                                                    
+Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main Sources [250 kB]                                                                                                       
+Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [129 kB]                                                                                                   
+Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [522 kB]                                                                                                
+Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [432 kB]                                                                                            
+Get:14 http://archive.ubuntu.com/ubuntu xenial-security/main Sources [52.7 kB]                                                                                                     
+Get:15 http://archive.ubuntu.com/ubuntu xenial-security/universe Sources [13.4 kB]                                                                                                 
+Get:16 http://archive.ubuntu.com/ubuntu xenial-security/main amd64 Packages [196 kB]                                                                                               
+Get:17 http://archive.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [62.2 kB]                                                                                          
+Fetched 24.4 MB in 28s (854 kB/s)                                                                                                                                                  
+Reading package lists... Done
+root@504d5f9b2c66:/#
+</code></pre>
+        
+        <p>І ўсталяваць <i>NodeJS</i>:</p>
+
+<pre><code class="language-bash">
+root@504d5f9b2c66:/# apt-get install -y nodejs
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  libicu55 libssl1.0.0 libuv1
+The following NEW packages will be installed:
+  libicu55 libssl1.0.0 libuv1 nodejs
+0 upgraded, 4 newly installed, 0 to remove and 5 not upgraded.
+Need to get 11.9 MB of archives.
+After this operation, 47.7 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libssl1.0.0 amd64 1.0.2g-1ubuntu4.5 [1082 kB]
+Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libicu55 amd64 55.1-7 [7643 kB]
+Get:3 http://archive.ubuntu.com/ubuntu xenial/universe amd64 libuv1 amd64 1.8.0-1 [57.4 kB]                                                                                        
+Get:4 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 nodejs amd64 4.2.6~dfsg-1ubuntu4.1 [3161 kB]                                                                  
+Fetched 11.9 MB in 17s (702 kB/s)                                                                                                                                                  
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libssl1.0.0:amd64.
+(Reading database ... 7256 files and directories currently installed.)
+Preparing to unpack .../libssl1.0.0_1.0.2g-1ubuntu4.5_amd64.deb ...
+Unpacking libssl1.0.0:amd64 (1.0.2g-1ubuntu4.5) ...
+Selecting previously unselected package libicu55:amd64.
+Preparing to unpack .../libicu55_55.1-7_amd64.deb ...
+Unpacking libicu55:amd64 (55.1-7) ...
+Selecting previously unselected package libuv1:amd64.
+Preparing to unpack .../libuv1_1.8.0-1_amd64.deb ...
+Unpacking libuv1:amd64 (1.8.0-1) ...
+Selecting previously unselected package nodejs.
+Preparing to unpack .../nodejs_4.2.6~dfsg-1ubuntu4.1_amd64.deb ...
+Unpacking nodejs (4.2.6~dfsg-1ubuntu4.1) ...
+Processing triggers for libc-bin (2.23-0ubuntu3) ...
+Setting up libssl1.0.0:amd64 (1.0.2g-1ubuntu4.5) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up libicu55:amd64 (55.1-7) ...
+Setting up libuv1:amd64 (1.8.0-1) ...
+Setting up nodejs (4.2.6~dfsg-1ubuntu4.1) ...
+update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+Processing triggers for libc-bin (2.23-0ubuntu3) ...
+</code></pre>
+        
+          <p>Файлавая сыстэма докера часовая па-змоўчваньні. Калі застартаваць пэўны вобраз, ўнесьці нейкія зьмены ў сыстэму кантэйнэра, спыніць яго і зноў застартаваць той жа самы вобраз, усё зьмены, якія былі зроблены на папярэднім кроку, будуць згубленыя. У сувязі з гэтым вобразы докера&nbsp;&ndash; гэта больш шаблёны, чым звыклыя нам вобразы віртуальных машын. Таму ўсталяваўшы <i>NodeJS</i> у кантэйнэр у папярэднім прыкладзе, мы будзем мець кантэйнэр, які адрозьніваецца ад свайго вобразу. Гэты стан можна захаваць у новы вобраз. Для гэтага трэба выйсьці зь яго:</p>
+
+<pre><code class="language-bash">
+root@504d5f9b2c66:/# exit
+</code></pre>
+
+          <p>І захаваць зьмены ў новы вобраз:</p>
+
+<pre><code class="language-bash">
+$ docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name
+</code></pre>
+
+          <p>Дзе:</p>
+          <ul>
+            <li><code>container-id</code>&nbsp;&ndash; гэта <i>ID</i> кантэйнэра, на які мы зьвярталі ўвагу вышэй;</li>
+            <li><code>repository</code>&nbsp;&ndash; гэта імя вашага уліковага запісу альбо рэпазыторыю ў <i>Docker Hub</i>;</li>
+            <li><code>new_image_name</code>&nbsp;&ndash; гэта імя новага вобразу;</li>
+          </ul>
+          <p>Напрыклад:</p>
+
+<pre><code class="language-bash">
+$ docker commit -m "added node.js" -a "Yurtsevich" 504d5f9b2c66 yurtsevich/ubuntu-with-nodejs
+</code></pre>
+
+          <p>Можна пераканацца, што вобраз сапраўды быў захаваны:</p>
+
+<pre><code class="language-bash">
+$ docker images
+REPOSITORY                      TAG                 IMAGE ID            CREATED              SIZE
+yurtsevich/ubuntu-with-nodejs   latest              f9c99a5f7a94        3 seconds ago        215.3 MB
+ubuntu                          latest              f753707788c5        8 days ago           127.2 MB
+hello-world                     latest              c54a2cc56cbb        3 months ago         1.848 kB
+</code></pre>
+
+          <p>Розьніца ў памеры паміж вобразамі <code>ubuntu</code> і <code>yurtsevich/ubuntu-with-nodejs</code> пазначае аднаўленьне базы даных <i>apt-get</i> і ўсталяваньне <i>NodeJS</i> у кантэйнэры, які мы запусьцілі з вобразу <code>ubuntu</code>. Але трэба памятаць што вобраз пакуль што захаваны толькі лякальна.</p>
+          <p>Праглядзець сьпіс усіх актыўных кантэйнэраў можна камандай:</p>
+
+<pre><code class="language-bash">
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+504d5f9b2c66        ubuntu              "/bin/bash"         8 minutes ago       Up 8 minutes                            pedantic_carson
+</code></pre>
+
+          <p>А сьпіс усіх, актыўных і неактыўных, кантэйнэраў:</p>
+
+<pre><code class="language-bash">
+$ docker ps -a
+</code></pre>
+
+          <p>Праглядзець апошні створаны кантэйнэр:</p>
+
+<pre><code class="language-bash">
+$ docker ps -l
+</code></pre>
+
+          <p>Спыніць працуючы кантэйнэр можна камандай:</p>
+
+<pre><code class="language-bash">
+$ docker stop container-id
+</code></pre>
+
+          <h3 id="Docker_Basics_PushingImages">Каміт вобразаў на Hub</h3>
+          <p>Каб закаміціць захаваны лякальна вобраз, трэба спачатку залагініцца на <i>Hub</i>:</p>
+
+<pre><code class="language-bash">
+$ docker login -u yurtsevich
+Password: 
+Login Succeeded
+</code></pre>
+
+          <p>А потым скарыстацца камандай каміту:</p>
+
+<pre><code class="language-bash">
+$ docker push yurtsevich/ubuntu-with-nodejs
+The push refers to a repository [docker.io/yurtsevich/ubuntu-with-nodejs]
+874ba904c09a: Pushed 
+0e20f4f8a593: Mounted from library/ubuntu 
+1633f88f8c9f: Mounted from library/ubuntu 
+46c98490f575: Mounted from library/ubuntu 
+8ba4b4ea187c: Mounted from library/ubuntu 
+c854e44a1a5a: Mounted from library/ubuntu 
+latest: digest: sha256:f64b0d5b7bf099e4f50e1f7bb8bdeb668ab0adff605c76d903c72b7844c1cadb size: 1569
+</code></pre>
+
+          <h2 id="Docker_Security">Бясьпека</h2>
+          <p><a href="http://blog.contino.io/blog/docker-security-what-you-need-to-know">Docker Security: What You Need to Know</a></p>
+
+          <h2 id="Docker_Logging">Лагіраваньне</h2>
+          <div class="refs">
+            <ul>
+              <li><a href="https://www.elastic.co/products/logstash">LogStash</a></li>
+            </ul>
+          </div>
+          <p><a href="https://technologyconversations.com/2016/10/24/forwarding-logs-from-all-containers-running-anywhere-inside-a-docker-swarm-cluster/">Forwarding Logs From All Containers Running Anywhere Inside A Docker Swarm Cluster</a></p>
+
+        </section>
 
       <section>
         <h1 id="EC2">EC2</h1>
@@ -280,6 +537,83 @@ $ wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-7/x86_64/apa
 <pre><code class="language-bash">
 $ rpm -ivh apache-maven-3.2.5-1.el7.noarch.rpm
 </code></pre>
+      </section>
+
+      <section>
+        <h1 id="OpenShift" data-content-item-open>OpenShift</h1>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.openshift.com/">Home</a></li>
+            <li><a href="https://openshift.redhat.com/app/console">Web console</a></li>
+          </ul>
+        </div>
+        <p><a href="http://www.first8.nl/blog/vertical-scaling-with-openshift/">VERTICAL SCALING WITH OPENSHIFT</a>.</p>
+        <p><a href="http://www.first8.nl/blog/horizontal-scaling-with-open-shift/">HORIZONTAL SCALING WITH OPENSHIFT</a>.</p>
+        <p><a href="http://www.first8.nl/blog/managing-multiple-gears-with-open-shift/">MANAGING MULTIPLE GEARS WITH OPEN SHIFT</a>.</p>
+
+        <p><i>OpenShift</i>&nbsp;&ndash; <i>The Open Hybrid Cloud Application Platform by Red Hat</i>, іншымі словамі <i>PaaS</i> для аўтаматычнага разгортваньня праграм на воблачным хостынгу.</p>
+        <p>Падтрымлівае мовы:</p>
+        <ul>
+          <li><i>Java</i> (<i>JBoss AS 7</i>, <i>WildFly 8.2</i>, <i>Tomcat 6/7 via JBoss EWS</i>, <i>JBoss EAP 6.4</i>)</li>
+          <li><i>Ruby</i></li>
+          <li><i>Node.js</i></li>
+          <li><i>Python</i></li>
+          <li><i>Perl</i></li>
+          <li><i>PHP</i></li>
+          <li><i>Ceylon</i></li>
+          <li><i>DIY/Custom</i></li>
+        </ul>
+
+        <h2 id="OpenShift_ClientTools">Client tools</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://developers.openshift.com/en/getting-started-debian-ubuntu.html">Install</a></li>
+            <li><a href="https://access.redhat.com/documentation/en-US/OpenShift_Online/2.0/html-single/User_Guide/index.html">Guide</a></li>
+          </ul>
+        </div>
+        <p>Акрамя <a href="https://openshift.redhat.com/app/console">вэб-кансолі</a> кіраваць праграмай можна праз <i>client tools</i> (<i>rhc</i>)&nbsp;&ndash; кансольную праграму, якая працуе на <i>Ruby</i>.</p>
+
+        <h2 id="OpenShift_CreateApp">Ствараем праграму</h2>
+
+<pre><code class="language-bash">
+$ rhc app-create myapp wildfly
+</code></pre>
+
+        <p>Будзе створана загатоўка <i>JEE</i>-праграмы для працы з сэрвэрам <i>WildFly</i> наступнай структуры:</p>
+<pre>
+|-- deployments/       Location for built WARs
+|-- src/               Maven source structure
+|-- pom.xml            Maven build file
+`-- .openshift/        Location for OpenShift specific files
+   |-- config/         Location for configuration files such as standalone.xml
+   |-- action_hooks/   See the Action Hooks documentation 
+   `-- markers/        See the Markers documentation 
+</pre>
+        <p>Дадаем <i>PostgreSQL</i>:</p>
+
+<pre><code class="language-bash">
+$ rhc cartridge add postgresql-9.2 -a myapp
+</code></pre>
+
+        <p>Адлеглыя <i>WildFly</i> і <i>PostgreSQL</i> будуць цалкам наладжаныя на працу. Застаецца наладзіць лякальныя <i>WildFly</i> і <i>PostgreSQL</i>.</p>
+
+        <h2 id="OpenShift_LocalConfig">Наладжваем лякальны асяродак</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.mastertheboss.com/jboss-server/jboss-datasource/configuring-a-datasource-with-postgresql-and-jboss-wildfly">Link 1</a></li>
+            <li><a href="http://www.quizful.net/post/datasource-in-wildfly-jboss-using-postgresql">Link 2</a></li>
+            <li><a href="http://devcolibri.com/4661">Link 3</a></li>
+          </ul>
+        </div>
+        <p><a href="https://jdbc.postgresql.org/download.html">Запампоўваем</a> <i>JDBC</i>-драйвэр для <i>PostgreSQL</i> той вэрсіі, якая лякальна ўсталяваная (няхай гэта будзе <code>postgresql-9.1-903.jdbc4.jar</code>), і зьмяшчаем яго ў тэчку <code>/tmp</code>. Далей запускаем кансоль кіраваньня <i>WildFly</i>:</p>
+
+<pre><code class="language-bash">
+/opt/wildfly-8.2.0/bin $ bash jboss-cli.sh
+</code></pre>
+
+        <p>І пасьлядоўна наступныя каманды ў самой кансолі (для зручнасьці агляду тут устаўлены пераносы радку, але на самай справе рабіць іх ня трэба):</p>
+        <img style="margin-top: 10px;" src="wildfly_postgres.jpg">
+        <p>Юзэр <code>_USER_NAME_</code> з паролем <code>_PASSWORD_</code> і экзэмпляр базы <code>_DB_NAME_</code> ужо павінны быць створаныя ў лякальным <i>PostgreSQL</i>.</p>
       </section>
 
       <footer>
