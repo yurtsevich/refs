@@ -1091,6 +1091,31 @@ order by 2 desc;
         <p><a href="http://campus.codeschool.com/courses/the-magical-marvels-of-mongodb">"The magical marvels of MongoDB"&nbsp;&ndash; відэа-курс ад <i>CodeSchool</i></a>.</p>
       </section>
 
+      <section>
+        <h1 id="Programming">Праграмаваньне</h1>
+
+        <h2 id="Programming_ApacheBenchmark">Apache Benchmark</h2>
+        <p>Пры дапамозе утыліты <i>Apache Benchmark</i> можна тэставаць нагрузку на вэб-праграму:</p>
+
+<pre><code class="language-bash">
+$ ab -n 10000 http://example.com/example.php
+</code></pre>
+
+        <p>У выніку будзе даслана 10000 пасьлядоўных запытаў да рэсурсу <code>http://example.com/example.php</code>. Каб дадаць рэалістычнасьці можна імітаваць паралельнасьць пры дапамозе парамэтру <code>-c</code> (колькасьць паралельных выклікаў):</p>
+
+<pre><code class="language-bash">
+$ ab -n 10000 -c 10 http://example.com/example.php
+</code></pre>
+
+        <p>Можна рабіць вывад выніку ў файл, рабіць вывад больш падрабязным (парамэтар <code>-v</code>), дасылаць пэўныя <i>HTTP</i>-загалоўкі (парамэтар <code>-H</code>) і гэтак далей:</p>
+
+<pre><code class="language-bash">
+$ ab -n 10000 -c 10 -v 3 -H "Accept: application/json" http://example.com/example.php > ab_result
+</code></pre>
+
+
+      </section>
+
       <footer>
         <div id="copyright">
           <p>Copyright &copy; 2010-2016 <a href="http://www.yurtsevich.info">yurtsevich.info</a></p>

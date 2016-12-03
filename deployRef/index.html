@@ -30,10 +30,13 @@
           <ul>
             <li><a href="https://www.docker.com/">Home</a></li>
             <li><a href="https://docs.docker.com/">Docs</a></li>
-            <li><a href="https://hub.docker.com/account/welcome/">Hub</a></li>
+            <li><a href="https://hub.docker.com/">Hub</a></li>
             <li><a href="https://cloud.docker.com/app/">Cloud</a></li>
           </ul>
         </div>
+        <p><a href="https://www.youtube.com/watch?v=aSATsLG59Zs">Arun Gupta "Docker and Kubernetes Recipes for Java Developers" 11.11.2015</a></p>
+        <p><a href="https://www.youtube.com/watch?v=ZNdc4-yFTeA">Arun Gupta "Docker for Java Developers" 22.09.2016</a></p>
+
         <p><a href="http://merrigrove.blogspot.co.uk/2015/10/visualizing-docker-containers-and-images.html?_tmc=Diy2bNEQqG5t8sSbcMW6T5Us4KCmgsInjBviObh0atg&mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4AS8VqI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Visualizing Docker Containers and Images</a></p>
         <p><a href="http://blog.xebia.com/2015/08/31/making-amazon-ecs-container-service-as-easy-to-use-as-docker-run/?mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4ASMRhI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Making Amazon ECS Container Service As Easy To Use As Docker Run</a></p>
         <br />
@@ -47,12 +50,7 @@
         <p><a href="https://docs.docker.com/docker-cloud/installing-cli/">The Docker Cloud CLI</a></p>
         <p><a href="https://docs.docker.com/docker-cloud/infrastructure/byoh/">Use the Docker Cloud Agent</a></p>
 
-        <p><a href="https://www.youtube.com/watch?v=IgJXYU3GOM4">https://www.youtube.com/watch?v=IgJXYU3GOM4</a></p>
-        <p><a href="https://www.youtube.com/watch?v=aSATsLG59Zs">https://www.youtube.com/watch?v=aSATsLG59Zs</a></p>
-        <p><a href="https://www.youtube.com/watch?v=SK0sqfVn7l">https://www.youtube.com/watch?v=SK0sqfVn7ls</a></p>
-        <p><a href="https://www.youtube.com/watch?v=ZsIb5tkyncA">https://www.youtube.com/watch?v=ZsIb5tkyncA</a></p>
-        <p><a href="https://www.youtube.com/watch?v=ZNdc4-yFTeA">https://www.youtube.com/watch?v=ZNdc4-yFTeA</a></p>
-        <p><a href="https://www.youtube.com/watch?v=OzfmRMNBwlE">https://www.youtube.com/watch?v=OzfmRMNBwlE</a></p>
+
 
         <h2 id="Docker_Install">Усталяваньне</h2>
         <div class="refs">
@@ -162,100 +160,137 @@ $ sudo systemctl status docker
 $ sudo usermod -G docker -a $(whoami)
 </code></pre>
 
-        <h2 id="Docker_Basics">Асновы</h2>
-
-        <h3 id="Docker_Basics_Commands">Каманды</h3>
+        <h2 id="Docker_Commands">Каманды</h2>
         <p>У агульным выпадку каманда <i>docker</i>-сэрвісу выконваецца наступным чынам:</p>
 
 <pre><code class="language-bash">
 $ docker [option] [command] [arguments]
 </code></pre>
 
-        <p>Вывесьці сьпіс усіх даступных каманд можна такім чынам:</p>
+        <p>Вывесьці сьпіс усіх даступных каманд можна набраўшы каманду <code class="language-bash">docker</code>:</p>
 
 <pre><code class="language-bash">
 $ docker
 Usage: docker [OPTIONS] COMMAND [arg...]
        docker [ --help | -v | --version ]
 
-A self-sufficient runtime for containers.
-
-Options:
-
-  --config=~/.docker              Location of client config files
-  -D, --debug                     Enable debug mode
-  -H, --host=[]                   Daemon socket(s) to connect to
-  -h, --help                      Print usage
-  -l, --log-level=info            Set the logging level
-  --tls                           Use TLS; implied by --tlsverify
-  --tlscacert=~/.docker/ca.pem    Trust certs signed only by this CA
-  --tlscert=~/.docker/cert.pem    Path to TLS certificate file
-  --tlskey=~/.docker/key.pem      Path to TLS key file
-  --tlsverify                     Use TLS and verify the remote
-  -v, --version                   Print version information and quit
-
-Commands:
-    attach    Attach to a running container
-    build     Build an image from a Dockerfile
-    commit    Create a new image from a containers changes
-    cp        Copy files/folders between a container and the local filesystem
-    create    Create a new container
-    diff      Inspect changes on a containers filesystem
-    events    Get real time events from the server
-    exec      Run a command in a running container
-    export    Export a containers filesystem as a tar archive
-    history   Show the history of an image
-    images    List images
-    import    Import the contents from a tarball to create a filesystem image
-    info      Display system-wide information
-    inspect   Return low-level information on a container, image or task
-    kill      Kill one or more running containers
-    load      Load an image from a tar archive or STDIN
-    login     Log in to a Docker registry.
-    logout    Log out from a Docker registry.
-    logs      Fetch the logs of a container
-    network   Manage Docker networks
-    node      Manage Docker Swarm nodes
-    pause     Pause all processes within one or more containers
-    port      List port mappings or a specific mapping for the container
-    ps        List containers
-    pull      Pull an image or a repository from a registry
-    push      Push an image or a repository to a registry
-    rename    Rename a container
-    restart   Restart a container
-    rm        Remove one or more containers
-    rmi       Remove one or more images
-    run       Run a command in a new container
-    save      Save one or more images to a tar archive (streamed to STDOUT by default)
-    search    Search the Docker Hub for images
-    service   Manage Docker services
-    start     Start one or more stopped containers
-    stats     Display a live stream of container(s) resource usage statistics
-    stop      Stop one or more running containers
-    swarm     Manage Docker Swarm
-    tag       Tag an image into a repository
-    top       Display the running processes of a container
-    unpause   Unpause all processes within one or more containers
-    update    Update configuration of one or more containers
-    version   Show the Docker version information
-    volume    Manage Docker volumes
-    wait      Block until a container stops, then print its exit code
-
-Run 'docker COMMAND --help' for more information on a command.
+...
 </code></pre>
 
-        <h3 id="Docker_Basics_Images">Вобразы</h3>
-        <p><i>docker</i>-кантэйнэры запускаюцца з вобразаў, якія захоўваюцца на <i>Docker Hub</i>. Любы чалавек можа стварыць і захаваць свой вобраз на гэтым рэсурсе. Каб праверыць ці ёсьць у вас доступ да <i>Docker Hub</i>, выканайце наступную каманду:</p>
+        <p>Ніжэй прыведзена апісаньне некаторых з камандаў (<i>усюды, дзе ў камандах пазначаюцца імёны вобразаў ці кантэйнэраў, могуць выкарыстоўвацца іх ID):</i></p>
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 220px;">Каманда</th>
+              <th>Апісаньне</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code class="language-bash">docker images</code></td>
+              <td>Выводзіць сьпіс асноўных вобразаў, якія раней былі сьцягнутыя ў сыстэму</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker images -a</code></td>
+              <td>Выводзіць сьпіс усіх (у тым ліку прамежкавых) вобразаў, якія раней былі сьцягнутыя ў сыстэму</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker pull &lt;IMAGE&gt;</code></td>
+              <td>Сьцягвае вобраз з рэгістру ў сыстэму</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker push &lt;IMAGE&gt;</code></td>
+              <td>Закідвае вобраз з сыстэмы ў рэгістар</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker rmi &lt;IMAGE&gt;</code></td>
+              <td>Выдаляе вобраз з сыстэмы</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker ps</code></td>
+              <td>Выводзіць сьпіс працуючых кантэйнэраў</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker ps -a</code></td>
+              <td>Выводзіць сьпіс усіх, у тым ліку непрацуючых кантэйнэраў</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker create &lt;IMAGE&gt;</code></td>
+              <td>Стварае кантэйнэр з вобразу</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker run &lt;IMAGE&gt; [&lt;COMMAND&gt;]</code></td>
+              <td>Стварае і запускае новы кантэйнэр з пазначанага вобразу і (неабавязкова) запускае ў ім пэўную каманду</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker start &lt;CONTAINER&gt;</code></td>
+              <td>Запускае кантэйнэр</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker logs &lt;CONTAINER&gt;</code></td>
+              <td>Выводзіць лог кантэйнэра</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker port &lt;CONTAINER&gt;</code></td>
+              <td>Выводзіць сьпіс мапінгу партоў кантэйнэра</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker top &lt;CONTAINER&gt;</code></td>
+              <td>Выводзіць сьпіс працуючых працэсаў кантэйнэра</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker stop &lt;CONTAINER&gt;</code></td>
+              <td>Спыняе кантэйнэр</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker restart &lt;CONTAINER&gt;</code></td>
+              <td>Спыняе і па новай стартуе кантэйнэр</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker kill &lt;CONTAINER&gt;</code></td>
+              <td>Прыбівае кантэйнэр</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker commit &lt;CONTAINER&gt;</code></td>
+              <td>Стварае новы вобраз з кантэйнэру, уключаючы ўсе зьмены, якія былі ў ім зроблены пасьля старту</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker network</code></td>
+              <td>Кіраваньне сеткай докера<br>
+                <code class="language-bash">docker network inspect bridge</code>&nbsp;&ndash; выведзе падрабязную інфармацыю пра сетку <code class="language-bash">bridge</code>
+              </td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker node</code></td>
+              <td>Кіраваньне вузламі клястэру.</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker volume</code></td>
+              <td>Кіраваньне тамамі даных.</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker login</code></td>
+              <td>Уваход у рэгістар.</td>
+            </tr>
+            <tr>
+              <td><code class="language-bash">docker logout</code></td>
+              <td>Выхад з рэгістру.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="Docker_Images">Вобразы</h2>
+        <p><i>docker</i>-кантэйнэры запускаюцца з вобразаў, якія захоўваюцца ў лякальнай сыстэме альбо ў рэгістры (прыватным альбо публічным як <i>Docker Hub</i>). Каб праглядзець, якія вобразы ўжо захоўваюцца лякальна, можна скарыстацца камандай:</p>
 
 <pre><code class="language-bash">
-$ docker run hello-world
+$ docker images
 
-Hello from Docker!
-This message shows that your installation appears to be working correctly.
-&hellip;
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              c54a2cc56cbb        3 months ago        1.848 kB
 </code></pre>
 
-        <p>Шукаць даступныя вобразы можна ў тым ліку пры дапамозе пад-каманды <code>search</code> докера:</p>
+        <h3 id="Docker_Images_Search">Пошук вобразаў</h3>
+        <p>Шукаць даступныя вобразы можна пры дапамозе каманды <code class="language-bash">docker search</code>:</p>
 
 <pre><code class="language-bash">
 $ docker search ubuntu
@@ -265,51 +300,28 @@ ubuntu                            Ubuntu is a Debian-based Linux operating s... 
 ubuntu-upstart                    Upstart is an event-based replacement for ...   67        [OK]       
 rastasheep/ubuntu-sshd            Dockerized SSH service, built on top of of...   45                   [OK]
 ubuntu-debootstrap                debootstrap --variant=minbase --components...   28        [OK]       
-torusware/speedus-ubuntu          Always updated official Ubuntu docker imag...   27                   [OK]
-nickistre/ubuntu-lamp             LAMP server on Ubuntu                           10                   [OK]
-nuagebec/ubuntu                   Simple always updated Ubuntu docker images...   9                    [OK]
-nickistre/ubuntu-lamp-wordpress   LAMP on Ubuntu with wp-cli installed            6                    [OK]
-nimmis/ubuntu                     This is a docker images different LTS vers...   5                    [OK]
-maxexcloo/ubuntu                  Base image built on Ubuntu with init, Supe...   2                    [OK]
-admiringworm/ubuntu               Base ubuntu images based on the official u...   1                    [OK]
-darksheer/ubuntu                  Base Ubuntu Image -- Updated hourly             1                    [OK]
-jordi/ubuntu                      Ubuntu Base Image                               1                    [OK]
-lynxtp/ubuntu                     https://github.com/lynxtp/docker-ubuntu         0                    [OK]
-konstruktoid/ubuntu               Ubuntu base image                               0                    [OK]
-datenbetrieb/ubuntu               custom flavor of the official ubuntu base ...   0                    [OK]
-webhippie/ubuntu                  Docker images for ubuntu                        0                    [OK]
-widerplan/ubuntu                  Our basic Ubuntu images.                        0                    [OK]
-esycat/ubuntu                     Ubuntu LTS                                      0                    [OK]
-labengine/ubuntu                  Images base ubuntu                              0                    [OK]
-ustclug/ubuntu                    ubuntu image for docker with USTC mirror        0                    [OK]
-dorapro/ubuntu                    ubuntu image                                    0                    [OK]
-uvatbc/ubuntu                     Ubuntu images with unprivileged user            0                    [OK]
+&hellip;
 smartentry/ubuntu                 ubuntu with smartentry                          0                    [OK]
 teamrock/ubuntu                   TeamRock's Ubuntu image configured with AW...   0                    [OK]
 </code></pre>
 
-        <p><i>OK</i> у калёнцы <i>OFFICIAL</i> азначае, што вобраз зроблены і падтрымліваецца кампаніяй, якая "валодае" альбо стаіць за праектам. Калі пры выкананьні пад-каманды <i>run</i> (запуску кантэйнэра з пэўнага вобраза), станецца што такога вобразу няма на лякальнай машыне, ён будзе спачатку спампаваны з <i>Docker Hub</i> і потым застартаваны. Каб праглядзець, якія вобразы ужо захоўваюцца лякальна, можна скарыстацца камандай:</p>
+        <p><i>OK</i> у калёнцы <i>OFFICIAL</i> азначае, што вобраз зроблены і падтрымліваецца кампаніяй, якая "валодае" альбо стаіць за праектам.</p>
+
+        <h3 id="Docker_Images_Pull">Сьцягваньне вобразаў</h3>
+        <p>Каб сьцягнуць вобраз з рэгістру ў лякальную сыстэму без яго запуску, трэба скарыстацца камандай:</p>
 
 <pre><code class="language-bash">
-$ docker images
-
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-hello-world         latest              c54a2cc56cbb        3 months ago        1.848 kB
+$ docker pull ubuntu
 </code></pre>
 
-        <h3 id="Docker_Basics_Containers">Кантэйнэры</h3>
-        <p>Запуск кантэйнэру адбываецца наступным чынам (парамэтры <code>-i</code> і <code>t</code> дазваляюць атрымаць доступ да інтэрактыўнай кансолі застартованага кантэйнэру):</p>
+        <h3 id="Docker_Images_Start">Запуск кантэйнэра з вобразу</h3>
+        <p>Каманда <code class="language-bash">docker run</code> запускае кантэйнэр з пэўнага вобразу. Калі такога вобразу яшчэ няма на лякальнай машыне, ён будзе спачатку сьцягнуты з рэгістру і потым застартаваны (парамэтры <code class="language-bash">-i</code> і <code class="language-bash">-t</code> дазваляюць атрымаць доступ да інтэрактыўнай кансолі працуючага кантэйнэру):</p>
 
 <pre><code class="language-bash">
 $ docker run -it ubuntu
 Unable to find image 'ubuntu:latest' locally
 latest: Pulling from library/ubuntu
-
-6bbedd9b76a4: Pull complete 
-fc19d60a83f1: Pull complete 
-de413bb911fd: Pull complete 
-2879a7ad3144: Pull complete 
-668604fde02e: Pull complete 
+&hellip;
 Digest: sha256:2d44ae143feeb36f4c898d32ed2ab2dffeb3a573d2d8928646dfc9cb7deb1315
 Status: Downloaded newer image for ubuntu:latest
 root@504d5f9b2c66:/#
@@ -321,27 +333,14 @@ root@504d5f9b2c66:/#
 root@504d5f9b2c66:/#
 </code></pre>
         
-        <p>Можна напрыклад аднавіць базу даных <i>apt-get</i> <i>Ubuntu</i>, якая працуе ў кантэйнэры:</p>
+        <h3 id="Docker_Images_Change">Унёсак зьменаў у працуючы кантэйнэр</h3>
+        <p>Можна ўнесьці зьмены ў працуючы кантэйнэр (у параўнаньні з вобразам, зь якога ён быў застартаваны), напрыклад аднавіць базу даных <i>apt-get</i> <i>Ubuntu</i>:</p>
 
 <pre><code class="language-bash">
 root@504d5f9b2c66:/# apt-get update
 Get:1 http://archive.ubuntu.com/ubuntu xenial InRelease [247 kB]
 Get:2 http://archive.ubuntu.com/ubuntu xenial-updates InRelease [95.7 kB]
-Get:3 http://archive.ubuntu.com/ubuntu xenial-security InRelease [94.5 kB]
-Get:4 http://archive.ubuntu.com/ubuntu xenial/main Sources [1103 kB]
-Get:5 http://archive.ubuntu.com/ubuntu xenial/restricted Sources [5179 B]
-Get:6 http://archive.ubuntu.com/ubuntu xenial/universe Sources [9802 kB]
-Get:7 http://archive.ubuntu.com/ubuntu xenial/main amd64 Packages [1558 kB]                                                                                                        
-Get:8 http://archive.ubuntu.com/ubuntu xenial/restricted amd64 Packages [14.1 kB]                                                                                                  
-Get:9 http://archive.ubuntu.com/ubuntu xenial/universe amd64 Packages [9827 kB]                                                                                                    
-Get:10 http://archive.ubuntu.com/ubuntu xenial-updates/main Sources [250 kB]                                                                                                       
-Get:11 http://archive.ubuntu.com/ubuntu xenial-updates/universe Sources [129 kB]                                                                                                   
-Get:12 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [522 kB]                                                                                                
-Get:13 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [432 kB]                                                                                            
-Get:14 http://archive.ubuntu.com/ubuntu xenial-security/main Sources [52.7 kB]                                                                                                     
-Get:15 http://archive.ubuntu.com/ubuntu xenial-security/universe Sources [13.4 kB]                                                                                                 
-Get:16 http://archive.ubuntu.com/ubuntu xenial-security/main amd64 Packages [196 kB]                                                                                               
-Get:17 http://archive.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [62.2 kB]                                                                                          
+&hellip;                                                                                      
 Fetched 24.4 MB in 28s (854 kB/s)                                                                                                                                                  
 Reading package lists... Done
 root@504d5f9b2c66:/#
@@ -358,68 +357,36 @@ The following additional packages will be installed:
   libicu55 libssl1.0.0 libuv1
 The following NEW packages will be installed:
   libicu55 libssl1.0.0 libuv1 nodejs
-0 upgraded, 4 newly installed, 0 to remove and 5 not upgraded.
-Need to get 11.9 MB of archives.
-After this operation, 47.7 MB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu xenial-updates/main amd64 libssl1.0.0 amd64 1.0.2g-1ubuntu4.5 [1082 kB]
-Get:2 http://archive.ubuntu.com/ubuntu xenial/main amd64 libicu55 amd64 55.1-7 [7643 kB]
-Get:3 http://archive.ubuntu.com/ubuntu xenial/universe amd64 libuv1 amd64 1.8.0-1 [57.4 kB]                                                                                        
-Get:4 http://archive.ubuntu.com/ubuntu xenial-updates/universe amd64 nodejs amd64 4.2.6~dfsg-1ubuntu4.1 [3161 kB]                                                                  
-Fetched 11.9 MB in 17s (702 kB/s)                                                                                                                                                  
-debconf: delaying package configuration, since apt-utils is not installed
-Selecting previously unselected package libssl1.0.0:amd64.
-(Reading database ... 7256 files and directories currently installed.)
-Preparing to unpack .../libssl1.0.0_1.0.2g-1ubuntu4.5_amd64.deb ...
-Unpacking libssl1.0.0:amd64 (1.0.2g-1ubuntu4.5) ...
-Selecting previously unselected package libicu55:amd64.
-Preparing to unpack .../libicu55_55.1-7_amd64.deb ...
-Unpacking libicu55:amd64 (55.1-7) ...
-Selecting previously unselected package libuv1:amd64.
-Preparing to unpack .../libuv1_1.8.0-1_amd64.deb ...
-Unpacking libuv1:amd64 (1.8.0-1) ...
-Selecting previously unselected package nodejs.
-Preparing to unpack .../nodejs_4.2.6~dfsg-1ubuntu4.1_amd64.deb ...
-Unpacking nodejs (4.2.6~dfsg-1ubuntu4.1) ...
-Processing triggers for libc-bin (2.23-0ubuntu3) ...
-Setting up libssl1.0.0:amd64 (1.0.2g-1ubuntu4.5) ...
-debconf: unable to initialize frontend: Dialog
-debconf: (No usable dialog-like program is installed, so the dialog based frontend cannot be used. at /usr/share/perl5/Debconf/FrontEnd/Dialog.pm line 76.)
-debconf: falling back to frontend: Readline
-debconf: unable to initialize frontend: Readline
-debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/x86_64-linux-gnu/perl/5.22.1 /usr/local/share/perl/5.22.1 /usr/lib/x86_64-linux-gnu/perl5/5.22 /usr/share/perl5 /usr/lib/x86_64-linux-gnu/perl/5.22 /usr/share/perl/5.22 /usr/local/lib/site_perl /usr/lib/x86_64-linux-gnu/perl-base .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
-debconf: falling back to frontend: Teletype
-Setting up libicu55:amd64 (55.1-7) ...
-Setting up libuv1:amd64 (1.8.0-1) ...
-Setting up nodejs (4.2.6~dfsg-1ubuntu4.1) ...
+&hellip;
 update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
 Processing triggers for libc-bin (2.23-0ubuntu3) ...
 </code></pre>
         
-          <p>Файлавая сыстэма докера часовая па-змоўчваньні. Калі застартаваць пэўны вобраз, ўнесьці нейкія зьмены ў сыстэму кантэйнэра, спыніць яго і зноў застартаваць той жа самы вобраз, усё зьмены, якія былі зроблены на папярэднім кроку, будуць згубленыя. У сувязі з гэтым вобразы докера&nbsp;&ndash; гэта больш шаблёны, чым звыклыя нам вобразы віртуальных машын. Таму ўсталяваўшы <i>NodeJS</i> у кантэйнэр у папярэднім прыкладзе, мы будзем мець кантэйнэр, які адрозьніваецца ад свайго вобразу. Гэты стан можна захаваць у новы вобраз. Для гэтага трэба выйсьці зь яго:</p>
+        <p>Файлавая сыстэма докера часовая па-змоўчваньні. Калі застартаваць пэўны вобраз, ўнесьці нейкія зьмены ў сыстэму кантэйнэра, спыніць яго і зноў застартаваць той жа самы вобраз, усе зьмены, якія былі зроблены на папярэднім кроку, будуць згубленыя. У сувязі з гэтым вобразы докера&nbsp;&ndash; гэта больш шаблёны, чым звыклыя нам вобразы віртуальных машын. Таму ўсталяваўшы <i>NodeJS</i> у кантэйнэр у папярэднім прыкладзе, мы будзем мець кантэйнэр, які адрозьніваецца ад свайго вобразу. Гэты стан можна захаваць у новы вобраз. Для гэтага трэба выйсьці зь яго:</p>
 
 <pre><code class="language-bash">
 root@504d5f9b2c66:/# exit
 </code></pre>
 
-          <p>І захаваць зьмены ў новы вобраз:</p>
+        <p>І захаваць зьмены ў новы вобраз:</p>
 
 <pre><code class="language-bash">
 $ docker commit -m "What did you do to the image" -a "Author Name" container-id repository/new_image_name
 </code></pre>
 
-          <p>Дзе:</p>
-          <ul>
-            <li><code>container-id</code>&nbsp;&ndash; гэта <i>ID</i> кантэйнэра, на які мы зьвярталі ўвагу вышэй;</li>
-            <li><code>repository</code>&nbsp;&ndash; гэта імя вашага уліковага запісу альбо рэпазыторыю ў <i>Docker Hub</i>;</li>
-            <li><code>new_image_name</code>&nbsp;&ndash; гэта імя новага вобразу;</li>
-          </ul>
-          <p>Напрыклад:</p>
+        <p>Дзе:</p>
+        <ul>
+          <li><code>container-id</code>&nbsp;&ndash; гэта <i>ID</i> кантэйнэра, на які мы зьвярталі ўвагу вышэй;</li>
+          <li><code>repository</code>&nbsp;&ndash; гэта імя вашага уліковага запісу альбо рэпазыторыю ў <i>Docker Hub</i>;</li>
+          <li><code>new_image_name</code>&nbsp;&ndash; гэта імя новага вобразу;</li>
+        </ul>
+        <p>Напрыклад:</p>
 
 <pre><code class="language-bash">
 $ docker commit -m "added node.js" -a "Yurtsevich" 504d5f9b2c66 yurtsevich/ubuntu-with-nodejs
 </code></pre>
 
-          <p>Можна пераканацца, што вобраз сапраўды быў захаваны:</p>
+        <p>Можна пераканацца, што вобраз сапраўды быў захаваны:</p>
 
 <pre><code class="language-bash">
 $ docker images
@@ -429,35 +396,10 @@ ubuntu                          latest              f753707788c5        8 days a
 hello-world                     latest              c54a2cc56cbb        3 months ago         1.848 kB
 </code></pre>
 
-          <p>Розьніца ў памеры паміж вобразамі <code>ubuntu</code> і <code>yurtsevich/ubuntu-with-nodejs</code> пазначае аднаўленьне базы даных <i>apt-get</i> і ўсталяваньне <i>NodeJS</i> у кантэйнэры, які мы запусьцілі з вобразу <code>ubuntu</code>. Але трэба памятаць што вобраз пакуль што захаваны толькі лякальна.</p>
-          <p>Праглядзець сьпіс усіх актыўных кантэйнэраў можна камандай:</p>
+        <p>Розьніца ў памеры паміж вобразамі <code>ubuntu</code> і <code>yurtsevich/ubuntu-with-nodejs</code> пазначае аднаўленьне базы даных <i>apt-get</i> і ўсталяваньне <i>NodeJS</i> у кантэйнэры, які мы запусьцілі з вобразу <code>ubuntu</code>. Але трэба памятаць што вобраз пакуль што захаваны толькі лякальна.</p>
 
-<pre><code class="language-bash">
-$ docker ps
-CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
-504d5f9b2c66        ubuntu              "/bin/bash"         8 minutes ago       Up 8 minutes                            pedantic_carson
-</code></pre>
-
-          <p>А сьпіс усіх, актыўных і неактыўных, кантэйнэраў:</p>
-
-<pre><code class="language-bash">
-$ docker ps -a
-</code></pre>
-
-          <p>Праглядзець апошні створаны кантэйнэр:</p>
-
-<pre><code class="language-bash">
-$ docker ps -l
-</code></pre>
-
-          <p>Спыніць працуючы кантэйнэр можна камандай:</p>
-
-<pre><code class="language-bash">
-$ docker stop container-id
-</code></pre>
-
-          <h3 id="Docker_Basics_PushingImages">Каміт вобразаў на Hub</h3>
-          <p>Каб закаміціць захаваны лякальна вобраз, трэба спачатку залагініцца на <i>Hub</i>:</p>
+        <h3 id="Docker_Images_Push">Закід вобразаў</h3>
+        <p>Каб закінуць у рэгістар захаваны лякальна вобраз, трэба спачатку ўвайсьці на <i>Docker Hub</i>:</p>
 
 <pre><code class="language-bash">
 $ docker login -u yurtsevich
@@ -465,32 +407,145 @@ Password:
 Login Succeeded
 </code></pre>
 
-          <p>А потым скарыстацца камандай каміту:</p>
+        <p>А потым скарыстацца камандай закіду:</p>
 
 <pre><code class="language-bash">
 $ docker push yurtsevich/ubuntu-with-nodejs
 The push refers to a repository [docker.io/yurtsevich/ubuntu-with-nodejs]
 874ba904c09a: Pushed 
-0e20f4f8a593: Mounted from library/ubuntu 
-1633f88f8c9f: Mounted from library/ubuntu 
-46c98490f575: Mounted from library/ubuntu 
-8ba4b4ea187c: Mounted from library/ubuntu 
-c854e44a1a5a: Mounted from library/ubuntu 
+...
 latest: digest: sha256:f64b0d5b7bf099e4f50e1f7bb8bdeb668ab0adff605c76d903c72b7844c1cadb size: 1569
 </code></pre>
 
-          <h2 id="Docker_Security">Бясьпека</h2>
-          <p><a href="http://blog.contino.io/blog/docker-security-what-you-need-to-know">Docker Security: What You Need to Know</a></p>
+        <h2 id="Docker_Dockerfile">Dockerfile</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/">Best practices</a></li>
+            <li><a href="https://docs.docker.com/engine/reference/builder/">Reference</a></li>
+          </ul>
+        </div>
+        <p>Ствараць вобразы можна не інтэрактыўна праз камандны радок, а пры дапамозе адмысловага скрыпту, які павінен захоўвацца ў файле <code class="language-bash">Dockerfile</code>.</p>
 
-          <h2 id="Docker_Logging">Лагіраваньне</h2>
-          <div class="refs">
-            <ul>
-              <li><a href="https://www.elastic.co/products/logstash">LogStash</a></li>
-            </ul>
-          </div>
-          <p><a href="https://technologyconversations.com/2016/10/24/forwarding-logs-from-all-containers-running-anywhere-inside-a-docker-swarm-cluster/">Forwarding Logs From All Containers Running Anywhere Inside A Docker Swarm Cluster</a></p>
+        <h3 id="Docker_Dockerfile_Wildfly">Wildfly</h3>
+        <p><a href="https://hub.docker.com/r/jboss/wildfly/~/dockerfile/">https://hub.docker.com/r/jboss/wildfly/~/dockerfile/</a></p>
+        <p><a href="https://github.com/jboss-dockerfiles/wildfly">https://github.com/jboss-dockerfiles/wildfly</a></p>
+        <p><a href="https://github.com/jboss-dockerfiles/keycloak">https://github.com/jboss-dockerfiles/keycloak</a></p>
+        <p><a href="https://goldmann.pl/blog/2014/07/18/logging-with-the-wildfly-docker-image/">https://goldmann.pl/blog/2014/07/18/logging-with-the-wildfly-docker-image/</a></p>
 
-        </section>
+        <h3 id="Docker_Dockerfile_PostgreSQL">PostgreSQL</h3>
+        <p><a href="https://hub.docker.com/_/postgres/">postgres</a></p>
+        <p><a href="https://docs.docker.com/engine/examples/postgresql_service/">Dockerize PostgreSQL</a></p>
+        <p><a href="https://hub.docker.com/r/gsengun/flyway-postgres/">flyway-postgres</a></p>
+        <p><a href="https://hub.docker.com/r/dhoer/flyway/">Docker Flyway</a></p>
+
+
+        <h2 id="Docker_Containers">Кантэйнэры</h2>
+        <p>Праглядзець сьпіс усіх актыўных кантэйнэраў можна камандай:</p>
+
+<pre><code class="language-bash">
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+504d5f9b2c66        ubuntu              "/bin/bash"         8 minutes ago       Up 8 minutes                            pedantic_carson
+</code></pre>
+
+        <p>А сьпіс усіх, актыўных і неактыўных, кантэйнэраў:</p>
+
+<pre><code class="language-bash">
+$ docker ps -a
+</code></pre>
+
+        <p>Праглядзець апошні створаны кантэйнэр:</p>
+
+<pre><code class="language-bash">
+$ docker ps -l
+</code></pre>
+
+        <p>Спыніць працуючы кантэйнэр можна камандай:</p>
+
+<pre><code class="language-bash">
+$ docker stop container-id
+</code></pre>
+
+        <h2 id="Docker_Network">Сетка</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://docs.docker.com/engine/tutorials/networkingcontainers/">Networking containers</a></li>
+          </ul>
+        </div>
+
+        <h2 id="Docker_Volumes">Тамы даных</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://docs.docker.com/engine/tutorials/dockervolumes/">Manage data in containers</a></li>
+          </ul>
+        </div>
+        <p><a href="https://flocker-docs.clusterhq.com/en/latest/docker-integration/tutorial-swarm-compose.html">Tutorial: Using Flocker with Docker, Swarm, Compose</a></p>
+        <p><a href="https://flocker-docs.clusterhq.com/en/latest/docker-integration/manual-install.html">Manually Installing Flocker with Docker Swarm</a></p>
+
+        <h2 id="Docker_Security">Бясьпека</h2>
+        <p><a href="http://blog.contino.io/blog/docker-security-what-you-need-to-know">Docker Security: What You Need to Know</a></p>
+
+        <h2 id="Docker_Logging">Лагіраваньне</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.elastic.co/products/logstash">LogStash</a></li>
+          </ul>
+        </div>
+        <p><a href="https://technologyconversations.com/2016/10/24/forwarding-logs-from-all-containers-running-anywhere-inside-a-docker-swarm-cluster/">Forwarding Logs From All Containers Running Anywhere Inside A Docker Swarm Cluster</a></p>
+
+        <h2 id="Docker_Machine">Machine</h2>
+        <aside>
+          <p>Бывае, што ў <i>BIOS</i> кампутара магчымасьць віртуалізацыі заблякаваная на апаратным узроўні. Каб <i>Docker Machine</i> мела магчымасьць запускаць свае віртуальныя машыны, трэба зьняць гэтую блякіроўку.</p>
+          <p>Таксама трэба памятаць, што <i>Docker Machine</i> не мае свайго рухавіку віртуалізацыі, але выкарыстоўвае <i>API</i> староньніх сэрвісаў (<i>VirtualBox</i>, <i>VMWare</i> і г.д.), таму для яго працы трэба ўсталяваць у сыстэму хаця б адзін з гэтых сэрвісаў.</p>
+        </aside>
+        <div class="refs">
+          <ul>
+            <li><a href="https://www.docker.com/products/docker-machine">Home</a></li>
+            <li><a href="https://docs.docker.com/machine/overview/">Docs</a></li>
+          </ul>
+        </div>
+        <p><i>Machine</i>&nbsp;&ndash; гэта служба віртуалізацыі, маніторынгу і кіраваньня докер-хастамі.</p>
+
+        <h3 id="Docker_Machine_Install">Усталяваньне</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://docs.docker.com/machine/install-machine/">Docs</a></li>
+          </ul>
+        </div>
+        <p>Каб усталяваць <i>Machine</i> трэба выканаць каманду (пад <i>power-user</i>):</p>
+
+<pre><code class="language-bash">
+$ curl -L https://github.com/docker/machine/releases/download/v0.8.2/docker-machine-`uname -s`-`uname -m` >/usr/local/bin/docker-machine &amp;&amp; \
+chmod +x /usr/local/bin/docker-machine
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   600    0   600    0     0    447      0 --:--:--  0:00:01 --:--:--   447
+100 23.4M  100 23.4M    0     0  83322      0  0:04:54  0:04:54 --:--:-- 53889
+</code></pre>
+
+        <p>А пасьля пераканацца, што ўсталёўка прайшла пасьпяхова:</p>
+
+<pre><code class="language-bash">
+$ docker-machine version
+docker-machine version 0.8.2, build e18a919
+</code></pre>
+
+        <h2 id="Docker_Swarm">Swarm</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://docs.docker.com/swarm/">Docs</a></li>
+          </ul>
+        </div>
+
+        <h2 id="Docker_Kubernetes">Kubernetes</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="http://kubernetes.io/">Home</a></li>
+          </ul>
+        </div>
+
+
+      </section>
 
       <section>
         <h1 id="EC2">EC2</h1>

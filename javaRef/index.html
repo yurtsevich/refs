@@ -27,6 +27,7 @@
 
       <section>
         <h1 id="Links">Карысныя спасылкі</h1>
+        <p><a href="https://github.com/Vedenin/useful-java-links/tree/master/link-rus">Сьпіс карысных спасылак для <i>Java</i>-праграміста</a><sup>ru</sup></p>
 
         <h2 id="Links_Home">Хатняя старонка</h2>
         <p>Хатняя старонка на <b>Oracle.com</b>: <a href="https://www.oracle.com/java/">https://www.oracle.com/java/</a></p>
@@ -366,6 +367,9 @@ PT655H49M49.245S
         <h2 id="Library_Collections">Калекцыі</h2>
         
         <h2 id="Library_Streaming">Streaming API</h2>
+        <p><a href="https://medium.com/@johnmcclean/java-8-streams-10-missing-features-ec82ee90b6c0#.33ukxgjvs">Java 8 Streams : 10 missing features</a></p>
+        <p><a href="http://gist.asciidoctor.org/?github-aol/simple-react//user-guide/streams.adoc&doctype=book&toc=preamble">Working With Streams</a> (<i>StreamUtils</i>, <i>Streamable</i>, <i>ReactiveSeq</i>)</p>
+        <br>
         <p><i>Streaming API</i>&nbsp;&ndash; гэта яшчэ адзін (у дадатак да <a href="#Core_Lambda">лямбда-выразаў</a>) зрух у <i>Java</i>&nbsp;8 у бок дэкляратыўнага, а не імпэратыўнага праграмаваньня, калі мы пазначаем пажаданы вынік замест рэалізацыі кожнай дробнай дэталі дасягненьня гэтага выніку. Напрыклад, мы кажам мове, што мы жадаем атрымаць адсартаваны ці адфільтраваны сьпіс элемэнтаў, пазначаючы толькі пэўныя парамэтры таго, якім чынам яны павінныя быць адсартаваныя і адфільтраваныя, а ўжо якім чынам іх адсартаваць і адфільтраваць, будзе заклапочана сама мова, прычым яно зробіць гэта аптымізаваным чынам.</p>
         <p><i>Streaming API</i> прызначаны палепшыць працу з калекцыямі элемэнтаў. Плынь (<i>stream</i>) у <i>Java</i>&nbsp;8&nbsp;&ndash; гэта пасьлядоўнасьць пэўных элемэнтаў, прычым плынь не захоўвае самі элемэнты, але мае спасылку на іх крыніцу і перабірае элемэнтамі ў ходзе выкананьня праграмы. Шмат якія апэрацыі плыняў зроблены такім чынам, што яны ізноў вяртаюць плынь з ужо іншымі характарыстыкамі. Гэта зроблена, каб іх можна было злучаць у ланцуг выклікаў&nbsp;&ndash; у так званую трубу:</p>
 
@@ -2046,7 +2050,130 @@ public @interface Model {}
         <p><a href="http://www.javacodegeeks.com/wp-content/uploads/2015/05/JPA-Tutorial.pdf">JPA Tutorial</a></p>
         <p><a href="http://www.javacodegeeks.com/wp-content/uploads/2013/06/JPA_Mini_Book.pdf">JPA Mini Book</a></p>
         <p><a href="http://www.javacodegeeks.com/wp-content/uploads/2015/05/Hibernate-Tutorial.pdf">Hibernate Tutorial</a></p>
-        <p>&nbsp;</p>
+        
+        <h3 id="JEE_JPA_Constraints">Constraints</h3>
+        <p><i>JPA Constraints</i>&nbsp;&ndash; гэта анатацыі, якія накладваюць пэўныя абмежаваньні на тое, якія значэньні могуць прымаць атрыбуты <i>Entity</i>-клясы, якія пазначаныя гэтымі анатацыямі.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Анатацыя</th>
+              <th>Прыклад</th>
+              <th>Апісаньне</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code class="language-java">@DecimalMax</code></td>
+              <td>
+<pre><code class="language-javascript">
+@DecimalMax("30.00")
+BigDecimal discount;
+</code></pre>
+              </td>
+              <td>Значэньнем атрыбуту павінен быць рэчаісны лік меншы альбо роўны пазначанаму.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@DecimalMin</code></td>
+              <td>
+<pre><code class="language-javascript">
+@DecimalMin("5.00")
+BigDecimal discount;
+</code></pre>
+              </td>
+              <td>Значэньнем атрыбуту павінен быць рэчаісны лік большы альбо роўны пазначанаму.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@Digits</code></td>
+              <td>
+<pre><code class="language-javascript">
+@Digits(integer=6, fraction=2)
+BigDecimal price;
+</code></pre>
+              </td>
+              <td>Значэньнем атрыбуту павінен быць рэчаісны лік з максымальнай колькасьцю цэлых знакаў роўнаю значэньню парамэтра анатацыі <code class="language-java">integer</code> і з максымальнай колькасьцю дробных знакаў роўнаю значэньню парамэтра анатацыі <code class="language-java">fraction</code>.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@Future</code></td>
+              <td>
+<pre><code class="language-javascript">
+@Future
+Date eventDate;
+</code></pre>
+              </td>
+              <td>Значэньнем атрыбуту павінна быць дата ў будучым.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@Max</code></td>
+              <td>
+<pre><code class="language-javascript">
+@Max(10)
+int quantity;
+</code></pre>
+              </td>
+              <td>Значэньнем атрыбуту павінен быць цэлы лік меншы альбо роўны пазначанаму.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@Min</code></td>
+              <td>
+<pre><code class="language-javascript">
+@Min(5)
+int quantity;
+</code></pre>
+              </td>
+              <td>Значэньнем атрыбуту павінен быць цэлы лік большы альбо роўны пазначанаму.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@NotNull</code></td>
+              <td>
+<pre><code class="language-javascript">
+@NotNull
+String username;
+</code></pre>
+              </td>
+              <td>Атрыбут ня можа прымаць значэньне <code class="language-java">null</code>.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@Null</code></td>
+              <td>
+<pre><code class="language-javascript">
+@Null
+String unusedString;
+</code></pre>
+              </td>
+              <td>Атрыбут можа прымаць толькі значэньне <code class="language-java">null</code>.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@Past</code></td>
+              <td>
+<pre><code class="language-javascript">
+@Past
+Date birthday;
+</code></pre>
+              </td>
+              <td>Значэньнем атрыбуту павінна быць дата ў мінулым.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@Pattern</code></td>
+              <td>
+<pre><code class="language-javascript">
+@Pattern(regexp="(d{3})d{3}-d{4}")
+String phoneNumber;
+</code></pre>
+              </td>
+              <td>Значэньне атрыбуту павінна адпавядаць пазначанаму рэгулярнаму выразу.</td>
+            </tr>
+            <tr>
+              <td><code class="language-java">@Size</code></td>
+              <td>
+<pre><code class="language-javascript">
+@Size(min=2, max=240)
+String briefMessage;
+</code></pre>
+              </td>
+              <td>Памер атрыбуту павінен адпавядаць пазначанаму дыяпазону. Атрыбут можа быць масівам, тыпу <code class="language-java">String</code>, <code class="language-java">Collection</code>, <code class="language-java">Map</code></td>
+            </tr>
+          </tbody>
+        </table>
 
         <aside>
           <p><i>JSR-344</i>&nbsp;&ndash; стандарт "JavaServer Faces"</p>
@@ -2062,10 +2189,46 @@ public @interface Model {}
             <li><a href="http://www.mkyong.com/tutorials/jsf-2-0-tutorials/">Tutorial</a></li>
           </ul>
         </div>
-        <p><a href="http://www.ocpsoft.org/java/jsf-java/jsf2-how-to-create-a-global-ajax-status-indicator/">JSF2: How to Create a Global Ajax Status Indicator</a></p>
+        <p><a href="http://www.ibm.com/developerworks/ru/library/j-jsf2fu1/index.html">JSF 2 fu.: Часть 1. Упрощаем разработку Web-приложений</a></p>
         <p><a href="http://stackoverflow.com/questions/7583038/what-is-the-use-of-faces-config-xml-in-jsf-2">Што можна наладжваць праз <code class="language-bash">faces-config.xml</code></a></p>
-        <p><a href="https://habrahabr.ru/post/192434/">Разработка JSF приложений при помощи IntelliJ Idea. Часть 2: Разработка простого приложения</a></p>
         <p><a href="http://www.ocpsoft.org/prettyfaces/">prettyfaces</a>&nbsp;&ndash; The open-source /url/#{rewriting} solution for Servlet, JSF, and Java EE</p>
+
+        <h3 id="JEE_JSF_AJAX">AJAX</h3>
+
+        <h4 id="JEE_JSF_AJAX_GlobalStatusIndicator">Global Status Indicator</h4>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.ocpsoft.org/java/jsf-java/jsf2-how-to-create-a-global-ajax-status-indicator/">Source</a></li>
+          </ul>
+        </div>
+        <p>Каб дадаць глябальны індыкатар статусу AJAX, можна дадаць наступны <i>JavaScript</i> код да старонкі (да макету):</p>
+
+<pre><code class="language-javascript">
+&lt;h:outputScript library="javax.faces" name="jsf.js" />
+&lt;script type="text/javascript"&gt;
+  if (!window["busystatus"]) {
+    var busystatus = {};
+  }
+
+  busystatus.onStatusChange = function onStatusChange(data) {
+    if (data.status === "begin") { // turn on busy indicator
+      document.body.style.cursor = 'wait';
+    } else { // turn off busy indicator, on either "complete" or "success"
+      document.body.style.cursor = 'auto';
+    }
+  };
+
+  jsf.ajax.addOnEvent(busystatus.onStatusChange);
+&lt;/script&gt;
+</code></pre>
+
+        <h3 id="JEE_JSF_PrettyFaces">PrettyFaces</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://www.ocpsoft.org/prettyfaces/">Home</a></li>
+            <li><a href="http://www.ocpsoft.org/docs/prettyfaces/3.3.3/en-US/html/index.html">Guide</a></li>
+          </ul>
+        </div>
 
         <h3 id="JEE_JSF_PrimeFaces">PrimeFaces</h3>
         <div class="refs">
@@ -2073,6 +2236,14 @@ public @interface Model {}
             <li><a href="http://primefaces.org/">Home</a></li>
             <li><a href="http://primefaces.org/documentation">Docs</a></li>
             <li><a href="http://www.primefaces.org/docs/guide/primefaces_user_guide_5_3.pdf">Guide (PDF)</a></li>
+          </ul>
+        </div>
+
+        <h3 id="JEE_JSF_SeamFacesAndDeltaSpike">JBoss SeamFaces / Apache DeltaSpike</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/">SeamFaces Guide</a></li>
+            <li><a href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/">DeltaSpike JSF Guide</a></li>
           </ul>
         </div>
 
@@ -2109,6 +2280,17 @@ public @interface Model {}
 @Produces(MediaType.APPLICATION_JSON)
 public List<Member> listAllMembers() {
     return repository.findAllOrderedByName();
+}
+</code></pre>
+
+        <p>Гэта дэкляратыўны спосаб вярнуць <i>JSON</i>, але тое ж самае можна зрабіць і праграмаваным чынам, маючы пры гэтым большы кантроль над тым што і якім чынам будзе вяртацца:</p>
+
+<pre><code class="language-java">
+@GET
+public JsonArray listAllMembers() {
+    return repository.findAllOrderedByName().stream.map(m -> 
+            Json.createObjectBuilder().add("name", m.getName()).build()).
+        collect(Json::createArrayBuilder, JsonArrayBuilder::add, JsonArrayBuilder::add).build();
 }
 </code></pre>
 
@@ -2442,6 +2624,7 @@ public class VideoListServlet extends HttpServlet {
         <p><a href="http://www.tutorialspoint.com/spring/">Spring Tutorial на <b>tutorialspoint.com</b></a></p>
         <p><a href="http://websystique.com/spring-4-tutorial/">Spring 4 Tutorial <b>websystique.com</b></a></p>
         <p><a href="http://crunchify.com/category/spring-mvc/">Spring MVC Tricks and Tutorials <b>crunchify.com</b></a></p>
+        <p><a href="http://www.baeldung.com/"><b>baeldung.com</b></a></p>
 
         <h2 id="Spring_Security">Security</h2>
         <div class="refs">
@@ -3250,7 +3433,6 @@ log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
         <h2 id="Testing_Unit">Unit-тэставаньне</h2>
         <div class="refs">
           <ul>
-            <li><a href="http://junit.org/">JUnit</a></li>
             <li><a href="http://mockito.org/">Mockito</a></li>
             <li><a href="http://jmockit.org/">JMockit</a></li>
           </ul>
@@ -3260,6 +3442,18 @@ log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
         <p><a href="https://github.com/jmockit/jmockit1/blob/master/samples/mockito/test/org/mockitousage/JavadocExamples_JMockit_Test.java">JMockit samples</a></p>
         <p><a href="http://maven.apache.org/surefire/maven-surefire-report-plugin/">surefire</a>&nbsp;&ndash; maven-убудаваньне для праверкі ступені пакрыцьця тэстамі.</p>
 
+        <h3 id="Testing_Unit_JUnit">JUnit</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="http://junit.org/">Home</a></li>
+            <li><a href="http://junit.org/">JUnit5</a></li>
+            <li><a href="http://junit.org/junit5/docs/current/user-guide/">User Guide</a></li>
+            <li><a href="http://zeroturnaround.com/rebellabs/junit-cheat-sheet/">Cheat Sheet</a></li>
+          </ul>
+        </div>
+        <p><a href="http://blog.qatools.ru/junit/junit-rules-tutorial">Механизм правил в JUnit</a></p>
+        <p><a href="http://joel-costigliola.github.io/assertj/">AssertJ</a>&nbsp;&ndash; больш багаты набор <i>assert</i>'аў.</p>
+
         <h2 id="Testing_Functional">Функцыянальнае тэставаньне</h2>
         <div class="refs">
           <ul>
@@ -3268,6 +3462,8 @@ log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
         </div>
         <p><a href="http://habrahabr.ru/company/luxoft/blog/246465/">Интеграционное тестирование в Java EE</a></p>
         <p><a href="http://www.javacodegeeks.com/2015/11/java-ee-integration-testing-arquillian-using-chameleon-shrinkwrap-dronegraphene.html">Java EE integration testing with Arquillian using Chameleon, Shrinkwrap, Drone/Graphene</a></p>
+        <p><a href="http://softwareyoga.com/arquillian-and-wildfly-integration-test-tutorial/">Arquillian and Wildfly: Integration test tutorial</a></p>
+        <p><a href="http://www.mastertheboss.com/jboss-frameworks/arquillian/arquillian-tutorial">Arquillian tutorial</a></p>
 
         <h2 id="Testing_UI">UI-тэставаньне</h2>
         <div class="refs">
@@ -3293,6 +3489,7 @@ log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
         <p><a href="http://www.mammatustech.com/Microservice-Service-Discovery-with-Consul">Microservice Service Discovery with Consul</a></p>
         <p><a href="http://www.mammatustech.com/consul-service-discovery-and-health-for-microservices-architecture-tutorial">Consul Service Discovery and Health For Microservices Architecture Tutorial</a></p>
         <p><a href="https://github.com/Netflix/eureka/">Eureka is a REST based service that is primarily used in the AWS cloud for locating services for the purpose of load balancing and failover of middle-tier servers.</a></p>
+        <p><a href="https://www.youtube.com/watch?v=QO2321eMNYE">Adam Bien - Java EE Microservices Communication</a></p>
 
       </section>
 
@@ -3309,6 +3506,10 @@ log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
         <h1 id="HowTos">HowTo's</h1>
         
         <p>Guide to Regular Expressions in Java: <a href="http://www.ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/">Part 1</a>, <a href="http://www.ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/">Part 2</a></p>
+
+        <h2 id="HowTos_GeoLocation">Geolocation</h2>
+        <p><a href="http://www.baeldung.com/geolocation-by-ip-with-maxmind">Geolocation by IP in Java</a></p>
+
       </section>
 
       <section>

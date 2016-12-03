@@ -25,7 +25,10 @@
         Даведнік па JavaScript
       </header>
 
+      <p><a href="https://learn.javascript.ru/">Современный учебник JavaScript</a><sup>ru</sup></p>
+
       <p><a href="http://www.wintellect.com/devcenter/nstieglitz/5-great-features-in-es6-harmony">5 Great Features In EcmaScript 6</a></p>
+      <p><a href="https://es6cheatsheet.com/?utm_source=drip&utm_medium=email&__s=qs1syostphxzh61zhnjh">ES6 CheatSheet</a></p>
       <p><a href="http://habrahabr.ru/post/252323/">ECMAScript 6</a></p>
       <p><a href="http://habrahabr.ru/post/267639/">Тонкости модульной системы ECMAScript 2015 (ES6)</a></p>
       <p><a href="http://es6-features.org/">ECMAScript 6 — New Features: Overview & Comparison</a></p>
@@ -2436,6 +2439,88 @@
       </section>
 
       <section>
+        <h1 id="OOP">ААП</h1>
+
+        <h4>HttpRequest.js</h4>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          function HttpRequest(url) {
+              this.request = new XMLHttpRequest();
+           
+              this.body = undefined;
+              this.method = HttpRequest.METHOD_GET;
+              this.url = url;
+           
+              this.responseParser = undefined;
+          }
+           
+          HttpRequest.METHOD_GET = 'GET';
+          HttpRequest.METHOD_POST = 'POST';
+           
+          HttpRequest.prototype.setMethod = function(method) {
+              this.method = method;
+              return this;
+          };
+           
+          HttpRequest.prototype.setBody = function(body) {
+              if (typeof body === 'object') {
+                  body = JSON.stringify(body);
+              }
+           
+              this.body = body;
+              return this;
+          };
+           
+          HttpRequest.prototype.setResponseParser = function(responseParser) {
+              if (typeof responseParser !== 'function') return;
+           
+              this.responseParser = responseParser;
+              return this;
+          };
+           
+          HttpRequest.prototype.send = function(callback) {
+              this.request.addEventListener('load', function() {
+                  if (this.responseParser) {
+                      callback(this.responseParser(this.request.responseText));
+                  } else {
+                      callback(this.request.responseText);
+                  }
+              }, false);
+           
+              this.request.open(this.method, this.url, true);
+              this.request.send(this.body);
+              return this;
+          };
+        ]]></script>
+
+        <h4>app.js</h4>
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          new HttpRequest('/users')
+              .setResponseParser(JSON.parse)
+              .send(function(users) {
+                  // Делаем что-нибудь с пользователями
+              });
+           
+          new HttpRequest('/posts')
+              .setResponseParser(JSON.parse)
+              .send(function(posts) {
+                  // Делаем что-нибудь с постами
+              });
+           
+          // Создаём нового пользователя
+          new HttpRequest('/user')
+              .setMethod(HttpRequest.METHOD_POST)
+              .setBody({
+                  name: 'Tim',
+                  email: 'info@example.com'
+              })
+              .setResponseParser(JSON.parse)
+              .send(function(user) {
+                  // Делаем что-нибудь с новым пользователем
+              });
+        ]]></script>          
+      </section>
+
+      <section>
         <h1 id="CoreObjects">Базавыя аб'екты</h1>
         <div class="refs">
           <ul>
@@ -2593,6 +2678,31 @@
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/promise-based-validation/">Promise-Based Validation</a></p>
         <p><a href="http://robotlolita.me/2015/11/15/how-do-promises-work.html?mc_cid=b2ece7659c&mc_eid=5b4e3f8de1">How do Promises Work?</a></p>
         <p><a href="http://www.html5rocks.com/en/tutorials/es6/promises/?mc_cid=b2ece7659c&mc_eid=5b4e3f8de1">JavaScript Promises</a></p>
+
+        <script type="syntaxhighlighter" class="brush: js"><![CDATA[
+          function doRequest(url) {
+              return new Promise(function(resolve, reject) {
+                  // Инициализируем запрос
+                  // В случае успеха вызываем resolve(response)
+                  // В случае ошибки вызываем reject(error)
+              });
+          }
+           
+          // Сначала запрашиваем пользователей
+          doRequest('https://example.com/api/users')
+          // Когда все они успешно выполнены, запускаем .then()
+          .then(function(users) { /* ... */ })
+          // Когда любой из Promise активизировал функцию reject(), вызываем .catch()
+          .catch(function(error) { /* ... */ });
+           
+          // Параллельный запуск нескольких Promise
+          Promise.all([
+              doRequest('https://example.com/api/users'),
+              doRequest('https://example.com/api/posts')
+          ])
+          .then(function(responses) { /* ... */ })
+          .catch(function(error) { /* ... */ });
+        ]]></script>
       </section>
 
       <section>
@@ -2608,6 +2718,9 @@
           }
         ]]></script>
         <p>Што такое <i>Firebug</i> можна даведацца ў відэа-ўводзінах да гэтага <a href="http://firefox.com/" title="Хатняя старонка Firefox"><i>Firefox</i></a>-дадатку на <strong>css-tricks.com</strong>: <a href="http://css-tricks.com/video-screencasts/15-introduction-to-firebug/">http://css-tricks.com/video-screencasts/15-introduction-to-firebug/</a>.</p>
+
+        <br>
+        <p><a href="https://www.sitepoint.com/logging-errors-client-side-apps/">Logging Errors in Client-Side Applications</a></p>
 
         <h2 id="Testing">Тэставаньне</h2>
         <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/how-to-test-your-javascript-code-with-qunit/">How to Test your JavaScript Code with QUnit</a>, <a href="https://code.tutsplus.com/tutorials/dont-forget-to-cover-your-client-side--cms-21021">Don't Forget to Cover Your Client Side!</a></p>
@@ -3063,6 +3176,7 @@ console.log(array1.push.apply(array1, array2)); // [1,2,3,4,5,6];
         <p><a href="https://github.com/mxstbr/react-boilerplate?mc_cid=350132d979&mc_eid=5b4e3f8de1">react-boilerplate</a></p>
         <p><a href="https://medium.com/@steedhelix/react-webpack-and-horizon-quick-start-b9335c1ece53#.fdbx2n8bz">React, Webpack, and Horizon Quick Start</a></p>
         <p><a href="http://stack.formidable.com/radium/">Radium&nbsp;&ndash; set of tools to manage inline styles on React elements</a></p>
+        <p><a href="https://medium.com/@sgroff04/how-i-learned-react-and-how-you-can-too-6714a48e984a#.ae1cmbwew">How I learned React and how you can too</a></p>
 
         <h3 id="Frameworks_React_ComponentOrganisation">Арганізацыя коду кампанэнтаў</h3>
         <script type="syntaxhighlighter" class="brush: js"><![CDATA[
@@ -3383,6 +3497,16 @@ React.renderComponent(
           </ul>
         </div>
 
+        <h3 id="Frameworks_React_Flow">Flow</h3>
+        <div class="refs">
+          <ul>
+            <li><a href="https://flowtype.org/">Home</a></li>
+            <li><a href="https://flowtype.org/docs/getting-started.html">Docs</a></li>
+          </ul>
+        </div>
+        <p><a href="https://www.theodo.fr/blog/2016/11/go-with-the-flow-a-static-type-checking-tool-for-javascript/">Go With the Flow – A Static Type Checking Tool for JavaScript</a></p>
+
+
         <h3 id="Frameworks_React_Redux">Redux</h3>
         <div class="refs">
           <ul>
@@ -3406,6 +3530,14 @@ React.renderComponent(
           <li><a href="http://zenoamaro.github.io/react-quill/">http://zenoamaro.github.io/react-quill/</a></li>
           <li><a href="http://tgecho.github.io/react-prosemirror/">http://tgecho.github.io/react-prosemirror/</a></li>
         </ul>
+
+        <h2 id="Frameworks_Vue">Vue</h2>
+        <div class="refs">
+          <ul>
+            <li><a href="https://vuejs.org/">Home</a></li>
+          </ul>
+        </div>
+        <p><a href="https://medium.com/js-dojo/4-things-vue-js-got-right-10820cc84004#.d4hjv138r">4 Things Vue.js Got Right</a></p>
 
         <h2 id="Frameworks_Aurelia">Aurelia</h2>
         <div class="refs">
