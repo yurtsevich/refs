@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yurtsevich/Manuals.git"
+    "url": "git+https://github.com/yurtsevich/refs.git"
   },
   "author": "Yurtsevich Dzmitry",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/yurtsevich/Manuals/issues"
+    "url": "https://github.com/yurtsevich/refs/issues"
   },
-  "homepage": "https://github.com/yurtsevich/Manuals#readme",
+  "homepage": "https://github.com/yurtsevich/refs#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-compass": "^2.1.0",
