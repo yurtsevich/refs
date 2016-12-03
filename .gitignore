@@ -2,6 +2,7 @@
 .idea/
 *.iml
 publish/
+tools/
 build/buildinfo.properties
 node_modules/
 .sass-cache/**
