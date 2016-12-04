@@ -92,7 +92,7 @@ function content() {
     });
   });
 
-  content_tree.append($("<a id='proxy_link' href='#' style='display: none;'>Proxy</a>"))
+  content_tree.append($("<a id='proxy_link' href='#' style='display: none;'>Proxy</a>"));
 
   return content.append(content_tree);
 }
@@ -158,7 +158,7 @@ function private_work_ul() {
 
   ul.append(new_li().append($("<a href='../ftsRef/index.html' title='Праект Fujitsu'>FTS</a>")));
   ul.append(new_li().append($("<a href='../tadRef/index.html' title='Праект Tandberg'>TAD</a>")));
-  
+
   return ul;
 }
 
