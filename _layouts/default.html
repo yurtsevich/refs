@@ -1,0 +1,46 @@
+---
+layout: compress
+---
+
+<!doctype html>
+<html lang="be-tarask" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% include seo.html %}
+
+  {% include styles.html %}
+
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<div id="container">
+  <article id="content">
+
+    <header>
+      {{page.title}}
+    </header>
+
+    {{ content }}
+
+    {% include footer.html %}
+
+    {% include disqus.html %}
+
+  </article>
+</div>
+
+<!-- - - - - - - - - - - - - - - - - - - - - -
+Javascript at the bottom for fast page loading
+ - - - - - - - - - - - - - - - - - - - - - - -->
+{% include scripts.html %}
+
+{% include uservoice.html %}
+
+{% include analytics.html %}
+
+</body>
+</html>
