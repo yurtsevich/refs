@@ -1,0 +1,3608 @@
+---
+title: Даведнік па Java
+description: Даведнік па Java па-беларуску
+disqus_shortname: java-be
+---
+
+<section>
+  <h1 id="Links">Карысныя спасылкі</h1>
+  <p><a href="https://github.com/Vedenin/useful-java-links/tree/master/link-rus">Сьпіс карысных спасылак для <i>Java</i>-праграміста</a><sup>ru</sup></p>
+
+  <h2 id="Links_Home">Хатняя старонка</h2>
+  <p>Хатняя старонка на <b>Oracle.com</b>: <a href="https://www.oracle.com/java/">https://www.oracle.com/java/</a></p>
+
+  <h2 id="Links_Refs_Books">Даведнікі і кнігі</h2>
+  <p>Даведнік па <i>Java</i> на <b>Oracle.com</b>: <a href="http://docs.oracle.com/javase/tutorial/index.html">http://docs.oracle.com/javase/tutorial/index.html</a></p>
+  <p>Шэраг даведнікаў, прысьвечаных розным тэмам вакол <i>Java</i> на <b>tutorialspoint.com</b>: <a href="http://www.tutorialspoint.com/java_technology_tutorials.htm">http://www.tutorialspoint.com/java_technology_tutorials.htm</a></p>
+  <p><a href="http://www.amazon.com/Java-Complete-Reference-Herbert-Schildt/dp/0071808558/ref=sr_1_1?ie=UTF8&qid=1463765983">Java: The Complete Reference</a> (дзевятае выданьне папяровай кнігі, аўтарства <a href="http://www.amazon.com/Herbert-Schildt/e/B001H6PSMG/" title="Старонка, прысьвечаная Herbert Schildt на Amazon.com">Herbert Schildt</a> ад выдавецтва <a href="http://community.oraclepressbooks.com/" title="Хатняя старонка выдавецтва Oracle Press">Oracle&nbsp;Press</a>, на жаль электроннага варыянту няма ў вольным доступе). Ці перакладзенае на расейскую мову выданьне гэтай кнігі: <a href="http://www.ozon.ru/context/detail/id/31249554/">ozon.ru</a>.</p>
+
+  <h2 id="Links_Refs_Blogs">Блогі</h2>
+  <p><a href="http://www.baeldung.com/">baeldung.com</a></p>
+</section>
+
+<section>
+  <h1 id="Core" data-content-item-open>Ядро</h1>
+
+  <h2 id="Core_DataTypes">Тыпы даных</h2><!-- зьменныя, type wrappers, autoboxing, масівы, пералічэньні -->
+
+  <h2 id="Core_Operators">Апэрацыі</h2>
+
+  <h2 id="Core_Statements">Інструкцыі</h2>
+
+  <h2 id="Core_Classes">Клясы</h2><!-- пакеты, інтэрфэйсы, насьледаваньне -->
+
+  <h2 id="Core_Generics">Generics</h2>
+
+  <h2 id="Core_Exceptions">Выключэньні</h2>
+
+  <h2 id="Core_Multithreading">Multithreading</h2>
+
+  <h2 id="Core_IO">I/O</h2>
+
+  <h2 id="Core_Lambda">Lambda-выразы</h2>
+  <p><i>Lambda</i>-выразы&nbsp;&ndash; гэта рэалізацыя абстрактнага мэтаду функцыянальнага інтэрфэйсу. Функцыянальны інтэрфэйс&nbsp;&ndash; гэта інтэрфэйс, які ўтрымлівае адзін і толькі адзін мэтад. Самымі відавочнымі прыкладамі функцыянальнага інтэрфэйсу зьяўляюцца старыя добрыя інтэрфэйсы кшталту:</p>
+  <ul>
+    <li><code class="language-java">java.lang.Runnable</code> з адзіным мэтадам <code class="language-java">void run()</code>;</li>
+    <li>альбо <code class="language-java">java.awt.event.ActionListener</code> з адзіным мэтадам <code class="language-java">void actionPerformed(ActionEvent e)</code>.</li>
+  </ul>
+  <p>Любы інтэрфэйс з адзіным мэтадам зьяўляецца функцыянальным, нічога дадаткова рабіць ня трэба, але аўтар такога інтэрфэйсу можа яўна пазначыць свой намер і абмежаваць зьмены ў такім інтэрфэйсе праз анатацыю <code class="language-java">@FunctionalInterface</code>. У такім выпадку кампілятар ня дасьць дадаць у такі інтэрфэйс дадатковы мэтад, альбо прыбраць існы. Вось як выглядае рэалізацыя інэтрфэйсу <code class="language-java">Runnable</code>:</p>
+
+  <pre><code class="language-java">
+@FunctionalInterface
+public interface Runnable {
+    public abstract void run();
+}
+</code></pre>
+
+  <p>Адпаведна, калі да 8-ай вэрсіі неабходна было пісаць:</p>
+
+  <pre><code class="language-java">
+new Thread(new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("Hello from thread");
+    }
+}).start();
+</code></pre>
+
+  <p>Пачынаючы з 8-ай вэрсіі, тое ж самае можна зрабіць наступным чынам:</p>
+
+  <pre><code class="language-java">
+new Thread(() -&gt; System.out.println("Hello from thread")).start();
+</code></pre>
+
+  <p>Як бачым варыянт з лямбда-выразам значна больш ляканічны.</p>
+  <p>Разгледзім сынтаксіс лямбда-выразу. Спачатку ідзе сьпіс парамэтраў у дужках. Тыпы парамэтраў пазначаць не абавязкова, яны будуць аўтаматычна вызначаныя кампілятарам у залежнасьці ад кантэксту, дзе лямбда-выраз выкарыстоўваецца. Калі парамэтар адзіны, дужкі не абавязковыя:</p>
+
+  <pre><code class="language-java">
+new JButton().addActionListener(e -&gt; System.out.println(e.getActionCommand()));
+</code></pre>
+
+  <p>Пасьля сьпісу парамэтраў ідзе адмысловая апэрацыя <code class="language-java">-></code>, а пасьля яе ідзе цела выразу, а фактычна цела мэтаду інтэрфэйса, які выраз рэалізуе. Калі цела лямбда-выразу складаецца з больш, чым адной інструкцыі, яго трэба абгортваць у фігурныя дужкі:</p>
+
+  <pre><code class="language-java">
+interface NumericFunc {
+    int func(int n);
+}
+class BlockLambdaDemo {
+    public static void main(final String args[]) {
+        final NumericFunc factorial = (n) -&gt; {
+            int result = 1;
+            for(int i=1; i &lt;= n; i++) result = i * result;
+            return result;
+        };
+        System.out.println("The factoral of 3 is " + factorial.func(3));
+        System.out.println("The factoral of 5 is " + factorial.func(5));
+    }
+}
+</code></pre>
+
+  <h3 id="Core_Lambda_GenericInterfaces">Generic функцыянальныя інтэрфэйсы</h3>
+  <p>Лямбда-выразы ня могуць вызначаць тыпы сваіх аргумэнтаў, яны вызначаюцца аўтаматычна ў залежнасьці ад інтэрфэйсаў, якія лямбда-выразы рэалізуюць. Таму лямбда-выразы ня могуць быць <i>generic</i>. Але самі функцыянальныя інтэрфэйсы могуць быць такімі:</p>
+
+  <pre><code class="language-java">
+// A generic functional interface.
+interface SomeFunc&lt;T&gt; {
+    T func(T t);
+}
+
+class GenericFunctionalInterfaceDemo {
+    public static void main(String args[]) {
+        // Use a String-based version of SomeFunc.
+        SomeFunc&lt;String&gt; reverse = (str) -&gt; {
+            String result = "";
+            for(int i = str.length()-1; i >= 0; i--) result += str.charAt(i);
+            return result;
+        };
+        System.out.println("Lambda reversed is " + reverse.func("Lambda"));
+        System.out.println("Expression reversed is " + reverse.func("Expression"));
+
+        // Now, use an Integer-based version of SomeFunc.
+        SomeFunc&lt;Integer&gt; factorial = (n) -&gt; {
+            int result = 1;
+            for(int i=1; i &lt;= n; i++) result = i * result;
+            return result;
+        };
+        System.out.println("The factoral of 3 is " + factorial.func(3));
+        System.out.println("The factoral of 5 is " + factorial.func(5));
+    }
+}
+</code></pre>
+
+  <h3 id="Core_Lambda_PredefinedInterfaces">Прадвызначаныя інтэрфэйсы агульнага прызначэньня</h3>
+  <p>Пакет <code class="language-java">java.util.function</code> у <i>Java</i>&nbsp;8 утрымлівае шэраг прадвызначаных функцыянальных інтэрфэйсаў агульнага прызначэньня (унівэрсальных):</p>
+  <table>
+    <thead>
+    <tr>
+      <th style="width: 150px;">Інтэрфэйс</th>
+      <th>Прызначэньне</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code class="language-java">UnaryOperator&lt;T&gt;</code></td>
+      <td>Ужывае ўнарную апэрацыю да аб'екта тыпу <code class="language-java">T</code> і вяртае вынік таго ж тыпу. Мэтадам гэтага інтэрфэйсу зьяўляецца мэтад <code class="language-java">apply()</code>. Рэалізуецца як <code class="language-java">Function&lt;T, T&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">BinaryOperator&lt;T&gt;</code></td>
+      <td>Ужывае бінарную апэрацыю да 2 аб'ектаў тыпу <code class="language-java">T</code> і вяртае вынік таго ж тыпу. Мэтад <code class="language-java">apply()</code>. Рэалізуецца як <code class="language-java">BiFunction&lt;T, T, T&gt;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">DoubleBinaryOperator</code></td>
+      <td>Ужывае бінарную апэрацыю да 2 аб'ектаў тыпу <code class="language-java">double</code> і вяртае вынік таго ж тыпу. Мэтад <code class="language-java">applyAsDouble()</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">Consumer&lt;T&gt;</code></td>
+      <td>Ужывае апэрацыю да аб'екта тыпу <code class="language-java">T</code>. Мэтад <code class="language-java">accept()</code>. <strong>Усе <i>consumer</i>-апэрацыі ў адрозьненьні ад іншых маюць пабочны эфэкт.</strong></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">BiConsumer&lt;T, U&gt;</code></td>
+      <td>Ужывае апэрацыю да двух сваіх аргумэнтаў, адзін тыпу <code class="language-java">T</code>, іншы тыпу <code class="language-java">U</code>. Мэтад <code class="language-java">accept()</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">Supplier&lt;T&gt;</code></td>
+      <td>Вяртае аб'ект тыпу <code class="language-java">T</code>. Мэтад <code class="language-java">get()</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">BooleanSupplier</code></td>
+      <td>Вяртае значэньне тыпу <code class="language-java">boolean</code>. Мэтад <code class="language-java">getAsBoolean()</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">Function&lt;T, R&gt;</code></td>
+      <td>Ужывае апэрацыю да аб'екта тыпу <code class="language-java">T</code> і вяртае аб'ект тыпу <code class="language-java">R</code> у якасьці выніку. Мэтад <code class="language-java">apply()</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">BiFunction&lt;T, U, R&gt;</code></td>
+      <td>Ужывае апэрацыю да аб'ектаў тыпу <code class="language-java">T</code> і тыпу <code class="language-java">U</code>, потым вяртае аб'ект тыпу <code class="language-java">R</code> у якасьці выніку. Мэтад <code class="language-java">apply()</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">Predicate&lt;T&gt;</code></td>
+      <td>Вызначае ці адпавядае аб'ект тыпу <code class="language-java">T</code> пэўным умовам, аб чым кажа значэньне тыпу <code class="language-java">boolean</code>, якое вяртае ягоны мэтад <code class="language-java">test()</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-java">BiPredicate&lt;T&gt;</code></td>
+      <td>Вызначае ці адпавядаюць аб'екты тыпу <code class="language-java">T</code> і тыпу <code class="language-java">U</code> пэўным умовам, аб чым кажа значэньне тыпу <code class="language-java">boolean</code>, якое вяртае ягоны мэтад <code class="language-java">test()</code></td>
+    </tr>
+    <tr>
+      <td><mark>Дарабіць, ня ўсе інтэрфэйсы пералічаны</mark></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Большасьць з гэтых інтэрфэйсаў рэалізуюць змоўчны мэтад <code class="language-java">andThen()</code> для магчымасьці спалучаць пасьлядоўныя выклікі ў ланцуг.</p>
+
+  <h3 id="Core_Lambda_MethodReferences">Спасылкі на мэтады</h3>
+  <p>Спасылкі на мэтады дазваляюць, аднойчы вызначыўшы пэўны мэтад, перадаваць яго як лямбда-выраз. Уявім у нас ёсьць наступны код, напісаны пры дапамозе звычайнага лямбда-выразу (рэалізацыя мэтаду <code class="language-java">boolean accept(File pathname)</code> функцыянальнага інтэрфэйсу <code class="language-java">java.io.FileFilter</code>):</p>
+
+  <pre><code class="language-java">
+File[] hiddenFiles = mainDirectory.listFiles(f -&gt; f.isHidden());
+</code></pre>
+
+  <p>Тое ж самае можна напісаць яшчэ больш ляканічна і выразна, а галоўнае без неабходнасьці кожны раз вызначаць адзін і той жа лямбда-выраз у шматлікіх месцах, пры дапамозе спасылкі на мэтад:</p>
+
+  <pre><code class="language-java">
+File[] hiddenFiles = file.listFiles(File::isHidden);
+</code></pre>
+
+  <p>Існуе 4 асноўных тыпаў спасылак на мэтады:</p>
+  <ol>
+    <li>
+      Спасылка на статычны мэтад:
+
+      <pre><code class="language-java">
+// Вызначэньне Function&lt;String, Integer&gt; кажа аб тым, што гэта функцыя,
+// якая прымае String у якасьці адзінага парамэтру і вяртае Integer.
+// apply - мэтад які запускае функцыю на выкананьне.
+Function&lt;String, Integer&gt; converter = Integer::parseInt;
+Integer number = converter.apply("10");
+</code></pre>
+
+    </li>
+    <li>
+      Спасылка на мэтад экзэмпляру клясы:
+
+      <pre><code class="language-java">
+Function&lt;Invoice, Integer&gt; invoiceToId = Invoice::getId;
+</code></pre>
+
+    </li>
+    <li>
+      Спасылка на мэтад пэўнага экзэмпляру клясы:
+
+      <pre><code class="language-java">
+Consumer&lt;Object&gt; print = System.out::println;
+</code></pre>
+
+      Асабліва карысны гэты тып для выпадкаў, калі вы жадаеце зрабіць іньекцыю прыватнага дапаможнага мэтаду ў іншае месца праграмы:
+
+      <pre><code class="language-java">
+...
+File[] hidden = mainDirectory.listFiles(this::isXML);
+...
+
+private boolean isXML(File f) {
+    return f.getName.endsWith(".xml");
+}
+</code></pre>
+
+    </li>
+    <li>
+      Спасылка на канструктар:
+
+      <pre><code class="language-java">
+Supplier&lt;List&lt;String&gt;&gt; listOfString = List::new;
+</code></pre>
+
+    </li>
+  </ol>
+
+  <h3 id="Core_Lambda_FinalExample">Выніковы прыклад</h3>
+  <p>Напрыканцы разгледзім паступовую пераробку аднаго прыкладу з цалкам <i>Java</i>&nbsp;7 варыянту ў цалкам <i>Java</i>&nbsp;8 варыянт. Уявім, што ў нас ёсьць наступны код упарадкаваньня сьпісу інвойсаў па іх велічыні:</p>
+
+  <pre><code class="language-java">
+Collections.sort(invoices, new Comparator&lt;Invoice&gt;() {
+    public int compare(Invoice inv1, Invoice inv2) {
+        return Double.compare(inv2.getAmount(), inv1.getAmount());
+    }
+});
+</code></pre>
+
+  <p>Па-першае <code class="language-java">Comparator</code> зьяўляецца функцыянальным інтэрфэйсам, адзіны мэтад якога прымае 2 аргумэнты аднаго тыпу і вяртае цэлалікавае значэньне, і ідэальна падыходзіць для замены ананімнай яго рэалізацыі лямбда-выразам:</p>
+
+  <pre><code class="language-java">
+Collections.sort(invoices,
+    (Invoice inv1, Invoice inv2) -&gt; return Double.compare(inv2.getAmount(), inv1.getAmount()));
+</code></pre>
+
+  <p>Далей, у <i>Java</i>&nbsp;8 мэтад упарадкаваньня быў уведзены ў сам сьпіс, таму няма неабходнасьці ўжываць дапаможны мэтад <code class="language-java">Collections.sort</code>:</p>
+
+  <pre><code class="language-java">
+invoices.sort((Invoice inv1, Invoice inv2) -&gt; return Double.compare(inv2.getAmount(), inv1.getAmount()));
+</code></pre>
+
+  <p>Наступны крок. У <i>Java</i>&nbsp;8 маецца дапаможны мэтад <code class="language-java">Comparator.comparing</code>, які ў якасьці аргумэнту прымае лямбда-выраз для атрыманьня ключа, па якому будзе рабіцца ўпарадкаваньне, і сам створыць адпаведны аб'ект <code class="language-java">Comparator</code>:</p>
+
+  <pre><code class="language-java">
+invoices.sort(Comparator.comparing(inv -&gt; inv.getAmount()));
+</code></pre>
+
+  <p>Наступным крокам можна лямбда-выраз у апошнім прыкладзе замяніць на спасылку на мэтад:</p>
+
+  <pre><code class="language-java">
+invoices.sort(Comparator.comparing(Invoice::getAmount));
+</code></pre>
+
+  <p>Як бачым, апошні варыянт нашмат больш ляканічны і выразны.</p>
+
+</section>
+
+<section>
+  <h1 id="Library" data-content-item-open>Бібліятэка</h1>
+
+  <h2 id="Library_Strings">Апрацоўка сымбальных чародаў</h2>
+
+  <h2 id="Library_Math">Матэматычныя вылічэньні</h2>
+
+  <h2 id="Library_javalang">Рознае ў <code class="language-java" style="font-variant: normal">java.lang</code></h2>
+
+  <h2 id="Library_DateTime">Значэньні даты і часу</h2>
+  <p><i>Date and Time API</i> у <i>Java</i>&nbsp;8 падвергнулася значным зьменам. Па-першае, аб'екты даты і часу сталі <i>immutable</i>, што вельмі важна для пазьбяганьня памылак. Па-другое, <i>API</i> стаў значна больш <i>domain driven</i> і інтуітыўна зразумелым:</p>
+
+  <pre><code class="language-java">
+LocatedDateTime coffeeBreak = LocalDateTime.now().plusHours(2).plusMinutes(30);
+</code></pre>
+
+  <p>Разгледзім комплексны прыклад для ілюстрацыі магчымасьцяў:</p>
+
+  <pre><code class="language-java">
+ZoneId london = ZoneId.of("Europe/London");
+LocalDate may1 = LocalDate.of(2016, Month.MAY, 1);
+LocalTime early = LocalTime.parse("08:45");
+ZonedDateTime departure = ZonedDateTime.of(may1, early, london);
+System.out.println(departure);
+
+LocalTime from = LocalTime.from(departure);
+System.out.println(from);
+
+ZonedDateTime landing = ZonedDateTime.of(may1, LocalTime.of(11, 35), ZoneId.of("Europe/Stockholm"));
+
+Duration flightLength = Duration.between(departure, landing);
+System.out.println(flightLength);
+
+ZonedDateTime now = ZonedDateTime.now();
+Duration timeHere = Duration.between(landing, now);
+System.out.println(timeHere);
+</code></pre>
+
+  <p>Гэты код прывядзе да падобнага вываду:</p>
+
+  <pre><code class="language-bash">
+2016-05-01T08:45+03:00[Europe/Minsk]
+08:45
+PT3H50M
+PT655H49M49.245S
+</code></pre>
+
+  <h2 id="Library_Collections">Калекцыі</h2>
+
+  <h2 id="Library_Streaming">Streaming API</h2>
+  <p><a href="https://medium.com/@johnmcclean/java-8-streams-10-missing-features-ec82ee90b6c0#.33ukxgjvs">Java 8 Streams : 10 missing features</a></p>
+  <p><a href="http://gist.asciidoctor.org/?github-aol/simple-react//user-guide/streams.adoc&doctype=book&toc=preamble">Working With Streams</a> (<i>StreamUtils</i>, <i>Streamable</i>, <i>ReactiveSeq</i>)</p>
+  <br>
+  <p><i>Streaming API</i>&nbsp;&ndash; гэта яшчэ адзін (у дадатак да <a href="#Core_Lambda">лямбда-выразаў</a>) зрух у <i>Java</i>&nbsp;8 у бок дэкляратыўнага, а не імпэратыўнага праграмаваньня, калі мы пазначаем пажаданы вынік замест рэалізацыі кожнай дробнай дэталі дасягненьня гэтага выніку. Напрыклад, мы кажам мове, што мы жадаем атрымаць адсартаваны ці адфільтраваны сьпіс элемэнтаў, пазначаючы толькі пэўныя парамэтры таго, якім чынам яны павінныя быць адсартаваныя і адфільтраваныя, а ўжо якім чынам іх адсартаваць і адфільтраваць, будзе заклапочана сама мова, прычым яно зробіць гэта аптымізаваным чынам.</p>
+  <p><i>Streaming API</i> прызначаны палепшыць працу з калекцыямі элемэнтаў. Плынь (<i>stream</i>) у <i>Java</i>&nbsp;8&nbsp;&ndash; гэта пасьлядоўнасьць пэўных элемэнтаў, прычым плынь не захоўвае самі элемэнты, але мае спасылку на іх крыніцу і перабірае элемэнтамі ў ходзе выкананьня праграмы. Шмат якія апэрацыі плыняў зроблены такім чынам, што яны ізноў вяртаюць плынь з ужо іншымі характарыстыкамі. Гэта зроблена, каб іх можна было злучаць у ланцуг выклікаў&nbsp;&ndash; у так званую трубу:</p>
+
+  <pre><code class="language-java">
+List&lt;Integer&gt; ids = invoices.stream()
+    .filter(inv -&gt; inv.getCustomer() == Customer.ORACLE)
+    .sorted(comparingDouble(Invoice::getAmount))
+    .map(Invoice::getId)
+    .collect(Collectors.toList());
+</code></pre>
+
+  <p>Усе апэрацыі, якія падтрымлівае інтэрфэйс <code class="language-java">java.util.stream.Stream</code> падзяляюцца на 2 катэгорыі:</p>
+  <ul>
+    <li>такія апэрацыі, як <code class="language-java">filter</code>, <code class="language-java">sorted</code> і <code class="language-java">map</code>, якія могуць злучацца ў ланцуг (трубу).</li>
+    <li>а таксама апэрацыі, як <code class="language-java">collect</code>, <code class="language-java">findFirst</code> і <code class="language-java">allMatch</code>, якія перарываюць ланцуг выклікаў і вяртаюць вынік.</li>
+  </ul>
+
+  <h3 id="Library_Streaming_Filtering">Фільтрацыя</h3>
+  <p>У <i>Streaming API</i> існуе шэраг апэрацыяў для фільтрацыі элемэнтаў, некаторыя зь іх:</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Апэрацыя</th>
+      <th>Значэньне</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code class="language-java">filter</code></td>
+      <td>Прымае ў якасьці аргумэнту аб'ект <code class="language-java">Predicate</code> і вяртае плынь, якая будзе ўтрымліваць толькі тыя элемэнты, якія задавальняюць умовам гэтага аб'екту.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">distinct</code></td>
+      <td>Вяртае плынь, якая будзе ўтрымліваць унікальныя элемэнты, у адпаведнасьці з вынікам працы мэтаду <code class="language-java">equals</code> аб'ектаў у плыні.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">limit</code></td>
+      <td>Вяртае плынь, памер якой ня болей за пазначанае значэньне.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">skip</code></td>
+      <td>Вяртае плынь, выключаючы першыя <i>n</i>-элемэнтаў зыходнай плыні.</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <pre><code class="language-java">
+List&lt;Invoice&gt; expensiveInvoices = invoices.stream()
+    .distinct()
+    .filter(inv -&gt; inv.getAmount() &gt; 10000)
+    .limit(5)
+    .collect(Collectors.toList());
+</code></pre>
+
+  <h3 id="Library_Streaming_Matching">Праверка на адпаведнасьць</h3>
+  <p>Можна праверыць ці адпавядаюць усе/пэўныя/ніякія элемэнты плыні пэўнаму крытэру. Для гэтага ў <i>Streaming API</i> існуюць апэрацыі <code class="language-java">allMatch</code>, <code class="language-java">anyMatch</code> і <code class="language-java">noneMatch</code>. У якасьці парамэтру яны прымаюць <code class="language-java">Predicate</code>, а вяртаюць вынік тыпу <code class="language-java">boolean</code>. Прыклад праверкі ці ўсе чэкі маюць суму большую за 1000:</p>
+
+  <pre><code class="language-java">
+boolean expensive = invoices.stream()
+    .allMatch(inv -&gt; inv.getAmount() &gt; 1000);
+</code></pre>
+
+  <h3 id="Library_Streaming_Finding">Адзін з мноства</h3>
+  <p>Калі трэба атрымаць проста любы ці першы элемэнт з плыні, можна скарыстацца апэрацыямі <code class="language-java">findAny</code> і <code class="language-java">findFirst</code>. У выніку будзе вернуты аб'ект <a href="#Library_OtherIn_javautil_Optional"><code class="language-java">Optional</code></a>:</p>
+
+  <pre><code class="language-java">
+Optional&lt;Invoice&gt; = invoices.stream()
+    .filter(inv -&gt; inv.getCustomer() == Customer.ORACLE)
+    .findAny();
+</code></pre>
+
+  <h3 id="Library_Streaming_Mapping">Mapping</h3>
+  <p>Пры дапамозе мэтаду <code class="language-java">map</code> можна пераўтварыць кожны элемэнт плыні ў іншы аб'ект. Мэтад прымае ў якасьці аргумэнту аб'ект <code class="language-java">Function</code>, які пасьлядоўна ўжываецца да кожнага з элемэнтаў плыні, а вынік яго выкананьня фармуе новую плынь. Напрыклад, такім чынам можна атрымаць <i>ID</i> усіх чэкаў, якія ўтрымліваюцца ў зыходнай плыні:</p>
+
+  <pre><code class="language-java">
+List&lt;Integer&gt; ids = invoices.stream()
+    .map(Invoice::getId)
+    .collect(Collectors.toList());
+</code></pre>
+
+  <h3 id="Library_Streaming_Reducing">Reducing</h3>
+  <p>Яшчэ адна апэрацыя, якую часта трэба выканаць над шэрагам элемэнтаў&nbsp;&ndash; гэта аб'яднаць нейкім чынам гэтыя элемэнты, каб атрымаць у выніку адно значэньне. Напрыклад, вылічыць суму ўсіх чэкаў у плыні. Клясычна мы б вырашалі гэтую задачу наступным чынам:</p>
+
+  <pre><code class="language-java">
+double sum = 0;
+for (Invoice invoice : invoices) {
+    sum += invoice.getAmount();
+}
+</code></pre>
+
+  <p>У <i>Streaming API</i> існуе мэтад <code class="language-java">reduce</code>, пры дапамозе якога папярэдні фрагмэнт коду можна перапісаць наступным чынам:</p>
+
+  <pre><code class="language-java">
+double sum = invoices.stream().map(Invoice::getAmount).reduce(0.0, (a, b) -&gt; a + b);
+</code></pre>
+
+  <p>Альбо яшчэ адзін прыклад, як знайсьці максымальнае значэньне ў плыні лічбаў:</p>
+
+  <pre><code class="language-java">
+int max = numbers.stream().reduce(Integer.MIN_VALUE, Integer::max);
+</code></pre>
+
+  <h3 id="Library_Streaming_Collectors">Collectors</h3>
+  <p>Калі мы скончылі апрацоўваць плынь і трэба вярнуць шэраг яе элемэнтаў, выкарыстоўваецца мэтад <code class="language-java">collect</code>. У якасьці аргумэнту ён прымае аб'ект <code class="language-java">java.util.stream.Collector</code>, які апісвае якім чынам трэба сабраць і вярнуць элемэнты. Напрыклад, у ранейшых прыкладах мы ўжо выкарыстоўвалі фабрычны мэтад <code class="language-java">Collectors.toList()</code>, які вяртае аб'ект <code class="language-java">Collector</code> з інструкцыямі вярнуць просты сьпіс элемэнтаў:</p>
+
+  <pre><code class="language-java">
+List&lt;Invoice&gt; invoices = invoices.stream().collect(Collectors.toList());
+</code></pre>
+
+  <p>У клясе <code class="language-java">Collectors</code> існуюць і іншыя падобныя мэтады, напрыклад:</p>
+
+  <pre><code class="language-java">
+Map&lt;Customer, List&lt;Invoice&gt;&gt; customerToInvoices = invoices.stream()
+    .collect(Collectors.groupingBy(Invoice::getCustomer));
+</code></pre>
+
+
+  <h2 id="Library_OtherIn_javautil">Іншае ў <code class="language-java" style="font-variant: normal">java.util</code></h2>
+
+  <h3 id="Library_OtherIn_javautil_Optional"><code class="language-java" style="font-variant: normal">Optional</code></h3>
+  <p>Для спрашчэньня ланцуговых выклікаў у функцыянальным стылі, каб пазьбягаць <code class="language-java">NullPointerException</code>, была уведзена кляса <code class="language-java">java.util.Optional</code>. Уявім прыклад:</p>
+
+  <pre><code class="language-java">
+getEventWithId(10).getLocation().getCity();
+</code></pre>
+
+  <p>Калі <code class="language-java">getEventWithId(10)</code> верне <code class="language-java">null</code>, будзе кінутае выключэньне. Нават калі не, тады існуе магчымасьць, што наступны выклік, <code class="language-java">getLocation()</code>, таксама верне <code class="language-java">null</code> і зноў будзе кінутае выключэньне. Іншымі словамі, кожны з выклікаў у ланцугу можа вярнуць <code class="language-java">null</code> і будзе кінутае выключэньне. Каб пазьбегнуць гэтага, можна ўбудаваць код, які будзе «абараняць» ад выключэньняў, напрыклад такім чынам:</p>
+
+  <pre><code class="language-java">
+public String getCityForEvent(int id) {
+    Event event = getEventWithId(id);
+    if (event != null) {
+        Location location = event.getLocation();
+        if (location != null) {
+            return location.getCity();
+        }
+    }
+    return "TBC";
+}
+</code></pre>
+
+  <p>Раней такія праверкі трэба было рабіць ледзь не на кожным кроку. Пачынаючы з <i>Java</i>&nbsp;8 гэта можна рабіць больш ляканічна:</p>
+
+  <pre><code class="language-java">
+public String getCityForEvent(int id) {
+    Optional.ofNullable(getEventWithId(id))
+            .flatMap(this::getLocation)
+            .map(this::getCity)
+            .orElse("TBC");
+}
+</code></pre>
+
+  <h2 id="Library_IO_NIO">I/O і NIO</h2>
+
+  <h2 id="Library_EventHandling">Апрацоўка падзеяў</h2>
+
+  <h2 id="Library_RegularExpressions">Рэгулярныя выразы</h2>
+
+  <h2 id="Library_Networking">Сетка</h2>
+
+  <h2 id="Library_ConcurrencyAndAsync">Паралельныя і асынхронныя вылічэньні</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://jcp.org/en/jsr/detail?id=166">JSR-166</a></li>
+      <li><a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/package-summary.html">JavaDoc</a></li>
+      <li><a href="http://www.ibm.com/developerworks/ru/library/j-jvmc1/">IBM 1</a></li>
+      <li><a href="http://www.ibm.com/developerworks/ru/library/j-jvmc2/">IBM 2</a></li>
+    </ul>
+  </div>
+  <p>Уключае клясы і інтэрфэйсы з герархіі <code class="language-java">java.util.concurrent</code>.</p>
+  <p><code class="language-java">TimeUnit</code>&nbsp;&ndash; пералічэньне для пераводу адных адзінак часу ў іншыя:</p>
+
+  <pre><code class="language-java">
+TimeUnit.HOURS.toSeconds(10);
+</code></pre>
+
+  <p><code class="language-java">Semaphore</code>&nbsp;&ndash; кляса для таго, каб абмяжоўваць колькасьць патокаў, якія могуць паралельна выконвацца:</p>
+
+  <pre><code class="language-java">
+public static void main(final String... args) {
+    Runnable limitedCall = new Runnable() {
+        final Random rand = new Random();
+        final Semaphore semaphore = new Semaphore(3);
+        int count = 0;
+
+        public void run() {
+            int time = rand.nextInt(15);
+            int num = count++;
+
+            try {
+                semaphore.acquire();
+                System.out.println("Executing " + "long-running action for " + time + " seconds... #" + num);
+                Thread.sleep(time * 1000);
+                System.out.println("Done with #" + num + "!");
+                semaphore.release();
+            } catch (InterruptedException intEx) {
+                intEx.printStackTrace();
+            }
+        }
+    };
+
+    for (int i=0; i&lt;10; i++)
+        new Thread(limitedCall).start();
+}
+</code></pre>
+
+  <p>Інтэрфэйс <code class="language-java">Future&lt;T&gt;</code>&nbsp;&ndash; гэта трымальнік значэньня тыпу <code class="language-java">&lt;T&gt;</code>, характэрнай рысай якога зьяўляецца тое, што значэньне ў агульным выпадку не даступнае да нейкага моманту пасьля стварэньня <code class="language-java">Future</code>.</p>
+
+  <p>Інтэрфэйсы <code class="language-java">Executor</code> і <code class="language-java">ExecutorService</code>&nbsp;&ndash; гэта нешта, што выконвае задачы. Гэтае нешта і будзе патокам, але інтэрфэйсы хаваюць падрабязнасьці таго, якім чынам паток ажыцьцяўляе выкананьне. Патокі спажываюць адносна шмат рэсурсаў, таму мае сэнс паўторна іх выкарыстоўваць, а не выдзяляць аднакроць з наступным выкідваньнем. Інтэрфэйс <code class="language-java">ExecutorService</code> спрашчае дзяленьне працы паміж патокамі, а таксама забясьпечвае аўтаматычнае паўторнае выкарыстаньне патокаў, што палягчае праграмаваньне і паляпшае прадукцыйнасьць.</p>
+
+  <pre><code class="language-java">
+final Collection&lt;Task&gt; tasks = new ArrayList&lt;Task&gt;();
+for (int i = 0; i < 100; i++) {
+    tasks.add(new Task());
+}
+ExecutorService threadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+try {
+    Collection&lt;Future&lt;String&gt;&gt; results = threadPool.invokeAll(tasks);
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+
+public class Task implements Callable&lt;String&gt; {
+    public String call() throws Exception {
+        return null;
+    }
+}
+</code></pre>
+  <p>У вышэйпрыведзеным прыкладзе, колькі б не было перададзена патокаў для адначасовага выкананьня (100 у прыкладзе), выконвацца будуць толькі столькі, колькі ядраў/працэсараў у кампутары, на якім прыклад выконваецца, астатнія будуць чакаць сваёй чаргі. Такі падыход адназначна не прывядзе да празьмернай нагрузкі на сыстэму.</p>
+
+  <p><a href="http://www.nurkiewicz.com/2013/05/java-8-definitive-guide-to.html?cm_mc_uid=34981155621614747441138&cm_mc_sid_50200000=1474876013&view=magazine">Java 8: Definitive guide to CompletableFuture</a></p>
+  <p><a href="https://examples.javacodegeeks.com/core-java/util/concurrent/java-8-concurrency-tutorial/">Java 8 Concurrency Tutorial</a></p>
+  <p><a href="http://winterbe.com/posts/2015/04/07/java8-concurrency-tutorial-thread-executor-examples/">Java 8 Concurrency Tutorial: Threads and Executors</a></p>
+
+  <h3 id="Library_CompletableFuture"><code class="language-java" style="font-variant: normal">CompletableFuture</code></h3>
+  <p>Адной з новых магчымасьцяў <i>Java</i>&nbsp;8 зьяўляецца кляса <code class="language-java">java.util.concurrent.CompletableFuture</code>, якая дазваляе рабіць ланцугі выклікаў (камбінаваць некалькі асынхронных выклікаў). У наступным прыкладзе 2 выклікі, якія блякуюць далейшы ход праграмы (атрыманьне цаны і абменнага курсу) робяцца паралельна і асынхронна, і калі абодва вынікі будуць атрыманы, будзе выведзены канчатковы кошт:</p>
+
+  <pre><code class="language-java">
+findBestPrice("iPhone6")
+    .thenCombine(lookupExchangeRate(Currency.GBP), this::exchange)
+    .thenAccept(localAmount -&gt; System.out.printf("It will cost you %f GBP\n", localAmount));
+
+private CompletableFuture&lt;Price&gt; findBestPrice(String product Name) {
+    return CompletableFuture.supplyAsync(() -> priceFinder.findBestPrice(productName));
+}
+
+private CompletableFuture&lt;Double&gt; lookupExchangeRate(Currency localCurrency) {
+    return CompletableFuture.supplyAsync(() -> exchangeService.lookupExchangeRate(Currency.USD, localCurrency));
+}
+</code></pre>
+
+
+</section>
+
+<section>
+  <h1 id="JSE" data-content-item-open>JSE</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="https://docs.oracle.com/javase/8/docs/">Guide</a></li>
+    </ul>
+  </div>
+
+  <aside>
+    <p><i>JSR-250</i>&nbsp;&ndash; стандарт "Common Annotations for the Java Platform"</p>
+    <p><a href="#Build_Maven_Dependencies_CommonAnnotation">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+  </aside>
+  <h2 id="JSE_CommonAnnotations">Common Annotations</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/common_annotations-1_2-mrel2-spec/jsr-250-1.2-final.pdf">JSR-250</a></li>
+    </ul>
+  </div>
+
+  <h3 id="JSE_CommonAnnotations_@Generated">@Generated</h3>
+  <p>Пазначае зыходны код, які быў згенераваны:</p>
+
+  <pre><code class="language-java">
+@Generated("com.sun.xml.rpc.AProcessor")
+public interface StockQuoteService extends java.rmi.Remote {
+  this.context = context;
+}
+</code></pre>
+
+  <h3 id="JSE_CommonAnnotations_@ManagedBean">@ManagedBean</h3>
+  <p>Выкарыстоўваецца для пазначэньня аб'ектаў, якія могуць кіравацца кантэйнэрам:</p>
+
+  <pre><code class="language-java">
+@ManagedBean("cart")
+public class ShoppingCart {
+  ...
+}
+</code></pre>
+
+  <h3 id="JSE_CommonAnnotations_@PostConstruct">@PostConstruct і @PreDestroy</h3>
+  <p><code class="language-java">@PostConstruct</code> выкарыстоўваецца для пазначэньня мэтаду, які будзе выкліканы пасьля ўсіх іньекцый, але перад тым, як бін будзе прадстаўлены кантэйнэрам для выкарыстаньня. А <code class="language-java">@PreDestroy</code> выкарыстоўваецца для пазначэньня мэтаду, які будзе выкліканы непасрэдна перад тым, як кантэйнэр вынішчыць бін, для вызваленьня папярэдне занятых рэсурсаў. Мэтады, пазначаныя гэтымі анатацыямі, павінны вяртаць <code class="language-java">void</code>, не кідаць <i>checked</i> выключэньняў, не быць статычнымі, а таксама не прымаць аргумэнтаў, за выключэньнем <i>EJB</i>-інтэрсэптэраў, калі яны прымаюць аргумэнт <code class="language-java">InvocationContext</code>.</p>
+
+  <pre><code class="language-java">
+...
+
+@Resource
+private void setMyDB(DataSource ds) {
+  myDB = ds;
+}
+
+@PostConstruct
+private void initialize() {
+  // Initialize the connection object from the DataSource
+  connection = myDB.getConnection();
+}
+
+@PreDestroy
+private void cleanup() {
+  // Close the connection to the DataSource.
+  connection.close();
+}
+
+private DataSource myDB;
+private Connection connection;
+
+...
+</code></pre>
+
+  <h3 id="JSE_CommonAnnotations_@Resource@Resources">@Resource і @Resources</h3>
+  <p><code class="language-java">@Resource</code> выкарыстоўваецца для пазначэньня спасылкі на рэсурс. Калі выкарыстоўваецца перад полем альбо сэттэрам, кантэйнэр зробіць іньекцыю адпаведнага значэньня ў час ініцыіраваньня праграмы. Калі выкарыстоўваецца перад клясам, гэта азначае, што праграма будзе "шукаць" значэньне ў часе сваёй працы.</p>
+
+  <pre><code class="language-java">
+@Resource(name="customerDB")
+private DataSource myDB;
+</code></pre>
+
+  <p>Калі ж трэба пазначыць некалькі рэсурсаў, выкарыстоўваецца <code class="language-java">@Resources</code>:</p>
+  <pre><code class="language-java">
+@Resources ({
+  @Resource(name="myDB" type=javax.sql.DataSource),
+  @Resource(name="myMQ" type=javax.jms.ConnectionFactory)
+})
+public class CalculatorBean {
+  //...
+}
+</code></pre>
+
+  <h3 id="JSE_CommonAnnotations_@DeclareRoles">@DeclareRoles</h3>
+  <p>Выкарыстоўваецца для аб'яўленьня роляў праграмы. (<mark>ня вельмі разумею сэнс</mark>)</p>
+
+  <pre><code class="language-java">
+@DeclareRoles("BusinessAdmin")
+public class Calculator {
+  public void convertCurrency() {
+    if (x.isUserInRole("BusinessAdmin")) {
+    ....
+    }
+  }
+  ...
+}
+</code></pre>
+
+  <h3 id="JSE_CommonAnnotations_@RolesAllowed">@RolesAllowed</h3>
+  <p>Выкарыстоўваецца для пазначэньня роляў, пад якімі дазваляецца выкананьне мэтадаў. Можа стаяць перад клясай і перад мэтадам. Калі ўжываецца перад клясай, ужываецца да ўсіх яе мэтадаў. Калі ўжываецца і перад клясай, і перад мэтадамі, тады анатацыя перад мэтадам перакрывае анатацыю перад клясай.</p>
+
+  <pre><code class="language-java">
+@RolesAllowed("Users")
+public class Calculator {
+
+  @RolesAllowed("Administrator")
+  public void setNewRate(int rate) {
+    ...
+  }
+
+  ...
+}
+</code></pre>
+
+  <h3 id="JSE_CommonAnnotations_@PermitAll">@PermitAll</h3>
+  <p>Выкарыстоўваецца каб пазначыць, што выкананьне мэтадаў дазваляецца любым ролям. Можа стаяць перад клясай і перад мэтадам.</p>
+
+  <pre><code class="language-java">
+@RolesAllowed("Users")
+public class Calculator {
+
+  @RolesAllowed("Administrator")
+  public void setNewRate(int rate) {
+    ...
+  }
+
+  @PermitAll
+  public long convertCurrency(long amount) {
+    ...
+  }
+
+  ...
+}
+</code></pre>
+
+  <h3 id="JSE_CommonAnnotations_@DenyAll">@DenyAll</h3>
+  <p>Выкарыстоўваецца каб пазначыць, што выкананьне мэтадаў забараняецца незалежна ад ролі. Можа стаяць перад клясай і перад мэтадам.</p>
+
+  <pre><code class="language-java">
+@RolesAllowed("Users")
+public class Calculator {
+
+  @RolesAllowed("Administrator")
+  public void setNewRate(int rate) {
+    ...
+  }
+
+  @DenyAll
+  public long convertCurrency(long amount) {
+    ...
+  }
+
+  ...
+}
+</code></pre>
+
+  <h3 id="JSE_CommonAnnotations_@DataSourceDefinition@DataSourceDefinitions">@DataSourceDefinition і @DataSourceDefinitions</h3>
+  <p><code class="language-java">@DataSourceDefinition</code> выкарыстоўваецца для аб'яўленьня <i>DataSource</i> кантэйнэра і для рэгістрацыі яго ў <i>JNDI</i>.</p>
+
+  <pre><code class="language-java">
+@DataSourceDefinition(name="java:global/MyApp/MyDataSource",
+    className="org.apache.derby.jdbc.ClientDataSource",
+    url="jdbc:derby://localhost:1527/myDB",
+    user="lance",
+    password="secret")
+</code></pre>
+
+  <p>альбо:</p>
+
+  <pre><code class="language-java">
+@DataSourceDefinition(name="java:global/MyApp/MyDataSource",
+    className="com.foobar.MyDataSource",
+    portNumber=6689,
+    serverName="myserver.com",
+    user="lance",
+    password="secret")
+</code></pre>
+
+  <p>Калі ж трэба аб'явіць некалькі <i>DataSource</i>, выкарыстоўваецца <code class="language-java">@DataSourceDefinitions</code>:</p>
+
+  <pre><code class="language-java">
+@DataSourceDefinitions ({
+  @DataSourceDefinition(name="java:global/MyApp/MyDataSource",
+      className="com.foobar.MyDataSource",
+      portNumber=6689,
+      serverName="myserver.com",
+      user="lance",
+      password="secret"),
+  @DataSourceDefinition(name="java:global/MyApp/MyDataSource",
+      className="org.apache.derby.jdbc.ClientDataSource",
+      url="jdbc:derby://localhost:1527/myDB",
+      user="lance",
+      password="secret")
+})
+public class CalculatorBean {
+  ...
+}
+</code></pre>
+
+  <aside>
+    <p><i>JSR-221</i>&nbsp;&ndash; стандарт "JDBC 4.0 API"</p>
+  </aside>
+  <h2 id="JSE_JDBC">JDBC</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/jdbc-4_2-mrel2-spec/jdbc4.2-fr-spec.pdf">JSR-221</a></li>
+      <li><a href="http://docs.oracle.com/javase/tutorial/jdbc/index.html">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <h2 id="JSE_JNDI">JNDI</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://docs.oracle.com/javase/tutorial/jndi/index.html">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <aside>
+    <p><i>JSR-206</i>&nbsp;&ndash; стандарт "Java API for XML Processing 1.3"</p>
+  </aside>
+  <h2 id="JSE_JAXP">JAXP</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/jaxp-1_6-mrel3-spec/JAXP1_6-FinalSpec.pdf">JSR-206</a></li>
+      <li><a href="http://docs.oracle.com/javase/tutorial/jaxp/index.html">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <aside>
+    <p><i>JSR-222</i>&nbsp;&ndash; стандарт "Java Architecture for XML Binding 2.0"</p>
+  </aside>
+  <h2 id="JSE_JAXB">JAXB</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/jaxb-2.0-fr-oth-JSpec/jaxb-2_0-fr-spec.pdf">JSR-222</a></li>
+      <li><a href="http://docs.oracle.com/javase/tutorial/jaxb/index.html">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <aside>
+    <p><i>JSR-173</i>&nbsp;&ndash; стандарт "Streaming API for XML"</p>
+  </aside>
+  <h2 id="JSE_StAX">StAX</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://jcp.org/en/jsr/detail?id=173">JSR-173</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <h2 id="JSE_JAAS">JAAS</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/jaas/tutorials/index.html">Tutorial</a></li>
+      <li><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/jaas/tutorials/GeneralAcnOnly.html">Auth Tutorial</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <aside>
+    <p><i>JSR-3</i>&nbsp;&ndash; стандарт "Java Management Extensions 1.4"</p>
+  </aside>
+  <h2 id="JSE_JMX">JMX</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/jmx-1_4-mrel4-spec/jsr3-jmx-1_4-mrel4-spec-FINAL-v1_0.pdf">JSR-3</a></li>
+      <li><a href="http://docs.oracle.com/javase/tutorial/jmx/index.html">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <aside>
+    <p><i>JSR-925</i>&nbsp;&ndash; стандарт "JavaBeans Activation Framework 1.1"</p>
+  </aside>
+  <h2 id="JSE_JAF">JAF</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/jaf-1.1-mrel-eval-oth-JPR/jaf-1.1-mrel.pdf">JSR-925</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</section>
+
+<section>
+  <aside>
+    <p><i>JSR-342</i>&nbsp;&ndash; стандарт "Java EE 7"</p>
+  </aside>
+  <h1 id="JEE" data-content-item-open>JEE</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-spec/JavaEE_Platform_Spec.pdf">JSR-342</a></li>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/java_ee-7-mrel-spec/WebProfile.pdf">JSR-342, Web Profile</a></li>
+      <li><a href="https://docs.oracle.com/javaee/7/JEETT.pdf">Tutorial</a></li>
+      <li><a href="http://blog.arungupta.me/defaults-javaee7-platform-techtip37/">Defaults</a></li>
+    </ul>
+  </div>
+  <p><a href="https://www.cuba-platform.com/quickstart">CUBA Platform</a></p>
+
+  <h2 id="JEE_Resources">Рэсурсы</h2>
+  <p><a href="http://resources.coreservlets.com/java-ee-books.html">Books on Java EE and Related Technologies</a></p>
+  <p><a href="https://www.youtube.com/user/bienadam">Screencasts: Adam Bien</a> (<a href="http://tv.adam-bien.com/">у храналягічным парадку</a>)</p>
+  <p><a href="https://confluence.jetbrains.com/display/IDEADEV/JavaEE+7+Screencasts">IntelliJ IDEA: JavaEE 7 Screencasts</a></p>
+  <p><a href="https://github.com/javaee-samples/javaee7-samples">JavaEE 7 Samples</a></p>
+  <p><a href="https://www.youtube.com/user/koushks">Java Brains Screencasts</a></p>
+  <p><a href="http://www.javacodegeeks.com/tutorials/java-tutorials/enterprise-java-tutorials/">Java Code Geeks Tutorials</a></p>
+  <p>ZEEF: <a href="https://javaee7.zeef.com/arjan.tijms">Arjan Tijms</a>, <a href="https://javaee7.zeef.com/abhishek.gupta">Abhishek Gupta</a></p>
+
+  <h2 id="JEE_Spec">Спэцыфікацыі</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://en.wikipedia.org/wiki/Java_EE_version_history">Wiki</a></li>
+    </ul>
+  </div>
+  <p>Зялёным тлом пазначаныя спэцыфікацыі, якія ўвайшлі ў <i>Web Profile</i> (<a href="http://download.oracle.com/otndocs/jcp/javaee_web_profile-6.0-fr-oth-JSpec/">JEE&nbsp;6</a> і <a href="http://download.oracle.com/otn-pub/jcp/java_ee-7-fr-spec/WebProfile.pdf">JEE&nbsp;7</a>)&nbsp;&ndash; гэта падмноства спэцыфікацыяў з <i>JEE</i>, актуальнае для распрацоўкі сеціўных праграмаў.</p>
+  <table>
+    <thead>
+    <tr>
+      <th rowspan="2" style="vertical-align: middle;">Тэхналёгія</th>
+      <th colspan="2" class="centered">J2EE&nbsp;1.4&nbsp;(11.11.03)<br /><a href="http://jcp.org/en/jsr/detail?id=151">JSR 151</a>&nbsp;|&nbsp;<a href="http://docs.oracle.com/javaee/1.4/tutorial/doc/">Tutorial</a></th>
+      <th colspan="2" class="centered">JEE&nbsp;5&nbsp;(11.05.06)<br /><a href="http://jcp.org/en/jsr/detail?id=244">JSR 244</a>&nbsp;|&nbsp;<a href="http://docs.oracle.com/javaee/5/tutorial/doc/">Tutorial</a></th>
+      <th colspan="2" class="centered">JEE&nbsp;6&nbsp;(10.12.09)<br /><a href="http://jcp.org/en/jsr/detail?id=316">JSR 316</a>&nbsp;|&nbsp;<a href="http://docs.oracle.com/javaee/6/tutorial/doc/">Tutorial</a></th>
+      <th colspan="2" class="centered">JEE&nbsp;7&nbsp;(16.06.13)<br /><a href="http://jcp.org/en/jsr/detail?id=342">JSR 342</a>&nbsp;|&nbsp;<a href="https://docs.oracle.com/javaee/7/tutorial/index.html">Tutorial</a></th>
+    </tr>
+    <tr class="centered">
+      <th>Вэрсія</th>
+      <th>JSR</th>
+      <th>Вэрсія</th>
+      <th>JSR</th>
+      <th>Вэрсія</th>
+      <th>JSR</th>
+      <th>Вэрсія</th>
+      <th>JSR</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th colspan="9">Тэхналёгіі сеціўных праграмаў:</th>
+    </tr>
+    <tr>
+      <td>Java Servlet</td>
+      <td class="centered">2.4</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=154">JSR&nbsp;154</a></td>
+      <td class="centered">2.5</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=154">JSR&nbsp;154</a></td>
+      <td class="centered green_bg">3.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=315">JSR&nbsp;315</a></td>
+      <td class="centered green_bg">3.1</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=340">JSR&nbsp;340</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="JavaServer Faces">JSF</abbr></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="https://jcp.org/en/jsr/detail?id=127">JSR&nbsp;127</a></td>
+      <td class="centered">1.2</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=252">JSR&nbsp;252</a></td>
+      <td class="centered green_bg">2.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=314">JSR&nbsp;314</a></td>
+      <td class="centered green_bg">2.2</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=344">JSR&nbsp;344</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Expression Language">EL</abbr></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered green_bg">2.2</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=245">JSR&nbsp;245</a></td>
+      <td class="centered green_bg">3.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=341">JSR&nbsp;341</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="JavaServer Pages">JSP</abbr></td>
+      <td class="centered">2.0</td>
+      <td class="centered"><a href="https://jcp.org/en/jsr/detail?id=152">JSR&nbsp;152</a></td>
+      <td class="centered">2.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=245">JSR&nbsp;245</a></td>
+      <td class="centered green_bg">2.2</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=245">JSR&nbsp;245</a></td>
+      <td class="centered green_bg">2.3</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=245">JSR&nbsp;245</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="JavaServer Pages Standard Tag Library">JSTL</abbr></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=52">JSR&nbsp;52</a></td>
+      <td class="centered">1.2</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=52">JSR&nbsp;52</a></td>
+      <td class="centered green_bg">1.2</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=52">JSR&nbsp;52</a></td>
+      <td class="centered green_bg">1.2</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=52">JSR&nbsp;52</a></td>
+    </tr>
+    <tr>
+      <td>Java API for WebSocket</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered green_bg">1.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=356">JSR&nbsp;356</a></td>
+    </tr>
+
+    <tr>
+      <th colspan="9">Тэхналёгіі <i>enterprise</i> праграмаў:</th>
+    </tr>
+    <tr>
+      <td>Dependency Injection</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered green_bg">1.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=330">JSR&nbsp;330</a></td>
+      <td class="centered green_bg">1.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=330">JSR&nbsp;330</a></td>
+    </tr>
+    <tr>
+      <td>Contexts and Dependency Injection</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered green_bg">1.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=299">JSR&nbsp;299</a></td>
+      <td class="centered green_bg">1.1</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=346">JSR&nbsp;346</a></td>
+    </tr>
+    <tr>
+      <td>Bean Validation</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered green_bg">1.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=303">JSR&nbsp;303</a></td>
+      <td class="centered green_bg">1.1</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=349">JSR&nbsp;349</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Enterprise JavaBeans">EJB</abbr></td>
+      <td class="centered">2.1</td>
+      <td class="centered"><a href="https://jcp.org/en/jsr/detail?id=153">JSR&nbsp;153</a></td>
+      <td class="centered">3.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=220">JSR&nbsp;220</a></td>
+      <td class="centered green_bg">3.1</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=318">JSR&nbsp;318</a></td>
+      <td class="centered green_bg">3.2</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=345">JSR&nbsp;345</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java Persistence API">JPA</abbr></td>
+      <td></td>
+      <td></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=220">JSR&nbsp;220</a></td>
+      <td class="centered green_bg">2.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=317">JSR&nbsp;317</a></td>
+      <td class="centered green_bg">2.1</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=338">JSR&nbsp;338</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java Transaction API">JTA</abbr></td>
+      <td class="centered">1.0</td>
+      <td></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=907">JSR&nbsp;907</a></td>
+      <td class="centered green_bg">1.1</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=907">JSR&nbsp;907</a></td>
+      <td class="centered green_bg">1.2</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=907">JSR&nbsp;907</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java Message Service API">JMS</abbr></td>
+      <td class="centered">1.1</td>
+      <td></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=914">JSR&nbsp;914</a></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=914">JSR&nbsp;914</a></td>
+      <td class="centered">2.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=343">JSR&nbsp;343</a></td>
+    </tr>
+    <tr>
+      <td>JavaMail API</td>
+      <td class="centered">1.3</td>
+      <td></td>
+      <td class="centered">1.4</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=919">JSR&nbsp;919</a></td>
+      <td class="centered">1.4</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=919">JSR&nbsp;919</a></td>
+      <td class="centered">1.5</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=919">JSR&nbsp;919</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java EE Connector Architecture">JCA</abbr></td>
+      <td class="centered">1.5</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=112">JSR&nbsp;112</a></td>
+      <td class="centered">1.5</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=112">JSR&nbsp;112</a></td>
+      <td class="centered">1.6</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=322">JSR&nbsp;322</a></td>
+      <td class="centered">1.7</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=322">JSR&nbsp;322</a></td>
+    </tr>
+    <tr>
+      <td>Concurrency Utilities for Java EE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=236">JSR&nbsp;236</a></td>
+    </tr>
+
+    <tr>
+      <th colspan="9">Тэхналёгіі сеціўных сэрвісаў:</th>
+    </tr>
+    <tr>
+      <td>Web Services</td>
+      <td class="centered">1.0</td>
+      <td></td>
+      <td class="centered">1.2</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=109">JSR&nbsp;109</a></td>
+      <td class="centered">1.3</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=109">JSR&nbsp;109</a></td>
+      <td class="centered">1.3</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=109">JSR&nbsp;109</a></td>
+    </tr>
+    <tr>
+      <td>Web Services Metadata</td>
+      <td></td>
+      <td></td>
+      <td class="centered">2.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=181">JSR&nbsp;181</a></td>
+      <td class="centered">2.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=181">JSR&nbsp;181</a></td>
+      <td class="centered">2.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=181">JSR&nbsp;181</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java API for RESTful Web Services">JAX-RS</abbr></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=311">JSR&nbsp;311</a></td>
+      <td class="centered green_bg">2.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=339">JSR&nbsp;339</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java API for JSON Processing">JSON-P</abbr></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered green_bg">1.0</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=353">JSR&nbsp;353</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java API for XML-Based Web Services">JAX-WS</abbr></td>
+      <td></td>
+      <td></td>
+      <td class="centered">2.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=224">JSR&nbsp;224</a></td>
+      <td class="centered">2.2</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=224">JSR&nbsp;224</a></td>
+      <td class="centered">2.2</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=224">JSR&nbsp;224</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java API for XML-based RPC">JAX-RPC</abbr></td>
+      <td class="centered">1.1</td>
+      <td></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=101">JSR&nbsp;101</a></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=101">JSR&nbsp;101</a></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=101">JSR&nbsp;101</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java API for XML Messaging">JAXM</abbr></td>
+      <td class="centered">1.1</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered">1.3</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=67">JSR&nbsp;67</a></td>
+      <td class="centered">1.3</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=67">JSR&nbsp;67</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java API for XML Registries">JAXR</abbr></td>
+      <td class="centered">1.0</td>
+      <td></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=93">JSR&nbsp;93</a></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=93">JSR&nbsp;93</a></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=93">JSR&nbsp;93</a></td>
+    </tr>
+
+    <tr>
+      <th colspan="9">Тэхналёгіі JSE, якія маюць дачыненьне да JEE:</th>
+    </tr>
+    <tr>
+      <td>Common Annotations</td>
+      <td></td>
+      <td></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=250">JSR&nbsp;250</a></td>
+      <td class="centered green_bg">1.1</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=250">JSR&nbsp;250</a></td>
+      <td class="centered green_bg">1.2</td>
+      <td class="centered green_bg"><a href="http://jcp.org/en/jsr/detail?id=250">JSR&nbsp;250</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java Database Connectivity">JDBC</abbr></td>
+      <td class="centered">3.0</td>
+      <td class="centered"><a href="https://jcp.org/en/jsr/detail?id=54">JSR&nbsp;54</a></td>
+      <td class="centered">3.0</td>
+      <td class="centered"><a href="https://jcp.org/en/jsr/detail?id=54">JSR&nbsp;54</a></td>
+      <td class="centered">4.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=221">JSR&nbsp;221</a></td>
+      <td class="centered">4.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=221">JSR&nbsp;221</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java Database Connectivity">JNDI</abbr></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered">1.2</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java Database Connectivity">JAAS</abbr></td>
+      <td class="centered">1.0</td>
+      <td></td>
+      <td class="centered">1.0</td>
+      <td></td>
+      <td class="centered">1.0</td>
+      <td></td>
+      <td class="centered">1.0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java Architecture for XML Binding">JAXB</abbr></td>
+      <td></td>
+      <td></td>
+      <td class="centered">2.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=222">JSR&nbsp;222</a></td>
+      <td class="centered">2.2</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=222">JSR&nbsp;222</a></td>
+      <td class="centered">2.2</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=222">JSR&nbsp;222</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java API for XML Processing">JAXP</abbr></td>
+      <td class="centered">1.2</td>
+      <td></td>
+      <td class="centered">1.2</td>
+      <td></td>
+      <td class="centered">1.2</td>
+      <td></td>
+      <td class="centered">1.3</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=206">JSR&nbsp;206</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Streaming API for XML">StAX</abbr></td>
+      <td></td>
+      <td></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=173">JSR&nbsp;173</a></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=173">JSR&nbsp;173</a></td>
+      <td class="centered">1.0</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=173">JSR&nbsp;173</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="Java Management Extensions">JMX</abbr></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td class="centered">1.2</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=3">JSR&nbsp;3</a></td>
+    </tr>
+    <tr>
+      <td><abbr title="JavaBeans Activation Framework">JAF</abbr></td>
+      <td class="centered">1.0</td>
+      <td></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=925">JSR&nbsp;925</a></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=925">JSR&nbsp;925</a></td>
+      <td class="centered">1.1</td>
+      <td class="centered"><a href="http://jcp.org/en/jsr/detail?id=925">JSR&nbsp;925</a></td>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <h2 id="JEE_Descriptors">Дэскрыптары разгортваньня</h2>
+  <pre>
+my-app
+`-- src
+    `-- main
+        |-- java
+        |    `...
+        |-- resources
+        |   |
+        |   `--META-INF
+        |      |-- application.xml           - JavaEE
+        |      |-- application-client.xml    - JavaEE
+        |      |-- persistence.xml           - JPA
+        |      `-- ra.xml                    - JCA
+        `-- webapp
+            |
+            `--WEB-INF
+               |-- beans.xml                 - CDI
+               |-- ejb-jar.xml               - EJB
+               |-- faces-config.xml          - JSF
+               |-- validation.xml            - Beans Validation
+               |-- web.xml                   - Servlet
+               |-- web-fragment.xml          - Servlet
+               `-- webservices.xml           - Web-services SOAP
+</pre>
+
+  <h3 id="JEE_Descriptors_web">web.xml</h3>
+
+  <pre><code class="language-xml">
+&lt;web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"&gt;
+&lt;/web-app&gt;
+</code></pre>
+
+  <h3 id="JEE_Descriptors_beans">beans.xml</h3>
+
+  <pre><code class="language-xml">
+&lt;beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+    bean-discovery-mode="all"&gt;
+&lt;/beans&gt;
+</code></pre>
+
+  <h3 id="JEE_Descriptors_jsf">faces-config.xml</h3>
+
+  <pre><code class="language-xml">
+&lt;faces-config version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"&gt;
+&lt;/faces-config&gt;
+</code></pre>
+
+  <h3 id="JEE_Descriptors_persistence">persistence.xml</h3>
+
+  <pre><code class="language-xml">
+&lt;persistence version="2.1"
+   xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"&gt;
+   &lt;persistence-unit name="primary"&gt;
+      &lt;!-- If you are running in a production environment, add a managed
+        data source, this example data source is just for devleopment and testing! --&gt;
+      &lt;!-- The datasource is deployed as WEB-INF/hibernate4-quickstart-ds.xml, you can
+        find it in the source at src/main/webapp/WEB-INF/hibernate4-quickstart-ds.xml --&gt;
+      &lt;jta-data-source&gt;java:jboss/datasources/Hibernate4QuickstartDS&lt;/jta-data-source&gt;
+      &lt;properties&gt;
+         &lt;!-- Properties for Hibernate --&gt;
+         &lt;property name="hibernate.hbm2ddl.auto" value="create-drop" /&gt;
+         &lt;property name="hibernate.show_sql" value="false" /&gt;
+      &lt;/properties&gt;
+   &lt;/persistence-unit&gt;
+&lt;/persistence&gt;
+</code></pre>
+
+  <aside>
+    <p><i>JSR-346</i>&nbsp;&ndash; стандарт "Contexts and Dependency Injection for the Java EE platform"</p>
+    <p><i>Weld</i>&nbsp;&ndash; рэалізацыя <i>JSR-346</i> у <i>JBoss WildFly</i></p>
+    <p><a href="#Build_Maven_Dependencies_CDI">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+  </aside>
+  <h2 id="JEE_BeansAndCDI">Біны і CDI</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/cdi-1_2-mrel-spec/cdi-1.2.pdf">JSR-346</a></li>
+      <li><a href="http://docs.jboss.org/weld/reference/latest/en-US/html/index.html">Weld</a></li>
+    </ul>
+  </div>
+  <p>Амаль любая <i>Java</i>-кляса з канструктарам без парамэтраў, альбо з канструктарам пазначаным анатацыяй <code class="language-java">@Inject</code>, зьяўляецца кампанэнтам, кіруемым кантэйнэрам (<i>managed bean</i>). Акрамя патрабаваньня да канструктараў ёсьць яшчэ некалькі патрабаваньняў да кіруемых біноў:</p>
+  <ul>
+    <li>яны павінны быць верхняга ўзроўню (<i>top-level</i>), то бок не <i>nested</i>;</li>
+    <li>ня могуць быць не-статычнымі ўнутранымі клясамі (з унутраных клясаў толькі статычныя могуць быць кіруемымі бінамі);</li>
+    <li>яны павінны быць пэўнымі клясамі (не абстрактнымі), альбо мець анатацыю <code class="language-java">@Decorator</code>;</li>
+    <li>не павінны быць пазначаныя як <i>EJB</i> праз адпаведную анатацыю, альбо праз файл <code class="language-bash">ejb-jar.xml</code>.</li>
+  </ul>
+  <p>Калі кляса адпавядае ўсім вышэйпералічаным патрабаваньням, яе жыцьцёвым цыклям можа кіраваць кантэйнэр, а таксама рабіць іньекцыю (<i>inject</i>) у яе іншых клясаў ці біноў.</p>
+
+  <h3 id="JEE_BeansAndCDI_LifeCycle">Жыцьцёвы цыкл кампанэнтаў</h3>
+  <img src="beans.png">
+
+  <h3 id="JEE_BeansAndCDI_ScopeAndContext">Вобласьці бачнасьці і кантэкст</h3>
+  <p>Кожны экзэмпляр кіруемага біна, які быў створаны кантэйнэрам праз службу <i>CDI</i>, зьяўляецца кантэкстуальным экзэмплярам, то бок ён існуе выключна ў межах пэўнага кантэксту і доступ да яго маюць толькі тыя іншыя аб'екты, якія існуюць у межах таго ж самага кантэксту. Кантэйнэр аўтаматычна стварае экзэмпляр кіруемага біна, калі нейкі іншы аб'ект мае ў ім патрэбу. Кантэйнэр разбурае раней створаны ім экзэмпляр, калі той кантэкст заканчваецца.</p>
+  <p>Усяго існуе 5 убудаваных кантэкстаў:</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Кантэкст</th>
+      <th>Анатацыя</th>
+      <th>Працягласьць</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Запросу</td>
+      <td><code class="language-java">@RequestScoped</code></td>
+      <td>Узаемадзеяньне <strong>аднаго</strong> карыстальніка з праграмай цягам <strong>аднаго <i>HTTP</i>-запыту</strong>.</td>
+    </tr>
+    <tr>
+      <td>Сэсіі</td>
+      <td><code class="language-java">@SessionScoped</code></td>
+      <td>Узаемадзеяньне <strong>аднаго</strong> карыстальніка з праграмай цягам <strong>шэрагу <i>HTTP</i>-запыту</strong>, якія складаюць адну сэсію з праграмай.</td>
+    </tr>
+    <tr>
+      <td>Праграмы</td>
+      <td><code class="language-java">@ApplicationScoped</code></td>
+      <td>Падзяляе стан паміж <strong>усімі</strong> карыстальнікамі праграмы цягам <strong>усяго жыцьця праграмы</strong>.</td>
+    </tr>
+    <tr>
+      <td>Залежны</td>
+      <td><code class="language-java">@Dependent</code></td>
+      <td>Змоўчны кантэкст, калі яўна не пазначаны. Азначае, што аб'ект створаны, каб служыць дакладна аднаму кліенту (іншаму біну), і жыве столькі ж, колькі і кліент.</td>
+    </tr>
+    <tr>
+      <td>Дыялёгу</td>
+      <td><code class="language-java">@ConversationScoped</code></td>
+      <td>Працягласьць гэтага кантэксту пашыраецца на <strong>шэраг <i>HTTP</i>-запытаў</strong> <strong>аднаго</strong> карыстальніка. Дакладная працягласьць гэтага шэрагу вызначаецца распрацоўшчыкам, але не можа "перасякаць" межы адной сэсіі.</td>
+    </tr>
+    </tbody>
+  </table>
+  <p><i>Request scoped</i> біны альбо залежныя біны, чый кліент зьяўляецца <i>request scoped</i> біном, могуць не быць <i>serizalizable</i>. Астатнія кантэкстуальныя біны (кантэксту сэсіі, праграмы, дыялёгу, а таксама залежныя ад такіх біноў) павінны быць <i>serizalizable</i>.</p>
+
+  <h3 id="JEE_BeansAndCDI_@Inject">@Inject</h3>
+  <p>Як мы ўжо пазначылі вышэй, кантэйнэр акрамя кіраваньня жыцьцём біна можа ўбудоўваць (рабіць іньекцыю) у яго неабходныя яму рэсурсы альбо іншыя біны. Што можа ўбудоўвацца:</p>
+  <ul>
+    <li>амаль любая <i>Java</i>-кляса;</li>
+    <li><i>Session beans</i>;</li>
+    <li><i>JavaEE</i>-рэсурсы: крыніцы даных (<i>data sources</i>), <i>JMS-topics</i>, чэргі, фабрыкі злучэньняў (<i>conncetion factories</i>) і падобнае;</li>
+    <li><i>persistent conexts</i> (аб'екты <code class="language-java">EntityManager</code> з <i>JPA</i>);</li>
+    <li>палі-вытворцы (<i>producer fields</i>);</li>
+    <li>аб'екты, якія вяртаюцца мэтадамі-вытворцамі (<i>producer methods</i>);</li>
+    <li>спасылкі на вэб-сэрвісы;</li>
+    <li>спасылкі на адлеглыя <i>EJB</i>.</li>
+  </ul>
+  <p>Іньекцыя робіцца пры дапамозе анатацыі <code class="language-java">@Inject</code>:</p>
+
+  <pre data-line="3"><code class="language-java">
+import javax.inject.Inject;
+public class Printer {
+    @Inject Greeting greeting;
+    ...
+}
+</code></pre>
+
+  <p>У дадзеным прыкладзе аб'ект <code class="language-java">Greeting</code> будзе аўтаматычна падстаўлены (створаны новы альбо ўзяты існуючы, калі ў дадзеным кантэксьце ён ужо існуе) у поле <code class="language-java">greeting</code> ствараемага экзэмпляра клясы <code class="language-java">Printer</code>. Пры гэтым нават не абавязкова мець <i>public setter</i> да гэтага поля, кантэйнэр зробіць іньекцыю нават у прыватнае поле.</p>
+
+  <h3 id="JEE_BeansAndCDI_Qualifiers">Кваліфікатары</h3>
+  <p>Кантэйнэр спрабуе знайсьці кандыдата для іньекцыі па тыпу аб'екта. Калі ж кантэйнэр знаходзіць некалькі раўназначных кандыдатаў, ён кіне выключэньне. У наступным прыкладзе кантэйнэр ня здолее выбраць паміж <code class="language-java">SuperCar</code> і <code class="language-java">CrossOver</code> для іньекцыі ў поле <code class="language-java">car</code> і кіне выключэньне:</p>
+
+  <pre><code class="language-java">
+public class SuperCar implements Car {...}
+
+public class Crossover implements Car {...}
+
+public class Garage {
+    @Inject Car car;
+}
+</code></pre>
+
+  <p>Для таго, каб вырашыць гэтую праблему, служаць кваліфікатары&nbsp;&ndash; анатацыі-маркеры, якія аб'яўляюцца пры дапамозе анатацыі <code class="language-java">@Qualifier</code>:</p>
+
+  <pre><code class="language-java">
+@Qualifier
+@Retention(RUNTIME)
+@Target({TYPE, METHOD, FIELD, PARAMETER})
+public @interface Parkable {}
+</code></pre>
+
+  <p>Тады вышэйзгаданы канфліктны прыклад можна перапісаць наступным чынам:</p>
+
+  <pre data-line="3,7"><code class="language-java">
+public class SuperCar implements Car {...}
+
+@Parkable
+public class Crossover implements Car {...}
+
+public class Garage {
+    @Inject @Parkable Car car;
+}
+</code></pre>
+
+  <p>Тым самым мы кажам кантэйнэру, што для іньекцыі ў дадзеным месцы падыходзіць не любы <code class="language-java">Car</code>, але толькі той, які пазначаны анатацыяй-маркерам <code class="language-java">@Parkable</code>. Кантэйнэр здолее адназначна выбраць адзін кандыдат для іньекцыі і выключэньня ня будзе.</p>
+  <p>Кваліфікатары можна камбінаваць, то бок пазначаць адну і тую ж клясу ці месца іньекцыі некалькімі кваліфікатарамі. Акрамя гэтага іх можна парамэтрызаваць. Прывядзем ніжэй 2 варыянты рэалізаваць адну і тую ж задуму. Першы варыянт пры дапамозе множных кваліфікатараў:</p>
+
+  <pre><code class="language-java">
+@Qualifier @Retention(RUNTIME) @Target({TYPE, METHOD, FIELD, PARAMETER})
+public @interface Number {}
+
+@Qualifier @Retention(RUNTIME) @Target({TYPE, METHOD, FIELD, PARAMETER})
+public @interface Odd {}
+
+public class Game {
+    @Inject @Number @Odd int num;
+    ...
+}
+</code></pre>
+
+  <p>Другі варыянт пры дапамозе аднаго кваліфікатара, але з парамэтрамі:</p>
+
+  <pre><code class="language-java">
+@Qualifier @Retention(RUNTIME) @Target({TYPE, METHOD, FIELD, PARAMETER})
+public @interface Number {
+    boolean odd();
+}
+
+public class Game {
+    @Inject @Number(odd = true) int num;
+    ...
+}
+</code></pre>
+
+  <h4 id="JEE_BeansAndCDI_Qualifiers_@Default">@Default</h4>
+  <p><code class="language-java">@Default</code>&nbsp;&ndash; гэта ўбудаваны і пры гэтым змоўчны кваліфікатар. То бок, калі пры аб'яўленьні біна не пазначана ніякага яўнага кваліфікатара, ён аўтаматычна пазначаецца кваліфікатарам <code class="language-java">@Default</code>. Калі ў момант убудаваньня залежнасьці, кантэйнэр вызначыць некалькі кандыдатаў, пры гэтым усе акрамя аднаго будуць пазначаныя яўнымі кваліфікатарамі, а адзін не будзе пазначаны, а таксама ў пункце ўбудаваньня не будзе пазначана яўнага кваліфікатара, тады кантэйнэр ня кіне выключэньне і падставіць <code class="language-java">@Default</code>-кандыдата.</p>
+
+  <h4 id="JEE_BeansAndCDI_Qualifiers_@Alternative">@Alternative</h4>
+  <p>Анатацыяй <code class="language-java">@Alternative</code> можна пазначыць не прыярытэтны, а наадварот непажаданы кандыдат(-аў) для іньекцыі:</p>
+
+  <pre><code class="language-java">
+@Alternative
+public class SuperCar implements Car {...}
+
+public class Crossover implements Car {...}
+
+public class Garage {
+    @Inject Car car;
+}
+</code></pre>
+
+  <p>Адзіны спосаб, каб кантэйнэр усё ж мог яго выбраць для іньекцыі&nbsp;&ndash; актываваць яго ў дэскрыптары <code class="language-bash">beans.xml</code>:</p>
+
+  <pre><code class="language-xml">
+&lt;beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+       version="1.1"
+       bean-discovery-mode="all"&gt;
+  &lt;alternatives&gt;
+    &lt;class&gt;some.package.SuperCar&lt;/class&gt;
+  &lt;/alternatives&gt;
+&lt;/beans&gt;
+</code></pre>
+
+  <h4 id="JEE_BeansAndCDI_Qualifiers_@Vetoed">@Vetoed</h4>
+  <p>Можна таксама ўвогуле выключыць нейкую клясу пры абраньні кандыдатаў для іньекцыі праз анатацыю <code class="language-java">@Vetoed</code>.</p>
+
+  <h4 id="JEE_BeansAndCDI_Qualifiers_@Any">@Any і выбар з альтэрнатываў</h4>
+  <p>Анатацыяй <code class="language-java">@Any</code> звычайна пазначаецца месца іньекцыі і кажа кантэйнэру, каб ён убудаваў усе магчымыя кандыдаты (сьпіс). Пазьней можна прабягацца па гэтаму сьпісу і выбіраць патрэбны кандыдат у рантайм:</p>
+
+  <pre data-line="4,14"><code class="language-java">
+@Named("atm")
+public class AutomatedTellerMachineImpl implements AutomatedTellerMachine {
+
+    @Inject @Any
+    private Instance&lt;ATMTransport&gt; allTransports;
+    private ATMTransport transport;
+
+    private boolean useJSON = true;
+    private boolean behindFireWall = true;
+
+    @PostConstruct
+    protected void init() {
+        ATMTransport soapTransport, jsonTransport, standardTransport;
+        standardTransport = allTransports.select(new AnnotationLiteral&lt;Soap&gt;() {}).get();
+        jsonTransport = allTransports.select(new AnnotationLiteral&lt;Json&gt;() {}).get();
+        soapTransport = allTransports.select(new AnnotationLiteral&lt;Default&gt;() {}).get();
+
+        if (!behindFireWall) {
+            transport = standardTransport;
+        } else {
+            if (useJSON) {
+                transport = jsonTransport;
+            } else {
+                transport = soapTransport;
+            }
+        }
+    }
+}
+</code></pre>
+
+  <h4 id="JEE_BeansAndCDI_Qualifiers_@Named">@Named</h4>
+  <p>Анатацыяй <code class="language-java">@Named</code> пазначаюцца біны, да якіх павінны мець доступ вью па іх імёнах:</p>
+
+  <pre data-line="1,3"><code class="language-java">
+@Named
+@RequestScoped
+public class Game implements Serializable {
+    ...
+}
+</code></pre>
+
+  <pre data-line="6,8,9,11,12"><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;head&gt;...&lt;/head&gt;
+&lt;body&gt;
+ &lt;div&gt;
+  Your guess:
+  &lt;h:inputText id="inputGuess" value="#{game.guess}"
+     required="true" size="3"
+     disabled="#{game.number eq game.guess}"
+     validator="#{game.validateNumberRange}" /&gt;
+  &lt;h:commandButton id="guessButton" value="Guess"
+     action="#{game.check}"
+     disabled="#{game.number eq game.guess}" /&gt;
+ &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+  <p>Улічваючы, што змоўчным <a href="#JEE_BeansAndCDI_ScopeAndContext">кантэкстам (ці вобласьцю бачнасьці)</a> біна, калі яўна не пазначана, зьяўляецца <code class="language-java">@Dependent</code>, што не падыходзіць у якасьці мадэлі для вью (таму што даныя, якія туды трапілі з вью, будуць адразу страчаныя), і разам з анатацыяй <code class="language-java">@Named</code> заўсёды прыходзіцца пазначаць анатацыю <code class="language-java">@RequestScoped</code>, стандартам <i>CDI</i> была ўведзеная дапаможная анатацыя <code class="language-java">@Model</code>, якая проста камбінуе <code class="language-java">@Named</code> і <code class="language-java">@RequestScoped</code>:</p>
+
+  <pre><code class="language-java">
+@Model
+public class Game implements Serializable {
+    ...
+}
+</code></pre>
+
+  <h4 id="JEE_BeansAndCDI_Qualifiers_@New">@New</h4>
+  <p>Калі ў месцы ўбудаваньня залежнасьці пажадана мець заўсёды ўнікальны аб'ект, які ня будзе падзяляцца з іншымі кантэкстамі (аб'ектамі), можна выкарыстоўваць анатацыю <code class="language-java">@New</code>. У гэтым выпадку кантэйнэр будзе заўсёды ствараць новы аб'ект, а не спрабаваць падставіць ужо існуючы.</p>
+
+  <h3 id="JEE_BeansAndCDI_@Produces@Disposes">@Produces і @Disposes</h3>
+  <p>Анатацыя <code class="language-java">@Produces</code> прадстаўляе мэханізм рабіць іньекцыі ня толькі біноў і <i>JEE</i>-рэсурсаў. Такім чынам могуць быць іньектаваны:</p>
+  <ul>
+    <li>прымітыўныя тыпы (<code class="language-java">int</code>, <code class="language-java">boolean</code> і інш.);</li>
+    <li>масівы і калекцыі;</li>
+    <li>аб'екты кшталту <code class="language-java">java.util.Date</code> альбо <code class="language-java">ja­va.lang.String</code>;</li>
+    <li>аб'екты, чыя дакладная кляса будзе вядома толькі ў часе выкананьня праграмы;</li>
+    <li>аб'екты, якія патрабуюць дадатковай ініцыялізацыі.</li>
+  </ul>
+  <p>Некалькі прыкладаў:</p>
+
+  <pre data-line="9,18"><code class="language-java">
+@Qualifier @Retention(RUNTIME) @Target({ TYPE, METHOD, PARAMETER, FIELD })
+public @interface Random {}
+
+@ApplicationScoped
+public class Generator implements Serializable {
+    private java.util.Random random = new java.util.Random(System.currentTimeMillis());
+    private int maxNumber = 100;
+
+    @Produces @Random // Гэты мэтад стварае экзэмпляр Random
+    int next() {
+        return random.nextInt(maxNumber - 1) + 1;
+    }
+}
+
+@SessionScoped
+public class Game implements Serializable {
+
+    @Inject @Random // У гэтае поле падстаўляецца папярэдне створаны экзэмпляр Random
+    Instance&lt;Integer&gt; randomNumber; // Instance - гэта сьпіс, які мае ітэратар. У агульным
+                                    // выпадку кандыдатаў на падстаноўку можа быць некалькі
+                                    // (некалькі @Default), тады сюды падставіцца не адно
+                                    // значэньне, а ўсе знойдзеныя. Можна рабіць так
+                                    // randomNumber.iterator().next()
+    ...
+}
+</code></pre>
+
+  <pre><code class="language-java">
+...
+
+@Produces
+public List&lt;String&gt; getGreetings() {
+List&lt;String&gt; response = new ArrayList&lt;String&gt;();
+    ...
+    return response;
+}
+
+@Inject List&lt;String&gt; list;
+
+...
+</code></pre>
+
+  <p><code class="language-java">@Produces</code>-мэтад можа ў якасьці аргумэнту прымаць <code class="language-java">InjectionPoint</code>&nbsp;&ndash; доступ да асяродку іньекцыі:</p>
+  <pre><code class="language-java">
+class Loggers {
+    @Produces Logger getLogger(InjectionPoint injectionPoint) {
+        return Logger.getLogger( injectionPoint.getMember().getDeclaringClass().getSimpleName() );
+    }
+}
+
+@SessionScoped
+public class Permissions implements Serializable {
+    @Inject Logger log; // Так можна рабіць у кожным месцы, дзе патрэбны логер
+                        // і кожны раз будзе стварацца логер для адпаведнай клясы
+    ...
+}
+</code></pre>
+
+  <p>З-за таго, што ў выпадку мэтаду-вытворцы кантэйнэр губляе кіраваньне вырашэньнем залежнасьцей і іх вобласьці бачнасьці, трэба быць уважлівым, каб не парушыць цэльнасьць. Разгледзім такі прыклад:</p>
+
+  <pre><code class="language-java">
+@Produces @Preferred @SessionScoped
+public PaymentStrategy getPaymentStrategy(CreditCardPaymentStrategy ccps,
+                                          CheckPaymentStrategy cps,
+                                          PayPalPaymentStrategy ppps) {
+    switch (paymentStrategy) {
+        case CREDIT_CARD: return ccps;
+        case CHEQUE: return cps;
+        case PAYPAL: return ppps;
+        default: return null;
+    }
+}
+</code></pre>
+
+  <p>Калі адзін ці некалькі аргумэнтаў мэтаду <code class="language-java">getPaymentStrategy</code> будуць <i>request-scoped</i>, у пэўны момант жыцьця сэсіі адпаведныя аб'екты ўжо могуць не існаваць. Каб пазьбегнуць такой сытуацыі, трэба даваць максымальны кантроль кантэйнэру, які дакладна не дапусьціць яе:</p>
+
+  <pre><code class="language-java">
+@Produces @Preferred @SessionScoped
+public PaymentStrategy getPaymentStrategy(@Dependent CreditCardPaymentStrategy ccps,
+                                          @Dependent CheckPaymentStrategy cps,
+                                          @Dependent PayPalPaymentStrategy ppps) {
+    switch (paymentStrategy) {
+        case CREDIT_CARD: return ccps;
+        case CHEQUE: return cps;
+        case PAYPAL: return ppps;
+        default: return null;
+    }
+}
+</code></pre>
+
+  <p>У дадатак да асаблівага мэханізму стварэньня аб'екта ў <i>CDI</i> існуе асаблівы мэханізм да разбурэньня раней створанага кантэйнэрам аб'екта&nbsp;&ndash; анатацыя <code class="language-java">@Dispose</code>. Гэты спосаб патрэбны ў тым выпадку, калі аб'ект павінен быць ня проста выкінуты, але патрэбна яшчэ вызваліць адкрытыя ім рэсурсы:</p>
+
+  <pre><code class="language-java">
+@Produces @RequestScoped
+Connection connect(User user) {
+    return createConnection(user.getId(), user.getPassword());
+}
+
+void close(@Disposes Connection connection) {
+    connection.close();
+}
+</code></pre>
+
+  <h3 id="JEE_BeansAndCDI_Events">Падзеі</h3>
+  <p><i>CDI</i>-падзеі прадстаўляюць спосаб камунікацыі паміж кампанэнтамі праграмы без убудаваньня залежнасьцяў.</p>
+  <p>У вытворцы падзеяў робіцца іньекцыя падзеяў і выклікаецца мэтад <code class="language-java">fire</code>, каб даслаць іх слухацелям падзеяў:</p>
+
+  <pre><code class="language-java">
+@Inject Event&lt;LoggedInEvent&gt; event;
+...
+event.fire(new LoggedInEvent(username));
+</code></pre>
+
+  <p>Слухацелі аб'яўляюць мэтад, які будзе прымаць дасланыя падзеі:</p>
+
+  <pre><code class="language-java">
+void onLoggedIn(@Observes LoggedInEvent event) {
+    ...
+}
+</code></pre>
+
+  <p>Па змоўчваньні, калі дасылаецца падзея, а адпаведны экзэмпляр слухацеля(-ў) яшчэ ня быў створаны, кантэйнэр яго створыць. Гэта можа быць не пажадана. Таму слухацель можа быць умоўным:</p>
+
+  <pre><code class="language-java">
+public void refreshOnDocumentUpdate(@Observes(receive=IF_EXISTS) @Updated Document doc) {
+    ...
+}
+</code></pre>
+
+  <h3 id="JEE_BeansAndCDI_Interceptors">Перахопнікі</h3>
+  <p>Перахопнікі выкарыстоўваюць для ўбудаваньня скразнога функцыяналу скрозь аб'екты рознага тыпу і прызначэньня. Напрыклад, лагіраваньне альбо функцыянал па бясьпецы. Робіцца гэта для таго, каб ён утрымліваўся ў адным месцы, а ня быў раскіданы па ўсяму праекту. Аб'ектамі, у якія можна ўстаўляць перахопнікі, зьяўляюцца любыя кіруемыя біны&nbsp;&ndash; <i>CDI</i>-біны, <i>EJB</i>, <i>RESTful</i>-сэрвісы і іншае.</p>
+  <p>Іншымі словамі перахопнікі&nbsp;&ndash; гэта клясы, чые мэтады выклікаюцца, калі выклікаюцца мэтады мэтавых клясаў, альбо адбываюцца падзеі жыцьцёвага цыкла гэтых клясаў, альбо адбываюцца таймаўты <i>EJB</i>-мэтадаў.</p>
+  <p>Каб убудаваць перахопнік, спачатку трэба стварыць злучальнік паміж перахопнікам і бізнэс-клясай. Для гэтага служыць анатацыя <code class="language-java">@InterceptorBinding</code>:</p>
+
+  <pre data-line="2"><code class="language-java">
+@Inherited @Retention(RUNTIME) @Target({METHOD, TYPE})
+@InterceptorBinding
+public @interface Logging {
+}
+</code></pre>
+
+  <p>Пасьля гэтага ствараем клясу самога перахопніка і аб'яўляем у ёй мэтады-перахопнікі (ня больш за 1 кожнага <a href="#JEE_BeansAndCDI_Interceptors_Types">тыпу</a>):</p>
+
+  <pre data-line="1,2,4"><code class="language-java">
+@Interceptor
+@Logging // Гэта злучальнік, які мы аб'явілі раней
+public class LoggingInterceptor {
+    @AroundInvoke
+    public Object log(InvocationContext context) throws Exception {
+        String name = context.getMethod().getName();
+        String params = context.getParameters().toString();
+        //. . .
+        return context.proceed(); // Выклік бізнэс-лёгікі
+    }
+}
+</code></pre>
+
+  <p>І напрыканцы пазначаем анатацыяй злучальніка бізнэс-клясу (тады перахоплівацца будуць усе мэтады бізнэс-клясы):</p>
+
+  <pre data-line="1"><code class="language-java">
+@Logging
+public class SimpleGreeting {
+    ...
+}
+</code></pre>
+
+  <p>Альбо толькі пэўны мэтад(ы) бізнэс-клясы (тады будуць перахоплівацца толькі пазначаныя мэтады):</p>
+
+  <pre data-line="2"><code class="language-java">
+public class SimpleGreeting {
+    @Logging
+    public String greet(String name) {
+        ...
+    }
+}
+</code></pre>
+
+  <p id="JEE_BeansAndCDI_Interceptors_Types">Мэтады-перахопнікі бываюць наступных тыпаў:</p>
+  <ul>
+    <li><code class="language-java">@AroundConstruct</code>&nbsp;&ndash; перахопнікі канструктараў;</li>
+    <li><code class="language-java">@AroundInvoke</code>&nbsp;&ndash; перахопнікі мэтадаў;</li>
+    <li><code class="language-java">@PostConstruct</code> і <code class="language-java">@PreDestroy</code>&nbsp;&ndash; перахопнікі падзеяў жыцьцёвага цыкла;</li>
+    <li><code class="language-java">@AroundTimeout</code>&nbsp;&ndash; перахопнікі таймаўтаў <i>EJB</i>-мэтадаў;</li>
+  </ul>
+  <p>Па змоўчваньні перахопнікі не актыўныя, каб актываваць іх, трэба дадаць адпаведныя інструкцыі ў дэскрыптар <a href="#JEE_Descriptors_beans"><code class="language-bash">beans.xml</code></a>:</p>
+
+  <pre><code class="language-xml">
+&lt;beans xmlns='http://java.sun.com/xml/ns/javaee'&gt;
+  &lt;interceptors&gt;
+    &lt;class&gt;org.example.TransactionInterceptor&lt;/class&gt;
+    &lt;class&gt;org.example.LoggingInterceptor&lt;/class&gt;
+  &lt;/interceptors&gt;
+&lt;/beans&gt;
+</code></pre>
+
+  <p>Такія перахопнікі будуць актыўныя для архіву, які будзе ўтрымліваць гэты дэскрыптар. Альтэрнатыўным спосабам актываваць перахопнік зьяўляецца ўжываньне анатацыі <code class="language-java">@Priority</code> пры яго аб'яўленьні:</p>
+
+  <pre data-line="1"><code class="language-java">
+@Priority(Interceptor.Priority.APPLICATION + 10)
+@Interceptor
+@Logging
+public class LoggingInterceptor {
+    ...
+}
+</code></pre>
+
+  <p>Перахопнік, актываваны такім чынам, будзе актыўным ува ўсёй праграме, незалежна ад таго, у якім архіве ён утрымліваецца. Перадвызначаныя канстанты для прыярытэтаў:</p>
+  <table style="width: 460px;">
+    <thead>
+    <tr>
+      <th>Прыярытэт</th>
+      <th>Значэньне</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code class="language-java">Interceptor.Priority.PLATFORM_BEFORE</code></td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">Interceptor.Priority.LIBRARY_BEFORE</code></td>
+      <td>1000</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">Interceptor.Priority.APPLICATION</code></td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">Interceptor.Priority.LIBRARY_AFTER</code></td>
+      <td>3000</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">Interceptor.Priority.PLATFORM_AFTER</code></td>
+      <td>4000</td>
+    </tr>
+    </tbody>
+  </table>
+  <p>Чым меншае значэньне, тым раней у чарадзе перахопнікаў ён будзе выкліканы, калі некалькі перахопнікаў вызначаныя для аднаго і таго ж мэтаду. Калі ж перахопнікі актываваныя праз дэскрыптар, тады пасьлядоўнасьць іх выклікаў вызначаецца пасьлядоўнасьцю, зь якой яны зьмяшчаюцца ў дэскрыптары.</p>
+
+  <h3 id="JEE_BeansAndCDI_Decorators">Дэкаратары</h3>
+  <p>Сутнасьць дэкаратараў падобна да сутнасьці перахопнікаў, але калі перахопнікі ня ведаюць і не турбуюцца пра бізнеэс-лёгіку, якую яны абгортваюць, то дэкаратары ствараюцца для аб'ектаў пэўнага тыпу і для пашырэньня іх бізнэс-лёгікі. Дэкаратар&nbsp;&ndash; гэта бін, які рэалізуе дэкаруемы ім бін (інтэрфэйс) і пазначаецца стэрэатыпнай анатацыяй <code class="language-java">@Decorator</code></p>
+
+  <pre data-line="1"><code class="language-java">
+@Decorator
+class TimestampLogger implements Logger {
+
+    @Inject @Delegate Logger logger;
+
+    public void log(String message) {
+        logger.log( timestamp() + ': ' + message);
+    }
+}
+</code></pre>
+
+  <p>Дэкаратар павінен рэалізоўваць адзіны пункт іньекцыі дэлегата&nbsp;&ndash; біна, які ён дэкарыруе (радок 4). Усе выклікі мэтадаў дэлегата, якія рэалізуе дэкаратар, будуць накіраваны да дэкаратара, які ў сваю чаргу можа рабіць выклік адпаведных мэтадаў дэлегата (радок 7):</p>
+
+  <pre data-line="4,7"><code class="language-java">
+@Decorator
+class TimestampLogger implements Logger {
+
+    @Inject @Delegate Logger logger;
+
+    public void log(String message) {
+        logger.log( timestamp() + ': ' + message);
+    }
+}
+</code></pre>
+
+  <p>Дэкаратар можа рэалізоўваць ня ўсе мэтады дэлегата і, адпаведна, быць абстрактным. Дэкаратары выклікаюцца пасьля перахопнікаў.</p>
+  <p>Дэкаратары, як і перахопнікі, па змоўчваньні не актыўныя, каб актываваць іх, трэба дадаць адпаведныя інструкцыі ў дэскрыптар <a href="#JEE_Descriptors_beans"><code class="language-bash">beans.xml</code></a>:</p>
+
+  <pre><code class="language-xml">
+&lt;beans xmlns='http://java.sun.com/xml/ns/javaee'&gt;
+  &lt;decorators&gt;
+    &lt;class&gt;org.example.TimestampLogger&lt;/class&gt;
+  &lt;/decorators&gt;
+&lt;/beans&gt;
+</code></pre>
+
+  <p>Альбо пазначыць іх анатацыяй <code class="language-java">@Priority</code>.</p>
+
+  <h3 id="JEE_BeansAndCDI_Stereotypes">Стэрэатыпы</h3>
+  <p>Стэрэатыпы&nbsp;&ndash; гэта мэта-анатацыі, якія аб'ядноўваюць іншыя анатацыі. Напрыклад, перадвызначаны стэрэатып <code class="language-java">@Model</code>:</p>
+
+  <pre><code class="language-java">
+@Named
+@RequestScoped
+@Stereotype
+@Target({TYPE, METHOD})
+@Retention(RUNTIME)
+public @interface Model {}
+</code></pre>
+
+  <p>Ён аб'ядноўвае анатацыі <code class="language-java">@Named</code> і <code class="language-java">@RequestScoped</code>.</p>
+
+  <h3 id="JEE_BeansAndCDI_AOP">AOP</h3>
+  <p><a href="http://java.dzone.com/articles/cdi-aop">CDI AOP Tutorial</a></p>
+
+  <aside>
+    <p><i>JSR-303</i>&nbsp;&ndash; стандарт "Bean Validation"</p>
+    <p><a href="#Build_Maven_Dependencies_BeanValidation">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+  </aside>
+  <h2 id="JEE_BeanValidation">Валідацыя біноў</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/bean_validation-1.0-fr-oth-JSpec/bean_validation-1_0-final-spec.pdf">JSR-303</a></li>
+    </ul>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <aside>
+    <p><i>JSR-345</i>&nbsp;&ndash; стандарт "Enterprise JavaBeans"</p>
+    <p><a href="#Build_Maven_Dependencies_EJB">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+  </aside>
+  <h2 id="JEE_EJB">EJB</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-spec/ejb-3_2-core-fr-spec.pdf">JSR-345, Core</a></li>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/ejb-3_2-fr-spec/ejb-3_2-optional-fr-spec.pdf">JSR-345, Optional</a></li>
+    </ul>
+  </div>
+  <p><a href="http://www.oracle.com/technetwork/articles/java/ejb-3-1-175064.html">Enterprise JavaBeans 3.1 with Contexts and Dependency Injection: The Perfect Synergy</a></p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <aside>
+    <p><i>JSR-338</i>&nbsp;&ndash; стандарт "Java Persistence API"</p>
+    <p><a href="#Build_Maven_Dependencies_JPA">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+  </aside>
+  <h2 id="JEE_JPA">JPA</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/persistence-2_1-fr-spec/JavaPersistence.pdf">JSR-338</a></li>
+    </ul>
+  </div>
+  <p><a href="http://www.objectdb.com/api/java/jpa">JPA Reference</a></p>
+  <p><a href="http://www.javacodegeeks.com/wp-content/uploads/2015/05/JPA-Tutorial.pdf">JPA Tutorial</a></p>
+  <p><a href="http://www.javacodegeeks.com/wp-content/uploads/2013/06/JPA_Mini_Book.pdf">JPA Mini Book</a></p>
+  <p><a href="http://www.javacodegeeks.com/wp-content/uploads/2015/05/Hibernate-Tutorial.pdf">Hibernate Tutorial</a></p>
+
+  <h3 id="JEE_JPA_Constraints">Constraints</h3>
+  <p><i>JPA Constraints</i>&nbsp;&ndash; гэта анатацыі, якія накладваюць пэўныя абмежаваньні на тое, якія значэньні могуць прымаць атрыбуты <i>Entity</i>-клясы, якія пазначаныя гэтымі анатацыямі.</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Анатацыя</th>
+      <th>Прыклад</th>
+      <th>Апісаньне</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code class="language-java">@DecimalMax</code></td>
+      <td>
+<pre><code class="language-javascript">
+@DecimalMax("30.00")
+BigDecimal discount;
+</code></pre>
+      </td>
+      <td>Значэньнем атрыбуту павінен быць рэчаісны лік меншы альбо роўны пазначанаму.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@DecimalMin</code></td>
+      <td>
+<pre><code class="language-javascript">
+@DecimalMin("5.00")
+BigDecimal discount;
+</code></pre>
+      </td>
+      <td>Значэньнем атрыбуту павінен быць рэчаісны лік большы альбо роўны пазначанаму.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@Digits</code></td>
+      <td>
+<pre><code class="language-javascript">
+@Digits(integer=6, fraction=2)
+BigDecimal price;
+</code></pre>
+      </td>
+      <td>Значэньнем атрыбуту павінен быць рэчаісны лік з максымальнай колькасьцю цэлых знакаў роўнаю значэньню парамэтра анатацыі <code class="language-java">integer</code> і з максымальнай колькасьцю дробных знакаў роўнаю значэньню парамэтра анатацыі <code class="language-java">fraction</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@Future</code></td>
+      <td>
+<pre><code class="language-javascript">
+@Future
+Date eventDate;
+</code></pre>
+      </td>
+      <td>Значэньнем атрыбуту павінна быць дата ў будучым.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@Max</code></td>
+      <td>
+<pre><code class="language-javascript">
+@Max(10)
+int quantity;
+</code></pre>
+      </td>
+      <td>Значэньнем атрыбуту павінен быць цэлы лік меншы альбо роўны пазначанаму.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@Min</code></td>
+      <td>
+<pre><code class="language-javascript">
+@Min(5)
+int quantity;
+</code></pre>
+      </td>
+      <td>Значэньнем атрыбуту павінен быць цэлы лік большы альбо роўны пазначанаму.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@NotNull</code></td>
+      <td>
+<pre><code class="language-javascript">
+@NotNull
+String username;
+</code></pre>
+      </td>
+      <td>Атрыбут ня можа прымаць значэньне <code class="language-java">null</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@Null</code></td>
+      <td>
+<pre><code class="language-javascript">
+@Null
+String unusedString;
+</code></pre>
+      </td>
+      <td>Атрыбут можа прымаць толькі значэньне <code class="language-java">null</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@Past</code></td>
+      <td>
+<pre><code class="language-javascript">
+@Past
+Date birthday;
+</code></pre>
+      </td>
+      <td>Значэньнем атрыбуту павінна быць дата ў мінулым.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@Pattern</code></td>
+      <td>
+<pre><code class="language-javascript">
+@Pattern(regexp="(d{3})d{3}-d{4}")
+String phoneNumber;
+</code></pre>
+      </td>
+      <td>Значэньне атрыбуту павінна адпавядаць пазначанаму рэгулярнаму выразу.</td>
+    </tr>
+    <tr>
+      <td><code class="language-java">@Size</code></td>
+      <td>
+<pre><code class="language-javascript">
+@Size(min=2, max=240)
+String briefMessage;
+</code></pre>
+      </td>
+      <td>Памер атрыбуту павінен адпавядаць пазначанаму дыяпазону. Атрыбут можа быць масівам, тыпу <code class="language-java">String</code>, <code class="language-java">Collection</code>, <code class="language-java">Map</code></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <aside>
+    <p><i>JSR-344</i>&nbsp;&ndash; стандарт "JavaServer Faces"</p>
+    <p><i>Mojarra</i>&nbsp;&ndash; <i>open source</i> рэалізацыя <i>JSR-344</i> ад <i>Oracle</i></p>
+    <p><a href="#Build_Maven_Dependencies_JSF">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+  </aside>
+  <h2 id="JEE_JSF">JSF</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://jcp.org/aboutJava/communityprocess/final/jsr344/index.html">JSR-344</a></li>
+      <li><a href="https://javaserverfaces.java.net/">Home</a></li>
+      <li><a href="https://javaserverfaces.java.net/docs/2.2/">Docs</a></li>
+      <li><a href="http://www.mkyong.com/tutorials/jsf-2-0-tutorials/">Tutorial</a></li>
+    </ul>
+  </div>
+  <p><a href="http://www.ibm.com/developerworks/ru/library/j-jsf2fu1/index.html">JSF 2 fu.: Часть 1. Упрощаем разработку Web-приложений</a></p>
+  <p><a href="http://stackoverflow.com/questions/7583038/what-is-the-use-of-faces-config-xml-in-jsf-2">Што можна наладжваць праз <code class="language-bash">faces-config.xml</code></a></p>
+  <p><a href="http://www.ocpsoft.org/prettyfaces/">prettyfaces</a>&nbsp;&ndash; The open-source /url/#{rewriting} solution for Servlet, JSF, and Java EE</p>
+
+  <h3 id="JEE_JSF_AJAX">AJAX</h3>
+
+  <h4 id="JEE_JSF_AJAX_GlobalStatusIndicator">Global Status Indicator</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.ocpsoft.org/java/jsf-java/jsf2-how-to-create-a-global-ajax-status-indicator/">Source</a></li>
+    </ul>
+  </div>
+  <p>Каб дадаць глябальны індыкатар статусу AJAX, можна дадаць наступны <i>JavaScript</i> код да старонкі (да макету):</p>
+
+  <pre><code class="language-javascript">
+&lt;h:outputScript library="javax.faces" name="jsf.js" />
+&lt;script type="text/javascript"&gt;
+  if (!window["busystatus"]) {
+    var busystatus = {};
+  }
+
+  busystatus.onStatusChange = function onStatusChange(data) {
+    if (data.status === "begin") { // turn on busy indicator
+      document.body.style.cursor = 'wait';
+    } else { // turn off busy indicator, on either "complete" or "success"
+      document.body.style.cursor = 'auto';
+    }
+  };
+
+  jsf.ajax.addOnEvent(busystatus.onStatusChange);
+&lt;/script&gt;
+</code></pre>
+
+  <h3 id="JEE_JSF_PrettyFaces">PrettyFaces</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.ocpsoft.org/prettyfaces/">Home</a></li>
+      <li><a href="http://www.ocpsoft.org/docs/prettyfaces/3.3.3/en-US/html/index.html">Guide</a></li>
+    </ul>
+  </div>
+
+  <h3 id="JEE_JSF_PrimeFaces">PrimeFaces</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://primefaces.org/">Home</a></li>
+      <li><a href="http://primefaces.org/documentation">Docs</a></li>
+      <li><a href="http://www.primefaces.org/docs/guide/primefaces_user_guide_5_3.pdf">Guide (PDF)</a></li>
+    </ul>
+  </div>
+
+  <h3 id="JEE_JSF_SeamFacesAndDeltaSpike">JBoss SeamFaces / Apache DeltaSpike</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/">SeamFaces Guide</a></li>
+      <li><a href="http://docs.jboss.org/seam/3/faces/reference/snapshot/en-US/html_single/">DeltaSpike JSF Guide</a></li>
+    </ul>
+  </div>
+
+  <h3 id="JEE_JSF_OmniFaces">OmniFaces</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://omnifaces.org/">Home</a></li>
+      <li><a href="http://primefaces.org/documentation">Docs</a></li>
+      <li><a href="http://www.primefaces.org/docs/guide/primefaces_user_guide_5_3.pdf">Guide (PDF)</a></li>
+    </ul>
+  </div>
+
+  <aside>
+    <p><i>JSR-339</i>&nbsp;&ndash; стандарт "JAX-RS: Java API for RESTful Web Services"</p>
+    <p><i>RESTEasy</i>&nbsp;&ndash; рэалізацыя <i>JSR-339</i> ад <i>JBoss</i></p>
+    <p><i>Jersey</i>&nbsp;&ndash; <i>open source</i> рэалізацыя <i>JSR-339</i> ад <i>Oracle</i></p>
+    <p><a href="#Build_Maven_Dependencies_JAX-RS">Падключэньне <i>API</i> праз <i>maven</i></a></p>
+  </aside>
+  <h2 id="JEE_JAX-RS">JAX-RS</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/jaxrs-2_0_rev_A-mrel-spec/jsr339-jaxrs-2.0-final-spec.pdf">JSR-339</a></li>
+      <li><a href="http://docs.jboss.org/resteasy/docs/3.0.9.Final/userguide/html_single/index.html">RESTEasy</a></li>
+      <li><a href="https://jersey.java.net/">Jersey</a></li>
+    </ul>
+  </div>
+  <p><a href="http://www.mkyong.com/tutorials/java-json-tutorials/">JSON Tutorial</a></p>
+  <p><a href="https://www.javacodegeeks.com/2013/01/get-post-with-restful-client-api.html">GET / POST with RESTful Client API</a></p>
+  <p><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/JAXRS2/jaxrs-clients.html">Java EE 7: Using JAX-RS Client API to consume RESTful Web Services</a></p>
+  <p>У ніжэй прыведзеным прыкладзе пры звароце да <i>RESTful</i> <i>GET</i>-рэсурсу адбудзецца аўтаматычнае канвэртацыя <i>Java</i>-аб'екту ў <i>JSON</i>-фармат пры дапамозе <i>RESTEasy</i>. Галоўнае, каб бін <code class="language-java">Member</code> быў пазначаны <i>JAXB</i>-анатацыяй <code class="language-java">@XmlRootElement</code>.</p>
+
+  <pre><code class="language-java">
+@GET
+@Produces(MediaType.APPLICATION_JSON)
+public List&lt;Member&gt; listAllMembers() {
+    return repository.findAllOrderedByName();
+}
+</code></pre>
+
+  <p>Гэта дэкляратыўны спосаб вярнуць <i>JSON</i>, але тое ж самае можна зрабіць і праграмаваным чынам, маючы пры гэтым большы кантроль над тым што і якім чынам будзе вяртацца:</p>
+
+  <pre><code class="language-java">
+@GET
+public JsonArray listAllMembers() {
+    return repository.findAllOrderedByName().stream.map(m ->
+            Json.createObjectBuilder().add("name", m.getName()).build()).
+        collect(Json::createArrayBuilder, JsonArrayBuilder::add, JsonArrayBuilder::add).build();
+}
+</code></pre>
+
+  <h2 id="JEE_Security">Security</h2>
+  <p><a href="http://stackoverflow.com/questions/26777083/best-practice-for-rest-token-based-authentication-with-jax-rs-and-jersey">Best practice for REST token-based authentication with JAX-RS and Jersey</a></p>
+  <p><a href="http://www.developerscrappad.com/1814/java/java-ee/rest-jax-rs/java-ee-7-jax-rs-2-0-simple-rest-api-authentication-authorization-with-custom-http-header/">Java EE 7 / JAX-RS 2.0: Simple REST API Authentication & Authorization with Custom HTTP Header</a></p>
+  <p><a href="http://www.ocpsoft.org/security/simple-java-ee-jsf-login-page-with-jboss-picketlink-security/">Simple Java EE (JSF) Login Page with JBoss PicketLink Security</a></p>
+  <p><a href="http://www.ocpsoft.org/opensource/secure-your-applications-url-based-attacks-are-real-and-dangerous/">Is your web application secure? HTTP attacks are real, and dangerous</a></p>
+  <p><a href="https://deltaspike.apache.org/documentation/security.html">Security Module of DeltaSpike</a></p>
+
+  <h3 id="JEE_Security_@ServletSecurity">@ServletSecurity</h3>
+  <p>Анатацыя ўзроўню клясы <code class="language-java">@ServletSecurity</code>, якая прызначана абараняць доступ да сэрвлетаў, мае наступнае вызначэньне:</p>
+
+  <pre><code class="language-java">
+@ServletSecurity(
+    httpMethodConstraints = &lt;HttpMethodConstraint[]&gt;,
+    value = &lt;HttpConstraint&gt;
+)
+</code></pre>
+
+  <p>Дзе атрыбут <code class="language-java">httpMethodConstraints</code> вызначае абмежаваньні для <i>HTTP</i>-мэтадаў, а атрыбут <code class="language-java">value</code> вызначае абмежаваньні для астатніх <i>HTTP</i>-мэтадаў, якія не былі вызначаныя ў атрыбуце <code class="language-java">httpMethodConstraints</code>.</p>
+
+  <h3 id="JEE_Security_@ServletSecurity_Examples">Прыклады</h3>
+  <p>Адсутнасьць якіх-кольвечы абмежаваньняў бясьпекі:</p>
+
+  <pre><code class="language-java">
+@WebServlet("/process")
+@ServletSecurity
+public class MyServlet extends HttpServlet {
+    // servlet code...
+}
+</code></pre>
+
+  <p>Пазначае неабходнасьць кадаваньня для ўсіх <i>HTTP</i>-мэтадаў:</p>
+
+  <pre><code class="language-java">
+@WebServlet("/process")
+@ServletSecurity(@HttpConstraint(transportGuarantee = TransportGuarantee.CONFIDENTIAL))
+public class MyServlet extends HttpServlet {
+    // servlet code...
+}
+</code></pre>
+
+  <p>Забараняе любыя <i>HTTP</i> <i>POST</i> мэтады (адпаведна астатнія <i>HTTP</i>-мэтады дазваляюцца):</p>
+
+  <pre><code class="language-java">
+@WebServlet("/process")
+@ServletSecurity(
+    httpMethodConstraints = @HttpMethodConstraint(value = "POST",
+        emptyRoleSemantic = EmptyRoleSemantic.DENY)
+)
+public class MyServlet extends HttpServlet {
+    // servlet code...
+}
+</code></pre>
+
+  <p>Патрабуе, каб карыстальнік, які робіць запыт да сэрвлету, меў ролю <code class="language-java">admin</code> (для ўсіх <i>HTTP</i>-мэтадаў):</p>
+
+  <pre><code class="language-java">
+@WebServlet("/manage")
+@ServletSecurity(@HttpConstraint(rolesAllowed = "admin"))
+public class AdminServlet extends HttpServlet {
+    // servlet code...
+}
+</code></pre>
+
+  <p>Патрабуе, каб карыстальнік, які робіць запыт да <i>POST</i> і <i>GET</i> мэтадаў сэрвлету, меў ролю <code class="language-java">admin</code>. Дадаткова пазначае неабходнасьць кадаваньня для ўсіх <i>POST</i>-мэтаду:</p>
+
+  <pre><code class="language-java">
+@WebServlet("/manage")
+@ServletSecurity(
+    httpMethodConstraints = {
+        @HttpMethodConstraint(value = "GET", rolesAllowed = "admin"),
+        @HttpMethodConstraint(value = "POST", rolesAllowed = "admin",
+            transportGuarantee = TransportGuarantee.CONFIDENTIAL),
+    }
+)
+public class AdminServlet extends HttpServlet {
+    // servlet code...
+}
+</code></pre>
+
+  <h3 id="JEE_Security_JSONWebToken">JSON Web Token</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://jwt.io/">jwt.io</a></li>
+    </ul>
+  </div>
+  <p>Рэалізацыі:</p>
+  <ul>
+    <li><a href="https://stormpath.com/blog/jjwt-how-it-works-why/?utm_source=javaworld-07162015&utm_medium=paid-newsletter-enl&utm_campaign=java-android-jjwt-blog">JJWT</a></li>
+    <li><a href="http://connect2id.com/products/nimbus-jose-jwt">Numbus JOSE + JWT</a></li>
+    <li><a href="https://bitbucket.org/b_c/jose4j/wiki/Home">jose4j</a></li>
+    <li><a href="https://github.com/auth0/java-jwt">Java JWT</a></li>
+  </ul>
+
+  <h3 id="JEE_Security_PicketLink">PicketLink</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://picketlink.org/">Home</a></li>
+    </ul>
+  </div>
+  <p><i>PicketLink</i>&nbsp;&ndash; гэта фрэймворк бясьпекі <i>JEE</i> праграмаў. Некаторыя з магчымасьцяў:</p>
+  <ul>
+    <li>першаклясная падтрымка <a href="#JEE_BeansAndCDI">CDI</a>;</li>
+    <li>магчымасьць кіраваць бясьпекай біноў і іх мэтадаў, вьюх, сэрвлэтаў і <i>REST</i>-сэрвісаў;</li>
+    <li><i>API</i> для кіраваньня карыстальнікамі, ролямі і групамі;</li>
+    <li>сацыяльны лагін праз <i>Facebook</i>, <i>Twitter</i>, <i>Google+</i>.</li>
+  </ul>
+  <p>Падыходзіць для выпадкаў, калі аўтары праграмы рэалізуюць уласную сыстэму бясьпекі&nbsp;&ndash; <i>PicketLink</i> прадстаўляе гатовыя цагліны, зь якіх такую сыстэму можна пабудаваць.</p>
+
+  <h3 id="JEE_Security_KeyCloak">KeyCloak</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://keycloak.jboss.org/">Home</a></li>
+      <li><a href="https://habrahabr.ru/company/eastbanctech/blog/272149/">habrahabr.ru</a></li>
+      <li><a href="http://localhost:8080/auth/admin/master/console/" target="_blank">Local console</a></li>
+    </ul>
+  </div>
+  <p><a href="http://stackoverflow.com/questions/31864062/fetch-logged-in-username-in-a-webapp-secured-with-keycloak">Fetch Logged In Username in a webapp secured with Keycloak</a>.</p>
+  <p><a href="http://www.first8.nl/blog/security-with-microservices-programmatic-security-with-keycloak/">SECURITY WITH MICROSERVICES: PROGRAMMATIC SECURITY WITH KEYCLOAK</a>.</p>
+  <p><a href="http://www.first8.nl/blog/securing-jax-rs-keycloak-cdi-and-ejb-confusion/">SECURING JAX-RS: KEYCLOAK, CDI AND EJB CONFUSION</a>.</p>
+  <p><a href="http://www.first8.nl/blog/testing-keycloak-integration-with-arquillian/">TESTING KEYCLOAK INTEGRATION WITH ARQUILLIAN</a>.</p>
+  <p><a href="http://www.first8.nl/blog/programmatically-adding-users-in-keycloak/">PROGRAMMATICALLY ADDING USERS IN KEYCLOAK</a>.</p>
+  <p><a href="https://github.com/keycloak/keycloak/tree/master/examples">Keycloak examples</a>.</p>
+
+  <p><i>KeyCloak</i>&nbsp;&ndash; гэта гатовы-да-выкарыстаньня-з-каробкі <i>Single-Sign-On</i> сэрвэр для мабільных, сеціўных і <i>REST</i>-праграмаў з адкрытым зыходным кодам ад <i>JBoss</i>. Ён прадстаўляе магчымасьці: 1. цэнтральнага кіраваньня карыстальнікамі, ролямі, групамі, сэсіямі; 2. сродкі аўтэнтыфікацыі і аўтарызацыі; 3. сацыяльны лагін.</p>
+
+  <h4 id="JEE_Security_KeyCloak_Installation">Усталёўка</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="http://keycloak.github.io/docs/userguide/keycloak-server/html_single/index.html#d4e70">Guide</a></li>
+    </ul>
+  </div>
+  <p>Для прастаты у межах дадзенага даведніка разгледзім усталёўку выключна дадатку да <a href="#Servers_WildFly">WildFly</a>. Па астатнія магчымасьці ўсталёўкі глядзіце афіцыйны даведнік.</p>
+  <ol>
+    <li>
+      Першым крокам сьцягваем архіў апошняй вэрсіі з афіцыйнай старонкі: <a href="http://keycloak.jboss.org/downloads">http://keycloak.jboss.org/downloads</a>. Дадатак да <i>WildFly</i> мае ў сваім імені слова <i>overlay</i>, напрыклад <code class="language-bash">keycloak-overlay-1.9.0.CR1.tar.gz</code>. Распакоўваем зьмесьціва архіву ў <code class="language-bash">&lt;WILDFLY_HOME&gt;</code> і ў кансолі запускаем каманду.
+
+      <pre><code class="language-bash">
+bin/jboss-cli.sh --file=bin/keycloak-install.cli
+</code></pre>
+
+      Тым самым мы ўсталявалі <i>KeyCloak</i> у <i>WildFly</i>.
+      <br /><br />
+    </li>
+    <li>Наступным крокам трэба ўсталяваць адаптар падтрымкі <i>KeyCloak</i> у сеціўных праграмах адсюль: <a href="http://keycloak.jboss.org/downloads.html?dir=0%3Dadapters/keycloak-oidc%3B">http://keycloak.jboss.org/downloads.html?dir=0%3Dadapters/keycloak-oidc%3B</a>. Для <i>WildFly</i> 8-ай вэрсіі файл <code class="language-bash">keycloak-wf8-adapter-dist-1.9.0.CR1.tar.gz</code>, а для 9-ай і 10-ай вэрсіяў файл <code class="language-bash">keycloak-wildfly-adapter-dist-1.9.0.CR1.tar.gz</code>. Ізноў распакоўваем зьмесьціва архіву ў <code class="language-bash">&lt;WILDFLY_HOME&gt;</code>, стартуем <i>WildFly</i> і ў кансолі запускаем каманду.
+
+      <pre><code class="language-bash">
+bin/jboss-cli.sh --file=bin/adapter-install.cli
+</code></pre>
+
+    </li>
+    <li>Апошнім крокам трэба перазапусьціць <i>WildFly</i> і адкрыць старонку <a href="http://localhost:8080/auth">http://localhost:8080/auth</a>. <i>KeyCloak</i> не прадстаўляе змоўчнага адміністратара, таму дадзеная старонка першай справай дасьць магчымасьць стварыць такога карыстальніка&nbsp;&ndash; увядзіце імя і пароль для яго. Калі ж вы ўсталёўваеце <i>KeyCloak</i> не на лякальнай машыне, тады стварыць першага адміністратара можна толькі пры дапамозе каманднага радка:
+
+      <pre><code class="language-bash">
+bin/add-user.sh -r master -u &lt;username&gt; -p &lt;password&gt;
+</code></pre>
+
+    </li>
+  </ol>
+
+  <h4 id="JEE_Security_KeyCloak_ConfigureKeyCloak">Наладкі KeyCloak</h4>
+  <p>Каб злучыць сеціўную праграму, якую мы распрацоўваем, з сэрвэрам <i>KeyCloak</i>, трэба выканаць наступныя крокі на баку KeyCloak.</p>
+  <ol>
+    <li>
+      <p>Па-першае ствараем у <i>KeyCloak</i> вобласьць (<i>realm</i>), якая будзе ўтрымліваць у сабе ўсе наладкі бясьпекі, якія тычацца менавіта і толькі гэтай праграмы. Для гэтага наводзім курсор мышы на стрэлку ў левым верхнім куце:</p>
+      <img style="margin-top: 15px;" src="keycloak/step1.png">
+      <p>Зьявіцца акенца існуючых абласьцей і кнопка для стварэньня новай:</p>
+      <img style="margin: 15px 0;" src="keycloak/step2.png">
+      <p>Цісьнем на гэтую кнопку і ствараем новую вобласьць:</p>
+      <img style="margin: 15px 0;" src="keycloak/step3.png">
+    </li>
+    <li>
+      <p>Наступным крокам ствараем ролю для нашай праграмы. Для гэтага знаходзячыся ў створанай намі вобласьці (далейшыя крокі будуць адбывацца ў межах гэтай вобласьці), цісьнем на пункт мэню <i>Roles</i> у разьдзеле <i>Configure</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step9.png">
+      <p>На старонцы, якая адкрылася, цісьнем на кнопку <i>Add role</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step10.png">
+      <p>Уводзім назву ролі і цісьнем на кнопку <i>Save</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step11.png">
+    </li>
+    <li>
+      <p>Далей ствараем новага карыстальніка. Цісьнем на пункт мэню <i>Users</i> у разьдзеле <i>Manage</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step4.png">
+      <p>А потым на старонцы, якая адкрылася, цісьнем на кнопку <i>Add user</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step5.png">
+      <p>Уводзім даныя карыстальніка і цісьнем на кнопку <i>Save</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step6.png">
+      <p>Адкрываем укладку <i>Credentials</i>, уводзім пароль і пацьверджаньне паролю і цісьнем кнопку <i>Reset Password</i> (ня вельмі ўдалая назва):</p>
+      <img style="margin: 15px 0;" src="keycloak/step7.png">
+      <p>У выніку адкрыецца акенца с запытам пацьвердзіць зьмену паролю, цісьнем кнопку <i>Change Password</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step8.png">
+      <p>Апошнім крокам злучаем карыстальніка з роляй, якую мы стварылі на папярэднім кроку. Адкрываем укладку <i>Role Mappings</i>, абіраем створаную раней ролю ў сэкцыі <i>Available Roles</i> і цісьнем кнопку <i>Add Selected</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step12.png">
+      <p>Зьмены захаваюцца аўтаматычна.</p>
+    </li>
+    <li>
+      <p>Наступным крокам вызначаем нашу праграму ў якасьці кліента <i>KeyCloak</i>. Цісьнем на пункт мэню <i>Clients</i> у разьдзеле <i>Configure</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step13.png">
+      <p>А потым на старонцы, якая адкрылася, цісьнем на кнопку <i>Create</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step14.png">
+      <p>Уводзім атрыбуты нашага кліента (<i>ID</i>, <i>URL</i> для вяртаньня пасьля аўтэнтыфікацыі і тып доступу) і цісьнем на кнопку <i>Save</i>:</p>
+      <img style="margin: 15px 0;" src="keycloak/step16.jpg">
+    </li>
+  </ol>
+
+  <h4 id="JEE_Security_KeyCloak_ConfigureApp">Наладкі праграмы</h4>
+  <p>Наладкі праграмы трохі адрозьніваюцца ў залежнасьці ад тэхналёгій, якія ў ёй выкарыстоўваюцца.</p>
+  <ol>
+    <li>Па-першае, калі гэта <i>Java</i>-кліент, трэба дадаць залежнасьці ў <i>maven</i>-канфігурацыю:
+      <pre><code class="language-xml">
+&lt;dependency>
+    &lt;groupId&gt;org.keycloak&lt;/groupId&gt;
+    &lt;artifactId&gt;keycloak-core&lt;/artifactId&gt;
+    &lt;version&gt;${version.keycloak}&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.keycloak&lt;/groupId&gt;
+    &lt;artifactId&gt;keycloak-adapter-core&lt;/artifactId&gt;
+    &lt;version&gt;${version.keycloak}&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.keycloak&lt;/groupId&gt;
+    &lt;artifactId&gt;keycloak-services&lt;/artifactId&gt;
+    &lt;version&gt;${version.keycloak}&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.keycloak&lt;/groupId&gt;
+    &lt;artifactId&gt;keycloak-jboss-adapter-core&lt;/artifactId&gt;
+    &lt;version&gt;${version.keycloak}&lt;/version&gt;
+    &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+    </li>
+    <li>
+      Наступным крокам вяртаемся на <i>UI</i> <i>KeyCloak</i>, цісьнем на пункт мэню <i>Clients</i> у разьдзеле <i>Configure</i>, у падмэню выбіраем <i>Installation</i> і на старонцы, якая адкрыецца, у полі <i>Format Option</i> выбіраем пункт <i>Keycloak OIDC JSON</i>:
+      <img style="margin: 15px 0;" src="keycloak/step17.png">
+      Капіюем наладкі з поля <i>Download</i>, ствараем у нашым праекце ў тэчцы <code class="language-bash">WEB_INF</code> файл <code class="language-bash">keycloak.json</code> і ўстаўляем у гэты файл наладкі <i>KeyCloak</i>:
+      <img style="margin: 15px 0;" src="keycloak/step18.png">
+    </li>
+    <li>Апошні крок, агульны для ўсіх тыпаў <i>Java</i>-кліентаў,&ndash; пазначыць тып аўтэнтыфікацыі ў файле <code class="language-bash">web.xml</code>:
+      <pre><code class="language-xml">
+&lt;web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"&gt;
+
+    &lt;!-- Declare to use KEYCLOAK authentication method --&gt;
+    &lt;login-config&gt;
+        &lt;auth-method&gt;KEYCLOAK&lt;/auth-method&gt;
+        &lt;realm-name&gt;videomanager&lt;/realm-name&gt;
+    &lt;/login-config&gt;
+&lt;/web-app&gt;
+</code></pre>
+    </li>
+  </ol>
+  <p>Вышэйзгаданае будзе аднолькава для любых <i>Java</i>-кліентаў. А цяпер прывядзем наладкі, спэцыфічныя для розных тыпаў кліентаў.</p>
+  <ol>
+    <li>
+      Калі гэта праграма на аснове сэрвлетаў, усё, што трэба зрабіць&nbsp;&ndash; гэта пазначыць абаронены сэрвлет (альбо яго асобныя мэтады) анатацыямі <code class="language-java">@DeclareRoles</code> і <code class="language-java">@ServletSecurity</code>:
+
+      <pre><code class="language-java">
+@WebServlet("/video-list-servlet")
+@DeclareRoles("video-app-user")
+@ServletSecurity(@HttpConstraint(rolesAllowed = {"video-app-user"}))
+public class VideoListServlet extends HttpServlet {
+}
+</code></pre>
+
+      У гэтым выпадку пры спробе доступу да рэсурсу <code class="language-bash">/video-list-servlet</code> праграма вызначыць, што няма аўтэнтыфікаванай сэсіі і перанакіруе запыт да <i>KeyCloak</i>, адчыніцца яго старонка лагіну, пасьля ўводу лагін-інфармацыі, запыт ізноў будзе накіраваны на зыходны рэсурс <code class="language-bash">/video-list-servlet</code>. Гэтым разам будзе даступна аўтэнтыфікаваная сэсія, праграма запытае (ці атрымае гэта непасрэдна з <i>JWT</i>-токэну) ролю аўтэнтыфікаванага карыстальніка і, калі яго роля супадае з аб'яўленай (<code class="language-java">video-app-user</code>), праграма задаволіць доступ да рэсурсу, інакш запыт будзе адхілены.
+    </li>
+    <li>
+      Калі ж праграма зьяўляецца <i>REST</i>-сэрвісам, альбо зроблена на аснове <a href="#JEE_JSF"><i>JSF</i></a>, патрэбна дадатковая наладка на ўзроўні <code class="language-bash">web.xml</code>:
+
+      <pre><code class="language-xml">
+&lt;web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"&gt;
+
+    &lt;security-constraint&gt;
+        &lt;web-resource-collection&gt;
+            &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+        &lt;/web-resource-collection&gt;
+        &lt;auth-constraint&gt;
+            &lt;role-name&gt;video-app-user&lt;/role-name&gt;
+        &lt;/auth-constraint&gt;
+    &lt;/security-constraint&gt;
+
+    &lt;login-config&gt;
+        &lt;auth-method&gt;KEYCLOAK&lt;/auth-method&gt;
+        &lt;realm-name&gt;videomanager&lt;/realm-name&gt;
+    &lt;/login-config&gt;
+
+    &lt;security-role&gt;
+        &lt;role-name&gt;video-app-user&lt;/role-name&gt;
+    &lt;/security-role&gt;
+&lt;/web-app&gt;
+</code></pre>
+
+    </li>
+  </ol>
+
+
+  <h2 id="JEE_Concurrency">Concurrency</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://download.oracle.com/otn-pub/jcp/concurrency-1_0-fr-spec/EE-Concurrency-Utilities-1.0-fr.pdf">JSR-236</a></li>
+    </ul>
+  </div>
+  <p>Асобны модуль у дадатак да <a href="#Library_ConcurrencyAndAsync"><code class="language-java">java.util.concurrent</code></a>.</p>
+
+</section>
+
+<section>
+  <h1 id="Spring" data-content-item-open>Spring</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="http://spring.io/">spring.io</a></li>
+      <li><a href="http://docs.spring.io/autorepo/docs/">Docs</a></li>
+      <li><a href="http://spring.io/docs/reference">Reference</a></li>
+      <li><a href="http://spring.io/guides">Guides</a></li>
+    </ul>
+  </div>
+  <p><a href="https://habrahabr.ru/post/111102/">Учимся готовить: Spring 3 MVC + Spring Security + Hibernate на <b>habrahabr.ru</b></a></p>
+  <p><a href="http://www.mkyong.com/tutorials/spring-tutorials/">Spring Core Tutorial на <b>mkyong.com</b></a></p>
+  <p><a href="http://www.mkyong.com/tutorials/spring-mvc-tutorials/">Spring MVC Tutorial на <b>mkyong.com</b></a></p>
+  <p><a href="http://www.tutorialspoint.com/spring/">Spring Tutorial на <b>tutorialspoint.com</b></a></p>
+  <p><a href="http://websystique.com/spring-4-tutorial/">Spring 4 Tutorial <b>websystique.com</b></a></p>
+  <p><a href="http://crunchify.com/category/spring-mvc/">Spring MVC Tricks and Tutorials <b>crunchify.com</b></a></p>
+  <p><a href="http://www.baeldung.com/"><b>baeldung.com</b></a></p>
+
+  <h2 id="Spring_Security">Security</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://projects.spring.io/spring-security/">Home</a></li>
+      <li><a href="http://docs.spring.io/autorepo/docs/spring-security/4.0.0.RELEASE/reference/html/">Reference</a></li>
+    </ul>
+  </div>
+  <p><a href="http://docs.spring.io/autorepo/docs/spring-security/4.0.0.RELEASE/guides/html5/">Spring Security Guides</a></p>
+  <p><a href="http://www.mkyong.com/tutorials/spring-security-tutorials/">Spring Security Tutorial на <b>mkyong.com</b></a></p>
+
+  <h2 id="Spring_Boot">Boot</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://docs.spring.io/spring-boot/docs/1.2.3.RELEASE/reference/htmlsingle/">Reference</a></li>
+    </ul>
+  </div>
+  <p>Патрабаваньні для вэрсіі 1.2.3.RELEASE:</p>
+  <ul>
+    <li>Java 7+</li>
+    <li>Servlet 3.1+</li>
+    <li>Spring Framework 4.1.5+</li>
+    <li>Maven 3.2+</li>
+    <li>Jetty 9+</li>
+  </ul>
+  <p>Тыповая наладка ў <code class="language-bash">pom.xml</code>:</p>
+  <pre><code class="language-xml">
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.example&lt;/groupId&gt;
+    &lt;artifactId&gt;myproject&lt;/artifactId&gt;
+    &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+
+    &lt;!-- Inherit defaults from Spring Boot --&gt;
+    &lt;parent&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+        &lt;version&gt;1.2.3.RELEASE&lt;/version&gt;
+    &lt;/parent&gt;
+
+    &lt;!-- Add typical dependencies for a web application --&gt;
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+            &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+
+    &lt;!-- Package as an executable jar --&gt;
+    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+&lt;/project&gt;
+</code></pre>
+
+  <h3 id="Spring_Boot_CLI">Усталёўка CLI</h3>
+    <p>Спампоўваем <a href="http://repo.spring.io/release/org/springframework/boot/spring-boot-cli/">архіў</a> і распакоўваем яго ў адвольную тэчку, напрыклад у <code class="language-bash">/opt/spring-boot</code>.</p>
+    <p>Ладкуем асяродак, дадаўшы ў <code class="language-bash">~/.profile</code>:</p>
+
+    <pre><code class="language-bash">
+SPRING_HOME=/opt/spring-boot
+export SPRING_HOME
+
+PATH=$PATH:$SPRING_HOME/bin
+export PATH
+</code></pre>
+
+    <p>Таксама ствараем сім-лінк :</p>
+    <pre><code class="language-bash">
+ln -s /opt/spring-boot/shell-completion/bash/spring /etc/bash_completion.d/spring
+</code></pre>
+
+    <h2 id="Spring_ViewTemplates">View templates</h2>
+
+    <h3 id="Spring_ViewTemplates_Thymeleaf">Thymeleaf</h3>
+    <div class="refs">
+      <ul>
+        <li><a href="http://www.thymeleaf.org/index.html">Home</a></li>
+        <li><a href="http://www.thymeleaf.org/documentation.html">Docs</a></li>
+        <li><a href="https://github.com/thymeleaf/thymeleaf-testing">Testing</a></li>
+      </ul>
+    </div>
+</section>
+
+<section>
+  <h1 id="DB" data-content-item-open>Базы даных</h1>
+
+  <h2 id="DB_Hibernate">Hibernate</h2>
+
+  <p><a href="http://javaxblog.ru/article/java-hibernate-1/">Java Hibernate. Часть 1 — Введение</a></p>
+  <p><a href="http://javaxblog.ru/article/java-hibernate-2/">Java Hibernate. Часть 2 — Запросы</a></p>
+  <p><a href="http://javaxblog.ru/article/java-hibernate-3/">Java Hibernate. Часть 3 — Отношения</a></p>
+  <p><a href="http://javaxblog.ru/article/java-hibernate-4/">Java Hibernate. Часть 4 — Spring</a></p>
+
+  <p><a href="http://www.tutorialspoint.com/hibernate/index.htm">tutorialspoint.com</a></p>
+  <p><a href="http://www.mkyong.com/tutorials/hibernate-tutorials/">mkyong.com</a></p>
+
+  <h2 id="DB_Migrations">Міграцыі</h2>
+  <p><a href="http://www.liquibase.org/">Liquibase</a>, <a href="https://gist.github.com/wilmoore/812253">Changelog samples</a></p>
+  <p><a href="http://stackoverflow.com/questions/12056139/running-db-migration-for-a-java-app">Running DB migration for a Java app</a></p>
+  <p><a href="http://www.hascode.com/2014/07/java-ee-7-database-migrations-with-liquibase-and-wildfly/">Java EE 7 Database Migrations with Liquibase and WildFly</a></p>
+
+
+</section>
+
+<section>
+  <h1 id="Build" data-content-item-open>Зборка</h1>
+
+  <h2 id="Build_Ant">Ant</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://ant.apache.org/manual/">Manual</a></li>
+      <li><a href="http://www.tutorialspoint.com/ant/">Tutorial</a></li>
+    </ul>
+  </div>
+  <p><a href="http://javaxblog.ru/article/java-ant-1/">Java Ant. Часть 1 — Введение</a></p>
+
+  <h2 id="Build_Maven">Maven</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/guides/">Guides</a></li>
+      <li><a href="http://www.tutorialspoint.com/maven/">Tutorial</a></li>
+      <li><a href="http://mvnrepository.com/">Repo</a></li>
+    </ul>
+  </div>
+  <p><a href="http://www.scribd.com/doc/238927/Better-Builds-With-Maven">Кніга «Better Builds With Maven»</a></p>
+  <p><a href="http://books.sonatype.com/mvnex-book/reference/index.html">Кніга «Maven by Example»</a></p>
+  <p><a href="http://books.sonatype.com/mvnref-book/reference/index.html">Кніга «Maven: The Complete Reference»</a></p>
+
+  <h3 id="Build_Maven_Installation">Усталёўка</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/download.html#Installation">Download</a></li>
+    </ul>
+  </div>
+  <p>Перш за ўсё трэба каб на кампутары быў ужо ўсталяваны <i>JDK</i>.</p>
+
+  <pre><code class="language-bash">
+$ echo $JAVA_HOME
+/usr/lib/jvm/java-7-openjdk-i386
+</code></pre>
+
+  <p>Пасьля гэтага <a href="http://maven.apache.org/download.html">спампоўваем дыстрыбутыў</a> і распакоўваем яго напрыклад сюды: <code class="language-bash">/usr/local/apache-maven</code>. Пры распакоўцы будзе створана тэчка з пазнакай вэрсіі, напрыклад: <code class="language-bash">apache-maven-3.0.5</code>.</p>
+  <p>Дадаем у асяродак зьменную <code class="language-bash">M2_HOME</code>:</p>
+
+  <pre><code class="language-bash">
+$ export M2_HOME=/usr/local/apache-maven/apache-maven-3.0.5
+</code></pre>
+
+  <p>Таксама дадаем шлях да <code class="language-bash">bin</code>-тэчкі мавена ў <code class="language-bash">PATH</code></p>
+
+  <pre><code class="language-bash">
+$ export PATH=$PATH:/usr/local/apache-maven/apache-maven-3.0.5/bin
+</code></pre>
+
+  <p>Пры неабходнасьці дадаем зьменную асяродка <code class="language-bash">MAVEN_OPTS</code>, якая вызначае ява-парамэтры, зь якімі будзе запускацца мавен:.</p>
+
+  <pre><code class="language-bash">
+$ export MAVEN_OPTS="-Xms256m -Xmx512m"
+</code></pre>
+
+  <p>Усё, мавен усталяваны і гатовы для працы. Пераканацца ў гэтым можна так:</p>
+
+  <pre><code class="language-bash">
+$ mvn --version
+Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 16:51:28+0300)
+Maven home: /usr/local/apache-maven/apache-maven-3.0.5
+Java version: 1.7.0_51, vendor: Oracle Corporation
+Java home: /usr/lib/jvm/java-7-openjdk-i386/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "3.8.0-19-generic", arch: "i386", family: "unix"
+</code></pre>
+
+  <h3 id="Build_Maven_Settings">Наладкі</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/settings.html">Settings</a></li>
+    </ul>
+  </div>
+  <p>У агульным выпадку пасьля ўсталёўкі мавен цалкам гатовы для працы, але бываюць выпадкі, калі патрэбныя дадатковыя наладкі. Адным з такіх выпадкаў зьяўляецца наяўнасьць проксі-сэрвэра паміж працоўным кампутарам і інтэрнэтам.</p>
+  <p>Дадатковыя наладкі мавена зьмяшчаюцца ў файле <code class="language-bash">settings.xml</code>, які ў сваю чаргу можа зьмяшчацца ў двух розных месцах:</p>
+  <ul>
+    <li>Тэчка мавена: <code class="language-bash">$M2_HOME/conf/settings.xml</code></li>
+    <li>Тэчка карыстальніка: <code class="language-bash">${user.home}/.m2/settings.xml</code></li>
+  </ul>
+  <p>Першы зь іх завецца файлам глябальнай канфігурацыі, другі&nbsp;&ndash; канфігурацыяй карыстальніка. Калі існуюць абодва гэтыя файлы, тады выніковая канфігурацыя складаецца ў выніку іх зьліцьця, пры гэтым канфігурацыя карыстальніка мае перавагу па-над глябальнай.</p>
+  <p>Прыклад наладкі проксі-сэрвэру:</p>
+
+  <pre><code class="language-xml">
+&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+  &lt;proxies&gt;
+    &lt;proxy&gt;
+      &lt;id&gt;proxy&lt;/id&gt;
+      &lt;active&gt;true&lt;/active&gt;
+      &lt;protocol&gt;http&lt;/protocol&gt;
+      &lt;host&gt;proxy.compony.com&lt;/host&gt;
+      &lt;port&gt;8080&lt;/port&gt;
+    &lt;/proxy&gt;
+  &lt;/proxies&gt;
+
+&lt;/settings&gt;
+</code></pre>
+
+  <h3 id="Build_Maven_CreateProject">Стварэньне праекту</h3>
+  <p>Стварыць новы праект можна наступным чынам (цяперашняй тэчкай павінна быць тэчка, у якой будуць зьмяшчацца вашы праекты):</p>
+
+  <pre><code class="language-bash">
+$ mvn archetype:generate -DgroupId=com.company.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+</code></pre>
+  <p>Гэтая каманда створыць тэчку <code class="language-bash">my-app</code> па значэньню парамэтра <code class="language-bash">artifactId</code>, а ў гэтай тэчцы наступную структуру:</p>
+  <pre>
+my-app
+|-- pom.xml
+`-- src
+    |-- main
+    |   `-- java
+    |       `-- com
+    |           `-- mycompany
+    |               `-- app
+    |                   `-- App.java
+    `-- test
+        `-- java
+            `-- com
+                `-- mycompany
+                    `-- app
+                        `-- AppTest.java
+        </pre>
+
+  <h3 id="Build_Maven_Convention">Канвэнцыя па-над канфігурацыяй</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html">Стандартная структура тэчак</a></li>
+    </ul>
+  </div>
+  <p><i>Maven</i> прытрымліваецца ідэалёгіі <i>канвэнцыя па-над канфігурацыяй</i>, якая азначае, што распрацоўшчыку ня трэба самому выдумляць нейкія базавыя рэчы, а <i>Maven</i> сам іх перадвызначае, напрыклад месцазнаходжаньне зыходнікаў, рэсурсаў, тэстаў, скампіляваных файлаў і <i>jar</i>-файлаў перадвызначана наступным чынам:</p>
+  <table>
+    <thead>
+      <tr>
+        <th>Элемэнт</th>
+        <th>Перадвызначанае месцазнаходжаньне</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Зыходныя файлы праекту</td>
+        <td><code class="language-bash">${basedir}/src/main/java</code></td>
+      </tr>
+      <tr>
+        <td>Рэсурсы</td>
+        <td><code class="language-bash">${basedir}/src/main/resources</code></td>
+      </tr>
+      <tr>
+        <td>Тэсты</td>
+        <td><code class="language-bash">${basedir}/src/test</code></td>
+      </tr>
+      <tr>
+        <td>Скампіляваныя файлы</td>
+        <td><code class="language-bash">${basedir}/target/classes</code></td>
+      </tr>
+      <tr>
+        <td><i>jar</i>-файлы</td>
+        <td><code class="language-bash">${basedir}/target</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 id="Build_Maven_POM">POM</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/pom.html">POM Reference</a></li>
+      <li><a href="http://maven.apache.org/xsd/maven-4.0.0.xsd">XML Schema</a></li>
+      <li><a href="http://www.tutorialspoint.com/maven/maven_pom.htm">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>Дэталі праекту, залежнасьцямі і зборкай якога кіруе <i>Maven</i>, знаходзяцца ў файле <code class="language-bash">pom.xml</code>, які павінен знаходзіцца ў корані праекту. Яго тыпічны зьмест наступны:</p>
+
+  <pre><code class="language-xml">
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+
+  &lt;!-- вэрсія мадэлі для POM-аў Maven 2.x заўсёды 4.0.0 --&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;!-- даныя для ідэнтыфікацыі праекту, то бок набор значэньняў,
+     які дазваляе адназначна яго ідэнтыфікаваць --&gt;
+  &lt;groupId&gt;com.companyname&lt;/groupId&gt;
+  &lt;artifactId&gt;MavenExample&lt;/artifactId&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+
+  &lt;!-- залежнасьці ад бібліятэкаў --&gt;
+  &lt;dependencies&gt;
+
+    &lt;dependency&gt;
+        &lt;!-- даныя для ідэнтыфікацыі бібліятэкі --&gt;
+        &lt;groupId&gt;junit&lt;/groupId&gt;
+        &lt;artifactId&gt;junit&lt;/artifactId&gt;
+        &lt;version&gt;4.10&lt;/version&gt;
+
+        &lt;!-- на якім этапе зборкі будзе выкарыстоўвацца,
+            у дадзеным выпадку - выключна для запуска і кампіляцыі тэстаў --&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+
+&lt;/project&gt;
+</code></pre>
+
+  <h3 id="Build_Maven_Phases">Этапы</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">Build Lifecycle</a></li>
+    </ul>
+  </div>
+  <p>Запусьціць зборку праекта мавенам можна пры дапамозе кансольнай каманды <code class="language-bash">mvn &lt;ЭТАП&gt;</code> з месца, дзе знаходзіцца файл <code class="language-bash">pom.xml</code> (то бок знаходзячыся ў корані праекта). ЭТАП&nbsp;&ndash; гэта імя этапу жыцьцёвага цыкла зборкі праекта:</p>
+  <table>
+    <tr>
+      <td><code class="language-bash">validate</code></td>
+      <td>правярае карэктнасьць мэта-інфармацыі аб праекце</td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">compile</code></td>
+      <td>кампіліруе зыходнікі</td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">test</code></td>
+      <td>праганяе юніт-тэсты скампіляваных клясаў, якія атрымаліся на папярэднім этапе, выкарыстоўваючы падыходзячы тэставы фрэймворк</td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">package</code></td>
+      <td>пакуе праект у лёгкаперамяшчаемы фармат (<i>JAR</i> альбо <i>WAR</i>)</td>
+    </tr>
+    <tr>
+      <td width="150em"><code class="language-bash">integration-test</code></td>
+      <td>адпраўляе запакаваны праект у асяродак інтэграцыйнага тэставаньня і праганяе інтэграцыйныя тэсты</td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">verify</code></td>
+      <td>правярае упакаваны праект на карэктнасьць і задавальненьне крытэрам якасьці</td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">install</code></td>
+      <td>зьмяшчае пакет у лякальны рэпазыторый мавена, адкуль ён будзе даступны іншым праектам у якасьці залежнасьці</td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">deploy</code></td>
+      <td>зьмяшчае пакет на сэрвэр для рэальнай працы</td>
+    </tr>
+  </table>
+  <p>Пры гэтым этапы асноўнага жыцьцёвага цыкла зборкі зьяўляюцца пасьлядоўнымі, і калі напрыклад запусьціць каманду <code class="language-bash">mvn package</code>, то будуць пасьлядоўна выкананы этапы <code class="language-bash">validate</code>, <code class="language-bash">compile</code>, <code class="language-bash">test</code> і напрыканцы сам <code class="language-bash">package</code>.</p>
+  <p>Акрамя гэтага у мавене ёсьць самастойныя этапы, якія існуюць па-за межамі звычайнага жыцьцёвага цыкла мавена і іх выкананьне не прыводзіць да аўтаматычнага выкананьня іншых этапаў, гэта:</p>
+  <table>
+    <tr>
+      <td><code class="language-bash">clean</code></td>
+      <td>выдаляе вытворныя артэфакты, якія былі створаныя мавенам раней</td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">site</code></td>
+      <td>стварае дакумэнтацыю для праекта</td>
+    </tr>
+  </table>
+
+  <h3 id="Build_Maven_Profiles">Профілі зборкі</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/guides/introduction/introduction-to-profiles.html">Guide</a></li>
+      <li><a href="http://www.tutorialspoint.com/maven/maven_build_profiles.htm">Tutorial</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Build_Maven_Repos">Рэпазыторыі</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.tutorialspoint.com/maven/maven_repositories.htm">Tutorial</a></li>
+      <li><a href="http://javaxblog.ru/article/java-maven-2/">javaxblog.ru</a></li>
+    </ul>
+  </div>
+  <p>Рэпазыторый мавена&nbsp;&ndash; гэта пляцоўка, дзе захоўваюцца джаркі праектаў, залежнасьці, плагіны і іншыя артэфакты, якія патрэбныя мавену для зборкі. Рэпазыторыі бываюць:</p>
+  <ul>
+    <li><b>лякальны</b>&nbsp;&ndash; гэта тэчка на лякальным кампутары, па змоўчваньні <code class="language-bash">$HOME/.m2/repository</code>, але можа быць перавызначана ў <a href="#Build_Maven_Settings"><code class="language-bash">settings.xml</code></a>:
+
+      <pre><code class="language-xml">
+&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+
+  &lt;localRepository&gt;/my/special/path/to/repo&lt;/localRepository&gt;
+
+&lt;/settings&gt;
+</code></pre>
+
+    </li>
+    <li><b>цэнтральны</b>&nbsp;&ndash; знаходзіцца па адрасе <a href="http://repo1.maven.org/maven2/">http://repo1.maven.org/maven2/</a>.</li>
+    <li><b>адлеглыя</b>&nbsp;&ndash; уласныя рэпазыторыі распрацоўшчыкаў. Гэтыя рэпазыторыі можна пазначаць непасрэдна ў <a href="#Build_Maven_POM"><code class="language-bash">pom.xml</code></a>:
+
+      <pre data-line="16-25"><code class="language-xml">
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+   &lt;groupId&gt;com.companyname.projectgroup&lt;/groupId&gt;
+   &lt;artifactId&gt;project&lt;/artifactId&gt;
+   &lt;version&gt;1.0&lt;/version&gt;
+   &lt;dependencies&gt;
+      &lt;dependency&gt;
+         &lt;groupId&gt;com.companyname.common-lib&lt;/groupId&gt;
+         &lt;artifactId&gt;common-lib&lt;/artifactId&gt;
+         &lt;version&gt;1.0.0&lt;/version&gt;
+      &lt;/dependency&gt;
+   &lt;dependencies&gt;
+   &lt;repositories&gt;
+      &lt;repository&gt;
+         &lt;id&gt;companyname.lib1&lt;/id&gt;
+         &lt;url&gt;http://download.companyname.org/maven2/lib1&lt;/url&gt;
+      &lt;/repository&gt;
+      &lt;repository&gt;
+         &lt;id&gt;companyname.lib2&lt;/id&gt;
+         &lt;url&gt;http://download.companyname.org/maven2/lib2&lt;/url&gt;
+      &lt;/repository&gt;
+   &lt;/repositories&gt;
+&lt;/project&gt;
+</code></pre>
+
+    </li>
+  </ul>
+  <p>Калі мавену ў працэсе зборкі спатрэбіўся нейкі артэфакт, ён:</p>
+  <ol>
+    <li>спачатку пашукае яго ў лякальным рэпазыторыі, калі ён там ёсьць, возьме яго адтуль, інакш пяройдзе на кроку 2;</li>
+    <li>пашукае яго ў цэнтральным рэпазыторыі (патрэбны доступ у інтэрнэт), калі ён там ёсьць, загрузіць яго ў лякальны рэпазыторый і возьме адтуль, інакш пяройдзе да кроку 3;</li>
+    <li>калі пазначаная крыніца адлеглага рэпазыторыю, пашукае там, калі артэфакт там ёсьць, загрузіць яго ў лякальны рэпазыторый і возьме адтуль, інакш, калі патрэбнага артэфакту няма і ў адлеглым рэпазыторыі, альбо калі адлеглыя рэпазыторыі ўвогуле не пазначаныя, тады мавен спыніць працу з пазнакай памылкі.</li>
+  </ol>
+  <p>Рэдка, але бываюць сытуацыі, калі пэўнага артэфакту няма ні ў якім з вядомых рэпазыторыяў, але ён даступны для загрузкі. У гэтым выпадку можна яго загрузіць на лякальны кампутар і дадаць у лякальны рэпазыторый наступнай камандай:</p>
+
+  <pre><code class="language-bash">
+mvn install:install-file -Dfile=&lt;path-to-file&gt; -DgroupId=&lt;group-id&gt; -DartifactId=&lt;artifact-id&gt; -Dversion=&lt;version&gt; -Dpackaging=&lt;packaging&gt;
+</code></pre>
+
+  <p>Напрыклад, jdbc-драйвэр для работы з СКБД Oracle вэрсіі 10.2.0.1, можна зарэгістраваць наступнай камандай:</p>
+
+  <pre><code class="language-bash">
+mvn install:install-file \
+  -Dfile=ojdbc14.jar \
+  -DgroupId=com.oracle \
+  -DartifactId=oracle \
+  -Dversion=10.2.0.1 \
+  -Dpackaging=jar \
+  -DgeneratePom=true
+</code></pre>
+
+  <h3 id="Build_Maven_Plugins">Плагіны</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/plugins/">Plugins list</a></li>
+      <li><a href="http://maven.apache.org/guides/mini/guide-configuring-plugins.html">Configuring Plugins</a></li>
+      <li><a href="http://www.tutorialspoint.com/maven/maven_plugins.htm">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>Па сутнасьці сваёй мавен&nbsp;&ndash; гэта фрэймворк выкананьня плагінаў. І каб зьмяніць нешта ў працэсе зборкі, якую ён робіць, усё што трэба зрабіць&nbsp;&ndash; гэта дадаць нейкі плагін, альбо наладзіць ужо існуючы. Напрыклад, каб наладзіць ява-кампілятар такім чынам, каб былі дазволеныя зыходнікі вэсріі 5.0, трэба зрабіць наступнае:</p>
+
+  <pre><code class="language-xml">
+...
+&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.5.1&lt;/version&gt;
+      &lt;configuration&gt;
+        &lt;source&gt;1.5&lt;/source&gt;
+        &lt;target&gt;1.5&lt;/target&gt;
+      &lt;/configuration&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+...
+</code></pre>
+
+  <p>Кожны плагін мае мэты (<i>goals</i>)&nbsp;&ndash; гэта пэўныя атамарныя апэрацыі, і ўсё, што робіць мавен (у межах <a href="#Build_Maven_Phases">этапаў зборкі</a>), ён робіць выконваючы пэўныя мэты розных плагінаў. Калі нейкая мэта плагіну не злучана ні зь якім этапам зборкі, яе можна выканаць непасрэдна праз плагін, а не праз этап зборкі:</p>
+
+  <pre><code class="language-bash">
+$ mvn &lt;plugin-name&gt;:&lt;goal-name&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Plugins_Jetty">Jetty</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html">Home</a></li>
+    </ul>
+  </div>
+  <p>Каб <i>Jetty</i> правяраў зьмяненьні ў праграме і аўтаматычна падгружаў іх, трэба зьмяніць змоўчнае значэньне парамэтру <code class="language-bash">scanIntervalSeconds</code> з 0 напрыклад на 1: </p>
+
+  <pre data-line="9"><code class="language-xml">
+...
+&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.eclipse.jetty&lt;/groupId&gt;
+      &lt;artifactId&gt;jetty-maven-plugin&lt;/artifactId&gt;
+      &lt;version&gt;9.2.3.v20140905&lt;/version&gt;
+      &lt;configuration&gt;
+          &lt;scanIntervalSeconds&gt;1&lt;/scanIntervalSeconds&gt;
+      &lt;/configuration&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+...
+</code></pre>
+
+  <p>Для таго, каб аўтаматычная падгрузка працавала як чакаецца, <i>Jetty</i> абавязкова павінен запускацца праз каманду <code class="language-bash">mvn jetty:run</code> (ні ў якім разе не <code class="language-bash">mvn jetty:run-exploded</code>; апошняя будзе прыводзіць да таго, што праграма будзе стартаваць з сабранага <code class="language-bash">war</code>-файла, і адпаведна будзе губляцца ўвесь сэнс хуткага фідбэку на зьмяненьні).</p>
+
+  <h3 id="Build_Maven_Dependencies">Залежнасьці</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://maven.apache.org/guides/getting-started/index.html#How_do_I_use_external_dependencies">Guide</a></li>
+      <li><a href="http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">Intro</a></li>
+      <li><a href="http://www.tutorialspoint.com/maven/maven_external_dependencies.htm">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>У сэкцыі <code class="language-bash">dependencies</code> файла <a href="#Build_Maven_POM"><code class="language-bash">pom.xml</code></a> пералічваюцца ўсе зьнешнія залежнасьці, якія патрэбныя для таго, каб праект змог быць сабраным:</p>
+
+  <pre><code class="language-xml">
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;groupId&gt;com.mycompany.app&lt;/groupId&gt;
+  &lt;artifactId&gt;my-app&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+
+  &lt;name&gt;Maven Quick Start Archetype&lt;/name&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;3.8.1&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;log4j&lt;/groupId&gt;
+      &lt;artifactId&gt;log4j&lt;/artifactId&gt;
+      &lt;version&gt;1.2.12&lt;/version&gt;
+      &lt;scope&gt;compile&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
+
+  <p>Пры гэтым у элемэнце <code class="language-bash">scope</code> пазначаецца вобласьць (<i>scope</i>), для якой гэтая залежнасьць мае дачыненьне, а таксама ўплывае на <i>classpath</i>, які ўжываецца для розных задач мавена. Магчымыя вобласьці:</p>
+  <ul>
+    <li><b>compile</b>&nbsp;&ndash; гэта змоўчная вобласьць, яна ўжываецца ў тым ліку тады, калі яўна не была пазначаная. Залежнасьці пазначаныя такім чынам, даступныя ўва ўсіх <i>classpath</i> праекту, і больш таго, даступныя ў залежных праектах.</li>
+    <li><b>provided</b>&nbsp;&ndash; падобна да <b>compile</b>, але чакаецца, што <i>JDK</i>, альбо кантэйнэр самі прадставяць залежнасьці ў <i>runtime</i>. Напрыклад, гэта тычыцца <i>Servlet API</i>, які павінен прадставіць вэб-кантэйнэр.</li>
+    <li><b>runtime</b>&nbsp;&ndash; пазначае, што залежнасьць патрэбная не для кампіляцыі, але для выкананьня праекту. Будзе даданая ў тэставы і <i>runtime</i> <i>classpath</i>.</li>
+    <li><b>test</b>&nbsp;&ndash; пазначае, што залежнасьць не патрэбная для зборкі і працы праграмы, але толькі для кампіляцыі і выкананьня тэстаў.</li>
+    <li><b>system</b>&nbsp;&ndash; падобна да <b>provided</b>, але адрозьніваецца тым, што шлях да <i>jar</i>-файлу залежнасьці павінен быць яўна пазначаны.</li>
+    <li><b>import</b> (<i>maven 2.0.9+</i>)&nbsp;&ndash; ужываецца толькі для залежнасьцяў з тыпам <i>pom</i> у сэкцыі <code class="language-bash">&lt;dependencyManagement&gt;</code></li>
+  </ul>
+
+  <h4 id="Build_Maven_Dependencies_CommonAnnotation">Common Annotations API</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- 'provided' scope in case of JBoss WildFly as the API is included there --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.jboss.spec.javax.annotation&lt;/groupId&gt;
+  &lt;artifactId&gt;jboss-annotations-api_1.2_spec&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_Web">Web</h4>
+
+  <pre><code class="language-xml">
+&lt;web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"&gt;
+
+&lt;/web-app&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_CDI">JavaEE CDI API</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- 'provided' scope in case of JBoss WildFly as the API is included there --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.enterprise&lt;/groupId&gt;
+  &lt;artifactId&gt;cdi-api&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_JSF">JavaServer Faces</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- 'provided' scope in case of JBoss WildFly as the API is included there --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.jboss.spec.javax.faces&lt;/groupId&gt;
+  &lt;artifactId&gt;jboss-jsf-api_2.2_spec&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <p>Альбо больш <i>vendor independent</i>:</p>
+
+  <pre><code class="language-xml">
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.faces&lt;/groupId&gt;
+  &lt;artifactId&gt;javax.faces-api&lt;/artifactId&gt;
+  &lt;version&gt;2.2&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_EJB">EJB</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- 'provided' scope in case of JBoss WildFly as the API is included there --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.jboss.spec.javax.ejb&lt;/groupId&gt;
+  &lt;artifactId&gt;jboss-ejb-api_3.2_spec&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_JPA">JPA API</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- 'provided' scope in case of JBoss WildFly as the API is included there --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.hibernate.javax.persistence&lt;/groupId&gt;
+  &lt;artifactId&gt;hibernate-jpa-2.1-api&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!-- Annotation processor to generate the JPA 2.0 metamodel classes for
+    typesafe criteria queries --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+  &lt;artifactId&gt;hibernate-jpamodelgen&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!-- Annotation processor that raising compilation errors whenever constraint
+    annotations are incorrectly used. --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+  &lt;artifactId&gt;hibernate-validator-annotation-processor&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_BeanValidation">Bean Validation</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- 'provided' scope in case of JBoss WildFly as the API is included there --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+  &lt;artifactId&gt;hibernate-validator&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+  &lt;exclusions&gt; &lt;!-- Гэта патрэбна, альбо толькі для гэтага пэўнага выпадку? --&gt;
+    &lt;exclusion&gt;
+      &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+      &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+    &lt;/exclusion&gt;
+  &lt;/exclusions&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_JAX-RS">JAX-RS API</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- 'provided' scope in case of JBoss WildFly as the API is included there --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+  &lt;artifactId&gt;jaxrs-api&lt;/artifactId&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_Logging">Лагіраваньне</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- 'provided' scope in case of JBoss WildFly as the API is included there --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+  &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+  &lt;version&gt;1.7.7&lt;/version&gt;
+  &lt;scope&gt;provided&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h4 id="Build_Maven_Dependencies_Testing">Testing</h4>
+
+  <pre><code class="language-xml">
+&lt;!-- Needed for running tests (you may also use TestNG) --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;junit&lt;/groupId&gt;
+  &lt;artifactId&gt;junit&lt;/artifactId&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;!-- Optional, but highly recommended --&gt;
+&lt;!-- Arquillian allows you to test enterprise code such as EJBs and Transactional(JTA)
+     JPA from JUnit/TestNG --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.jboss.arquillian.junit&lt;/groupId&gt;
+  &lt;artifactId&gt;arquillian-junit-container&lt;/artifactId&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+
+&lt;dependency&gt;
+  &lt;groupId&gt;org.jboss.arquillian.protocol&lt;/groupId&gt;
+  &lt;artifactId&gt;arquillian-protocol-servlet&lt;/artifactId&gt;
+  &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <h2 id="Build_Gradle">Gradle</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://gradle.org/">Home</a></li>
+    </ul>
+  </div>
+
+
+</section>
+
+<section>
+  <h1 id="Logging">Лагіраваньне</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.slf4j.org/docs.html">SLF4J</a></li>
+      <li><a href="https://logging.apache.org/log4j/1.2/manual.html">Log4J</a></li>
+    </ul>
+  </div>
+  <p>Трэба дадаць залежнасьці ў <code class="language-bash">pom.xml</code>:</p>
+
+  <pre><code class="language-xml">
+...
+&lt;dependencies&gt;
+  ...
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+    &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+    &lt;version&gt;1.7.10&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+    &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+    &lt;version&gt;1.7.10&lt;/version&gt;
+  &lt;/dependency&gt;
+  ...
+&lt;/dependencies&gt;
+...
+</code></pre>
+
+  <p>Дадаць наладкі <i>Log4J</i> у файл <code class="language-bash">log4j.properties</code> па шляху <code class="language-bash">src/main/resources</code>:</p>
+
+  <pre><code class="language-bash">
+#---  comment/uncomment needed lines to use for loging  -----------#
+log4j.rootCategory=DEBUG, file
+#------------------------------------------------------------------#
+
+##### Appenders area #####
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=logs/app.log
+log4j.appender.file.MaxFileSize=2MB
+log4j.appender.file.MaxBackupIndex=5
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
+</code></pre>
+
+</section>
+
+<section>
+  <h1 id="Testing" data-content-item-open>Тэставаньне</h1>
+
+  <h2 id="Testing_Automation">Аўтаматызацыя</h2>
+
+  <h3 id="Testing_Automation_Gauge">Gauge</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://getgauge.io/">Home</a></li>
+      <li><a href="http://getgauge.io/documentation/user/current/index.html">Docs</a></li>
+    </ul>
+  </div>
+  <p><a href="https://github.com/getgauge/gauge/wiki/Getting-Started-in-3-Steps">Getting Started with Java and IntelliJ IDEA</a></p>
+  <p><a href="https://github.com/getgauge/gauge-example-java">Gauge example in Java</a></p>
+
+  <h3 id="Testing_Automation_Cucumber">Cucumber</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://cucumber.io/">Home</a></li>
+      <li><a href="https://cucumber.io/docs">Docs</a></li>
+    </ul>
+  </div>
+
+  <h2 id="Testing_Unit">Unit-тэставаньне</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://mockito.org/">Mockito</a></li>
+      <li><a href="http://jmockit.org/">JMockit</a></li>
+    </ul>
+  </div>
+  <p><a href="http://site.mockito.org/mockito/docs/current/org/mockito/Mockito.html">Mockito JavaDoc</a></p>
+  <p><a href="http://jmockit.org/tutorial.html">The JMockit Testing Toolkit Tutorial</a></p>
+  <p><a href="https://github.com/jmockit/jmockit1/blob/master/samples/mockito/test/org/mockitousage/JavadocExamples_JMockit_Test.java">JMockit samples</a></p>
+  <p><a href="http://maven.apache.org/surefire/maven-surefire-report-plugin/">surefire</a>&nbsp;&ndash; maven-убудаваньне для праверкі ступені пакрыцьця тэстамі.</p>
+
+  <h3 id="Testing_Unit_JUnit">JUnit</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://junit.org/">Home</a></li>
+      <li><a href="http://junit.org/">JUnit5</a></li>
+      <li><a href="http://junit.org/junit5/docs/current/user-guide/">User Guide</a></li>
+      <li><a href="http://zeroturnaround.com/rebellabs/junit-cheat-sheet/">Cheat Sheet</a></li>
+    </ul>
+  </div>
+  <p><a href="http://blog.qatools.ru/junit/junit-rules-tutorial">Механизм правил в JUnit</a></p>
+  <p><a href="http://joel-costigliola.github.io/assertj/">AssertJ</a>&nbsp;&ndash; больш багаты набор <i>assert</i>'аў.</p>
+
+  <h2 id="Testing_Functional">Функцыянальнае тэставаньне</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://arquillian.org/">Arquillian</a></li>
+    </ul>
+  </div>
+  <p><a href="http://habrahabr.ru/company/luxoft/blog/246465/">Интеграционное тестирование в Java EE</a></p>
+  <p><a href="http://www.javacodegeeks.com/2015/11/java-ee-integration-testing-arquillian-using-chameleon-shrinkwrap-dronegraphene.html">Java EE integration testing with Arquillian using Chameleon, Shrinkwrap, Drone/Graphene</a></p>
+  <p><a href="http://softwareyoga.com/arquillian-and-wildfly-integration-test-tutorial/">Arquillian and Wildfly: Integration test tutorial</a></p>
+  <p><a href="http://www.mastertheboss.com/jboss-frameworks/arquillian/arquillian-tutorial">Arquillian tutorial</a></p>
+
+  <h2 id="Testing_UI">UI-тэставаньне</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://docs.seleniumhq.org/">Selenium</a></li>
+      <li><a href="http://www.fitnesse.org/">FitNesse</a></li>
+      <li><a href="http://xebia.github.io/Xebium/">Xebium</a></li>
+    </ul>
+  </div>
+  <p><a href="http://examples.javacodegeeks.com/enterprise-java/selenium/selenium-automation-testing-tutorial/">Selenium Automation Testing Tutorial</a></p>
+</section>
+
+<section>
+  <h1 id="Microservices">Мікрасэрвісы</h1>
+  <p><a href="https://blog.openshift.com/deploying-java-ee-microservices-on-openshift/">Deploying Java EE Microservices on OpenShift</a></p>
+  <p><a href="https://blog.openshift.com/building-microservices-wildfly-swarm-netflix-oss-openshift/">Building Microservices with WildFly Swarm and Netflix OSS on OpenShift</a></p>
+  <p><a href="https://github.com/wildfly-swarm/wildfly-swarm-examples">Examples of how to write applications using WildFly Swarm</a></p>
+  <br>
+  <p><a href="http://async-io.org/">async-io: Atmosphere framework</a></p>
+  <p><a href="http://akka.io/">akka.io: Build powerful concurrent and distributed applications more easily</a></p>
+  <p><a href="https://ee.kumuluz.com/">kumuluzEE: A lightweight framework for packing, bootstrapping and deploying Java EE components as microservices.</a></p>
+  <p><a href="https://github.com/advantageous/qbit">QBit is a reactive programming lib for building microservices - JSON, HTTP, WebSocket, and REST. QBit uses reactive programming to build elastic REST, and WebSockets based cloud friendly, web services. SOA evolved for mobile and cloud. ServiceDiscovery, Health, reactive StatService, events, Java idiomatic reactive prog…</a></p>
+  <p><a href="http://www.mammatustech.com/Microservice-Service-Discovery-with-Consul">Microservice Service Discovery with Consul</a></p>
+  <p><a href="http://www.mammatustech.com/consul-service-discovery-and-health-for-microservices-architecture-tutorial">Consul Service Discovery and Health For Microservices Architecture Tutorial</a></p>
+  <p><a href="https://github.com/Netflix/eureka/">Eureka is a REST based service that is primarily used in the AWS cloud for locating services for the purpose of load balancing and failover of middle-tier servers.</a></p>
+  <p><a href="https://www.youtube.com/watch?v=QO2321eMNYE">Adam Bien - Java EE Microservices Communication</a></p>
+
+</section>
+
+<section>
+  <h1 id="Libraries">Карысныя бібліятэкі</h1>
+
+  <p><a href="https://github.com/google/guava">Guava: Google Core Libraries for Java</a></p>
+  <p><a href="http://www.ocpsoft.org/prettytime/">PrettyTime: intuitive Java date and timestamp formatting</a></p>
+  <p><a href="http://www.ocpsoft.org/prettyfaces/">PrettyFaces: URL-rewriting library with support for JSF</a></p>
+  <p><a href="http://www.ocpsoft.org/rewrite/">Rewrite: Routing and URL rewriting solution for JavaEE</a></p>
+</section>
+
+<section>
+  <h1 id="HowTos">HowTo's</h1>
+
+  <p>Guide to Regular Expressions in Java: <a href="http://www.ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/">Part 1</a>, <a href="http://www.ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-2/">Part 2</a></p>
+
+  <h2 id="HowTos_GeoLocation">Geolocation</h2>
+  <p><a href="http://www.baeldung.com/geolocation-by-ip-with-maxmind">Geolocation by IP in Java</a></p>
+
+</section>
+
+<section>
+  <h1 id="CodeAnalyzers">Аналізатары кода</h1>
+
+  <h2 id="CodeAnalyzers_SonarQube">SonarQube</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.sonarqube.org/">Home</a></li>
+      <li><a href="http://docs.sonarqube.org/display/SONAR/Documentation">Docs</a></li>
+    </ul>
+  </div>
+  <p>Змоўчны адміністратар: <code class="language-bash">admin/admin</code>.</p>
+  <p>Старт сэрвэра: <code class="language-bash">sudo bash /opt/sonarqube-5.0.1/bin/linux-x86-32/sonar.sh start</code></p>
+</section>
+
+<section>
+  <h1 id="Servers">Servers</h1>
+
+  <h2 id="Servers_Jetty">Jetty</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.eclipse.org/jetty/">Home</a></li>
+    </ul>
+  </div>
+
+  <h2 id="Servers_WildFly">WildFly</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://wildfly.org/">Home</a></li>
+      <li><a href="https://github.com/wildfly/quickstart">QuickStart</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Servers_WildFly_SSL">Наладка SSL</h3>
+  <p><a href="https://docs.jboss.org/author/pages/viewpage.action?pageId=66322705">SSL setup guide</a></p>
+  <p><a href="https://stackoverflow.com/questions/29138478/how-to-configure-ssl-in-wildfly-8-2-0-server">how to configure ssl in wildfly 8.2.0 server?</a></p>
+  <p><a href="http://reallifejava.com/configuring-ssl-in-wildfly-8/">Configuring SSL in Wildfly 8/9/10</a></p>
+
+  <h3 id="Servers_WildFly_PostgreSQL">Усталёўка драйвэра PostgreSQL</h3>
+  <ol>
+    <li>спампоўваем адпаведную вэрсію драйвэру з <a href="https://jdbc.postgresql.org/download.html">https://jdbc.postgresql.org/download.html</a> у тэчку <code class="language-bash">/tmp</code></li>
+    <li>
+      Запускаем кансоль <i>WildFly</i>:
+
+      <pre><code class="language-bash">
+bin/jboss-cli.sh
+</code></pre>
+
+      і ў кансолі злучаемся з сэрвэрам:
+
+      <pre><code class="language-bash">
+You are disconnected at the moment. Type 'connect' to connect to the server or 'help' for the list of supported commands.
+[disconnected /] connect
+[standalone@localhost:9990 /]
+</code></pre>
+
+    </li>
+    <li>
+      Наступным крокам запускаем каманду ў кансолі:
+
+      <pre><code class="language-bash">
+module add --name=org.postgres --resources=/tmp/postgresql-9.4-1202.jdbc42.jar --dependencies=javax.api,javax.transaction.api,javax.servlet.api
+</code></pre>
+
+    </li>
+    <li>
+      А потым такую:
+
+      <pre><code class="language-bash">
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
+</code></pre>
+
+    </li>
+  </ol>
+  <p>Цяпер у файле канфігурацыі <i>WildFly</i> (<code class="language-bash">standalone.xml</code>) можна дадаваць <i>datasource</i> да БД <i>PostgreSQL</i>:</p>
+
+  <pre data-line="6,15-17"><code class="language-xml">
+&lt;subsystem xmlns="urn:jboss:domain:datasources:4.0"&gt;
+    &lt;datasources&gt;
+        &lt;datasource jta="true" jndi-name="java:jboss/datasources/PostgresDS"
+              pool-name="PostgresDS" enabled="true" use-java-context="true" use-ccm="true"&gt;
+            &lt;connection-url&gt;jdbc:postgresql://localhost:5432/example&lt;/connection-url&gt;
+            &lt;driver&gt;postgres&lt;/driver&gt;
+            &lt;security&gt;
+                &lt;user-name&gt;user&lt;/user-name&gt;
+                &lt;password&gt;password&lt;/password&gt;
+            &lt;/security&gt;
+        &lt;/datasource&gt;
+        ...
+        &lt;drivers&gt;
+            ...
+            &lt;driver name="postgres" module="org.postgres"&gt;
+                &lt;driver-class&gt;org.postgresql.Driver&lt;/driver-class&gt;
+            &lt;/driver&gt;
+        &lt;/drivers&gt;
+    &lt;/datasources&gt;
+&lt;/subsystem&gt;
+</code></pre>
+
+</section>
+
+<section>
+  <h1 id="DeploymentInCloud">Воблачны хостынг</h1>
+
+  <h2 id="Heroku">Heroku</h2>
+
+  <p><a href="https://devcenter.heroku.com/categories/java">Java on Heroku</a></p>
+  <p><a href="https://devcenter.heroku.com/articles/java-learn-more">Learn More about Heroku for Java</a></p>
+  <p><a href="https://devcenter.heroku.com/articles/java-webapp-runner">Deploying Tomcat-based Java Web Applications with Webapp Runner</a></p>
+  <p><a href="https://devcenter.heroku.com/articles/play-java-websockets">Using WebSockets on Heroku with Java and the Play Framework</a></p>
+  <p><a href="https://github.com/heroku/devcenter-java-database">Connecting to Relational Databases on Heroku with Java</a></p>
+</section>

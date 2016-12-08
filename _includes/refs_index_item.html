@@ -1,0 +1,6 @@
+{% capture ref_path %}{{include.caption | downcase}}{% endcapture %}
+{% include base_path %}
+
+<li class='{% if page.url contains ref_path %} active {% endif %}'>
+  <a href="{{ base_path }}/{{ ref_path }}/" title="{{ include.description }}">{{ include.caption }}</a>
+</li>

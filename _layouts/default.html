@@ -15,39 +15,15 @@ layout: compress
 
   {% include styles.html %}
 
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ base_path }}/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 <div id="container">
   <div id="index">
-    <div id="main_index">
-      <ul>
-        <li><a href="htmlRef/index.html" title="Даведнік па HTML">HTML</a></li>
-        <li><a href="cssRef/index.html" title="Даведнік па CSS">CSS</a></li>
-        <li><a href="jsRef/index.html" title="Даведнік па JavaScript">JS</a></li>
-        <li><a href="webRef/index.html" title="Распрацоўка сайтаў і сеціўных праграмаў">Web</a></li>
-      </ul>
-      <ul>
-        <li><a href="codingRef/index.html" title="Даведнік па тэорыі і прынцыпах праграмаваньня">Coding</a></li>
-        <li><a href="javaRef/index.html" title="Даведнік па Java">Java</a></li>
-        <li><a href="scalaRef/index.html" title="Даведнік па Scala">Scala</a></li>
-        <li><a href="rubyRef/index.html" title="Даведнік па Ruby">Ruby</a></li>
-        <li><a href="railsRef/index.html" title="Даведнік па Ruby-on-Rails">Rails</a></li>
-      </ul>
-      <ul>
-        <li><a href="linuxRef/index.html" title="Даведнік па Linux">Linux</a></li>
-        <li><a href="idesRef/index.html" title="Даведнік па асяродкам распрацоўкі">IDEs</a></li>
-        <li><a href="gitRef/index.html" title="Даведнік па Git">Git</a></li>
-        <li><a href="deployRef/index.html" title="Даведнік па разгортваньні праграм">Deploy</a></li>
-      </ul>
-      <div class="github_link"><a href="https://github.com/yurtsevich/Manuals" title="Зыходнікі ўсіх даведнікаў на GitHub"></a></div>
-    </div>
-    <div id="table_of_content">
-      <ul class="tree">
-        <a id="proxy_link" href="#" style="display: none;">Proxy</a>
-      </ul>
-    </div>
+
+    {% include refs_index.html %}
+
   </div>
 
   <article id="content">
@@ -56,14 +32,11 @@ layout: compress
       {{page.title}}
     </header>
 
-    {{base_path}}
-    {{page.url}}
-
     {{ content }}
 
-    {% include footer.html %}
-
     {% include disqus.html %}
+
+    {% include footer.html %}
 
   </article>
 </div>

@@ -1,0 +1,1096 @@
+---
+title: Даведнік па Linux
+description: Даведнік па Linux па-беларуску
+disqus_shortname: tekhnichny-davednik-pa-linux
+---
+
+<p><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/">50 UNIX / Linux Sysadmin Tutorials</a></p>
+<p><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/">50 Most Frequently Used UNIX / Linux Commands (With Examples)</a></p>
+<p><a href="http://www.thegeekstuff.com/2014/03/samba-as-pdc/">How to Setup Samba as Primary Domain Controller in Linux</a></p>
+<p><a href="http://en.wikipedia.org/wiki/Grep">grep (Wikipedia)</a></p>
+<p><a href="http://www.tldp.org/">The Linux Documentation Project</a></p>
+<p><a href="http://community.linuxmint.com/tutorial/view/100">The 5-Minute Essential Shell Tutorial</a></p>
+<p><a href="http://community.linuxmint.com/tutorial/view/778">** My top 15 linux commands ** that everyone should master!</a></p>
+<p><a href="http://community.linuxmint.com/tutorial/view/50">How to close a program that has frozen.</a></p>
+<p><a href="http://community.linuxmint.com/tutorial/view/244">Linux Terminal Command Reference</a></p>
+<p><a href="http://community.linuxmint.com/tutorial/view/834">shell commands</a></p>
+<p><a href="http://www.ibm.com/developerworks/training/kp/l-kp-command/index.html">Basics of Linux system administration: Working at the console</a></p>
+<p><a href="http://www.thegeekstuff.com/2010/09/linux-file-system-structure/">Linux Directory Structure</a></p>
+<p><a href="http://www.fandigital.com/2012/09/better-way-to-hide-file-folder-in.html">Better Way to Hide File / Folder in Nautilus (Ubuntu / Linux)</a></p>
+
+<section>
+  <h1 id="DistributionsComparison">Параўнаньне дыстрыбутываў</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="http://distrowatch.com/">distrowatch.com</a></li>
+      <li><a href="http://en.wikipedia.org/wiki/Comparison_of_Linux_distributions">Wiki</a></li>
+    </ul>
+  </div>
+
+  <p>Увогуле дыстрыбутываў <i>Linux</i> незьлічонае мноства, адны зь якіх зьяўляюцца спадкаемцамі іншых. Прывядзем тут параўнаньне адносна папулярных і істотных зь іх (у парадку зьмяншэньня <a href="http://distrowatch.com/dwres.php?resource=popularity">папулярнасьці</a> (06'2015) зьлева направа):</p>
+  <table>
+    <thead>
+    <tr>
+      <th>Парамэтар \ Сыстэма</th>
+      <th><a href="http://linuxmint.com/">Mint</a></th>
+      <th><a href="http://www.debian.org/">Debian</a></th>
+      <th><a href="http://www.ubuntu.com/">Ubuntu</a></th>
+      <th><a href="http://fedoraproject.org/">Fedora</a></th>
+      <th><a href="http://www.opensuse.org/">openSUSE</a></th>
+      <th><a href="http://www.redhat.com/">CentOS</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Загрузак штодня</td>
+      <td>2950</td>
+      <td>1700</td>
+      <td>1500</td>
+      <td>1460</td>
+      <td>1110</td>
+      <td>940</td>
+    </tr>
+    <tr>
+      <td>Спадкаемца</td>
+      <td>Ubuntu</td>
+      <td>-</td>
+      <td>Debian</td>
+      <td>-</td>
+      <td>Slackware</td>
+      <td>Fedora / RedHat</td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Desktop_environment">Графічны інтэрфэйс</a></td>
+      <td><a href="http://en.wikipedia.org/wiki/Cinnamon_(software)">Cinnamon</a> (<a href="http://en.wikipedia.org/wiki/GNOME">GNOME</a>)</td>
+      <td>GNOME</td>
+      <td><a href="http://en.wikipedia.org/wiki/Unity_(user_interface)">Unity</a> (GNOME)</td>
+      <td>GNOME</td>
+      <td><a href="http://en.wikipedia.org/wiki/KDE">KDE</a></td>
+      <td>GNOME</td>
+    </tr>
+    <tr>
+      <td><a href="http://en.wikipedia.org/wiki/Package_management_system">Кіраваньне пакетамі</a></td>
+      <td><a href="http://en.wikipedia.org/wiki/Dpkg">dpkg</a> (<a href="http://en.wikipedia.org/wiki/Advanced_Packaging_Tool">APT</a>)</td>
+      <td>dpkg (APT)</td>
+      <td>dpkg (APT)</td>
+      <td><a href="http://en.wikipedia.org/wiki/RPM_Package_Manager">RPM</a> (<a href="http://en.wikipedia.org/wiki/Yellowdog_Updater,_Modified">YUM</a>)</td>
+      <td>RPM (<a href="http://en.wikipedia.org/wiki/ZYpp">ZYpp</a>)</td>
+      <td>RPM (YUM)</td>
+    </tr>
+    <tr>
+      <td>Частотнасьць рэлізаў,<br/>1 раз на...</td>
+      <td>6 месяцаў</td>
+      <td>2 гады</td>
+      <td>6 месяцаў</td>
+      <td>6 месяцаў</td>
+      <td>8 месяцаў</td>
+      <td>6 месяцаў</td>
+    </tr>
+    <tr>
+      <td>Асаблівасьці</td>
+      <td>больш прыязны да карыстальніка, найбольш выкарыстоўваемыя рэчы ўжо перадустаноўлены</td>
+      <td>стабільнасьць і кансэрватыўнасьць, не заўсёды самыя сучасныя тэхналёгіі</td>
+      <td>больш прыязны да карыстальніка, але часта зьмяняюцца прынцыповыя рэчы</td>
+      <td>інавацыйны, высокая бясьпека, больш для карпаратыўнага карыстаньня</td>
+      <td>добрая дакумэнтацыя і адміністратыўная прылада, цяжкі і марудны UI</td>
+      <td>бясплатная вэрсія карпаратыўнага ўзроўню</td>
+    </tr>
+    </tbody>
+  </table>
+  <img title="Спрошчаная гісторыя разьвіцьця і ўзаемасувязь вэрсіяў Linux" alt="Спрошчаная гісторыя разьвіцьця і ўзаемасувязь вэрсіяў Linux" src="linux_distro_timeline.png">
+
+</section>
+
+<section>
+  <h1 id="Bash">Каманды радок</h1>
+  <!--div class="refs">
+    <ul>
+      <li><a href="http://how-to.wikia.com/wiki/How_to_set,_print,_or_list_environment_variables">wikia.com</a></li>
+      <li><a href="http://www.troubleshooters.com/linux/prepostpath.htm">troubleshooters.com</a></li>
+      <li><a href="http://www.cyberciti.biz/faq/unix-linux-adding-path/">cyberciti.biz</a></li>
+    </ul>
+  </div-->
+  <p>Выканаць нейкі скрыпт у цяперашнім кантэксьце (тэрмінальным акне) можна камандай <code>source</code>:</p>
+
+  <pre><code class="language-bash">
+$ source .bash_profile
+</code></pre>
+
+  <p>Стварыць скарот нейкай каманды можна пры дапамозе <code>alias</code>:</p>
+
+  <pre><code class="language-bash">
+$ alias pd="pwd"
+</code></pre>
+
+  <h2 id="Bash_PipingAndRedirection">Перакіраваньні ўводу і вываду</h2>
+  <p><code>&gt;</code> перанакіроўвае вывад каманды ў файл:</p>
+
+  <pre><code class="language-bash">
+$ cat lakes.txt | sort > sorted-lakes.txt
+</code></pre>
+
+  <p><code>&gt;&gt;</code> тое ж самае, што і папярэдняе, пры гэтым не перазапісвае зьмесьціва файла але дадае ў яго.</p>
+  <p><code>&lt;</code> бярэ зьмесьціва файла ў якасьці ўводу для каманды:</p>
+
+  <pre><code class="language-bash">
+$ cat < lakes.txt
+</code></pre>
+
+  <p><code>|</code> перадае вывад адной каманды ў якасьці ўводу іншай:</p>
+
+  <pre><code class="language-bash">
+$ cat volcanoes.txt | wc
+</code></pre>
+
+  <p>Тут вынік каманды <code>cat volcanoes.txt</code> будзе пераданы ў якасьці ўводу камандзе <code>wc</code>.</p>
+
+</section>
+
+<section>
+  <h1 id="Environment">Асяродак</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="http://how-to.wikia.com/wiki/How_to_set,_print,_or_list_environment_variables">wikia.com</a></li>
+      <li><a href="http://www.troubleshooters.com/linux/prepostpath.htm">troubleshooters.com</a></li>
+      <li><a href="http://www.cyberciti.biz/faq/unix-linux-adding-path/">cyberciti.biz</a></li>
+    </ul>
+  </div>
+  <p>Каб вывесьці сьпіс усіх зьменных асяродка, можна скарыстацца камандай <code>printenv</code>.</p>
+  <p>Каб вывесьці значэньне толькі пэўнай зьменнай, трэба скарыстацца камандай <code>echo $&lt;Env_Var_Name&gt;</code>, напрыклад:</p>
+
+  <pre><code class="language-bash">
+$ echo $PATH
+</code></pre>
+
+  <p>Пры жаданьні пашырыць існую ці стварыць новую зьменную асяродка трэба скарыстацца камандай:</p>
+
+  <pre><code class="language-bash">
+$ export PATH=$PATH:/path/to/dir
+</code></pre>
+
+  <p>якая дадасьць значэньне <code>/path/to/dir</code> у канец існага значэньня зьменнай <code>PATH</code>.</p>
+  <p>Калі выканаць каманду ў тэрмінальным акне, то гэтая зьмена будзе мець сілу толькі ў гэтым акне. Каб яна мела сілу на працягу ўсёй сэсіі працы пэўнага карыстальніка, трэба дадаць гэтую каманду ў файл <code>.bash_profile</code> (калі актуальна толькі для <code>bash</code>-сэсій, альбо ў <code>.profile</code> для ўсяго астатняга) хатняй тэчкі гэтага карыстальніка. Каб гэтая зьмена была актуальна для сэсій усіх карыстальнікаў, каманду трэба дадаць у файл <code>/etc/profile</code>.</p>
+</section>
+
+<section>
+  <h1 id="Security" data-content-item-open>Бясьпека</h1>
+
+  <h2 id="Security_ID">UID, GID, Groups</h2>
+  <p>Каманда <code>id</code> паказвае <i>UID</i>, <i>GID</i> і <i>ID</i> групаў карыстальніка:</p>
+
+  <pre><code class="language-bash">
+$ id carla
+uid=1000(carla) gid=1000(carla) groups=1000(carla), 4(adm),24(cdrom),27(sudo),30(dip),46(plugdev), 113(lpadmin),128(sambashare),999(docker)
+</code></pre>
+
+  <p>Потым гэтымі значэньнямі можна карыстацца ў іншых камандах, ці калі патрэбна пазначэньне карыстальніка. Напрыклад <a href="#FileSystem_Search_CLI">пошук файлаў</a>, якія належаць пэўнаму карыстальніку ў карнявой тэчцы <code>home</code>:</p>
+
+  <pre><code class="language-bash">
+$ find /home -uid 1001 | tee 1001-files.txt
+</code></pre>
+
+
+  <h2 id="Security_UserGroups">Групы карыстальнікаў</h2>
+  <p>Вывесьці сьпіс усіх групаў у сыстэме можна наступным чынам:</p>
+
+  <pre><code class="language-bash">
+$ cat /etc/group | sort
+</code></pre>
+
+  <p>Вывесьці сьпіс групаў, да якіх належыць цяперашні залагінены карыстальнік:</p>
+
+  <pre><code class="language-bash">
+$ groups
+</code></pre>
+
+  <p>Дадаць, выдаліць і зьмяніць атрыбуты групы можна камандамі <code>groupadd</code>, <code>groupdel</code>, <code>groupmod</code>. А таксама аналягі першай і другой зь іх: <code>addgroup</code>, <code>delgroup</code> (у <i>Debian</i> і яго вытворных).</p>
+
+  <h2 id="Security_Users">Карыстальнікі</h2>
+  <p>Вывесьці імя цяперашняга залагіненага карыстальніка:</p>
+
+  <pre><code class="language-bash">
+$ whoami
+</code></pre>
+
+  <p>Дадаць, выдаліць і зьмяніць атрыбуты карыстальніка можна камандамі <code>useradd</code>, <code>userdel</code>, <code>usermod</code>. А таксама аналягі першай і другой зь іх: <code>adduser</code>, <code>deluser</code> (у <i>Debian</i> і яго вытворных).</p>
+
+  <p>Дадаць цяперашняга залагіненага карыстальніка да пэўнай группы:</p>
+
+  <pre><code class="language-bash">
+$ sudo usermod -G &lt;NAME_OF_GROUP&gt; -a $(whoami)
+</code></pre>
+
+  <p>Каманда <code>deluser</code> мае наступныя карысныя опцыі:</p>
+
+  <pre><code class="language-bash">
+$ deluser --help
+deluser USER
+  remove a normal user from the system
+  example: deluser mike
+
+  --remove-home             remove the users home directory and mail spool
+  --remove-all-files        remove all files owned by user
+  --backup                  backup files before removing.
+  --backup-to &lt;DIR&gt;         target directory for the backups.
+                            Default is the current directory.
+  --system                  only remove if system user
+</code></pre>
+
+  <p>А каманда <code>userdel</code> наступныя:</p>
+
+  <pre><code class="language-bash">
+$ userdel --help
+Usage: userdel [options] LOGIN
+
+Options:
+  -f, --force                   force removal of files,
+                                even if not owned by user
+  -h, --help                    display this help message and exit
+  -r, --remove                  remove home directory and mail spool
+  -R, --root CHROOT_DIR         directory to chroot into
+  -Z, --selinux-user            remove any SELinux user mapping for the user
+</code></pre>
+
+
+  <h2 id="Security_Ownership">Валоданьне файламі і тэчкамі</h2>
+  <p>Даведацца хто валодае выключным правам на пэўны файл ці тэчку можна некалькімі спосабамі. Першы:</p>
+
+  <pre><code class="language-bash">
+$ ls -l /path/to/file
+</code></pre>
+
+  <p>Другі:</p>
+
+  <pre><code class="language-bash">
+$ stat /path/to/file
+
+$ stat py
+  File: `py'
+  Size: 32              Blocks: 8          IO Block: 4096   regular file
+Device: 801h/2049d      Inode: 429064      Links: 1
+Access: (0777/-rwxrwxrwx)  Uid: ( 1000/  razvan)   Gid: ( 1000/  razvan)
+Access: 2012-07-27 17:49:05.682143441 +0300
+Modify: 2012-07-01 03:58:02.848540175 +0300
+Change: 2012-08-01 21:12:57.129819212 +0300
+</code></pre>
+
+  <p>І апошні аналягічны папярэдняму, але замест падрабязнай інфармацыі выводзім толькі карыстальніка і групу:</p>
+
+  <pre><code class="language-bash">
+$ stat -c "%U %G" /path/to/file
+</code></pre>
+
+  <p>Зьмяніць права валоданьня усіх файлаў і тэчкаў у тэчцы <code>/home/username</code> і ўва ўсіх яе ўкладзеных тэчках (аргумэнт <i>-R</i>) на карыстальніка <code>newuser</code> і групу з такім жа імем:</p>
+
+  <pre><code class="language-bash">
+$ chown -R newuser:newuser /home/username
+</code></pre>
+
+  <p>Таксама можна прабегчыся па ўсім файлам сыстэмы і зьмяніць валоданьне з аднаго карыстальніка на іншага:</p>
+
+  <pre><code class="language-bash">
+$ find / -uid 1003 -exec chown -v 1010:1010 {} \;
+</code></pre>
+
+  <h2 id="Security_Processes">Працэсы</h2>
+  <p>Праглядзець сьпіс працэсаў, якія былі запушчаныя пэўным карыстальнікам можна наступным чынам:</p>
+
+  <pre><code class="language-bash">
+$ ps U username
+</code></pre>
+
+  <p>А "прыбіць" усе такія працэсы можна адмысловай камандай <code>slay</code>:</p>
+
+  <pre><code class="language-bash">
+$ slay -clean username
+</code></pre>
+
+
+
+</section>
+
+<section>
+  <h1 id="Programs" data-content-item-open>Праграмы</h1>
+
+  <h2 id="Programs_RegisterFromArchive">Рэгістрацыя праграмы з архіву</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://askubuntu.com/questions/26632/how-to-install-eclipse">askubuntu.com</a></li>
+    </ul>
+  </div>
+  <p>Калі праграма пастаўляецца ня ў выглядзе пакету, але ў выглядзе архіву, які трэба распакаваць і запусьціць праграму як ёсьць, тады трэба яе прадставіць сыстэме, інакш апошняя ня будзе ведаць пра яе існаваньне:</p>
+  <ol>
+    <li>Загружаем архіў і распакоўваем яго ў тэчку па жаданьні. Напрыклад, загружаем <a href="http://eclipse.org"><i>Eclipse</i></a> і распакоўваем у <code>/usr/lib</code></li>
+    <li>Ствараем выконваемы файл:
+
+      <pre><code class="language-bash">
+$ sudo touch /usr/bin/eclipse
+$ sudo chmod 755 /usr/bin/eclipse
+</code></pre>
+
+      Адчыняем файл пры дапамозе тэкставага рэдактару і ўстаўляем туды наступны скрыпт:
+
+      <pre><code class="language-text">
+#!/bin/sh
+export ECLIPSE_HOME="/usr/lib/eclipse"
+$ECLIPSE_HOME/eclipse $*
+</code></pre>
+
+      і захоўваем.
+    </li>
+    <li>Ствараем пункт мэню для <i>Gnome</i>. Для гэтага ствараем файл <code>eclipse.desktop</code> у тэчцы <code>/usr/share/applications/</code>, ўстаўляем у яго наступны тэкст:
+
+      <pre><code class="language-text">
+[Desktop Entry]
+Encoding=UTF-8
+Name=Eclipse
+Comment=Eclipse IDE
+Exec=eclipse
+Icon=/usr/lib/eclipse/icon.xpm
+Terminal=false
+Type=Application
+Categories=GNOME;Application;Development;
+StartupNotify=true
+</code></pre>
+
+      і захоўваем.
+    </li>
+  </ol>
+  <p>Усё, цяпер праграму можна запускаць праз мэню.</p>
+
+  <h2 id="Programs_update-alternatives">update-alternatives</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://www.opennet.ru/man.shtml?topic=update-alternatives&category=8&russian=0">Man</a></li>
+    </ul>
+  </div>
+  <p><code>update-alternatives</code>&nbsp;&ndash; гэта цэлая падсыстэма, якая абслугоўвае сымбалічныя спасылкі, якія вызначаюць каманды, файлы і дырэкторыі, якія выкарыстоўваюцца па-змоўчваньні.</p>
+  <p>Адлюстраваць усе альтэрнатыўныя шляхі пэўнай спасылкі можна наступным чынам:</p>
+
+  <pre><code class="language-bash">
+$ update-alternatives --list java
+/usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
+/usr/lib/jvm/java-1.8.0_51-oraclejdk-x64/jre/bin/java
+/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+</code></pre>
+
+  <p>Адлюстраваць усе альтэрнатывы для пэўнай спасылкі ўлучна з іх прыярытэтамі, а таксама з пазначэньнем якая зь іх зьяўляецца актыўнай на дадзены момант можна наступным чынам:</p>
+
+  <pre><code class="language-bash">
+$ update-alternatives --display java
+java - manual mode
+  link currently points to /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
+/usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java - priority 0
+/usr/lib/jvm/java-1.8.0_51-oraclejdk-x64/jre/bin/java - priority 0
+/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java - priority 1071
+  slave java.1.gz: /usr/lib/jvm/java-7-openjdk-amd64/jre/man/man1/java.1.gz
+Current 'best' version is '/usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java'.
+</code></pre>
+
+  <p>Дадаць альтэрнатыўны шлях да пэўнай спасылкі можна наступным чынам:</p>
+
+  <pre><code class="language-bash">
+$ update-alternatives --install java /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
+</code></pre>
+
+  <p>Выдаліць альтэрнатыву можна наступным чынам:</p>
+
+  <pre><code class="language-bash">
+$ update-alternatives --remove java /usr/lib/jvm/java-1.7.0_79-oraclejdk-x64/jre/bin/java
+</code></pre>
+
+  <p>Альбо выдаліць усе альтэрнатывы, то бок увогуле спасылку:</p>
+
+  <pre><code class="language-bash">
+$ update-alternatives --remove-all java
+</code></pre>
+
+  <p>Выбраць актыўную на дадзены момант альтэрнатыву можна наступным чынам:</p>
+
+  <pre><code class="language-bash">
+$ update-alternatives --config java
+</code></pre>
+
+  <p>з наступным вынікам:</p>
+  <img style="margin-top: 10px;" title="Вынік выкананьня каманды update-alternatives --config" alt="Вынік выкананьня каманды update-alternatives --config" src="update-alternatives01.jpg">
+
+  <h2 id="Programs_pkg">Пакеты</h2>
+  <p>Праглядзець сьпіс усталяваных сыстэмных пакетаў:</p>
+
+  <pre><code class="language-bash">
+$ dpkg --get-selections | grep node
+node-less         install
+nodejs            install
+</code></pre>
+
+  <p>Усталяваць новы пакет:</p>
+
+  <pre><code class="language-bash">
+$ sudo apt-get install npm
+</code></pre>
+
+</section>
+
+
+<section>
+  <h1 id="FileSystem" data-content-item-open>Файлавая сыстэма</h1>
+
+  <h2 id="FileSystem_Search">Пошук файлаў і тэчак</h2>
+  <p><a href="http://www.howtogeek.com/112674/how-to-find-files-and-folders-in-linux-using-the-command-line/">How to Find Files and Folders in Linux Using the Command Line</a></p>
+  <p><a href="http://stackoverflow.com/questions/16956810/finding-all-files-containing-a-text-string-in-linux">Finding all files containing a text string in linux</a></p>
+  <p><a href="http://content.hccfl.edu/pollock/unix/findcmd.htm">A Unix/Linux “find” Command Tutorial</a></p>
+
+  <h3 id="FileSystem_Search_GUI">Праз графічны інтэрфэйс</h3>
+  <p>Па-першае, шукаць можна праз стандартны файлавы мэнэджэр:</p>
+  <p>
+    <img src="img001.png">
+    <img src="img002.png">
+    <img src="img003.png">
+  </p>
+  <p>Перавагай гэтага мэтаду зьяўляецца яго прастата і візуалізацыя, нязручнасьцю&nbsp;&ndash; нягнуткасьць і тое, што вынікі пошуку адлюстроўваюцца ў плоскім выглядзе, без герархіі, не зразумела дзе дакладна ўнутры цяперашняй тэчцы знаходзіцца той ці іншы файл:</p>
+  <p><img src="img004.png"></p>
+
+  <h3 id="FileSystem_Search_CLI">Праз камандны радок</h3>
+  <p>Больш магутны сродак пошуку&nbsp;&ndash; сыстэмная каманда <code>find</code>:</p>
+
+  <pre><code class="language-bash">
+$ find .
+</code></pre>
+
+  <img src="img005.png">
+  <p><code>find -type l</code>&nbsp;&ndash; пералічыць усе сымлінкі (<i>symlinks</i>) цяперашняй тэчцы і ўва ўсіх укладзеных у яе.</p>
+  <p></p>
+
+  <h2 id="FileSystem_FilesInfo">Інфармацыя аб файлах</h2>
+  <p>Каманда <code>file &lt;FILE_NAME&gt;</code> выводзіць інфармацыю пра тое, што зь сябе ўяўляе пэўны файл:</p>
+
+  <pre><code class="language-bash">
+$ file branching.svg
+branching.svg: SVG Scalable Vector Graphics image
+
+$ file artifacts.xml
+artifacts.xml: XML  document text
+
+$ file java
+java: symbolic link to '/etc/alternatives/java'
+
+$ file profile
+profile: ASCII text
+</code></pre>
+
+  <h2 id="FileSystem_LinksAtDesktop">Лінкі на дэсктопе</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.linuxjournal.com/content/shortcut-creating-shortcuts">linuxjournal.com</a></li>
+    </ul>
+  </div>
+  <p>Пры жаданьні стварыць на дэсктопе лінк да файла ці тэчкі, можна скарыстацца камандай лінкаваньня <code>ln -s</code>:</p>
+
+  <pre><code class="language-bash">
+$ ln -s &lt;TARGET&gt; &lt;LINK&gt;
+</code></pre>
+
+  <p>дзе ў якасьці <code>&lt;TARGET&gt;</code> пазначаецца шлях да файла/тэчкі, а ў якасьці <code>&lt;LINK&gt;</code>&nbsp;&ndash; элемэнт дэсктопу (інакш кажучы іконка), які будзе злучаны з target-файлам/тэчкай. Напрыклад:</p>
+
+  <pre><code class="language-bash">
+$ ln -s /usr/bin/eclipse /home/my_home/Desktop/eclipse
+</code></pre>
+
+  <p>У выніку на дэсктопе зьявіцца іконка запуску экліпсы.</p>
+
+  <h2 id="FileSystem_FoldersContent">Зьмесьціва тэчак</h2>
+  <p><code>ls -Fal</code>&nbsp;&ndash; пералічыць увесь зьмест цяперашняй тэчцы, у тым ліку пакажа куды спасылаюцца сымлінкі.</p>
+
+  <h3 id="FileSystem_FoldersContent_Sorting">Сартаваньне</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://askubuntu.com/questions/239371/how-do-i-list-folders-with-underscores-first">askubuntu.com</a></li>
+    </ul>
+  </div>
+  <p>Правілы змоўчнага сартаваньня тэчак ігнаруюць адмысловыя сымбалі, якія некаторыя <i>Windows</i>-карыстальнікі выкарыстоўваюць для асобнага групаваньня пэўных тэчак, напрыклад знак падкрэсьліваньня. Каб праверыць які мэтад сартаваньня выкарыстоўвае сыстэма, трэба ў кансолі запусьціць каманду <code>locale</code>, якая выдасьць падобны вынік:</p>
+
+  <pre><code class="language-text">
+LANG=en_US.UTF-8
+LANGUAGE=
+LC_CTYPE="en_US.UTF-8"
+LC_NUMERIC=be_BY.UTF-8
+LC_TIME=be_BY.UTF-8
+LC_COLLATE="en_US.UTF-8"
+LC_MONETARY=be_BY.UTF-8
+LC_MESSAGES="en_US.UTF-8"
+LC_PAPER=be_BY.UTF-8
+LC_NAME=be_BY.UTF-8
+LC_ADDRESS=be_BY.UTF-8
+LC_TELEPHONE=be_BY.UTF-8
+LC_MEASUREMENT=be_BY.UTF-8
+LC_IDENTIFICATION=be_BY.UTF-8
+LC_ALL=
+</code></pre>
+
+  <p>Значэньне атрыбуту <code>LC_COLLATE</code> можна зьмяніць на <code>C</code>, тады мэтад сартаваньня зьменіцца і адмысловыя сымбалі ўжо будуць улічвацца, хаця і не цалкам так жа, як у <i>Windows</i>. Робіцца гэта пры дапамозе наступнай каманды:</p>
+
+  <pre><code class="language-bash">
+$ update-locale LC_COLLATE=C
+</code></pre>
+
+  <h2 id="FileSystem_FilesContent">Зьмесьціва файлаў</h2>
+  <p><code>sort</code>&nbsp;&ndash; сартуе радкі файлу ў альфабэтным парадку.</p>
+  <p><code>uniq</code>&nbsp;&ndash; выдаляе дубліруючыя радкі і выводзіць толькі ўнікальныя.</p>
+  <p><code>grep</code>&nbsp;&ndash; шукае ў пазначаных файлах супадзеньні па рэгулярных выразах:</p>
+
+  <pre><code class="language-bash">
+$ grep Mount mountains.txt
+</code></pre>
+
+  <p>альбо без уліку рэгістру:</p>
+
+  <pre><code class="language-bash">
+$ grep -i Mount mountains.txt
+</code></pre>
+
+  <p>Наступны варыянт шукае ўва ўсіх файлах пазначанай тэчкі (парамэтар <code>R</code>) і выводзіць толькі імёны файлаў (<code>l</code>), у якіх знайшлося супадзеньне:</p>
+
+  <pre><code class="language-bash">
+$ grep -Rl Arctic /home/ccuser/workspace/geography
+</code></pre>
+
+  <p><code>sed</code>&nbsp;&ndash; "знайсьці і замяніць":</p>
+
+  <pre><code class="language-bash">
+$ sed -i 's/snow/rain/g' forests.txt
+</code></pre>
+
+  <p>Знойдзе ўсе словы <code>snow</code> у файле <code>forests.txt</code> і заменіць (<code>s</code>) на слова <code>rain</code>, прычым ня толькі першае трапляньне <code>snow</code> у радку, але ўсе трапляньні (<code>g</code>), пры тым і без уліку рэгістру (<code>-i</code>).</p>
+
+  <h2 id="FileSystem_Compression">Сьцісканьне</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/4/html/Step_by_Step_Guide/s1-managing-compressing-archiving.html">RedHat</a></li>
+      <li><a href="http://www.mkyong.com/linux/how-to-zip-unzip-tar-in-unix-linux/">mkyong.com</a></li>
+      <li><a href="http://www.cyberciti.biz/howto/question/general/compress-file-unix-linux-cheat-sheet.php">cyberciti.biz</a></li>
+    </ul>
+  </div>
+  <p>Сьціснуць файл/тэчку:</p>
+
+  <pre><code class="language-bash">
+$ tar -cvzf archive.tar.gz /path/to/file/or/directory
+</code></pre>
+
+  <p>Распакаваць архіў ў цяперашнюю тэчку без выдаленьня архіву:</p>
+
+  <pre><code class="language-bash">
+$ tar -xvzf archive.tar.gz
+</code></pre>
+
+</section>
+
+<section>
+  <h1 id="Network" data-content-item-open>Сетка й злучэньні</h1>
+  <p><a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-16-04">Initial Server Setup with Ubuntu 16.04</a></p>
+
+  <h2 id="Network_Netmasks">Парамэтры для сеціўных масак</h2>
+  <table class="centered" style="width: 60%;"><tbody>
+  <tr><th>Маска дзес.</th><th>Адрасоў</th><th>Хастоў</th><th>Маска клясічная</th></tr>
+  <tr><td>/30</td><td>4</td><td>2</td><td>255.255.255.252</td></tr>
+  <tr><td>/29</td><td>8</td><td>6</td><td>255.255.255.248</td></tr>
+  <tr><td>/28</td><td>16</td><td>14</td><td>255.255.255.240</td></tr>
+  <tr><td>/27</td><td>32</td><td>30</td><td>255.255.255.224</td></tr>
+  <tr><td>/26</td><td>64</td><td>62</td><td>255.255.255.192</td></tr>
+  <tr><td>/25</td><td>128</td><td>126</td><td>255.255.255.128</td></tr>
+  <tr><td>/24</td><td>256</td><td>254</td><td>255.255.255.0</td></tr>
+  <tr><td>/23</td><td>512</td><td>510</td><td>255.255.254.0</td></tr>
+  <tr><td>/22</td><td>1024</td><td>1022</td><td>255.255.252.0</td></tr>
+  <tr><td>/21</td><td>2048</td><td>2046</td><td>255.255.248.0</td></tr>
+  <tr><td>/20</td><td>4096</td><td>4094</td><td>255.255.240.0</td></tr>
+  <tr><td>/19</td><td>8192</td><td>8190</td><td>255.255.224.0</td></tr>
+  <tr><td>/18</td><td>16384</td><td>16382</td><td>255.255.192.0</td></tr>
+  <tr><td>/17</td><td>32768</td><td>32766</td><td>255.255.128.0</td></tr>
+  <tr><td>/16</td><td>65536</td><td>65534</td><td>255.255.0.0</td></tr>
+  </tbody></table>
+
+  <h2 id="Network_Analysis">Аналіз трафіку</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://danielmiessler.com/study/tcpdump/">tcpdump</a></li>
+    </ul>
+  </div>
+  <p>Для аналізу трафіку выкарыстоўваецца каманда <code>tcpdump</code>.</p>
+  <p>Магчымыя опцыі:</p>
+  <ul>
+    <li><code>-n</code>&nbsp;&ndash; не вызначае імёны хастоў (будуць выводзіцца <i>IP</i>-адрасы);</li>
+    <li><code>-nn</code>&nbsp;&ndash; не вызначае імёны хастоў альбо партоў;</li>
+    <li><code>-q</code>&nbsp;&ndash; выводзіць менш інфармацыі;</li>
+    <li><code>-v</code>, <code>-vv</code>, <code>-vvv</code>&nbsp;&ndash; выводзіць больш пакетнай інфармацыі;</li>
+    <li><code>-c<i>X</i></code>&nbsp;&ndash; атрымлівае <i>X</i> пакетаў і спыняе працу;</li>
+    <li><code>-s <i>X</i></code>&nbsp;&ndash; вызначае памер у байтах таго фрагмэнту пакету, які будзе «захоплены» (<i>captured</i>) праграмай (па змоўчваньні 96, каб прыняць увесь зьмест трэба пазначыць <code>-s 0</code>);</li>
+    <li><code>-i any</code>&nbsp;&ndash; каманда будзе сачыць за ўсімі існуючымі сеціўнымі інтэрфэйсамі;</li>
+    <li><code>-i eth0</code>&nbsp;&ndash; каманда будзе сачыць толькі за пазначаным сеціўным інтэрфэйсам;</li>
+    <li><code>-S</code>&nbsp;&ndash; выводзяцца абсалютныя <i>sequence</i>-значэньні;</li>
+    <li><code>-e</code>&nbsp;&ndash; дадаткова выводзіцца і <i>ethernet</i>-загаловак;</li>
+    <li><code>-X</code>&nbsp;&ndash; зьмесьціва пакета будзе выводзіцца як у шаснаццацірычным, гэтак і ў <i>ASCII</i>-фармаце;</li>
+    <li><code>-XX</code>&nbsp;&ndash; тое ж што і <code>-X</code>, але дадаткова ужываецца і да <i>ethernet</i>-загалоўку;</li>
+    <li><code>icmp</code>&nbsp;&ndash; сочыць толькі за <i>ICMP</i>-пакетамі (яшчэ магчымыя значэньні <code>tcp</code> i <code>udp</code>);</li>
+    <li><code>-D</code>&nbsp;&ndash; выводзіць сьпіс даступных сеціўных інтэрфэйсаў;</li>
+    <li><code>-w CAPTURE_FILE</code>&nbsp;&ndash; перанакіроўвае вывад у <code>CAPTURE_FILE</code>-файл;</li>
+  </ul>
+  <p>Прывядзем некаторыя прыклады:</p>
+  <ul>
+    <li>Базавая інфармацыя пра трафік без асаблівых наладаў:
+
+      <pre><code class="language-bash">
+$ tcpdump -nS
+</code></pre>
+
+    </li>
+    <li>Больш разгорнутая інфармацыя пра трафік без вызначэньня імёнаў і партоў:
+
+      <pre><code class="language-bash">
+$ tcpdump -nnvvS
+</code></pre>
+
+    </li>
+    <li>Больш разгорнутая інфармацыя пра трафік без вызначэньня імёнаў і партоў:
+
+      <pre><code class="language-bash">
+$ tcpdump -nnvvS
+</code></pre>
+
+    </li>
+    <li>Дададзім <code>-X</code> для дадатковага вываду зьместу пакетаў:
+
+      <pre><code class="language-bash">
+$ tcpdump -nnvvXS
+</code></pre>
+
+    </li>
+    <li>Павялічваем памер вывадзімага зьместу пакетаў да 1514 байтаў:
+
+      <pre><code class="language-bash">
+$ tcpdump -nnvvXSs 1514
+</code></pre>
+
+    </li>
+    <li>Адсочваем дакладна 2 пакета пратаколу <i>ICMP</i> (пара <i>ping</i>- і <i>pong</i>-пакетаў каманды <code>ping</code>):
+
+      <pre><code class="language-bash">
+$ tcpdump -nnvvXSs 0 -c2 icmp
+</code></pre>
+
+      вынік будзе прыкладна наступны:
+      <img title="Вынік выкананьня каманды tcpdump" alt="Вынік выкананьня каманды tcpdump" src="tcpdump01.jpg" style="margin-top: 10px;">
+    </li>
+  </ul>
+  <p>Акрамя прыведзеных вышэй опцыяў можна задаваць дадатковыя парамэтры (<code>host</code>, <code>src</code>, <code>dst</code>, <code>net</code>, <code>port</code>, <code>src port</code>, <code>dst port</code>), а таксама камбінаваць іх у лягічныя выразы праз <code>or</code> і <code>and</code>:</p>
+  <pre><code class="language-bash">
+$ tcpdump host 1.2.3.4
+
+$ tcpdump src 2.3.4.5
+$ tcpdump dst 3.4.5.6
+
+$ tcpdump net 1.2.3.0/24
+
+$ tcpdump port 3389
+
+$ tcpdump src port 1025
+$ tcpdump dst port 389
+
+$ tcpdump src port 1025 or src port 1026
+$ tcpdump udp and src port 53
+</code></pre>
+
+  <p>Таксама можна задаваць не адзін порт, але дыяпазон:</p>
+
+  <pre><code class="language-bash">
+$ tcpdump portrange 1025-1026
+</code></pre>
+
+  <p>І абмяжоўваць памер адсочваемых пакетаў:</p>
+
+  <pre><code class="language-bash">
+$ tcpdump less 32
+$ tcpdump greater 128
+</code></pre>
+
+  <h2 id="Network_SSH">SSH</h2>
+
+  <h3 id="Network_SSH_KeyPair">Генэрацыя ключоў</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://linux.die.net/man/1/ssh-keygen">Man</a></li>
+      <li><a href="https://help.github.com/articles/generating-ssh-keys/">GitHub</a></li>
+    </ul>
+  </div>
+
+  <pre><code class="language-bash">
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/you/.ssh/id_rsa): /home/you/.ssh/your_rsa
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/you/.ssh/your_rsa.
+Your public key has been saved in /home/you/.ssh/your_rsa.pub.
+The key fingerprint is:
+1e:b2:dd:ee:9b:61:ae:34:78:04:d1:26:2b:ad:24:24 your_email@example.com
+</code></pre>
+
+  <p>Шэраг магчымых опцыяў:</p>
+  <ul>
+    <li><code>-t</code>&nbsp;&ndash; тып ключа. Магчымыя значэньні <code>rsa1</code> для пратаколу вэрсіі 1 і <code>rsa</code>/<code>dsa</code> для пратаколу вэрсіі 2.</li>
+    <li><code>-b</code>&nbsp;&ndash; памер ключа ў байтах. Памер <i>rsa</i>-ключоў можа быць ад 768, змоўчным значэньнем зьяўляецца 2048, што лічыцца цалкам дастатковым. Памер <i>dsa</i>-ключоў павінен быць дакладна 1024.</li>
+    <li><code>-C</code>&nbsp;&ndash; камэнтар (звычайна <i>email</i>).</li>
+    <li><code>-f</code>&nbsp;&ndash; імя файлу, куды будзе зьмешчаны ключ.</li>
+  </ul>
+
+  <h3 id="Network_SSH_KeyFingerprint">Fingerprint ключа</h3>
+  <p>Каб пабачыць <i>fingerprint</i> ключа, можна скарыстацца камандамі:</p>
+  <ul>
+    <li><i>fingerprint</i> публічнага ключа цяперашняга карыстальніка:
+
+      <pre><code class="language-bash">
+$ ssh-add -l
+</code></pre>
+
+    </li>
+    <li><i>fingerprint</i> адвольнага ключа з пазначэньнем шляху да гэтага ключа:
+
+      <pre><code class="language-bash">
+$ ssh-keygen -lf ~/.ssh/id_rsa.pub
+</code></pre>
+
+    </li>
+  </ul>
+
+  <h3 id="Network_SSH_Tunnel">Тунэль</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/">nerderati.com</a></li>
+      <li><a href="http://www.cyberciti.biz/faq/set-up-ssh-tunneling-on-a-linux-unix-bsd-server-to-bypass-nat/">cyberciti.biz</a></li>
+      <li><a href="http://stackoverflow.com/questions/16960567/access-git-repo-via-ssh-tunnel">StackOverflow</a></li>
+    </ul>
+  </div>
+  <p>Каб зрабіць <i>SSH</i>-тунэль, можна скарыстацца камандай:</p>
+
+  <pre><code class="language-bash">
+$ ssh -N -L &lt;LOCAL_PORT&gt;:&lt;REMOTE_HOST&gt;:&lt;REMOTE_PORT&gt; &lt;USER_NAME&gt;@&lt;SSH_SERVER&gt;
+</code></pre>
+
+  <p>Тлумачэньне:</p>
+  <ul>
+    <li><code>-N</code>&nbsp;&ndash; вызначае, што злучэньне будзе не інтэрактыўным (<i>SSH</i>-кансоль адлеглага сэрвэру не будзе адкрытая).</li>
+    <li><code>-L</code>&nbsp;&ndash; вызначае, што злучэньне з лякальным партом будзе перанакіроўвацца на адлеглы порт.</li>
+    <li><code>&lt;LOCAL_PORT&gt;</code>&nbsp;&ndash; нумар лякальнага парта, павінен не перакрывацца з іншымі адкрытымі партамі і быць большым за 1024.</li>
+    <li><code>&lt;REMOTE_HOST&gt;</code>&nbsp;&ndash; імя ці <i>IP</i>-адрас адлеглага хаста, зь якім мы насамрэч жадаем злучыцца.</li>
+    <li><code>&lt;REMOTE_PORT&gt;</code>&nbsp;&ndash; нумар парта адлеглага хаста, зь якім мы насамрэч жадаем злучыцца.</li>
+    <li><code>&lt;SSH_SERVER&gt;</code>&nbsp;&ndash; імя ці <i>IP</i>-адрас пасярэдняга <i>SSH</i>-сэрвэра, які будзе ажыцьцяўляць ролю тунэля.</li>
+    <li><code>&lt;USER_NAME&gt;</code>&nbsp;&ndash; імя карыстальніка, які зарэгістраваны на <i>SSH</i>-сэрвэры.</li>
+  </ul>
+  <p>Прыклад:</p>
+
+  <pre><code class="language-bash">
+$ ssh -N -L 9022:10.1.22.16:22 yurtsevich@192.168.117.160
+</code></pre>
+
+  <p>Калі такое злучэньне робіцца на рэгулярнай аснове, можна яго вынесьці ў наладкі, прысвоіць імя і злучацца па імені. Дадаем наступнае ў файл <code>~/.ssh/config</code>:</p>
+
+  <pre><code class="language-text">
+          Host tunnel
+              HostName 192.168.117.160
+              IdentityFile ~/.ssh/id_rsa
+              LocalForward 9022 10.1.22.16:22
+              User yurtsevich
+</code></pre>
+
+  <p>Тады злучэньне можна будзе рабіць наступным скарочаным чынам:</p>
+
+  <pre><code class="language-bash">
+$ ssh -N tunnel
+</code></pre>
+
+  <p>А калі дадаць аргумэнт <code>-f</code> тады кансоль не заліпне пасьля злучэньня:</p>
+
+  <pre><code class="language-bash">
+$ ssh -N -f tunnel
+</code></pre>
+
+  <p>Пасьля гэтага можна зьвяртацца да лякальнага парта, быццам гэта порт адлеглага сэрвэру:</p>
+
+  <pre><code class="language-bash">
+$ git clone ssh://git@localhost:9022/project/repo
+</code></pre>
+
+  <h2 id="Network_SCP">SCP</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.hypexr.org/linux_scp_help.php">hypexr.org</a></li>
+      <li><a href="http://www.computerhope.com/unix/scp.htm">computerhope.com</a></li>
+    </ul>
+  </div>
+  <p>Сьцягнуць файл <code>foobar.txt</code> з адлеглага хаста <code>remotehost.edu</code> у лякальную тэчку <code>/some/local/directory</code>:</p>
+
+  <pre><code class="language-bash">
+$ scp your_username@remotehost.edu:foobar.txt /some/local/directory
+</code></pre>
+
+  <p>Адправіць файл <code>foobar.txt</code> з цяперашняй тэчкі на адлеглы хост <code>remotehost.edu</code> у яго тэчку <code>/some/remote/directory</code>:</p>
+
+  <pre><code class="language-bash">
+$ scp foobar.txt your_username@remotehost.edu:/some/remote/directory
+</code></pre>
+
+  <p>Адправіць файл <code>foobar.txt</code> з адлеглага хоста <code>rh1.edu</code> на іншы адлеглы хост <code>rh2.edu</code>:</p>
+
+  <pre><code class="language-bash">
+$ scp you@rh1.edu:/some/remote/directory/foobar.txt you@rh2.edu:/some/remote/directory/
+</code></pre>
+
+  <p>Магчымыя опцыі:</p>
+  <ul>
+    <li><code>-r</code>&nbsp;&ndash; рэкурсіўна пераносіць усю тэчку.</li>
+    <li><code>-P</code>&nbsp;&ndash; пазначаецца нумар парта адлеглага хаста.</li>
+  </ul>
+
+  <h2 id="Network_rsync">rsync</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.techonthenet.com/linux/commands/rsync.php">TechOnTheNet</a></li>
+      <li><a href="http://www.computerhope.com/unix/rsync.htm">ComputerHope.com</a></li>
+    </ul>
+  </div>
+  <p>Сьцягнуць файл <code>foobar.txt</code> з адлеглага хаста <code>remotehost.edu</code> у лякальную тэчку <code>/some/local/directory</code> з пазначэньнем альтэрнатыўнага парта (2222, у адрозьненьне ад змоўчнага 22):</p>
+
+  <pre><code class="language-bash">
+$ rsync -av --partial -e "ssh -p 2222" you@remotehost.edu:foobar.txt /some/local/directory
+</code></pre>
+
+  <h2 id="Network_GNUscreen">GNU screen</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://aperiodic.net/screen/quick_reference">Ref</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/GNU_Screen">Wiki</a></li>
+    </ul>
+  </div>
+  <p>Робіць проксі паміж хастом і сэсіяй адлеглага карыстальніка да гэтага хаста. Што дазваляе камандам працягваць выконвацца на хасьце нават калі сэсія адлеглага карыстальніка перарываецца. Падключэньне да <code>screen</code> пасьля лагіну:</p>
+
+  <pre><code class="language-bash">
+$ screen -D -RR
+</code></pre>
+
+  <h2 id="Network_Nginx">Nginx</h2>
+  <p><a href="http://www.javacodegeeks.com/2015/09/introduction-to-nginx.html">Introduction to Nginx – Complete Tutorial</a></p>
+</section>
+
+<section>
+  <h1 id="Devices" data-content-item-open>Прыстасаваньні</h1>
+
+  <h2 id="Devices_xinput">xinput</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.x.org/archive/current/doc/man/man1/xinput.1.xhtml">Man</a></li>
+      <li><a href="http://www.mepis.org/docs/en/index.php?title=Configuring_the_touchpad_with_xinput">Examples</a></li>
+      <li><a href="https://wiki.ubuntu.com/X/Config/Input">Examples</a></li>
+    </ul>
+  </div>
+  <p>Пры дапамозе каманды <code>xinput</code> можна праглядаць і наладжваць прыстасаваньні ўводу.</p>
+  <p>Праглядзець сьпіс прыстасаваньняў можна наступным чынам:</p>
+
+  <pre><code class="language-bash">
+$ xinput --list
+⎡ Virtual core pointer                          id=2  [master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer                id=4  [slave  pointer  (2)]
+⎜   ↳ DaKai 2.4G RX                             id=11 [slave  pointer  (2)]
+⎜   ↳ PS/2 Logitech Wheel Mouse                 id=15 [slave  pointer  (2)]
+⎣ Virtual core keyboard                         id=3  [master keyboard (2)]
+    ↳ Virtual core XTEST keyboard               id=5  [slave  keyboard (3)]
+    ↳ Power Button                              id=6  [slave  keyboard (3)]
+    ↳ Video Bus                                 id=7  [slave  keyboard (3)]
+    ↳ Video Bus                                 id=8  [slave  keyboard (3)]
+    ↳ Sleep Button                              id=9  [slave  keyboard (3)]
+    ↳ DaKai 2.4G RX                             id=10 [slave  keyboard (3)]
+    ↳ USB2.0 HD UVC WebCam                      id=12 [slave  keyboard (3)]
+    ↳ Asus WMI hotkeys                          id=13 [slave  keyboard (3)]
+    ↳ AT Translated Set 2 keyboard              id=14 [slave  keyboard (3)]
+</code></pre>
+
+  <p>Праглядзець сьпіс атрыбутаў пэўнага прыстасаваньня можна наступным чынам (па <i>id</i> прыстасаваньня):</p>
+
+  <pre><code class="language-bash">
+$ xinput --list-props 11
+Device 'DaKai 2.4G RX':
+        Device Enabled (154): 1
+        Coordinate Transformation Matrix (156): 1.000000, 0.000000, 0.000000,
+0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+        Device Accel Profile (282): 0
+        Device Accel Constant Deceleration (283): 2.000000
+        Device Accel Adaptive Deceleration (284): 2.500000
+        Device Accel Velocity Scaling (285):  0.500000
+        Device Product ID (273):  3727, 165
+        Device Node (274):  "/dev/input/event7"
+        Evdev Axis Inversion (286): 0, 0
+        Evdev Axes Swap (288):  0
+        Axis Labels (289):  "Rel X" (164), "Rel Y" (165),
+"Rel Horiz Wheel" (280), "Rel Vert Wheel" (281)
+        Button Labels (290):  "Button Left" (157), "Button Middle" (158),
+"Button Right" (159), "Button Wheel Up" (160), "Button Wheel Down" (161),
+"Button Horiz Wheel Left" (162), "Button Horiz Wheel Right" (163), "Button Side" (278),
+"Button Extra" (279), "Button Unknown" (276), "Button Unknown" (276),
+"Button Unknown"(276), "Button Unknown" (276)
+        Evdev Middle Button Emulation (291):  1
+        Evdev Middle Button Timeout (292):  50
+        Evdev Third Button Emulation (293): 0
+        Evdev Third Button Emulation Timeout (294): 1000
+        Evdev Third Button Emulation Button (295):  3
+        Evdev Third Button Emulation Threshold (296): 20
+        Evdev Wheel Emulation (297):  0
+        Evdev Wheel Emulation Axes (298): 0, 0, 4, 5
+        Evdev Wheel Emulation Inertia (299):  10
+        Evdev Wheel Emulation Timeout (300):  200
+        Evdev Wheel Emulation Button (301): 4
+        Evdev Drag Lock Buttons (302):  0
+</code></pre>
+
+  <p>Аднак трэба памятаць, што спадзявацца на <i>id</i> ня варта, таму што сьпіс прыстасаваньняў можа зьмяніцца, а адпаведна і <i>id</i>. Таму тое ж самае можна зрабіць па імені прыстасаваньня.</p>
+
+  <pre><code class="language-bash">
+$ xinput --list-props "DaKai 2.4G RX"
+Warning: There are multiple devices matching 'DaKai 2.4G RX'.
+To ensure the correct one is selected, please use the device ID, or prefix the
+device name with 'pointer:' or 'keyboard:' as appropriate.
+
+unable to find device DaKai 2.4G RX
+</code></pre>
+
+  <p>Упс. Сыстэма паскардзілася, што прыстасаваньняў з такім імем некалькі і яна сама ня можа вызначыць які зь іх мы мелі на ўвазе, таму трэба быць больш дакладным:</p>
+
+  <pre><code class="language-bash">
+$ xinput --list-props "pointer:DaKai 2.4G RX"
+Device 'DaKai 2.4G RX':
+        Device Enabled (154): 1
+        ...
+</code></pre>
+
+  <p>Зьмяніць значэньне пэўнага атрыбуту прыстасаваньня, можна наступным чынам (па <i>id</i> прыстасаваньня і атрыбута):</p>
+
+  <pre><code class="language-bash">
+$ xinput --set-prop 11 283 2.0
+</code></pre>
+
+  <p>Альбо тое ж самае па імені прыстасаваньня і атрыбута:</p>
+
+  <pre><code class="language-bash">
+$ xinput --set-prop "pointer:DaKai 2.4G RX" "Device Accel Constant Deceleration" 2.0
+</code></pre>
+
+  <p>Сэнс некаторых атрыбутаў прыстасаваньняў навядзеньня (мыш):</p>
+  <ul>
+    <li><i>Device Accel Constant Deceleration</i>&nbsp;&ndash; каэфіцыент замаруджваньня хуткасьці руху курсору пры звычайных рухах мышкай; чым вышэй значэньне, тым марудней будзе рухацца курсор пры тых жа рухах мышкай.</li>
+    <li><i>Device Accel Adaptive Deceleration</i>&nbsp;&ndash; каэфіцыент замаруджваньня хуткасьці руху курсору пры нязначных рухах мышкай (няма пэўнага вызначэньня, што значыць нязначныя рухі, трэба спрабаваць для кожнай сыстэмы/прыстасаваньня); чым вышэй значэньне, тым марудней будзе рухацца курсор пры тых жа рухах мышкай.</li>
+    <li><i>Device Accel Velocity Scaling</i>&nbsp;&ndash; для большасьці прыладаў, аптымальнае значэньне&nbsp;&ndash; 0.5-2.</li>
+  </ul>
+
+</section>
+
+<section>
+  <h1 id="DB" data-content-item-open>БД</h1>
+
+  <h2 id="DB_MySQL">MySQL</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://dev.mysql.com/doc/refman/5.6/en/mysql.html">mysql.com</a></li>
+      <li><a href="https://dev.mysql.com/doc/refman/5.0/en/server-system-variables.html">Опцыі</a></li>
+      <li><a href="https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial">digitalocean.com</a></li>
+      <li><a href="https://www.a2hosting.com/kb/developer-corner/mysql/connect-to-mysql-from-the-command-line">a2hosting.com</a></li>
+    </ul>
+  </div>
+  <p>Падключыцца да базы:</p>
+
+  <pre><code class="language-bash">
+$ mysql -u USERNAME -p
+</code></pre>
+
+  <p>Пабачыць сьпіс усіх базаў у кансолі <i>mysql</i>:</p>
+
+  <pre><code class="language-sql">
+mysql> show databases;
+</code></pre>
+
+  <p>Стварыць новы экзэмпляр базы:</p>
+
+  <pre><code class="language-sql">
+mysql> create database DBNAME;
+</code></pre>
+
+  <p>Надзяліць пэўнага юзэра правамі доступу да пэўнай базы:</p>
+
+  <pre><code class="language-sql">
+mysql> grant all privileges on DBNAME.* to 'USER'@'localhost' identified by 'PASSWORD';
+</code></pre>
+
+  <p>Падключыцца да пэўнай базы:</p>
+
+  <pre><code class="language-sql">
+mysql> use DBNAME;
+</code></pre>
+
+  <p>Пасьля гэтага можна выконваць <i>SQL</i>-запыты да гэтай базы.</p>
+  <p>Сьцягнуць дамп базы ў файл:</p>
+
+  <pre><code class="language-bash">
+$ mysql -u USERNAME -p DBNAME > dump.sql
+# альбо
+$ mysqldump -u USERNAME -p DBNAME > dump.sql
+</code></pre>
+
+  <p>Накаціць дамп базы з файла:</p>
+
+  <pre><code class="language-bash">
+$ mysql -u USERNAME -p DBNAME < dump.sql
+# альбо ў кансолі базы
+mysql> source /path/to/dump.sql
+</code></pre>
+
+  <p>Выдаліць таймстэмпы са скрыпта:</p>
+
+  <pre><code class="language-bash">
+$ sed -i 's/DEFAULT CURRENT_TIMESTAMP//g' SCRIPT.sql
+</code></pre>
+
+  <br/>
+
+  <pre><code class="language-sql">
+select name, round(1.0 * count(distinct order_id) /
+  count(distinct orders.delivered_to), 2) as reorder_rate
+from order_items
+  join orders on
+    orders.id = order_items.order_id
+group by 1
+order by 2 desc;
+</code></pre>
+
+  <h2 id="DB_MongoDB">MongoDB</h2>
+  <p><a href="http://campus.codeschool.com/courses/the-magical-marvels-of-mongodb">"The magical marvels of MongoDB"&nbsp;&ndash; відэа-курс ад <i>CodeSchool</i></a>.</p>
+</section>
+
+<section>
+  <h1 id="Programming">Праграмаваньне</h1>
+
+  <h2 id="Programming_ApacheBenchmark">Apache Benchmark</h2>
+  <p>Пры дапамозе утыліты <i>Apache Benchmark</i> можна тэставаць нагрузку на вэб-праграму:</p>
+
+  <pre><code class="language-bash">
+$ ab -n 10000 http://example.com/example.php
+</code></pre>
+
+  <p>У выніку будзе даслана 10000 пасьлядоўных запытаў да рэсурсу <code>http://example.com/example.php</code>. Каб дадаць рэалістычнасьці можна імітаваць паралельнасьць пры дапамозе парамэтру <code>-c</code> (колькасьць паралельных выклікаў):</p>
+
+  <pre><code class="language-bash">
+$ ab -n 10000 -c 10 http://example.com/example.php
+</code></pre>
+
+  <p>Можна рабіць вывад выніку ў файл, рабіць вывад больш падрабязным (парамэтар <code>-v</code>), дасылаць пэўныя <i>HTTP</i>-загалоўкі (парамэтар <code>-H</code>) і гэтак далей:</p>
+
+  <pre><code class="language-bash">
+$ ab -n 10000 -c 10 -v 3 -H "Accept: application/json" http://example.com/example.php > ab_result
+</code></pre>
+
+
+</section>

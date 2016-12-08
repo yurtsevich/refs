@@ -32,10 +32,11 @@ exclude:
   - Gemfile.lock
   - manuals.sublime-project
   - manuals.sublime-workspace
-  - Manuals.iml
+  - manuals.iml
 sass:
   sass_dir: _sass
   style: compressed
+  compile_in_place: false
 defaults:
   -
     scope:
@@ -43,3 +44,4 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+      author: "Юрцэвіч Зьміцер"
