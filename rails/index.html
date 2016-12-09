@@ -4,6 +4,8 @@ description: Даведнік па Rails па-беларуску
 disqus_shortname: rails-be
 ---
 
+{% include base_path %}
+
 <p><a href="http://noteslog.com/post/netbeans-6-9-1-ruby-1-9-2-rails-3-0-0-debugging/">Rails debug in NetBeans</a></p>
 <p><a href="http://net.tutsplus.com/articles/web-roundups/essential-ruby-rails-3-reading-3/">Essential Ruby &amp; Rails 3 Reading</a></p>
 <p><a href="http://net.tutsplus.com/tutorials/ruby/ruby-for-newbies-testing-with-rspec/">Testing with Rspec</a></p>
@@ -67,13 +69,12 @@ disqus_shortname: rails-be
   <h2 id="GettingStarted_WhatIsRails">Што такое Rails?</h2>
   <p><i>Rails</i>&nbsp;&ndash; гэта фрэймворк распрацоўкі сеціўных праграмаў, напісаны на мове праграмаваньня <i><a href="../ruby/index.html">Ruby</a></i>. Ён спраектаваны такім чынам, каб зрабіць працэс стварэньня сеціўных праграмаў прасьцейшым, улічваючы тыя аспэкты, зь якімі вымушаны сутыкацца бальшыня распрацоўшчыкаў. <i>Rails</i> дазваляе пісаць менш коду, рашаючы пры тым больш задачаў, чым іншыя мовы ці фрэймворкі.</p>
   <p>Дадзены фрэймворк грунтуецца на дапушчэньні, што ў шэрагу магчымых рашэньняў заўсёды існуюць найлепшыя, і ён «заахвочвае» распрацоўшчыка да карыстаньня імі, і часам нават робіць «перашкоды» на шляху карыстаньня ня лепшымі з рашэньняў.</p>
-  <p>Філязофія <i>Rails</i> уключае такія прынцыпы, як:
+  <p>Філязофія <i>Rails</i> уключае такія прынцыпы, як:</p>
   <ul>
-    <li><i>DRY</i> (ад анг. <i>Don't Repeat Youself</i>, што азначае <i>не паўтарайце сябе</i>)&nbsp;&ndash; сьцьвярджае, што пісаць шматкроць адзін і той жа код зьяўляецца кепскай рэччу.</li>
+    <li><i>DRY</i> (ад анг. <i>Don't Repeat Yourself</i>, што азначае <i>не паўтарайце сябе</i>)&nbsp;&ndash; сьцьвярджае, што пісаць шматкроць адзін і той жа код зьяўляецца кепскай рэччу.</li>
     <li><i>Convention over configuration</i> (дамоўленасьці па-над наладкамі)&nbsp;&ndash; азначае, што ў <i>Rails</i> у шмат якіх выпадках ужо прадвызначана што і як трэба рабіць, замест таго, каб патрабаваць ад распрацоўшчыка вызначаць кожную дробязь (напрыклад, праз файлы канфігурацыі).</li>
     <li><i><a href="#GettingStarted_WhatIsRails_REST">REST</a></i> зьяўляецца найлепшым шаблёнам (<i>pattern</i>) для сеціўных праграмаў&nbsp;&ndash; арганізацыя праграмаў вакол рэсурсаў і стандартных <a href="http://ru.wikipedia.org/wiki/HTTP#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4.D1.8B"><i>HTTP</i>-дзеясловаў</a> прыводзіць да найхутчэйшага іх стварэньня.</li>
   </ul>
-  </p>
 
   <h3 id="GettingStarted_WhatIsRails_MVC">Архітэктура MVC</h3>
   <div class="refs">
@@ -82,16 +83,15 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <figure style="float: right;">
-    <img alt="Архітэктура MVC у дзеі" title="Архітэктура MVC у дзеі" src="../images/mvc.png"/>
+    <img alt="Архітэктура MVC у дзеі" title="Архітэктура MVC у дзеі" src="{{ base_path }}/assets/images/mvc.png"/>
     <figcaption class="imgcaption">Архітэктура MVC у дзеі: жыцьцёвы шлях Rails-запыту</figcaption>
   </figure>
-  <p>У ядры <i>Rails</i> ляжыць <a href="http://en.wikipedia.org/wiki/Model–view–controller">архітэктурны патэрн Мадэль-Вью-Кантролер</a> (ад анг. <i>Model-View-Controller</i>, ці скарочана <i>MVC</i>), перавагамі якога зьяўляюцца:
+  <p>У ядры <i>Rails</i> ляжыць <a href="http://en.wikipedia.org/wiki/Model–view–controller">архітэктурны патэрн Мадэль-Вью-Кантролер</a> (ад анг. <i>Model-View-Controller</i>, ці скарочана <i>MVC</i>), перавагамі якога зьяўляюцца:</p>
   <ul>
     <li>ізаляцыя бізнэс-лёгікі ад інтэрфэйсу;</li>
     <li>лёгкасьць утрымліваць код DRY;</li>
     <li>ясна дзе знаходзіцца код таго ці іншага тыпу, што палягчае будучую падтрымку коду.</li>
   </ul>
-  </p>
   <p>У адпаведнасьці з гэтым патэрнам адбываецца наступная пасьлядоўнасьць працэдураў:</p>
   <ol>
     <li>браўзэр дасылае запыт да вэб-сэрвэру, які перадасылае яго адпаведнаму <i>Rails</i>-кантролеру (файлы ў тэчцы <code>app/controllers/</code>);</li>
@@ -99,8 +99,8 @@ disqus_shortname: rails-be
     <li>мадэль адказная за тое, каб сфармаваць належны запыт да базы даных, каб атрымаць адтуль неабходныя даныя;</li>
     <li>база вяртае даныя;</li>
     <li>мадэль правярае карэктнасьць даных і вяртае іх кантролеру;</li>
-    <li>кантролер перадае даныя ў шаблён вью (<i>view templates</i>&nbsp;&ndash; файлы ў тэчцы <code>app/views/</code>, якія ў агульным выпадку ўяўляюць зь сябе <a href="../htmlRef/index.html"><i>HTML</i></a>-файлы з убудаваным <a href="../ruby/index.html"><i>Ruby</i></a>-кодам);</li>
-    <li>шаблён вью фармуе <a href="../htmlRef/index.html"><i>HTML</i></a>-старонку (ізноў такі ў агульным выпадку, хаця гэта можа быць напрыклад кавалак <a href="../js/index.html"><i>JavaScript</i></a>-коду) і перадае яе ў кантролер;</li>
+    <li>кантролер перадае даныя ў шаблён вью (<i>view templates</i>&nbsp;&ndash; файлы ў тэчцы <code>app/views/</code>, якія ў агульным выпадку ўяўляюць зь сябе <a href="../html/index.html"><i>HTML</i></a>-файлы з убудаваным <a href="../ruby/index.html"><i>Ruby</i></a>-кодам);</li>
+    <li>шаблён вью фармуе <a href="../html/index.html"><i>HTML</i></a>-старонку (ізноў такі ў агульным выпадку, хаця гэта можа быць напрыклад кавалак <a href="../js/index.html"><i>JavaScript</i></a>-коду) і перадае яе ў кантролер;</li>
     <li>кантролер дасылае вынік браўзэру.</li>
   </ol>
 
@@ -133,7 +133,7 @@ disqus_shortname: rails-be
   <p><i>REST</i> зьяўляецца натуральным стылем для архітэктуры сеціўных праграмаў і<i>Rails</i> рэалізуе яго ў сваім нутры даволі празрыста і пазбаўляе распрацоўшчыка ад неабходнасьці паглыбляцца ў складаныя аспэкты <i>RESTful</i>-архітэктуры.</p>
 
   <h3 id="GettingStarted_WhatIsRails_Components">Кампанэнты Rails</h3>
-  <p><i>Rails</i> уключае ў сябе шэраг асобных кампанэнтаў:
+  <p><i>Rails</i> уключае ў сябе шэраг асобных кампанэнтаў:</p>
   <ul>
     <li><i>Action Pack</i>
       <ul>
@@ -149,7 +149,6 @@ disqus_shortname: rails-be
     <li><i>Active Support</i></li>
     <li><i>Railties</i></li>
   </ul>
-  </p>
 
   <h4 id="GettingStarted_WhatIsRails_Components_ActionPack">Action Pack</h4>
   <p>Гэта <a href="../ruby/index.html#Gems">гем</a>, які ўтрымлівае <a href="#GettingStarted_WhatIsRails_Components_ActionController"><i>Action Controller</i></a>, <a href="#GettingStarted_WhatIsRails_Components_ActionView"><i>Action View</i></a> і <a href="#GettingStarted_WhatIsRails_Components_ActionDispatch"><i>Action Dispatch</i></a>&nbsp;&ndash; «<i>VC</i>» частку з «<a href="#GettingStarted_WhatIsRails_MVC"><i>MVC</i></a>».</p>
@@ -158,7 +157,7 @@ disqus_shortname: rails-be
   <p>Гэта кампанэнт, які кіруе <a href="#GettingStarted_WhatIsRails_MVC_Controllers">кантролерамі</a>. Апрацоўвае запыты да <i>Rails</i>-праграмы, вымае зь іх парамэтры і накіроўвае запыты да адпаведных дзеяў (<i>actions</i>&nbsp;&ndash; пад такім агульным паняцьцем разумеюцца мэтады кантролераў). Таксама прадстаўляе такія сэрвісы, як кіраваньне сэсіямі і перанакіраваньнямі, візуалізацыя шаблёнаў.</p>
 
   <h4 id="GettingStarted_WhatIsRails_Components_ActionView">Action View</h4>
-  <p>Кіруе <a href="#GettingStarted_what_is_MVC_Views">вью</a> праграмы. Па-змоўчваньні можа ствараць <a href="../htmlRef/index.html"><i>HTML</i></a>- і <i>XML</i>-вынік. Кіруе шіблёнамі вью, улучна з укладзенымі шаблёнамі (<mark><i>nested templates</i>-спасылка на разьдзел</mark>) і часткамі-шаблёнамі (<mark><i>partial templates</i>-спасылка на разьдзел</mark>), а таксама ўключае ў сябе ўбудаваную падтрымку <a href="http://en.wikipedia.org/wiki/AJAX"><i>AJAX</i></a>.</p>
+  <p>Кіруе <a href="#GettingStarted_WhatIsRails_MVC_Views">вью</a> праграмы. Па-змоўчваньні можа ствараць <a href="../html/index.html"><i>HTML</i></a>- і <i>XML</i>-вынік. Кіруе шіблёнамі вью, улучна з укладзенымі шаблёнамі (<mark><i>nested templates</i>-спасылка на разьдзел</mark>) і часткамі-шаблёнамі (<mark><i>partial templates</i>-спасылка на разьдзел</mark>), а таксама ўключае ў сябе ўбудаваную падтрымку <a href="http://en.wikipedia.org/wiki/AJAX"><i>AJAX</i></a>.</p>
 
   <h4 id="GettingStarted_WhatIsRails_Components_ActionDispatch">Action Dispatch</h4>
   <p>Адказвае за разводку вэб-запытаў і накіраваньне іх па жаданьні распрацоўшчыка.</p>
@@ -185,18 +184,21 @@ disqus_shortname: rails-be
 
   <h3 id="GettingStarted_NewProject_InstallingRails">Усталяваньне Rails</h3>
   <p>Перад тым, як ствараць <i>Rails</i>-праект, трэба ўсталяваць уласна <i>Rails</i> (як гем <i>Ruby</i>):</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ gem install rails
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ gem install rails
+</code></pre>
 
   <h3 id="GettingStarted_NewProject_BlogProject">Стварэньне блогу</h3>
   <p>Пасьля ўсталяваньня <i>Rails</i> можна ствараць новую праграму, напрыклад блог, папярэдне перайшоўшы ў тэчку, прызначаную для <i>Rails</i>-праектаў:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ mkdir projects
-        $ cd projects
-        $ rails new blog
-        ]]></script>
-  <p>Апошняя каманда створыць шкілет <i>Rails</i>-праекту пад назвай <i>Blog</i> у тэчцы <code>blog</code>. Гэты шкілет уяўляе зь сябе пэўную структуру файлаў і тэчак, аднолькавую для ўсіх <i>Rails</i>-праектаў, што зьяўляецца вялікім плюсам <i>Rails</i>&nbsp;&ndash; унівэрсальная структура файлаў і тэчак усіх <i>Rails</i>-праектаў значна палягчае іх падтрымку нават тымі распрацоўшчыкамі, каторыя першапачаткова ня ўдзельнічалі ў іх распрацоўцы. Разгледзем падрабязьней гэтую структуру:
+
+  <pre><code class="language-bash">
+$ mkdir projects
+$ cd projects
+$ rails new blog
+</code></pre>
+
+  <p>Апошняя каманда створыць шкілет <i>Rails</i>-праекту пад назвай <i>Blog</i> у тэчцы <code>blog</code>. Гэты шкілет уяўляе зь сябе пэўную структуру файлаў і тэчак, аднолькавую для ўсіх <i>Rails</i>-праектаў, што зьяўляецца вялікім плюсам <i>Rails</i>&nbsp;&ndash; унівэрсальная структура файлаў і тэчак усіх <i>Rails</i>-праектаў значна палягчае іх падтрымку нават тымі распрацоўшчыкамі, каторыя першапачаткова ня ўдзельнічалі ў іх распрацоўцы. Разгледзем падрабязьней гэтую структуру:</p>
   <table>
     <caption>Структура шкілету <i>Rails</i>-праграмы</caption>
     <thead>
@@ -220,40 +222,43 @@ disqus_shortname: rails-be
     <tr><td class="file_folder"><code>config.ru</code></td> <td>Наладкі для Rack-сэрвероў, каторыя выкарыстоўваюцца для старта праграмы.</td></tr>
     </tbody>
   </table>
-  </p>
+
 
   <h3 id="GettingStarted_NewProject_InstallingGems">Усталяваньне патрэбных гемаў</h3>
   <p><i>Rails</i>-праграмы па змоўчваньні кіруюць <a href="../ruby/index.html#Gems">гемамі</a> і іх залежнасьцямі праз <a href="http://gembundler.com/"><i>Bundler</i></a>. Як нам ня трэба ніякіх гемаў больш за тыя, што пазначаныя ў змоўчным <code>Gemfile</code>, можна проста запусьціць наступную каманду, каб усталяваць іх:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ bundle install
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ bundle install
+</code></pre>
 
   <h3 id="GettingStarted_NewProject_ConfiguringDB">Наладжваньне базы даных</h3>
   <p>Мала якія <i>Rails</i>-праграмы могуць абысьціся без базы даных. Аднак, перад тым, як <i>Active Record</i> зможа быць выкарыстаны і праявіць сваё <i>ORM</i>-чараўніцтва, трэба яму сказаць зь якой базай даных будзе весьціся праца і якім чынам зь ёй наладзіць сувязь. Адпаведныя наладкі пазначаюцца ў файле канфігурацыі <code>config/database.yml</code>, які пасьля генэрацыі новай праграмы выглядае наступным чынам:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          # SQLite version 3.x
-          #   gem install sqlite3-ruby (not necessary on OS X Leopard)
-          development:
-            adapter: sqlite3
-            database: db/development.sqlite3
-            pool: 5
-            timeout: 5000
 
-          # Warning: The database defined as "test" will be erased and
-          # re-generated from your development database when you run "rake".
-          # Do not set this db to the same as development or production.
-          test:
-            adapter: sqlite3
-            database: db/test.sqlite3
-            pool: 5
-            timeout: 5000
+  <pre><code class="language-ruby">
+# SQLite version 3.x
+#   gem install sqlite3-ruby (not necessary on OS X Leopard)
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
-          production:
-            adapter: sqlite3
-            database: db/production.sqlite3
-            pool: 5
-            timeout: 5000
-        ]]></script>
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
+</code></pre>
+
   <aside><sup>1</sup> Той факт, што кожны з асяродкаў выкарыстоўвае свой асобны экзэмпляр базы даных, можа прыводзіць да спакусы выкарыстоўваць для кожнага зь іх свой тып, а адпаведна і адаптар, базы даных. Напрыклад, <i>SQLite</i> для асяродку распрацоўкі, і <i>PostgreSQL</i> для вытворчага асяродку. Недахопам такога падыходу зьяўляецца тое, што адрозьненьні паміж рознымі базамі даных могуць быць схаваныя пакуль вы распрацоўваеце праграму і выявіцца праз нечаканыя і непрыемныя сюрпрызы ў часе запуску праграмы ў вытворчым асяродку. Таму добрай практыкай можна лічыць імкненьне трымаць канфігурацыю розных асяродкаў як мага бліжэй адна да другой.</aside>
   <p>Гэты файл утрымлівае сэкцыі для канфігурацыі 3-х розных асяродкаў, у якіх <i>Rails</i> можа запускацца па змоўчваньні<sup>1</sup>:</p>
   <ul>
@@ -266,57 +271,65 @@ disqus_shortname: rails-be
   <p>Акрамя <i>SQLite</i> у <i>Rails</i> убудаваная выключная падтрымка яшчэ <a name="GettingStarted_NewProject_ConfiguringDB_MySQL"><i>MySQL</i></a> і <a href="http://www.postgresql.org/"><i>PostgreSQL</i></a>, а таксама маецца шэраг дадаткаў для падтрымкі іншых базаў даных.</p>
 
   <p>Пры жаданьні, ствараючы новую <i>Rails</i>-праграму, можна пазначыць, каб файл наладкаў быў створаны са змоўчнымі парамэтрамі да іншага тыпу базы даных. Для гэтага трэба скарыстацца опцыяй <code>--database</code>:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          $ rails new myapp --database=mysql
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rails new myapp --database=mysql
+</code></pre>
+
   <p>Прыклады наладкаў да іншых тыпаў базаў даных:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          development:
-            adapter: mysql2
-            encoding: utf8
-            reconnect: false
-            database: test-mysql2_development
-            pool: 5
-            username: some_user_name
-            password: some_password
-            socket: /tmp/mysql.sock
 
-          # Warning: The database defined as "test" will be erased and
-          # re-generated from your development database when you run "rake".
-          # Do not set this db to the same as development or production.
-          test:
-            adapter: sqlite3
-            database: db/test.sqlite3
-            pool: 5
-            timeout: 5000
+  <pre><code class="language-ruby">
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: test-mysql2_development
+  pool: 5
+  username: some_user_name
+  password: some_password
+  socket: /tmp/mysql.sock
 
-          production:
-            adapter: postgresql
-            host: some_hosting.amazonaws.com
-            port: 5432
-            username: some_user_name
-            password: some_password
-            database: some_db_name
-            encoding: unicode
-        ]]></script>
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
+production:
+  adapter: postgresql
+  host: some_hosting.amazonaws.com
+  port: 5432
+  username: some_user_name
+  password: some_password
+  database: some_db_name
+  encoding: unicode
+</code></pre>
 
   <h3 id="GettingStarted_NewProject_CreatingDB">Стварэньне базы даных</h3>
   <p>Базы даных адрозныя ад <a href="http://www.sqlite.org/"><i>SQLite</i></a> часьцей за ўсё ствараюцца ўручную адміністратарам/праграмістам, але трэба памятаць, што <i>Rails</i> прадстаўляе мэханізм для аўтаматычнага стварэньня базы даных&nbsp;&ndash; пры дапамозе наступнай каманды:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          rake db:create
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rake db:create
+</code></pre>
+
   <p>Гэтая каманда створыць базу даных у адпаведным асяродку, узяўшы даныя з файла <code>config/database.yml</code>. Калі ёсьць патрэба сварыць адначасова базы даных для ўсіх асяродкаў, можна скарыстацца варыяцыяй гэтай каманды:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          rake db:create:all
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rake db:create:all
+</code></pre>
 
   <h3 id="GettingStarted_NewProject_StartingApp">Запуск праграмы</h3>
   <p>Засталося запусьціць вэб-сэрвер, каб пабачыць стартавую старонку аўтаматычна створанай па-змоўчваньні праграмы:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          $ rails server
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rails server
+</code></pre>
+
   <p>Каб пабачыць вынік, трэба ў адрасным радку вэб-браўзэра набраць <a href="http://localhost:3000">http://localhost:3000</a>. Вы павінны пабачыць наступную старонку:</p>
-  <img alt="Start page of Rails default application" title="Start page of Rails default application" src="../images/StartPageOfRoRDefaultApp.png"/>
+  <img alt="Start page of Rails default application" title="Start page of Rails default application" src="{{ base_path }}/assets/images/StartPageOfRoRDefaultApp.png"/>
   <p>Гэта ўсяго толькі статычная старонка, прызначэньнем якой зьяўляецца паказаць, што падрыхтоўчыя крокі зроблены правільна і пасьпяхова. Калі вас не цікавяць пытаньні <a href="#GettingStarted_Git">кантролю вэрсій</a> і <a href="#GettingStarted_Deploying">разгортваньня праграмы ў вытворчым асяродку</a>, можаце адразу перайсьці да разьдзелу <a href="#GettingStarted_FastDevelopment">хуткай распрацоўкі праграмы</a>.</p>
 
   <h2 id="GettingStarted_Git">Кантроль вэрсій з <i>Git</i></h2>
@@ -328,13 +341,16 @@ disqus_shortname: rails-be
   <h3 id="GettingStarted_Deploying_HerokuMultipleAccounts">Праца зь некалькімі рахункамі на <i>Heroku</i></h3>
   <p>Гэта не трывіяльная задача, таму што па змоўчаньні гем ад <i>Heroku</i> працуе з адзіным рахункам. Але гэтая задача моцна спрашчаецца пры выкарыстаньні дадатку <a href="https://github.com/ddollar/heroku-accounts" title="Хатняя старонка heroku-accounts на GitHub"><code>heroku-accounts</code></a>.</p>
   <p>Дадатак удзяляе літаральна некалькі простых у выкарыстаньні дапаможных камандаў, якія вычарпальна апісаныя на хатняй старонцы дадатку, таму ня буду яшчэ раз спыняцца на апісаньні. Адзінае, што варта адмыслова адзначыць, у код дадатку варта ўнесьці адну зьмену пры жаданьні ўжываць яго ў <i>Windows</i>-асяродку. Гэтая зьмена будзе працаваць толькі пачынаючы з <i>Rails</i> 3-й вэрсіі, але наш даведнік разглядае менавіта гэтую вэрсію, таму скарыстаемся ёй. Праблема тычыцца хатняй тэчкі карыстальніка ў <i>Windows</i>, пэўныя каманды дадатку не працуюць з-за таго, што ў ім выкарыстоўваецца ўласны спосаб вызначэньня гэтай тэчкі, відаць не зусім правільны. Такім чынам, зьмену трэба ўнесьці ў файл <code>&lt;USER_HOME&gt;\.heroku\plugins\heroku-accounts\lib\ext\heroku\command\accounts.rb</code>, у мэтадзе <code class="method">accounts_directory</code> выраз:</p>
-  <script type="syntaxhighlighter" class="brush: rails"><![CDATA[
-          directory = File.join(home_directory, ".heroku", "accounts")
-        ]]></script>
+
+  <pre><code class="language-rails">
+directory = File.join(home_directory, ".heroku", "accounts")
+</code></pre>
+
   <p>трэба зьмяніць наступным чынам:</p>
-  <script type="syntaxhighlighter" class="brush: rails"><![CDATA[
-          directory = File.join(Dir.home, ".heroku", "accounts")
-        ]]></script>
+
+  <pre><code class="language-rails">
+directory = File.join(Dir.home, ".heroku", "accounts")
+</code></pre>
 
   <h2 id="GettingStarted_FastDevelopment">Хуткая распрацоўка</h2>
   <div class="refs">
@@ -344,27 +360,34 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <p><a href="#GettingStarted_NewProject_BlogProject">Вышэй</a> мы разглядалі працэс стварэньня новага праекту, у выніку чаго атрымалі ўнівэрсальны змоўчны каркас праграмы і статычную старонку, каторая адчыняецца па карнявым адрасе. Каб пабачыць нашу праграму ў дынаміцы (напрыклад, адлюстраваць на старонцы тэкст «Вітаю, сусьвет!»), неабходна перш за ўсё выдаліць статычную старонку <code>public/index.html</code>. У <i>Rails</i> існуе шэраг каманд і прыладаў, каторыя паскараюць працэс стварэньня як асобных кампанэнтаў (кантролер, мадэль), гэтак і поўную сукупнасьць усіх неабходных кампанэнтаў для паўнавартаснай працы з пэўным рэсурсам праграмы. Напрыклад, наступным чынам можна стварыць мінімалістычныя кантролер і вью:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rails generate controller home index
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rails generate controller home index
+</code></pre>
+
   <p>Па гэтай камандзе <i>Rails</i> створыць за вас некалькі файлаў, у тым ліку <code>app/views/home/index.html.erb</code>. Гэта шаблён, каторы будзе выкарыстоўвацца для адлюстраваньня вынікаў дзеі <code>index</code> <code>home</code>-кантролеру. Адкрыем гэты шаблён і ўвядзем туды наступны тэкст:</p>
-  <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-        <h1>Hello, Rails!</h1>
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;h1&gt;Hello, Rails!&lt;/h1&gt;
+</code></pre>
+
   <aside><sup>1</sup> Падрабязную інфармацыю пра разводку глядзіце ў разьдзеле <a href="#Controllers_Routing">Разводка</a>.</aside>
   <p>Наступным крокам трэба сказаць <i>Rails</i>&#8217;у, якая дзея якога кантролера павінна быць выкананай па карнявым адрасе. Адчынім файл <code>config/routes.rb</code>&nbsp;&ndash; гэта файл так званай разводкі<sup>1</sup> (ці маршрутызацыі), які ўтрымлівае запісы на адмысловай <i>domain-specific</i> мове, якія вызначаюць да якога кантролеру і якой зь ягоных дзеяў напраўляць уваходныя запыты. Зробім там наступны запіс:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        Blog::Application.routes.draw do
 
-          root :to => "home#index"
-        ]]></script>
+  <pre><code class="language-ruby">
+Blog::Application.routes.draw do
+
+  root :to =&gt; "home#index"
+</code></pre>
 
   <h3 id="GettingStarted_FastDevelopment_Scaffolding">Scaffolding</h3>
   <p>Акрамя генерацыі асобных кампанэнтаў, прыладай <i>scaffold</i> можна згенерыць поўную сукупнасьць неабходных кампанэнтаў для працы з пэўным рэсурсам. Уявім, што ў нашай праграме павінен існаваць рэсурс допісаў у блогу (<i>Post</i>), экзэмпляры якога карыстальнік можа ствараць, рэдагаваць і выдаляць. Напрыклад, наступная каманда:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rails generate scaffold Post name:string title:string content:text
-        ]]></script>
-  <p>Створыць 14 файлаў, неабходныя дадатковыя тэчкі і ўнясе зьмены ў адзін файл:
+
+  <pre><code class="language-bash">
+$ rails generate scaffold Post name:string title:string content:text
+</code></pre>
+
+  <p>Створыць 14 файлаў, неабходныя дадатковыя тэчкі і ўнясе зьмены ў адзін файл:</p>
   <table>
     <!--caption>Структура шкілету Rails-праграмы</caption-->
     <thead>
@@ -385,84 +408,95 @@ disqus_shortname: rails-be
     <tr><td><code>test/functional/posts_controller_test.rb</code></td> <td>Функцыянальныя тэсты кантролеру.</td></tr>
     <tr><td><code>test/unit/helpers/posts_helper_test.rb</code></td> <td><i>Unit</i>-тэсты дапаможных мэтадаў.</td></tr>
     <tr><td><code>config/routes.rb</code></td> <td>Гэты файл будзе адрэдагаваны, каб уключыць апдаведную разводку запытаў.</td></tr>
-    <tr><td><code>public/stylesheets/scaffold.css</code></td> <td><a href="../cssRef/index.html">CSS</a>-стылі <i>scaffold</i>-прылады.</td></tr>
+    <tr><td><code>public/stylesheets/scaffold.css</code></td> <td><a href="../css/index.html">CSS</a>-стылі <i>scaffold</i>-прылады.</td></tr>
     </tbody>
   </table>
-  </p>
   <p>Пасьля гэтага трэба запусьціць міграцыю, каб яна стварыла неабходную табліцу ў базе:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rake db:migrate
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rake db:migrate
+</code></pre>
+
   <p>А таксама дадаць спасылку да допісаў з нашай галоўнай старонкі (<code>app/views/home/index.html.erb</code>):</p>
-  <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-        <h1>Hello, Rails!</h1> <%= link_to "My Blog", posts_path %>
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;h1&gt;Hello, Rails!&lt;/h1&gt; &lt;%= link_to "My Blog", posts_path %&gt;
+</code></pre>
+
   <p>Дапаможны мэтад <code>link_to</code>, які даступны да ўсіх вью, створыць спасылку з тэксту і шляху (<code>posts_path</code>), каторыя былі яму перададзены.</p>
   <p>Цяпер, калі адкрыць галоўную старонку (<a href="http://localhost:3000">http://localhost:3000</a>) і націснуць на спасылку «My Blog», мы пабачым наступную старонку:</p>
-  <img alt="Posts index" title="Posts index" src="../images/posts_index.png"/>
+  <img alt="Posts index" title="Posts index" src="{{ base_path }}/assets/images/posts_index.png"/>
   <p>Гэта змоўчнае адлюстраваньне допісаў. У базе яшчэ няма ніводнага, але калі націснуць на «New post», можна стварыць першы. Пасьля стварэньня допісу, вы пабачыце, што яго можна праглядаць, рэдагаваць і выдаляць, і ўсё гэта было створана аўтаматычна прыладай <i>scaffold</i>.</p>
 
   <h4 id="GettingStarted_FastDevelopment_Scaffolding_Model">Мадэль</h4>
   <p>Створаная пры дапамозе <i>scaffold</i> мадэль (<code>app/models/post.rb</code>) пустая:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class Post < ActiveRecord::Base
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Post &lt; ActiveRecord::Base
+end
+</code></pre>
+
   <p>аднак базавую сваю функцыянальнасьць (стварэньне, выдаленьне, рэдагаваньне допісаў, запыты да базы) яна ўспадкоўвае ад <code class="class">ActiveRecord::Base</code>. Можам дадаць у яе пэўную праверку даных, каторыя карыстальнік будзе ўводзіць у форму:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class Post < ActiveRecord::Base
-          validates :name,  :presence => true
-          validates :title, :presence => true,
-                            :length => { :minimum => 5 }
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Post &lt; ActiveRecord::Base
+  validates :name,  :presence =&gt; true
+  validates :title, :presence =&gt; true,
+                    :length =&gt; { :minimum =&gt; 5 }
+end
+</code></pre>
+
   <p>Гэты код будзе правяраць ці мае допіс імя і загаловак, каторы пры гэтым павінен утрымліваць мінімум 5 сымбаляў, перад тым, як гэты допіс захаваць у базу.</p>
 
   <h4 id="GettingStarted_FastDevelopment_Scaffolding_ListingResources">Адлюстраваньне рэсурсаў</h4>
   <p>Код, каторы <i>scaffold</i> уставіў у мэтад <code class="method">index</code> кантролеру <code>app/controllers/posts_controller.rb</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        def index
-          @posts = Post.all
 
-          respond_to do |format|
-            format.html # index.html.erb
-            format.xml  { render :xml => @posts }
-          end
-        end
-        ]]></script>
+  <pre><code class="language-ruby">
+def index
+  @posts = Post.all
+
+  respond_to do |format|
+    format.html # index.html.erb
+    format.xml  { render :xml =&gt; @posts }
+  end
+end
+</code></pre>
+
   <aside><sup>2</sup> Падрабязную інфармацыю пра запыты да базы глядзіце ў разьдзеле <a href="#Models_Querying">Састаўленьне запытаў</a>.</aside>
   <p>адказвае за адлюстраваньне ўсіх допісаў. Выклік <code>Post.all</code> запытаецца ў мадэлі па ўсе допісы, каторыя захаваныя ў базе<sup>2</sup>. У выніку будзе вернуты масіў допісаў, які захаваецца ў зьменнай экзэмпляру <code class="var">@posts</code>.</p>
-  <p>Блёк <code>respond_to</code> апрацоўвае як <a href="../htmlRef/index.html">HTML</a>-, так і <abbr class="term" title="eXtensible Markup Language">XML</abbr>-запыты да гэтай дзеі. Калі ў адрасным радку будзе ўведзена <code>http://localhost:3000/posts.xml</code>, у выніку будуць адлюстраваны ўсе допісы ў <abbr class="term" title="eXtensible Markup Language">XML</abbr>-фармаце. Для стварэньня <a href="../htmlRef/index.html">HTML</a>-водгуку будзе ўзята вью з <code>app/views/posts/</code>, імя якой адпавядае назьве дзеі (<code>app/views/posts/index.html.erb</code>):</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        <h1>Listing posts</h1>
+  <p>Блёк <code>respond_to</code> апрацоўвае як <a href="../html/index.html">HTML</a>-, так і <abbr class="term" title="eXtensible Markup Language">XML</abbr>-запыты да гэтай дзеі. Калі ў адрасным радку будзе ўведзена <code>http://localhost:3000/posts.xml</code>, у выніку будуць адлюстраваны ўсе допісы ў <abbr class="term" title="eXtensible Markup Language">XML</abbr>-фармаце. Для стварэньня <a href="../htmlRef/index.html">HTML</a>-водгуку будзе ўзята вью з <code>app/views/posts/</code>, імя якой адпавядае назьве дзеі (<code>app/views/posts/index.html.erb</code>):</p>
 
-        <table>
-          <tr>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Content</th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tr>
+  <pre><code class="language-ruby">
+&lt;h1&gt;Listing posts&lt;/h1&gt;
 
-        <% @posts.each do |post| %>
-          <tr>
-            <td><%= post.name %></td>
-            <td><%= post.title %></td>
-            <td><%= post.content %></td>
-            <td><%= link_to 'Show', post %></td>
-            <td><%= link_to 'Edit', edit_post_path(post) %></td>
-            <td><%= link_to 'Destroy', post,
-                :confirm => 'Are you sure?', :method => :delete %></td>
-          </tr>
-        <% end %>
-        </table>
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Title&lt;/th&gt;
+    &lt;th&gt;Content&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+  &lt;/tr&gt;
 
-        <br />
+&lt;% @posts.each do |post| %&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;%= post.name %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= post.title %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= post.content %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= link_to 'Show', post %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= link_to 'Edit', edit_post_path(post) %&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;%= link_to 'Destroy', post,
+        :confirm =&gt; 'Are you sure?', :method =&gt; :delete %&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;% end %&gt;
+&lt;/table&gt;
 
-        <%= link_to 'New post', new_post_path %>
-        ]]></script>
+&lt;br /&gt;
+
+&lt;%= link_to 'New post', new_post_path %&gt;
+</code></pre>
+
   <p>Тут вью пасьлядоўна праходзіцца па ўсім элемэнтам масіву <code class="var">@posts</code>, каб адлюстраваць іх даныя і адпаведныя спасылкі. <code class="method">edit_post_path</code> і <code class="method">new_post_path</code>&nbsp;&ndash; дапаможныя мэтады атрыманьня адпаведнага <i>RESTful</i>-шляху.</p>
 
 </section>
@@ -471,7 +505,7 @@ disqus_shortname: rails-be
 <section>
   <h1 id="Models" data-content-item-open>Мадэлі</h1>
   <p>Змоўчны спосаб захаваньня даных у <i>Rails</i>&nbsp;&ndash; праз базу даных і змоўчным кампанэнтам для гэтых мэтаў зьяўляецца <a href="http://railsapi.com/doc/rails-v3.0.8rc1/files/activerecord/README_rdoc.html">Active Record</a> (рэалізацыя <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a> у <i>Rails</i>). Ён прадстаўляе шмат мэтадаў для стварэньня, захаваньня і пошуку аб&#8217;ектаў даных і ўсё гэта без неабходнасьці выкарыстоўваць (а адпаведна і ведаць) <abbr title="Structured Query Language">SQL</abbr>. Больш таго, пры дапамозе <a href="#Models_Migrations">міграцыяў</a>, апісаньне данных можна рабіць на чыстым <i>Ruby</i>, без неабходнасьці ведаць SQL <i>Data Definition Language (DDL)</i>. У выніку распрацоўшчык у <i>Rails</i> у агульным выпадку можа абстрагавацца ад асаблівасьцяў і дэталяў сродкаў захаваньня даных, якія будуць ужывацца. То бок у распрацоўшчыцкім асяродку можа выкарыстоўвацца <a href="http://www.sqlite.org/">SQLite</a>, у тэставым асяродку&nbsp;&ndash; <a href="http://mysql.com/">MySQL</a>, а ў вытворчым&nbsp;&ndash; <a href="http://www.postgresql.org/">PostgreSQL</a>, і на самой праграме гэта ніяк не адаб&#8217;ецца.</p>
-  <p>Яшчэ адзін кампанэнт, які прадстаўляе мадэлі ў <i>Rails</i>&nbsp;&ndash; гэта <a href="http://railsapi.com/doc/rails-v3.0.8rc1/files/activeresource/README_rdoc.html">Active Resource</a>. Падрабязьней пра яго глядзі разьдзел <a href="file:///D:/_Buisiness/Manuals/railsRef/index.html#WebServices">Вэб-сэрвісы</a>.</p>
+  <p>Яшчэ адзін кампанэнт, які прадстаўляе мадэлі ў <i>Rails</i>&nbsp;&ndash; гэта <a href="http://railsapi.com/doc/rails-v3.0.8rc1/files/activeresource/README_rdoc.html">Active Resource</a>. Падрабязьней пра яго глядзі разьдзел <a href="../rails/index.html#WebServices">Вэб-сэрвісы</a>.</p>
 
   <h2 id="Models_Migrations">Міграцыі</h2>
   <div class="refs">
@@ -480,38 +514,42 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <p>Стварэньне і зьмены ў структуры даных у <i>Rails</i> робіцца пры дапамозе міграцыяў:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class CreateProducts < ActiveRecord::Migration
-          def self.up
-            create_table :products do |t|
-              t.string :name
-              t.text :description
 
-              t.timestamps
-            end
-          end
+  <pre><code class="language-ruby">
+class CreateProducts &lt; ActiveRecord::Migration
+  def self.up
+    create_table :products do |t|
+      t.string :name
+      t.text :description
 
-          def self.down
-            drop_table :products
-          end
-        end
-        ]]></script>
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :products
+  end
+end
+</code></pre>
+
   <p>Запуск пазначанай вышэй міграцыі (падкляса <code>ActiveRecord::Migration</code>) праз выкананьне мэтаду <code>up</code> прывядзе да таго, што будзе створана табліца <code>products</code> з радковай калёнкай <code>name</code> і тэкставай калёнкай <code>description</code>. Акрамя гэтага па змоўчаньні будзе створана калёнка першаснага ключу <code>id</code>, нават без яўнага пазначэньня. Таксама будуць створаны калёнкі часаадзнакі <code>created_at</code> і <code>updated_at</code>, зьмест каторых <a href="http://railsapi.com/doc/rails-v3.0.8rc1/files/activerecord/README_rdoc.html">Active Record</a> будзе зьмяняць аўтаматычна. Створаныя міграцыяй зьмены могуць быць адкочаны праз выклік мэтаду <code>down</code> (у дадзеным выпадку табліца <code>products</code> будзе выдалена).</p>
   <p>Таксама міграцыямі можна зьмяняць ня толькі структуру, але і самі даныя:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class AddReceiveNewsletterToUsers < ActiveRecord::Migration
-          def self.up
-            change_table :users do |t|
-              t.boolean :receive_newsletter, :default => false
-            end
-            User.update_all ["receive_newsletter = ?", true]
-          end
 
-          def self.down
-            remove_column :users, :receive_newsletter
-          end
-        end
-        ]]></script>
+  <pre><code class="language-ruby">
+class AddReceiveNewsletterToUsers &lt; ActiveRecord::Migration
+  def self.up
+    change_table :users do |t|
+      t.boolean :receive_newsletter, :default =&gt; false
+    end
+    User.update_all ["receive_newsletter = ?", true]
+  end
+
+  def self.down
+    remove_column :users, :receive_newsletter
+  end
+end
+</code></pre>
+
   <p>У прыкладзе вышэй да табліцы <code>users</code> будзе дададзена калёнка <code>receive_newsletter</code>, якая па змоўчаньні будзе запаўняцца значэньнямі <code>false</code>, але ў існых запісах табліцы гэтая калёнка будзе запоўнена значэньнем <code>true</code>. У гэтым прыкладзе ёсьць адзін падводны камень&nbsp;&ndash; выкарыстаньне клясы мадэлі, чаму гэтага рабіць не пажадана глядзіце разьдзел <a href="#Models_Migrations_UsingModels">«Выкарыстаньне мадэляў у міграцыях»</a></p>
   <p>Для базаў даных, каторыя падтрымліваюць транзакцыі (<a href="http://www.postgresql.org/">PostgreSQL</a>, <a href="http://www.sqlite.org/">SQLite</a>), міграцыі будуць абгорнуты ў транзакцыю. Калі ж база не падтрымлівае транзакцыі (<a href="http://mysql.com/">MySQL</a>), тады ў выпадку памылкі зьмены, каторыя адбыліся да памылкі, ня будуць адменены аўтаматычна і іх адкат трэба будзе рабіць «рукамі».</p>
   <p>Міграцыі захоўваюцца ў тэчцы <code>db/migrate</code> і маюць выгляд фармату "<code>YYYYMMDDHHMMSS_імя_клясы_міграцыі.rb</code>", дзе "<code>YYYYMMDDHHMMSS</code>"&nbsp;&ndash; дата і час міграцыі, пасьля якой праз знак падкрэсьліваньня ідзе імя міграцыі, каторае павінна супадаць зь імем адпаведнай клясы. Напрыклад, файл міграцыі <code>20080906120000_create_products.rb</code> павінен утрымліваць клясу міграцыі <code>CreateProducts</code>. Дата і час у назьве файла неабходны <i>Rails</i>&#8217;у для ідэнтыфікацыі міграцыі. Гэты ідэнтыфікатар нараўне з адзнакамі якія міграцыі ўжо былі выкананыя дазваляе правільна апрацоўваць складаныя сытуацыі пры распрацоўцы праграмы некалькімі распрацоўшчыкамі. Хаця апошняе, натуральна, не пазбаўляе чальцоў каманды ад неабходнасьці ўзгадняць свае дзеяньні.</p>
@@ -520,59 +558,70 @@ disqus_shortname: rails-be
 
   <h3 id="Models_Migrations_Creating">Стварэньне міграцыяў</h3>
   <p>Пры стварэньні мадэляў ці пры карыстаньні <i>scaffold</i>-генератарамі міграцыі будуць створаны аўтаматычна. Напрыклад, у выніку выкананьня каманды:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rails generate model Product name:string description:text
-        ]]></script>
+
+  <pre><code class="bash">
+$ rails generate model Product name:string description:text
+</code></pre>
+
   <p>будзе створана міграцыя:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class CreateProducts < ActiveRecord::Migration
-          def self.up
-            create_table :products do |t|
-              t.string :name
-              t.text :description
 
-              t.timestamps
-            end
-          end
+  <pre><code class="language-ruby">
+class CreateProducts &lt; ActiveRecord::Migration
+  def self.up
+    create_table :products do |t|
+      t.string :name
+      t.text :description
 
-          def self.down
-            drop_table :products
-          end
-        end
-        ]]></script>
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :products
+  end
+end
+</code></pre>
+
   <p><code>t.timestamps</code> будзе дададзена нават, калі гэта не пазначыць у камандзе стварэньня мадэлі.</p>
   <p>Калі ж трэба стварыць міграцыю для ўжо існай мадэлі (табліцы ў базе) тады можна скарыстацца генератарам міграцыі:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rails generate migration AddPartNumberToProducts
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rails generate migration AddPartNumberToProducts
+</code></pre>
+
   <p>У выніку выкананьня папярэдняй каманды будзе створана пустая міграцыя:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class AddPartNumberToProducts < ActiveRecord::Migration
-          def self.up
-          end
 
-          def self.down
-          end
-        end
-        ]]></script>
+  <pre><code class="language-ruby">
+class AddPartNumberToProducts < ActiveRecord::Migration
+  def self.up
+  end
+
+  def self.down
+  end
+end
+</code></pre>
+
   <p>Калі імя міграцыі адпавядае фарматам "<code>AddXXXToYYY</code>" ці "<code>RemoveXXXFromYYY</code>" і пасьля імені міграцыі ў камандзе ідзе сьпіс палёў зь іх тыпамі, тады ў міграцыю будуць устаўлены выклікі адпаведных мэтадаў: <code>add_column</code> ці <code>remove_column</code>. Напрыклад, пасьля выкананьня:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rails generate migration AddDetailsToProducts part_number:string price:decimal
-        ]]></script>
-  <p>будзе створана міграцыя:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class AddDetailsToProducts < ActiveRecord::Migration
-          def self.up
-            add_column :products, :part_number, :string
-            add_column :products, :price, :decimal
-          end
 
-          def self.down
-            remove_column :products, :price
-            remove_column :products, :part_number
-          end
-        end
-        ]]></script>
+  <pre><code class="language-bash">
+$ rails generate migration AddDetailsToProducts part_number:string price:decimal
+</code></pre>
+
+  <p>будзе створана міграцыя:</p>
+
+  <pre><code class="language-ruby">
+class AddDetailsToProducts &lt; ActiveRecord::Migration
+  def self.up
+    add_column :products, :part_number, :string
+    add_column :products, :price, :decimal
+  end
+
+  def self.down
+    remove_column :products, :price
+    remove_column :products, :part_number
+  end
+end
+</code></pre>
 
   <h3 id="Models_Migrations_Writing">Састаўленьне міграцыяў</h3>
   <div class="refs">
@@ -589,17 +638,21 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <p>Табліцы можна ствараць пры дапамозе мэтаду <code>create_table</code> (па спасылцы зьлева можна даведацца пра ўсе мэтады, каторыя даступны аб&#8217;екту, які перадаецца ў блёк мэтаду <code>create_table</code>):</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        create_table :products do |t|
-          t.string :name
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+create_table :products do |t|
+  t.string :name
+end
+</code></pre>
+
   <p>Стварэньне калёнкі ў папярэднім прыкладзе запісана сучасным спосабам, існуе шчэ традыцыйны спосаб:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        create_table :products do |t|
-          t.column :name, :string
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+create_table :products do |t|
+  t.column :name, :string
+end
+</code></pre>
+
   <p>Па-змоўчаньні мэтад <code>create_table</code> створыць у новай табліцы першасны ключ <code>id</code>. Калі імя першаснага ключа трэба зьмяніць, трэба яўна ўставіць выраз стварэньня гэтага поля і пазначыць для яго опцыю <code>:primary_key</code>.</p>
   <p>Тыпы калёнак, каторыя падтрымліваюцца <a href="http://railsapi.com/doc/rails-v3.0.8rc1/files/activerecord/README_rdoc.html">Active Record</a> наступныя:</p>
   <table>
@@ -664,11 +717,12 @@ disqus_shortname: rails-be
     </tbody>
   </table>
   <p>Гэтыя тыпы будуць аўтаматычна пераўтварацца ў тыпы базы, каторая ўжываецца на цяперашні момант. Напрыклад, у выпадку <a href="http://mysql.com/">MySQL</a> тып <code>:string</code> будзе пераўтвораны ў <code>VARCHAR(255)</code>. Акрамя гэтага можна пазначаць тыпы, якія не падтрымліваюцца <a href="http://railsapi.com/doc/rails-v3.0.8rc1/files/activerecord/README_rdoc.html">Active Record</a> праз традыцыйны запіс стварэньня калёнак:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        create_table :products do |t|
-          t.column :name, 'polygon', :null => false
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+create_table :products do |t|
+  t.column :name, 'polygon', :null => false
+end
+</code></pre>
 
   <h4 id="Models_Migrations_Writing_ChangingTable">Зьмена табліцаў</h4>
   <div class="refs">
@@ -676,147 +730,167 @@ disqus_shortname: rails-be
       <li><a href="http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/Table.html">Мэтады</a></li>
     </ul>
   </div>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        change_table :products do |t|
-          t.remove :description, :name
-          t.string :part_number
-          t.index :part_number
-          t.rename :upccode, :upc_code
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+change_table :products do |t|
+  t.remove :description, :name
+  t.string :part_number
+  t.index :part_number
+  t.rename :upccode, :upc_code
+end
+</code></pre>
+
   <p>У папярэднім прыкладзе з табліцы <code>products</code> будуць выдаленыя калёнкі <code>description</code> і <code>name</code>, устаўлена калёнка <code>part_number</code>, да каторай будзе дададзен індэкс, а калёнка <code>upccode</code> будзе перайменавана ў <code>upc_code</code>. Тое ж сама ў традыцыйнай форме будзе:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        remove_column :products, :description
-        remove_column :products, :name
-        add_column :products, :part_number, :string
-        add_index :products, :part_number
-        rename_column :products, :upccode, :upc_code
-        ]]></script>
+
+  <pre><code class="language-ruby">
+remove_column :products, :description
+remove_column :products, :name
+add_column :products, :part_number, :string
+add_index :products, :part_number
+rename_column :products, :upccode, :upc_code
+</code></pre>
 
   <h4 id="Models_Migrations_Writing_Helpers">Дапаможнікі</h4>
   <p>Існуе шэраг мэтадаў-дапаможнікаў, якія спрашчаюць напісаньне міграцыяў. Напрыклад, згаданы вышэй <code>timestamps</code>, які дадае ў табліцу аб&#8217;яўленьні калёнак <code>created_at</code> і <code>updated_at</code>. Яшчэ адзін мэтад-дапаможнік&nbsp;&ndash; <code>references</code>, у якога існуе псэўданім <code>belongs_to</code>. Ён дадае апісаньне калёнкі, якая зьяўляецца зьнешнім ключом да іншай табліцы. Наступны прыклад:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        create_table :products do |t|
-          t.references :category
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+create_table :products do |t|
+  t.references :category
+end
+</code></pre>
+
   <p>дадасьць калёнку <code>category_id</code> адпаведнага тыпу. Зьвярніце ўвагу, што ў мэтад перадаецца імя мадэлі (<code>category</code>), а не імя калёнкі (<code>category_id</code>), пры гэтым <code>_id</code> будзе дададзена аўтаматычна. Яшчэ вельмі істотная заўвага&nbsp;&ndash; у выпадку выкананьня гэтага мэтаду будзе проста дададзена калёнка адпаведнай назвы і тыпу, але ня будзе ўстаўлены неабходны <i>constraint</i> праверкі цэласнасьці ключоў. Зрабіць гэта трэба альбо праз выклік адпаведнага «сырога» SQL (глядзі ў <a href="#Models_Migrations_Writing_DownMethod">прыкладзе ніжэй</a>), альбо праз карыстаньне дадаткам <a href="http://rubydoc.info/gems/automatic_foreign_key/1.2.0/frames/"><i>Automatic Foreign Key</i></a>. Згаданы дадатак у самым простым выпадку лічыць, што калі ў вас ёсьць калёнка <code>customer_id</code>, вы жадаеце, каб быў створаны <i>foreign key constraint</i> на калёнку <code>id</code> табліцы <code>customers</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        create_table :orders do |t|
-          t.column :customer_id, :integer, :null => false
-          ...
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+create_table :orders do |t|
+  t.column :customer_id, :integer, :null => false
+  &hellip;
+end
+</code></pre>
 
   <h4 id="Models_Migrations_Writing_DownMethod">Мэтад <code>down</code></h4>
   <p>Мэтад <code>down</code> міграцыі павінен адкаціць тое, што было зроблена мэтадам <code>up</code>. Іншымі словамі стан базы павінен застацца нязьменным у выніку пасьлядоўнага выкананьня мэтадаў <code>up</code> і <code>down</code>. Прычым апошні павінен рабіць адкат зьменаў у зваротным парадку ў параўнаньні з тым, які быў ў мэтадзе <code>up</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class ExampleMigration < ActiveRecord::Migration
 
-          def self.up
-            create_table :products do |t|
-              t.references :category
-            end
-            #add a foreign key
-            execute <<-SQL
-              ALTER TABLE products
-                ADD CONSTRAINT fk_products_categories
-                FOREIGN KEY (category_id)
-                REFERENCES categories(id)
-            SQL
+  <pre><code class="language-ruby">
+class ExampleMigration &lt; ActiveRecord::Migration
 
-            add_column :users, :home_page_url, :string
+  def self.up
+    create_table :products do |t|
+      t.references :category
+    end
+    #add a foreign key
+    execute &lt;&lt;-SQL
+      ALTER TABLE products
+        ADD CONSTRAINT fk_products_categories
+        FOREIGN KEY (category_id)
+        REFERENCES categories(id)
+    SQL
 
-            rename_column :users, :email, :email_address
-          end
+    add_column :users, :home_page_url, :string
 
-          def self.down
-            rename_column :users, :email_address, :email
-            remove_column :users, :home_page_url
-            execute "ALTER TABLE products DROP FOREIGN KEY fk_products_categories"
-            drop_table :products
-          end
-        end
-        ]]></script>
+    rename_column :users, :email, :email_address
+  end
+
+  def self.down
+    rename_column :users, :email_address, :email
+    remove_column :users, :home_page_url
+    execute "ALTER TABLE products DROP FOREIGN KEY fk_products_categories"
+    drop_table :products
+  end
+end
+</code></pre>
+
   <p>Часам дзеяньні міграцыяў могуць быць незваротнымі&nbsp;&ndash; напрыклад, выдаленьне пэўных даных. У такім разе, мэтад <code>down</code> нічога не павінен рабіць, а толькі кідаць выключэньне <code>IrreversibleMigration</code>.</p>
 
   <h3 id="Models_Migrations_Running">Выкананьне міграцыяў</h3>
   <p>Rake-каманда <code>db:migrate</code> запускае ўсе міграцыі, якія шчэ не былі выкананыя. Яна ў сваю чаргу запусьціць каманду <code>db:schema:dump</code>, якая зьменіць файл <code>db/schema.rb</code>, каб ён адпавядаў новай структуры базы. Для выкананьня ня проста ўсіх новых міграцыяў, але для пераходу да пэўнага стану, трэба пазначыць адпаведную вэрсію:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rake db:migrate VERSION=20080906120000
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rake db:migrate VERSION=20080906120000
+</code></pre>
+
   <p>Вэрсія&nbsp;&ndash; гэта часаадзнакавы прэфікс перад імем міграцыі ў імені файла міграцыі. У выпадку, калі пазначаная вэрсія большая за цяперашнюю, будуць выкананыя мэтады <code>up</code> у тых міграцыяў, якія шчэ не былі выкананыя і чыя вэрсія меншая ці роўная пазначанай у камандзе. Калі ж мы пазначаем вэрсію меншую за цяперашнюю (то бок робім адкат), тады будзе выкананы мэтад <code>down</code> у тых міграцыяў, якія ўжо былі выкананыя і вэрсія якіх большая за пазначаную ў камандзе.</p>
   <p>Калі трэба выканаць/адкаціць ня проста <em>ўсе</em> міграцыі да пэўнай вэрсіі, але мэтад <code>up</code> ці <code>down</code> пэўнай адзінай міграцыі, тады трэба карыстацца камандамі <code>db:migrate:up</code> і <code>db:migrate:down</code>:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rake db:migrate:up VERSION=20080906120000
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rake db:migrate:up VERSION=20080906120000
+</code></pre>
+
   <p>Прычым <i>Rails</i> сам правярае ці карэктная гэта каманда. То бок, калі пэўная міграцыя ўжо была выканана і мы спрабуем для яе запусьціць каманду <code>db:migrate:up</code>, ці, калі пэўная міграцыя яшчэ не была выканана і мы спрабуем для яе запусьціць каманду <code>db:migrate:down</code>, то ў абодвух выпадках нічога ня будзе зроблена.</p>
 
   <h4 id="Models_Migrations_Running_Rollback">Адкат</h4>
   <p>Для адкату апошняй(-іх) міграцыі(-яў) ёсьць дапаможны мэтад <code>rollback</code>. Наступная каманда зробіць адкат апошняй выкананай міграцыі:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rake db:rollback
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rake db:rollback
+</code></pre>
+
   <p>Каб зрабіць адкат некалькіх апошніх міграцыяў дастаткова пазначыць іх колькасьць у парамэтры <code>STEP</code>. Наступная каманда зробіць адкат трох апошніх міграцыяў:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ rake db:rollback STEP=3
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ rake db:rollback STEP=3
+</code></pre>
 
   <h4 id="Models_Migrations_Running_Reset">Reset</h4>
   <p>І яшчэ адна дапаможная каманда: <code>db:reset</code>. Яна выдаліць базу, створыць яе зноўку і загрузіць туды актуальную <a href="#Models_Migrations_Dumps">схему</a> (але гэта ня тое ж самае, што пасьлядоўна выканаць усе міграцыі).</p>
 
   <h4 id="Models_Migrations_Running_Verbose">Вывад інфармацыі а хадзе міграцыі</h4>
   <p>Па змоўчаньні пры выкананьні міграцыі ў кансоль будзе вывадзіцца трасіровачная інфармацыя а хадзе міграцыі. Нешта кшталту:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        20080906170109 CreateProducts: migrating
-        -- create_table(:products)
-           -> 0.0021s
-        -- add_index(:products, :name)
-           -> 0.0026s
-        20080906170109 CreateProducts: migrated (0.0059s)
-        ]]></script>
-  <p>Існуе шэраг мэтадаў, якія могуць уплываць на гэты працэс:
+
+  <pre><code class="language-bash">
+20080906170109 CreateProducts: migrating
+-- create_table(:products)
+   -&gt; 0.0021s
+-- add_index(:products, :name)
+   -&gt; 0.0026s
+20080906170109 CreateProducts: migrated (0.0059s)
+</code></pre>
+
+  <p>Існуе шэраг мэтадаў, якія могуць уплываць на гэты працэс:</p>
   <ul>
     <li><code>suppress_messages</code>&nbsp;&ndash; падаўляе вывад любой трасіровачнай інфармацыі ў сваім блёку;</li>
     <li><code>say</code>&nbsp;&ndash; выводзіць тэкст, які перадаецца ў якасьці парамэтру;</li>
     <li><code>say_with_time</code>&nbsp;&ndash; выводзіць тэкст, які перадаецца ў якасьці парамэтру, потым час, які выконваўся яго блёк, і ў выпадку, калі блёк вяртае цэлы лік, лічыць, што гэта колькасьць задзейнічаных міграцыяй радкоў.</li>
   </ul>
-  </p>
   <p>Напрыклад, міграцыя:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class CreateProducts < ActiveRecord::Migration
-          def self.up
-            suppress_messages do
-              create_table :products do |t|
-                t.string :name
-                t.text :description
-                t.timestamps
-              end
-            end
-            say "Created a table"
-            suppress_messages {add_index :products, :name}
-            say "and an index!", true
-            say_with_time 'Waiting for a while' do
-              sleep 10
-              250
-            end
-          end
 
-          def self.down
-            drop_table :products
-          end
-        end
-        ]]></script>
+  <pre><code class="language-ruby">
+class CreateProducts &lt; ActiveRecord::Migration
+  def self.up
+    suppress_messages do
+      create_table :products do |t|
+        t.string :name
+        t.text :description
+        t.timestamps
+      end
+    end
+    say "Created a table"
+    suppress_messages {add_index :products, :name}
+    say "and an index!", true
+    say_with_time 'Waiting for a while' do
+      sleep 10
+      250
+    end
+  end
+
+  def self.down
+    drop_table :products
+  end
+end
+</code></pre>
+
   <p>прывядзе да наступнага вываду:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        20080906170109 CreateProducts: migrating
-          Created a table
-           -> and an index!
-          Waiting for a while
-           -> 10.0001s
-           -> 250 rows
-        20080906170109 CreateProducts: migrated (10.0097s)
-        ]]></script>
+
+  <pre><code class="language-bash">
+20080906170109 CreateProducts: migrating
+  Created a table
+   -&gt; and an index!
+  Waiting for a while
+   -&gt; 10.0001s
+   -&gt; 250 rows
+20080906170109 CreateProducts: migrated (10.0097s)
+</code></pre>
+
   <p>Калі ж вы жадаеце, каб міграцыя ўвогуле не рабіла ніякага вываду, запускаць яе трэба з опцыяй <code>VERBOSE=false</code>.</p>
 
   <h3 id="Models_Migrations_UsingModels">Выкарыстаньне мадэляў у міграцыях</h3>
@@ -889,33 +963,41 @@ disqus_shortname: rails-be
     <tr>
       <td><code>rake db:migrate</code></td>
       <td>Выконвае міграцыі (запускае мэтады міграцыяў <code>up</code> ці <code>change</code>), якія шчэ не былі выкананыя. Камандзе можна перадаваць парамэтар <code>VERSION</code>. Калі значэньне гэтага парамэтру большае за вэрсію актуальнай міграцыі, тады будзе выкананы мэтад <code>up</code> усіх міграцыяў паміж цяперашняй і пазначанай у парамэтры ўключна. Калі ж значэньне парамэтру меншае за актуальную, тады будзе выкананы мэтад <code>down</code> усіх міграцыяў паміж цяперашняй і пазначанай у парамэтры ўключна:
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-                $ rake db:migrate VERSION=20080906120000
-              ]]></script>
+
+        <pre><code class="language-bash">
+$ rake db:migrate VERSION=20080906120000
+</code></pre>
+
       </td>
     </tr>
     <tr>
       <td><code>rake db:rollback</code></td>
       <td>Адкочвае актуальную міграцыю (запускае мэтад міграцыі <code>down</code> ці робіць аўтаматычны, па пэўным альгарытме адкат мэтаду <code>change</code>). Калі ёсьць патрэба адкаціць адразу некалькі міграцыяў, можна перадаць камандзе парамэтар <code>STEP</code>, у якім пазначыць колькасьць апошніх выкананых міграцыяў, якія павінны быць адкочаны:
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-                $ rake db:rollback STEP=3
-              ]]></script>
+
+        <pre><code class="language-bash">
+$ rake db:rollback STEP=3
+</code></pre>
+
       </td>
     </tr>
     <tr>
       <td><code>rake db:migrate:redo</code></td>
       <td>Перавыконвае актуальную міграцыю (пасьлядоўна робіць адкат міграцыі і выконвае яе ізноў &nbsp;&ndash; гл. дзьве каманды вышэй у табліцы). Як і ў выпадку адкочваньня, можна перадаць камандзе парамэтар <code>STEP</code>, у якім пазначыць колькасьць апошніх міграцыяў, якія павінны быць перавыкананы:
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-                $ rake db:migrate:redo STEP=2
-              ]]></script>
+
+        <pre><code class="language-bash">
+$ rake db:migrate:redo STEP=2
+</code></pre>
+
       </td>
     </tr>
     <tr>
       <td><code>rake db:fixtures:load</code></td>
       <td>Загрузіць тэставыя даныя (файлы <code>.yml</code> у тэчцы <code>test/fixtures</code>) у базу бягучага асяродку. Калі ёсьць патрэба загрузіць ня ўсе, але толькі пэўныя даныя, можна скарыстацца парамэтрам <code>FIXTURES</code>:
-        <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-                $ rake db:fixtures:load FIXTURES=data1.yml,data2.yml
-              ]]></script>
+
+        <pre><code class="language-bash">
+$ rake db:fixtures:load FIXTURES=data1.yml,data2.yml
+</code></pre>
+
       </td>
     </tr>
     </tbody>
@@ -923,16 +1005,18 @@ disqus_shortname: rails-be
 
   <h2 id="Models_NewRecords">Новыя экзэмпляры</h2>
   <p>Новы экзэмпляр пэўнай мадэлі можна стварыць пры дапамозе мэтаду <code>new</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          p = Person.new(:name => "John Doe")
-        ]]></script>
-  <p>А праверыць ці быў гэты экзэмпляр калі-небудзь захаваны ў базу даных (альбо існуе адно ў памяці) можна наступным чынам:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          p.new_record?         # => true
-          p.save                # => true
-          p.new_record?         # => false
-        ]]></script>
 
+  <pre><code class="language-ruby">
+p = Person.new(:name =&gt; "John Doe")
+</code></pre>
+
+  <p>А праверыць ці быў гэты экзэмпляр калі-небудзь захаваны ў базу даных (альбо існуе адно ў памяці) можна наступным чынам:</p>
+
+  <pre><code class="language-ruby">
+p.new_record?         # =&gt; true
+p.save                # =&gt; true
+p.new_record?         # =&gt; false
+</code></pre>
 
   <h2 id="Models_TrackingChanges">Сачэньне за зьменамі</h2>
   <div class="refs">
@@ -941,37 +1025,43 @@ disqus_shortname: rails-be
       <li><a href="http://api.rubyonrails.org/classes/ActiveModel/Dirty.html">API</a></li>
     </ul>
   </div>
-  <p>Часам у праграме трэба ведаць ці былі зроблены зьмены ў аб&#39;екце пасьля яго стварэньня і калі былі, то якія. Пры гэтым выкарыстоўваецца наступная тэрміналёгія: калі адзін ці некалькі атрыбутаў нейкага экзэмпляру былі зьмененыя, яго называюць брудным экзэмплярам; калі брудны экзэмпляр быў захаваны ў базу, ён ізноў становіцца чыстым. Для вызначэньня ці зьяўляецца экзэмпляр брудным выкарыстоўваецца мэтад <code>changed?</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          student.changed?                 # => false
-          student.middle_name = 'Ambrose'
-          student.changed?                 # => true
-          student.save
-          student.changed?                 # => false
-        ]]></script>
+  <p>Часам у праграме трэба ведаць ці былі зроблены зьмены ў аб'екце пасьля яго стварэньня і калі былі, то якія. Пры гэтым выкарыстоўваецца наступная тэрміналёгія: калі адзін ці некалькі атрыбутаў нейкага экзэмпляру былі зьмененыя, яго называюць брудным экзэмплярам; калі брудны экзэмпляр быў захаваны ў базу, ён ізноў становіцца чыстым. Для вызначэньня ці зьяўляецца экзэмпляр брудным выкарыстоўваецца мэтад <code>changed?</code>:</p>
+
+  <pre><code class="language-ruby">
+student.changed?                 # =&gt; false
+student.middle_name = 'Ambrose'
+student.changed?                 # =&gt; true
+student.save
+student.changed?                 # =&gt; false
+</code></pre>
+
   <p>Можна пайсьці далей і запытацца пра пэўныя з атрыбутаў, ці былі яны зьмененыя, і даведацца пра значэньні, якія яны ўтрымлівалі да зьмены:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          student.gpa = 3.22
-          student.gpa_changed?             # => true
-          student.gpa_was                  # => 3.14
-          student.gpa_change               # => [3.22, 3.14]
-        ]]></script>
+
+  <pre><code class="language-ruby">
+student.gpa = 3.22
+student.gpa_changed?             # =&gt; true
+student.gpa_was                  # =&gt; 3.14
+student.gpa_change               # =&gt; [3.22, 3.14]
+</code></pre>
+
   <p>Пры дапамозе мэтадаў <code>changed</code> і <code>changes</code> можна атрымаць сьпіс зьмененых атрыбутаў і гісторыю іх зьменаў:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          student.middle_name = 'David'
-          student.changed                  # => ["gpa", "middle_name"]
-          student.changes                  # => {"gpa" => [3.22, 3.14],
-                                           #       "middle_name" => ["Ambrose", "David"]}
-        ]]></script>
+
+  <pre><code class="language-ruby">
+student.middle_name = 'David'
+student.changed                  # =&gt; ["gpa", "middle_name"]
+student.changes                  # =&gt; {"gpa" =&gt; [3.22, 3.14],
+                                 #       "middle_name" =&gt; ["Ambrose", "David"]}
+</code></pre>
+
   <p>УВАГА! Калі атрыбут зьмяняецца без ужываньня апэрацыі прысваеньня, Active Record не ўсьвядоміць зьмены аўтаматычна і трэба кампанэнту дапамагчы зрабіць гэта:</p>
-  <script type="syntaxhighlighter" class="brush: ruby; highlight: [2]"><![CDATA[
-          student.save
-          student.middle_name_will_change!
-          student.middle_name_changed?     # => false
-          student.middle_name << 'son'
-          student.middle_name_change       # => ["David", "Davidson"]
-        ]]></script>
-  <p></p>
+
+  <pre data-line="2"><code class="language-ruby">
+student.save
+student.middle_name_will_change!
+student.middle_name_changed?     # =&gt; false
+student.middle_name &lt;&lt; 'son'
+student.middle_name_change       # =&gt; ["David", "Davidson"]
+</code></pre>
 
   <h2 id="Models_Validations">Валідацыя даных</h2>
   <div class="refs">
@@ -988,24 +1078,28 @@ disqus_shortname: rails-be
     <li>Rails-мадэлі&nbsp;&ndash; найбольш унівэрсальны ўзровень валідацыі, якая не залежыць ад рэалізацыі базы даных, не можа быць падмененая карыстальнікам, зручная пры тэставаньні і падтрымцы.</li>
   </ul>
   <p>Па вялікаму рахунку адна і тая ж валідацыя ў праграме можа быць рэалізавана на ўсіх трох узроўнях. Але ў межах гэтага даведніку разгледзім больш падрабязна валідацыю толькі на ўзроўні <i>Rails</i>-мадэляў. Напрыклад, наступны код будзе прадухіляць захаваньне/абнаўленьне такіх экзэмпляраў клясы <code>Video</code>, у якіх атрыбуты <code>title</code> і <code>embeded</code> не запоўненыя:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Video < ActiveRecord::Base
-            validates :title, :embeded, :presence => true
-          end
-        ]]></script>
-  <p>Калі ўбудаваных валідатараў не дастаткова, каб рэалізаваць патрэбную валідацыю, можна напісаць уласны валідатар:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Video < ActiveRecord::Base
-            validates :title, :embeded, :presence => true
-            validate :must_have_valid_embeded
 
-            def must_have_valid_embeded
-              unless embeded.include?("<iframe")
-                errors.add(:embeded, "Must include an iframe tag")
-              end
-            end
-          end
-        ]]></script>
+  <pre><code class="language-ruby">
+class Video &lt; ActiveRecord::Base
+  validates :title, :embeded, :presence => true
+end
+</code></pre>
+
+  <p>Калі ўбудаваных валідатараў не дастаткова, каб рэалізаваць патрэбную валідацыю, можна напісаць уласны валідатар:</p>
+
+  <pre><code class="language-ruby">
+class Video &lt; ActiveRecord::Base
+  validates :title, :embeded, :presence =&gt; true
+  validate :must_have_valid_embeded
+
+  def must_have_valid_embeded
+    unless embeded.include?("&lt;iframe")
+      errors.add(:embeded, "Must include an iframe tag")
+    end
+  end
+end
+</code></pre>
+
   <p>Мэтад <code>validate</code> выклікае мэтад-валідатар, імя якога было яму перададзена. Апошні ў сваю чаргу робіць патрэбныя праверкі і ў выпадку, калі экзэмпляр не праходзіць валідацыю, дадае ў яго калекцыю памылак адпаведнае паведамленьне з адпаведным ключом (<code>embeded</code> у прыкладзе вышэй).</p>
 
   <h3 id="Models_Validations_WhenHappen">Калі адбываецца валідацыя?</h3>
@@ -1034,51 +1128,59 @@ disqus_shortname: rails-be
     <li><code>update_counters</code></li>
   </ul>
   <p>Таксама вышэйзгаданы мэтад <code>save</code> не запусьціць валідацыю, калі будзе выкліканы з аргумэнтам <code>:validate => false</code> (трэба ўжываць з асьцярогай!):</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          save(:validate => false)
-        ]]></script>
+
+  <pre><code class="language-ruby">
+save(:validate =&gt; false)
+</code></pre>
 
   <h3 id="Models_Validations_Checking"><code>valid?</code> і <code>invalid?</code></h3>
   <p>Rails унутры сябе для праверкі валіднасьці выкарыстоўвае мэтады <code>valid?</code> і <code>invalid?</code>, якія могуць быць выкарыстаныя і на ўласныя мэты:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :name, :presence => true
-          end
 
-          Person.create(:name => "John Doe").valid?   # => true
-          Person.create(:name => nil).valid?          # => false
-        ]]></script>
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :name, :presence =&gt; true
+end
+
+Person.create(:name =&gt; "John Doe").valid?   # =&gt; true
+Person.create(:name =&gt; nil).valid?          # =&gt; false
+</code></pre>
+
   <p>Пасьля таго, як была выклікана валідацыя і было выяўлена, што экзэмпляр не валідны, усе паведамленьні пра адпаведныя памылкі даступныя праз мэтад <code>errors</code>, які вяртае <a href="../ruby/index.html#Types_Hashes">хэш</a>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :name, :presence => true
-          end
 
-          p = Person.new        # => #<Person id: nil, name: nil>
-          p.errors              # => {}
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :name, :presence =&gt; true
+end
 
-          p.valid?              # => false
-          p.errors              # => {:name => ["can't be blank"]}
+p = Person.new        # =&gt; #&lt;Person id: nil, name: nil&gt;
+p.errors              # =&gt; {}
 
-          # Экзэмпляр ня будзе захаваны, таму што ня пройдзе валідацыю
-          p = Person.create     # => #<Person id: nil, name: nil>
-          p.errors              # => {:name => ["can't be blank"]}
+p.valid?              # =&gt; false
+p.errors              # =&gt; {:name =&gt; ["can't be blank"]}
 
-          p.save                # => false
+# Экзэмпляр ня будзе захаваны, таму што ня пройдзе валідацыю
+p = Person.create     # =&gt; #&lt;Person id: nil, name: nil>
+p.errors              # =&gt; {:name => ["can't be blank"]}
 
-          p.save!               # => ActiveRecord::RecordInvalid:
-                                #         Validation failed: Name cant be blank
-        ]]></script>
+p.save                # =&gt; false
+
+p.save!               # =&gt; ActiveRecord::RecordInvalid:
+                      #         Validation failed: Name cant be blank
+</code></pre>
 
   <h3 id="Models_Validations_Builtin">Убудаваныя валідатары</h3>
   <p>Мадэлі ў <i>Rails</i> маюць шэраг убудаваных валідатараў, кожны зь якіх мае дзьве формы запісу&nbsp;&ndash; поўную:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          validates :name, :presence => true
-        ]]></script>
+
+  <pre><code class="language-ruby">
+validates :name, :presence =&gt; true
+</code></pre>
+
   <p>... і скарочаную:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          validates_presence_of :name
-        ]]></script>
+
+  <pre><code class="language-ruby">
+validates_presence_of :name
+</code></pre>
+
   <aside>Для зручнасьці пошуку інфармацыі ў якасьці загалоўкаў у дадзеным даведніку прывядзем скарочаныя вэрсіі валідатараў.</aside>
   <p>Пераважнай зьяўляецца поўная форма, таму што пры гэтым можна аб&#39;ядноўваць некалькі валідатараў у адным радку.</p>
   <p>Валідатарам можна перадаваць парамэтры (опцыі), <code>:presence => true</code> у прыкладзе вышэй. Акрамя спэцыфічных для кожнага з валідатараў, ёсьць шэраг парамэтраў, характэрных для ўсіх іх:</p>
@@ -1086,12 +1188,14 @@ disqus_shortname: rails-be
     <li><code>:on</code>&nbsp;&ndash; вызначае калі павінна адбыцца валідацыя. Магчымыя значэньні: <code>:save</code> (змоўчнае; захаваньне экзэмпляру незалежна новы ён ці не), <code>:create</code> (толькі пры захаваньні новага экзэмпляру) і <code>:update</code> (толькі пры апдэйце ўжо існага экзэмпляру).</li>
     <li><code>:message</code>&nbsp;&ndash; вызначае паведамленьне ў выпадку, калі валідацыя не прайшла. Для кожнай з валідацыі існуе змоўчнае паведамленьне, якое будзе выкарыстана, калі гэты парамэтар не пазначаны.</li>
     <li><code>:if</code>&nbsp;&ndash; пазначае мэтад, працэдуру, альбо чараду для выкананьня, каб вызначыць ці павінна адбыцца валідацыя. Напрыклад:
-      <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-              :if => :allow_validation
 
-              # альбо
-              :if => Proc.new { |user| user.signup_step > 2 }
-            ]]></script>
+      <pre><code class="language-ruby">
+:if =&gt; :allow_validation
+
+# альбо
+:if =&gt; Proc.new { |user| user.signup_step &gt; 2 }
+</code></pre>
+
     </li>
 
     <li><code>:unless</code>&nbsp;&ndash; пазначае мэтад, працэдуру, альбо чараду для выкананьня, каб вызначыць ці павінна валідацыя быць праігнаравана.</li>
@@ -1101,24 +1205,30 @@ disqus_shortname: rails-be
 
   <h4 id="Models_Validations_Builtin_acceptance"><code>validates_acceptance_of</code></h4>
   <p>Правярае ці быў абраны пэўны чэкбокс (у агульным выпадку) пры сабміце формы. Звычайна гэтая валідацыя выкарыстоўваецца, калі карыстальнік павінен згадзіцца з умовамі сэрвісу, пацьвердзіць прачытаньне нейкага тэксту ці ў іншых падобных выпадках. Часта факт «прыняцьця» правяраецца толькі ў момант сабміту формы і не маецца патрэбы захоўваць гэтую інфармацыю ў базе даных, таму ў выпадку адсутнасьці адпаведнага атрыбуту мадэлі валідатар створыць віртуальны атрыбут:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :terms_of_service, :acceptance => true
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :terms_of_service, :acceptance =&gt; true
+end
+</code></pre>
+
   <p>Чэкбокс для гэтага прыкладу можа быць сканструяваны наступным чынам:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          <% form_for @user do |user| %>
-            ...
-            <%= user.check_box :terms_of_service %>
-          <% end %>
-        ]]></script>
+
+  <pre><code class="language-ruby">
+&lt;% form_for @user do |user| %&gt;
+  ...
+  &lt;%= user.check_box :terms_of_service %&gt;
+&lt;% end %&gt;
+</code></pre>
+
   <p>Дадатковыя парамэтры:</p>
   <ul>
     <li><code>:accept</code>&nbsp;&ndash; вызначае значэньне, якое будзе лічыцца за «прыняцьце» (змоўчным зьяўляецца значэньне <code>"1"</code>):
-      <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-              validates :terms_of_service, :acceptance => { :accept => 'yes' }
-            ]]></script>
+
+      <pre><code class="language-ruby">
+validates :terms_of_service, :acceptance =&gt; { :accept =&gt; 'yes' }
+</code></pre>
+
     </li>
     <li><code>:allow_nil</code>&nbsp;&ndash; прапусьціць валідацыю, калі парамэтар роўны <code>nil</code>. Змоўчнае значэньне&nbsp;&ndash; <code>true</code>.</li>
   </ul>
@@ -1126,33 +1236,41 @@ disqus_shortname: rails-be
 
   <h4 id="Models_Validations_Builtin_confirmation"><code>validates_confirmation_of</code></h4>
   <p>Валідацыя зручна для праверкі значэньняў, якія на вью павінны быць уведзеныя карыстальнікам двойчы для выключэньня памылкі ўводу, напрыклад, значэньне паролю ці адрасу электроннай пошты:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :email, :confirmation => true
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :email, :confirmation =&gt; true
+end
+</code></pre>
+
   <p>адпаведнае вью можа выглядаць наступным чынам:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          <%= text_field :person, :email %>
-          <%= text_field :person, :email_confirmation %>
-        ]]></script>
+
+  <pre><code class="language-ruby">
+&lt;%= text_field :person, :email %&gt;
+&lt;%= text_field :person, :email_confirmation %&gt;
+</code></pre>
+
   <p>Аднак трэба памятаць, што гэтая валідацыя спрацуе толькі, калі <code>email_confirmation</code> ня <code>nil</code>. Для запуску валідацыі ў любым выпадку, незалежна ад значэньня атрыбуту <code>email_confirmation</code>, трэба дадаць валідацыю абавязковасьці:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :email, :confirmation => true
-            validates :email_confirmation, :presence => true
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :email, :confirmation =&gt; true
+  validates :email_confirmation, :presence =&gt; true
+end
+</code></pre>
+
   <p>Змоўчны тэкст паведамленьня для гэтага валідатара: <code>"doesn’t match confirmation"</code>.</p>
 
   <h4 id="Models_Validations_Builtin_exclusion"><code>validates_exclusion_of</code></h4>
   <p>Правярае, каб атрыбут мадэлі не прымаў значэньні з пэўнага шэрагу:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Account < ActiveRecord::Base
-            validates :subdomain, :exclusion => { :in => %w(www us ca jp),
-              :message => "Subdomain %{value} is reserved." }
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Account &lt; ActiveRecord::Base
+  validates :subdomain, :exclusion =&gt; { :in =&gt; %w(www us ca jp),
+    :message =&gt; "Subdomain %{value} is reserved." }
+end
+</code></pre>
+
   <p>Дадатковыя парамэтры:</p>
   <ul>
     <li><code>:allow_blank</code>&nbsp;&ndash; прапусьціць валідацыю, калі парамэтар не запоўнены (роўны <code>nil</code> альбо пустой чарадзе напрыклад). Змоўчнае значэньне&nbsp;&ndash; <code>false</code>.</li>
@@ -1163,11 +1281,13 @@ disqus_shortname: rails-be
 
   <h4 id="Models_Validations_Builtin_format"><code>validates_format_of</code></h4>
   <p>Правярае, каб значэньне атрыбуту мадэлі адпавядала (альбо наадварот, НЕ адпавядала) пэўнаму рэгулярнаму выразу:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class User < ActiveRecord::Base
-            validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class User &lt; ActiveRecord::Base
+  validates :email, :format =&gt; { :with =&gt; /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i }
+end
+</code></pre>
+
   <p>Дадатковыя парамэтры:</p>
   <ul>
     <li><code>:allow_blank</code>&nbsp;&ndash; прапусьціць валідацыю, калі парамэтар не запоўнены (роўны <code>nil</code> альбо пустой чарадзе напрыклад). Змоўчнае значэньне&nbsp;&ndash; <code>false</code>.</li>
@@ -1177,29 +1297,33 @@ disqus_shortname: rails-be
   </ul>
   <p>Змоўчны тэкст паведамленьня для гэтага валідатара: <code>"is invalid"</code>.</p>
   <p>Прывядзем дадатковыя прыклады:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates_format_of :email, :without => %rNOSPAM/
-          end
-        ]]></script>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            # Admin can have number as a first letter in their screen name
-            validates_format_of :screen_name,
-                                :with => lambda{ |person| person.admin? ? %r\A[a-z0-9][a-z0-9_\-]*\Z/
-                                    : %r\A[a-z][a-z0-9_\-]*\Z/ }
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates_format_of :email, :without =&gt; %rNOSPAM/
+end
+</code></pre>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  # Admin can have number as a first letter in their screen name
+  validates_format_of :screen_name,
+                      :with =&gt; lambda{ |person| person.admin? ? %r\A[a-z0-9][a-z0-9_\-]*\Z/
+                          : %r\A[a-z][a-z0-9_\-]*\Z/ }
+end
+</code></pre>
 
   <h4 id="Models_Validations_Builtin_inclusion"><code>validates_inclusion_of</code></h4>
   <p>Правярае, каб атрыбут мадэлі прымаў значэньні толькі з пэўнага шэрагу:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class User < ActiveRecord::Base
-            validates_inclusion_of :date_of_birth,
-              :in => (130.years.ago.to_date .. Date.today),
-              :message => "must be at least plausibly human"
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class User &lt; ActiveRecord::Base
+  validates_inclusion_of :date_of_birth,
+    :in =&gt; (130.years.ago.to_date .. Date.today),
+    :message =&gt; "must be at least plausibly human"
+end
+</code></pre>
+
   <p>Дадатковыя парамэтры:</p>
   <ul>
     <li><code>:allow_blank</code>&nbsp;&ndash; прапусьціць валідацыю, калі парамэтар не запоўнены (роўны <code>nil</code> альбо пустой чарадзе напрыклад). Змоўчнае значэньне&nbsp;&ndash; <code>false</code>.</li>
@@ -1210,25 +1334,27 @@ disqus_shortname: rails-be
 
   <h4 id="Models_Validations_Builtin_length"><code>validates_length_of</code> (ці <code>validates_size_of</code>)</h4>
   <p>Правярае, каб атрыбут мадэлі прымаў значэньні пэўнай даўжыні (роўна, больш/менш, альбо дыяпазону даўжынь):</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :first_name,  :length => { :maximum => 30 }
-            validates :last_name,   :length => { :maximum => 30,
-                                        :message => "less than 30 if you don't mind" }
-            validates :fax,         :length => { :in => 7..32, :allow_nil => true }
-            validates :phone,       :length => { :in => 7..32, :allow_blank => true }
-            validates :user_name,   :length => { :within => 6..20,
-                                        :too_long => "pick a shorter name",
-                                        :too_short => "pick a longer name" }
-            validates :zip_code,    :length => { :minimum => 5,
-                                        :too_short => "please enter at least 5 characters" }
-            validates :smurf_leader,:length => { :is => 4,
-                            :message => "papa is spelled with 4 characters... don't play me." }
-            validates :essay,       :length => { :minimum => 100,
-                                        :too_short => "Your essay must be at least 100 words.",
-                                        :tokenizer => lambda { |str| str.scan(%r\w+/) } }
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :first_name,  :length =&gt; { :maximum =&gt; 30 }
+  validates :last_name,   :length =&gt; { :maximum =&gt; 30,
+                              :message =&gt; "less than 30 if you don't mind" }
+  validates :fax,         :length =&gt; { :in =&gt; 7..32, :allow_nil =&gt; true }
+  validates :phone,       :length =&gt; { :in =&gt; 7..32, :allow_blank =&gt; true }
+  validates :user_name,   :length =&gt; { :within =&gt; 6..20,
+                              :too_long =&gt; "pick a shorter name",
+                              :too_short =&gt; "pick a longer name" }
+  validates :zip_code,    :length =&gt; { :minimum =&gt; 5,
+                              :too_short =&gt; "please enter at least 5 characters" }
+  validates :smurf_leader,:length =&gt; { :is =&gt; 4,
+                              :message =&gt; "papa is spelled with 4 characters... don't play me." }
+  validates :essay,       :length =&gt; { :minimum =&gt; 100,
+                              :too_short =&gt; "Your essay must be at least 100 words.",
+                              :tokenizer =&gt; lambda { |str| str.scan(%r\w+/) } }
+end
+</code></pre>
+
   <p>Дадатковыя парамэтры:</p>
   <ul>
     <li><code>:allow_blank</code>&nbsp;&ndash; прапусьціць валідацыю, калі парамэтар не запоўнены (роўны <code>nil</code> альбо пустой чарадзе напрыклад). Змоўчнае значэньне&nbsp;&ndash; <code>false</code>.</li>
@@ -1246,17 +1372,19 @@ disqus_shortname: rails-be
 
   <h4 id="Models_Validations_Builtin_numericality"><code>validates_numericality_of</code></h4>
   <p>Правярае, каб атрыбут мадэлі прымаў толькі лічбавыя значэньні:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Player < ActiveRecord::Base
-            validates :points, :numericality => true
-            validates :games_played, :numericality => { :only_integer => true }
-          end
 
-          class Person < ActiveRecord::Base
-            validates :width, :numericality => { :less_than => Proc.new { |person| person.height } }
-            validates :width, :numericality => { :greater_than => :minimum_width }
-          end
-        ]]></script>
+  <pre><code class="language-ruby">
+class Player &lt; ActiveRecord::Base
+  validates :points, :numericality =&gt; true
+  validates :games_played, :numericality =&gt; { :only_integer =&gt; true }
+end
+
+class Person &lt; ActiveRecord::Base
+  validates :width, :numericality =&gt; { :less_than =&gt; Proc.new { |person| person.height } }
+  validates :width, :numericality =&gt; { :greater_than =&gt; :minimum_width }
+end
+</code></pre>
+
   <p>Дадатковыя парамэтры:</p>
   <ul>
     <li><code>:allow_nil</code>&nbsp;&ndash; прапусьціць валідацыю, калі парамэтар роўны <code>nil</code>. Змоўчнае значэньне&nbsp;&ndash; <code>false</code>.</li>
@@ -1273,48 +1401,60 @@ disqus_shortname: rails-be
 
   <h4 id="Models_Validations_Builtin_presence"><code>validates_presence_of</code></h4>
   <p>Правярае, каб атрыбут быў не пустым (быў запоўненым):</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :email, :presence => true
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :email, :presence =&gt; true
+end
+</code></pre>
+
   <p>У выпадку, калі трэба праверыць ці запоўненая асацыяцыя (зьвязаная запіс), трэба правяраць наяўнасьць не самой асацыяцыі, а зьнешняга ключа да яе:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class LineItem < ActiveRecord::Base
-            belongs_to :order
-            validates :order_id, :presence => true
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class LineItem &lt; ActiveRecord::Base
+  belongs_to :order
+  validates :order_id, :presence =&gt; true
+end
+</code></pre>
+
   <p>Улічваючы, што <code>false.blank?</code> верне значэньне <code>true</code>, правяраць запоўненасьць булевых атрыбутаў трэба інакш:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          validates :boolean_field_name, :inclusion => { :in => [true, false] }
-        ]]></script>
+
+  <pre><code class="language-ruby">
+validates :boolean_field_name, :inclusion =&gt; { :in =&gt; [true, false] }
+</code></pre>
+
   <p>Змоўчны тэкст паведамленьня для гэтай валідацыі: <code>"can’t be empty"</code>.</p>
 
   <aside>Трэба памятаць, што праверка ўнікальнасьці адбываецца не за конт канстрэйнта базы даных і цалкам магчыма, што розныя канэкшэны да базы даных адначасова створаць запісы з аднолькавым значэньнем у такім полі. Таму гэтую валідацыю варта заўсёды суправаджаць адпаведным канстрэйнтам базы даных.</aside>
   <h4 id="Models_Validations_Builtin_uniqueness"><code>validates_uniqueness_of</code></h4>
   <p>Правярае, каб атрыбут меў унікальнае значэньне (сярод усіх запісаў ці па дадатковай умове):</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Account < ActiveRecord::Base
-            validates :email, :uniqueness => true
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Account &lt; ActiveRecord::Base
+  validates :email, :uniqueness =&gt; true
+end
+</code></pre>
+
   <p>Дадатковыя парамэтры:</p>
   <ul>
     <li><code>:case_sensitive</code>&nbsp;&ndash; вызначае ці з улікам рэгістру (значэньне <code>true</code>) рабіць праверку унікальнасьці. Змоўчнае значэньне&nbsp;&ndash; <code>true</code>.
-      <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-              class Person < ActiveRecord::Base
-                validates :name, :uniqueness => { :case_sensitive => false }
-              end
-            ]]></script>
+
+      <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :name, :uniqueness =&gt; { :case_sensitive =&gt; false }
+end
+</code></pre>
+
     </li>
     <li><code>:scope</code>&nbsp;&ndash; пазначае дадатковы атрыбут, які будзе ўлічвацца ў вызначэньні ўнікальнасьці (каб зьменшыць «маштаб» унікальнасьці):
-      <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-              class Holiday < ActiveRecord::Base
-                validates :name, :uniqueness => { :scope => :year,
-                  :message => "should happen once per year" }
-              end
-            ]]></script>
+
+      <pre><code class="language-ruby">
+class Holiday &lt; ActiveRecord::Base
+  validates :name, :uniqueness =&gt; { :scope =&gt; :year,
+    :message =&gt; "should happen once per year" }
+end
+</code></pre>
+
     </li>
   </ul>
   <p>Змоўчны тэкст паведамленьня для гэтай валідацыі: <code>"has already been taken"</code>.</p>
@@ -1324,147 +1464,167 @@ disqus_shortname: rails-be
 
   <h4 id="Models_Validations_Custom_Attributes">Валідацыя атрыбутаў</h4>
   <p>Уласная валідацыя асобных атрыбутаў магчымая, па-першае, праз стварэньне клясаў-валідатараў, спадчыньнікаў ад <code>ActiveModel::EachValidator</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class EmailValidator < ActiveModel::EachValidator
-            def validate_each(record, attribute, value)
-              unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
-                record.errors[attribute] << (options[:message] || "is not an email")
-              end
-            end
-          end
 
-          class Person < ActiveRecord::Base
-            validates :email, :presence => true, :email => true
-          end
-        ]]></script>
+  <pre><code class="language-ruby">
+class EmailValidator &lt; ActiveModel::EachValidator
+  def validate_each(record, attribute, value)
+    unless value =~ /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+      record.errors[attribute] &lt;&lt; (options[:message] || "is not an email")
+    end
+  end
+end
+
+class Person &lt; ActiveRecord::Base
+  validates :email, :presence =&gt; true, :email =&gt; true
+end
+</code></pre>
+
   <p>Мэтад <code>validate_each</code> гэтага валідатару ў якасьці парамэтраў прымае сам экзэмпляр (<code>record</code>), імя атрыбуту (<code>attr</code>) і ягонае значэньне (<code>value</code>). Зьвярніце ўвагу як пазначаецца валідатар: <code>:email => true</code>, а імя валідатара пры гэтым <code>EmailValidator</code>. Таксама зьвярніце ўвагу, як у апошнім прыкладзе камбінуюцца убудаваны і ўласны валідатары.</p>
   <p>Акрамя гэтага для валідацыі атрыбутаў можна скарыстацца макрасам <code>validates_each</code>, якому перадаецца ліст атрыбутаў для праверкі і блёк, які прымае тыя ж парамэтры <code>record</code>, <code>attr</code> і <code>value</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates_each :name, :surname do |record, attr, value|
-              record.errors.add(attr, 'must start with upper case') if value =~ /\A[a-z]/
-            end
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates_each :name, :surname do |record, attr, value|
+    record.errors.add(attr, 'must start with upper case') if value =~ /\A[a-z]/
+  end
+end
+</code></pre>
 
   <h4 id="Models_Validations_Custom_Instances">Валідацыя экзэмпляраў</h4>
   <p>Для праверкі цалкам усяго экзэмпляру можна скарыстацца макрасам <code>validates_with</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates_with GoodnessValidator
-          end
 
-          class GoodnessValidator < ActiveModel::Validator
-            def validate(record)
-              if record.first_name == "Evil"
-                record.errors[:base] << "This person is evil"
-              end
-            end
-          end
-        ]]></script>
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates_with GoodnessValidator
+end
+
+class GoodnessValidator &lt; ActiveModel::Validator
+  def validate(record)
+    if record.first_name == "Evil"
+      record.errors[:base] &lt;&lt; "This person is evil"
+    end
+  end
+end
+</code></pre>
+
   <p>Зьвярніце ўвагу на тое, што паведамленьні аб памылцы, дададзеныя ў хэш <code>errors</code> з ключом <code>:base</code> адносяцца не да пэўнага атрыбуту, але да ўсяго экзэмпляру.</p>
   <p>У валідатары акрамя стандартных можна перадаваць дадатковыя парамэтры, доступ да якіх у клясе валідатара будзе магчымы праз хэш <code>options</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby; highlight: [2,7]"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates_with GoodnessValidator, :fields => [:first_name, :last_name]
-          end
 
-          class GoodnessValidator < ActiveModel::Validator
-            def validate(record)
-              if options[:fields].any?{|field| record.send(field) == "Evil" }
-                record.errors[:base] << "This person is evil"
-              end
-            end
-          end
-        ]]></script>
+  <pre data-line="2,7"><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates_with GoodnessValidator, :fields =&gt; [:first_name, :last_name]
+end
+
+class GoodnessValidator &lt; ActiveModel::Validator
+  def validate(record)
+    if options[:fields].any?{|field| record.send(field) == "Evil" }
+      record.errors[:base] &lt;&lt; "This person is evil"
+    end
+  end
+end
+</code></pre>
 
   <h4 id="Models_Validations_Custom_Methods">Мэтады-валідатары</h4>
   <p>Таксама ўласную валідацыю можна стварыць праз звычайны мэтад мадэлі:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Invoice < ActiveRecord::Base
-            validate :expiration_date_cannot_be_in_the_past,
-              :discount_cannot_be_greater_than_total_value
 
-            def expiration_date_cannot_be_in_the_past
-              if !expiration_date.blank? and expiration_date < Date.today
-                errors.add(:expiration_date, "can't be in the past")
-              end
-            end
+  <pre><code class="language-ruby">
+class Invoice &lt; ActiveRecord::Base
+  validate :expiration_date_cannot_be_in_the_past,
+    :discount_cannot_be_greater_than_total_value
 
-            def discount_cannot_be_greater_than_total_value
-              if discount > total_value
-                errors.add(:discount, "can't be greater than total value")
-              end
-            end
-          end
-        ]]></script>
+  def expiration_date_cannot_be_in_the_past
+    if !expiration_date.blank? and expiration_date &lt; Date.today
+      errors.add(:expiration_date, "can't be in the past")
+    end
+  end
+
+  def discount_cannot_be_greater_than_total_value
+    if discount &gt; total_value
+      errors.add(:discount, "can't be greater than total value")
+    end
+  end
+end
+</code></pre>
 
   <h3 id="Models_Validations_Conditional">Умоўная валідацыя</h3>
   <p>Як ужо адзначалася вышэй, кожны з валідатараў можа прымаць парамэтры <code>:if</code> і <code>:unless</code>, якія ўплываюць на тое, пры якіх умовах валідатары будуць выкананыя ці праігнараваныя. Значэньнем гэтых парамэтраў можа быць <a href="../ruby/index.html#Types_Symbols">сымбаль</a>, які павінен адпавядаць імені аднаго з мэтадаў:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Order < ActiveRecord::Base
-            validates :card_number, :presence => true, :if => :paid_with_card?
 
-            def paid_with_card?
-              payment_type == "card"
-            end
-          end
-        ]]></script>
+  <pre><code class="language-ruby">
+class Order &lt; ActiveRecord::Base
+  validates :card_number, :presence =&gt; true, :if =&gt; :paid_with_card?
+
+  def paid_with_card?
+    payment_type == "card"
+  end
+end
+</code></pre>
+
   <p>...альбо сымбальная чарада, якая павінна ўтрымліваць валідны <i>Ruby</i>-код (выкарыстаньне варта абмяжоўваць толькі вельмі кароткімі ўмовамі):</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :surname, :presence => true, :if => "name.nil?"
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :surname, :presence =&gt; true, :if =&gt; "name.nil?"
+end
+</code></pre>
+
   <p>...альбо аб&#39;ект <code>Proc</code>, які будзе ўтрымліваць код неабходнай умовы:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Account < ActiveRecord::Base
-            validates :password, :confirmation => true,
-              :unless => Proc.new { |a| a.password.blank? }
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class Account &lt; ActiveRecord::Base
+  validates :password, :confirmation =&gt; true,
+    :unless =&gt; Proc.new { |a| a.password.blank? }
+end
+</code></pre>
+
   <p>Калі патрэбна, каб некалькі валідатараў спрацоўвалі па адной і той жа умове, можна скарыстацца макрасам <code>with_options</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class User < ActiveRecord::Base
-            with_options :if => :is_admin? do |admin|
-              admin.validates :password, :length => { :minimum => 10 }
-              admin.validates :email, :presence => true
-            end
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class User &lt; ActiveRecord::Base
+  with_options :if =&gt; :is_admin? do |admin|
+    admin.validates :password, :length =&gt; { :minimum => 10 }
+    admin.validates :email, :presence =&gt; true
+  end
+end
+</code></pre>
 
   <h3 id="Models_Validations_ErrorMessages">Паведамленьні аб памылках валідацыі</h3>
   <p>Атрыбут мадэляў <code>errors</code> зьяўляецца экзэмплярам клясы <code>ActiveModel::Errors</code> і ўтрымлівае ўсе паведамленьні аб памылках валідацыі:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Person < ActiveRecord::Base
-            validates :name, :presence => true, :length => { :minimum => 3 }
-          end
 
-          person = Person.new
-          person.valid? # => false
-          person.errors # => {:name => ["can't be blank", "is too short (minimum is 3 characters)"]}
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  validates :name, :presence =&gt; true, :length =&gt; { :minimum =&gt; 3 }
+end
 
-          person = Person.new(:name => "John Doe")
-          person.valid? # => true
-          person.errors # => {}
-        ]]></script>
+person = Person.new
+person.valid? # =&gt; false
+person.errors # =&gt; {:name =&gt; ["can't be blank", "is too short (minimum is 3 characters)"]}
+
+person = Person.new(:name =&gt; "John Doe")
+person.valid? # =&gt; true
+person.errors # =&gt; {}
+</code></pre>
+
   <p>Мэтад <code>errors[]</code> верне кантэйнэр паведамленьняў аб памылках для пэўнага атрыбуту:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          person = Person.new(:name => "JD")
-          person.valid? # => false
-          person.errors[:name] # => ["is too short (minimum is 3 characters)"]
-        ]]></script>
-  <p>Мэтад <code>add</code> атрыбуту <code>errors</code>, дазваляе дадаваць новыя паведамленьні аб памылках валідацыі, а мэтад <code>clear</code> таго ж атрыбуту робіць кантэйнэр паведамленьняў пустым. Мэтады <code>full_messages</code> і <code>to_a</code> кантэйнэру вярнуць усе паведамленьні аб памылках у форме, у якой яны могуць быць прадстаўленыя карыстальніку.</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Person < ActiveRecord::Base
-            def a_method_used_for_validation_purposes
-              errors.add(:name, "cannot contain the characters !@#%*()_-+=")
-            end
-          end
 
-          person = Person.create(:name => "!@#")
-          person.errors.full_messages # => ["Name cannot contain the characters !@#%*()_-+="]
-        ]]></script>
+  <pre><code class="language-ruby">
+person = Person.new(:name =&gt; "JD")
+person.valid? # =&gt; false
+person.errors[:name] # =&gt; ["is too short (minimum is 3 characters)"]
+</code></pre>
+
+  <p>Мэтад <code>add</code> атрыбуту <code>errors</code>, дазваляе дадаваць новыя паведамленьні аб памылках валідацыі, а мэтад <code>clear</code> таго ж атрыбуту робіць кантэйнэр паведамленьняў пустым. Мэтады <code>full_messages</code> і <code>to_a</code> кантэйнэру вярнуць усе паведамленьні аб памылках у форме, у якой яны могуць быць прадстаўленыя карыстальніку.</p>
+
+  <pre><code class="language-ruby">
+class Person &lt; ActiveRecord::Base
+  def a_method_used_for_validation_purposes
+    errors.add(:name, "cannot contain the characters !@#%*()_-+=")
+  end
+end
+
+person = Person.create(:name =&gt; "!@#")
+person.errors.full_messages # =&gt; ["Name cannot contain the characters !@#%*()_-+="]
+</code></pre>
+
   <p>Акрамя паведамленьняў аб памылках для пэўных атрыбутаў, <code>errors</code> утрымлівае паведамленьні аб памылках, якія адносяцца да ўсяго экзэмпляру мадэлі, пад адмысловым ключом <code>:base</code>.</p>
 
   <h2 id="Models_Callbacks">Зваротныя выклікі</h2>
@@ -1476,31 +1636,35 @@ disqus_shortname: rails-be
   </div>
   <p>Зваротныя выклікі&nbsp;&ndash; гэта пэўныя кавалкі коду, якія выклікаюцца ў пэўныя моманты жыцьцёвага шляху экзэмпляраў мадэляў. Пры дапамозе зваротных выклікаў магчыма выконваць нейкі код кожны раз, калі экзэмпляр ствараецца, загружаецца, захоўваецца, абнаўляецца, праходзіць валідацыю ці выдаляецца.</p>
   <p>У якасьці зваротных выклікаў могуць выкарыстоўвацца звычайныя мэтады:</p>
-  <script type="syntaxhighlighter" class="brush: ruby; highlight: [4,8,9,10,11,12]"><![CDATA[
-          class User < ActiveRecord::Base
-            validates :login, :email, :presence => true
 
-            before_validation :ensure_login_has_a_value
+  <pre data-line="4,8-12"><code class="language-ruby">
+class User &lt; ActiveRecord::Base
+  validates :login, :email, :presence =&gt; true
 
-            private
+  before_validation :ensure_login_has_a_value
 
-              def ensure_login_has_a_value
-                if login.nil?
-                  self.login = email unless email.blank?
-                end
-              end
-          end
-        ]]></script>
+  private
+
+    def ensure_login_has_a_value
+      if login.nil?
+        self.login = email unless email.blank?
+      end
+    end
+end
+</code></pre>
+
   <p>... альбо блёкі, калі гэта вельмі кароткі фрагмэнт коду (1-2 радкі):</p>
-  <script type="syntaxhighlighter" class="brush: ruby; highlight: [4,5,6]"><![CDATA[
-          class User < ActiveRecord::Base
-            validates :login, :email, :presence => true
 
-            before_create do |user|
-              user.name = user.login.capitalize if user.name.blank?
-            end
-          end
-        ]]></script>
+  <pre data-line="4-6"><code class="language-ruby">
+class User &lt; ActiveRecord::Base
+  validates :login, :email, :presence =&gt; true
+
+  before_create do |user|
+    user.name = user.login.capitalize if user.name.blank?
+  end
+end
+</code></pre>
+
   <p>Лічыцца добрай практыкай мэтады, якія ўжываюцца як зваротныя выклікі, рабіць <code>private</code> ці <code>protected</code>.</p>
 
   <h3 id="Models_Callbacks_Types">Тыпы зваротных выклікаў</h3>
@@ -1540,26 +1704,27 @@ disqus_shortname: rails-be
   <h4 id="Models_Callbacks_Types_InitializingObject"><code>after_initialize</code> і <code>after_find</code></h4>
   <p>Зваротны выклік <code>after_initialize</code> выклікаецца кожны раз, калі экзэмпляр ствараецца ў памяці кампутара&nbsp;&ndash; альбо праз наўпроставае ініцыіраваньне (выклік мэтаду <code>new</code>), альбо праз загрузку яго з базы даных.</p>
   <p>Зваротны выклік <code>after_find</code> выклікаецца кожны раз, калі Active Record вычытвае запіс з базы даных. Ён выклікаецца да выкліку <code>after_initialize</code>, калі абодва зарэгістраваныя:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class User < ActiveRecord::Base
-            after_initialize do |user|
-              puts "You have initialized an object!"
-            end
 
-            after_find do |user|
-              puts "You have found an object!"
-            end
-          end
+  <pre><code class="language-ruby">
+class User &lt; ActiveRecord::Base
+  after_initialize do |user|
+    puts "You have initialized an object!"
+  end
 
-          >> User.new
-          You have initialized an object!
-          => #<User id: nil>
+  after_find do |user|
+    puts "You have found an object!"
+  end
+end
 
-          >> User.first
-          You have found an object!
-          You have initialized an object!
-          => #<User id: 1>
-        ]]></script>
+&gt;&gt; User.new
+You have initialized an object!
+=&gt; #&lt;User id: nil&gt;
+
+&gt;&gt; User.first
+You have found an object!
+You have initialized an object!
+=&gt; #&lt;User id: 1&gt;
+</code></pre>
 
   <h3 id="Models_Callbacks_RunningCallbacks">Калі выконваюцца зваротныя выклікі</h3>
   <p>Наступныя мэтады мадэляў прыводзяць да запуску адпаведных зваротных выклікаў:</p>
@@ -1612,24 +1777,25 @@ disqus_shortname: rails-be
 
   <h3 id="Models_Callbacks_Conditional">Умоўныя выклікі</h3>
   <p>Як і ў выпадку <a href="#Models_Validations_Conditional">валідатараў</a> выкананьне зваротных выклікаў можна абстаўляць пэўнымі ўмовамі. Праз падабенства ўжываньня з валідатарамі падрабязна спыняцца ня будзем, а проста прывядзем шэраг прыкладаў:</p>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Order < ActiveRecord::Base
-            before_save :normalize_card_number, :if => :paid_with_card?
-          end
-        ]]></script>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Order < ActiveRecord::Base
-            before_save :normalize_card_number, :if => "paid_with_card?"
-          end
-        ]]></script>
-  <script type="syntaxhighlighter" class="brush: ruby;"><![CDATA[
-          class Order < ActiveRecord::Base
-            before_save :normalize_card_number,
-              :if => Proc.new { |order| order.paid_with_card? }
-          end
-        ]]></script>
 
+  <pre><code class="language-ruby">
+class Order &lt; ActiveRecord::Base
+  before_save :normalize_card_number, :if =&gt; :paid_with_card?
+end
+</code></pre>
 
+  <pre><code class="language-ruby">
+class Order &lt; ActiveRecord::Base
+  before_save :normalize_card_number, :if =&gt; "paid_with_card?"
+end
+</code></pre>
+
+  <pre><code class="language-ruby">
+class Order &lt; ActiveRecord::Base
+  before_save :normalize_card_number,
+    :if =&gt; Proc.new { |order| order.paid_with_card? }
+end
+</code></pre>
 
   <h2 id="Models_Associations">Асацыяцыі</h2>
   <div class="refs">
@@ -1650,26 +1816,30 @@ disqus_shortname: rails-be
   <h1 id="Views" data-content-item-open>Вью</h1>
 
   <p>Вью&nbsp;&ndash; гэта тое, што карыстальнік праграмы бачыць і чаго «кранаецца». У агульным выпадку вью адлюстроўвае даныя мадэлі альбо формы, аднак можа вывадзіць і XML для RSS-рыдэраў ці JSON для пэўнага API.</p>
-  <p>Rails прадстаўляе гэты прэзэнтацыйны ўзровень пры дапамозе кампанэнта Action View, які ўключае сыстэму шаблёнаў, якая завецца <i>embedded Ruby</i> (ERB) і выдатна падыходзіць для стварэньня <a href="../htmlRef/index.html">HTML</a>-дакумэнтаў:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          <h1>All People</h1>
-          <ul>
-          <% Person.all.each do |person| %>
-            <li><%= person.name %> is having a birthday
-              in <%= distance_of_time_in_words_to_now(person.birthday) %></li>
-          <% end %>
-          </ul>
-        ]]></script>
+  <p>Rails прадстаўляе гэты прэзэнтацыйны ўзровень пры дапамозе кампанэнта Action View, які ўключае сыстэму шаблёнаў, якая завецца <i>embedded Ruby</i> (ERB) і выдатна падыходзіць для стварэньня <a href="../html/index.html">HTML</a>-дакумэнтаў:</p>
+
+  <pre><code class="language-html">
+&lt;h1&gt;All People&lt;/h1&gt;
+&lt;ul&gt;
+&lt;% Person.all.each do |person| %&gt;
+  &lt;li&gt;&lt;%= person.name %&gt; is having a birthday
+    in &lt;%= distance_of_time_in_words_to_now(person.birthday) %&gt;&lt;/li&gt;
+&lt;% end %&gt;
+&lt;/ul&gt;
+</code></pre>
+
   <p>Пры гэтым код у тэгах <code>&lt;%&nbsp;…&nbsp;%&gt;</code> апрацоўваецца, аднак не выводзіцца ў дакумэнт (звычайна так запісваюцца ўмовы і цыклы). Код жа ў тэгах <code>&lt;%=&nbsp;…&nbsp;%&gt;</code> апрацоўваецца і яго вынік выводзіцца ў выніковы дакумэнт. У выніку апрацоўкі шаблёну з папярэдняга прыкладу будзе сфармаваны прыкладна такі дакумэнт:</p>
-  <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-          <h1>All People</h1>
-          <ul>
-            <li>Edward is having a birthday in 11 days</li>
-            <li>James is having a birthday in 11 days</li>
-            <li>John is having a birthday in 156 days</li>
-            <li>Cody is having a birthday in 90 days</li>
-          </ul>
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;h1&gt;All People&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Edward is having a birthday in 11 days&lt;/li&gt;
+  &lt;li&gt;James is having a birthday in 11 days&lt;/li&gt;
+  &lt;li&gt;John is having a birthday in 156 days&lt;/li&gt;
+  &lt;li&gt;Cody is having a birthday in 90 days&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
   <p><code>distance_of_time_in_words_to_now</code>&nbsp;&ndash; ідзін з <a href="http://api.rubyonrails.org/classes/ActionView/Helpers.html">дапаможных мэтадаў</a>, якія ўключае ў сябе Action View.</p>
 
   <h2 id="Views_LayoutsRendering">Макеты і візуалізацыя ў Rails</h2>
@@ -1699,23 +1869,25 @@ disqus_shortname: rails-be
 
   <p>Кампанэнт Action Controller кіруе жыцьцёвым цыклам <i>Rails</i>-запытаў: прымае HTTP-запыты, атрымлівае даныя з мадэляў і візуалізіруе вью. Для спрашчэньня працы распрацоўшчыка ён прадстаўляе аўтаматычнае лагіраваньне, <i>benchmarking</i>, кэшаваньне, кіраваньне сэсіямі і cookies, а таксама іншыя цікавыя магчымасьці як фільтры, якія выклікаюць нейкі код да дзеі ці пасьля яе, што вельмі зручна напрыклад для убудаваньня аўтэнтыфікацыі.</p>
   <p>Яшчэ Action Controller аўтаматычна зьвязвае пэўную дзею з адпаведным вью. Разгледзім фрагмэнт тыповага кантролеру:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class PeopleController < ApplicationController
-            before_filter :ensure_user_is_authenticated
 
-            def index
-              @people = Person.all
+  <pre><code class="language-ruby">
+class PeopleController &lt; ApplicationController
+  before_filter :ensure_user_is_authenticated
 
-              respond_to do |format|
-                format.html # index.html.erb
-                format.json  { render :json => @people }
-              end
-            end
+  def index
+    @people = Person.all
 
-            # ...
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json  { render :json =&gt; @people }
+    end
+  end
 
-          end
-        ]]></script>
+  # &hellip;
+
+end
+</code></pre>
+
   <p>Калі прыходзіць запыт на URI <code>http://some-app.com/people/index.html</code> мэтад <code>index</code> кантролеру <code>PeopleController</code> будзе шукаць шаблён з такім жа імем і фарматам: <code>index.html.erb</code></p>
   <p>Што яшчэ больш цікава і зручна, гэта што Action Controller можа адказваць тым жа самым мэтадам (дзеяй) на запыты розных фарматаў: на URI <code>http://some-app.com/people/index.json</code> той жа самы мэтад <code>index</code> кантролеру <code>PeopleController</code> з прыкладу вышэй адкажа JSON-дакумэнтам.</p>
 
@@ -1726,94 +1898,106 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <p>Які мэтад якога кантролера адказны за чарговы запыт звонку вызначае кампанэнт разводкі (<i>routing</i>)&nbsp;&ndash; Action Dispatch. Каб пабачыць усе магчымыя запыты (шляхі), якія праграма наладжана апрацоўваць, можна скарыстацца камандай <code>rake routes</code>:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-          $ rake routes
 
-              videos GET    /videos(.:format)          {:controller=>"videos", :action=>"index"}
-                     POST   /videos(.:format)          {:controller=>"videos", :action=>"create"}
-           new_video GET    /videos/new(.:format)      {:controller=>"videos", :action=>"new"}
-          edit_video GET    /videos/:id/edit(.:format) {:controller=>"videos", :action=>"edit"}
-               video GET    /videos/:id(.:format)      {:controller=>"videos", :action=>"show"}
-                     PUT    /videos/:id(.:format)      {:controller=>"videos", :action=>"update"}
-                     DELETE /videos/:id(.:format)      {:controller=>"videos", :action=>"destroy"}
-        ]]></script>
+  <pre><code class="language-bash">
+$ rake routes
+
+    videos GET    /videos(.:format)          {:controller=&gt;"videos", :action=&gt;"index"}
+           POST   /videos(.:format)          {:controller=&gt;"videos", :action=&gt;"create"}
+ new_video GET    /videos/new(.:format)      {:controller=&gt;"videos", :action=&gt;"new"}
+edit_video GET    /videos/:id/edit(.:format) {:controller=&gt;"videos", :action=&gt;"edit"}
+     video GET    /videos/:id(.:format)      {:controller=&gt;"videos", :action=&gt;"show"}
+           PUT    /videos/:id(.:format)      {:controller=&gt;"videos", :action=&gt;"update"}
+           DELETE /videos/:id(.:format)      {:controller=&gt;"videos", :action=&gt;"destroy"}
+</code></pre>
+
   <aside>Public-мэтады кантролераў, якія прызначаны для апрацоўкі запытаў называюцца <i>дзеямі</i> (<i>actions</i>). А працэс знаходжаньня сувязі паміж шляхам і адпаведнай дзеяй кантролеру называецца <i>разводкай</i> (<i>routing</i>).</aside>
   <p>З гэтай трасіроўкі можна даведацца пра ролю, якую граюць HTTP-выказьнікі ў працэсе разводкі: адзін і той жа шлях <code>/videos</code> будзе накіраваны для апрацоўкі ў розныя мэтады кантролеру <code>VideosController</code> у залежнасьці ад таго быў выкарыстаны выказьнік GET альбо POST. У аснове такога падыходу ляжыць рэалізацыя ідэі RESTful-разводкі, якая між іншым вызначае відавочнасьць і прадказуемасьць выкарыстоўваемых шляхоў. Напрыклад, HTTP-запыт DELETE, дасланы па шляху <code>/videos/1</code>, будзе азначаць запыт на выдаленьне відэа-запісу з ID роўным 1. Як вынікае з апошняга сьцьверджаньня <code>:id</code>-частка у шляху зьяўляецца замяшчальнікам рэальнага ID экзэмпляру.</p>
   <p>Запісваецца разводка праграмы ў файле <code>config/routes.rb</code>. Для вызначэньня ўсіх тых шляхоў, якія былі выведзены ў трасіроўцы вышэй, і якія зьяўляюцца змоўчнымі для <i>Rails</i>-праграмы дастаткова ўсяго аднаго радку ў гэтым файле разводкі:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          resources :videos
-        ]]></script>
+
+  <pre><code class="language-ruby">
+resources :videos
+</code></pre>
+
   <p>Гэты радок зьяўляецца нічым іншым, як выклікам мэтаду, які наладжвае стандартную RESTful-разводку для відэа-рэсурсаў праграмы.</p>
 
   <h2 id="Controllers_Parameters">Парамэтры</h2>
-  <p>Часам у кантролерах трэба мець доступ да даных, пераданых карыстальнікам, ці да іншых парамэтраў праграмы. Існуе 2 віды парамэтраў, даступныя ў любой сеціўнай праграме. Першыя&nbsp;&ndash; дасылаемые ў складзе <abbr class="term" title="Uniform Resource Locator">URL</abbr>'а (<i>query string parameters</i>). Гэтыя парамэтры пазначаюцца ў адрасным радку праз пытальнік пасьля ўласна адрасу. Другі від парамэтраў перадаецца як частка <code>POST</code>-запыту і зьяўляецца звычайна данымі, каторыя карыстальнік увёў у <a href="../htmlRef/index.html">HTML</a>-форму. Нягледзячы на дзьве розныя прыроды гэтых парамэтраў, <i>Rails</i> не падзяляе іх і прадстаўляе аднолькавы да іх доступ&nbsp;&ndash; праз <a href="../ruby/index.html#Types_Hashes">Hash</a>-зьменную <code>params</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class ClientsController < ActionController::Base
-          # Гэтая дзея выкарыстоўвае парамэтры першага віду, таму што праграма трапляе сюды
-          # праз GET-запыт. Сэнс гэтай дзеі - прагледзець усіх актыўных/неактыўных кліентаў і URL
-          # пры гэтым мог бы выглядаць наступным чынам: "/clients?status=activated"
-          def index
-            if params[:status] == "activated"
-              @clients = Client.activated
-            else
-              @clients = Client.unactivated
-            end
-          end
+  <p>Часам у кантролерах трэба мець доступ да даных, пераданых карыстальнікам, ці да іншых парамэтраў праграмы. Існуе 2 віды парамэтраў, даступныя ў любой сеціўнай праграме. Першыя&nbsp;&ndash; дасылаемые ў складзе <abbr class="term" title="Uniform Resource Locator">URL</abbr>'а (<i>query string parameters</i>). Гэтыя парамэтры пазначаюцца ў адрасным радку праз пытальнік пасьля ўласна адрасу. Другі від парамэтраў перадаецца як частка <code>POST</code>-запыту і зьяўляецца звычайна данымі, каторыя карыстальнік увёў у <a href="../html/index.html">HTML</a>-форму. Нягледзячы на дзьве розныя прыроды гэтых парамэтраў, <i>Rails</i> не падзяляе іх і прадстаўляе аднолькавы да іх доступ&nbsp;&ndash; праз <a href="../ruby/index.html#Types_Hashes">Hash</a>-зьменную <code>params</code>:</p>
 
-          # Гэтая дзея выкарыстоўвае POST-парамэтры, каторыя хутчэй за ўсё прыйшлі
-          # сюды з HTML-формы, каторую запоўніў карыстальнік. URL для гэтага
-          # RESTful-запытў будзе выглядаць як "/clients", а даныя будуць дасланыя
-          # як частка цела запыту.
-          def create
-            @client = Client.new(params[:client])
-            if @client.save
-              redirect_to @client
-            else
-              # Гэты радок перавызначае змоўчныя паводзіны адлюстраваньня, каторыя
-              # інакш адлюстравалі б "create"-вью.
-              render :action => "new"
-            end
-          end
-        end
-        ]]></script>
+  <pre><code class="language-ruby">
+class ClientsController &lt; ActionController::Base
+  # Гэтая дзея выкарыстоўвае парамэтры першага віду, таму што праграма трапляе сюды
+  # праз GET-запыт. Сэнс гэтай дзеі - прагледзець усіх актыўных/неактыўных кліентаў і URL
+  # пры гэтым мог бы выглядаць наступным чынам: "/clients?status=activated"
+  def index
+    if params[:status] == "activated"
+      @clients = Client.activated
+    else
+      @clients = Client.unactivated
+    end
+  end
+
+  # Гэтая дзея выкарыстоўвае POST-парамэтры, каторыя хутчэй за ўсё прыйшлі
+  # сюды з HTML-формы, каторую запоўніў карыстальнік. URL для гэтага
+  # RESTful-запытў будзе выглядаць як "/clients", а даныя будуць дасланыя
+  # як частка цела запыту.
+  def create
+    @client = Client.new(params[:client])
+    if @client.save
+      redirect_to @client
+    else
+      # Гэты радок перавызначае змоўчныя паводзіны адлюстраваньня, каторыя
+      # інакш адлюстравалі б "create"-вью.
+      render :action =&gt; "new"
+    end
+  end
+end
+</code></pre>
 
   <h3 id="Controllers_Parameters_HashesAndArrays">Хэшы і масівы ў якасьці парамэтраў</h3>
   <p>У якасьці парамэтраў могуць быць ня толькі дыскрэтныя значэньні, але і <a href="../ruby/index.html#Types_Hashes">хэшы</a> ды <a href="../ruby/index.html#Types_Arrays">масівы</a>. Каб пазначыць, што ў якасьці парамэтру перадаецца масіў, трэба да імені парамэтру дадаць "<code>[]</code>":</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        GET /clients?ids[]=1&ids[]=2&ids[]=3
-        ]]></script>
+
+  <pre><code class="language-bash">
+GET /clients?ids[]=1&ids[]=2&ids[]=3
+</code></pre>
+
   <p>У папярэднім прыкладзе значэньне <code>params[:ids]</code> будзе масіў <code>["1", "2", "3"]</code>.</p>
   <p>Каб пазначыць, што парамэтар&nbsp;&ndash; хэш, трэба ў квадратных дужках пазначыць яшчэ імя ключа:</p>
-  <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-        <form action="/clients" method="post">
-          <input type="text" name="client[name]" value="Acme" />
-          <input type="text" name="client[phone]" value="12345" />
-          <input type="text" name="client[address][postcode]" value="12345" />
-          <input type="text" name="client[address][city]" value="Carrot City" />
-        </form>
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;form action="/clients" method="post"&gt;
+  &lt;input type="text" name="client[name]" value="Acme" /&gt;
+  &lt;input type="text" name="client[phone]" value="12345" /&gt;
+  &lt;input type="text" name="client[address][postcode]" value="12345" /&gt;
+  &lt;input type="text" name="client[address][city]" value="Carrot City" /&gt;
+&lt;/form&gt;
+</code></pre>
+
   <p>Калі пазначаная форма будзе дасланая, значэньне <code>params[:client]</code> будзе <code>{"name" => "Acme", "phone" => "12345", "address" => {"postcode" => "12345", "city" => "Carrot City"}}</code>. Зьвярніце ўвагу на наяўнасьць у дадзеным прыкладзе укладзенага хэшу <code>params[:client][:address]</code>.</p>
 
   <h3 id="Controllers_Parameters_Routing">Парамэтры разводкі</h3>
   <p>Хэш <code>params</code> акрамя іншага заўсёды будзе ўтрымліваць значэньні ключоў <code>:controller</code> і <code>:action</code>, пры гэтым пераважным спосабам атрыманьня адпаведных значэньняў зьяўляюцца мэтады <code>controller_name</code> і <code>action_name</code>. Іншыя парамэтры, якія вызначаюцца разводкай, як напрыклад <code>:id</code>, таксама будуць даступныя. Напрыклад, нам патрэбна вывадзіць сьпіс актыўных і неактыўных кліентаў, тады можна вызначыць разводку наступным чынам, уключыўшы ў яе статус кліента:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        map.connect "/clients/:status",
-          :controller => "clients",
-          :action => "index",
-          :foo => "bar"
-        ]]></script>
+
+  <pre><code class="language-ruby">
+map.connect "/clients/:status",
+  :controller =&gt; "clients",
+  :action =&gt; "index",
+  :foo =&gt; "bar"
+</code></pre>
+
   <p>У гэтым выпадку, калі карыстальнік набірае ў адрасным радку <code>/clients/active</code>, значэньнем <code>params[:status]</code> будзе <code>"active"</code>. Адпаведна, калі спрацуе гэтая разводка, <code>params[:foo]</code> будзе ўтрымліваць значэньне <code>"bar"</code> (гэтак жа сама, калі б парамэтар быў перададзены як <i>query string parameter</i>).</p>
 
   <h3 id="Controllers_Parameters_Default">Змоўчныя</h3>
   <p>У <i>Rails</i> маецца мэханізм, які дазваляе пазначыць парамэтры, каторыя будуць ужывацца пры кожным запыце да пэўнага ці да ўсіх кантролераў&nbsp;&ndash; пры дапамозе мэтаду <code>default_url_options</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class ApplicationController < ActionController::Base
-          # Парамэтар options гэтага мэтаду будзе далей перададзены ў мэтад url_for
-          def default_url_options(options)
-            {:locale => I18n.locale}
-          end
-        end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class ApplicationController &lt; ActionController::Base
+  # Парамэтар options гэтага мэтаду будзе далей перададзены ў мэтад url_for
+  def default_url_options(options)
+    {:locale =&gt; I18n.locale}
+  end
+end
+</code></pre>
 
   <h2 id="Controllers_Cookies">Cookies</h2>
   <div class="refs">
@@ -1822,31 +2006,33 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <p>Сеціўная праграма можа захоўваць невялікія аб&#8217;ёмы інфармацыі (да 4-ох кілябайтаў) на кліенцкім баку праз <i>cookie</i> браўзэраў, каторыя захоўваюцца пакуль ваша праграма ці сам карыстальнік ня выдаліць іх адтуль. <i>Rails</i> забяспечвае доступ да <i>cookie</i> праз мэтад <code>cookies</code>, праца зь якім, як і ў выпадку з <a href="#Security_Sessions"><code>session</code></a>, мае выгляд працы з хэшамі:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class CommentsController < ApplicationController
-          def new
-            # Auto-fill the commenter&#39;s name if it has been stored in a cookie
-            @comment = Comment.new(:name => cookies[:commenter_name])
-          end
 
-          def create
-            @comment = Comment.new(params[:comment])
-            if @comment.save
-              flash[:notice] = "Thanks for your comment!"
-              if params[:remember_name]
-                # Remember the commenter&#39;s name.
-                cookies[:commenter_name] = @comment.name
-              else
-                # Delete cookie for the commenter&#39;s name cookie, if any.
-                cookies.delete(:commenter_name)
-              end
-              redirect_to @comment.article
-            else
-              render :action => "new"
-            end
-          end
-        end
-        ]]></script>
+  <pre><code class="language-ruby">
+class CommentsController &lt; ApplicationController
+  def new
+    # Auto-fill the commenter&#39;s name if it has been stored in a cookie
+    @comment = Comment.new(:name =&gt; cookies[:commenter_name])
+  end
+
+  def create
+    @comment = Comment.new(params[:comment])
+    if @comment.save
+      flash[:notice] = "Thanks for your comment!"
+      if params[:remember_name]
+        # Remember the commenter&#39;s name.
+        cookies[:commenter_name] = @comment.name
+      else
+        # Delete cookie for the commenter&#39;s name cookie, if any.
+        cookies.delete(:commenter_name)
+      end
+      redirect_to @comment.article
+    else
+      render :action =&gt; "new"
+    end
+  end
+end
+</code></pre>
+
   <p>У адрозьненьні ж ад працы з <a href="#Security_Sessions">сэсіямі</a>, каб выдаліць пэўнае значэньне з <i>cookie</i>, недастаткова пазначыць у якасьці новага значэньня <code>nil</code>, але трэба карыстацца выклікам кшталту <code>cookies.delete(:key)</code>.</p>
 
   <h2 id="Controllers_Filters">Фільтры</h2>
@@ -1862,8 +2048,6 @@ disqus_shortname: rails-be
       <li><a href="http://guides.rubyonrails.org/action_controller_overview.html#verification">Guide</a></li>
     </ul>
   </div>
-
-
 
 </section>
 
@@ -1887,43 +2071,46 @@ disqus_shortname: rails-be
   </div>
   <p>Па сваёй прыродзе <a href="http://be-x-old.wikipedia.org/wiki/HTTP" title="Апісаньне 'HyperText Transfer Protocol' на Вікіпэдыі"><i>HTTP</i></a> не мае магчымасьці захоўваць стан&nbsp;&ndash; кожны новы запыт робіцца з «чыстага аркуша». Гэта зусім не падыходзіць для зручнай працы сеціўных праграмаў, таму што пры пераходзе да новага адрасу праграмы (да новага <a href="http://be-x-old.wikipedia.org/wiki/URL" title="Апісаньне 'Uniform Resource Locator' на Вікіпэдыі"><i>URL</i>'а</a>) прыйшлося б штораз пытацца пра імя і пароль карыстальніка, каб ідэнтыфікаваць яго. Для вырашэньня гэтай праблемы быў уведзены мэханізм захаваньня сэсіі карыстальніка цягам усяго часу яго працы ў праграме. Праўда праграма можа ствараць штучныя абмежаваньні на працягласьць сэсій, каб паменшыць магчымыя дзіркі ў бясьпецы праграмы.</p>
   <aside><sup>3</sup> <a href="http://segment7.net/projects/ruby/drb/introduction.html">Уводзіны ў Distributed Ruby (DRb)</a>, <a href="http://code.google.com/p/rails-fast-sessions/">Запуск DRb-сэрвера ў якасьці Windows-сэрвісу.</a></aside>
-  <p>Такім чынам, кожнаму карыстальніку праграмы пастаўлена ў адпаведнасьць сэсія&nbsp;&ndash; сукупнасьць хэша, які ўтрымлівае спэцыфічныя для сэсіі даныя, і ідэнтыфікатара сэсіі (звычайна 32-сымбальны выпадковы радок), па якому шукаецца адпаведны хэш сэсіі. Ідэнтыфікатар сэсіі дасылаецца да браўзэра, які дасылае яго назад пры наступным запыце. Існуе некалькі спосабаў як абменьвацца ідэнтыфікатарам (праз адрасны радок, схаванае поле формы), але ўсе стандартныя мэханізмы захаваньня сэсіі ў <i>Rails</i> выкарыстоўваюць для гэтага <i>cookie</i>. Сярод згаданых вышэй мэханізмаў захаваньня сэсіі існуюць наступныя:
-    <aside><sup>4</sup> <a href="http://memcached.org/">http://memcached.org</a></aside>
+  <p>Такім чынам, кожнаму карыстальніку праграмы пастаўлена ў адпаведнасьць сэсія&nbsp;&ndash; сукупнасьць хэша, які ўтрымлівае спэцыфічныя для сэсіі даныя, і ідэнтыфікатара сэсіі (звычайна 32-сымбальны выпадковы радок), па якому шукаецца адпаведны хэш сэсіі. Ідэнтыфікатар сэсіі дасылаецца да браўзэра, які дасылае яго назад пры наступным запыце. Існуе некалькі спосабаў як абменьвацца ідэнтыфікатарам (праз адрасны радок, схаванае поле формы), але ўсе стандартныя мэханізмы захаваньня сэсіі ў <i>Rails</i> выкарыстоўваюць для гэтага <i>cookie</i>. Сярод згаданых вышэй мэханізмаў захаваньня сэсіі існуюць наступныя:</p>
+  <aside><sup>4</sup> <a href="http://memcached.org/">http://memcached.org</a></aside>
   <ul>
     <li><code class="class">CookieStore</code>&nbsp;&ndash; захоўвае даныя на баку кліента, таксама ў <i>cookie</i>, як і ўласна ідэнтыфікатар.</li>
     <li><code class="class">DRbStore</code>&nbsp;&ndash; захоўвае даныя ў <i>DRb</i>-сэрвэры<sup>3</sup>.</li>
     <li><code class="class">MemCacheStore</code>&nbsp;&ndash; захоўвае даныя ў <i>memcached</i><sup>4</sup>.</li>
     <li><code class="class">ActiveRecordStore</code>&nbsp;&ndash; захоўвае даныя ў базе праз <i>Active Record</i><sup>5</sup></li>
   </ul>
-  </p>
   <aside><sup>5</sup> Гэты мэханізм зьяўляецца занадта марудным для кіраваньня сэсіямі праз архітэктурны прынцып <a href="http://en.wikipedia.org/wiki/Object-relational_mapping">ORM</a>, які ўжываецца ў <i>Active Record</i>. Больш хуткія надбудовы ці аналягі: <a href="http://errtheblog.com/posts/22-sessions-n-such">SQLSessionStore</a> і <a href="http://code.google.com/p/rails-fast-sessions/">Fast Sessions</a></aside>
   <p>Усе пазначаныя мэханізмы акрамя першага захоўваюць даныя сэсіі на баку сэрвэра (ці то ў табліцы базы, ці то ў памяці ці іншым якім чынам), і таму зьяўляюцца больш бясьпечнымі з таго пункту гледжаньня, што зламысьнік не можа падмяніць гэтыя даныя. Але і патрабуюць дадатковыя высілкі на наладжваньне. Змоўчны мэханізм (<code class="class">CookieStore</code>) не патрабуе ўвогуле ніякіх наладкаў і можа быць адразу ж выкарыстаны. Ён троху падгружае сеткавы трафік, таму што даныя сэсіі перадаюцца з кожным запытам, і, тэарэтычна, менш бясьпечны, таму што даныя сэсіі захоўваюцца на кліенцкім баку. Зламысьнік можа атрымаць да іх доступ, прачытаць і падмяніць. Але, па-першае, <i>Rails</i> прадухіляе магчымасьць падмяніць іх, праз крыптаграфічную подпіс. Па-другое, проста ня трэба захоўваць у сэсіі крытычную інфармацыю, неадпаведнае выкарыстаньне каторай можа падарваць бясьпеку праграмы. Акрамя гэтага існуе надбудова <a href="https://github.com/FooBarWidget/encrypted_cookie_store"><code class="class">EncryptedCookieStore</code></a>, якая дадаткова да подпісу яшчэ і шыфруе ўвесь зьмест <i>cookie</i>.</p>
   <p>Пры выкарыстаньні любога з мэханізмаў захаваньня даных сэсіі (пры ўмове, што яны адпаведна наладжаны, акрамя <code class="class">CookieStore</code>, для якога не патрэбна дадатковая наладка) доступ да іх адбываецца даволі празрыста для распрацоўшчыка:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          # захоўваем у сэсіі ідэнтыфікатар карыстальніка
-          session[:user_id] = @current_user.id
 
-          # пазьней па гэтаму ідэнтыфікатару атрымліваем даныя карыстальніка з базы
-          User.find(session[:user_id])
+  <pre><code class="language-ruby">
+# захоўваем у сэсіі ідэнтыфікатар карыстальніка
+session[:user_id] = @current_user.id
 
-          # каб выдаліць нейкае значэньне з сэсіі, адпаведнаму ключу проста прысвойваецца nil
-          @current_user = session[:user_id] = nil
+# пазьней па гэтаму ідэнтыфікатару атрымліваем даныя карыстальніка з базы
+User.find(session[:user_id])
 
-          # а каб ачысьціць усю сэсію:
-          reset_session
-        ]]></script>
+# каб выдаліць нейкае значэньне з сэсіі, адпаведнаму ключу проста прысвойваецца nil
+@current_user = session[:user_id] = nil
+
+# а каб ачысьціць усю сэсію:
+reset_session
+</code></pre>
 
   <aside><sup>6</sup> Пры зьмене сакрэтнага ключу (атрымаць чарговы ключ можна праз каманду <code>rake secret</code>) усе ранейшыя сэсіі стануць несапраўднымі.</aside>
   <h3 id="Security_Sessions_Settings">Наладжваньне</h3>
   <p>Як наладжваць кожны з мэханізмаў захаваньня даных сэсій глядзіце <a href="http://errtheblog.com/posts/22-sessions-n-such">Err The Blog</a>. Тут жа пазначым толькі агульныя асаблівасьці ды тыя зь іх, якія тычацца <code class="class">CookieStore</code>, як больш пажаданага мэханізму.</p>
   <p>Які мэханізм ужываць, а таксама ключ сэсіі (імя <i>cookie</i>), які выкарыстоўваецца пры подпісе даных сэсіі, пазначаецца ў файле <code>config/initializers/session_store.rb</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        _YourApp_::Application.config.session_store :cookie_store, :key => '_your_app_session'
-        ]]></script>
+
+  <pre><code class="language-ruby">
+_YourApp_::Application.config.session_store :cookie_store, :key =&gt; '_your_app_session'
+</code></pre>
+
   <p>Сакрэтны ключ, які таксама ўжываецца пры подпісе даных, пазначаецца ў файле <code>config/initializers/secret_token.rb</code><sup>6</sup></p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        YourApp::Application.config.secret_token = '49d3f3de9ed86c74b94ad6bd0...'
-        ]]></script>
+
+  <pre><code class="language-ruby">
+YourApp::Application.config.secret_token = '49d3f3de9ed86c74b94ad6bd0...'
+</code></pre>
 
   <h3 id="Security_Sessions_TurnOff">Ігнараваньне</h3>
   <div class="refs">
@@ -1934,22 +2121,25 @@ disqus_shortname: rails-be
   </div>
   <p>Па змоўчваньні кожны запыт да праграмы суправаджаецца інфармацыяй пра сэсію. Натуральна гэта не заўсёды патрэбна, а ў выпадку, калі запыт прыйшоў ад сеціўнага робата, нават шкодна&nbsp;&ndash; у сэнсе дадатковай непатрэбнай і інтэнсіўнай загрузкі праграмы, асабліва калі сэсія захоўваецца ў базе.</p>
   <p>Каб праграма ігнаравала запыты ботаў пры кіраваньні сэсіямі, трэба спачатку мець мэтад, які будзе вызначаць ці гэта бот:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        class Util
-          def self.is_bot?(user_agent)
-            user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|ZIBB|ZyBorg)\b/i
-          end
-        end
-        ]]></script>
-  <p>Пасьля гэтага адключаем для іх апрацоўку сэсій:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class ApplicationController < ActionController::Base
-            # адключаем апрацоўку сэсій, калі запыт прыйшоў ад бота
-            session :off, :if => proc { |request| Util.is_bot?(request.user_agent) }
 
-            ...
-          end
-        ]]></script>
+  <pre><code class="language-ruby">
+class Util
+  def self.is_bot?(user_agent)
+    user_agent =~ /\b(Baidu|Gigabot|Googlebot|libwww-perl|lwp-trivial|msnbot|SiteUptime|Slurp|WordPress|ZIBB|ZyBorg)\b/i
+  end
+end
+</code></pre>
+
+  <p>Пасьля гэтага адключаем для іх апрацоўку сэсій:</p>
+
+  <pre><code class="language-ruby">
+class ApplicationController &lt; ActionController::Base
+  # адключаем апрацоўку сэсій, калі запыт прыйшоў ад бота
+  session :off, :if =&gt; proc { |request| Util.is_bot?(request.user_agent) }
+
+  &hellip;
+end
+</code></pre>
 
   <h3 id="Security_Sessions_Flashes">Бліскаўкі</h3>
   <div class="refs">
@@ -1958,68 +2148,76 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <p>Хаця й не маюць непасрэдны ўплыў на бясьпеку праграмы, але зьяўляюцца неад'емнай часткай сэсій так званыя бліскаўкі (ад ангельскага <i>flash</i>)&nbsp;&ndash; паведамленьні (інфармацыйныя, папярэджваючыя ці аб памылках), час жыцьця якіх&nbsp;&ndash; выключна наступны запыт. Адсюль і назва. Праца зь імі падобна да працы з сэсіямі. Разгледзім прыклад выхаду карыстальніка з праграмы. Адпаведны кантролер можа пазначыць якое паведамленьне паказаць карыстальніку наступным крокам:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class LoginsController < ApplicationController
-            def destroy
-              session[:current_user_id] = nil
-              flash[:notice] = "Вы пасьпяхова выйшлі з праграмы"
-              redirect_to root_url
-            end
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class LoginsController &lt; ApplicationController
+  def destroy
+    session[:current_user_id] = nil
+    flash[:notice] = "Вы пасьпяхова выйшлі з праграмы"
+    redirect_to root_url
+  end
+end
+</code></pre>
+
   <p>Тое ж самае можна зрабіць троху іншым чынам&nbsp;&ndash; праз само перанакіраваньне:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          redirect_to root_url, :notice => "Вы пасьпяхова выйшлі з праграмы"
-        ]]></script>
+
+  <pre><code class="language-ruby">
+redirect_to root_url, :notice => "Вы пасьпяхова выйшлі з праграмы"
+</code></pre>
+
   <p>Дзея <code class="method">destroy</code> кантролеру <code class="class">LoginsController</code> перанакіроўвае да адрасу <code>root_url</code>, дзе пазначанае паведамленьне павінна быць адлюстравана. Аднак, што рабіць і ўвогуле ці рабіць нешта з гэтым паведамленьнем, залежыць ад кантролера (вью), адказнага за наступны запыт. Павялося, што бліскаўкі адлюстроўваюцца ў <a href="#Views_LayoutsRendering">макетах</a> праграмы:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          <html>
-            <!-- <head/> -->
-            <body>
-              <% if flash[:notice] %>
-                <p class="notice"><%= flash[:notice] %></p>
-              <% end %>
-              <% if flash[:error] %>
-                <p class="error"><%= flash[:error] %></p>
-              <% end %>
-              <!-- more content -->
-            </body>
-          </html>
-        ]]></script>
+
+  <pre><code class="language-ruby">
+&lt;html&gt;
+  &lt;!-- &lt;head/&gt; --&gt;
+  &lt;body&gt;
+    &lt;% if flash[:notice] %&gt;
+      &lt;p class="notice"&gt;&lt;%= flash[:notice] %&gt;&lt;/p&gt;
+    &lt;% end %&gt;
+    &lt;% if flash[:error] %&gt;
+      &lt;p class="error"&gt;&lt;%= flash[:error] %&gt;&lt;/p&gt;
+    &lt;% end %&gt;
+    &lt;!-- more content --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
   <p>Пры такім падыходзе бліскаўкі, пазначаныя папярэднімі дзеямі, будуць аўтаматычна адлюстроўвацца макетамі. У адваротным выпадку імі нічога ня будзе адлюстравана.</p>
   <p>Пры неабходнасьці перадаць тыя ж бліскаўкі наступнаму запыту можна скарыстацца мэтадам <code class="method">keep</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class MainController < ApplicationController
-            # Напрыклад гэтая дзея адпавядае адрасу root_url, і вы жадаеце, каб
-            # усе запыты адсюль былі перанакіраваны ў UsersController#index.
-            # Калі папярэдняя дзея пазначала пэўныя бліскаўскі, яны ўжо будуць
-            # недаступныя ў UsersController#index. Але іх можна 'перадаць' туды.
-            def index
-              # Перадасьць усе бліскаўкі наступнай дзеі.
-              flash.keep
 
-              # Калі перадаць трэба толькі пэўную бліскаўку, гэта можна зрабіць такім чынам:
-              # flash.keep(:notice)
-              redirect_to users_url
-            end
-          end
-        ]]></script>
+  <pre><code class="language-ruby">
+class MainController &lt; ApplicationController
+  # Напрыклад гэтая дзея адпавядае адрасу root_url, і вы жадаеце, каб
+  # усе запыты адсюль былі перанакіраваны ў UsersController#index.
+  # Калі папярэдняя дзея пазначала пэўныя бліскаўскі, яны ўжо будуць
+  # недаступныя ў UsersController#index. Але іх можна 'перадаць' туды.
+  def index
+    # Перадасьць усе бліскаўкі наступнай дзеі.
+    flash.keep
+
+    # Калі перадаць трэба толькі пэўную бліскаўку, гэта можна зрабіць такім чынам:
+    # flash.keep(:notice)
+    redirect_to users_url
+  end
+end
+</code></pre>
 
   <h4 id="Security_Sessions_Flashes_Now"><code class="method">flash.now</code></h4>
   <p>Часам нейкае паведамленьне трэба адлюстраваць у межах таго ж самага запыту, без перанакіраваньня. Напрыклад, калі пэўная дзея пры памылцы дасылае да іншай дзеі таго ж кантролеру. У гэтым выпадку звычайнымі бліскаўкамі скарыстацца няма магчымасьці, таму што доступ ёсьць толькі да паведамленьняў з папярэдняга запыту. Тады трэба карыстацца <code class="method">flash.now</code>:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          class ClientsController < ApplicationController
-            def create
-              @client = Client.new(params[:client])
-              if @client.save
-                # ...
-              else
-                flash.now[:error] = "Could not save client"
-                render :action => "new"
-              end
-            end
-          end
-        ]]></script>
+
+  <pre><code class="language-ruby">
+class ClientsController &lt; ApplicationController
+  def create
+    @client = Client.new(params[:client])
+    if @client.save
+      # ...
+    else
+      flash.now[:error] = "Could not save client"
+      render :action =&gt; "new"
+    end
+  end
+end
+</code></pre>
 
   <h2 id="Security_MassAssignment">Адначасовае множнае прысваеньне</h2>
   <p><a href="http://guides.rubyonrails.org/security.html#mass-assignment">http://guides.rubyonrails.org/security.html#mass-assignment</a></p>
@@ -2086,52 +2284,60 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <p>Першым крокам трэба стварыць сэртыфікат, каторы будзе ўжывацца для шыфраванай перадачы даных. Зробім гэта пры дапамозе бясплатнай прылады <a href="http://www.openssl.org/"><i>OpenSSL</i></a>. Яна, дарэчы, ідзе ў пастаўцы <a href="../git/index.html">Git</a>. Таму, калі ў вас ужо ўсталяваны апошні, вы знойдзеце <code>openssl.exe</code> у яго <code>bin</code> тэчцы. Выконваем наступную каманду для стварэньня <i>Request</i>-сэртыфікату і адпаведнага прыватнага ключу:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ openssl req -new > server.cert.csr
-        ]]></script>
-  <p>У працэсе выкананьня будзе заданы шэраг абавязковых (напр. пароль) і неабавязковых (калі вы не жадаеце ўводзіць пэўныя даныя, пастаўце кропку) пытаньняў:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        [root@pm ]# openssl req -new > server.cert.csr
-        Generating a 1024 bit RSA private key
-        ...++++++
-        ..................................................++++++
-        writing new private key to 'privkey.pem'
-        Enter PEM pass phrase:
-        Verifying - Enter PEM pass phrase:
-        -----
-        You are about to be asked to enter information that will be incorporated
-        into your certificate request.
-        What you are about to enter is what is called a Distinguished Name or a DN.
-        There are quite a few fields but you can leave some blank
-        For some fields there will be a default value,
-        If you enter '.', the field will be left blank.
-        -----
-        Country Name (2 letter code) [GB]:GB
-        State or Province Name (full name) [Berkshire]:Berkshire
-        Locality Name (eg, city) [Newbury]:Newbury
-        Organization Name (eg, company) [My Company Ltd]:My Co Ltd
-        Organizational Unit Name (eg, section) []:.
-        Common Name (eg, your name or your servers hostname) []:test.com
-        Email Address []:test@test.com
 
-        Please enter the following 'extra' attributes
-        to be sent with your certificate request
-        A challenge password []:my_password
-        An optional company name []:.
-        ]]></script>
+  <pre><code class="language-bash">
+$ openssl req -new > server.cert.csr
+</code></pre>
+
+  <p>У працэсе выкананьня будзе заданы шэраг абавязковых (напр. пароль) і неабавязковых (калі вы не жадаеце ўводзіць пэўныя даныя, пастаўце кропку) пытаньняў:</p>
+
+  <pre><code class="language-bash">
+[root@pm ] $ openssl req -new &gt; server.cert.csr
+Generating a 1024 bit RSA private key
+...++++++
+..................................................++++++
+writing new private key to 'privkey.pem'
+Enter PEM pass phrase:
+Verifying - Enter PEM pass phrase:
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [GB]:GB
+State or Province Name (full name) [Berkshire]:Berkshire
+Locality Name (eg, city) [Newbury]:Newbury
+Organization Name (eg, company) [My Company Ltd]:My Co Ltd
+Organizational Unit Name (eg, section) []:.
+Common Name (eg, your name or your servers hostname) []:test.com
+Email Address []:test@test.com
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:my_password
+An optional company name []:.
+</code></pre>
+
   <p>У выніку будуць створаны 2 файлы: <code>server.cert.csr</code> (<i>Request</i>-сэртыфікат) і <code>privkey.pem</code> (прыватны ключ). Вымем зараз ключ для подпісу сэртыфікату (інакш прыйшлося б уводзіць пароль пры ўсталяваньні <i>https</i>-злучэньня):</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ openssl rsa -in privkey.pem -out server.cert.key
-        Enter pass phrase for privkey.pem:
-        writing RSA key
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ openssl rsa -in privkey.pem -out server.cert.key
+Enter pass phrase for privkey.pem:
+writing RSA key
+</code></pre>
+
   <p>Гэта створыць файл <code>server.cert.key</code>. Зараз трансфармуем <i>Request</i>-сэртыфікат у падпісаны сэртыфікат:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ openssl x509 -in server.cert.csr -out server.cert.crt -req -signkey server.cert.key -days 365
-        Signature ok
-        subject=/C=GB/ST=Berkshire/L=Newbury/O=My CO Ltd/CN=test.com/emailAddress=test@test.com
-        Getting Private key
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ openssl x509 -in server.cert.csr -out server.cert.crt -req -signkey server.cert.key -days 365
+Signature ok
+subject=/C=GB/ST=Berkshire/L=Newbury/O=My CO Ltd/CN=test.com/emailAddress=test@test.com
+Getting Private key
+</code></pre>
+
   <p>У выніку атрымаем файл падпісанага сэртыфікату <code>server.cert.crt</code>.</p>
 
   <h4 id="Security_SSL_ConfiguringWEBrick_ActivatingSSL">Актывацыя SSL у WEBrick</h4>
@@ -2141,43 +2347,48 @@ disqus_shortname: rails-be
     </ul>
   </div>
   <p>Зараз створым тэчку <code>cert</code> у карнявой тэчцы адпаведнай <i>Rails</i>-праграмы і перапішам туды файлы <code>server.cert.crt</code> і <code>server.cert.key</code>. Пасьля гэтага трэба зрабіць копію файла <code>rails</code> у тэчцы <code>script</code>, назавем яго <code>rails_ssl</code>. Адкрыем яго і ўставім перад аб&#8217;яўленьнем пераменнай <code>APP_PATH</code> наступныя радкі:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-        require 'rubygems'
-        require 'rails/commands/server'
-        require 'rack'
-        require 'webrick'
-        require 'webrick/https'
 
-        module Rails
-          class Server < ::Rack::Server
-            def default_options
-              super.merge({
-                :Port => 3001,
-                :environment => (ENV['RAILS_ENV'] || "development").dup,
-                :daemonize => false,
-                :debugger => false,
-                :pid => File.expand_path("tmp/pids/server.pid"),
-                :config => File.expand_path("config.ru"),
-                :SSLEnable => true,
-                :SSLVerifyClient => OpenSSL::SSL::VERIFY_NONE,
-                :SSLPrivateKey => OpenSSL::PKey::RSA.new(
-                       File.open("/path/to/key").read),
-                :SSLCertificate => OpenSSL::X509::Certificate.new(
-                       File.open("/path/to/crt").read),
-                :SSLCertName => [["CN", WEBrick::Utils::getservername]]
-              })
-            end
-          end
-        end
-        ]]></script>
+  <pre><code class="language-ruby">
+require 'rubygems'
+require 'rails/commands/server'
+require 'rack'
+require 'webrick'
+require 'webrick/https'
+
+module Rails
+  class Server &lt; ::Rack::Server
+    def default_options
+      super.merge({
+        :Port =&gt; 3001,
+        :environment =&gt; (ENV['RAILS_ENV'] || "development").dup,
+        :daemonize =&gt; false,
+        :debugger =&gt; false,
+        :pid =&gt; File.expand_path("tmp/pids/server.pid"),
+        :config =&gt; File.expand_path("config.ru"),
+        :SSLEnable =&gt; true,
+        :SSLVerifyClient =&gt; OpenSSL::SSL::VERIFY_NONE,
+        :SSLPrivateKey =&gt; OpenSSL::PKey::RSA.new(
+               File.open("/path/to/key").read),
+        :SSLCertificate =&gt; OpenSSL::X509::Certificate.new(
+               File.open("/path/to/crt").read),
+        :SSLCertName =&gt; [["CN", WEBrick::Utils::getservername]]
+      })
+    end
+  end
+end
+</code></pre>
+
   <p>Зьвярніце ўвагу на наступныя акалічнасьці. Пе-першае, мы абралі порт (<code>:Port => 3001</code>), які адрозьніваецца ад стандартнага <i>https</i>-порту (443), таму што апошні па змоўчаньні блякуецца файрволам <i>Windows</i>, а ў распрацоўшчыцкім асяродку няма вялікай розніцы які порт абраць. Таксама порт павінен адрозьнівацца ад стандартнага порту <i>WEBrick</i> у <i>Rails</i> (3000), таму што, калі мы жадаем, каб працавалі і <i>http</i>-запыты, і <i>https</i>-запыты, нам трэба будзе запускаць 2 экзэмпляры <i>WEBrick</i>&nbsp;&ndash; адзін для апрацоўкі <i>http</i>-запытаў, іншы для апрацоўкі <i>https</i>-запытаў. Гэта можа ня вельмі зграбнае рашэньне праблемы, але даволі простае, таму заплюшчым на гэта вочы. Па-другое, у прыкладзе пазначаныя фіктыўныя шляхі да файлаў сэртыфікату і ключа (<code>/path/to/crt</code> і <code>/path/to/key</code>). Вам трэба будзе зьмяніць іх на сапраўдныя, кшталту <code>d:/projects/abc/cert/server.cert.key</code>. Вуаля! Цяпер трэба ў адным кансольным акне запусьціць сэрвер для <i>http</i>:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ script/rails server
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ script/rails server
+</code></pre>
+
   <p>а ў іншым кансольным акне&nbsp;&ndash; сэрвер для <i>https</i>:</p>
-  <script type="syntaxhighlighter" class="brush: text"><![CDATA[
-        $ script/rails_ssl server
-        ]]></script>
+
+  <pre><code class="language-bash">
+$ script/rails_ssl server
+</code></pre>
 
 </section>
 
@@ -2228,43 +2439,51 @@ disqus_shortname: rails-be
 <section>
   <h1 id="RSS">RSS</h1>
   <p>Каб дадаць у праграму магчымасьць адказваць на запыты RSS-чытальнікаў, дастаткова ў дзею кантролера дадаць яшчэ адзін, адпаведны фармат вью (радок 7):</p>
-  <script type="syntaxhighlighter" class="brush: ruby; highlight: [7]"><![CDATA[
-          def index
-            @videos = Video.all
 
-            respond_to do |format|
-              format.html # index.html.erb
-              format.json { render :json => @videos }
-              format.atom
-            end
-          end
-        ]]></script>
+  <pre data-line="7"><code class="language-ruby">
+def index
+  @videos = Video.all
+
+  respond_to do |format|
+    format.html # index.html.erb
+    format.json { render :json =&gt; @videos }
+    format.atom
+  end
+end
+</code></pre>
+
   <p>У якасьці шаблёну можна было б стварыць <code>index.atom.erb</code> і скарыстацца магчымасьцямі ERB для генэрацыі вью. Але <i>Rails</i> мае начыньне, якое больш пасуе для стварэньня XML-дакумэнтаў, якімі зьяўляюцца дакумэнты для RSS-чытальнікаў&nbsp;&ndash; гэта Builder-шаблёны (<code>index.atom.builder</code>):</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          atom_feed do |feed|
-            feed.title("Awesome Videos")
-            feed.updated(@videos.first.created_at)
 
-            @videos.each do |video|
-              feed.entry(video) do |entry|
-                entry.title(video.title)
-                entry.content(sanitize_embeded(video), :type => 'html')
+  <pre><code class="language-ruby">
+atom_feed do |feed|
+  feed.title("Awesome Videos")
+  feed.updated(@videos.first.created_at)
 
-                entry.author do |author|
-                  author.name("Some cool author name")
-                end
-              end
-            end
-          end
-        ]]></script>
+  @videos.each do |video|
+    feed.entry(video) do |entry|
+      entry.title(video.title)
+      entry.content(sanitize_embeded(video), :type =&gt; 'html')
+
+      entry.author do |author|
+        author.name("Some cool author name")
+      end
+    end
+  end
+end
+</code></pre>
+
   <p>Акрамя стварэньня магчымасьці адказваць на наўпроставыя RSS-запыты, можна ў звычайную HTML-старонку дадаць дадатковы тэг, каб браўзэры самі маглі вымаць інфармацыю пра RSS. Для гэтага ў целе тэгу <code>&lt;head&gt;</code> трэба ўставіць наступнае:</p>
-  <script type="syntaxhighlighter" class="brush: html"><![CDATA[
-          <link href="/videos.atom" rel="alternate" title="ATOM" type="application/atom+xml" />
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;link href="/videos.atom" rel="alternate" title="ATOM" type="application/atom+xml" /&gt;
+</code></pre>
+
   <p>Альбо тое ж самае пры дапамозе <i>Rails</i>-дапаможніку:</p>
-  <script type="syntaxhighlighter" class="brush: ruby"><![CDATA[
-          <%= auto_discovery_link_tag :atom, videos_path(:atom) %>
-        ]]></script>
+
+  <pre><code class="language-ruby">
+&lt;%= auto_discovery_link_tag :atom, videos_path(:atom) %&gt;
+</code></pre>
+
 </section>
 
 <section>
@@ -2283,12 +2502,11 @@ disqus_shortname: rails-be
 
 <section>
   <h1 id="Money">Money in Rails</h1>
-  <p>Money values:
+  <p>Money values:</p>
   <ul>
     <li><a href="https://github.com/RubyMoney/money">money-library</a></li>
     <li><a href="http://blog.clickablebliss.com/2006/06/14/using-aggregation-in-rails-to-manage-money/">Using aggregation in Rails to manage money</a></li>
   </ul>
-  </p>
 
   <h1 id="Payment">Плацежныя сыстэмы ў Rails</h1>
   <p><a href="http://activemerchant.org/" title="ActiveMerchant">ActiveMerchant&nbsp;&ndash; дадатак і <i>gem</i></a>.</p>
@@ -2297,7 +2515,7 @@ disqus_shortname: rails-be
 
 <section>
   <h1 id="JS">Інтэграцыя з JavaScript</h1>
-  <p>Праблема выкарыстаньня jQuery у <i>Rails</i>. Канфлікты з іншымі фрэймворкамі і шляхі іх разьвязваньня:
+  <p>Праблема выкарыстаньня jQuery у <i>Rails</i>. Канфлікты з іншымі фрэймворкамі і шляхі іх разьвязваньня:</p>
   <ul>
     <li><a href="http://errtheblog.com/posts/73-the-jskinny-on-jquery">The jSkinny on jQuery</a></li>
     <li><a href="http://www.alfajango.com/blog/rails-prototype-to-jquery/">Rails, Prototype, and JQuery in Harmony (or how to replace Prototype with JQuery)</a></li>
@@ -2305,8 +2523,7 @@ disqus_shortname: rails-be
     <li><a href="http://railstips.org/blog/archives/2008/11/20/jquery-on-rails-why-bother/">jQuery on Rails: Why Bother?</a></li>
     <li><a href="https://github.com/indirect/jquery-rails">jquery-rails gem</a></li>
   </ul>
-  </p>
-  <p>RJS, jQuery, Rails:
+  <p>RJS, jQuery, Rails:</p>
   <ul>
     <li><a href="http://www.rubyinside.com/16-rjs-resources-and-tutorials-for-rails-programmers-5.html">16 RJS Resources and Tutorials for Rails Programmers (2006 - useful?)</a></li>
     <li><a href="http://slash7.com/assets/2006/10/8/RJS-Demistified_Amy-Hoy-slash7_1.pdf">RJS demistified (PDF cheat-sheet)</a></li>
@@ -2314,12 +2531,11 @@ disqus_shortname: rails-be
     <li><a href="http://api.rubyonrails.org/classes/ActionView/Helpers/PrototypeHelper/JavaScriptGenerator/GeneratorMethods.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</a></li>
     <li><a href="http://stackoverflow.com/questions/906634/running-a-rails-rjs-template-from-a-jquery-get-request">Running a rails RJS template from a jquery get request</a></li>
   </ul>
-  </p>
-  <p>AJAX:
+  <p>AJAX:</p>
   <ul>
     <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/using-unobtrusive-javascript-and-ajax-with-rails-3/">Using Unobtrusive JavaScript and AJAX with Rails 3</a></li>
   </ul>
-  </p>
+
   <p><a href="http://www.alfajango.com/blog/rails-3-remote-links-and-forms-data-type-with-jquery/">Rails3: remote links and forms data type with jQuery</a></p>
   <p><a href="http://www.alfajango.com/blog/rails-jquery-ujs-now-interactive/">Rails jquery-ujs now interactive</a></p>
   <p><a href="http://stackoverflow.com/questions/4421072/jquery-ui-dialog-instead-of-alert-for-rails-3-data-confirm-attribute">jQuery-UI dialog instead of alert for Rails3 data-confirm attribute</a></p>
