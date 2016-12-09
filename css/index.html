@@ -4,6 +4,8 @@ description: Даведнік па CSS па-беларуску
 disqus_shortname: css-be
 ---
 
+{% include base_path %}
+
 <p><a href="http://adamschwartz.co/magic-of-css/">The magic of CSS</a></p>
 <p><a href="http://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/">8 simple CSS3 transitions that will wow your users</a></p>
 <p><a href="http://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573">7 CSS Units You Might Not Know About</a></p>
@@ -52,17 +54,17 @@ disqus_shortname: css-be
       <li><a href="http://reference.sitepoint.com/css/css/">SitePoint</a></li>
     </ul>
   </div>
-  <p>Вэб-дакумэнт складаецца з 3х слаёў:
-    <figure style="float: right;">
-      <img alt="Тры слаі вэб-дакумэнту" title="Тры слаі вэб-дакумэнту" src="../images/css_three-layers.png"/>
-      <figcaption class="imgcaption">Тры слаі вэб-дакумэнту</figcaption>
-    </figure>
+  <p>Вэб-дакумэнт складаецца з 3х слаёў:</p>
+  <figure style="float: right;">
+    <img alt="Тры слаі вэб-дакумэнту" title="Тры слаі вэб-дакумэнту" src="{{ base_path }}/assets/images/css_three-layers.png"/>
+    <figcaption class="imgcaption">Тры слаі вэб-дакумэнту</figcaption>
+  </figure>
   <ol>
     <li><em><strong>Зьмест</strong> (Content)</em>&nbsp;&mdash; тое, што аўтар хоча данесьці да чытача.</li>
     <li><em><strong>Прадстаўленьне</strong> (Presentation)</em>&nbsp;&mdash; як гэта інфармацыя выглядае.</li>
     <li><em><strong>Паводзіны</strong> (Behavior)</em>&nbsp;&mdash; узаемадзеяньні карыстальніка з дакумэнтам.</li>
   </ol>
-  </p>
+
   <p>Асноўная ідэя <abbr class="term" title="Cascading Style Sheets">CSS</abbr> заключаецца ў тым, каб захоўваць тое, як <em>інфармацыя <strong>адлюстроўваецца/прадстаўляецца</strong> асобна ад самой інфармацыі</em>. Перавагі такога падыходу:
   <ol>
     <li>Сродкі <abbr class="term" title="Cascading Style Sheets">CSS</abbr> нашмат <em>больш магутныя</em> за сродкі <a href="../htmlRef/index.html"><span class="term">HTML</span></a>.</li>
@@ -633,7 +635,7 @@ disqus_shortname: css-be
   <p>Значэнье <code>1em</code> адпавядае памеру цяперашняга шрыфту (успадкаванага ад бацькоўскага элемэнту), якім бы чынам ён ня быў вызначаны. Такім чынам, выраз <code class="attr">font-size:</code>&nbsp;<code class="value">1em;</code> ня мае ніякай сілы, яго вынік такі ж, калі б мы ўвогуле яго не прыводзілі. А пазначэньне <code class="attr">font-size:</code>&nbsp;<code class="value">1.2em;</code> зробіць шрыфт адпаведнага элемэнту на 20% большым за памер бацькоўскага шрыфту.</p>
   <p>Значэнье <code>1ex</code> адпавядае вышыні літары <i>х</i> цяперашняга шрыфту, як паказана на малюнку ніжэй. Цікава, што гэтае значэньне вызначана ў тым ліку і для шрыфтоў, якія не ўтрымліваюць літару <i>х</i>.</p>
   <figure style="text-align: center;">
-    <img alt="Памер шрыфту і літары <i>х</i>" title="Памер шрыфту і літары <i>х</i>" src="../images/font-sizes.png"/>
+    <img alt="Памер шрыфту і літары <i>х</i>" title="Памер шрыфту і літары <i>х</i>" src="{{ base_path }}/assets/images/font-sizes.png"/>
     <figcaption class="imgcaption">Памер шрыфту і літары <i>х</i></figcaption>
   </figure>
   <p>Варта таксама адзначыць, што даччыныя элемэнты <a href="#Concepts_Inheritance">спадкуюць</a> не адносныя значэньні ад бацькоў, а разьлічаныя. У прыкладзе ніжэй значэньнем атрыбуту <code class="attr">text-indent</code> элемэнту <a href="../htmlRef/index.html#h"><code class="elem">h1</code></a> будзе <code class="value">36px</code>, а не <code class="value">45px</code>, калі <a href="../htmlRef/index.html#h"><code class="elem">h1</code></a> зьяўляецца даччыным да элемэнту <a href="../htmlRef/index.html#body"><code class="elem">body</code></a>.
@@ -720,7 +722,7 @@ disqus_shortname: css-be
           </ul>
         ]]></script>
   <p>што будзе выглядаць:</p>
-  <img src="../images/css_tricks_collapse_by_float.png"
+  <img src="{{ base_path }}/assets/images/css_tricks_collapse_by_float.png"
        alt="Прыклад згортваньня бацькоўскага элемэнту пры даччыным float" title="Прыклад згортваньня бацькоўскага элемэнту пры даччыным float" />
   <p>Як бачым, у сьпісу няма чорнага тлу, як гэта вызначана ў стылі. Гэта таму, што ён нулявога памеру (не абгортвае даччыныя элемэнты). Вырашыць гэтую праблему можна наступным чынам. Па-першае, бацькоўскаму элемэнту можна дадаць атрыбут <code>overflow: hidden;</code>:</p>
   <script type="syntaxhighlighter" class="brush: css"><![CDATA[
@@ -749,7 +751,7 @@ disqus_shortname: css-be
           }
         ]]></script>
   <p>і першы, і другі варыянты прывядуць да наступнага выніку:</p>
-  <img src="../images/css_tricks_collapse_by_float_fix.png"
+  <img src="{{ base_path }}/assets/images/css_tricks_collapse_by_float_fix.png"
        alt="Выпраўленае згортваньне бацькоўскага элемэнту пры даччыным float" title="Выпраўленае згортваньне бацькоўскага элемэнту пры даччыным float" />
 
   <h3 id="TipsTricks_Box_MultipleBorders">Множныя бордэры</h3>
@@ -790,7 +792,7 @@ disqus_shortname: css-be
         <div id="box"></div>
         ]]></script>
   <p>прывядзе да такога выніку: </p>
-  <img src="../images/css_tricks_multi_borders.png"
+  <img src="{{ base_path }}/assets/images/css_tricks_multi_borders.png"
        alt="Прыклад множных бордэраў" title="Прыклад множных бордэраў" />
 
   <h2 id="TipsTricks_Colors">Колеры</h2>

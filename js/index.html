@@ -1,3 +1,6 @@
+
+{% include base_path %}
+
 <!doctype html>
 
 <html lang="be-tarask" class="no-js">
@@ -90,7 +93,7 @@
         <h2 id="Overview_JavaScriptAndJava"><i>JavaScript</i> і <i>Java</i></h2>
         <p><i>JavaScript</i> і <a href="../java/index.html"><i>Java</i></a> падобныя ў некаторых аспэктах, але фундамэнтальна адрозьніваюцца ў іншых. Напрыклад, <i>JavaScript</i> ня мае статычнага тыпаваньня і строгай праверкі тыпаў, як у <a href="../java/index.html"><i>Java</i></a>, але пры гэтым вельмі падобны на яго сынтакс выразаў і інструкцыяў.</p>
         <p>У адрозьненьні ад <a href="../java/index.html"><i>Java</i></a> у <i>JavaScript</i> адбываецца дынамічнае вызначэньне тыпаў зьменных&nbsp;&ndash; у часе выкананьня праграмы, а не загадзя. У <i>JavaScript</i> выкарыстоўваецца прататыпная аб'ектная мадэль у адрозьненьні ад <a href="../java/index.html"><i>Java</i></a>, дзе выкарыстоўваецца больш звыклая для <a href="http://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D1%8A%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F" title="«Объектно-ориентированный язык программирования» ў расейскай Вікіпэдыі">аб'ектна-арыентаваных моваў</a> клясавая аб'ектная мадэль. У <i>JavaScript</i> зьменным можна прысвойваць функцыі, а таксама апошнія могуць быць парамэтрамі аб'ектаў.</p>
-        <p>Форма ўжываньня <i>JavaScript</i> больш вольная, чым у <a href="../java/index.html"><i>Java</i></a>. Ня трэба загадзя і строга вызначаць усе зьменныя, клясы, мэтады. Ня трэба вызначаць ці пэўны мэтад зьяўляецца <code class="keyword">public</code>, <code class="keyword">private</code>, альбо <code class="keyword">protected</code>. Ня трэба рэалізоўваць інтэрфэйсы і вызначаць тыпы зьменных, парамэтраў і вяртаемых мэтадамі значэньняў.</p>
+        <p>Форма ўжываньня <i>JavaScript</i> больш вольная, чым у <a href="../java/index.html"><i>Java</i></a>. Ня трэба загадзя і строга вызначаць усе зьменныя, клясы, мэтады. Ня трэба вызначаць ці пэўны мэтад зьяўляецца <code>public</code>, <code>private</code>, альбо <code>protected</code>. Ня трэба рэалізоўваць інтэрфэйсы і вызначаць тыпы зьменных, парамэтраў і вяртаемых мэтадамі значэньняў.</p>
         <p>Больш падрабязна пра розьніцу паміж <i>JavaScript</i> і <a href="../java/index.html"><i>Java</i></a>, а таксама пра аб'ектную мадэль у <i>JavaScript</i> глядзіце разьдзел <a href="#ObjectModel">«Аб'ектная мадэль»</a>.</p>
 
         <h2 id="Overview_JavaScriptAndECMAScript"><i>JavaScript</i> і <i>ECMAScript</i></h2>
@@ -4255,7 +4258,7 @@ React.renderComponent(
             <li><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/extreme-makeover-jpaginator-css3-edition/">Tutorial</a></li>
           </ul>
         </div>
-        <p><img src="../images/jPaginator.png" alt="jPaginator screenshot" title="jPaginator screenshot" /></p>
+        <p><img src="{{ base_path }}/assets/images/jPaginator.png" alt="jPaginator screenshot" title="jPaginator screenshot" /></p>
 
         <h4 id="Frameworks_jQuery_Plugins_ProgressiveLoad">Адкладзеная загрузка</h4>
         <p><a href="http://imakewebthings.github.com/jquery-waypoints/">Waypoints</a>&nbsp;&ndash; унівэрсальны <i>jQuery</i>-дадатак, які дазваляе прычапляць апрацоўшчыкі падзеі, калі пэўны элемэнт старонкі трапляе ці наадварот зьнікае з экрану пры скролінгу. Гэта дазваляе рабіць ня толькі адкладзеную загрузку зьместу старонкі па патрэбе, але і шмат чаго іншага. На старонцы дадатку прыведзеныя варыянты магчымага выкарыстаньня, а таксама апісаньне.</p>
