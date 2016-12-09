@@ -94,37 +94,43 @@ disqus_shortname: sublimetext-be
   <p>Каб стварыць новы сьніпэт трэба абраць у мэню <b>Tools > New Snippet</b>:</p>
   <p><img src="new_snippet.jpg"></p>
   <p>У выніку будзе адкрыта новая укладка з наступным шаблёнам сьніпэту:</p>
-  <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
-          <snippet>
-            <content><![CDATA[
-          Hello, ${1:this} is a ${2:snippet}.
-          ]]&gt;</content>
-            <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-            <!-- <tabTrigger>hello</tabTrigger> -->
-            <!-- Optional: Set a scope to limit where the snippet will trigger -->
-            <!-- <scope>source.python</scope> -->
-          </snippet>
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;snippet&gt;
+  &lt;content&gt;&lt;![CDATA[
+Hello, ${1:this} is a ${2:snippet}.
+]]&gt;&lt;/content&gt;
+  &lt;!-- Optional: Set a tabTrigger to define how to trigger the snippet --&gt;
+  &lt;!-- &lt;tabTrigger&gt;hello&lt;/tabTrigger&gt; --&gt;
+  &lt;!-- Optional: Set a scope to limit where the snippet will trigger --&gt;
+  &lt;!-- &lt;scope&gt;source.python&lt;/scope&gt; --&gt;
+&lt;/snippet&gt;
+</code></pre>
+
   <p>Зьмест сьніпэта трэба зьмясьціць заміж <code>&lt;![CDATA[</code> і <code>]]&gt;</code> у элемэнце <code>&lt;content&gt;</code>, напрыклад:</p>
-  <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
-          <content><![CDATA[
-            -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
-            -moz-box-shadow:    1px 1px 1px 0px rgba(0, 0, 0, 0.5);
-            box-shadow:         1px 1px 1px 0px rgba(0, 0, 0, 0.5);
-          ]]&gt;</content>
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;content&gt;&lt;![CDATA[
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow:    1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+  box-shadow:         1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+]]&gt;&lt;/content&gt;
+</code></pre>
+
   <p>Затым можна задаць трыгер і кантэкст, па якім будзе ўстаўляцца сьніпэт:</p>
-  <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
-          <snippet>
-            <content><![CDATA[
-              -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
-              -moz-box-shadow:    1px 1px 1px 0px rgba(0, 0, 0, 0.5);
-              box-shadow:         1px 1px 1px 0px rgba(0, 0, 0, 0.5);
-            ]]&gt;</content>
-            <tabTrigger>shadow</tabTrigger>
-            <scope>source.css</scope>
-          </snippet>
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;snippet&gt;
+  &lt;content&gt;&lt;![CDATA[
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow:    1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+    box-shadow:         1px 1px 1px 0px rgba(0, 0, 0, 0.5);
+  ]]&gt;&lt;/content&gt;
+  &lt;tabTrigger&gt;shadow&lt;/tabTrigger&gt;
+  &lt;scope&gt;source.css&lt;/scope&gt;
+&lt;/snippet&gt;
+</code></pre>
+
   <p>Гэтыя дадатковыя парамэтры кажуць, што сьніпэт павінен быць даступны толькі ў кантэксьце <i>CSS</i>-коду і прапаноўвацца для ўстаўцы пры ўводзе слова <i>shadow</i>. Цяпер захоўваем сьніпэт, зьвярніце ўвагу на абавязковае пашырэньне файла-сьніпэта <code>.sublime-snippet</code>:</p>
   <p><img src="Selection_003.png"></p>
 
@@ -134,17 +140,19 @@ disqus_shortname: sublimetext-be
   <p>Прапаноўвацца ўстаўка сніпэта будзе толькі ў <i>CSS</i>-кантэксьце, у іншых нічога не адбудзецца:</p>
   <p><img src="snippet_insert_2.png"></p>
   <p>Могуць быць сытуацыі, калі цела сьніпэта будзе мець не статычны, але зьменны характар, то бок акрамя статычнага зьместу ў целе сьніпэта будуць адна ці некалькі зьменных частак. Такія часткі пазначаюцца ў сьніпэце праз фігурныя дужкі з пазначэньнем яе парадкавага нумару:</p>
-  <script type="syntaxhighlighter" class="brush: xml"><![CDATA[
-          <snippet>
-            <content><![CDATA[
-              -webkit-box-shadow: ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${5:rgba(0, 0, 0, 0.5)};
-              -moz-box-shadow:    ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${5:rgba(0, 0, 0, 0.5)};
-              box-shadow:         ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${5:rgba(0, 0, 0, 0.5)};
-            ]]&gt;</content>
-            <tabTrigger>shadow</tabTrigger>
-            <scope>source.css</scope>
-          </snippet>
-        ]]></script>
+
+  <pre><code class="language-html">
+&lt;snippet&gt;
+  &lt;content&gt;&lt;![CDATA[
+    -webkit-box-shadow: ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${5:rgba(0, 0, 0, 0.5)};
+    -moz-box-shadow:    ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${5:rgba(0, 0, 0, 0.5)};
+    box-shadow:         ${1:1px} ${2:1px} ${3:1px} ${4:1px} ${5:rgba(0, 0, 0, 0.5)};
+  ]]&gt;&lt;/content&gt;
+  &lt;tabTrigger&gt;shadow&lt;/tabTrigger&gt;
+  &lt;scope&gt;source.css&lt;/scope&gt;
+&lt;/snippet&gt;
+</code></pre>
+
   <p>У гэтым выпадку пасьля ўстаўцы сьніпэта зьменныя яго часткі пад нумарам 1 (іх можа быць некалькі) будуць адначасова выдзеленыя:</p>
   <p><img src="snippet_insert_3.png"></p>
   <p>Можна зьмяніць іх зьмест і націснуўшы клявішу <i>Tab</i> перайсьці да наступнай зьменнай частцы:</p>
