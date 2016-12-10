@@ -126,7 +126,7 @@ disqus_shortname: rails-be
       <li><a href="http://www.infoq.com/articles/webber-rest-workflow">REST workflow</a></li>
     </ul>
   </div>
-  <p><i>REST</i> зьяўляецца абрэвіятураў ад ангельскага <i>REpresentational State Transfer</i> (перадача прадстаўнічага стану) і зьяўляецца асновай <i>RESTful</i> архітэктуры. Лічыцца, што ўпершыню гэты архітэктурны прынцып быў сфармуляваны ў <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">доктарскай дысэртацыі Роя Філдзінга</a>. Ён (прынцып) вызначае сеціўную праграму як набор рэсурсаў, доступ да якіх ажыцьцяўляецца праз аднастайныя, прадказуемыя <a href="http://be-x-old.wikipedia.org/wiki/URL"><i>URL</i>'ы</a> і <a href="http://ru.wikipedia.org/wiki/HTTP#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4.D1.8B"><i>HTTP</i>-дзеясловы</a> <code>GET</code>, <code>PUT</code>, <code>POST</code> і <code>DELETE</code>. Гэтыя <i>URL</i>&#39;ы (<i>HTTP</i>-дзеясловы) вяртаюць пэўнае прадстаўленьне рэсурсу альбо пераводзяць яго ў пэўны стан.</p>
+  <p><i>REST</i> зьяўляецца абрэвіятураў ад ангельскага <i>REpresentational State Transfer</i> (перадача прадстаўнічага стану) і зьяўляецца асновай <i>RESTful</i> архітэктуры. Лічыцца, што ўпершыню гэты архітэктурны прынцып быў сфармуляваны ў <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">доктарскай дысэртацыі Роя Філдзінга</a>. Ён (прынцып) вызначае сеціўную праграму як набор рэсурсаў, доступ да якіх ажыцьцяўляецца праз аднастайныя, прадказуемыя <a href="http://be-x-old.wikipedia.org/wiki/URL"><i>URL</i>'ы</a> і <a href="http://ru.wikipedia.org/wiki/HTTP#.D0.9C.D0.B5.D1.82.D0.BE.D0.B4.D1.8B"><i>HTTP</i>-дзеясловы</a> <code>GET</code>, <code>PUT</code>, <code>POST</code> і <code>DELETE</code>. Гэтыя <i>URL</i>'ы (<i>HTTP</i>-дзеясловы) вяртаюць пэўнае прадстаўленьне рэсурсу альбо пераводзяць яго ў пэўны стан.</p>
   <p>Напр., запыт кшталту:</p>
   <p><code>DELETE /photos/17</code></p>
   <p>будзе зразумелы ў <i>Rails</i> як зьвяртаньне да фота-рэсурсу з ідэнтыфікатарам 17 і пазначэньне пры гэтым пажаданай апэрацыі&nbsp;&ndash; выдаленьне гэтага рэсурсу.</p>
@@ -1182,7 +1182,7 @@ validates_presence_of :name
 </code></pre>
 
   <aside>Для зручнасьці пошуку інфармацыі ў якасьці загалоўкаў у дадзеным даведніку прывядзем скарочаныя вэрсіі валідатараў.</aside>
-  <p>Пераважнай зьяўляецца поўная форма, таму што пры гэтым можна аб&#39;ядноўваць некалькі валідатараў у адным радку.</p>
+  <p>Пераважнай зьяўляецца поўная форма, таму што пры гэтым можна аб'ядноўваць некалькі валідатараў у адным радку.</p>
   <p>Валідатарам можна перадаваць парамэтры (опцыі), <code>:presence => true</code> у прыкладзе вышэй. Акрамя спэцыфічных для кожнага з валідатараў, ёсьць шэраг парамэтраў, характэрных для ўсіх іх:</p>
   <ul>
     <li><code>:on</code>&nbsp;&ndash; вызначае калі павінна адбыцца валідацыя. Магчымыя значэньні: <code>:save</code> (змоўчнае; захаваньне экзэмпляру незалежна новы ён ці не), <code>:create</code> (толькі пры захаваньні новага экзэмпляру) і <code>:update</code> (толькі пры апдэйце ўжо існага экзэмпляру).</li>
@@ -1567,7 +1567,7 @@ class Person &lt; ActiveRecord::Base
 end
 </code></pre>
 
-  <p>...альбо аб&#39;ект <code>Proc</code>, які будзе ўтрымліваць код неабходнай умовы:</p>
+  <p>...альбо аб'ект <code>Proc</code>, які будзе ўтрымліваць код неабходнай умовы:</p>
 
   <pre><code class="language-ruby">
 class Account &lt; ActiveRecord::Base
@@ -1670,7 +1670,7 @@ end
   <h3 id="Models_Callbacks_Types">Тыпы зваротных выклікаў</h3>
   <p>Ніжэй пералічаны тыпы зваротных выклікаў у той пасьлядоўнасьці (у межах адпаведнай апэрацыі), у якой яны будуць выклікацца, незалежна ад той пасьлядоўнасьці, у якой яны зьмешчаны ў кодзе праграмы.</p>
 
-  <h4 id="Models_Callbacks_Types_CreatingObject">Стварэньне аб&#39;екту</h4>
+  <h4 id="Models_Callbacks_Types_CreatingObject">Стварэньне аб'екту</h4>
   <ul>
     <li><code>before_validation</code></li>
     <li><code>after_validation</code></li>
@@ -2010,7 +2010,7 @@ end
   <pre><code class="language-ruby">
 class CommentsController &lt; ApplicationController
   def new
-    # Auto-fill the commenter&#39;s name if it has been stored in a cookie
+    # Auto-fill the commenter's name if it has been stored in a cookie
     @comment = Comment.new(:name =&gt; cookies[:commenter_name])
   end
 
@@ -2019,10 +2019,10 @@ class CommentsController &lt; ApplicationController
     if @comment.save
       flash[:notice] = "Thanks for your comment!"
       if params[:remember_name]
-        # Remember the commenter&#39;s name.
+        # Remember the commenter's name.
         cookies[:commenter_name] = @comment.name
       else
-        # Delete cookie for the commenter&#39;s name cookie, if any.
+        # Delete cookie for the commenter's name cookie, if any.
         cookies.delete(:commenter_name)
       end
       redirect_to @comment.article
