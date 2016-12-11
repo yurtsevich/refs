@@ -34,11 +34,6 @@ blockquote {
   margin: 10px 30px 10px;
 }
 
-/*
-code {background-color: #E8E8E8; @include border-radius(4px); color: #000; padding: 0 5px;}
-.elem, .at_rule, .keyword {color: #006699;}
-.syntaxhighlighter code {@include text-shadow(none);}
-*/
 /* line 22, ../sass/screen.scss */
 abbr {
   color: #000;
