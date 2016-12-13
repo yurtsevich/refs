@@ -1,0 +1,2 @@
+autoprefixer:
+  only_production: true
