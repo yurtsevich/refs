@@ -1,0 +1,12 @@
+---
+---
+
+h1, h2, h3, h4, h5, h6 {
+  a {text-decoration: none;} // excluding text underlying of links inside of headers
+}
+p {
+  box-shadow: rgba(0,0,0,0.2) -2px 0 2px inset;
+}
+:fullscreen a {
+  display: flex
+}
