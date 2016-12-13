@@ -29,11 +29,11 @@ disqus_shortname: js-be
   <p>«<i>Learn JavaScript</i>» на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en-US/learn/javascript">https://developer.mozilla.org/en-US/learn/javascript</a></p>
 
   <h2 id="Links_Refs">Даведнікі і кнігі</h2>
-  <p><i>Даведнік</i> на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en/JavaScript/Guide">https://developer.mozilla.org/en/JavaScript/Guide</a></p>
-  <p>«<i>JavaScript Garden</i>»: <a href="http://bonsaiden.github.com/JavaScript-Garden/">http://bonsaiden.github.com/JavaScript-Garden</a></p>
-  <p>Інтэрактыўныя шпаргалкі на <b>OverAPI</b>: <a href="http://overapi.com/javascript/">http://overapi.com/javascript/</a> і <a href="http://overapi.com/jquery/">http://overapi.com/jquery/</a></p>
-  <p>«<i>Learning JavaScript Design Patterns</i>»: <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">http://addyosmani.com/resources/essentialjsdesignpatterns/book</a></p>
-  <p>«<i>Eloquent JavaScript</i>»: <a href="http://eloquentjavascript.net/">http://eloquentjavascript.net/</a></p>
+  <p><i>Даведнік</i> на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en/JavaScript/Guide">developer.mozilla.org/en/JavaScript/Guide</a></p>
+  <p>«<i>JavaScript Garden</i>»: <a href="http://bonsaiden.github.com/JavaScript-Garden/">bonsaiden.github.com/JavaScript-Garden</a></p>
+  <p>Інтэрактыўныя шпаргалкі на <b>OverAPI</b>: <a href="http://overapi.com/javascript">overapi.com/javascript</a> і <a href="http://overapi.com/jquery">overapi.com/jquery</a></p>
+  <p>«<i>Learning JavaScript Design Patterns</i>»: <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/">addyosmani.com/resources/essentialjsdesignpatterns/book</a></p>
+  <p>«<i>Eloquent JavaScript</i>»: <a href="http://eloquentjavascript.net/">eloquentjavascript.net/</a></p>
   <p><a href="http://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527">JavaScript: The Definitive Guide. Activate Your Web Pages</a> (шостае выданьне вядомай папяровай кнігі, напісанай <a href="http://www.amazon.com/David-Flanagan/e/B000APEZR4" title="Старонка, прысьвечаная Дэвіду Флэнэгэну на Amazon.com">Дэвідам Флэнэгэнам</a> ад выдавецтва <a href="http://oreilly.com/" title="Хатняя старонка выдавецтва O'Reilly">O'Reilly</a>&nbsp;&ndash; на мой погляд лепшая крыніца, з тых што мне трапляліся, паглыбленага вывучэньня <i>JavaScript</i>, але на жаль электроннага варыянту няма ў вольным доступе). Ці перакладзенае на расейскую мову выданьне гэтай кнігі: <a href="http://www.ozon.ru/context/detail/id/19677670/">ozon.ru</a>.</p>
 
   <h2 id="Links_Lessons">Урокі</h2>
@@ -301,7 +301,8 @@ y = 1
 </code></pre>
 
   <h2 id="Lexic_Literals">Літаралы</h2>
-  <p>Літаралы (элемэнтарныя значэньні)&nbsp;&ndash; гэта фіксаваныя значэньні, якія вы наўпрост (<i>літаральна</i>) прадстаўляеце праграме, то бок без ужываньня <mark>зьменных, канстантаў, выклікаў функцыяў</mark> і інш. Прыклады літаралаў:</p>
+  <p>Літаралы (элемэнтарныя значэньні)&nbsp;&ndash; гэта фіксаваныя значэньні, якія вы наўпрост (<i>літаральна</i>) прадстаўляеце праграме, то бок без ужываньня
+    <a href="#TypesValues_Variables">зьменных</a>, <a href="#TypesValues_Constants">канстантаў</a>, <mark>выклікаў функцыяў</mark> і інш. Прыклады літаралаў:</p>
 
   <pre><code class="language-js">
 15                  // Лік пятнаццаць
@@ -1488,6 +1489,7 @@ function f() {
 }
 </code></pre>
 
+  <h2 id="TypesValues_Constants">Канстанты</h2>
 </section>
 
 <section>
@@ -2605,12 +2607,10 @@ for(var i = 0 ; i < elements.length ; i++){
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">Reference</a></li>
     </ul>
   </div>
-</section>
 
-<section>
-  <h1 id="OOP">ААП</h1>
+  <h2 id="ObjectModel_Example">Прыклад</h2>
 
-  <h4>HttpRequest.js</h4>
+  <h3>HttpRequest.js</h3>
 
   <pre><code class="language-js">
 function HttpRequest(url) {
@@ -2662,7 +2662,7 @@ HttpRequest.prototype.send = function(callback) {
 };
 </code></pre>
 
-  <h4>app.js</h4>
+  <h3>app.js</h3>
 
   <pre><code class="language-js">
 new HttpRequest('/users')
@@ -4577,4 +4577,7 @@ $("dl").on("mouseenter", "dt", function() {
   </div>
   <p>Прылада правярае ці адпавядае напісаны вамі скрыпт пэўным крытэрам «добрай практыкі».</p>
   <p><a href="http://www.jshint.com/">JSHint</a>&nbsp;&ndash; прыкладна тое ж самае.</p>
+
+  <h2 id="Tools_EventKeyCodes">Event KeyCodes</h2>
+  <p><a href="http://keycode.info/">Прасьцейшая праграма, якая проста выводзіць коды націснутых клявіш</a>.</p>
 </section>

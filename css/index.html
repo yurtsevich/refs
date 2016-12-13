@@ -18,7 +18,6 @@ disqus_shortname: css-be
 
   <h2 id="Links_CSSHome">CSS home</h2>
   <p><i>Афіцыйная</i> пляцоўка на <b>W3C</b>: <a href="http://www.w3.org/Style/CSS/">http://www.w3.org/Style/CSS</a></p>
-  <p>Зручны індэкс па ўсім афіцыйным дакумэнтам на <b>W3Viewer</b>: <a href="http://www.w3viewer.com/">http://www.w3viewer.com</a></p>
   <p><i>Неафіцыйная</i> пляцоўка: <a href="http://www.css3.info/">http://www.css3.info</a></p>
 
   <h2 id="Links_Specs">Стандарты і спэцыфікацыі</h2>
@@ -28,7 +27,6 @@ disqus_shortname: css-be
   <h2 id="Links_Refs">Даведнікі</h2>
   <p><i>Даведнік па базавым аспэктам</i>: <a href="http://www.cssbasics.com/">http://www.cssbasics.com</a></p>
   <p><i>Дасканалы даведнік</i> на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/css/">http://reference.sitepoint.com/css</a></p>
-  <p><i>Даведнік</i> на <b>DocHub</b>: <a href="http://dochub.io/#css/">http://dochub.io/#css/</a></p>
   <p>Інтэрактыўная шпаргалка на <b>OverAPI</b>: <a href="http://overapi.com/css/">http://overapi.com/css/</a></p>
   <p><mark>TODO (разабраць):</mark></p>
   <ul>
@@ -39,7 +37,6 @@ disqus_shortname: css-be
   </ul>
 
   <h2 id="Links_Blogs">Блогі</h2>
-  <p>Разьдзел <i>CSS</i> на <b>scriptjunkie{} (MSDN Magazine)</b>: <a href="http://msdn.microsoft.com/en-us/magazine/ff601772.aspx">http://msdn.microsoft.com/en-us/magazine/ff601772.aspx</a></p>
 
   <h2 id="Links_Tools">Прылады</h2>
   <p><i>Відэа-ўводзіны</i> да <a href="http://firefox.com/" title="Хатняя старонка Firefox"><i>Firefox</i></a>-дадатку <a href="http://getfirebug.com/" title="Хатняя старонка Firebug"><i>Firebug</i></a> на <strong>css-tricks.com</strong>: <a href="http://css-tricks.com/video-screencasts/15-introduction-to-firebug/">http://css-tricks.com/video-screencasts/15-introduction-to-firebug/</a></p>
@@ -351,7 +348,7 @@ div {
   <p><i>At-rules</i>&nbsp;&ndash; гэта інструкцыі ці дырэктывы для парсера <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
 
   <aside><sup>3</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <i>HTML</i>/<abbr title="Cascading Style Sheets">CSS</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
-  <h3 id="At-rules_charset"><code class="at_rule">&#64;charset</code></h3>
+  <h2 id="At-rules_charset"><code class="language-css" style="font-variant: normal;">&#64;charset</code></h2>
   <div class="refs">
     <ul>
       <li><a href="http://reference.sitepoint.com/css/at-charset/">SitePoint</a></li>
@@ -361,19 +358,19 @@ div {
   <p>Агенты карыстаюцца наступным сьпісам пры вызначэньні кадоўкі <code>css</code>-файлу, у парадку зьмяншэньня прыярытэту:</p>
   <ul>
     <li>Атрыбут <code>charset</code> <abbr title="HyperText Transfer Protocol">HTTP</abbr> загалоўку <code>Content-Type</code>, каторы дасылаецца вэб-сэрверам.</li>
-    <li><code class="at_rule">&#64;charset</code>-дырэктыва.</li>
+    <li><code>&#64;charset</code>-дырэктыва.</li>
     <li>Атрыбут <code>charset</code> <a href="../html/index.html#link"><code>link</code></a>-элемэнту, якім <i>HTML</i>-дакумэнт спасылаецца да <code>css</code>-файлу.</li>
     <li>Кадоўка дакумэнту, каторы спасылаецца да гэтага <code>css</code>-файлу.</li>
   </ul>
   <p>І толькі, калі не атрымалася вызначыць кадоўку ніводным з гэтых варыянтаў, ужываецца змоўчная кадоўка&nbsp;&ndash; <code>UTF-8</code>.</p>
 
-  <h4>Прыклад</h4>
+  <h3>Прыклад</h3>
 
   <pre><code class="language-css">
 @charset "ISO-8859-15";
 </code></pre>
 
-  <h3 id="At-rules_import"><code class="at_rule">&#64;import</code></h3>
+  <h2 id="At-rules_import"><code style="font-variant: normal;">&#64;import</code></h2>
   <div class="refs">
     <ul>
       <li><a href="http://reference.sitepoint.com/css/at-import/">SitePoint</a></li>
@@ -386,7 +383,7 @@ div {
 </code></pre>
 
   <p>У выпадку пазначэньня адносных спасылак/шляхоў "адпраўной кропкай" лічыцца месцазнаходжаньне файлу стыляў, у якім гэтая дырэктыва зьмешчана. Пасьля спасылкі/шляху могуць пазначацца <a href="../html/index.html#Media">media</a>-тыпы, для якіх гэтая дырэктыва павінна ўжывацца.</p>
-  <p><code class="at_rule">&#64;import</code>-дырэктыва павінна ісьці вышэй за ўсе <a href="#Concepts_SyntaxTerminology"><i>rule-sets</i></a>, у адваротным выпадку яна будзе праігнаравана.</p>
+  <p><code>&#64;import</code>-дырэктыва павінна ісьці вышэй за ўсе <a href="#Concepts_SyntaxTerminology"><i>rule-sets</i></a>, у адваротным выпадку яна будзе праігнаравана.</p>
 
   <pre><code class="language-css">
 /* Зробіць імпарт файла /css/screen.css у выпадку ўжываньня ў
@@ -401,21 +398,26 @@ html {
 @import url("other.css");
 </code></pre>
 
-  <h3 id="At-rules_media"><code class="at_rule">&#64;media</code></h3>
+  <h2 id="At-rules_media"><code style="font-variant: normal;">&#64;media</code></h2>
   <div class="refs">
     <ul>
       <li><a href="http://reference.sitepoint.com/css/at-media/">SitePoint</a></li>
     </ul>
   </div>
 
-  <h3 id="At-rules_page"><code class="at_rule">&#64;page</code></h3>
+  <h3 id="At-rules_media_extended">Пашыраныя тэхнікі: <i>Element Queries</i></h3>
+  <p><a href="http://codepen.io/tomhodgins/post/how-style-scoping-works-with-element-queries">How Style Scoping Works with Element Queries</a></p>
+  <p><a href="http://elementqueries.com/">EQCSS&nbsp;&ndash; A CSS Extension for Element Queries & More</a></p>
+  <p><a href="https://tomhodgins.github.io/element-queries-spec/element-queries.html">Element Queries (draft)</a></p>
+
+  <h2 id="At-rules_page"><code style="font-variant: normal;">&#64;page</code></h2>
   <div class="refs">
     <ul>
       <li><a href="http://reference.sitepoint.com/css/at-page/">SitePoint</a></li>
     </ul>
   </div>
 
-  <h3 id="At-rules_font-face"><code class="at_rule">&#64;font-face</code></h3>
+  <h2 id="At-rules_font-face"><code style="font-variant: normal;">&#64;font-face</code></h2>
   <div class="refs">
     <ul>
       <li><a href="http://reference.sitepoint.com/css/at-fontface/">SitePoint</a></li>
@@ -466,7 +468,7 @@ html {
 }
 </code></pre>
 
-  <h3 id="At-rules_namespace"><code class="at_rule">&#64;namespace</code></h3>
+  <h2 id="At-rules_namespace"><code style="font-variant: normal;">&#64;namespace</code></h2>
   <div class="refs">
     <ul>
       <li><a href="http://reference.sitepoint.com/css/at-namespace/">SitePoint</a></li>
