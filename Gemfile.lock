@@ -22,8 +22,6 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-autoprefixer (1.0.1)
       autoprefixer-rails (~> 6.3.6)
-    jekyll-feed (0.8.0)
-      jekyll (~> 3.3)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
     jekyll-watch (1.5.0)
@@ -52,7 +50,6 @@ PLATFORMS
 DEPENDENCIES
   jekyll (= 3.3.1)
   jekyll-autoprefixer
-  jekyll-feed (~> 0.6)
   minima (~> 2.0)
 
 RUBY VERSION
