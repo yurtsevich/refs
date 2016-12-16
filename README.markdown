@@ -1,4 +1,5 @@
-# Беларускамоўныя даведнікі па некаторых мовах праграмаваньня і ня толькі.
+# Беларускамоўныя IT-даведнікі
+[![залежнасьць: ruby 2.3.1](https://img.shields.io/badge/%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%8C%D1%86%D1%8C%3A-ruby%202.3.1p112-green.svg)](https://www.ruby-lang.org/en/)
 
 Цалкам (зразумела, з пэўным допускам) зроблены толькі даведнік па HTML, некаторыя даробленыя часткова, некаторыя амаль пустыя ці ў выглядзе сьпісу пэўных крыніцаў. Дапаўняюцца па меры вольнага часу аўтара.
 
@@ -6,23 +7,23 @@
 
 Web-распрацоўка:
 
-* [HTML](https://github.com/yurtsevich/Manuals/tree/master/htmlRef/)
-* [CSS](https://github.com/yurtsevich/Manuals/tree/master/cssRef/)
-* [JavaScript](https://github.com/yurtsevich/Manuals/tree/master/jsRef/)
-* [Распрацоўка сеціўных праграмаў і сайтаў](https://github.com/yurtsevich/Manuals/tree/master/webRef/)
+* [HTML](https://yurtsevich.github.io/refs/html/)
+* [CSS](https://yurtsevich.github.io/refs/css/)
+* [JavaScript](https://yurtsevich.github.io/refs/js/)
+* [Распрацоўка сеціўных праграмаў і сайтаў](https://yurtsevich.github.io/refs/web/)
 
 Праграмаваньне:
 
-* [Агульныя прынцыпы](https://github.com/yurtsevich/Manuals/tree/master/codingRef/)
-* [Java](https://github.com/yurtsevich/Manuals/tree/master/javaRef/)
-* [Scala](https://github.com/yurtsevich/Manuals/tree/master/scalaRef/)
-* [Ruby](https://github.com/yurtsevich/Manuals/tree/master/rubyRef/)
-* [Rails](https://github.com/yurtsevich/Manuals/tree/master/railsRef/)
+* [Агульныя прынцыпы](https://yurtsevich.github.io/refs/coding/)
+* [Java](https://yurtsevich.github.io/refs/java/)
+* [Scala](https://yurtsevich.github.io/refs/scala/)
+* [Ruby](https://yurtsevich.github.io/refs/ruby/)
+* [Rails](https://yurtsevich.github.io/refs/rails/)
 
 Рознае:
 
-* [Linus](https://github.com/yurtsevich/Manuals/tree/master/linuxRef/)
-* [IDEs](https://github.com/yurtsevich/Manuals/tree/master/linuxRef/)
-* [Git](https://github.com/yurtsevich/Manuals/tree/master/gitRef/)
-* [Разгортваньне праграм у працоўным асяродку](https://github.com/yurtsevich/Manuals/tree/master/gitRef/)
+* [Linus](https://yurtsevich.github.io/refs/linux/)
+* [IDEs](https://yurtsevich.github.io/refs/ides/)
+* [Git](https://yurtsevich.github.io/refs/git/)
+* [Разгортваньне праграм у працоўным асяродку](https://yurtsevich.github.io/refs/deploy/)
 
