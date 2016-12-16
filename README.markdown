@@ -1,14 +1,14 @@
 # Беларускамоўныя IT-даведнікі
 [![залежнасьць: ruby 2.3.1](https://img.shields.io/badge/%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%8C%D1%86%D1%8C-ruby%202.3.1p112-green.svg)](https://www.ruby-lang.org/en/)
-[![залежнасьць: jekyll 3.3.1](https://img.shields.io/badge/%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%8C%D1%86%D1%8C-jekyll%203.3.1-green.svg)](http://jekyllrb.com/)
+[![залежнасьць: jekyll](https://img.shields.io/badge/%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%8C%D1%86%D1%8C-jekyll-green.svg)](http://jekyllrb.com/)
+[![залежнасьць: liquid](https://img.shields.io/badge/%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%8C%D1%86%D1%8C-liquid-green.svg)](http://shopify.github.io/liquid/)
+[![залежнасьць: sass](https://img.shields.io/badge/%D0%B7%D0%B0%D0%BB%D0%B5%D0%B6%D0%BD%D0%B0%D1%81%D1%8C%D1%86%D1%8C-sass-green.svg)](http://sass-lang.com/)
 
-Цалкам (зразумела, з пэўным допускам) зроблены толькі даведнік па HTML, некаторыя даробленыя часткова, некаторыя амаль пустыя ці ў выглядзе сьпісу пэўных крыніцаў. Дапаўняюцца па меры вольнага часу аўтара.
-
-## Што ўнутры
+## Разьдзелы
 
 Web-распрацоўка:
 
-* [HTML](https://yurtsevich.github.io/refs/html/)
+* [HTML](https://yurtsevich.github.io/refs/html/) [![прагрэс: 100%](https://img.shields.io/badge/%D0%BF%D1%80%D0%B0%D0%B3%D1%80%D1%8D%D1%81-100%25-brightgreen.svg)]()
 * [CSS](https://yurtsevich.github.io/refs/css/)
 * [JavaScript](https://yurtsevich.github.io/refs/js/)
 * [Распрацоўка сеціўных праграмаў і сайтаў](https://yurtsevich.github.io/refs/web/)
