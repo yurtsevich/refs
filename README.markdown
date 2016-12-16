@@ -8,7 +8,7 @@
 
 Web-распрацоўка:
 
-* [HTML](https://yurtsevich.github.io/refs/html/)<img src="https://img.shields.io/badge/%D0%BF%D1%80%D0%B0%D0%B3%D1%80%D1%8D%D1%81-100%25%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-brightgreen.svg" alt="прагрэс: 100%" style="max-width:100%; margin-left: 10px; margin-bottom: -3px;">
+* [HTML](https://yurtsevich.github.io/refs/html/)<span>&nbsp;</span>![прагрэс: 100%](https://img.shields.io/badge/%D0%BF%D1%80%D0%B0%D0%B3%D1%80%D1%8D%D1%81-100%25%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20-brightgreen.svg)
 
 * [CSS](https://yurtsevich.github.io/refs/css/)
 * [JavaScript](https://yurtsevich.github.io/refs/js/)
