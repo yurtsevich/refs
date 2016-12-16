@@ -8,10 +8,10 @@
 
 Web-распрацоўка:
 
-* ![прагрэс: 100%](https://img.shields.io/badge/%D0%BF%D1%80%D0%B0%D0%B3%D1%80%D1%8D%D1%81-100%25%-brightgreen.svg)&nbsp;&nbsp;&nbsp;[HTML](https://yurtsevich.github.io/refs/html/)
+* ![прагрэс: 100%](https://img.shields.io/badge/%D0%BF%D1%80%D0%B0%D0%B3%D1%80%D1%8D%D1%81-100%25-brightgreen.svg)&nbsp;&nbsp;&nbsp;[HTML](https://yurtsevich.github.io/refs/html/)
 * ![прагрэс: 20%](https://img.shields.io/badge/%D0%BF%D1%80%D0%B0%D0%B3%D1%80%D1%8D%D1%81-20%25%20-orange.svg)&nbsp;&nbsp;&nbsp;[CSS](https://yurtsevich.github.io/refs/css/)
 * ![прагрэс: 60%](https://img.shields.io/badge/%D0%BF%D1%80%D0%B0%D0%B3%D1%80%D1%8D%D1%81-60%25%20-yellow.svg)&nbsp;&nbsp;&nbsp;[JavaScript](https://yurtsevich.github.io/refs/js/)
-* [Распрацоўка сеціўных праграмаў і сайтаў](https://yurtsevich.github.io/refs/web/)
+* ![прагрэс: 20%](https://img.shields.io/badge/%D0%BF%D1%80%D0%B0%D0%B3%D1%80%D1%8D%D1%81-20%25%20-orange.svg)&nbsp;&nbsp;&nbsp;[Распрацоўка сеціўных праграмаў і сайтаў](https://yurtsevich.github.io/refs/web/)
 
 Праграмаваньне:
 
