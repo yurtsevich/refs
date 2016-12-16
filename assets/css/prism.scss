@@ -1,3 +1,6 @@
+---
+---
+
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+ruby+docker+git+haml+http+java+less+markdown+nginx+jsx+sass+scss+scala+sql+typescript&plugins=line-highlight+line-numbers+remove-initial-line-feed */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
@@ -154,9 +157,9 @@ pre[data-line] {
 	background: -webkit-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
 	background: -o-linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
 	background: linear-gradient(left, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	
+
 	pointer-events: none;
-	
+
 	line-height: inherit;
 	white-space: pre;
 }
@@ -178,7 +181,7 @@ pre[data-line] {
 		text-shadow: none;
 		box-shadow: 0 1px white;
 	}
-	
+
 	.line-highlight[data-end]:after {
 		content: attr(data-end);
 		top: auto;

@@ -1,19 +1,19 @@
 {% include base_path %}
 
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script>!window.jQuery && document.write(unescape('%3Cscript src="{{ base_path }}/assets/js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
+<script async src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>!window.jQuery && document.write(unescape('%3Cscript async src="{{ base_path }}/assets/js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 
 <!-- 3rd party library to display tree-like table of content -->
-<script src="{{ base_path }}/assets/js/libs/jquery.tree.js"></script>
+<script async src="{{ base_path }}/assets/js/libs/jquery.tree.js"></script>
 <!-- Own script to build Refs index and article's table of content -->
-<script src="{{ base_path }}/assets/js/index.js"></script>
+<script async src="{{ base_path }}/assets/js/index.js"></script>
 <!-- 3rd party library to fire scrolling events -->
-<script src="{{ base_path }}/assets/js/libs/waypoints.min.js"></script>
+<script async src="{{ base_path }}/assets/js/libs/waypoints.min.js"></script>
 <!-- Own script to highlight currently viewing section in table of content with help of waypoints-library -->
-<script src="{{ base_path }}/assets/js/ref.js"></script>
+<script async src="{{ base_path }}/assets/js/ref.js"></script>
 <!-- 3rd party library to highlight code syntax -->
-<script src="{{ base_path }}/assets/js/libs/prism.js"></script>
+<script async src="{{ base_path }}/assets/js/libs/prism.js"></script>
 
 <!-- To display embedded JSBin examples -->
 <script async src="//static.jsbin.com/js/embed.min.js?3.35.2"></script>
