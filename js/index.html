@@ -535,7 +535,7 @@ var number_wrapper = new Object(3);
   <h3 id="TypesValues_Numbers_Integers">Цэлыя літаралы</h3>
   <div class="refs">
     <ul>
-      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#Integers_(.D1.86.D0.B5.D0.BB.D1.8B.D0.B5_.D1.87.D0.B8.D1.81.D0.BB.D0.B0)">Guide</a></li>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Grammar_and_Types#Литерал_целого_числа">Guide</a></li>
     </ul>
   </div>
   <p>Цэлыя дзесятковыя лікі запісваюцца як пасьлядоўнасьць лічбаў:</p>
@@ -559,7 +559,7 @@ var number_wrapper = new Object(3);
   <h3 id="TypesValues_Numbers_Floats">Рэчаісныя літаралы</h3>
   <div class="refs">
     <ul>
-      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#.D0.9B.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D0.BB.D1.8B_.D1.87.D0.B8.D1.81.D0.BB.D0.B0_.D1.81_.D0.BF.D0.BB.D0.B0.D0.B2.D0.B0.D1.8E.D1.89.D0.B5.D0.B9_.D0.B7.D0.B0.D0.BF.D1.8F.D1.82.D0.BE.D0.B9">Guide</a></li>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Grammar_and_Types#Литерал_числа_с_плавающей_точкой">Guide</a></li>
     </ul>
   </div>
   <p>Рэчаісны лік можа ўтрымліваць наступныя часткі:</p>
@@ -588,7 +588,7 @@ var number_wrapper = new Object(3);
   <h3 id="TypesValues_Numbers_Wrapper">Аб'ект-абгортка</h3>
   <div class="refs">
     <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects#Number_Object">Guide</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates#Number_object">Guide</a></li>
       <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Number">Reference</a></li>
     </ul>
   </div>
@@ -604,8 +604,8 @@ var number_wrapper = new Object(3);
     <li><a name="TypesValues_Numbers_Wrapper_Props_NaN"><code class="language-js">NaN</code></a>&nbsp;&ndash; адмысловае значэньне «ня-лік», якое прадстаўляе, напрыклад, вынікі некарэктных арытмэтычных апэрацыяў (як то дзяленьне на нуль <sup><a href="#Ref_DevisionByZero">2</a></sup>). Тое ж самае, што і базавы аб'ект <a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a>.</li>
   </ul>
 
-    <h5 id="TypesValues_Numbers_Wrapper_Props_Examples">Прыклады</h5>
-    <p>Доступ да гэтых значэньняў адбываецца заўсёды цераз прадвызначаны глябальны аб'ект <code class="language-js">Number</code> як у прыкладзе ніжэй, а не праз аб'екты <code class="language-js">Number</code>, якія вы ствараеце самі:</p>
+  <h5 id="TypesValues_Numbers_Wrapper_Props_Examples">Прыклады</h5>
+  <p>Доступ да гэтых значэньняў адбываецца заўсёды цераз прадвызначаны глябальны аб'ект <code class="language-js">Number</code> як у прыкладзе ніжэй, а не праз аб'екты <code class="language-js">Number</code>, якія вы ствараеце самі:</p>
 
   <pre><code class="language-js">
 var aNumber = (-Number.MAX_VALUE) * 2;
@@ -617,13 +617,12 @@ if (aNumber == Number.NEGATIVE_INFINITY) {
 aNumber = aNumber / 0;          // вынікам будзе Number.NaN
 </code></pre>
 
+  <h4 id="TypesValues_Numbers_Wrapper_Methods">Мэтады</h4>
+  <p>Таксама <a href="#ObjectModel">прататып аб'екта</a> (<mark>магчыма ўдакладніць спасылку да даччынага разьдзелу</mark>) <code class="language-js">Number</code> вызначае шэраг мэтадаў, якія даступны да ўсіх аб'ектаў <code class="language-js">Number</code>:</p>
+  <ul>
+    <li><code class="language-js">toExponential</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у экспанэнцыяльнай натацыі. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі. Калі парамэтар не пазначаны, будзе адлюстравана столькі лічбаў пасьля рэчаіснай кропкі, колькі патрэбна. Прыклады:
 
-    <h4 id="TypesValues_Numbers_Wrapper_Methods">Мэтады</h4>
-    <p>Таксама <a href="#ObjectModel">прататып аб'екта</a> (<mark>магчыма ўдакладніць спасылку да даччынага разьдзелу</mark>) <code class="language-js">Number</code> вызначае шэраг мэтадаў, якія даступны да ўсіх аб'ектаў <code class="language-js">Number</code>:</p>
-    <ul>
-      <li><code class="language-js">toExponential</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у экспанэнцыяльнай натацыі. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі. Калі парамэтар не пазначаны, будзе адлюстравана столькі лічбаў пасьля рэчаіснай кропкі, колькі патрэбна. Прыклады:
-
-        <pre><code class="language-js">
+      <pre><code class="language-js">
 var num=77.1234;
 
 alert("num.toExponential() is " + num.toExponential());        // адлюструе 7.71234e+1
@@ -633,36 +632,36 @@ alert("77.1234.toExponential() is " + 77.1234.toExponential());// адлюстр
 alert("77 .toExponential() is " + 77 .toExponential());        // адлюструе 7.7e+1
 </code></pre>
 
-      </li>
-      <li><code class="language-js">toFixed</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у натацыі з фіксаванай кропкай. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі (ад 0 да 20). Калі парамэтар не пазначаны, лічбы пасьля рэчаіснай кропкі будуць адкінутыя ўвогуле. Прыклады:
+    </li>
+    <li><code class="language-js">toFixed</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, у натацыі з фіксаванай кропкай. У якасьці парамэтру можа перадавацца колькасьць лічбаў пасьля рэчаіснай кропкі (ад 0 да 20). Калі парамэтар не пазначаны, лічбы пасьля рэчаіснай кропкі будуць адкінутыя ўвогуле. Прыклады:
 
-        <pre><code class="language-js">
+      <pre><code class="language-js">
 var n = 12345.6789;
 
 n.toFixed();            // вярне "12346": ня проста адкіне дроб,
-                        // але акругліць значэньне
+                      // але акругліць значэньне
 n.toFixed(1);           // вярне "12345.7": таксама акругліць значэньне
 n.toFixed(6);           // вярне "12345.678900": дадасьць нулі
 (1.23e+20).toFixed(2);  // вярне "123000000000000000000.00"
 (1.23e-10).toFixed(2);  // вярне "0.00"
 2.34.toFixed(1);        // вярне "2.3"
 -2.34.toFixed(1);       // вярне -2.3: не чарада, але лік, з-за парадку
-                        // апрацоўкі апэрацыяў
+                      // апрацоўкі апэрацыяў
 (-2.24).toFixed(1);     // вярне "-2.3": пасьля абгортваньня
-                        // ў дужкі - сымбальная чарада
+                      // ў дужкі - сымбальная чарада
 </code></pre>
-      </li>
-      <li><code class="language-js">toLocaleString</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, з улікам лякальных асаблівасьцяў. Прыклад:
+    </li>
+    <li><code class="language-js">toLocaleString</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, з улікам лякальных асаблівасьцяў. Прыклад:
 
-        <pre><code class="language-js">
+      <pre><code class="language-js">
 var number = 3500;
 console.log(number.toLocaleString()); // адлюструе "3,500" у ангельскай лякалі
 </code></pre>
 
-      </li>
-      <li><code class="language-js">toPrecision</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, альбо ў экспанэнцыяльнай натацыі, альбо ў натацыі з фіксаванай кропкай у залежнасьці ад неабходнай дакладнасьці. У якасьці парамэтру можа перадавацца неабходная дакладнасьць&nbsp;&ndash; колькасьць вартасных лічбаў. Калі парамэтар не пазначаны, мэтад вядзе сябе гэтак сама, як мэтад <a href="#TypesValues_Numbers_Wrapper_Methods_toString"><code class="language-js">toString</code></a>. Калі ў якасьці парамэтру будзе ўжыта ня цэлае значэньне, яно будзе акруглена. Пасьля агругленьня, калі значэньне парамэтру будзе выходзіць за межы дыяпазону ад 1 да 100, будзе згенэравана <a href="#CoreObjects_RangeError"><code class="language-js">RangeError</code></a>. Прыклады:
+    </li>
+    <li><code class="language-js">toPrecision</code>&nbsp;&ndash; вяртае сымбальную чараду, якая прадстаўляе дадзены лік, альбо ў экспанэнцыяльнай натацыі, альбо ў натацыі з фіксаванай кропкай у залежнасьці ад неабходнай дакладнасьці. У якасьці парамэтру можа перадавацца неабходная дакладнасьць&nbsp;&ndash; колькасьць вартасных лічбаў. Калі парамэтар не пазначаны, мэтад вядзе сябе гэтак сама, як мэтад <a href="#TypesValues_Numbers_Wrapper_Methods_toString"><code class="language-js">toString</code></a>. Калі ў якасьці парамэтру будзе ўжыта ня цэлае значэньне, яно будзе акруглена. Пасьля агругленьня, калі значэньне парамэтру будзе выходзіць за межы дыяпазону ад 1 да 100, будзе згенэравана <a href="#CoreObjects_RangeError"><code class="language-js">RangeError</code></a>. Прыклады:
 
-        <pre><code class="language-js">
+      <pre><code class="language-js">
 var num = 5.123456;
 console.log("num.toPrecision() is " + num.toPrecision());   // адлюструе 5.123456
 console.log("num.toPrecision(5) is " + num.toPrecision(5)); // адлюструе 5.1235
@@ -670,10 +669,10 @@ console.log("num.toPrecision(2) is " + num.toPrecision(2)); // адлюстру�
 console.log("num.toPrecision(1) is " + num.toPrecision(1)); // адлюструе 5
 </code></pre>
 
-      </li>
-      <li><a name="TypesValues_Numbers_Wrapper_Methods_toString"><code class="language-js">toString</code></a>&nbsp;&ndash; вяртае сымбальнае прадстаўленьне дадзенага ліку. У якасьці парамэтру можа перадавацца базіс ліку для адлюстраваньня (ад 2 да 36). Калі парамэтар не пазначаны, бярэцца базіс 10. Калі парамэтар знаходзіцца па-за межамі дыяпазону ад 2 да 36, будзе згенэравана памылка. Прыклады:
+    </li>
+    <li><a name="TypesValues_Numbers_Wrapper_Methods_toString"><code class="language-js">toString</code></a>&nbsp;&ndash; вяртае сымбальнае прадстаўленьне дадзенага ліку. У якасьці парамэтру можа перадавацца базіс ліку для адлюстраваньня (ад 2 да 36). Калі парамэтар не пазначаны, бярэцца базіс 10. Калі парамэтар знаходзіцца па-за межамі дыяпазону ад 2 да 36, будзе згенэравана памылка. Прыклады:
 
-        <pre><code class="language-js">
+      <pre><code class="language-js">
 var count = 10;
 console.log(count.toString());   // адлюструе "10"
 console.log((17).toString());    // адлюструе "17"
@@ -682,160 +681,160 @@ var x = 7;
 console.log(x.toString(2));      // адлюструе дваічнае "111"
 </code></pre>
 
-      </li>
-      <li><code class="language-js">valueOf</code>&nbsp;&ndash; вяртае прымітыўнае лікавае прадстаўленьне дадзенага лікавага аб'екта.</li>
-    </ul>
+    </li>
+    <li><code class="language-js">valueOf</code>&nbsp;&ndash; вяртае прымітыўнае лікавае прадстаўленьне дадзенага лікавага аб'екта.</li>
+  </ul>
 
-    <h3 id="TypesValues_Numbers_NaN">Аб'ект <code class="language-js">NaN</code></h3>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/NaN">Reference</a></li>
-      </ul>
-    </div>
-    <aside id="Ref_DevisionByZero"><sup>2</sup> Трэба заўважыць, што вынікам <a href="#TypesValues_Numbers_Wrapper_Props_NaN"><code class="language-js">Number.NaN</code></a> будзе толькі дзяленьне <code class="language-js">0/0</code>, а, напрыклад, <code class="language-js">1/0</code> верне <a href="#TypesValues_Numbers_Wrapper_Props_PositiveInfinity">дадатную бясконцасьць</a>.</aside>
-    <p>Акрамя <a href="#TypesValues_Numbers_Wrapper">аб'екта-абгортцы</a> існуе адмысловы аб'ект для прадстаўленьня некарэктных лікавых значэньняў,&nbsp;&ndash; напрыклад, вынік дзяленьня на нуль <sup>2</sup>. Тое ж самае, што і <a href="#TypesValues_Numbers_Wrapper_Props_NaN"><code class="language-js">Number.NaN</code></a>.</p>
-
-    <h3 id="TypesValues_Numbers_WorkingWith">Праца з лікамі</h3>
-    <p>Для выкананьня арытмэтычных дзеяў над лікамі ў <i>JavaScript</i> існуюць <a href="#Operators_Arithmetic">арытмэтычныя апэрацыі</a>: <code class="language-js">+</code> для складаньня, <code class="language-js">-</code> для адніманьня, <code class="language-js">*</code> для памнажэньня, <code class="language-js">/</code> для дзяленьня і <code class="language-js">%</code> для вызначэньня астачы цэлалікавага дзяленьня.</p>
-
-    <h4 id="TypesValues_Numbers_WorkingWith_MathObject">Аб'ект <code class="language-js">Math</code></h4>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects#Math_Object">Guide</a></li>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math">Reference</a></li>
-      </ul>
-    </div>
-    <p>Акрамя арытмэтычных апэрацыяў <i>JavaScript</i> падтрымлівае выкананьне болей складаных матэматычных апэрацыяў пры дапамозе вялікай колькасьці матэматычных функцыяў. Для зручнасьці гэтыя функцыі сабраныя ў адзін дапаможны аб'ект <code class="language-js">Math</code>.</p>
-
-    <h5>Атрыбуты</h5>
+  <h3 id="TypesValues_Numbers_NaN">Аб'ект <code class="language-js">NaN</code></h3>
+  <div class="refs">
     <ul>
-      <li><code class="language-js">E</code>&nbsp;&ndash; аснова натуральнага лягарытму (прыкладна 2,718).</li>
-      <li><code class="language-js">LN2</code>&nbsp;&ndash; натуральны лягарытм 2 (прыкладна 0,693).</li>
-      <li><code class="language-js">LN10</code>&nbsp;&ndash; натуральны лягарытм 10 (прыкладна 2,303).</li>
-      <li><code class="language-js">LOG2E</code>&nbsp;&ndash; лягарытм E па аснове 2 (прыкладна 1,442).</li>
-      <li><code class="language-js">LOG10E</code>&nbsp;&ndash; лягарытм E па аснове 10 (прыкладна 0,434).</li>
-      <li><code class="language-js">PI</code>&nbsp;&ndash; значэньне π (прыкладна 3,14159).</li>
-      <li><code class="language-js">SQRT1_2</code>&nbsp;&ndash; квадратны корань 1/2 (прыкладна 0,707).</li>
-      <li><code class="language-js">SQRT2</code>&nbsp;&ndash; квадратны корань 2 (прыкладна 1,414).</li>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/NaN">Reference</a></li>
     </ul>
+  </div>
+  <aside id="Ref_DevisionByZero"><sup>2</sup> Трэба заўважыць, што вынікам <a href="#TypesValues_Numbers_Wrapper_Props_NaN"><code class="language-js">Number.NaN</code></a> будзе толькі дзяленьне <code class="language-js">0/0</code>, а, напрыклад, <code class="language-js">1/0</code> верне <a href="#TypesValues_Numbers_Wrapper_Props_PositiveInfinity">дадатную бясконцасьць</a>.</aside>
+  <p>Акрамя <a href="#TypesValues_Numbers_Wrapper">аб'екта-абгортцы</a> існуе адмысловы аб'ект для прадстаўленьня некарэктных лікавых значэньняў,&nbsp;&ndash; напрыклад, вынік дзяленьня на нуль <sup>2</sup>. Тое ж самае, што і <a href="#TypesValues_Numbers_Wrapper_Props_NaN"><code class="language-js">Number.NaN</code></a>.</p>
 
-    <h5>Мэтады</h5>
-    <table>
-      <thead>
-      <tr>
-        <th width="80px">Мэтад(-ы)</th>
-        <th>Апісаньне</th>
-        <th width="40%">Прыклад</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><code class="language-js">abs</code></td>
-        <td>Вяртае абсалютнае значэньне аргумэнту.</td>
-        <td><code class="language-js">Math.abs(-5); //=> 5</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">acos</code> <br /> <code class="language-js">asin</code> <br /> <code class="language-js">atan</code> <br /> <code class="language-js">atan2</code></td>
-        <td>Зваротныя трыганамэтрычныя функцыі. Вяртаюць значэньні ў радыянах.</td>
-        <td><code class="language-js">Math.acos(1); //=> 3.141592653589793</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">ceil</code></td>
-        <td>Вяртае найменшы цэлы лік, большы ці роўны аргумэнту.</td>
-        <td><code class="language-js">Math.ceil(45.25); //=> 46</code> <br /> <code class="language-js">Math.ceil(-45.25); //=> -45</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">cos</code> <br /> <code class="language-js">sin</code> <br /> <code class="language-js">tan</code></td>
-        <td>Прамыя трыганамэтрычныя функцыі. Вяртаюць значэньні ў радыянах.</td>
-        <td><code class="language-js">Math.cos(Math.PI); //=> -1</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">exp</code></td>
-        <td>Падвышае значэньне <code class="language-js">E</code> да перададзенай ступені.</td>
-        <td><code class="language-js">Math.exp(2); //=> 7.389</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">floor</code></td>
-        <td>Вяртае найбольшы цэлы лік, меншы ці роўны аргумэнту.</td>
-        <td><code class="language-js">Math.ceil(45.95); //=> 45</code> <br /> <code class="language-js">Math.ceil(-45.95); //=> -46</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">log</code></td>
-        <td>Вяртае значэньне натуральнага лягарытму ад аргумэнту.</td>
-        <td><code class="language-js">Math.log(10); //=> 2.302585092994046</code> <br />
-          <code class="language-js">Math.log(0); //=> -Infinity</code> <br />
-          <code class="language-js">Math.log(-1); //=> NaN</code> <br />
-          <code class="language-js">Math.log(100)/Math.LN10 // log<sub>10</sub>(100)</code>
-        </td>
-      </tr>
-      <tr>
-        <td><code class="language-js">max</code> <br /> <code class="language-js">min</code></td>
-        <td>Вяртаюць адпаведна найбольшае й найменшае сярод сваіх аргумэнтаў (адвольная колькасьць).</td>
-        <td><code class="language-js">Math.min(1,3); //=> 1</code><br />
-          <code class="language-js">Math.max(1,8,3) //=> 8</code><br />
-          <code class="language-js">Math.min() //=> Infinity</code><br />
-          <code class="language-js">Math.max() //=> -Infinity</code><br />
-          <code class="language-js">Math.max(1, "a") //=> NaN</code>
-        </td>
-      </tr>
-      <tr>
-        <td><code class="language-js">pow</code></td>
-        <td>Вяртае значэньне першага свайго аргумэнту, падвышанае ў ступень другога свайго аргумэнту.</td>
-        <td><code class="language-js">Math.pow(7,2) //=> 49 (7<sup>2</sup>)</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">random</code></td>
-        <td>Вяртае выпадковае рэчаіснае значэньне ў дыяпазоне ад 0 (уключна) да 1 (ня ўключна).</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">round</code></td>
-        <td>Вяртае бліжэйшае цэлае значэньне па правілам скругленьня.</td>
-        <td><code class="language-js">Math.round(25.49) //=> 25</code> <br />
-          <code class="language-js">Math.round(25.5) //=> 26</code>
-        </td>
-      </tr>
-      <tr>
-        <td><code class="language-js">sqrt</code></td>
-        <td>Вяртае значэньне квадратнага кораню аргумэнту.</td>
-        <td><code class="language-js">Math.sqrt(9) //=> 3</code></td>
-      </tr>
-      </tbody>
-    </table>
-    <p>У дадатак да вышэйпералічаных мэтадаў разгледзім некалькі сытуацыяў, якія выходзяць за межы магчымасьцяў гэтых мэтадаў, але зьяўляюцца даволі распаўсюджанымі.</p>
-    <p>Па-першае, лягарытмы адвольных значэньняў па аснове 2 і 10.</p>
+  <h3 id="TypesValues_Numbers_WorkingWith">Праца з лікамі</h3>
+  <p>Для выкананьня арытмэтычных дзеяў над лікамі ў <i>JavaScript</i> існуюць <a href="#Operators_Arithmetic">арытмэтычныя апэрацыі</a>: <code class="language-js">+</code> для складаньня, <code class="language-js">-</code> для адніманьня, <code class="language-js">*</code> для памнажэньня, <code class="language-js">/</code> для дзяленьня і <code class="language-js">%</code> для вызначэньня астачы цэлалікавага дзяленьня.</p>
 
-    <pre><code class="language-js">
+  <h4 id="TypesValues_Numbers_WorkingWith_MathObject">Аб'ект <code class="language-js">Math</code></h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Numbers_and_dates#Math_object">Guide</a></li>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math">Reference</a></li>
+    </ul>
+  </div>
+  <p>Акрамя арытмэтычных апэрацыяў <i>JavaScript</i> падтрымлівае выкананьне болей складаных матэматычных апэрацыяў пры дапамозе вялікай колькасьці матэматычных функцыяў. Для зручнасьці гэтыя функцыі сабраныя ў адзін дапаможны аб'ект <code class="language-js">Math</code>.</p>
+
+  <h5>Атрыбуты</h5>
+  <ul>
+    <li><code class="language-js">E</code>&nbsp;&ndash; аснова натуральнага лягарытму (прыкладна 2,718).</li>
+    <li><code class="language-js">LN2</code>&nbsp;&ndash; натуральны лягарытм 2 (прыкладна 0,693).</li>
+    <li><code class="language-js">LN10</code>&nbsp;&ndash; натуральны лягарытм 10 (прыкладна 2,303).</li>
+    <li><code class="language-js">LOG2E</code>&nbsp;&ndash; лягарытм E па аснове 2 (прыкладна 1,442).</li>
+    <li><code class="language-js">LOG10E</code>&nbsp;&ndash; лягарытм E па аснове 10 (прыкладна 0,434).</li>
+    <li><code class="language-js">PI</code>&nbsp;&ndash; значэньне π (прыкладна 3,14159).</li>
+    <li><code class="language-js">SQRT1_2</code>&nbsp;&ndash; квадратны корань 1/2 (прыкладна 0,707).</li>
+    <li><code class="language-js">SQRT2</code>&nbsp;&ndash; квадратны корань 2 (прыкладна 1,414).</li>
+  </ul>
+
+  <h5>Мэтады</h5>
+  <table>
+    <thead>
+    <tr>
+      <th width="80px">Мэтад(-ы)</th>
+      <th>Апісаньне</th>
+      <th width="40%">Прыклад</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code class="language-js">abs</code></td>
+      <td>Вяртае абсалютнае значэньне аргумэнту.</td>
+      <td><code class="language-js">Math.abs(-5); //=> 5</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">acos</code> <br /> <code class="language-js">asin</code> <br /> <code class="language-js">atan</code> <br /> <code class="language-js">atan2</code></td>
+      <td>Зваротныя трыганамэтрычныя функцыі. Вяртаюць значэньні ў радыянах.</td>
+      <td><code class="language-js">Math.acos(1); //=> 3.141592653589793</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">ceil</code></td>
+      <td>Вяртае найменшы цэлы лік, большы ці роўны аргумэнту.</td>
+      <td><code class="language-js">Math.ceil(45.25); //=> 46</code> <br /> <code class="language-js">Math.ceil(-45.25); //=> -45</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">cos</code> <br /> <code class="language-js">sin</code> <br /> <code class="language-js">tan</code></td>
+      <td>Прамыя трыганамэтрычныя функцыі. Вяртаюць значэньні ў радыянах.</td>
+      <td><code class="language-js">Math.cos(Math.PI); //=> -1</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">exp</code></td>
+      <td>Падвышае значэньне <code class="language-js">E</code> да перададзенай ступені.</td>
+      <td><code class="language-js">Math.exp(2); //=> 7.389</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">floor</code></td>
+      <td>Вяртае найбольшы цэлы лік, меншы ці роўны аргумэнту.</td>
+      <td><code class="language-js">Math.ceil(45.95); //=> 45</code> <br /> <code class="language-js">Math.ceil(-45.95); //=> -46</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">log</code></td>
+      <td>Вяртае значэньне натуральнага лягарытму ад аргумэнту.</td>
+      <td><code class="language-js">Math.log(10); //=> 2.302585092994046</code> <br />
+        <code class="language-js">Math.log(0); //=> -Infinity</code> <br />
+        <code class="language-js">Math.log(-1); //=> NaN</code> <br />
+        <code class="language-js">Math.log(100)/Math.LN10 // log<sub>10</sub>(100)</code>
+      </td>
+    </tr>
+    <tr>
+      <td><code class="language-js">max</code> <br /> <code class="language-js">min</code></td>
+      <td>Вяртаюць адпаведна найбольшае й найменшае сярод сваіх аргумэнтаў (адвольная колькасьць).</td>
+      <td><code class="language-js">Math.min(1,3); //=> 1</code><br />
+        <code class="language-js">Math.max(1,8,3) //=> 8</code><br />
+        <code class="language-js">Math.min() //=> Infinity</code><br />
+        <code class="language-js">Math.max() //=> -Infinity</code><br />
+        <code class="language-js">Math.max(1, "a") //=> NaN</code>
+      </td>
+    </tr>
+    <tr>
+      <td><code class="language-js">pow</code></td>
+      <td>Вяртае значэньне першага свайго аргумэнту, падвышанае ў ступень другога свайго аргумэнту.</td>
+      <td><code class="language-js">Math.pow(7,2) //=> 49 (7<sup>2</sup>)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">random</code></td>
+      <td>Вяртае выпадковае рэчаіснае значэньне ў дыяпазоне ад 0 (уключна) да 1 (ня ўключна).</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">round</code></td>
+      <td>Вяртае бліжэйшае цэлае значэньне па правілам скругленьня.</td>
+      <td><code class="language-js">Math.round(25.49) //=> 25</code> <br />
+        <code class="language-js">Math.round(25.5) //=> 26</code>
+      </td>
+    </tr>
+    <tr>
+      <td><code class="language-js">sqrt</code></td>
+      <td>Вяртае значэньне квадратнага кораню аргумэнту.</td>
+      <td><code class="language-js">Math.sqrt(9) //=> 3</code></td>
+    </tr>
+    </tbody>
+  </table>
+  <p>У дадатак да вышэйпералічаных мэтадаў разгледзім некалькі сытуацыяў, якія выходзяць за межы магчымасьцяў гэтых мэтадаў, але зьяўляюцца даволі распаўсюджанымі.</p>
+  <p>Па-першае, лягарытмы адвольных значэньняў па аснове 2 і 10.</p>
+
+  <pre><code class="language-js">
 Math.log(100)/Math.LN10 // лягарытм 100 па аснове 10
 Math.log(512)/Math.LN2 // лягарытм 512 па аснове 2
 </code></pre>
 
-    <p>Далей, каб атрымаць выпадковае рэчаіснае значэньне ў <strong>адвольным дыяпазоне</strong> можна скарыстацца ўласнай функцыяй:</p>
+  <p>Далей, каб атрымаць выпадковае рэчаіснае значэньне ў <strong>адвольным дыяпазоне</strong> можна скарыстацца ўласнай функцыяй:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+return Math.random() * (max - min) + min;
 }
 </code></pre>
 
-    <p>Каб атрымаць выпадковае <strong>цэлае</strong> значэньне ў адвольным дыяпазоне можна скарыстацца наступнай функцыяй:</p>
+  <p>Каб атрымаць выпадковае <strong>цэлае</strong> значэньне ў адвольным дыяпазоне можна скарыстацца наступнай функцыяй:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 function getRandomInt(min, max) {
   Math.floor(Math.random() * (max - min + 1)) + min;
 }
 </code></pre>
 
-    <h3 id="TypesValues_Numbers_ParsingStrings">Утварэньне з чародаў</h3>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseInt">parseInt</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat">parseFloat</a></li>
-      </ul>
-    </div>
-    <p>Для пераўтварэньня сымбальных чародаў у лікі існуюць дапаможныя функцыі верхняга ўзроўню: <code class="language-js">parseInt</code> і <code class="language-js">parseFloat</code>, для цэлых і рэчаісных лікаў адпаведна. Напрыклад, вынікам усіх наступных выразаў будзе рэчаісны лік 3,14:</p>
+  <h3 id="TypesValues_Numbers_ParsingStrings">Утварэньне з чародаў</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/parseInt">parseInt</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseFloat">parseFloat</a></li>
+    </ul>
+  </div>
+  <p>Для пераўтварэньня сымбальных чародаў у лікі існуюць дапаможныя функцыі верхняга ўзроўню: <code class="language-js">parseInt</code> і <code class="language-js">parseFloat</code>, для цэлых і рэчаісных лікаў адпаведна. Напрыклад, вынікам усіх наступных выразаў будзе рэчаісны лік 3,14:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 parseFloat("3.14");
 parseFloat("314e-2");
 parseFloat("0.0314E+2");
@@ -845,15 +844,15 @@ parseFloat("3.14more non-digit characters");  // працэс сканавань
                                               // у лікавы літарал
 </code></pre>
 
-    <p>А наступны прыклад верне <a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a>:</p>
+  <p>А наступны прыклад верне <a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a>:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 parseFloat("FF2");
 </code></pre>
 
-    <p>Вынікам усіх наступных выразаў будзе цэлы лік 15:</p>
+  <p>Вынікам усіх наступных выразаў будзе цэлы лік 15:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 // першы парамэтар мэтаду parseInt - чарада для пераўтварэньня, другі - базіс ліку.
 
 parseInt(" 0xF", 16);   // вядучыя прагалы ў першым парамэтры ігнаруюцца
@@ -871,23 +870,23 @@ parseInt("15px", 10);
 parseInt("12", 13);
 </code></pre>
 
-    <p>Наступныя прыклады вернуць <a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a>:</p>
+  <p>Наступныя прыклады вернуць <a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a>:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 parseInt("Hello", 8); // Зусім ня лік
 parseInt("546", 2);   // Некарэктныя лічбы для дваічнага ліку
 </code></pre>
 
-    <h3 id="TypesValues_Numbers_Checking">Праверкі</h3>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN">isNaN</a></li>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite">isFinite</a></li>
-      </ul>
-    </div>
-    <p>Для праверкі ці зьяўляецца пэўнае значэньне лікам існуе функцыя <code class="language-js">isNaN</code>, таксама верхняга ўзроўню. Гэтую функцыю трэба выкарыстоўваць з пэўнай асьцярогай, асабліва, калі правяраемым значэньнем можа быць ня лік&nbsp;&ndash; у гэтым выпадку значэньне будзе спачатку пераўтворана ў лік, які ўжо ў сваю чаргу будзе пераданы ў функцыю:</p>
+  <h3 id="TypesValues_Numbers_Checking">Праверкі</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/isNaN">isNaN</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isFinite">isFinite</a></li>
+    </ul>
+  </div>
+  <p>Для праверкі ці зьяўляецца пэўнае значэньне лікам існуе функцыя <code class="language-js">isNaN</code>, таксама верхняга ўзроўню. Гэтую функцыю трэба выкарыстоўваць з пэўнай асьцярогай, асабліва, калі правяраемым значэньнем можа быць ня лік&nbsp;&ndash; у гэтым выпадку значэньне будзе спачатку пераўтворана ў лік, які ўжо ў сваю чаргу будзе пераданы ў функцыю:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 isNaN(NaN);       // true
 isNaN(true);      // false: значэньне true, як і false будзе пераўтворана ў адпаведна
                   // 1 і 0, якія ў сваю чаргу зьяўляюцца карэктнымі лікамі
@@ -902,25 +901,25 @@ isNaN("blabla")   // true: спроба пераўтварыць чараду "b
                   // пасьпяховай, гэта спроба верне NaN
 </code></pre>
 
-    <p>Для праверкі ці зьяўляецца значэньне пэўным лікам (не бясконцасьцю) існуе функцыя верхняга ўзроўню <code class="language-js">isFinite</code>. Калі ў якасьці аргумэнту ёй перададзеныя <a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a>, <a href="#TypesValues_Numbers_Wrapper_Props_PositiveInfinity">дадатная</a> ці <a href="#TypesValues_Numbers_Wrapper_Props_NegativeInfinity">адмоўная бясконцасьць</a>, яна верне <code class="language-js">false</code>, у астатніх выпадках&nbsp;&ndash; <code class="language-js">true</code>.</p>
+  <p>Для праверкі ці зьяўляецца значэньне пэўным лікам (не бясконцасьцю) існуе функцыя верхняга ўзроўню <code class="language-js">isFinite</code>. Калі ў якасьці аргумэнту ёй перададзеныя <a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a>, <a href="#TypesValues_Numbers_Wrapper_Props_PositiveInfinity">дадатная</a> ці <a href="#TypesValues_Numbers_Wrapper_Props_NegativeInfinity">адмоўная бясконцасьць</a>, яна верне <code class="language-js">false</code>, у астатніх выпадках&nbsp;&ndash; <code class="language-js">true</code>.</p>
 
-    <h2 id="TypesValues_Strings">Сымбальныя чароды</h2>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript#.D0.A1.D1.82.D1.80.D0.BE.D0.BA.D0.B8">re-Introduction</a></li>
-      </ul>
-    </div>
-    <p>Сымбальная чарада ўяўляе зь сябе пасьлядоўнасьць літар, лічбаў, знакаў пунктуацыі і іншых <i><a href="http://be-x-old.wikipedia.org/wiki/%D0%AE%D0%BD%D1%96%D0%BA%D0%BE%D0%B4" title="Пра Unicode у беларускай Вікіпэдыі">Unicode</a></i>-сымбаляў і зьяўляецца тыпам даных <i>JavaScript</i> для прадстаўленьня тэкстаў. Зьвярніце ўвагу, што ў <i>JavaScript</i> няма сымбальнага тыпу даных, як <code class="language-js">char</code> у мовах праграмаваньня <i>C</i>, <i>C++</i> альбо <i>Java</i>. Адзінкавы сымбаль прадстаўляецца праз чараду адзінкавай даўжыні.</p>
+  <h2 id="TypesValues_Strings">Сымбальныя чароды</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript#Строки">re-Introduction</a></li>
+    </ul>
+  </div>
+  <p>Сымбальная чарада ўяўляе зь сябе пасьлядоўнасьць літар, лічбаў, знакаў пунктуацыі і іншых <i><a href="http://be-x-old.wikipedia.org/wiki/%D0%AE%D0%BD%D1%96%D0%BA%D0%BE%D0%B4" title="Пра Unicode у беларускай Вікіпэдыі">Unicode</a></i>-сымбаляў і зьяўляецца тыпам даных <i>JavaScript</i> для прадстаўленьня тэкстаў. Зьвярніце ўвагу, што ў <i>JavaScript</i> няма сымбальнага тыпу даных, як <code class="language-js">char</code> у мовах праграмаваньня <i>C</i>, <i>C++</i> альбо <i>Java</i>. Адзінкавы сымбаль прадстаўляецца праз чараду адзінкавай даўжыні.</p>
 
-    <h3 id="TypesValues_Strings_Literals">Літаралы</h3>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Values,_variables,_and_literals#.D0.A1.D1.82.D1.80.D0.BE.D0.BA.D0.BE.D0.B2.D1.8B.D0.B9_.D0.BB.D0.B8.D1.82.D0.B5.D1.80.D0.B0.D0.BB">Guide</a></li>
-      </ul>
-    </div>
-    <p>Сымбальныя літаралы ў <i>JavaScript</i>&nbsp;&ndash; гэта пасьлядоўнасьці з 0 ці больш <i><a href="http://be-x-old.wikipedia.org/wiki/%D0%AE%D0%BD%D1%96%D0%BA%D0%BE%D0%B4" title="Пра Unicode у беларускай Вікіпэдыі">Unicode</a></i>-сымбаляў (у кадоўцы <i><a href="https://en.wikipedia.org/wiki/UTF-16" title="Пра UTF-16 у ангельскай Вікіпэдыі">UTF-16</a></i>), зьмешчаная паміж двума знакамі апострафа альбо двукосься. Большая колькасьць <i>Unicode</i>-сымбаляў могуць быць прадстаўленыя пры дапамозе 16-бітавых значэньняў і, адпаведна, ім адпавядае адзін элемэнт чарады. Тым жа <i>Unicode</i>-сымбалям, якія ня могуць быць прадстаўленыя 16-бітавымі значэньнямі, адпавядаюць 2 пасьлядоўных элемэнта чарады (так званая «сурагатная пара»). Даўжынёй чарады зьяўляецца колькасьць 16-бітавых значэньняў, якія яна ўтрымлівае. Адпаведна, улічваючы папярэдняе правіла, даўжыня чарады можа не адпавядаць колькасьці <i>Unicode</i>-сымбаляў гэтай чарады.</p>
+  <h3 id="TypesValues_Strings_Literals">Літаралы</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Guide/Grammar_and_types#Строковый_литерал">Guide</a></li>
+    </ul>
+  </div>
+  <p>Сымбальныя літаралы ў <i>JavaScript</i>&nbsp;&ndash; гэта пасьлядоўнасьці з 0 ці больш <i><a href="http://be-x-old.wikipedia.org/wiki/%D0%AE%D0%BD%D1%96%D0%BA%D0%BE%D0%B4" title="Пра Unicode у беларускай Вікіпэдыі">Unicode</a></i>-сымбаляў (у кадоўцы <i><a href="https://en.wikipedia.org/wiki/UTF-16" title="Пра UTF-16 у ангельскай Вікіпэдыі">UTF-16</a></i>), зьмешчаная паміж двума знакамі апострафа альбо двукосься. Большая колькасьць <i>Unicode</i>-сымбаляў могуць быць прадстаўленыя пры дапамозе 16-бітавых значэньняў і, адпаведна, ім адпавядае адзін элемэнт чарады. Тым жа <i>Unicode</i>-сымбалям, якія ня могуць быць прадстаўленыя 16-бітавымі значэньнямі, адпавядаюць 2 пасьлядоўных элемэнта чарады (так званая «сурагатная пара»). Даўжынёй чарады зьяўляецца колькасьць 16-бітавых значэньняў, якія яна ўтрымлівае. Адпаведна, улічваючы папярэдняе правіла, даўжыня чарады можа не адпавядаць колькасьці <i>Unicode</i>-сымбаляў гэтай чарады.</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var p = "π";  // π зьяўляецца сымбалем, які прадстаўляецца 16-бітавым значэньнем 0x03c0
 var e = "e";  // e зьяўляецца сымбалем, які прадстаўляецца 17-бітавым значэньнем 0x1d452
 p.length      // =&gt; 1: p утрымлівае 1 16-бітавы элемэнт
@@ -928,10 +927,10 @@ e.length      // =&gt; 2: у адпаведнасьці з кадоўкай UTF-
               // значэньняў: "\ud835\udc52"
 </code></pre>
 
-    <p>Пустая чарада мае даўжыню 0. Доступ да сымбаляў чарады адбываецца пры дапамозе індэксу, пачынаючы з 0.</p>
-    <p>Для пазначэньня сымбальнай чарады ў праграме патрэбны тэкст абгортваецца двукосьсем ці адзіночнымі апострафамі. Пры гэтым у чарадзе, якая абгортваецца двукосьсем, могуць сустракацца сымбалі апострафаў. І, адпаведна, у чарадзе, якая абгортваецца апострафамі, могуць сустракацца сымбалі двукосься. Сымбальная чарада таксама можа ўтрымліваць <i>escape</i>-пасьлядоўнасьці, <i>backslash</i> за якім ідзе пэўны сымбаль,&nbsp;&ndash; для прадстаўленьня ня-тэкставых ці адмысловых сымбаляў, а таксама для прадстаўленьня любых сымбаляў праз іх <i>Unicode</i>-значэньне.</p>
+  <p>Пустая чарада мае даўжыню 0. Доступ да сымбаляў чарады адбываецца пры дапамозе індэксу, пачынаючы з 0.</p>
+  <p>Для пазначэньня сымбальнай чарады ў праграме патрэбны тэкст абгортваецца двукосьсем ці адзіночнымі апострафамі. Пры гэтым у чарадзе, якая абгортваецца двукосьсем, могуць сустракацца сымбалі апострафаў. І, адпаведна, у чарадзе, якая абгортваецца апострафамі, могуць сустракацца сымбалі двукосься. Сымбальная чарада таксама можа ўтрымліваць <i>escape</i>-пасьлядоўнасьці, <i>backslash</i> за якім ідзе пэўны сымбаль,&nbsp;&ndash; для прадстаўленьня ня-тэкставых ці адмысловых сымбаляў, а таксама для прадстаўленьня любых сымбаляў праз іх <i>Unicode</i>-значэньне.</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 ""  // Пустая чарада
 'testing'
 "3.14"
@@ -941,82 +940,81 @@ e.length      // =&gt; 2: у адпаведнасьці з кадоўкай UTF-
 "π is the ratio of a circle's circumference to its diameter"
 </code></pre>
 
-    <table>
-      <caption><i>escape</i>-пасьлядоўнасьці ў <i>JavaScript</i></caption>
-      <thead>
-      <tr>
-        <th width="20%">Пасьлядоўнасьць</th>
-        <th>Сымбаль, які прадстаўляецца</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td>\O</td>
-        <td>NUL-сымбаль (\u0000)</td>
-      </tr>
-      <tr>
-        <td>\b</td>
-        <td><i>Backspace</i> (\u0008)</td>
-      </tr>
-      <tr>
-        <td>\t</td>
-        <td>Гарызантальная табуляцыя (\u0009)</td>
-      </tr>
-      <tr>
-        <td>\n</td>
-        <td>Сымбаль новага радка (\u000A)</td>
-      </tr>
-      <tr>
-        <td>\v</td>
-        <td>Вертыкальная табуляцыя (\u000B)</td>
-      </tr>
-      <tr>
-        <td>\f</td>
-        <td><i>Form feed</i> (\u000C)</td>
-      </tr>
-      <tr>
-        <td>\r</td>
-        <td>Сымбаль вяртаньня карэткі (\u000D)</td>
-      </tr>
-      <tr>
-        <td>\"</td>
-        <td>Сымбаль двукосься (\u0022)</td>
-      </tr>
-      <tr>
-        <td>\'</td>
-        <td>Апостраф (\u0027)</td>
-      </tr>
-      <tr>
-        <td>\\</td>
-        <td><i>Backslash</i> (\u005C)</td>
-      </tr>
-      <tr>
-        <td>\x<i>XX</i></td>
-        <td>Сымбаль з кадоўкі <i>Latin-1</i>, які прадстаўляецца двума 16-рычнымі лічбамі</td>
-      </tr>
-      <tr>
-        <td>\u<i>XXXX</i></td>
-        <td><i>Unicode</i>-сымбаль, які прадстаўляецца чатырма 16-рычнымі лічбамі</td>
-      </tr>
-      </tbody>
-    </table>
+  <table>
+    <caption><i>escape</i>-пасьлядоўнасьці ў <i>JavaScript</i></caption>
+    <thead>
+    <tr>
+      <th width="20%">Пасьлядоўнасьць</th>
+      <th>Сымбаль, які прадстаўляецца</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>\O</td>
+      <td>NUL-сымбаль (\u0000)</td>
+    </tr>
+    <tr>
+      <td>\b</td>
+      <td><i>Backspace</i> (\u0008)</td>
+    </tr>
+    <tr>
+      <td>\t</td>
+      <td>Гарызантальная табуляцыя (\u0009)</td>
+    </tr>
+    <tr>
+      <td>\n</td>
+      <td>Сымбаль новага радка (\u000A)</td>
+    </tr>
+    <tr>
+      <td>\v</td>
+      <td>Вертыкальная табуляцыя (\u000B)</td>
+    </tr>
+    <tr>
+      <td>\f</td>
+      <td><i>Form feed</i> (\u000C)</td>
+    </tr>
+    <tr>
+      <td>\r</td>
+      <td>Сымбаль вяртаньня карэткі (\u000D)</td>
+    </tr>
+    <tr>
+      <td>\"</td>
+      <td>Сымбаль двукосься (\u0022)</td>
+    </tr>
+    <tr>
+      <td>\'</td>
+      <td>Апостраф (\u0027)</td>
+    </tr>
+    <tr>
+      <td>\\</td>
+      <td><i>Backslash</i> (\u005C)</td>
+    </tr>
+    <tr>
+      <td>\x<i>XX</i></td>
+      <td>Сымбаль з кадоўкі <i>Latin-1</i>, які прадстаўляецца двума 16-рычнымі лічбамі</td>
+    </tr>
+    <tr>
+      <td>\u<i>XXXX</i></td>
+      <td><i>Unicode</i>-сымбаль, які прадстаўляецца чатырма 16-рычнымі лічбамі</td>
+    </tr>
+    </tbody>
+  </table>
 
-    <h3 id="TypesValues_Strings_Wrapper">Аб'ект-абгортка</h3>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects#String_Object">Guide</a></li>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String">Reference</a></li>
-      </ul>
-    </div>
-    <p>Для сымбальных чародаў існуе <a href="#TypesValues_Wrappers">аб'ект-абгортка</a> <code class="language-js">String</code>. Для вызначэньня даўжыні чарады выкарыстоўваецца яго атрыбут <code class="language-js">length</code>:</p>
+  <h3 id="TypesValues_Strings_Wrapper">Аб'ект-абгортка</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String">Reference</a></li>
+    </ul>
+  </div>
+  <p>Для сымбальных чародаў існуе <a href="#TypesValues_Wrappers">аб'ект-абгортка</a> <code class="language-js">String</code>. Для вызначэньня даўжыні чарады выкарыстоўваецца яго атрыбут <code class="language-js">length</code>:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 s.length;
 </code></pre>
 
-    <p>Акрамя вышэйазначанага атрыбуту маецца шчэ шэраг мэтадаў:</p>
+  <p>Акрамя вышэйазначанага атрыбуту маецца шчэ шэраг мэтадаў:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var s = "hello, world"; // Пачынаем з пэўнага тэксту.
 
 // Доступ да сымбаляў:
@@ -1051,17 +1049,17 @@ s.replace("h", "H");    // =&gt; "Hello, world": зьмяняе сымбалі, 
 s.toUpperCase();        // =&gt; "HELLO, WORLD": зьмяняе ўсе малыя літары на вялікія
 s.toLowerCase();        // =&gt; "hello, world": зьмяняе ўсе вялікія літары на малыя</code></pre>
 
-    <h3 id="TypesValues_Strings_WorkingWith">Праца з чародамі</h3>
-    <p>Адной з убудаваных магчымасьцяў працы з чародамі ў дадатак да магчымасьцяў, якія прадстаўляе аб'ект-абгортка, зьяўляецца <i>канкатэнацыя</i>&nbsp;&ndash; аб'яднаньне двух чародаў:</p>
+  <h3 id="TypesValues_Strings_WorkingWith">Праца з чародамі</h3>
+  <p>Адной з убудаваных магчымасьцяў працы з чародамі ў дадатак да магчымасьцяў, якія прадстаўляе аб'ект-абгортка, зьяўляецца <i>канкатэнацыя</i>&nbsp;&ndash; аб'яднаньне двух чародаў:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 msg = "Hello, " + "world";      // У выніку атрымліваем "Hello, world"
 greeting = "Welcome to my blog," + " " + name;
 </code></pre>
 
-    <p>Для параўнаньня чародаў ня трэба выкарыстоўваць адмысловыя функцыі (як у мовах <i>C</i> альбо <i>Java</i>), дастаткова скарыстацца <a href="#Operators_Comparison">апэрацыямі параўнаньня</a>:</p>
+  <p>Для параўнаньня чародаў ня трэба выкарыстоўваць адмысловыя функцыі (як у мовах <i>C</i> альбо <i>Java</i>), дастаткова скарыстацца <a href="#Operators_Comparison">апэрацыямі параўнаньня</a>:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var a = "a";
 var b = "b";
 if (a &lt; b) // true
@@ -1072,37 +1070,37 @@ else
   print(a + " і " + b + " роўныя.");
 </code></pre>
 
-    <h3 id="TypesValues_Strings_Transformations">Пераўтварэньні ў лікі і наадварот</h3>
-    <p>Лікі ў чароды і наадварот могуць пераўтварацца ядром мовы аўтаматычна ў залежнасьці ад кантэксту. У прыкладзе ніжэй лік будзе аўтаматычна пераўтвораны ў чараду:</p>
+  <h3 id="TypesValues_Strings_Transformations">Пераўтварэньні ў лікі і наадварот</h3>
+  <p>Лікі ў чароды і наадварот могуць пераўтварацца ядром мовы аўтаматычна ў залежнасьці ад кантэксту. У прыкладзе ніжэй лік будзе аўтаматычна пераўтвораны ў чараду:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var n = 100;
 var s = n + " білетаў на канцэрт."; // У выніку зьменная s атрымае
                                     // значэньне "100 білетаў на канцэрт."
 </code></pre>
 
-    <p>А ў наступным прыкладзе чароды будуць аўтаматычна пераўтвораны ў лікі:</p>
+  <p>А ў наступным прыкладзе чароды будуць аўтаматычна пераўтвораны ў лікі:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var product = "21" * "2";   // У выніку зьменная product атрымае лікавае значэньне 42
 </code></pre>
 
-    <h2 id="TypesValues_Booleans">Лягічныя значэньні</h2>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript#.D0.94.D1.80.D1.83.D0.B3.D0.B8.D0.B5_.D1.82.D0.B8.D0.BF.D1.8B">re-Introduction</a></li>
-      </ul>
-    </div>
-    <p>Лікавыя і сымбальныя тыпы даных маюць вялікую ці бясконцую колькасьць магчымых значэньняў. Лягічны тып даных, наадварот, мае толькі 2 магчымых значэньні, якія прадстаўляюцца літараламі <code class="language-js">true</code> (<i>праўда</i>, ці <i>ісьціна</i>) і <code class="language-js">false</code> (<i>няпраўда</i>). Лягічныя значэньні кажуць аб праўдзівасьці чаго-небудзь і ўяўляюць зь сябе звычайна вынік параўнаньня, напрыклад:</p>
+  <h2 id="TypesValues_Booleans">Лягічныя значэньні</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/A_re-introduction_to_JavaScript#Другие_типы">re-Introduction</a></li>
+    </ul>
+  </div>
+  <p>Лікавыя і сымбальныя тыпы даных маюць вялікую ці бясконцую колькасьць магчымых значэньняў. Лягічны тып даных, наадварот, мае толькі 2 магчымых значэньні, якія прадстаўляюцца літараламі <code class="language-js">true</code> (<i>праўда</i>, ці <i>ісьціна</i>) і <code class="language-js">false</code> (<i>няпраўда</i>). Лягічныя значэньні кажуць аб праўдзівасьці чаго-небудзь і ўяўляюць зь сябе звычайна вынік параўнаньня, напрыклад:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 x == 5
 </code></pre>
 
-    <p>Гэты выраз правярае ці роўнае значэньне зьменнай <code class="language-js">x</code> ліку 5. Калі так, тады вынікам гэтага параўнаньня будзе значэньне <code class="language-js">true</code>. Калі зьменная <code class="language-js">x</code> ня роўная 5, вынікам параўнаньня будзе значэньне <code class="language-js">false</code>.</p>
-    <p>Лягічныя значэньні звычайна выкарыстоўваюцца ў <a href="#Statements">інструкцыях</a>, як <a href="#Statements_Conditional_if...else"><code class="language-js">if...else</code></a>, які выконвае адно дзеяньне, калі лягічнае значэньне роўнае <code class="language-js">true</code>, і іншае дзеяньне, калі лягічнае значэньне роўнае <code class="language-js">false</code>:</p>
+  <p>Гэты выраз правярае ці роўнае значэньне зьменнай <code class="language-js">x</code> ліку 5. Калі так, тады вынікам гэтага параўнаньня будзе значэньне <code class="language-js">true</code>. Калі зьменная <code class="language-js">x</code> ня роўная 5, вынікам параўнаньня будзе значэньне <code class="language-js">false</code>.</p>
+  <p>Лягічныя значэньні звычайна выкарыстоўваюцца ў <a href="#Statements">інструкцыях</a>, як <a href="#Statements_Conditional_if...else"><code class="language-js">if...else</code></a>, які выконвае адно дзеяньне, калі лягічнае значэньне роўнае <code class="language-js">true</code>, і іншае дзеяньне, калі лягічнае значэньне роўнае <code class="language-js">false</code>:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 if (a == 4) {
   b = b + 1;
 } else {
@@ -1110,220 +1108,249 @@ if (a == 4) {
 }
 </code></pre>
 
-    <p>Тут выконваецца праверка ці роўнае значэньне зьменнай <code class="language-js">a</code> ліку 4. Калі так, тады да значэньня зьменнай <code class="language-js">b</code> дадаецца 1, у адваротным выпадку 1 дадаецца да значэньня зьменнай <code class="language-js">a</code>.</p>
+  <p>Тут выконваецца праверка ці роўнае значэньне зьменнай <code class="language-js">a</code> ліку 4. Калі так, тады да значэньня зьменнай <code class="language-js">b</code> дадаецца 1, у адваротным выпадку 1 дадаецца да значэньня зьменнай <code class="language-js">a</code>.</p>
 
-    <h3 id="TypesValues_Booleans_Wrapper">Аб'ект-абгортка</h3>
-    <div class="refs">
-      <ul>
-        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects#Boolean_Object">Guide</a></li>
-        <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Reference</a></li>
-      </ul>
-    </div>
-    <p>Для лягічных значэньняў, гэтаксама як і для лікаў з чародамі, існуе свой аб'ект-абгортка&nbsp;&ndash; <code class="language-js">Boolean</code>. Ён утрымлівае толькі адзін атрыбут&nbsp;&ndash; <code class="language-js">value</code>, які вяртае лягічнае значэньне абгорнутае аб'ектам.</p>
-    <p>Аб'ект <code class="language-js">Boolean</code> трэба выкарыстоўваць з вялікай асьцярогай, напрыклад не выкарыстоўваць яго ў лягічных выразах (глядзі наступны разьдзел).</p>
-
-    <h3 id="TypesValues_Booleans_Transformations">Пераўтварэньні лягічных значэньняў</h3>
-    <p>Калі лягічнае значэньне выкарыстоўваецца ў лікавым кантэксьце, тады значэньне <code class="language-js">true</code> пераўтвараецца ў лік 1, а <code class="language-js">false</code>&nbsp;&ndash; у 0. Калі лягічнае значэньне выкарыстоўваецца ў сымбальным кантэксьце, тады значэньне <code class="language-js">true</code> пераўтвараецца ў чараду <code class="language-js">"true"</code>, а <code class="language-js">false</code>&nbsp;&ndash; у чараду <code class="language-js">"false"</code>.</p>
-    <p>Трэба заўважыць, што значэньні іншых тыпаў таксама могуць выкарыстоўвацца ў лягічным кантэксьце. Наступныя значэньні хаця і не зьяўляюцца лягічнымі інтэрпрэтуюцца як «няпраўда» (<code class="language-js">false</code>):</p>
+  <h3 id="TypesValues_Booleans_Wrapper">Аб'ект-абгортка</h3>
+  <div class="refs">
     <ul>
-      <li><code class="language-js">0</code></li>
-      <li><a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a></li>
-      <li><code class="language-js">""</code> (пустая <a href="#TypesValues_Strings">чарада</a>)</li>
-      <li><a href="#TypesValues_null"><code class="language-js">null</code></a></li>
-      <li><a href="#TypesValues_undefined"><code class="language-js">undefined</code></a></li>
+      <li><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Boolean">Reference</a></li>
     </ul>
-    <p>Усе астатнія значэньні будуць інтэрпрэтавацца як <code class="language-js">true</code>. <strong>Заўважце, што аб'ект <code class="language-js">Boolean</code>, які ўтрымлівае лягічнае значэньне <code class="language-js">false</code>, не падпадае ані пад адно з пералічаных вышэй значэньняў, якія трактуюцца як <code class="language-js">false</code>, таму будзе трактаваны як <code class="language-js">true</code>.</strong></p>
+  </div>
+  <p>Для лягічных значэньняў, гэтаксама як і для лікаў з чародамі, існуе свой аб'ект-абгортка&nbsp;&ndash; <code class="language-js">Boolean</code>. Ён утрымлівае толькі адзін атрыбут&nbsp;&ndash; <code class="language-js">value</code>, які вяртае лягічнае значэньне абгорнутае аб'ектам.</p>
+  <p>Аб'ект <code class="language-js">Boolean</code> трэба выкарыстоўваць з вялікай асьцярогай, напрыклад не выкарыстоўваць яго ў лягічных выразах (глядзі наступны разьдзел).</p>
 
-    <h2 id="TypesValues_null">Значэньне <code class="language-js">null</code></h2>
-    <p><code class="language-js">null</code>&nbsp;&ndash; гэта <a href="#Lexic_Keywords">ключавое слова</a> ў <i>JavaScript</i>, якое пазначае адсутнасьць значэньня (напрыклад, у зьменнай, не важна элемэнтарнага ці аб'ектнага тыпу).</p>
-    <p><code class="language-js">null</code>&nbsp;&ndash; гэта нармальная альбо чаканая адсутнасьць значэньня ў зьменнай, у адрозьненьні ад <a href="#TypesValues_undefined"><code class="language-js">undefined</code></a>. Калі пэўную зьменную трэба абнуліць альбо перадаць у функцыю пустое значэньне, трэба скарыстацца менавіта значэньнем <code class="language-js">null</code>.</p>
+  <h3 id="TypesValues_Booleans_Transformations">Пераўтварэньні лягічных значэньняў</h3>
+  <p>Калі лягічнае значэньне выкарыстоўваецца ў лікавым кантэксьце, тады значэньне <code class="language-js">true</code> пераўтвараецца ў лік 1, а <code class="language-js">false</code>&nbsp;&ndash; у 0. Калі лягічнае значэньне выкарыстоўваецца ў сымбальным кантэксьце, тады значэньне <code class="language-js">true</code> пераўтвараецца ў чараду <code class="language-js">"true"</code>, а <code class="language-js">false</code>&nbsp;&ndash; у чараду <code class="language-js">"false"</code>.</p>
+  <p>Трэба заўважыць, што значэньні іншых тыпаў таксама могуць выкарыстоўвацца ў лягічным кантэксьце. Наступныя значэньні хаця і не зьяўляюцца лягічнымі інтэрпрэтуюцца як «няпраўда» (<code class="language-js">false</code>):</p>
+  <ul>
+    <li><code class="language-js">0</code></li>
+    <li><a href="#TypesValues_Numbers_NaN"><code class="language-js">NaN</code></a></li>
+    <li><code class="language-js">""</code> (пустая <a href="#TypesValues_Strings">чарада</a>)</li>
+    <li><a href="#TypesValues_null"><code class="language-js">null</code></a></li>
+    <li><a href="#TypesValues_undefined"><code class="language-js">undefined</code></a></li>
+  </ul>
+  <p>Усе астатнія значэньні будуць інтэрпрэтавацца як <code class="language-js">true</code>. <strong>Заўважце, што аб'ект <code class="language-js">Boolean</code>, які ўтрымлівае лягічнае значэньне <code class="language-js">false</code>, не падпадае ані пад адно з пералічаных вышэй значэньняў, якія трактуюцца як <code class="language-js">false</code>, таму будзе трактаваны як <code class="language-js">true</code>.</strong></p>
 
-    <h2 id="TypesValues_undefined">Значэньне <code class="language-js">undefined</code></h2>
-    <p>У <i>JavaScript</i> маецца яшчэ адно адмысловае значэньне <code class="language-js">undefined</code>, якое таксама пазначае адсутнасьць значэньня, але гэта яшчэ больш глыбокі ўзровень адсутнасьці значэньня&nbsp;&ndash; яно азначае, што зьменнай ўвогуле ніколі не прысвойвалася ніякае значэньне. Яно атрымліваецца, калі мы зьвяртаемся да неіснуючага атрыбуту аб'екта альбо неіснуючага элемэнту масіву, і вяртаецца функцыямі, якія не вяртаюць значэньняў.</p>
+  <h2 id="TypesValues_null">Значэньне <code class="language-js">null</code></h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/null">Glossary</a></li>
+    </ul>
+  </div>
+  <p><code class="language-js">null</code>&nbsp;&ndash; гэта <a href="#Lexic_Keywords">ключавое слова</a> ў <i>JavaScript</i>, якое пазначае адсутнасьць значэньня (напрыклад, у зьменнай, не важна элемэнтарнага ці аб'ектнага тыпу).</p>
+  <p><code class="language-js">null</code>&nbsp;&ndash; гэта нармальная альбо чаканая адсутнасьць значэньня ў зьменнай, у адрозьненьні ад <a href="#TypesValues_undefined"><code class="language-js">undefined</code></a>. Калі пэўную зьменную трэба абнуліць альбо перадаць у функцыю пустое значэньне, трэба скарыстацца менавіта значэньнем <code class="language-js">null</code>.</p>
 
-    <p><code class="language-js">undefined</code>&nbsp;&ndash; гэта нечаканая альбо памылка-падобная адсутнасьць значэньня ў зьменнай. Звычайна яно выкарыстоўваецца у праграме наўпрост толькі пры выкананьні нейкіх праверак, каб прадухіліць нечаканыя сытуацыі.</p>
+  <h2 id="TypesValues_undefined">Значэньне <code class="language-js">undefined</code></h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Undefined">Glossary</a></li>
+    </ul>
+  </div>
+  <p>У <i>JavaScript</i> маецца яшчэ адно адмысловае значэньне <code class="language-js">undefined</code>, якое таксама пазначае адсутнасьць значэньня, але гэта яшчэ больш глыбокі ўзровень адсутнасьці значэньня&nbsp;&ndash; яно азначае, што зьменнай ўвогуле ніколі не прысвойвалася ніякае значэньне. Яно атрымліваецца, калі мы зьвяртаемся да неіснуючага атрыбуту аб'екта альбо неіснуючага элемэнту масіву, і вяртаецца функцыямі, якія не вяртаюць значэньняў.</p>
 
-    <h2 id="TypesValues_Conversions">Пераўтварэньні тыпаў</h2>
-    <p>Як мы ўжо бачылі вышэй <i>JavaScript</i> ня ўскладвае занадта вялікіх патрабаваньняў да тыпу значэньняў, калі апэруе імі. Напрыклад, што тычыцца лягічнага тыпу, мы <a href="#TypesValues_Booleans_Transformations">адзначалі вышэй</a>, што якое б мы значэньне ня выкарысталі ў кантэксьце, у якім чакаецца лягічны тып, <i>JavaScript</i> аўтаматычна пераўтворыць яго менавіта ў лягічны тып. Тое ж самае тычыцца іншых тыпаў, напрыклад:</p>
+  <p><code class="language-js">undefined</code>&nbsp;&ndash; гэта нечаканая альбо памылка-падобная адсутнасьць значэньня ў зьменнай. Звычайна яно выкарыстоўваецца у праграме наўпрост толькі пры выкананьні нейкіх праверак, каб прадухіліць нечаканыя сытуацыі.</p>
 
-    <pre><code class="language-js">
+  <aside class="usage_indicator usage_new"><code class="language-js">Symbol</code>&nbsp;&ndash; новы тып даных, упершыню ўведзены ў <a href="#Overview_JavaScriptAndECMAScript">ES6</a></aside>
+  <h2 id="TypesValues_Symbol">Нязьменныя значэньні <code class="language-js">Symbol</code></h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol">Reference</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/symbol">Glossary</a></li>
+    </ul>
+  </div>
+  <p><code class="language-js">Symbol</code>&nbsp;&ndash; гэта элемэнтарны тып даных, чые экзэмпляры ўнікальныя і нязьменныя (<i>immutable</i>). Каб стварыць новы элемэнтарны сымбаль, трэба ўжыць у кодзе выраз <code class="language-js">Symbol()</code> з магчымым пазначэньнем яго тэкставага апісаньня:</p>
+
+  <pre><code class="language-js">
+var sym1 = Symbol();
+var sym2 = Symbol("foo");
+var sym3 = Symbol("foo");
+
+Symbol("foo") === Symbol("foo"); // false
+</code></pre>
+
+  <p>Заўважце, што 2 экзэмпляры сымбальнага тыпу будуць заўсёды адрозьнівацца, нават калі пры іх стварэньні былі перададзеныя аднолькавыя апісаньні.</p>
+
+  <h2 id="TypesValues_Conversions">Пераўтварэньні тыпаў</h2>
+  <p>Як мы ўжо бачылі вышэй <i>JavaScript</i> ня ўскладвае занадта вялікіх патрабаваньняў да тыпу значэньняў, калі апэруе імі. Напрыклад, што тычыцца лягічнага тыпу, мы <a href="#TypesValues_Booleans_Transformations">адзначалі вышэй</a>, што якое б мы значэньне ня выкарысталі ў кантэксьце, у якім чакаецца лягічны тып, <i>JavaScript</i> аўтаматычна пераўтворыць яго менавіта ў лягічны тып. Тое ж самае тычыцца іншых тыпаў, напрыклад:</p>
+
+  <pre><code class="language-js">
 10 + " objects"   // =&gt; "10 objects". Лік 10 будзе аўтаматычна пераўтвораны ў чараду
 "7" * "4"         // =&gt; 28: абедзьве чарады будуць аўтаматычна пераўтвораны ў лікі
 var n = 1 - "x";  // =&gt; NaN: чарада "x" ня можа быць пераўтворана ў лік
 n + " objects"    // =&gt; "NaN objects": лік NaN будзе пераўтвораны ў чараду "NaN"
 </code></pre>
 
-    <p>У табліцы ніжэй прыведзены правілы аўтаматычнага пераўтварэньня тыпаў:</p>
-    <table>
-      <caption>Пераўтварэньні тыпаў</caption>
-      <thead>
-      <tr>
-        <th rowspan="2">Зыходнае значэньне</th>
-        <th colspan="4">Аўтаматычнае пераўтварэньне ў:</th>
-      </tr>
-      <tr>
-        <th>Чараду</th>
-        <th>Лік</th>
-        <th>Лягічнае значэньне</th>
-        <th>Аб'ект</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-        <td><code class="language-js">undefined</code></td>
-        <td><code class="language-js">"undefined"</code></td>
-        <td><code class="language-js">NaN</code></td>
-        <td><code class="language-js">false</code></td>
-        <td>будзе кінута памылка <code class="language-js">TypeError</code></td>
-      </tr>
-      <tr>
-        <td class="underlined"><code class="language-js">null</code></td>
-        <td class="underlined"><code class="language-js">"null"</code></td>
-        <td class="underlined"><code class="language-js">0</code></td>
-        <td class="underlined"><code class="language-js">false</code></td>
-        <td class="underlined">будзе кінута памылка <code class="language-js">TypeError</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">true</code></td>
-        <td><code class="language-js">"true"</code></td>
-        <td><code class="language-js">1</code></td>
-        <td></td>
-        <td><code class="language-js">new Boolean(true)</code></td>
-      </tr>
-      <tr>
-        <td class="underlined"><code class="language-js">false</code></td>
-        <td class="underlined"><code class="language-js">"false"</code></td>
-        <td class="underlined"><code class="language-js">0</code></td>
-        <td class="underlined"></td>
-        <td class="underlined"><code class="language-js">new Boolean(false)</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">""</code> (пустая чарада)</td>
-        <td></td>
-        <td><code class="language-js">0</code></td>
-        <td><code class="language-js">false</code></td>
-        <td><code class="language-js">new String("")</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">"1.2"</code> (утрымлівае лік)</td>
-        <td></td>
-        <td><code class="language-js">1.2</code></td>
-        <td><code class="language-js">true</code></td>
-        <td><code class="language-js">new String("1.2")</code></td>
-      </tr>
-      <tr>
-        <td class="underlined"><code class="language-js">"one"</code> (утрымлівае ня лік)</td>
-        <td class="underlined"></td>
-        <td class="underlined"><code class="language-js">NaN</code></td>
-        <td class="underlined"><code class="language-js">true</code></td>
-        <td class="underlined"><code class="language-js">new String("one")</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">0</code></td>
-        <td><code class="language-js">"0"</code></td>
-        <td></td>
-        <td><code class="language-js">false</code></td>
-        <td><code class="language-js">new Number(0)</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">-0</code></td>
-        <td><code class="language-js">"-0"</code></td>
-        <td></td>
-        <td><code class="language-js">false</code></td>
-        <td><code class="language-js">new Number(-0)</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">NaN</code></td>
-        <td><code class="language-js">"NaN"</code></td>
-        <td></td>
-        <td><code class="language-js">false</code></td>
-        <td><code class="language-js">new Number(NaN)</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">Infinity</code></td>
-        <td><code class="language-js">"Infinity"</code></td>
-        <td></td>
-        <td><code class="language-js">true</code></td>
-        <td><code class="language-js">new Number(Infinity)</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">-Infinity</code></td>
-        <td><code class="language-js">"-Infinity"</code></td>
-        <td></td>
-        <td><code class="language-js">true</code></td>
-        <td><code class="language-js">new Number(-Infinity)</code></td>
-      </tr>
-      <tr>
-        <td class="underlined"><code class="language-js">1</code> (канечны лік, ня нуль)</td>
-        <td class="underlined"><code class="language-js">"1"</code></td>
-        <td class="underlined"></td>
-        <td class="underlined"><code class="language-js">true</code></td>
-        <td class="underlined"><code class="language-js">new Number(1)</code></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">{}</code> (любы аб'ект)</td>
-        <td></td>
-        <td></td>
-        <td><code class="language-js">true</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">[]</code> (пусты масіў)</td>
-        <td><code class="language-js">""</code></td>
-        <td><code class="language-js">0</code></td>
-        <td><code class="language-js">true</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">[9]</code> (адзіны лікавы элемэнт)</td>
-        <td><code class="language-js">"9"</code></td>
-        <td><code class="language-js">9</code></td>
-        <td><code class="language-js">true</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">['a']</code> (любы іншы масіў)</td>
-        <td>вынік мэтаду <code class="language-js">join()</code></td>
-        <td><code class="language-js">NaN</code></td>
-        <td><code class="language-js">true</code></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code class="language-js">function(){}</code> (любая функцыя)</td>
-        <td>вынік мэтаду <code class="language-js">join()</code></td>
-        <td><code class="language-js">NaN</code></td>
-        <td><code class="language-js">true</code></td>
-        <td></td>
-      </tr>
-      </tbody>
-    </table>
+  <p>У табліцы ніжэй прыведзены правілы аўтаматычнага пераўтварэньня тыпаў:</p>
+  <table>
+    <caption>Пераўтварэньні тыпаў</caption>
+    <thead>
+    <tr>
+      <th rowspan="2">Зыходнае значэньне</th>
+      <th colspan="4">Аўтаматычнае пераўтварэньне ў:</th>
+    </tr>
+    <tr>
+      <th>Чараду</th>
+      <th>Лік</th>
+      <th>Лягічнае значэньне</th>
+      <th>Аб'ект</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code class="language-js">undefined</code></td>
+      <td><code class="language-js">"undefined"</code></td>
+      <td><code class="language-js">NaN</code></td>
+      <td><code class="language-js">false</code></td>
+      <td>будзе кінута памылка <code class="language-js">TypeError</code></td>
+    </tr>
+    <tr>
+      <td class="underlined"><code class="language-js">null</code></td>
+      <td class="underlined"><code class="language-js">"null"</code></td>
+      <td class="underlined"><code class="language-js">0</code></td>
+      <td class="underlined"><code class="language-js">false</code></td>
+      <td class="underlined">будзе кінута памылка <code class="language-js">TypeError</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">true</code></td>
+      <td><code class="language-js">"true"</code></td>
+      <td><code class="language-js">1</code></td>
+      <td></td>
+      <td><code class="language-js">new Boolean(true)</code></td>
+    </tr>
+    <tr>
+      <td class="underlined"><code class="language-js">false</code></td>
+      <td class="underlined"><code class="language-js">"false"</code></td>
+      <td class="underlined"><code class="language-js">0</code></td>
+      <td class="underlined"></td>
+      <td class="underlined"><code class="language-js">new Boolean(false)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">""</code> (пустая чарада)</td>
+      <td></td>
+      <td><code class="language-js">0</code></td>
+      <td><code class="language-js">false</code></td>
+      <td><code class="language-js">new String("")</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">"1.2"</code> (утрымлівае лік)</td>
+      <td></td>
+      <td><code class="language-js">1.2</code></td>
+      <td><code class="language-js">true</code></td>
+      <td><code class="language-js">new String("1.2")</code></td>
+    </tr>
+    <tr>
+      <td class="underlined"><code class="language-js">"one"</code> (утрымлівае ня лік)</td>
+      <td class="underlined"></td>
+      <td class="underlined"><code class="language-js">NaN</code></td>
+      <td class="underlined"><code class="language-js">true</code></td>
+      <td class="underlined"><code class="language-js">new String("one")</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">0</code></td>
+      <td><code class="language-js">"0"</code></td>
+      <td></td>
+      <td><code class="language-js">false</code></td>
+      <td><code class="language-js">new Number(0)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">-0</code></td>
+      <td><code class="language-js">"-0"</code></td>
+      <td></td>
+      <td><code class="language-js">false</code></td>
+      <td><code class="language-js">new Number(-0)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">NaN</code></td>
+      <td><code class="language-js">"NaN"</code></td>
+      <td></td>
+      <td><code class="language-js">false</code></td>
+      <td><code class="language-js">new Number(NaN)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">Infinity</code></td>
+      <td><code class="language-js">"Infinity"</code></td>
+      <td></td>
+      <td><code class="language-js">true</code></td>
+      <td><code class="language-js">new Number(Infinity)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">-Infinity</code></td>
+      <td><code class="language-js">"-Infinity"</code></td>
+      <td></td>
+      <td><code class="language-js">true</code></td>
+      <td><code class="language-js">new Number(-Infinity)</code></td>
+    </tr>
+    <tr>
+      <td class="underlined"><code class="language-js">1</code> (канечны лік, ня нуль)</td>
+      <td class="underlined"><code class="language-js">"1"</code></td>
+      <td class="underlined"></td>
+      <td class="underlined"><code class="language-js">true</code></td>
+      <td class="underlined"><code class="language-js">new Number(1)</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">{}</code> (любы аб'ект)</td>
+      <td></td>
+      <td></td>
+      <td><code class="language-js">true</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">[]</code> (пусты масіў)</td>
+      <td><code class="language-js">""</code></td>
+      <td><code class="language-js">0</code></td>
+      <td><code class="language-js">true</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">[9]</code> (адзіны лікавы элемэнт)</td>
+      <td><code class="language-js">"9"</code></td>
+      <td><code class="language-js">9</code></td>
+      <td><code class="language-js">true</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">['a']</code> (любы іншы масіў)</td>
+      <td>вынік мэтаду <code class="language-js">join()</code></td>
+      <td><code class="language-js">NaN</code></td>
+      <td><code class="language-js">true</code></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><code class="language-js">function(){}</code> (любая функцыя)</td>
+      <td>вынік мэтаду <code class="language-js">join()</code></td>
+      <td><code class="language-js">NaN</code></td>
+      <td><code class="language-js">true</code></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
 
-    <h3 id="TypesValues_Conversions_Equality">Пераўтварэньні і роўнасьць</h3>
-    <p>З-за таго, што <i>JavaScript</i> гнутка пераўтварае адны тыпы ў іншыя, яго <a href="#Operators_Comparison">апэрацыя роўнасьці</a> <code class="language-js">==</code> таксама гнуткая ў вызначэньні ці роўныя яе апэранды. Напрыклад, усе наступныя параўнаньні вяртаюць <code class="language-js">true</code>:</p>
+  <h3 id="TypesValues_Conversions_Equality">Пераўтварэньні і роўнасьць</h3>
+  <p>З-за таго, што <i>JavaScript</i> гнутка пераўтварае адны тыпы ў іншыя, яго <a href="#Operators_Comparison">апэрацыя роўнасьці</a> <code class="language-js">==</code> таксама гнуткая ў вызначэньні ці роўныя яе апэранды. Напрыклад, усе наступныя параўнаньні вяртаюць <code class="language-js">true</code>:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 null == undefined   // Гэтыя значэньні трактуюцца як роўныя.
 "0" == 0            // Чарада пераўтвараецца ў лік перад параўнаньнем.
 0 == false          // Лягічнае значэньне пераўтвараецца ў лік перад параўнаньнем.
 "0" == false        // Абодва апэранды пераўтвараюцца ў лікі перад параўнаньнем.
 </code></pre>
 
-    <h3 id="TypesValues_Conversions_ObjectsToPrimitives">Пераўтварэньні аб'ектаў у элемэнтарныя тыпы</h3>
-    <p>Гэтую тэму пакінем па-за межамі дадзенага даведніку. Пры жаданьні можна зьвярнуцца да адпаведнага разьдзелу 3.8.3 шостага выданьня кнігі <a href="http://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527"><i>David Flanagan. «JavaScript. The Definitive Guide. Activate Your Web Pages».</i></a></p>
+  <h3 id="TypesValues_Conversions_ObjectsToPrimitives">Пераўтварэньні аб'ектаў у элемэнтарныя тыпы</h3>
+  <p>Гэтую тэму пакінем па-за межамі дадзенага даведніку. Пры жаданьні можна зьвярнуцца да адпаведнага разьдзелу 3.8.3 шостага выданьня кнігі <a href="http://www.amazon.com/JavaScript-Definitive-Guide-Activate-Guides/dp/0596805527"><i>David Flanagan. «JavaScript. The Definitive Guide. Activate Your Web Pages».</i></a></p>
 
-    <h2 id="TypesValues_MutableObjectsAndImmutablePrimitives">Зьменныя аб'екты і нязьменныя элемэнтарныя значэньні</h2>
-    <p>У <i>JavaScript</i> існуе прынцыповае адрозьненьне паміж элемэнтарнымі тыпамі і аб'ектамі (уключаючы масівы і функцыі). Значэньні элемэнтарных тыпаў нязьменныя. Праілюструем гэта на прыкладзе з чарадой:</p>
+  <h2 id="TypesValues_MutableObjectsAndImmutablePrimitives">Зьменныя аб'екты і нязьменныя элемэнтарныя значэньні</h2>
+  <p>У <i>JavaScript</i> існуе прынцыповае адрозьненьне паміж элемэнтарнымі тыпамі і аб'ектамі (уключаючы масівы і функцыі). Значэньні элемэнтарных тыпаў нязьменныя. Праілюструем гэта на прыкладзе з чарадой:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var s = "hello";  // Прысвоім чарадзе пэўны тэкст
 s.toUpperCase();  // Дадзены выклік вяртае "HELLO",
                   // АЛЕ зьменена была КОПІЯ зыходнай чарады
 s                 // =&gt; "hello": Зыходная чарада пры гэтым засталася бяз зьменаў
 </code></pre>
 
-    <p>Аб'екты ж у <i>JavaScript</i> могуць зьмяняцца:</p>
+  <p>Аб'екты ж у <i>JavaScript</i> могуць зьмяняцца:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var o = { x:1 };    // Пачнём зь нейкага аб'екта
 o.x = 2;            // Зьменім яго шляхам зьмены яго атрыбуту
 o.y = 3;            // Яшчэ раз зьменім шляхам дабаўленьня новага атрыбуту
@@ -1333,9 +1360,9 @@ a[0] = 0;           // Зьменім значэньне пэўнага элем
 a[3] = 4;           // Дададзім новы элемэнт да масіву
 </code></pre>
 
-    <p>Яшчэ аб'екты параўноўваюцца не па значэньні. Нават калі 2 аб'екты маюць адзін і той жа набор атрыбутаў і усе яны маюць аднолькавыя значэньні, гэтыя аб'екты ня будуць лічыцца роўнымі:</p>
+  <p>Яшчэ аб'екты параўноўваюцца не па значэньні. Нават калі 2 аб'екты маюць адзін і той жа набор атрыбутаў і усе яны маюць аднолькавыя значэньні, гэтыя аб'екты ня будуць лічыцца роўнымі:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var o = {x:1}, p = {x:1};   // Два аб'екты з аднолькавымі атрыбутамі
 o === p                     // =&gt; false: розныя аб'екты ніколі ня будуць роўнымі
 var a = [], b = [];         // Два пустых масіва
@@ -1343,9 +1370,9 @@ a === b                     // =&gt; false: тое ж тычыцца і масі
                             // ня будуць роўныя, нават утрымліваючы аднолькавыя элемэнты
 </code></pre>
 
-    <p>Аб'екты яшчэ завуцца спасылачным тыпам (у адрозьненьні ад элемэнтарных тыпаў), таму што значэньні аб'ектаў&nbsp;&ndash; гэта спасылкі на аб'екты. Таму 2 спасылкі толькі тады роўныя, калі спасылаюцца на адзін і той жа аб'ект:</p>
+  <p>Аб'екты яшчэ завуцца спасылачным тыпам (у адрозьненьні ад элемэнтарных тыпаў), таму што значэньні аб'ектаў&nbsp;&ndash; гэта спасылкі на аб'екты. Таму 2 спасылкі толькі тады роўныя, калі спасылаюцца на адзін і той жа аб'ект:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var a = [];   // Зьменная a спасылаецца на пусты масіў.
 var b = a;    // Цяпер b спасылаецца на той жа самы масіў.
 b[0] = 1;     // Зьменім масіў, на які спасылаецца b.
@@ -1354,9 +1381,9 @@ a === b       // =&gt; true: зьменныя a і b спасылаюцца на
               // таму яны роўныя.
 </code></pre>
 
-    <p>З прыкладу вышэй відаць, што прысваеньне зьменнай нейкага аб'екта ня робіць копіі гэтага аб'екта, а захоўвае ў зьменнай спасылкі на гэты аб'ект. Калі ж вы жадаеце зрабіць менавіта копію, тады трэба яўным чынам скапіяваць кожны з атрыбутаў зыходнага аб'екта (масіву):</p>
+  <p>З прыкладу вышэй відаць, што прысваеньне зьменнай нейкага аб'екта ня робіць копіі гэтага аб'екта, а захоўвае ў зьменнай спасылкі на гэты аб'ект. Калі ж вы жадаеце зрабіць менавіта копію, тады трэба яўным чынам скапіяваць кожны з атрыбутаў зыходнага аб'екта (масіву):</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var a = ['a','b','c'];              // Масіў, копію якога мы жадаем зрабіць
 var b = [];                         // Іншы масіў, у які мы жадаем зьмясьціць копію зыходнага
 for(var i = 0; i < a.length; i++) { // Для кожнага індэксу масіву a[]
@@ -1364,60 +1391,65 @@ for(var i = 0; i < a.length; i++) { // Для кожнага індэксу ма
 }
 </code></pre>
 
-    <p>Гэткім жа чынам, пры жаданьні параўнаць 2 аб'екты ці масівы, трэба пасьлядоўна параўнаць усе іх атрыбуты/элемэнты.</p>
+  <p>Гэткім жа чынам, пры жаданьні параўнаць 2 аб'екты ці масівы, трэба пасьлядоўна параўнаць усе іх атрыбуты/элемэнты.</p>
 
-    <h2 id="TypesValues_Variables">Зьменныя</h2>
-    <p>Зьменная&nbsp;&ndash; гэта імя, злучанае са значэньнем. Кажуць, што значэньне ўтрымліваецца ці захоўваецца ў зьменнай. Зьменныя дазваляюць захоўваць даныя ў праграме і працаваць зь імі. Напрыклад, наступны радок коду прысвойвае значэньне <code class="language-js">2</code> зьменнай зь імем <code class="language-js">i</code>:</p>
+  <h2 id="TypesValues_Variables">Зьменныя</h2>
+  <p>Зьменная&nbsp;&ndash; гэта імя, злучанае са значэньнем. Кажуць, што значэньне ўтрымліваецца ці захоўваецца ў зьменнай. Зьменныя дазваляюць захоўваць даныя ў праграме і працаваць зь імі. Напрыклад, наступны радок коду прысвойвае значэньне <code class="language-js">2</code> зьменнай зь імем <code class="language-js">i</code>:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 i = 2;
 </code></pre>
 
-    <p>А ў наступным прыкладзе значэньне <code class="language-js">3</code> дадаецца да значэньня зьменнай зь імем <code class="language-js">i</code>, а вынік прысвойваецца зьменнай зь імем <code class="language-js">sum</code>:</p>
+  <p>А ў наступным прыкладзе значэньне <code class="language-js">3</code> дадаецца да значэньня зьменнай зь імем <code class="language-js">i</code>, а вынік прысвойваецца зьменнай зь імем <code class="language-js">sum</code>:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 sum = 3 + i;
 </code></pre>
 
-    <p><i>JavaScript</i> не зьяўляецца строга тыпізаванай мовай, таму адна і тая ж зьменная ў розныя часы можа захоўваць значэньні розных тыпаў:</p>
+  <p><i>JavaScript</i> не зьяўляецца строга тыпізаванай мовай, таму адна і тая ж зьменная ў розныя часы можа захоўваць значэньні розных тыпаў:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 i = "дзесяць";
 i = 10;
 </code></pre>
 
-    <p>У <i>Java</i>, <i>C</i>, <i>C++</i> ці іншай тыпізаванай мове праграмаваньня такі код немагчымы, таму што ў гэтых мовах зьменная можа ўтрымліваць значэньні толькі пэўнага тыпу, які быў зададзены пры яе аб'яўленьні.</p>
+  <p>У <i>Java</i>, <i>C</i>, <i>C++</i> ці іншай тыпізаванай мове праграмаваньня такі код немагчымы, таму што ў гэтых мовах зьменная можа ўтрымліваць значэньні толькі пэўнага тыпу, які быў зададзены пры яе аб'яўленьні.</p>
 
-    <h3 id="TypesValues_Variables_Declaration">Аб'яўленьні</h3>
-    <p>Перад выкарыстаньнем зьменную трэба аб'явіць. Гэта робіцца пры дапамозе <a href="#Lexic_Keywords">ключавога слова</a> <code class="language-js">var</code> наступным чынам:</p>
+  <aside class="usage_indicator usage_new"><code class=" language-js">let</code>&nbsp;– новы спосаб аб'яўляць зьменныя, упершыню ўведзены ў <a href="#Overview_JavaScriptAndECMAScript">ES6</a></aside>
+  <h3 id="TypesValues_Variables_Declaration">Аб'яўленьні</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">var</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let</a></li>
+    </ul>
+  </div>
+  <p>Перад выкарыстаньнем зьменную трэба аб'явіць. Гэта робіцца пры дапамозе <a href="#Lexic_Keywords">ключавых словаў</a> <code class="language-js">var</code> альбо <code class="language-js">let</code>.</p>
 
-    <pre><code class="language-js">
-var i;
-</code></pre>
-
-    <p>Калі трэба запар зрабіць некалькі аб'яўленьняў, іх можна аб'яднаць у адно аб'яўленьне:</p>
-
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var i;    // можна
 var j;    // паасобку
 
 var i, j; // а можна аб'яднаць у адно аб'яўленьне праз коску
-</code></pre>
 
-    <p>Адначасова з аб'яўленьнем можна праініцыяваць зьменную:</p>
-
-    <pre><code class="language-js">
+// А можна адначасова з ініцыяцыяй
 var message = "hello";
 var i = 0, j = 0, k = 0;
+
+function letTest() {
+  var x = 1;    // зьменная узроўню функцыі
+  if (true) {
+    let x = 2;  // зьменная узроўню блёка
+  }
+}
 </code></pre>
 
-    <p>Калі пры аб'яўленьні зьменнай не прысвойваецца значэньне, яна будзе ўтрымліваць значэньне <a href="#TypesValues_undefined"><code class="language-js">undefined</code></a> да таго часу, пакуль ня будзе яўным чынам праініцыяваная.</p>
+  <p>Калі пры аб'яўленьні зьменнай не прысвойваецца значэньне, яна будзе ўтрымліваць значэньне <a href="#TypesValues_undefined"><code class="language-js">undefined</code></a> да таго часу, пакуль ня будзе яўным чынам праініцыяваная.</p>
 
-    <h3 id="TypesValues_Variables_Scope">Вобласьць бачнасьці</h3>
-    <p>Вобласьць бачнасьці (<i>scope</i>) зьменнай&nbsp;&ndash; гэта частка коду праграмы, у якой гэтая зьменнай аб'яўлена і, адпаведна, бачна. <i>Глябальныя</i> зьменныя маюць глябальную вобласьць бачнасьці і бачны ў любым месцы вашай <i>JavaScript</i>-праграмы. Вобласьцю бачнасьці зьменных, якія былі аб'яўлены ўнутры функцыі, зьяўляецца цела гэтай функцыі. У апошнім выпадку пра зьменную кажуць, што яна <i>лякальная</i>. Парамэтры функцыі таксама лічацца лякальнымі зьменнымі і бачны толькі ў межах сваёй функцыі.</p>
-    <p>Унутры цела функцыі лякальная зьменная мае перавагу перад глябальнай з такім жа імем. Такім чынам, аб'явіўшы ў функцыі зьменную зь імем як у нейкай глябальнай зьменнай, вы згубіце доступ да той глябальнай зьменнай:</p>
+  <h3 id="TypesValues_Variables_Scope">Вобласьць бачнасьці</h3>
+  <p>Вобласьць бачнасьці (<i>scope</i>) зьменнай&nbsp;&ndash; гэта частка коду праграмы, у якой гэтая зьменнай аб'яўлена і, адпаведна, бачная. <i>Глябальныя</i> зьменныя маюць глябальную вобласьць бачнасьці і бачны ў любым месцы <i>JavaScript</i>-праграмы. Вобласьцю бачнасьці зьменных, якія былі аб'яўлены ўнутры функцыі, зьяўляецца цела гэтай функцыі. У апошнім выпадку пра зьменную кажуць, што яна <i>лякальная</i>. Парамэтры функцыі таксама лічацца лякальнымі зьменнымі і бачны толькі ў межах сваёй функцыі.</p>
+  <p>Унутры цела функцыі лякальная зьменная мае перавагу перад глябальнай з такім жа імем. Такім чынам, аб'явіўшы ў функцыі зьменную зь імем як у нейкай глябальнай зьменнай, вы згубіце доступ да той глябальнай зьменнай:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var scope = "global";   // Аб'яўляем глябальную зьменную
 
 function checkscope() {
@@ -1428,9 +1460,9 @@ function checkscope() {
 checkscope()            // =&gt; "local"
 </code></pre>
 
-    <p>Вызначэньні функцыяў могуць быць укладзенымі адна ў адну. Кожная функцыя мае сваю ўласную лякальную вобласьць бачнасьці, такім чынам у дадзеным выпадку будуць некалькі ўкладзеным абласьцей бачнасьці:</p>
+  <p>Вызначэньні функцыяў могуць быць укладзенымі адна ў адну. Кожная функцыя мае сваю ўласную лякальную вобласьць бачнасьці, такім чынам у дадзеным выпадку будуць некалькі ўкладзеных абласьцей бачнасьці:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var scope = "global scope";     // Глябальная зьменная
 
 function checkscope() {
@@ -1447,25 +1479,9 @@ function checkscope() {
 checkscope();                   // =&gt; "nested scope"
 </code></pre>
 
-    <p>У <i>C</i>-падобных мовах праграмаваньня кожны блёк (заключаны ў фігурныя дужкі) мае сваю ўласную лякальную вобласьць бачнасьці і да зьменнай, аб'яўленай ў блёку, няма доступу па-за межамі гэтага блёку. Гэта завецца блёчнай вобласьцю бачнасьці і <i>JavaScript</i> яе <strong>ня мае</strong>. У <i>JavaScript</i> лякальныя вобласьці заўсёды абмежаваны функцыямі: лякальныя зьменныя бачны ўва ўсім целе функцыі, у якой яны аб'яўлены, і ўва ўсіх іншых функцыях, якія ўкладзены/вызначаны ў гэтай функцыі. У наступным прыкладзе ўсе лякальныя зьменныя аб'яўлены ў розных месцах функцыі, але ўсе яны маюць адну і тую ж вобласьць бачнасьці&nbsp;&ndash; цела гэтай функцыі:</p>
+  <p>Той факт, што зьменныя, яб'яўленыя пры дапамозе <code class="language-js">var</code>, бачны ўва ўсёй функцыі незалежна ад месцу іх аб'яўленьня, азначае што яны могуць быць бачны да свайго аб'яўленьня:</p>
 
-    <pre><code class="language-js">
-function test(o) {
-  var i = 0;
-  if (typeof o == "object") {
-    var j = 0;                  // j вызначана для ўсёй функцыі, ня толькі для блёку
-    for(var k=0; k < 10; k++) { // k вызначана для ўсёй функцыі, ня толькі для цыкла
-      console.log(k);           // друкуе лікі ад 0 да 9
-    }
-    console.log(k);             // k усё яшчэ бачна: друкуе 10
-  }
-  console.log(j);               // j усё яшчэ бачна, але можа быць нявызначанай
-}
-</code></pre>
-
-    <p>Той факт, што зьменныя бачны ўва ўсёй функцыі незалежна ад месцу іх аб'яўленьня, азначае што яны могуць быць бачны да свайго аб'яўленьня:</p>
-
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var scope = "global";
 
 function f() {
@@ -1476,9 +1492,9 @@ function f() {
 }
 </code></pre>
 
-    <p>Кажуць, што аб'яўленьні лякальных зьменных у <i>JavaScript</i> як бы «усплываюць» да верху функцыі. Вызначэньне функцыі ў папярэднім прыкладзе эквівалентнае наступнаму:</p>
+  <p>Кажуць, што аб'яўленьні лякальных зьменных у <i>JavaScript</i> як бы «усплываюць» да верху функцыі. Вызначэньне функцыі ў папярэднім прыкладзе эквівалентнае наступнаму:</p>
 
-    <pre><code class="language-js">
+  <pre><code class="language-js">
 var scope = "global";
 
 function f() {
@@ -1489,7 +1505,67 @@ function f() {
 }
 </code></pre>
 
+  <p>Са зьяўленьнем у <i>ES6</i> ключавога слова <code class="language-js">let</code> у <i>JavaScript</i> зьявілася і блёчная вобласьць бачнасьці:</p>
+
+  <pre><code class="language-js">
+function varTest() {
+  var x = 1;
+  if (true) {
+    var x = 2;        // Тая ж самая зьменная!! Пры дапамозе <i>var</i> немагчыма аб'явіць зьменную блёчнай бачнасьці
+    console.log(x);   // 2
+  }
+  console.log(x);     // 2
+}
+
+function letTest() {
+  let x = 1;
+  if (true) {
+    let x = 2;        // Іншая зьменная, <i>let</i> дазваляе аб'явіць зьменную блёчнай бачнасьці
+    console.log(x);   // 2
+  }
+  console.log(x);     // 1
+}
+</code></pre>
+
+  <aside class="usage_indicator usage_new"><a href="#Overview_JavaScriptAndECMAScript">ES6</a> упершыню ўвёў магчымасьць аб'яўляць канстанты ў <i>JavaScript</i></aside>
   <h2 id="TypesValues_Constants">Канстанты</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">Reference</a></li>
+    </ul>
+  </div>
+  <p>Пачынаючы з <a href="#Overview_JavaScriptAndECMAScript">ES6</a> у <i>JavaScript</i> можна аб'явіць нязьменную (канстантную) імянную велічыню. Канстантныя велічыні маюць блёчную вобласьць бачнасьці, як і зьменныя, аб'яўленыя пры дапамозе <code class="language-js">let</code>.</p>
+
+  <pre><code class="language-js">
+const MY_FAV = 7;
+MY_FAV = 20;            // Будзе кінутая памылка выкананьня
+console.log("my favorite number is: " + MY_FAV);  // Выведзе 7
+
+const MY_FAV = 20;      // Пры спробе пера-вызначыць канстанту з тым же імем будзе ізноў кінутая памылка
+var MY_FAV = 20;        // Як і пры спробе аб'явіць зьменную з тым жа імем
+let MY_FAV = 20;        // ... альбо такім чынам - ізноў памылка
+
+// У канстантаў блёчная вобласьць бачнасьці...
+if (MY_FAV === 7) {
+    const MY_FAV = 20;  // ...таму такое аб'яўленьне ня выкліча памылкі - іншая вобласьць бачнасьці
+
+    console.log("my favorite number is " + MY_FAV);  // Выведзе 20
+}
+
+console.log("my favorite number is " + MY_FAV); // На гэтым узроўні MY_FAV усё яшчэ 7
+
+const FOO;  // Будзе кінутая памылка - ня было прадстаўлена значэньне для канстанты
+
+const MY_OBJECT = {"key": "value"}; // Канстантамі могуць быць і аб'екты...
+MY_OBJECT = {"OTHER_KEY": "value"}; // ...які нельга пера-вызначыць (будзе кінутая памылка)...
+MY_OBJECT.key = "otherValue";       // ...але яго атрыбуты зьмяняць можна
+                                    // Калі патрэбна замарозіць і атрыбуты можна скарыстацца Object.freeze()
+
+const MY_ARRAY = [];  // Тое ж самае і з канстантнымі масівамі
+MY_ARRAY.push("A");   // Да яго можна дадаваць элемэнты
+MY_ARRAY = ["B"];     // Але нельга пера-вызначаць (будзе кінутая памылка)
+</code></pre>
+
 </section>
 
 <section>
