@@ -1566,6 +1566,17 @@ MY_ARRAY.push("A");   // Да яго можна дадаваць элемэнт�
 MY_ARRAY = ["B"];     // Але нельга пера-вызначаць (будзе кінутая памылка)
 </code></pre>
 
+  <p>Каб яб'явіць канстантнае значэньне ў <i>ES5</i>, трэба было рабіць наступны <i>workaround</i>:</p>
+
+  <pre><code class="language-js">
+// ES5 ня мае магчымасьці аб'явіць канстанту ўбудаванымі сродкамі мовы, але можна яе імітаваць:
+function fakeConstant() {
+  return 'Я - псэўдаканстанта';
+}
+
+console.log(fakeConstant());  // "Я - псэўдаканстанта"
+</code></pre>
+
 </section>
 
 <section>
@@ -1732,6 +1743,14 @@ a = a OP b
     </tr>
     </tbody>
   </table>
+
+  <aside class="usage_indicator usage_new"><a href="#Overview_JavaScriptAndECMAScript">ES6</a> упершыню ўвёў паняцьце састаўнога прысваеньня ў <i>JavaScript</i></aside>
+  <h2 id="Operators_DestructuringAssignments">Састаўнога прысваеньня</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">Reference</a></li>
+    </ul>
+  </div>
 
   <h2 id="Operators_Comparison">Параўнаньня</h2>
   <div class="refs">
@@ -2036,7 +2055,133 @@ false || "Cat";    // false || true  => "Cat"
 !"Cat";            // !true  => false
 </code></pre>
 
-  <aside>Тут прыведзеныя апэрацыі і выразы, якія не тычацца непасрэдна аб'ектнай мадэлі <i>JavaScript</i>. Апошнія для лепшага разуменьня матэрыялу (але ў ахвяру структураванасьці) зьмешчаныя ў <a href="#ObjectModel">разьдзеле, прысьвечаным аб'ектнай мадэлі</a>.</aside>
+  <h2 id="Operators_Object">Аб'ектныя</h2>
+
+  <h3 id="Operators_Object_PropertyAccess">Доступу да атрыбутаў</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors">Reference</a></li>
+    </ul>
+  </div>
+  <p>Апэрацыя доступу да атрыбутаў дазваляе атрымаць ці прысвоіць значэньне атрыбуту аб'екта альбо элемэнту масіву. Існуе 2 варыянты гэтай апэрацыі. У першым зь іх імя атрыбуту ідзе праз кропку пасьля ідэнтыфікатару аб'екта, у другім&nbsp;&ndash; заключана ў прамавугольныя дужкі пасьля ідэнтыфікатару:</p>
+
+  <pre><code class="language-js">
+object_name . attribute_name
+object_name [ attribute_name ]
+</code></pre>
+
+  <h3 id="Operators_Object_delete"><code class="language-js">delete</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete">Reference</a></li>
+    </ul>
+  </div>
+  <p>Апэрацыя выдаляе атрыбут аб'екта ці элемэнт масіву.</p>
+
+  <pre><code class="language-js">
+var o = { x: 1, y: 2};    // Аб'яўляем аб'ект
+delete o.x;               // Выдаляем адзін зь ягоных атрыбутаў
+"x" in o;                 // => false: атрыбут не існуе
+
+var a = [1,2,3];          // Аб'яўляем масіў
+delete a[2];              // Выдаляем яго апошні элемэнт
+a.length;                 // => 2: масіў утрымлівае цяпер 2 элемэнты
+</code></pre>
+
+  <p>Калі апэрацыя выкананая пасьпяхова, яна выдаляе атрыбут у аб'екта. Але, калі ў ланцугу прататыпаў аб'екта існуе атрыбут з такім жа імем, ён будзе успадкаваны аб'ектам адтуль.</p>
+  <p>Апэрацыя ня можа быць ужытая да <a href="#TypesValues_Variables">зьменных</a>, функцый, а таксама да пэўных атрыбутаў <a href="#CoreObjects">базавых аб'ектаў</a>.</p>
+
+  <h3 id="Operators_Object_in"><code class="language-js">in</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in">Reference</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Operators_Object_instanceof"><code class="language-js">instanceof</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">Reference</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Operators_Object_new"><code class="language-js">new</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new">Reference</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Operators_Object_this"><code class="language-js">this</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">Reference</a></li>
+    </ul>
+  </div>
+  <p>У <i>JavaScript</i>, як і ў бальшыні іншых аб'ектна-арыентаваных мовах праграмаваньня, ключавое слова <code class="language-js">this</code> служыць для таго, каб можна было спасылацца знутры функцыі да аб'екта, які гэтую функцыю утрымлівае. Але існуе некалькі ўласьцівых <i>JavaScript</i> асаблівасьцяў, на якіх варта спыніцца. Каб вызначыць, на што спасылаецца <code class="language-js">this</code>, трэба кіравацца наступным альгарытмам:</p>
+  <ul>
+    <li>Калі выклік функцыі адбыўся пры дапамозе <a href="#CoreObjects_Function_Methods_apply"><code class="language-js">apply</code></a>, <a href="#CoreObjects_Function_Methods_bind"><code class="language-js">bind</code></a> ці <a href="#CoreObjects_Function_Methods_call"><code class="language-js">call</code></a>, <code class="language-js">this</code> будзе роўны першаму аргумэнту, які быў перададзены <code class="language-js">apply</code>/<code class="language-js">bind</code>/<code class="language-js">call</code>. Калі ж першым аргумэнтам быў перададзены <code class="language-js">null</code> ці <code class="language-js">undefined</code>, <code class="language-js">this</code> будзе спасылацца на глябальны аб'ект (<code class="language-js">window</code> у выпадку браўзэра).
+
+      <pre><code class="language-js">
+var myObject = {
+  sayHello : function() {
+    console.log('Hi! My name is ' + this.myName);
+  },
+
+  myName : 'Rebecca'
+};
+
+var secondObject = {
+  myName : 'Colin'
+};
+
+myObject.sayHello();                  // Вывядзе ў лог 'Hi! My name is Rebecca'
+myObject.sayHello.call(secondObject); // Вывядзе ў лог 'Hi! My name is Colin'
+</code></pre>
+
+    </li>
+    <li>Калі выклік функцыі адбыўся ў якасьці апрацоўшчыка падзеі (не знутры апрацоўшчыка падзеі, а менавіта як апрацоўшчык падзеі), тады <code class="language-js">this</code> будзе спасылацца на аб'ект, для якога гэтая падзея спрацавала.
+
+      <pre><code class="language-js">
+function bluify(e) {
+  this.style.backgroundColor = '#A5D9F3'; // Пры кліку на пэўным элемэнце зробіць
+}                                         // яго колер блакітным
+// Атрымліваем сьпіс усіх элемэнтаў дакумэнту
+var elements = document.getElementsByTagName('*');
+
+// ... і дадаем да іх у якасьці апрацоўшчыку клікаў функцыю bluify
+for(var i = 0 ; i < elements.length ; i++){
+  elements[i].addEventListener('click', bluify, false);
+}
+</code></pre>
+
+    </li>
+    <li>Калі функцыя выклікана як мэтад аб'екта, тады <code class="language-js">this</code> будзе спасылацца на гэты аб'ект.</li>
+    <li>Інакш <code class="language-js">this</code> будзе спасылацца на глябальны аб'ект.</li>
+  </ul>
+
+  <h3 id="Operators_Object_typeof"><code class="language-js">typeof</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">Reference</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Operators_Object_get"><code class="language-js">get</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">Reference</a></li>
+    </ul>
+  </div>
+  <p>Калі значэньне нейкага атрыбуту аб'екта павінна разьлічвацца дынамічна, яго можна не аб'яўляць наўпрост, а скарыстацца мэханізмам </p>
+
+  <h3 id="Operators_Object_set"><code class="language-js">set</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">Reference</a></li>
+    </ul>
+  </div>
+
   <h2 id="Operators_Special">Асаблівыя</h2>
 
   <h3 id="Operators_Special_Conditional">Умоўная</h3>
@@ -2169,18 +2314,46 @@ function funcname([arg1 [, arg2 [..., argn]]]) {
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">Reference</a></li>
     </ul>
   </div>
-  <p><a href="#TypesValues_Variables_Declaration">Аб'яўленьне зьменных</a> і іх <a href="#TypesValues_Variables_Scope">вобласьці бачнасьці</a> былі ўжо разгледжаныя вышэй. Адно, прывядзем яшчэ колькі прыкладаў:</p>
+  <p>Аб'яўленьне глябальных і <i>function-scoped</i> <a href="#TypesValues_Variables">зьменных</a>:</p>
 
   <pre><code class="language-js">
-var i;              // Аб'яўленьне без ініцыіраваньня
-var j = 0;          // + ініцыіраваньне
-var p, q;           // Аб'яўленьне дзьвюх зьменных у адной інструкцыі
-var greeting = "hello" + name; // Ініцыіраваньне праз выраз
+var i;                                      // Аб'яўленьне без ініцыіраваньня
+var j = 0;                                  // + ініцыіраваньне
+var p, q;                                   // Аб'яўленьне дзьвюх зьменных у адной інструкцыі
+var greeting = "hello" + name;              // Ініцыіраваньне праз выраз
 var x = 2.34, y = Math.cos(0.75), r, theta; // Шмат зьменных
 var x = 2, y = x*x; // Аб'яўленьне другой зьменнай выкарыстоўвае першую
 var x = 2,                                  // Шмат зьменных,
     f = function(x) { return x*x },         // кожная на асобным
     y = f(x);                               // радку
+</code></pre>
+
+  <h3 id="Statements_Declarations_let"><code class="language-js">let</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">Reference</a></li>
+    </ul>
+  </div>
+  <p>Аб'яўленьне блёчных <a href="#TypesValues_Variables">зьменных</a>:</p>
+
+  <pre><code class="language-js">
+if (true) {
+  let x = 2;        // Зьменная ўзроўню if-блёка, па-за межамі гэтага блёку не існуе
+}
+</code></pre>
+
+  <h3 id="Statements_Declarations_const"><code class="language-js">const</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">Reference</a></li>
+    </ul>
+  </div>
+  <p>Аб'яўленьне блёчных <a href="#TypesValues_Constants">канстантаў</a>:</p>
+
+  <pre><code class="language-js">
+if (true) {
+  const MY_FAV = 20;
+}
 </code></pre>
 
   <h2 id="Statements_Conditional">Умоўныя</h2>
@@ -2558,131 +2731,6 @@ function display_object(obj) {
   <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/whats-new-in-javascript-1-8-5/">What’s new in JavaScript 1.8.5</a></p>
   <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/closures-front-to-back/">Closures: Front to Back</a></p>
   <p><a href="https://www.webcodegeeks.com/javascript/javascript-properties-example/">Javascript Properties Example</a></p>
-
-  <h3 id="Operators_Special_PropertyAccess">Доступу да атрыбутаў</h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors">Reference</a></li>
-    </ul>
-  </div>
-  <p>Апэрацыя доступу да атрыбутаў дазваляе атрымаць ці прысвоіць значэньне атрыбуту аб'екта альбо элемэнту масіву. Існуе 2 варыянты гэтай апэрацыі. У першым зь іх імя атрыбуту ідзе праз кропку пасьля ідэнтыфікатару аб'екта, у другім&nbsp;&ndash; заключана ў прамавугольныя дужкі пасьля ідэнтыфікатару:</p>
-
-  <pre><code class="language-js">
-object_name . attribute_name
-object_name [ attribute_name ]
-</code></pre>
-
-  <h3 id="ObjectModel_delete"><code class="language-js">delete</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete">Reference</a></li>
-    </ul>
-  </div>
-  <p>Апэрацыя выдаляе атрыбут аб'екта ці элемэнт масіву.</p>
-
-  <pre><code class="language-js">
-var o = { x: 1, y: 2};    // Аб'яўляем аб'ект
-delete o.x;               // Выдаляем адзін зь ягоных атрыбутаў
-"x" in o;                 // => false: атрыбут не існуе
-
-var a = [1,2,3];          // Аб'яўляем масіў
-delete a[2];              // Выдаляем яго апошні элемэнт
-a.length;                 // => 2: масіў утрымлівае цяпер 2 элемэнты
-</code></pre>
-
-  <p>Калі апэрацыя выкананая пасьпяхова, яна выдаляе атрыбут у аб'екта. Але, калі ў ланцугу прататыпаў аб'екта існуе атрыбут з такім жа імем, ён будзе успадкаваны аб'ектам адтуль.</p>
-  <p>Апэрацыя ня можа быць ужытая да <a href="#TypesValues_Variables">зьменных</a>, функцый, а таксама да пэўных атрыбутаў <a href="#CoreObjects">базавых аб'ектаў</a>.</p>
-
-  <h3 id="ObjectModel_in"><code class="language-js">in</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in">Reference</a></li>
-    </ul>
-  </div>
-
-  <h3 id="ObjectModel_instanceof"><code class="language-js">instanceof</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">Reference</a></li>
-    </ul>
-  </div>
-
-  <h3 id="ObjectModel_new"><code class="language-js">new</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new">Reference</a></li>
-    </ul>
-  </div>
-
-  <h3 id="ObjectModel_this"><code class="language-js">this</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">Reference</a></li>
-    </ul>
-  </div>
-  <p>У <i>JavaScript</i>, як і ў бальшыні іншых аб'ектна-арыентаваных мовах праграмаваньня, ключавое слова <code class="language-js">this</code> служыць для таго, каб можна было спасылацца знутры функцыі да аб'екта, які гэтую функцыю утрымлівае. Але існуе некалькі ўласьцівых <i>JavaScript</i> асаблівасьцяў, на якіх варта спыніцца. Каб вызначыць, на што спасылаецца <code class="language-js">this</code>, трэба кіравацца наступным альгарытмам:</p>
-  <ul>
-    <li>Калі выклік функцыі адбыўся пры дапамозе <a href="#CoreObjects_Function_Methods_apply"><code class="language-js">apply</code></a>, <a href="#CoreObjects_Function_Methods_bind"><code class="language-js">bind</code></a> ці <a href="#CoreObjects_Function_Methods_call"><code class="language-js">call</code></a>, <code class="language-js">this</code> будзе роўны першаму аргумэнту, які быў перададзены <code class="language-js">apply</code>/<code class="language-js">bind</code>/<code class="language-js">call</code>. Калі ж першым аргумэнтам быў перададзены <code class="language-js">null</code> ці <code class="language-js">undefined</code>, <code class="language-js">this</code> будзе спасылацца на глябальны аб'ект (<code class="language-js">window</code> у выпадку браўзэра).
-
-      <pre><code class="language-js">
-var myObject = {
-  sayHello : function() {
-    console.log('Hi! My name is ' + this.myName);
-  },
-
-  myName : 'Rebecca'
-};
-
-var secondObject = {
-  myName : 'Colin'
-};
-
-myObject.sayHello();                  // Вывядзе ў лог 'Hi! My name is Rebecca'
-myObject.sayHello.call(secondObject); // Вывядзе ў лог 'Hi! My name is Colin'
-</code></pre>
-
-    </li>
-    <li>Калі выклік функцыі адбыўся ў якасьці апрацоўшчыка падзеі (не знутры апрацоўшчыка падзеі, а менавіта як апрацоўшчык падзеі), тады <code class="language-js">this</code> будзе спасылацца на аб'ект, для якога гэтая падзея спрацавала.
-
-      <pre><code class="language-js">
-function bluify(e) {
-  this.style.backgroundColor = '#A5D9F3'; // Пры кліку на пэўным элемэнце зробіць
-}                                         // яго колер блакітным
-// Атрымліваем сьпіс усіх элемэнтаў дакумэнту
-var elements = document.getElementsByTagName('*');
-
-// ... і дадаем да іх у якасьці апрацоўшчыку клікаў функцыю bluify
-for(var i = 0 ; i < elements.length ; i++){
-  elements[i].addEventListener('click', bluify, false);
-}
-</code></pre>
-
-    </li>
-    <li>Калі функцыя выклікана як мэтад аб'екта, тады <code class="language-js">this</code> будзе спасылацца на гэты аб'ект.</li>
-    <li>Інакш <code class="language-js">this</code> будзе спасылацца на глябальны аб'ект.</li>
-  </ul>
-
-  <h3 id="ObjectModel_typeof"><code class="language-js">typeof</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">Reference</a></li>
-    </ul>
-  </div>
-
-  <h3 id="ObjectModel_get"><code class="language-js">get</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">Reference</a></li>
-    </ul>
-  </div>
-  <p>Калі значэньне нейкага атрыбуту аб'екта павінна разьлічвацца дынамічна, яго можна не аб'яўляць наўпрост, а скарыстацца мэханізмам </p>
-
-  <h3 id="ObjectModel_set"><code class="language-js">set</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">Reference</a></li>
-    </ul>
-  </div>
 
   <h2 id="ObjectModel_Example">Прыклад</h2>
 
@@ -4142,7 +4190,7 @@ $(".buttons button").on("click", function() {
   <a class="jsbin-embed" href="http://jsbin.com/gijeyet/embed?js,output&height=180px">Прыклад на jsbin.com</a>
 
   <h4 id="Frameworks_jQuery_Querying_this"><code class="language-js">this</code></h4>
-  <p>У дадатак да таго, што ўжо апісана <a href="#ObjectModel_this">вышэй</a> у дачыненьні да <i>JavaScript</i>, у <i>jQuery</i> існуе яшчэ адна магчымасьць пазначыць кантэкст функцыі (злучыць <code class="language-js">this</code> унутры функцыі з пэўным аб'ектам)&nbsp;&ndash; гэта мэтад <code class="language-js">$.proxy</code>:</p>
+  <p>У дадатак да таго, што ўжо апісана <a href="#Operators_Object_this">вышэй</a> у дачыненьні да <i>JavaScript</i>, у <i>jQuery</i> існуе яшчэ адна магчымасьць пазначыць кантэкст функцыі (злучыць <code class="language-js">this</code> унутры функцыі з пэўным аб'ектам)&nbsp;&ndash; гэта мэтад <code class="language-js">$.proxy</code>:</p>
 
   <pre><code class="language-js">
 var myFunction = function() { console.log(this); };
