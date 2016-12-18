@@ -32,7 +32,7 @@ figure {margin: 20px;
       }
     }
   }
-  .github_link {height: 32px; display: block; bottom: 46px; left: 9px; position: absolute; box-shadow: 0 0 3px rgba(0, 0, 0, .4);
+  .github_link {height: 32px; display: block; bottom: 46px; left: 8px; position: absolute; box-shadow: 0 0 3px rgba(0, 0, 0, .4);
       background-color: #555; border: 1px solid #888; border-radius: 50%; transition-duration: 0.4s;
     &:hover { background-color: #222; border-color: #555; box-shadow: 1px 1px 5px rgba(0, 0, 0, .7); transform: translateY(-1px);}
     &:active {box-shadow: 0 0 2px rgba(0, 0, 0, .3); transform: translateY(1px);}
