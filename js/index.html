@@ -1748,9 +1748,291 @@ a = a OP b
   <h2 id="Operators_DestructuringAssignments">Састаўнога прысваеньня</h2>
   <div class="refs">
     <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">Reference</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">Reference</a></li>
+      <li><a href="http://wesbos.com/destructuring-objects/">WesBos 1</a></li>
+      <li><a href="http://wesbos.com/destructuring-renaming/">WesBos 2</a></li>
+      <li><a href="http://wesbos.com/destructuring-default-values/">WesBos 3</a></li>
     </ul>
   </div>
+  <p><i>ES6</i> увёў магчымасьць састаўнога прысваеньня, альбо даслоўна «прысваеньня з рэ-структураваньнем» (<i>destructuring assignment</i>). Калі простымі словамі, гэта магчымасьць выняць некалькі значэньняў з масіву альбо аб'екту ў новыя асообныя зьменныя за адну апэрацыю:</p>
+
+  <pre><code class="language-js">
+const person = {
+  first: 'Алесь',
+  last: 'Загорскі',
+  country: 'Беларусь',
+  city: 'Нясьвіж',
+  twitter: '@было_б_забаўна'
+};
+
+// Калі нам патрэбна было б выняць значэньні імені і прозьвішча ў асобныя зьменныя,
+// да зьяўленьня ES6 трэба было б рабіць наступным чынам:
+const first = person.first;
+const last = person.last;
+
+// А са зьяўленьнем ES6 можна такім чынам:
+const { first, last } = person;
+</code></pre>
+
+  <h3 id="Operators_DestructuringAssignments_SwapValues">Абмен значэньнямі</h3>
+  <p>Не зусім відавочная магчымасьць, якую прадстаўляе апэрацыя састаўнога прысваеньня, гэта абмен значэньняў паміж дзьвюма зьменнымі без неабходнасьці аб'яўленьня трэцяй:</p>
+
+  <pre><code class="language-js">
+var a = 1;
+var b = 3;
+
+[a, b] = [b, a];
+console.log(a); // 3
+console.log(b); // 1
+</code></pre>
+
+  <h3 id="Operators_DestructuringAssignments_Arrays">Прыстасоўна да масіваў</h3>
+  <p>Састаўныя прысваеньні могуць ужывацца прыстасоўна да масіваў:</p>
+
+  <pre><code class="language-js">
+var foo = ["one", "two", "three"];
+
+var [one, two, three] = foo;
+console.log(one);   // "one"
+console.log(two);   // "two"
+console.log(three); // "three"
+
+// --- Прысваеньне асобна ад аб'яўленьня ---
+var a, b;
+
+[a, b] = [1, 2];
+console.log(a); // 1
+console.log(b); // 2
+
+// --- Рэ-структураваньне выніку функцыі ---
+function f() {
+  return [1, 2];
+}
+
+var [a, b] = f();
+console.log(a); // 1
+console.log(b); // 2
+</code></pre>
+
+  <h4 id="Operators_DestructuringAssignments_Arrays_Defaults">Змоўчныя значэньні</h4>
+  <p>Робячы састаўное прысваеньне значэньняў масіву, можна пазначаць змоўчныя велічыні, якія будуць ужытыя, калі ў масіве няма адпаведнага элемэнту:</p>
+
+  <pre><code class="language-js">
+var a, b;
+
+[a=5, b=7] = [1];
+console.log(a); // 1 (яўна прысвоенае)
+console.log(b); // 7 (змоўчнае)
+</code></pre>
+
+  <p><strong>УВАГА!</strong> Змоўчнае значэньне будзе ўжытае толькі ў выпадку поўнай адсутнасьці элемэнту масіву, альбо калі ён мае значэньне <code class="language-js">undefined</code>. Калі ж адпаведны элемэнт прысутнічае і мае значэньні кшталту <code class="language-js">0</code>, <code class="language-js">false</code>, <code class="language-js">null</code>, то будзе ужытае адно з гэтых значэньняў:</p>
+
+  <pre><code class="language-js">
+var a, b;
+
+[a=5, b=7] = [1, null];
+console.log(a); // 1
+console.log(b); // null (змоўчнае ня будзе ўжытае, таму што адпаведны элемэнт масіву прысутнічае і не undefined)
+</code></pre>
+
+  <p>Таму гэта зусім ня тое ж самае, што стары мэханізм пазначаць змоўчныя значэньні:</p>
+
+  <pre><code class="language-js">
+const mySpeed = 0; // Той жа эфэкт будзе ў выпадку значэньняў false, null ці undefined
+const speed = mySpeed || 760;
+console.log(speed); // 760!
+</code></pre>
+
+  <h4 id="Operators_DestructuringAssignments_Arrays_IgnoringValues">Ігнараваньне значэньняў</h4>
+  <p>Ігнараваць пэўныя значэньні масіву можна наступным чынам:</p>
+
+  <pre><code class="language-js">
+function f() {
+  return [1, 2, 3];
+}
+
+var [a, , b] = f();
+console.log(a); // 1
+console.log(b); // 3
+</code></pre>
+
+  <h4 id="Operators_DestructuringAssignments_Arrays_RestExpression">Прысваеньне астачы масіву</h4>
+  <p>Акрамя прысваеньня асобных значэньняў адной са зьменных можна прысвоіць усю «астачу» масіву:</p>
+
+  <pre><code class="language-js">
+var [a, ...b] = [1, 2, 3];
+console.log(a); // 1
+console.log(b); // [2, 3]
+</code></pre>
+
+  <h4 id="Operators_DestructuringAssignments_Arrays_RealLifeExample">Рэальны прыклад</h4>
+  <p>Прыклад як можа ўжывацца апэрацыя састаўнога прысваеньня прыстасоўна да масіваў у рэальным жыцьці:</p>
+
+  <pre><code class="language-js">
+var url = "https://developer.mozilla.org/en-US/Web/JavaScript";
+
+var parsedURL = /^(\w+)\:\/\/([^\/]+)\/(.*)$/.exec(url);
+console.log(parsedURL); // [
+                        //  "https://developer.mozilla.org/en-US/Web/JavaScript",
+                        //  "https",
+                        //  "developer.mozilla.org",
+                        //  "en-US/Web/JavaScript"
+                        // ]
+
+var [, protocol, fullhost, fullpath] = parsedURL;
+
+console.log(protocol); // "https"
+</code></pre>
+
+  <h3 id="Operators_DestructuringAssignments_Objects">Прыстасоўна да аб'ектаў</h3>
+  <p>Састаўныя прысваеньні могуць ужывацца таксама прыстасоўна да аб'ектаў:</p>
+
+  <pre><code class="language-js">
+var o = {p: 42, q: true};
+
+var {p, q} = o;
+console.log(p); // 42
+console.log(q); // true
+
+// --- Тое ж самае прысваеньне, але асобна ад аб'яўленьня ---
+var o = {p: 42, q: true};
+var p, q;
+
+({p, q} = o);   // Зьвярніце ўвагу на круглыя дужкі вакол усяго выразу, бязь іх апэрацыя ня будзе працаваць.
+</code></pre>
+
+  <h4 id="Operators_DestructuringAssignments_Objects_Renaming">Прысваеньне з перайменаваньнем</h4>
+  <p>Значэньні атрыбутаў аб'екта могуць быць вынятыя ў зьменныя з адрознымі імёнамі:</p>
+
+  <pre><code class="language-js">
+var o = {p: 42, q: true};
+
+var {p: foo, q: bar} = o;
+console.log(foo); // 42
+console.log(bar); // true
+</code></pre>
+
+  <h4 id="Operators_DestructuringAssignments_Objects_DefaultValues">Змоўчныя значэньні</h4>
+  <p>Робячы састаўное прысваеньне значэньняў аб'екта, можна пазначаць змоўчныя велічыні, якія будуць ужытыя, калі ў аб'екце няма адпаведнага атрыбуту:</p>
+
+  <pre><code class="language-js">
+var {a=10, b=5} = {a: 3};
+
+console.log(a); // 3 (яўна прысвоенае)
+console.log(b); // 5 (змоўчнае)
+</code></pre>
+
+  <p><strong>УВАГА!</strong> Як было ўжо пазначана ў <a href="#Operators_DestructuringAssignments_Arrays_Defaults">аналягічным разьдзеле, прысьвечаным масівам</a>, змоўчныя значэньні састаўных прысваеньняў будуць ужытыя толькі калі адпаведнага атрыбуту ўвогуле не існуе ў аб'екце альбо ён мае значэньне <code class="language-js">undefined</code>. Калі ж атрыбут прысутнічае і мае напрыклад значэньне <code class="language-js">null</code> альбо <code class="language-js">0</code> ці <code class="language-js">false</code>, то будзе ужытае менавіта адно з гэтых значэньняў.</p>
+
+  <h4 id="Operators_DestructuringAssignments_Objects_DefaultParameters">Змоўчныя значэньні парамэтраў функцыі</h4>
+  <p>Адносна змоўчных значэньняў асобна разгледзім магчымасьць задаваць змоўчныя значэньні парамэтрам функцый:</p>
+
+  <pre><code class="language-js">
+// ES5 вэрсія
+function drawES5Chart(options) {
+  options = options === undefined ? {} : options;
+  var size = options.size === undefined ? 'big' : options.size;
+  var cords = options.cords === undefined ? { x: 0, y: 0 } : options.cords;
+  var radius = options.radius === undefined ? 25 : options.radius;
+  console.log(size, cords, radius);
+  // now finally do some chart drawing
+}
+
+drawES5Chart({
+  cords: { x: 18, y: 30 },
+  radius: 30
+});
+
+// ES6 вэрсія
+function drawES6Chart({size = 'big', cords = { x: 0, y: 0 }, radius = 25} = {}) {
+  console.log(size, cords, radius);
+  // do some chart drawing
+}
+
+drawES6Chart({
+  cords: { x: 18, y: 30 },
+  radius: 30
+});
+</code></pre>
+
+  <h4 id="Operators_DestructuringAssignments_Objects_NestedObjectsAndArrays">Укладзеныя аб'екты і масівы</h4>
+  <p>Састаўныя прысваеньні можна ўжываць і да ўкладзеных аб'ектаў ці масіваў:</p>
+
+  <pre><code class="language-js">
+const wes = {
+  first: 'Wes',
+  last: 'Bos',
+  links: {
+    social: {
+      twitter: 'https://twitter.com/wesbos',
+      facebook: 'https://facebook.com/wesbos.developer',
+    },
+    web: {
+      blog: 'https://wesbos.com'
+    }
+  }
+};
+
+const { twitter, facebook } = wes.links.social;
+console.log(twitter, facebook); // Выведзе значэньні дзьвюх зьменных
+</code></pre>
+
+  <p>Альбо больш складаны прыклад:</p>
+
+  <pre><code class="language-js">
+var metadata = {
+  title: "Scratchpad",
+  translations: [
+    {
+      locale: "de",
+      localization_tags: [ ],
+      last_edit: "2014-04-14T08:43:37",
+      url: "/de/docs/Tools/Scratchpad",
+      title: "JavaScript-Umgebung"
+    }
+  ],
+  url: "/en-US/docs/Tools/Scratchpad"
+};
+
+var { title: englishTitle, translations: [{ title: localeTitle }] } = metadata;
+
+console.log(englishTitle); // "Scratchpad"
+console.log(localeTitle);  // "JavaScript-Umgebung"
+</code></pre>
+
+  <h4 id="Operators_DestructuringAssignments_Objects_InLoops">Ужываньне ў цыклах</h4>
+
+  <pre><code class="language-js">
+var people = [
+  {
+    name: "Mike Smith",
+    family: {
+      mother: "Jane Smith",
+      father: "Harry Smith",
+      sister: "Samantha Smith"
+    },
+    age: 35
+  },
+  {
+    name: "Tom Jones",
+    family: {
+      mother: "Norah Jones",
+      father: "Richard Jones",
+      brother: "Howard Jones"
+    },
+    age: 25
+  }
+];
+
+for (var {name: n, family: { father: f } } of people) {
+  console.log("Name: " + n + ", Father: " + f);
+}
+
+// "Name: Mike Smith, Father: Harry Smith"
+// "Name: Tom Jones, Father: Richard Jones"
+</code></pre>
+
+
 
   <h2 id="Operators_Comparison">Параўнаньня</h2>
   <div class="refs">
