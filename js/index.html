@@ -2348,8 +2348,8 @@ false || "Cat";    // false || true  => "Cat"
   <p>Апэрацыя доступу да атрыбутаў дазваляе атрымаць ці прысвоіць значэньне атрыбуту аб'екта альбо элемэнту масіву. Існуе 2 варыянты гэтай апэрацыі. У першым зь іх імя атрыбуту ідзе праз кропку пасьля ідэнтыфікатару аб'екта, у другім&nbsp;&ndash; заключана ў прамавугольныя дужкі пасьля ідэнтыфікатару:</p>
 
   <pre><code class="language-js">
-object_name . attribute_name
-object_name [ attribute_name ]
+object_name.attribute_name
+object_name["attribute_name"]
 </code></pre>
 
   <h3 id="Operators_Object_delete"><code class="language-js">delete</code></h3>
@@ -2379,6 +2379,53 @@ a.length;                 // => 2: масіў утрымлівае цяпер 2 
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/in">Reference</a></li>
     </ul>
   </div>
+  <p>Апэрацыя служыць для праверкі ці існуе пэўны атрыбут у аб'екце ці пэўны элемэнт масіву:</p>
+
+  <pre><code class="language-js">
+// Масівы
+var trees = ["redwood", "bay", "cedar", "oak", "maple"];
+0 in trees        // Верне true
+3 in trees        // Верне true
+6 in trees        // Верне false
+"bay" in trees    // Верне false (прыстасоўна да масіваў трэба пазначаць індэкс элемэнту,
+                  // які трэба праверыць, а не яго яго значэньне)
+"length" in trees // Верне true (length &ndash; гэта атрыбут аб'екта Array)
+Symbol.iterator in trees // Верне true (масівы перабіраюцца, працуе толькі ў ES6+)
+
+// Прадвызначаныя аб'екты
+"PI" in Math      // Верне true
+
+// Уласныя аб'екты
+var mycar = {make: "Honda", model: "Accord", year: 1998};
+"make" in mycar   // Верне true
+"model" in mycar  // Верне true
+</code></pre>
+
+  <p>Справа ад знака апэрацыі павінен стаяць аб'ект, элемэнтарныя тыпы ня могуць зьмяшчацца:</p>
+
+  <pre><code class="language-js">
+var color1 = new String("green");
+"length" in color1 // Верне true
+
+var color2 = "coral";
+// Будзе кінутая памылка (color2 &ndash; гэта не аб'ект тыпу String)
+"length" in color2
+</code></pre>
+
+  <p>Калі элемэнт масіву ці атрыбут аб'екта быў папярэдне выдалены пры дапамозе апэрацыі <a href="#Operators_Object_delete"><code class="language-js">delete</code></a>, апэрацыя <code class="language-js">in</code> зразумела верне <code class="language-js">false</code> пры праверцы гэтага элемэнту/атрыбуту. Калі элемэнту масіва альбо атрыбуту аб'екта прысвоіць значэньне <code class="language-js">undefined</code>, тады апэрацыя <code class="language-js">in</code> верне <code class="language-js">true</code>:</p>
+
+  <pre><code class="language-js">
+var mycar = {make: "Honda", model: "Accord", year: 1998};
+mycar.make = undefined;
+"make" in mycar;  // Верне true
+</code></pre>
+
+  <p>Апэрацыя правярае ўсю герархію аб'екта, таму верне <code class="language-js">true</code> пры праверцы атрыбуту, які яўна не быў вызначаны ў аб'екце, але ўспадкаваў яго ад бацькоўскіх аб'ектаў (<i>prototype chain</i>):</p>
+
+  <pre><code class="language-js">
+"toString" in {}; // Верне true
+</code></pre>
+
 
   <h3 id="Operators_Object_instanceof"><code class="language-js">instanceof</code></h3>
   <div class="refs">
