@@ -2032,7 +2032,7 @@ public @interface Model {}
   <p><a href="http://www.javacodegeeks.com/wp-content/uploads/2013/06/JPA_Mini_Book.pdf">JPA Mini Book</a></p>
   <p><a href="http://www.javacodegeeks.com/wp-content/uploads/2015/05/Hibernate-Tutorial.pdf">Hibernate Tutorial</a></p>
 
-  <h3 id="JEE_JPA_Constraints">Constraints</h3>
+  <h3 id="JEE_JPA_Constraints"><i>Constraints</i></h3>
   <p><i>JPA Constraints</i>&nbsp;&ndash; гэта анатацыі, якія накладваюць пэўныя абмежаваньні на тое, якія значэньні могуць прымаць атрыбуты <i>Entity</i>-клясы, якія пазначаныя гэтымі анатацыямі.</p>
   <table>
     <thead>
@@ -2046,7 +2046,7 @@ public @interface Model {}
     <tr>
       <td><code class="language-java">@DecimalMax</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @DecimalMax("30.00")
 BigDecimal discount;
 </code></pre>
@@ -2056,7 +2056,7 @@ BigDecimal discount;
     <tr>
       <td><code class="language-java">@DecimalMin</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @DecimalMin("5.00")
 BigDecimal discount;
 </code></pre>
@@ -2066,7 +2066,7 @@ BigDecimal discount;
     <tr>
       <td><code class="language-java">@Digits</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @Digits(integer=6, fraction=2)
 BigDecimal price;
 </code></pre>
@@ -2076,7 +2076,7 @@ BigDecimal price;
     <tr>
       <td><code class="language-java">@Future</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @Future
 Date eventDate;
 </code></pre>
@@ -2086,7 +2086,7 @@ Date eventDate;
     <tr>
       <td><code class="language-java">@Max</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @Max(10)
 int quantity;
 </code></pre>
@@ -2096,7 +2096,7 @@ int quantity;
     <tr>
       <td><code class="language-java">@Min</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @Min(5)
 int quantity;
 </code></pre>
@@ -2106,7 +2106,7 @@ int quantity;
     <tr>
       <td><code class="language-java">@NotNull</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @NotNull
 String username;
 </code></pre>
@@ -2116,7 +2116,7 @@ String username;
     <tr>
       <td><code class="language-java">@Null</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @Null
 String unusedString;
 </code></pre>
@@ -2126,7 +2126,7 @@ String unusedString;
     <tr>
       <td><code class="language-java">@Past</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @Past
 Date birthday;
 </code></pre>
@@ -2136,7 +2136,7 @@ Date birthday;
     <tr>
       <td><code class="language-java">@Pattern</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @Pattern(regexp="(d{3})d{3}-d{4}")
 String phoneNumber;
 </code></pre>
@@ -2146,7 +2146,7 @@ String phoneNumber;
     <tr>
       <td><code class="language-java">@Size</code></td>
       <td>
-<pre><code class="language-javascript">
+<pre><code class="language-java">
 @Size(min=2, max=240)
 String briefMessage;
 </code></pre>
@@ -2155,6 +2155,103 @@ String briefMessage;
     </tr>
     </tbody>
   </table>
+
+  <h3 id="JEE_JPA_Enums"><i>JPA</i> і <i>Enums</i></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://tomee.apache.org/examples-trunk/jpa-enumerated/">Apache TomEE</a></li>
+    </ul>
+  </div>
+  <p>Часам пажадана, каб значэньне пэўнай калёнкі ў базе даных было прадстаўлена <i>Enum</i> тыпам. <i>JPA</i> прадстаўляе магчымасьць аўтаматычнага пераўтварэньня значэньня <i>Enum</i> тыпа ў значэньне базы і наадварот пры дапамозе анатацыі <code class="language-java">@javax.persistence.Enumerated</code>.</p>
+  <p>Уявім, што ў нас ёсьць <code class="language-java">Movie</code> <i>entity</i>-кляса, і мы жадаем, каб ўзроставае абмежаваньне фільму было прадстаўлена наступным <i>Enum</i>-тыпам:</p>
+
+  <pre><code class="language-java">
+public enum Rating {
+    UNRATED,
+    G,
+    PG,
+    PG13,
+    R,
+    NC17
+}
+</code></pre>
+
+  <p>Для гэтага аб'явім атрыбут <code class="language-java">rating</code> у нашай <code class="language-java">Movie</code> клясе і дададзім анатацыю <code class="language-java">@Enumerated(EnumType.STRING)</code> да яго:</p>
+
+  <pre><code class="language-java">
+@Entity
+public class Movie {
+
+    @Id
+    @GeneratedValue
+    private int id;
+    &hellip;
+    @Enumerated(EnumType.STRING)
+    private Rating rating;
+    &hellip;
+}
+</code></pre>
+
+  <p>У запытах такія атрыбуты ўжываюцца наступным чынам:</p>
+
+  <pre><code class="language-java">
+public class Movies {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    public List&lt;Movie&gt; findByRating(Rating rating) {
+        final TypedQuery&lt;Movie&gt; query = entityManager.createQuery(
+                "SELECT m FROM Movie as m WHERE m.rating = :rating", Movie.class);
+        query.setParameter("rating", rating);
+        return query.getResultList();
+    }
+    &hellip;
+}
+</code></pre>
+
+  <p>У базе такія значэньні могуць захоўвацца:</p>
+  <ul>
+    <li>ў радковым эквіваленце (значэньне, якое вяртаецца мэтадам <code class="language-java">name()</code> <i>Enum</i> тыпу), для гэтага выкарыстоўваецца анатацыя з парамэтрам <code class="language-java">EnumType.STRING</code>: <code class="language-java">@Enumerated(EnumType.STRING)</code>;</li>
+    <li>альбо ў лічбавым эквіваленце (значэньне, якое вяртаецца мэтадам <code class="language-java">ordinal()</code> <i>Enum</i> тыпу): <code class="language-java">@Enumerated(EnumType.ORDINAL)</code></li>
+  </ul>
+  <p>У агульным выпадку, які з гэтых двух тыпаў выкарыстоўваць&nbsp;&ndash; справа густу, але маюцца асаблівасьці, якія варта ўлічваць: калі ў базе захоўваецца радковы эквівалент, ён не залежыць ад парадку, у якім аб'яўленыя значэньні <i>Enum</i> тыпу; калі ж захоўваецца лічбавы эквівалент, парадак мае значэньне. Іншымі словамі, калі ў базе захаваныя радковыя значэньні <code class="language-java">UNRATED</code>, альбо <code class="language-java">PG</code>, яны і застануцца гэтымі значэньнямі, які б ні быў іх парадак у <i>Enum</i> тыпе. Калі ж захаваныя <code class="language-java">0</code> (як <i>ordinal</i> значэньня <code class="language-java">UNRATED</code>), альбо <code class="language-java">2</code> (як <i>ordinal</i> значэньня <code class="language-java">PG</code>), гэтыя значэньні і павінны заставацца на пазыцыі 1 і 3 у <i>Enum</i> тыпе, каб стан праграмы застаўся цэльным. Калі ж мы раптам памяняем месцамі значэньні <code class="language-java">UNRATED</code> і <code class="language-java">PG</code> у <i>Enum</i> тыпе. Тады запісы раней захаваныя ў базе раптам стануць зь нявернымі значэньнямі.</p>
+
+  <h4 id="JEE_JPA_Enums_UnitTesting"><i>Unit Testing</i></h4>
+
+  <pre><code class="language-java">
+public class MoviesTest extends TestCase {
+
+    public void test() throws Exception {
+
+        final Properties p = new Properties();
+        p.put("movieDatabase", "new://Resource?type=DataSource");
+        p.put("movieDatabase.JdbcDriver", "org.hsqldb.jdbcDriver");
+        p.put("movieDatabase.JdbcUrl", "jdbc:hsqldb:mem:moviedb");
+
+        EJBContainer container = EJBContainer.createEJBContainer(p);
+        final Context context = container.getContext();
+
+        final Movies movies = (Movies) context.lookup("java:global/jpa-scratch/Movies");
+
+        movies.addMovie(new Movie("James Frawley", "The Muppet Movie", 1979, Rating.G));
+        movies.addMovie(new Movie("Jim Henson", "The Great Muppet Caper", 1981, Rating.G));
+        movies.addMovie(new Movie("Frank Oz", "The Muppets Take Manhattan", 1984, Rating.G));
+        movies.addMovie(new Movie("James Bobin", "The Muppets", 2011, Rating.PG));
+
+        assertEquals("List.size()", 4, movies.getMovies().size());
+
+        assertEquals("List.size()", 3, movies.findByRating(Rating.G).size());
+
+        assertEquals("List.size()", 1, movies.findByRating(Rating.PG).size());
+
+        assertEquals("List.size()", 0, movies.findByRating(Rating.R).size());
+
+        container.close();
+    }
+}
+</code></pre>
+
 
   <aside>
     <p><i>JSR-344</i>&nbsp;&ndash; стандарт "JavaServer Faces"</p>
