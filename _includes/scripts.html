@@ -19,3 +19,12 @@
 <script async src="//static.jsbin.com/js/embed.min.js?3.35.2"></script>
 <!-- To display embedded CodePen examples -->
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<!-- Lazy load images and other resources, when possible -->
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.4/jquery.lazy.plugins.min.js"></script>
+<script>
+  $(function() {
+    $('.lazy').lazy();
+  });
+</script>
