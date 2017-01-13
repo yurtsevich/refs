@@ -15,7 +15,9 @@ abbr {color: #000;}
 figure {margin: 20px;
   &.git_branching {text-align: left;}
 }
+iframe { width: 100%; }
 .imgcaption {font-size: smaller; font-style: italic; text-align: center; text-indent: 0;}
+.loading {background: #fafafa url('../images/loading.gif') no-repeat 50% 50%;}
 #container {float: left; width: 100%;}
 #index {float: left; width: 320px;}
 #main_index {background-color: #BBBBBB; box-shadow: rgba(0, 0, 0, .2) -2px 0 2px inset; font-size: .70em;
