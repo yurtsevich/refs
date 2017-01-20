@@ -10,7 +10,7 @@
 })();
 
 function table_of_content() {
-  var content = $("<div id='table_of_content'>"),
+  var content = $("<div id='toc'>"),
       content_tree = $("<ul class='tree'></ul>");
 
   $("#content section").each(function() {

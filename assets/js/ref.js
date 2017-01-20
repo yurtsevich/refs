@@ -1,5 +1,5 @@
 (function() {
-  var toc = $("#table_of_content"),
+  var toc = $("#toc"),
       toc_sections = toc.find("ul.tree > li"),
       toc_subsections = toc_sections.find("li"),
       content_sections = $("article#content").find("section");
