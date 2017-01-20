@@ -12,7 +12,10 @@ disqus_shortname: css-be
 <p><a href="http://chriswrightdesign.com/experiments/using-flexbox-today/?mc_cid=c95a03a2f4&mc_eid=5b4e3f8de1">Using Flexbox today</a></p>
 <p><a href="https://philipwalton.github.io/solved-by-flexbox/?mc_cid=c95a03a2f4&mc_eid=5b4e3f8de1">Solved by Flexbox</a></p>
 <p><a href="https://github.com/philipwalton/flexbugs?mc_cid=c95a03a2f4&mc_eid=5b4e3f8de1">Flexbugs</a></p>
+<p><a href="https://bitsofco.de/3-new-css-features-to-learn-in-2017/">3 New CSS Features to Learn in 2017</a></p>
+<p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/10-css3-properties-you-need-to-be-familiar-with/">10-css3-properties-you-need-to-be-familiar-with</a></p>
 <p><strong><a href="http://cssreference.io/">CSSreference.io</a></strong></p>
+<p><a href="https://github.com/daneden/animate.css/">animate.css</a></p>
 
 <section>
   <h1 id="Links">Карысныя спасылкі</h1>
@@ -26,16 +29,10 @@ disqus_shortname: css-be
   <p><i>Спэцыфікацыя</i> на <b>W3C</b>: <a href="http://www.w3.org/TR/CSS2/">http://www.w3.org/TR/CSS2</a></p>
 
   <h2 id="Links_Refs">Даведнікі</h2>
-  <p><i>Даведнік па базавым аспэктам</i>: <a href="http://www.cssbasics.com/">http://www.cssbasics.com</a></p>
-  <p><i>Дасканалы даведнік</i> на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/css/">http://reference.sitepoint.com/css</a></p>
+  <p><i>Комплексная</i> дакумэнтацыя на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en-US/learn/css" title="&laquo;Learn CSS&raquo; на MDN">https://developer.mozilla.org/en-US/learn/css</a></p>
+  <p>Даведнік па <i>базавых аспэктах</i>: <a href="http://www.cssbasics.com/">http://www.cssbasics.com</a></p>
+  <p><i>Дасканалы</i> даведнік на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/css/">http://reference.sitepoint.com/css</a></p>
   <p>Інтэрактыўная шпаргалка на <b>OverAPI</b>: <a href="http://overapi.com/css/">http://overapi.com/css/</a></p>
-  <p><mark>TODO (разабраць):</mark></p>
-  <ul>
-    <li>Комплексная дакумэнтацыя на <b><abbr title="Mozilla Developer Network">MDN</abbr></b>: <a href="https://developer.mozilla.org/en-US/learn/css" title="&laquo;Learn CSS&raquo; на MDN">https://developer.mozilla.org/en-US/learn/css</a></li>
-    <li><i>Hands on tutorial</i> на <b>westciv</b>: <a href="http://www.westciv.com/style_master/academy/hands_on_tutorial/index.html">http://www.westciv.com/style_master/academy/hands_on_tutorial/index.html</a></li>
-    <li><i>Complete css guide</i> на <b>westciv</b>: <a href="http://www.westciv.com/style_master/academy/css_tutorial/introduction/index.html">http://www.westciv.com/style_master/academy/css_tutorial/introduction/index.html</a></li>
-    <li><a href="http://www.css3files.com/">http://www.css3files.com/</a></li>
-  </ul>
 
   <h2 id="Links_Blogs">Блогі</h2>
   <p><a href="https://css-tricks.com/">css-tricks.com</a></p>
@@ -94,7 +91,7 @@ disqus_shortname: css-be
   </div>
   <p>Тыпы <em>аўтарскіх</em> <abbr title="Cascading Style Sheets">CSS</abbr> у парадку, у якім браўзэр шукае стыль пэўнага элемэнту:</p>
     <ol>
-      <li><em><strong>Inline</strong> (убудаваны) стыль</em>. Пры выкарыстаньні <a href="../html/index.html#style_attr"><code>style</code></a>-атрыбуту <i>HTML</i>-аб'ектаў:
+      <li><em><strong>Inline</strong> (убудаваны) стыль</em>. Пры выкарыстаньні <a href="../html/index.html#style_attr"><code class="language-html">style</code></a>-атрыбуту <i>HTML</i>-аб'ектаў:
 
         <pre><code class="language-html">
 &lt;ul style="font-size: 120%; color: #060;"&gt;
@@ -110,7 +107,7 @@ disqus_shortname: css-be
 
         Недахоп такога спосабу ўжываць стылі ў тым, што яны ўбудаваны ў гэтым выпадку ў кантэнт. Але гэта можа быць апраўдана, калі такім стылем трэба пазначыць толькі адзін (некалькі) <a href="../html/index.html#Elements">элемэнт</a> старонкі.
       </li>
-      <li style="margin-top: 10px;"><em><strong>Internal</strong> (унутраны) стыль</em>. Пры выкарыстаньні <a href="../html/index.html#style_elem"><code>style</code></a>-элемэнту ўнутры <a href="../html/index.html#head"><code>head</code></a>-элемэнту <a href="../html/index.html"><span>HTML</span></a>:
+      <li style="margin-top: 10px;"><em><strong>Internal</strong> (унутраны) стыль</em>. Пры выкарыстаньні <a href="../html/index.html#style_elem"><code class="language-html">style</code></a>-элемэнту ўнутры <a href="../html/index.html#head"><code class="language-html">head</code></a>-элемэнту <a href="../html/index.html"><span>HTML</span></a>:
 
         <pre><code class="language-html">
 &lt;style type="text/css" media="screen, projection"&gt;
@@ -118,12 +115,12 @@ disqus_shortname: css-be
 &lt;/style&gt;
 </code></pre>
 
-        <aside><sup>1</sup> Калі ўва ўнутраным і зьнешнім <abbr title="Cascading Style Sheets">CSS</abbr> не пазначаны атрыбут <code>media</code>, спэцыфікацыя кажа, што будзе ўжыта значэньне <code>screen</code>, але насамрэч браўзэры апрацоўваюць гэты выпадак, як быццам пазначана значэньне <code>all</code>.</aside>
+        <aside><sup>1</sup> Калі ўва ўнутраным і зьнешнім <abbr title="Cascading Style Sheets">CSS</abbr> не пазначаны атрыбут <code class="language-html">media</code>, спэцыфікацыя кажа, што будзе ўжытае значэньне <code class="language-html">screen</code>, але насамрэч браўзэры апрацоўваюць гэты выпадак, як быццам пазначана значэньне <code class="language-html">all</code>.</aside>
         Недахопы амаль тыя ж, што і папярэдняга тыпу. Адзінае, у гэтым выпадку можна дабівацца re-use аднаго і таго ж стылю для некалькіх элемэнтаў <i>HTML</i>, а таксама пазначаць <a href="../html/index.html#Media"><i>media</i></a><sup>1</sup>.
       </li>
   <li style="margin-top: 10px;"><em><strong>External</strong> (зьнешні) стыль</em>. Падключаецца са зьнешняга <code>css</code>-файлу. Падключэньне магчымае 2ма шляхамі:
     <ol style="list-style-type: lower-latin;">
-      <li><a href="../html/index.html#link"><code>link</code></a>-элемэнт ўнутры <a href="../html/index.html#head"><code>head</code></a>-элемэнту <i>HTML</i>:
+      <li><a href="../html/index.html#link"><code class="language-html">link</code></a>-элемэнт ўнутры <a href="../html/index.html#head"><code class="language-html">head</code></a>-элемэнту <i>HTML</i>:
 
         <pre><code class="language-html">
 &lt;link rel="stylesheet" type="text/css" href="style.css" media="screen" /&gt;
@@ -131,15 +128,15 @@ disqus_shortname: css-be
 
         Гэты мэтад можа таксама выкарыстоўвацца для падключэньня альтэрнатыўных стыляў:
         <ul>
-          <li>калі ў элемэнце <a href="../html/index.html#link"><code>link</code></a> пазначана <strong><code>rel=</code><code>"stylesheet"</code></strong> і <strong>адсутнічае</strong> атрыбут <code>title</code>, стыль лічыцца "нерухомым" ці пастаянным і не можа быць заменены іншым. Калі ў браўзэры абіраецца іншы стыль, ён ужываецца паралельна з гэтым нерухомым, а не замест яго.</li>
-          <li>калі ў элемэнце <a href="../html/index.html#link"><code>link</code></a> пазначана <strong><code>rel=</code><code>"stylesheet"</code></strong> і <strong>прысутнічае</strong> атрыбут <code>title</code>, стыль лічыцца змоўчным, але можа быць адключаны, калі карыстач абярэ іншы стыль ў браўзэры.</li>
+          <li>калі ў элемэнце <a href="../html/index.html#link"><code class="language-html">link</code></a> пазначана <strong><code class="language-html">rel="stylesheet"</code></strong> і <strong>адсутнічае</strong> атрыбут <code class="language-html">title</code>, стыль лічыцца "нерухомым" ці пастаянным і не можа быць заменены іншым. Калі ў браўзэры абіраецца іншы стыль, ён ужываецца паралельна з гэтым нерухомым, а не замест яго.</li>
+          <li>калі ў элемэнце <a href="../html/index.html#link"><code class="language-html">link</code></a> пазначана <strong><code class="language-html">rel="stylesheet"</code></strong> і <strong>прысутнічае</strong> атрыбут <code class="language-html">title</code>, стыль лічыцца змоўчным, але можа быць адключаны, калі карыстач абярэ іншы стыль ў браўзэры.</li>
           <li>
             <aside><sup>2</sup> Зьвярніце ўвагу, што спэцыфікацыя <abbr title="Cascading Style Sheets">CSS</abbr> выкарыстоўвае тэрмін <i>alternate</i>, а не <i>alternative</i></aside>
-            калі ў элемэнце <a href="../html/index.html#link"><code>link</code></a> пазначана <strong><code>rel=</code><code>"alternate stylesheet"</code></strong><sup>2</sup>, стыль па-змоўчваньні не выкарыстоўваецца, але можа быць уключаны карыстачом парз браўзэр.</li>
-          <li>калі ў некалькіх элемэнтаў <a href="../html/index.html#link"><code>link</code></a> маецца <strong>атрыбут <code>title</code> з адным і тым жа значэньнем</strong>, то ўключэньне аднаго зь іх прывядзе да ўключэньня іншых і, адпаведна, да адключэньня стыляў зь іншымі "імёнамі" ці без "імёнаў".</li>
+            калі ў элемэнце <a href="../html/index.html#link"><code class="language-html">link</code></a> пазначана <strong><code class="language-html">rel="alternate stylesheet"</code></strong><sup>2</sup>, стыль па-змоўчваньні не выкарыстоўваецца, але можа быць уключаны карыстальнікам праз браўзэр.</li>
+          <li>калі ў некалькіх элемэнтаў <a href="../html/index.html#link"><code class="language-html">link</code></a> маецца <strong>атрыбут <code class="language-html">title</code> з адным і тым жа значэньнем</strong>, то ўключэньне аднаго зь іх прывядзе да ўключэньня іншых і, адпаведна, да адключэньня стыляў зь іншымі "імёнамі" ці без "імёнаў".</li>
         </ul>
       </li>
-      <li><a href="#At-rules_import"><code>@import</code></a> <i>at-rule</i> ўнутры <a href="../html/index.html#head"><code>head</code></a>-элемэнту <i>HTML</i>:
+      <li><a href="#At-rules_Simple_import"><code class="language-css">@import</code></a> <i>at-rule</i> ўнутры <a href="../html/index.html#head"><code class="language-html">head</code></a>-элемэнту <i>HTML</i>:
         <aside>Падобна да <strong>internal</strong> стыляў, але замест яўнага прапісваньня стылю імпартуецца зьмест <code>css</code>-файлу.</aside>
 
         <pre><code class="language-html">
@@ -153,7 +150,7 @@ disqus_shortname: css-be
     </li>
   </ol>
 
-  <p>І для 3.а, і для 3.b характэрна тое, што <a href="http://en.wikipedia.org/wiki/URI"><i>URI</i></a>'s у <code>href</code>-атрыбуце і ў <a href="#At-rules_import"><code>@import</code></a> <i>at-rule</i> зьяўляюцца адноснымі да <i>HTML</i>-дакумэнту, які ўтрымлівае гэтую спасылку. Калі <a href="#At-rules_import"><code>@import</code></a> выкарыстоўваецца ў <abbr title="Cascading Style Sheets">CSS</abbr>-дакумэнце, тады <a href="http://en.wikipedia.org/wiki/URI"><i>URI</i></a> зьяўляецца адносным да гэтага <abbr title="Cascading Style Sheets">CSS</abbr>-дакумэнту.</p>
+  <p>І для 3.а, і для 3.b характэрна тое, што <a href="http://en.wikipedia.org/wiki/URI"><i>URI</i></a>'s у <code class="language-html">href</code>-атрыбуце і ў <a href="#At-rules_Simple_import"><code class="language-css">@import</code></a> <i>at-rule</i> зьяўляюцца адноснымі да <i>HTML</i>-дакумэнту, які ўтрымлівае гэтую спасылку. Калі <a href="#At-rules_Simple_import"><code class="language-css">@import</code></a> выкарыстоўваецца ў <abbr title="Cascading Style Sheets">CSS</abbr>-дакумэнце, тады <a href="http://en.wikipedia.org/wiki/URI"><i>URI</i></a> зьяўляецца адносным да гэтага <abbr title="Cascading Style Sheets">CSS</abbr>-дакумэнту.</p>
 
   <h2 id="Concepts_SyntaxTerminology">Сынтакс і тэрміналёгія</h2>
   <div class="refs">
@@ -161,7 +158,7 @@ disqus_shortname: css-be
       <li><a href="http://reference.sitepoint.com/css/syntax/">SitePoint</a></li>
     </ul>
   </div>
-  <p><abbr title="Cascading Style Sheets">CSS</abbr> складаецца з набору выразаў (<i>statements</i>). Выразам можа быць альбо <a href="#At-rules"><i>at-rule</i></a>, якое складаецца з ключавога слова (сымбаль <code>&#64;</code>, за каторым ідзе <i>at-rule</i> імя), за каторым ідзе блёк (<code>{...}</code>) ці тэкст, які сканчваецца кропкай з коскай:</p>
+  <p><abbr title="Cascading Style Sheets">CSS</abbr> складаецца з набору выразаў (<i>statements</i>). Выразам можа быць альбо <a href="#At-rules"><i>at-rule</i></a>, якое складаецца з ключавога слова (сымбаль <code>&#64;</code>, за якім ідзе <i>at-rule</i> імя), за каторым ідзе блёк (<code>{...}</code>) ці тэкст, які сканчваецца кропкай з коскай:</p>
 
   <pre><code class="language-css">
 @import url(base.css);
@@ -181,7 +178,7 @@ h2 {
 }
 </code></pre>
 
-  <p>Дзе <code>h2</code>&nbsp;&ndash; сэлектар, а ў блёку аб'яўленьняў пазначаюцца атрыбут <code>color</code> са значэньнем <code>#666</code> і атрыбут <code>font-weight</code> са значэньнем <code>bold</code>.</p>
+  <p>Дзе <code class="language-html">h2</code>&nbsp;&ndash; сэлектар, а ў блёку аб'яўленьняў пазначаюцца атрыбут <code class="language-css">color</code> са значэньнем <code class="language-css">#666</code> і атрыбут <code class="language-css">font-weight</code> са значэньнем <code class="language-css">bold</code>.</p>
 
   <h2 id="Concepts_Comments">Камэнтары</h2>
   <div class="refs">
@@ -189,7 +186,7 @@ h2 {
       <li><a href="http://reference.sitepoint.com/css/comments">SitePoint</a></li>
     </ul>
   </div>
-  <p>Камэнтары ў <abbr title="Cascading Style Sheets">CSS</abbr> пачынаюцца з <code>/*</code>, а сканчваюцца <code>*/</code> і могуць ахопліваць некалькі радкоў:</p>
+  <p>Камэнтары ў <abbr title="Cascading Style Sheets">CSS</abbr> пачынаюцца з <code class="language-css">/*</code>, а сканчваюцца <code class="language-css">*/</code> і могуць ахопліваць некалькі радкоў:</p>
 
   <pre><code class="language-css">
 /* This is a single-line comment */
@@ -205,8 +202,8 @@ p {
       <li><a href="http://reference.sitepoint.com/css/cssescapenotation/">SitePoint</a></li>
     </ul>
   </div>
-  <p>Прадстаўленьне <i>escape</i> (спэцыяльных) сымбаляў у <abbr title="Cascading Style Sheets">CSS</abbr> адрозьніваецца ад <a href="../html/index.html#Special_symbols">спосабу</a> рабіць гэта ў <i>HTML</i>. У <abbr title="Cascading Style Sheets">CSS</abbr> гэта робіцца наступным чынам: выкарыстоўваецца сымбаль зваротнага слэшу (\), пасьля якога ідуць ад 1 да 6 шаснаццацірычных лічбаў, якія прадстаўляюць код сымбалю з табліцы <em>ISO 10646 standard</em>, каторая эквівалентная <em>Unicode</em>. Любы сымбаль, які адрозьніваецца ад шаснаццацірычнай лічбы перарве пасьлядоўнасьць.</p>
-  <p>Калі сымбаль, які павінен ісьці адразу пасьля <i>escape</i> сымбалю, таксама уяўляе зь сябе шаснаццацірычную лічбу, трэба альбо дапоўніць <i>escape</i> код нулямі да агульнай іх колькасьці ў 6 лічбаў, альбо ўставіць прагал пасьля <i>escape</i> сымбалю. Напрыклад, калі трэба пазначыць <code>"»back"</code>, можна ўвесьці альбо <code>"\0000bbback"</code>, альбо <code>"\bb back"</code>. З апошняга прыкладу зразумела, што першы прагал пасьля <i>escape</i> сымбалю выдаляецца (нават калі ў гэтым сымбалі ўжываюцца ўсе 6 дазволеных лічбаў). Каб насамрэч уставіць прагал, трэба пазначыць яго двойчы.</p>
+  <p>Прадстаўленьне <i>escape</i> (спэцыяльных) сымбаляў у <abbr title="Cascading Style Sheets">CSS</abbr> адрозьніваецца ад <a href="../html/index.html#Special_symbols">спосабу</a> рабіць гэта ў <i>HTML</i>. У <abbr title="Cascading Style Sheets">CSS</abbr> гэта робіцца наступным чынам: выкарыстоўваецца сымбаль зваротнага слэшу (\), пасьля якога ідуць ад 1 да 6 шаснаццацірычных лічбаў, якія прадстаўляюць код сымбалю з табліцы <em>ISO 10646 standard</em>, якая эквівалентная <em>Unicode</em>. Любы сымбаль, які адрозьніваецца ад шаснаццацірычнай лічбы перарве пасьлядоўнасьць.</p>
+  <p>Калі сымбаль, які павінен ісьці адразу пасьля <i>escape</i> сымбалю, таксама уяўляе зь сябе шаснаццацірычную лічбу, трэба альбо дапоўніць <i>escape</i> код нулямі да агульнай іх колькасьці ў 6 лічбаў, альбо ўставіць прагал пасьля <i>escape</i> сымбалю. Напрыклад, калі трэба пазначыць <code class="language-css">"»back"</code>, можна ўвесьці альбо <code class="language-css">"\0000bbback"</code>, альбо <code class="language-css">"\bb back"</code>. З апошняга прыкладу зразумела, што першы прагал пасьля <i>escape</i> сымбалю выдаляецца (нават калі ў гэтым сымбалі ўжываюцца ўсе 6 дазволеных лічбаў). Каб насамрэч уставіць прагал, трэба пазначыць яго двойчы.</p>
 
   <h2 id="Concepts_CascadeSpecificity">Каскад і спэцыфічнасьць</h2>
   <div class="refs">
@@ -288,7 +285,7 @@ p {
 }
 </code></pre>
 
-  <p>Вынік падліку спэцыфічнасьці сэлектараў, прыведзеных вышэй, пры вызначэньні якое ж значэньне атрыбуту <code>color</code> ужыць да чарговага <a href="../html/index.html#p"><code>p</code></a>-элемэнту прыведзена ў табліцы ніжэй:</p>
+  <p>Вынік падліку спэцыфічнасьці сэлектараў, прыведзеных вышэй, пры вызначэньні якое ж значэньне атрыбуту <code class="language-css">color</code> ужыць да чарговага <a href="../html/index.html#p"><code class="language-html">p</code></a>-элемэнту прыведзена ў табліцы ніжэй:</p>
   <table>
     <thead>
       <tr>
@@ -300,18 +297,18 @@ p {
       </tr>
     </thead>
     <tbody>
-      <tr><td><code>body#home div#warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>3</td></tr>
-      <tr><td><code>* body#home>div#warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>3</td></tr>
-      <tr><td><code>#home #warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>1</td></tr>
-      <tr><td><code>#warning p.message</code></td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
-      <tr><td><code>#warning p</code></td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
-      <tr><td><code>p.message</code></td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
-      <tr><td><code>p</code></td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+      <tr><td><code class="language-css">body#home div#warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>3</td></tr>
+      <tr><td><code class="language-css">* body#home>div#warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>3</td></tr>
+      <tr><td><code class="language-css">#home #warning p.message</code></td><td>0</td><td>2</td><td>1</td><td>1</td></tr>
+      <tr><td><code class="language-css">#warning p.message</code></td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+      <tr><td><code class="language-css">#warning p</code></td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+      <tr><td><code class="language-css">p.message</code></td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+      <tr><td><code class="language-css">p</code></td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
     </tbody>
   </table>
 
   <h3 id="Concepts_OrderInSource">Парадак сьледаваньня</h3>
-  <p>Калі ж і на трэцім кроку не ўдалося звузіць колькасьць пасуючых аб'яўленьняў да аднаго, тады ўлічваецца іх парадак у зыходных файлах. Той, каторы сустракаецца апошнім, перакрывае папярэднія і насамрэч ужываецца.</p>
+  <p>Калі ж і на трэцім кроку не ўдалося звузіць колькасьць пасуючых аб'яўленьняў да аднаго, тады ўлічваецца іх парадак у зыходных файлах. Той, які сустракаецца апошнім, перакрывае папярэднія і насамрэч ужываецца.</p>
 
   <h2 id="Concepts_Inheritance">Спадчыннасьць</h2>
   <div class="refs">
@@ -319,123 +316,165 @@ p {
       <li><a href="http://reference.sitepoint.com/css/inheritance/">SitePoint</a></li>
     </ul>
   </div>
-  <p>Значэньні пэўных атрыбутаў (напр. <code>font-size</code> ці <code>color</code>), калі не пазначаныя наўпрост, спадкуюцца элемэнтамі ад іх бацькоўскіх элемэнтаў:</p>
+  <p>Значэньні пэўных атрыбутаў (напр. <code class="language-css">font-size</code> ці <code class="language-css">color</code>), калі не пазначаныя наўпрост, спадкуюцца элемэнтамі ад іх бацькоўскіх элемэнтаў:</p>
 
-  <pre><code class="language-css">
-div {
-  font-size: 20px;
-}
-</code></pre>
+  <a class="jsbin-embed" href="http://jsbin.com/sogohu/embed?html,css,output&height=200px">Прыклад на jsbin.com</a>
 
-  <pre><code class="language-html">
-&lt;div&gt;
-  &lt;p&gt;
-    This &lt;em&gt;sentence&lt;/em&gt; will have a 20px
-    &lt;a href="#"&gt;font-size&lt;/a&gt;.
-  &lt;/p&gt;
-&lt;/div&gt;
-</code></pre>
-
-  <p>У прыкладзе вышэй тэкст і ў элемэнце <a href="../html/index.html#p"><code>p</code></a>, і ў <a href="../html/index.html#em"><code>em</code></a>, і ў <a href="../html/index.html#a"><code>a</code></a> будзе памерам <code>20px</code>.</p>
-  <p>Калі ж значэньні атрыбутаў аўтаматычна не спадкуюцца (напр. <code>background-color</code>), іх можна ўспадкаваць уручную, пазначыўшы для пэўнага атрыбуту ў якасьці яго значэньня <code>inherit</code>, калі гэта дазваляецца спэцыфікацыяй, натуральна.</p>
+  <p>У прыкладзе вышэй тэкст і ў элемэнце <a href="../html/index.html#p"><code class="language-html">p</code></a>, і ў <a href="../html/index.html#em"><code class="language-html">em</code></a>, і ў <a href="../html/index.html#a"><code class="language-html">a</code></a> будзе памерам <code class="language-css">20px</code>.</p>
+  <p>Калі ж значэньні атрыбутаў аўтаматычна не спадкуюцца (напр. <code class="language-css">background-color</code>), іх можна ўспадкаваць уручную, пазначыўшы для пэўнага атрыбуту ў якасьці яго значэньня <code class="language-css">inherit</code>, калі гэта дазваляецца спэцыфікацыяй, натуральна.</p>
 </section>
 
 <section>
   <h1 id="At-rules" data-content-item-open>At-rules</h1>
   <div class="refs">
     <ul>
-      <li><a href="http://reference.sitepoint.com/css/atrulesref/">SitePoint</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/">CSS-tricks</a></li>
     </ul>
   </div>
-  <p><i>At-rules</i>&nbsp;&ndash; гэта інструкцыі ці дырэктывы для парсера <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
+  <p><i>At-rules</i>&nbsp;&ndash; гэта адмысловыя інструкцыі ці дырэктывы <i>CSS</i>. Існуюць простыя дырэктывы і дырэктывы з укладзеным зьместам, сярод апошніх выдзяляюць таксама ўмоўныя.</p>
 
-  <aside><sup>3</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <i>HTML</i>/<abbr title="Cascading Style Sheets">CSS</abbr>-дакумэнтах імёны і аліасы адзначаны "<i>(preferred MIME name)</i>"</aside>
-  <h2 id="At-rules_charset"><code class="language-css" style="font-variant: normal;">&#64;charset</code></h2>
+  <h2 id="At-rules_Simple">Простыя</h2>
+  <p>Простыя дырэктывы выкарыстоўваюць наступны сынтаксіс:</p>
+
+  <pre><code class="language-css">
+@KEYWORD RULE;
+</code></pre>
+
+  <aside><sup>3</sup> Афіцыйны сьпіс кадовак: <a href="http://www.iana.org/assignments/character-sets/">http://www.iana.org/assignments/character-sets</a>. Для выкарыстаньня ў <i>HTML</i>/<i>CSS</i>-дакумэнтах імёны і аліасы адзначаны &laquo;<i>(preferred MIME name)</i>&raquo;</aside>
+  <h3 id="At-rules_Simple_charset"><code class="language-css" style="font-variant: normal;">&#64;charset</code></h3>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@charset">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-1">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/at-charset/">SitePoint</a></li>
     </ul>
   </div>
-  <p>Выкарыстоўваецца для пазначэньня кадоўкі<sup>3</sup> зьнешняга файлу стыляў (<code>css</code>-файлу). Па зразумелым прычынам гэтая дырэктыва, калі прысутнічае, павінна быць самым першым выразам у <code>css</code>-файле.</p>
+  <p>Выкарыстоўваецца для пазначэньня кадоўкі<sup>3</sup> зьнешняга файлу стыляў (<code>css</code>-файлу). Па зразумелым прычынам гэтая дырэктыва, калі прысутнічае, павінна быць самым першым выразам у <code>css</code>-файле (нават прагальныя сымбалі перад ёю не дапускаюцца).</p>
   <p>Агенты карыстаюцца наступным сьпісам пры вызначэньні кадоўкі <code>css</code>-файлу, у парадку зьмяншэньня прыярытэту:</p>
   <ul>
-    <li>Атрыбут <code>charset</code> <abbr title="HyperText Transfer Protocol">HTTP</abbr> загалоўку <code>Content-Type</code>, каторы дасылаецца вэб-сэрверам.</li>
-    <li><code>&#64;charset</code>-дырэктыва.</li>
-    <li>Атрыбут <code>charset</code> <a href="../html/index.html#link"><code>link</code></a>-элемэнту, якім <i>HTML</i>-дакумэнт спасылаецца да <code>css</code>-файлу.</li>
-    <li>Кадоўка дакумэнту, каторы спасылаецца да гэтага <code>css</code>-файлу.</li>
+    <li>Атрыбут <code>charset</code> <abbr title="HyperText Transfer Protocol">HTTP</abbr> загалоўку <code>Content-Type</code>, які дасылаецца вэб-сэрвэрам.</li>
+    <li><code class="language-css">&#64;charset</code>-дырэктыва.</li>
+    <li>Атрыбут <code class="language-html">charset</code> <a href="../html/index.html#link"><code class="language-html">link</code></a>-элемэнту, якім <i>HTML</i>-дакумэнт спасылаецца да <code>css</code>-файлу.</li>
+    <li>Кадоўка дакумэнту, які спасылаецца да гэтага <code>css</code>-файлу.</li>
   </ul>
   <p>І толькі, калі не атрымалася вызначыць кадоўку ніводным з гэтых варыянтаў, ужываецца змоўчная кадоўка&nbsp;&ndash; <code>UTF-8</code>.</p>
 
-  <h3>Прыклад</h3>
+  <h4>Прыклад</h4>
 
   <pre><code class="language-css">
 @charset "ISO-8859-15";
 </code></pre>
 
-  <h2 id="At-rules_import"><code style="font-variant: normal;">&#64;import</code></h2>
+  <h3 id="At-rules_Simple_import"><code class="language-css" style="font-variant: normal;">&#64;import</code></h3>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-2">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/at-import/">SitePoint</a></li>
     </ul>
   </div>
   <p>Зьяўляецца мэханізмам імпартаваньня аднаго файлу стыляў у іншы. Выкарыстоўваецца наступным чынам:</p>
 
   <pre><code class="language-css">
-@import  { URI | string } [  media type, … ] ;
+@import  { URI | string } [ list-of-media-queries ] ;
 </code></pre>
 
-  <p>У выпадку пазначэньня адносных спасылак/шляхоў "адпраўной кропкай" лічыцца месцазнаходжаньне файлу стыляў, у якім гэтая дырэктыва зьмешчана. Пасьля спасылкі/шляху могуць пазначацца <a href="../html/index.html#Media">media</a>-тыпы, для якіх гэтая дырэктыва павінна ўжывацца.</p>
-  <p><code>&#64;import</code>-дырэктыва павінна ісьці вышэй за ўсе <a href="#Concepts_SyntaxTerminology"><i>rule-sets</i></a>, у адваротным выпадку яна будзе праігнаравана.</p>
+  <p>У выпадку пазначэньня адносных спасылак/шляхоў "адпраўной кропкай" лічыцца месцазнаходжаньне файлу стыляў, у якім гэтая дырэктыва зьмешчана. Пасьля спасылкі/шляху могуць пазначацца <i><a href="../html/index.html#Media">media</a>-queries</i>, для якіх гэтая дырэктыва павінна ўжывацца.</p>
+  <p><code class="language-css">&#64;import</code>-дырэктыва павінна ісьці вышэй за ўсе іншыя дырэктывы (за выключэньнем <code class="language-css">&#64;charset</code>) і іншыя выразы, у адваротным выпадку яна будзе праігнараваная.</p>
 
   <pre><code class="language-css">
-/* Зробіць імпарт файла /css/screen.css у выпадку ўжываньня ў
-дадзены момант манітору ці праектара. */
+/* Зробіць імпарт файла /css/screen.css у выпадку ўжываньня ў дадзены момант манітору ці праектара. */
 @import url(/css/screen.css) screen, projection;
 html {
   background-color: #fff;
   color: #000;
 }
-/* Дадзеная дырэктыва будзе праігнаравана, таму што зьмешчана
-пасьля папярэдняга rule-set. */
+/* Дадзеная дырэктыва будзе праігнараваная, таму што зьмешчана пасьля rule-set. */
 @import url("other.css");
 </code></pre>
 
-  <h2 id="At-rules_media"><code style="font-variant: normal;">&#64;media</code></h2>
+  <h3 id="At-rules_Simple_namespace"><code class="language-css" style="font-variant: normal;">&#64;namespace</code></h3>
   <div class="refs">
     <ul>
-      <li><a href="http://reference.sitepoint.com/css/at-media/">SitePoint</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@namespace">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-3">CSS-tricks</a></li>
+      <li><a href="http://reference.sitepoint.com/css/at-namespace/">SitePoint</a></li>
     </ul>
   </div>
+  <p>Гэтая дырэктыва выкарыстоўваецца для пазначэньня прасторы імёнаў <i>XML</i>, якая будзе выкарыстоўвацца ў гэтым <i>CSS</i>. Выкарыстаньне дырэктывы мае сэнс толькі калі дакумэнт апэрыруе з рознымі прасторамі імёнаў, напр.&nbsp;&ndash; <i>HTML5</i> з убудаваным <i>SVG</i> і <i>MathML</i> зьместам, альбо <i>XML</i> у якім зьмяшаныя некалькі лексык. Дырэктыва павінна ісьці адразу пасьля дырэктываў <code class="language-css" style="font-variant: normal;">&#64;charset</code> і <code class="language-css">&#64;import</code> і перад любымі іншымі выразамі. Дырэктыва выкарыстоўваецца для пазначэньня альбо змоўчнай прасторы імёнаў, альбо прэфіксу прасторы імёнаў:</p>
 
-  <h3 id="At-rules_media_extended">Пашыраныя тэхнікі: <i>Element Queries</i></h3>
-  <p><a href="http://codepen.io/tomhodgins/post/how-style-scoping-works-with-element-queries">How Style Scoping Works with Element Queries</a></p>
-  <p><a href="http://elementqueries.com/">EQCSS&nbsp;&ndash; A CSS Extension for Element Queries & More</a></p>
-  <p><a href="https://tomhodgins.github.io/element-queries-spec/element-queries.html">Element Queries (draft)</a></p>
+  <pre><code class="language-css">
+@namespace url(http://www.w3.org/1999/xhtml);
+@namespace svg url(http://www.w3.org/2000/svg);
 
-  <h2 id="At-rules_page"><code style="font-variant: normal;">&#64;page</code></h2>
+/* This matches all XHTML &lt;a&gt; elements, as XHTML is the default unprefixed namespace */
+a {}
+
+/* This matches all SVG &lt;a&gt; elements */
+svg|a {}
+
+/* This matches both XHTML and SVG &lt;a&gt; elements */
+*|a {}
+</code></pre>
+
+  <h2 id="At-rules_Nested">З укладзеным зьместам</h2>
+  <p>Гэтыя дырэктывы маюць укладзеныя ў іх выразы і выкарыстоўваюць наступны сынтаксіс:</p>
+
+  <pre><code class="language-css">
+@KEYWORD [RULES] {
+    /* Укладзеныя выразы */
+}
+</code></pre>
+
+  <aside class="usage_indicator usage_warn">Наступная дырэктыва зьяўляецца на момант напісаньня гэтага матэрыялу экспэрымэнтальнай, будзьце ўважлівымі пры выкарыстаньні.</aside>
+  <h3 id="At-rules_Nested_document"><code class="language-css" style="font-variant: normal;">&#64;document</code></h3>
   <div class="refs">
     <ul>
-      <li><a href="http://reference.sitepoint.com/css/at-page/">SitePoint</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@document">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-5">CSS-tricks</a></li>
     </ul>
   </div>
+  <p>Гэтая ўмоўная інструкцыя дапамагае ўжываць пэўныя стылі толькі да пэўных старонак па ўмове (па поўнаму УРЛу, па прэфіксу да УРЛа, па дамэну, ці адвольнаму рэгулярнаму выразу, які ўжываецца да УРЛа):</p>
+  <pre><code class="language-css">
+@document
+  /* Правіла да поўнага УРЛа */
+  url(http://css-tricks.com/),
 
-  <h2 id="At-rules_font-face"><code style="font-variant: normal;">&#64;font-face</code></h2>
+  /* Правіла да старонак, чый УРЛ пачынаецца з... */
+  url-prefix(http://css-tricks.com/snippets/),
+
+  /* Правіла да любой старонкі дамэна */
+  domain(css-tricks.com),
+
+  /* Правіла да бясьпечных старонак */
+  regexp("https:.*")
+{
+
+  /* І вызначаем стылі, якія будуць ужывацца пры пазначаных вышэй умовах */
+  body { font-family: Comic Sans; }
+}
+</code></pre>
+
+  <h3 id="At-rules_Nested_font-face"><code class="language-css" style="font-variant: normal;">&#64;font-face</code></h3>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-6">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/at-fontface/">SitePoint</a></li>
       <li><a href="http://www.fontsquirrel.com/fontface/generator/">Code generator</a></li>
     </ul>
   </div>
-  <p>Дырэктыва дазваляе выкарыстоўваць у сеціўных старонках несыстэмныя шрыфты. Больш падрабязную інфармацыю пра шрыфты ўвогуле, пра іх фарматы, пра стэкі сыстэмных шрыфтоў і магчымасьці ўбудоўваць несыстэмныя <a href="../web/index.html#Typography">глядзіце адпаведны разьдзел у даведніку па распрацоўцы сайтаў</a>.</p>
-  <p>Улічваючы неаднастайнасьць фарматаў, каторымі карыстаюцца розныя апэрацыйныя сыстэмы, лепш за ўсё карыстацца <a href="http://www.fontsquirrel.com/fontface/generator" title="Fontsquirrel generator">генэратарам ад Fontsquirrel</a>, каторы ня толькі генэруе правільны і ўсеабдымны код, але і канвэртуе шрыфт з сыходнага фармату ў іншыя распаўсюджаныя, для падтрымкі як мага большай колькасьцю браўзэраў. Разгледзем некаторыя з опцыяў гэтага генэратару:</p>
+  <p>Дырэктыва дазваляе выкарыстоўваць у сеціўных старонках несыстэмныя шрыфты. Больш падрабязную інфармацыю пра шрыфты ўвогуле, пра іх фарматы, пра стэкі сыстэмных шрыфтоў і магчымасьці ўбудоўваць несыстэмныя <a href="../web/index.html#DesignUI_Typography">глядзіце адпаведны разьдзел у даведніку па распрацоўцы сайтаў</a>.</p>
+  <p>Улічваючы неаднастайнасьць фарматаў, якімі карыстаюцца розныя апэрацыйныя сыстэмы, лепш за ўсё карыстацца <a href="http://www.fontsquirrel.com/fontface/generator" title="Fontsquirrel generator">генэратарам ад Fontsquirrel</a>, які ня толькі генэрыруе правільны і ўсёабдымны код, але і канвэртуе шрыфт з сыходнага фармату ў іншыя распаўсюджаныя, для падтрымкі як мага большай колькасьці браўзэраў. Разгледзім некаторыя з опцыяў гэтага генэратару:</p>
   <ul>
     <li>Група опцыяў <i>Rendering</i>:
       <ul>
         <li><i>Apply Hinting</i>: палепшанае адлюстраваньне шрыфту на <i>Windows</i>-плятформах. Ад гэтай опцыі варта адмаўляцца толькі ў тым выпадку, калі вы дакладна ведаеце, што шрыфт ужо аптымізаваны.</li>
-        <li><i>Remove Kerning</i>: для &laquo;палягчэньня&raquo; шрыфту можна абраць гэтую опцыю, каторая выдаліць <i>kerning</i>-даныя з шрыфту. Даволі сьмела можна абіраць гэтую опцыю для асноўнага тэксту, але з вялікай асьцярогай для загалоўкаў, ці ўвогуле лепш адмовіцца ад опцыі для апошняга.</li>
+        <li><i>Remove Kerning</i>: для &laquo;палягчэньня&raquo; шрыфту можна абраць гэтую опцыю, якая выдаліць <i>kerning</i>-даныя з шрыфту. Даволі сьмела можна абіраць гэтую опцыю для асноўнага тэксту, але з вялікай асьцярогай для загалоўкаў, ці ўвогуле лепш адмовіцца ад опцыі для апошняга.</li>
       </ul>
     </li>
-    <li><i>WebOnly<sup>TM</sup></i>: кажа браўзэрам не ўсталёўваць шрыфт у сыстэму, каб пазьбегнуць несанкцыяваных копій нявольных шрыфтоў.</li>
+    <li><i>WebOnly<sup>TM</sup></i>: кажа браўзэрам не ўсталёўваць шрыфт у сыстэму, каб пазьбегнуць несанкцыянаваных копій нявольных шрыфтоў.</li>
     <li>Пры дапамозе групы опцыяў <i>Subsetting</i> можна абмяжоўваць шрыфт на ўтрыманьне даных толькі пэўных знакаў:
       <ul>
         <li><i>Basic Subsetting</i>: стандартны набор знакаў лацінскіх моваў.</li>
@@ -452,7 +491,7 @@ html {
     </li>
     <li>Група опцыяў <i>CSS options</i>:
       <ul>
-        <li><i>Style Linking</i>: групуе розныя стылі аднаго сямейства, каб пазьней можна было асобна рэгуляваць стыль і таўчшыню шрыфта праз атрыбуты <code>font-style</code> і <code>font-weight</code>. Ужываньне гэтай опцыі магчыма толькі, калі шрыфт складаецца з чатырох стандартных стыляў: <i>regular</i>, <i>italic</i>, <i>bold</i> і <i>bold italic</i>, інакш яе выкарыстоўваць ня варта.</li>
+        <li><i>Style Linking</i>: групуе розныя стылі аднаго сямейства, каб пазьней можна было асобна рэгуляваць стыль і таўшчыню шрыфту праз атрыбуты <code>font-style</code> і <code>font-weight</code>. Ужываньне гэтай опцыі магчыма толькі, калі шрыфт складаецца з чатырох стандартных стыляў: <i>regular</i>, <i>italic</i>, <i>bold</i> і <i>bold italic</i>, інакш яе выкарыстоўваць ня варта.</li>
         <li><i>Base64 Encode</i>: убудаваньне шрыфту пры дапамозе <i>base64</i>-кадаваньня ў <abbr title="Cascading Style Sheets">CSS</abbr>-код. У выніку чаго шрыфт не зьявіцца асобным файлам у кэшы браўзэра.</li>
       </ul>
     </li>
@@ -468,14 +507,44 @@ html {
         url('Graublauweb.ttf')  format('truetype'), /* Safari, Android, iOS */
         url('Graublauweb.svg#svgGraublauweb') format('svg'); /* Legacy iOS */
 }
+
+h1 {
+  font-family: Graublauweb, serif;
+}
 </code></pre>
 
-  <h2 id="At-rules_namespace"><code style="font-variant: normal;">&#64;namespace</code></h2>
+  <h3 id="At-rules_Nested_keyframes"><code class="language-css" style="font-variant: normal;">&#64;keyframes</code></h3>
   <div class="refs">
     <ul>
-      <li><a href="http://reference.sitepoint.com/css/at-namespace/">SitePoint</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-7">CSS-tricks</a></li>
     </ul>
   </div>
+  <p>Дырэктыва дазваляе вызначаць кантрольныя кропкі пры <i>CSS</i>-анімацыі.</p>
+
+  <a class="jsbin-embed" href="http://jsbin.com/tuhomiv/embed?css,output&height=500px">Прыклад на jsbin.com</a>
+
+  <p>У папярэднім прыкладзе мы вызначаем значэньні пэўных атрыбутаў на пэўным кроку анімацыі, кожнай з анімацыяў задаём імя (<code class="language-css">move</code>, <code class="language-css">fadeInOut</code>, <code class="language-css">shrinkGrow</code>, <code class="language-css">change</code>) і потым ужываем іх да <i>HTML</i>-элемэнту.</p>
+
+  <h3 id="At-rules_Nested_media"><code class="language-css" style="font-variant: normal;">&#64;media</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://reference.sitepoint.com/css/at-media/">SitePoint</a></li>
+    </ul>
+  </div>
+
+  <h3 id="At-rules_media_extended">Пашыраныя тэхнікі: <i>Element Queries</i></h3>
+  <p><a href="http://codepen.io/tomhodgins/post/how-style-scoping-works-with-element-queries">How Style Scoping Works with Element Queries</a></p>
+  <p><a href="http://elementqueries.com/">EQCSS&nbsp;&ndash; A CSS Extension for Element Queries & More</a></p>
+  <p><a href="https://tomhodgins.github.io/element-queries-spec/element-queries.html">Element Queries (draft)</a></p>
+
+  <h3 id="At-rules_Nested_page"><code class="language-css" style="font-variant: normal;">&#64;page</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://reference.sitepoint.com/css/at-page/">SitePoint</a></li>
+    </ul>
+  </div>
+
 
 </section>
 
@@ -561,39 +630,57 @@ html {
 
 <section>
   <h1 id="Attributes" data-content-item-open>Атрыбуты</h1>
-  <div class="refs">
-    <ul>
-      <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/10-css3-properties-you-need-to-be-familiar-with/">NetTuts+</a></li>
-    </ul>
-  </div>
 
-  <h2 id="Attributes_ByTypes" data-content-item-open>Па тыпах</h2>
+  <h2 id="Attributes_ByTypes" data-content-item-open>Па групах</h2>
+  <p><i>CSS3</i> разьбіты на модулі&nbsp;&ndash; асобныя дакумэнты, якія незалежна адзін ад аднаго праходзяць этапы стандартызацыі, ў адрозьненьне ад <i>CSS2.1</i> які ўяўляў зь сябе маналітную спэцыфікацыю. Модуляў у трэцяй вэрсіі даволі шмат і арыентавацца ў іх не заўсёды проста. Я ж згрупаваў тут атрыбуты на больш высокім узроўні, каб арыентавацца было лягчэй (спадзяюся ў мяне атрымалася). У кожнай групе будуць зьмешчаныя спасылкі на адпаведныя модулі.</p>
+  <table>
+    <caption>Сьпісы модуляў CSS3</caption>
+    <tbody>
+    <tr>
+      <td><a href="https://www.w3.org/Style/CSS/specs">W3C</a></td>
+      <td><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3">MDN</a></td>
+    </tr>
+    </tbody>
+  </table>
 
-  <h3 id="Attributes_Box">Box-атрыбуты</h3>
+  <h3 id="Attributes_Box">Box</h3>
   <div class="refs">
     <ul>
       <li><a href="http://www.w3.org/TR/css3-box/">W3C-box</a></li>
-      <li><a href="http://www.w3.org/TR/css3-linebox/">W3C-linebox</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_Started/Boxes">MDN</a></li>
+      <li><a href="http://adamschwartz.co/magic-of-css/chapters/1-the-box/">Magic of CSS</a></li>
     </ul>
   </div>
+  <p>Блёчная мадэль <i>CSS</i> апісвае простакутнікі, якія ствараюцца для кожнага бачнага элемэнту на старонцы. Па вялікаму рахунку ўсё, што ёсьць на старонцы&nbsp;&ndash; гэта простакутнікі. Іх структура наступная:</p>
+  <figure style="text-align: center;">
+    <img src="box_model.png" alt="Структура простакутніка элемэнта на старонцы">
+  </figure>
+  <ul>
+    <li><i>content</i>&nbsp;&ndash; Непасрэдна зьмест элемэнту.</li>
+    <li><i>padding</i>&nbsp;&ndash; Унутраны (паміж зьместам і краем), <strong>бачны</strong> (паддаецца стылістыцы) водступ.</li>
+    <li><i>border</i>&nbsp;&ndash; Край/беражок/аблямоўка.</li>
+    <li><i>margin</i>&nbsp;&ndash; Зьнешні (паміж краем і суседнімі блёкамі), <strong>нябачны</strong> (не паддаецца стылістыцы, заўсёды празрысты) водступ.</li>
+  </ul>
+  <p>Атрыбут <a href="#box-sizing"><code class="language-css">box-sizing</code></a> вызначае якім чынам будуць разьлічвацца зьнешнія памеры гэтага простакутнікі. Яго значэньні:</p>
+  <ul>
+    <li><code class="language-css">content-box</code>&nbsp;&ndash; пры разьліку даўжыні і вышыні, значэньні <i>padding</i> і <i>border</i> будуць даданыя (змоўчнае значэньне).</li>
+    <li><code class="language-css">border-box</code>&nbsp;&ndash; пры разьліку даўжыні і вышыні, значэньні <i>padding</i> і <i>border</i> ня будуць даданыя (будуць як бы ўнутры даўжыні і шырыні).</li>
+  </ul>
+  <p>Схематычна гэта будзе выглядаць наступным чынам (зьверху <code class="language-css">box-sizing</code> мае значэньне <code class="language-css">content-box</code>, а зьнізу &nbsp;&ndash; <code class="language-css">border-box</code>):</p>
+  <figure style="text-align: center;">
+    <img src="content-vs-border_box.png" alt="Розьніца вылічэньня шырыні пры content-box і border-box">
+  </figure>
+  <p>Яшчэ адзін, жывы прыклад:</p>
+  <a class="jsbin-embed" href="http://jsbin.com/jomudiguya/embed?html,css,output&height=380px">Прыклад на jsbin.com</a>
 
-  <h3 id="Attributes_Layout">Атрыбуты разьмяшчэньня</h3>
+  <h3 id="Attributes_Layout">Layout</h3>
   <div class="refs">
     <ul>
       <li><a href="http://www.w3.org/TR/css3-layout/">W3C</a></li>
     </ul>
   </div>
 
-  <h3 id="Attributes_List">Атрыбуты сьпісаў</h3>
-  <div class="refs">
-    <ul>
-      <li><a href="http://www.w3.org/TR/css3-lists/">W3C</a></li>
-    </ul>
-  </div>
-
-  <h3 id="Attributes_Table">Атрыбуты табліцаў</h3>
-
-  <h3 id="Attributes_ColorBackground">Атрыбуты колераў і фонаў</h3>
+  <h3 id="Attributes_ColorBackground">Color and background</h3>
   <div class="refs">
     <ul>
       <li><a href="http://www.w3.org/TR/css3-color/">W3C-color</a></li>
@@ -601,15 +688,25 @@ html {
     </ul>
   </div>
 
-  <h3 id="Attributes_Typographical">Тыпаграфічныя атрыбуты</h3>
+  <h3 id="Attributes_Text">Text</h3>
   <div class="refs">
     <ul>
       <li><a href="http://www.w3.org/TR/css3-fonts/">W3C-fonts</a></li>
       <li><a href="http://www.w3.org/TR/css3-multicol/">W3C-multicol</a></li>
       <li><a href="http://www.w3.org/TR/css3-text/">W3C-text</a></li>
+      <li><a href="http://www.w3.org/TR/css3-linebox/">W3C-linebox</a></li>
     </ul>
   </div>
   <p><a href="http://coding.smashingmagazine.com/2010/03/01/css-and-the-future-of-text/">The Future Of CSS Typography</a></p>
+
+  <h3 id="Attributes_List">List</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.w3.org/TR/css3-lists/">W3C</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Attributes_Table">Table</h3>
 
   <h3 id="Attributes_GeneratedContent">Атрыбуты згенераванага зьместу</h3>
 
@@ -1011,7 +1108,7 @@ table {
 }
 </code></pre>
 
-  <p> <a href="http://snook.ca/archives/html_and_css/no_css_reset">Лічыцца</a>, што выкарыстоўваць саму па сабе гэтую канцэпцыю няма вялікага сэнсу. Замест яе трэба карыстацца альбо ўласнымі надбудовамі над ёй, альбо больш шырокімі і магутнымі канцэпцыямі/фрэймворкамі, напр. <a href="#Boilerplate">Boilerplate</a>, <a href="../web/index.html#DesignUI_Frameworks_Blueprint">Blueprint</a>.</p>
+  <p> <a href="http://snook.ca/archives/html_and_css/no_css_reset">Лічыцца</a>, што выкарыстоўваць саму па сабе гэтую канцэпцыю няма вялікага сэнсу. Замест яе трэба карыстацца альбо ўласнымі надбудовамі над ёй, альбо больш шырокімі і магутнымі канцэпцыямі/фрэймворкамі, напр. <a href="#Boilerplate">Boilerplate</a>.</p>
 
   <h2 id="Boilerplate">Boilerplate</h2>
   <div class="refs">
