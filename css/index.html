@@ -427,7 +427,7 @@ svg|a {}
 }
 </code></pre>
 
-  <aside class="usage_indicator usage_warn">Наступная дырэктыва зьяўляецца на момант напісаньня гэтага матэрыялу экспэрымэнтальнай, будзьце ўважлівымі пры выкарыстаньні.</aside>
+  <aside class="usage_indicator usage_warn">Наступная дырэктыва зьяўляецца на момант напісаньня гэтага матэрыялу экспэрымэнтальнай, будзьце ўважлівымі пры выкарыстаньні&nbsp;&ndash; пэўныя браўзэры могуць яе не падтрымліваць.</aside>
   <h3 id="At-rules_Nested_document"><code class="language-css" style="font-variant: normal;">&#64;document</code></h3>
   <div class="refs">
     <ul>
@@ -529,11 +529,29 @@ h1 {
   <h3 id="At-rules_Nested_media"><code class="language-css" style="font-variant: normal;">&#64;media</code></h3>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-8">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/at-media/">SitePoint</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Using media queries</a></li>
     </ul>
   </div>
+  <p>Прызначэньне дырэктывы&nbsp;&ndash; уключаць ці наадварот выключаць пэўныя стылі ў залежнасьці ад тыпу ці характарыстыкі прылады, на якой дакумэнт цяпер адлюстроўваецца:</p>
 
-  <h3 id="At-rules_media_extended">Пашыраныя тэхнікі: <i>Element Queries</i></h3>
+  <pre><code class="language-css">
+/* iPhone in Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .module { width: 100%; }
+}
+
+/* Наступныя стылі будуць ужытыя толькі ў выпадку друку старонкі*/
+@media print {
+  // ...
+}
+</code></pre>
+
+  <p>Інфармацыю пра тыпы і характарыстыкі <i>media</i> глядзі ў <a href="../html/index.html#Media">адпаведным разьдзеле</a> даведніку па <i>HTML</i>.</p>
+
+  <h4 id="At-rules_media_extended">Пашыраныя тэхнікі: <i>Element Queries</i></h4>
   <p><a href="http://codepen.io/tomhodgins/post/how-style-scoping-works-with-element-queries">How Style Scoping Works with Element Queries</a></p>
   <p><a href="http://elementqueries.com/">EQCSS&nbsp;&ndash; A CSS Extension for Element Queries & More</a></p>
   <p><a href="https://tomhodgins.github.io/element-queries-spec/element-queries.html">Element Queries (draft)</a></p>
@@ -541,10 +559,46 @@ h1 {
   <h3 id="At-rules_Nested_page"><code class="language-css" style="font-variant: normal;">&#64;page</code></h3>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@page">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-9">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/at-page/">SitePoint</a></li>
     </ul>
   </div>
+  <p>Дырэктыва выкарыстоўваецца для зьмены некаторых стыляў пры друку дакумэнту. Ня ўсе стылі могуць быць зьмененыя, але толькі <i>margins</i>, <i>orphans</i>, <i>widows</i> і <i>page breaks</i>. Яна таксама ўключае адмысловыя толькі для яе псэўда-элемэнты: <code class="language-css">:first</code> (першая старонка пры друку), <code class="language-css">:left</code> і <code class="language-css">:right</code> (палі зьлева і справа).</p>
 
+  <pre><code class="language-css">
+@page :first {
+  margin: 1in;
+}
+</code></pre>
+
+  <aside class="usage_indicator usage_warn">Наступная дырэктыва зьяўляецца на момант напісаньня гэтага матэрыялу экспэрымэнтальнай, будзьце ўважлівымі пры выкарыстаньні&nbsp;&ndash; пэўныя браўзэры могуць яе не падтрымліваць.</aside>
+  <h3 id="At-rules_Nested_supports"><code class="language-css" style="font-variant: normal;">&#64;supports</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href=https://developer.mozilla.org/en-US/docs/Web/CSS/@supports">MDN</a></li>
+      <li><a href="https://css-tricks.com/the-at-rules-of-css/#article-header-id-10">CSS-tricks</a></li>
+    </ul>
+  </div>
+  <p>Прызначэньне дырэктывы&nbsp;&ndash; уключаць ці наадварот выключаць пэўныя стылі ў залежнасьці падтрымлівае браўзэр пэўны атрыбут(ы) ці не:</p>
+
+  <pre><code class="language-css">
+@supports (display: flex) {
+  .module { display: flex; }
+}
+
+@supports (transform-style: preserve) or (-moz-transform-style: preserve) {
+  // some styles
+}
+
+@supports (display: table-cell) and (display: list-item) {
+  // some styles
+}
+
+@supports not ( (text-align-last: justify) or (-moz-text-align-last: justify) ) {
+  // some styles
+}
+</code></pre>
 
 </section>
 
@@ -553,6 +607,7 @@ h1 {
   <div class="refs">
     <ul>
       <li><a href="http://www.w3.org/TR/css3-selectors/">W3C</a></li>
+      <li><a href="https://css-tricks.com/how-css-selectors-work/">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/selectorref/">SitePoint</a></li>
       <li><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/">NetTuts+</a></li>
     </ul>
@@ -708,11 +763,24 @@ h1 {
 
   <h3 id="Attributes_Table">Table</h3>
 
+  <h3 id="Attributes_PagedMedia">Paged Media</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Paged_Media">MDN</a></li>
+    </ul>
+  </div>
+  <p>Гэтыя атрыбуты вызначаюць стыль зьместу на друкары ці любым іншым <a href="../html/index.html#Media"><i>media</i></a>, які разьбівае зьмест на старонкі. Яны дазваляюць пазначаць разрывы старонак, вызначаць зоны для друку, пазначаць розныя стылі для левых і правых старонак і іншае. Некаторыя з гэтых атрыбутаў:</p>
+  <ul>
+    <li><a href="#Attributes_orphans"><code class="language-css">orphans</code></a></li>
+    <li><a href="#Attributes_page-break-after"><code class="language-css">page-break-after</code></a></li>
+    <li><a href="#Attributes_page-break-before"><code class="language-css">page-break-before</code></a></li>
+    <li><a href="#Attributes_page-break-inside"><code class="language-css">page-break-inside</code></a></li>
+    <li><a href="#Attributes_widows"><code class="language-css">widows</code></a></li>
+  </ul>
+
   <h3 id="Attributes_GeneratedContent">Атрыбуты згенераванага зьместу</h3>
 
   <h3 id="Attributes_UI">Атрыбуты UI</h3>
-
-  <h3 id="Attributes_PagedMedia">Paged-media атрыбуты</h3>
 
   <h3 id="Attributes_VendorSpecific">Vendor-спэцыфічныя атрыбуты</h3>
 
