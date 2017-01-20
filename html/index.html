@@ -4205,19 +4205,26 @@ end.
   <h1 id="Media">Media</h1>
   <div class="refs">
     <ul>
-      <li><a href="http://www.w3.org/TR/CSS21/media.html">W3C</a></li>
+      <li><a href="https://www.w3.org/TR/css3-mediaqueries">CSS3</a></li>
+      <li><a href="https://drafts.csswg.org/mediaqueries/#media-types">Media Queries Level 4</a></li>
     </ul>
   </div>
-  <p><i>HTML</i> і <i>CSS</i> падтрымліваюць пераключэньне табліцаў стыляў у залежнасьці ад прылады, якая на дадзены момант выкарыстоўваецца для адлюстраваньня старонкі.</p>
-  <p>Сьпіс тыпаў прыладаў (<i>media</i>), якія падтрымліваюцца ў <i>HTML4</i>:</p>
+  <p><i>HTML</i> і <i>CSS</i> падтрымліваюць пераключэньне табліц стыляў у залежнасьці ад прылады, якая на дадзены момант выкарыстоўваецца для адлюстраваньня старонкі.</p>
+
+  <h2 id="Media_Types">Тыпы</h2>
+  <p>Сьпіс тыпаў прыладаў (<i>media</i>), якія падтрымліваюцца ў <i>HTML5</i>/<i>CSS3</i>:</p>
   <ul>
     <li><code class="language-html">all</code>&nbsp;&ndash; ўжываецца для любой прылады</li>
-    <li><code class="language-html">braille</code>&nbsp;&ndash; прылада для чытаньня сьляпымі (шрыфт Брайля)</li>
-    <li><code class="language-html">handheld</code>&nbsp;&ndash; наладонная прылада</li>
     <li><code class="language-html">print</code>&nbsp;&ndash; друкар</li>
-    <li><code class="language-html">projection</code>&nbsp;&ndash; праектар</li>
     <li><code class="language-html">screen</code>&nbsp;&ndash; манітор</li>
     <li><code class="language-html">speech</code>&nbsp;&ndash; сынтэзатар маўленьня (у <i>CSS</i>2 мела абазначэньне <code class="language-html">aural</code>)</li>
+  </ul>
+  <p>Наступныя значэньні таксама падтрымліваюцца ў <i>HTML5</i>/<i>CSS3</i>, але ў <i><a href="https://drafts.csswg.org/mediaqueries/#media-types">Media Queries Level 4</a></i> пазначаныя як непажаданыя для выкарыстаньня:</p>
+  <ul>
+    <li><code class="language-html">braille</code>&nbsp;&ndash; прылада для чытаньня сьляпымі (шрыфт Брайля)</li>
+    <li><code class="language-html">embossed</code>&nbsp;&ndash; прылада друкаваньня шрыфту Брайля</li>
+    <li><code class="language-html">handheld</code>&nbsp;&ndash; наладонная прылада</li>
+    <li><code class="language-html">projection</code>&nbsp;&ndash; праектар</li>
     <li><code class="language-html">tty</code>&nbsp;&ndash; кансоль</li>
     <li><code class="language-html">tv</code>&nbsp;&ndash; тэлевізар</li>
   </ul>
@@ -4239,36 +4246,11 @@ end.
 &lt;link rel="stylesheet" media="not screen and (color)" href="example.css" /&gt;
 </code></pre>
 
-  <h2 id="Media_HTML5">Дадатковыя <code class="language-html">media</code> у HTML5</h2>
-  <p>На шчасьце <i>HTML4</i> прадугледзеў магчымасьць пашыраць сьпіс прыладаў. Вось вытрымка з <a href="http://www.w3.org/TR/1999/REC-html401-19991224/types.html#h-6.13">HTML4, разьдзел 6.13</a>:</p>
-  <blockquote>
-    <p>Будучыя вэрсіі <i>HTML</i> могуць уводзіць новыя значэньні і іх характарыстыкі. Для гэтага агенты павінны разьбіраць значэньне <code class="language-html">media</code> наступным чынам:</p>
-    <ol>
-      <li>Значэньне зьяўляецца наборам запісаў, падзеленых коскай. Напрыклад:
-<pre><code class="language-html">
-media="screen, 3d-glasses, print and resolution > 90dpi"
-</code></pre>
-        будзе разьбітае на запісы:
-        <ul>
-          <li><code class="language-html">"screen"</code></li>
-          <li><code class="language-html">"3d-glasses"</code></li>
-          <li><code class="language-html">"print and resolution > 90dpi"</code></li>
-        </ul>
-      </li>
-      <li>Кожнае з запісаў далей абразаецца на тым сымбалі, які не зьяўляецца US ASCII літарай [a-zA-Z] (коды 65-90, 97-122), лічбай [0-9] (коды 30-39), ці знакам мінусу (45). Гэта значыць, што ў папярэднім прыкладзе запісы будуць канчаткова мець выгляд:
-        <ul>
-          <li><code class="language-html">"screen"</code></li>
-          <li><code class="language-html">"3d-glasses"</code></li>
-          <li><code class="language-html">"print"</code></li>
-        </ul>
-      </li>
-    </ol>
-  </blockquote>
-
-  <h2 id="Media_characteristics">Характарыстыкі <code class="language-html">media</code></h2>
+  <h2 id="Media_Characteristics">Характарыстыкі</h2>
   <div class="refs">
     <ul>
       <li><a href="http://www.w3.org/TR/2009/CR-css3-mediaqueries-20090915/">W3C</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media">MDN</a></li>
     </ul>
   </div>
   <p>Амаль усе характарыстыкі могуць мець неабавязковыя прэфіксы <code class="language-html">min-</code> і <code class="language-html">max-</code>, якія азначаюць <i>больш-ці-роўна</i> і <i>меньш-ці-роўна</i>. Характарыстыкі могуць ня мець лічбавых значэньняў&nbsp;&ndash; быць самі па сабе, як <code class="language-html">color</code> у прыкладах вышэй.</p>
