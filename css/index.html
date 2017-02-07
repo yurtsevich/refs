@@ -9,11 +9,9 @@ disqus_shortname: css-be
 <p><a href="http://adamschwartz.co/magic-of-css/">The magic of CSS</a></p>
 <p><a href="http://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/">8 simple CSS3 transitions that will wow your users</a></p>
 <p><a href="http://webdesign.tutsplus.com/articles/7-css-units-you-might-not-know-about--cms-22573">7 CSS Units You Might Not Know About</a></p>
-<p><a href="http://chriswrightdesign.com/experiments/using-flexbox-today/?mc_cid=c95a03a2f4&mc_eid=5b4e3f8de1">Using Flexbox today</a></p>
-<p><a href="https://philipwalton.github.io/solved-by-flexbox/?mc_cid=c95a03a2f4&mc_eid=5b4e3f8de1">Solved by Flexbox</a></p>
-<p><a href="https://github.com/philipwalton/flexbugs?mc_cid=c95a03a2f4&mc_eid=5b4e3f8de1">Flexbugs</a></p>
 <p><a href="https://bitsofco.de/3-new-css-features-to-learn-in-2017/">3 New CSS Features to Learn in 2017</a></p>
 <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/10-css3-properties-you-need-to-be-familiar-with/">10-css3-properties-you-need-to-be-familiar-with</a></p>
+<p><a href="https://css-tricks.com/lets-look-50-interesting-css-properties-values/">Let’s Look at 50+ Interesting CSS Properties & Values</a></p>
 <p><strong><a href="http://cssreference.io/">CSSreference.io</a></strong></p>
 <p><a href="https://github.com/daneden/animate.css/">animate.css</a></p>
 
@@ -33,6 +31,9 @@ disqus_shortname: css-be
   <p>Даведнік па <i>базавых аспэктах</i>: <a href="http://www.cssbasics.com/">http://www.cssbasics.com</a></p>
   <p><i>Дасканалы</i> даведнік на <b>SitePoint</b>: <a href="http://reference.sitepoint.com/css/">http://reference.sitepoint.com/css</a></p>
   <p>Інтэрактыўная шпаргалка на <b>OverAPI</b>: <a href="http://overapi.com/css/">http://overapi.com/css/</a></p>
+
+  <h2 id="Links_Recommendation">Рэкамэндацыі</h2>
+  <p><a href="https://csswizardry.com/2012/11/code-smells-in-css/">Code smells in CSS</a></p>
 
   <h2 id="Links_Blogs">Блогі</h2>
   <p><a href="https://css-tricks.com/">css-tricks.com</a></p>
@@ -564,7 +565,7 @@ h1 {
       <li><a href="http://reference.sitepoint.com/css/at-page/">SitePoint</a></li>
     </ul>
   </div>
-  <p>Дырэктыва выкарыстоўваецца для зьмены некаторых стыляў пры друку дакумэнту. Ня ўсе стылі могуць быць зьмененыя, але толькі <i>margins</i>, <i>orphans</i>, <i>widows</i> і <i>page breaks</i>. Яна таксама ўключае адмысловыя толькі для яе псэўда-элемэнты: <code class="language-css">:first</code> (першая старонка пры друку), <code class="language-css">:left</code> і <code class="language-css">:right</code> (палі зьлева і справа).</p>
+  <p>Дырэктыва выкарыстоўваецца для зьмены некаторых стыляў пры друку дакумэнту. Ня ўсе стылі могуць быць зьмененыя, але толькі <i>margins</i>, <i>orphans</i>, <i>widows</i> і <i>page breaks</i>. Яна таксама ўключае адмысловыя толькі для яе <a href="#Selectors_PseudoClasses">псэўда-клясы</a>: <a href="#Selectors_PseudoClasses_first"><code class="language-css">:first</code></a> (першая старонка пры друку), <a href="#Selectors_PseudoClasses_left"><code class="language-css">:left</code></a> і <a href="#Selectors_PseudoClasses_right"><code class="language-css">:right</code></a> (левая і правая старонкі пры двухбаковым друку).</p>
 
   <pre><code class="language-css">
 @page :first {
@@ -614,48 +615,525 @@ h1 {
   </div>
   <p>Сэлектары&nbsp;&ndash; гэта шаблёны, каторыя вызначаюць да якіх элемэнтаў <i>HTML</i> будуць ужытыя <a href="#Concepts_SyntaxTerminology">аб'явы</a>, якія зьмяшчаюцца ў <a href="#Concepts_SyntaxTerminology">блёку</a> пасьля гэтага сэлектара. Гэтыя аб'яўленьні будуць ужытыя да ўсіх элемэнтаў, каторыя адпавядаюць шаблёну, акрамя выпадку, калі яны перавызначаныя ў іншым, больш <a href="#Concepts_SelectorsSpecificity">спэцыфічным</a> сэлектары.</p>
   <p>Сэлектар можа складацца з шэрагу простых сэлектараў, якія падзяляюцца паміж сабой <a href="#Selectors_Combinators">камбінатарамі</a>. <a href="#Selectors_PseudoElements">Псэўда-элемэнты</a> таксама могуць быць зьмешчаныя адразу пасьля апошняга простага сэлектару ў шэрагу.</p>
-  <br />
-  <p><a href="http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/">http://net.tutsplus.com/tutorials/html-css-techniques/the-30-css-selectors-you-must-memorize/</a></p>
 
   <h2 id="Selectors_Universal">Унівэрсальны сэлектар</h2>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/u/universal/">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/universalselector/">SitePoint</a></li>
     </ul>
   </div>
+  <p>Зорачка (<code class="language-css">*</code>) зьяўляецца так званым унівэрсальным сэлектарам&nbsp;&ndash; ён адпавядае любому і кожнаму элемэнту дакумэнту:</p>
+
+  <pre><code class="language-css">
+* {
+ margin: 0;
+ padding: 0;
+}
+</code></pre>
+
+  <p>Папярэдні прыклад скідвае ўсе водступы <strong>ўсіх элемэнтаў дакумэнту</strong> ў 0.</p>
+  <p>Але трэба адзначыць, што ўнівэрсальны сэлектар, нават калі не выкарыстоўваецца яўна, усё роўна нябачна пранізвае ўвесь CSS. Напрыклад наступныя 2 фрагмэнты абсалютна ідэнтычныя:</p>
+
+  <pre><code class="language-css">
+*.module { }
+
+.module { }
+</code></pre>
+
+  <p>Таму выкарыстаньне гэтага сэлектара даволі абмежаванае, як скід некаторых атрыбутаў адразу для ўсіх элемэнтаў дакумэнту (каб потым перавызначыць іх для некаторых зь іх), як у першым прыкладзе, альбо каб пазначыць стыль напрыклад усім дзіцячым элемэнтам іншага элемэнта:</p>
+
+  <pre><code class="language-css">
+#container * {
+ border: 1px solid black;
+}
+</code></pre>
+
+  <p>Таксама ўнівэрсальны сэлектар можа выкарыстоўвацца ў спалучэньні з <a href="#At-rules_Simple_namespace">прасторай імёнаў</a>:</p>
+  <ul>
+    <li><code class="language-css">ns|*</code>&nbsp;&ndash; адпавядае любому элемэнту прасторы імёнаў <code class="language-css">ns</code>;</li>
+    <li><code class="language-css">*|*</code>&nbsp;&ndash; адпавядае любому элемэнту любой прасторы імёнаў;</li>
+    <li><code class="language-css">|*</code>&nbsp;&ndash; адпавядае любому элемэнту па-за прасторы імёнаў;</li>
+  </ul>
 
   <h2 id="Selectors_Elements">Сэлектар паводле элемэнтаў</h2>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Type_selectors">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/t/type/">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/elementtypeselector/">SitePoint</a></li>
     </ul>
   </div>
+  <p>Гэты сэлектар прызначаны выбіраць элемэнты дакумэнту па іх тыпу (як <code class="language-html">&lt;p&gt;</code>, <code class="language-html">&lt;span&gt;</code>, <code class="language-html">&lt;ul&gt;</code> і г.д.):</p>
+
+  <pre><code class="language-css">
+p { /* "p" - гэта сэлектар паводле элемэнту параграф */
+  margin: 0 0 1em 0;
+}
+</code></pre>
+
+  <p>У папярэднім прыкладзе вызначаецца стыль усіх параграфаў дакумэнту. Ці вось яшчэ прыклад, дзе вызначаецца стыль усіх <code class="language-html">&lt;span&gt;</code>-элемэнтаў дакумэнту:</p>
+  <a class="jsbin-embed" href="http://jsbin.com/ruyedoz/embed?html,css,output&height=150px">Прыклад на jsbin.com</a>
 
   <h2 id="Selectors_Classes">Сэлектар паводле клясаў</h2>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Class_selectors">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/c/class/">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/classselector/">SitePoint</a></li>
     </ul>
   </div>
+  <p>Сэлектар паводле клясаў складаецца з кропкі, за якой ідзе імя клясы:</p>
 
-  <h2 id="Selectors_IDs">Сэлектар паводле ідэнтыфікатараў</h2>
+  <pre><code class="language-css">
+.classname { /* сэлектар паводле клясы */
+  &hellip;
+}
+</code></pre>
+
+  <p>Такі сэлектар выбірае ўсе элемэнты дакумэнту, у якіх <a href="../html/index.html#class"><code class="language-html">class</code></a>-атрыбут ўтрымлівае сярод іншых <code class="language-css">classname</code>:</p>
+  <a class="jsbin-embed" href="http://jsbin.com/gemejab/embed?html,css,output&height=180px">Прыклад на jsbin.com</a>
+  <p>У прыкладзе вышэй адна з кнопак выбраная сэлектарам, іншая - не, таму што не ўтрымлівае значэньне клясы, пазначанай у сэлектары.</p>
+  <p>Сэлектар можна мадыфікаваць такім чынам, каб ён выбіраў ня ўсе элемэнты пэўнай клясы, але толькі пэўнага тыпу:</p>
+
+  <pre><code class="language-css">
+ul.menu {
+  list-style: none;
+}
+</code></pre>
+
+  <p>Сэлектарам у прыкладзе вышэй будуць выбраныя ня ўсе элемэнты, пазначаныя клясай <code class="language-css">menu</code>, але толькі элемэнты <a href="../html/index.html#ul"><code class="language-html">ul</code></a> з такой клясай.</p>
+  <p>Таксама элемэнт можа ўтрымліваць некалькі клясаў у сваім вызначэньні:</p>
+
+  <pre><code class="language-html">
+&lt;p class="intro blue"&gt;
+  This paragraph will get styles from .intro and .blue selectors.
+&lt;/p&gt;
+</code></pre>
+
+  <p>І калі нам трэба вызначыць стыль элемэнтаў, якія ўтрымліваюць абедзьве гэтыя клясы (<code class="language-css">intro</code> і <code class="language-css">blue</code>), сэлектар трэба будзе саставіць наступным чынам (ідуць адзін за адным без прагалаў і іншых знакаў):</p>
+
+  <pre><code class="language-css">
+.intro.blue {
+  font-size: 1.3em;
+}
+</code></pre>
+
+  <p>І напрыканцы гэтага разьдзелу можна адзначыць, што выбару элемэнтаў паводле клясы можна дабіцца праз <a href="#Selectors_Attributes">сэлектар паводле атрыбуту</a>:</p>
+
+  <pre><code class="language-css">
+[class~=classname] {
+  &hellip;
+}
+</code></pre>
+
+  <h2 id="Selectors_IDs">Сэлектар паводле ідэнтыфікатару</h2>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/ID_selectors">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/i/id/">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/idselector/">SitePoint</a></li>
     </ul>
   </div>
+  <p>Сэлектар паводле ідэнтыфікатараў складаецца са знаку дыез, за якім ідзе ідэнтыфікатар элемэнту:</p>
+
+  <pre><code class="language-css">
+#identifier { /* сэлектар паводле ідэнтыфікатару */
+  &hellip;
+}
+</code></pre>
+
+  <p>Такі сэлектар выбірае элемэнт дакумэнту, у якога <a href="../html/index.html#id"><code class="language-html">id</code></a>-атрыбут роўны <code class="language-css">identifier</code>. Пры гэтым прыярытэт сэлектару паводле ідэнтыфікатараў найвышэйшы:</p>
+  <a class="jsbin-embed" href="http://jsbin.com/xedimim/embed?html,css,output&height=240px">Прыклад на jsbin.com</a>
+  <p>У прыкладзе вышэй нягледзячы на тое, што апошнім у <i>CSS</i> ідзе сэлектар паводле клясы, у які таксама трапляе параграф, стыль будзе ўжыты ўсё ж з сэлектару паводле ідэнтыфікатару.</p>
+  <p>Трэба адзначыць, што па спэцыфікацыі <i>HTML</i> у дакумэнце можа ўтрымлівацца толькі адзін элемэнт, пазначаны пэўным ідэнтыфікатарам. Калі ж такіх элемэнтаў некалькі, то ў агульным выпадку вынік будзе непрадказальны. Асабліва гэта тычыцца <i>JavaScript</i>, які возьме першы з элемэнтаў пазначаных адным і тым жа ідэнтыфікатарам і выканае код толькі для яго, праігнараваўшы астатнія. Але сам па сабе <i>CSS</i> возьме ўсе такія элемэнты і ўжыве стылі для іх усіх.</p>
+  <p>Улічваючы найвышэйшы прыярытэт такіх сэлектараў, які немагчыма перакрыць іншымі сэлектарамі, ужываньне ў <i>CSS</i> сэлектараў паводле ідэнтыфікатараў лічыцца <a href="http://oli.jp/2011/ids/">кепскай</a> <a href="https://csswizardry.com/2012/11/code-smells-in-css/">практыкай</a>.</p>
 
   <h2 id="Selectors_Attributes">Сэлектар паводле атрыбутаў</h2>
   <div class="refs">
     <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/a/attribute/">CSS-tricks</a></li>
       <li><a href="http://reference.sitepoint.com/css/attributeselector/">SitePoint</a></li>
     </ul>
   </div>
+  <p>Клясы й ідэнтыфікатары&nbsp;&ndash; не адзіныя <a href="../html/index.html#Attributes">атрыбуты</a>, якія можа ўтрымліваць элемэнт, і па якіх можна абраць элемэнт пры дапамозе 2 вышэйзгаданых сэлектараў. Сэлектар паводле атрыбутаў як раз і дазваляе выбраць элемэнты паводле факту, што яны альбо ўтрымліваюць пэўны атрыбут, альбо што гэты атрыбут мае пэўнае значэньне:</p>
+
+  <pre><code class="language-css">
+[data-value] {
+  /* Сэлектар выбірае элемэнт, проста калі ў ім прысутнічае атрыбут 'data-value' */
+}
+
+[data-value="foo"] {
+  /* Атрыбут 'data-value' мае дакладна значэньне 'foo' */
+}
+
+[data-value*="foo"] {
+  /* Значэньне атрыбуту ўтрымлівае 'foo' (ня важна ў пачатку, сярэдзіне ці канцы) */
+}
+
+[data-value~="foo"] {
+  /* Значэньне атрыбуту ўтрымлівае сьпіс словаў падзеленых прагаламі і адно
+    зь якіх роўнае 'foo' */
+}
+
+[data-value^="foo"] {
+  /* Значэньне атрыбуту пачынаецца з 'foo' */
+}
+
+[data-value=|"foo"] {
+  /* Значэньне атрыбуту ўтрымлівае сьпіс словаў падзеленых дэфісамі і адно
+    зь якіх роўнае 'foo' */
+}
+
+[data-value$="foo"] {
+  /* Значэньне атрыбуту заканчваецца на 'foo' */
+}
+
+[data-value="foo" i] {
+  /* Значэньне атрыбуту роўнае 'foo' без уліку рэгістру літараў */
+}
+</code></pre>
+
+  <p>Прыклады:</p>
+  <a class="jsbin-embed" href="http://jsbin.com/kilihuv/embed?css,output&height=540px">Прыклад на jsbin.com</a>
+  <p>Сэлектары паводле атрыбутаў могуць камбінавацца зь іншымі сэлектарамі:</p>
+
+  <pre><code class="language-css">
+div[attribute="value"] {&hellip;}
+.module[attribute="value"] {&hellip;}
+#header[attribute="value"] {&hellip;}
+</code></pre>
+
+  <p>і нават зь іншымі сэлектарамі паводле атрыбутаў:</p>
+
+  <pre><code class="language-css">
+img[alt~="person"][src*="lorem"] {
+  &hellip;
+}
+</code></pre>
+
+  <p>У папярэднім прыкладзе будзе выбраны элемэнт <a href="../html/index.html#img"><code class="language-html">img</code></a>, чый <a href="../html/index.html#img.attr.alt"><code class="language-html">alt</code></a>-атрыбут роўны дакладна <code class="language-html">«person»</code> (альбо гэтае слова прысутнічае ў сьпісе словаў падзеленых прагаламі) <strong>і</strong> чый <code class="language-html">src</code>-атрыбут утрымлівае значэньне <code class="language-html">«lorem»</code>.</p>
 
   <h2 id="Selectors_PseudoClasses">Псэўда-клясы</h2>
   <div class="refs">
     <ul>
       <li><a href="http://reference.sitepoint.com/css/pseudoclasses/">SitePoint</a></li>
+    </ul>
+  </div>
+  <p>Сэлектары паводле псэўда-клясаў дадаюць пэўнай спэцыфікі&nbsp;&ndash; дапамагаюць звужаць кола элемэнтаў, якія былі выбраныя асноўнымі сэлектарамі. Сярод іх існуюць статычныя (не залежаць ад паводзінаў карыстальніка на старонцы) і дынамічныя (залежаць ад паводзінаў карыстальніка). Псэўда-клясы пачынаюцца са знака <code class="language-css">:</code> (прагалы не дапускаюцца ні перад, ні пасьля знаку). Псэўда-клясы як і іншыя сэлектары могуць аб'ядноўвацца ў адным комплексным сэлектары, але толькі калі не зьяўляюцца ўзаемавыключальнымі. Напрыклад, наступныя сэлектары дазваляюцца:</p>
+
+  <pre><code class="language-css">
+a:link:hover {}     /* спасылка, на якую навялі курсор і якая не была яшчэ наведаная */
+a:visited:hover {}  /* наведаная спасылка, на якую навялі курсор */
+</code></pre>
+
+  <p>Але наступны сэлектар немагчымы, таму что <a href="#Selectors_PseudoClasses_link"><code class="language-html">:link</code></a> і <a href="#Selectors_PseudoClasses_visited"><code class="language-html">:visited</code></a> зьяўляюцца ўзаемавыключальнымі: спасылка ня можа быць адначасова наведаная і ненаведаная.</p>
+
+  <pre><code class="language-css">
+a:link:visited {}     /* некарэктны сэлектар */
+</code></pre>
+
+
+  <h3 id="Selectors_PseudoClasses_active"><code class="language-css">:active</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:active">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/a/active/">CSS-tricks</a></li>
+    </ul>
+  </div>
+  <p>Пад такі сэлектар падпадаюць элемэнты ў момант іх актывацыі (па іх клікаюць ці любым іншым чынам актывуюць). Звычайна момант актывацыі доўжыцца долі сэкунды, аднак гэта важны візуальны эфэкт, які дапамагае карыстальніку ўпэўніцца, што актывацыя здарылася. Найчасьцей пры дапамозе гэтай псэўда-клясы наладжваюць стылі націскаемай кнопкі ці спасылкі.</p>
+  <p>У прыкладзе ніжэй месцазнаходжаньне спасылкі зьмяняецца на 1 піксэль уніз&nbsp;&ndash; эфэкт фізычнага націсканьня ў 3D-прасторы:</p>
+  <iframe class="lazy loading" data-src="http://codepen.io/css-tricks/embed/GtHfd?height=100" style="height: 100px;"></iframe>
+  <p>Аднак у агульным выпадку гэты сэлектар можа ўжывацца да любога элемэнту старонкі (ня толькі кнопак і спасылак), у прыкладзе ніжэй фон усяго дакумэнту зьмяняецца на жоўты пры націсканьні на яго:</p>
+  <iframe class="lazy loading" data-src="http://codepen.io/css-tricks/embed/sDBzb?height=100" style="height: 100px;"></iframe>
+  <p>Добрай практыкай зьяўляецца вызначэньне ўсіх 4 клясаў, якія пазначаюць стан (<a href="#Selectors_PseudoClasses_link"><code class="language-html">:link</code></a>, <a href="#Selectors_PseudoClasses_visited"><code class="language-html">:visited</code></a>, <a href="#Selectors_PseudoClasses_hover"><code class="language-html">:hover</code></a>, <code class="language-html">:active</code>, прычым менавіта ў такой пасьлядоўнасьці):</p>
+  <iframe class="lazy loading" data-src="http://codepen.io/yurtsevich/embed/BpJpwX?height=200" style="height: 200px;"></iframe>
+
+
+  <h3 id="Selectors_PseudoClasses_checked"><code class="language-css">:checked</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:checked">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/c/checked/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_default"><code class="language-css">:default</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:default">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/d/default/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_disabled"><code class="language-css">:disabled</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:disabled">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/d/disabled/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_empty"><code class="language-css">:empty</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:empty">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/e/empty/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_enabled"><code class="language-css">:enabled</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:enabled">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/e/enabled/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_first"><code class="language-css">:first</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first">MDN</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_first-child"><code class="language-css">:first-child</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-child">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/f/first-child/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_first-of-type"><code class="language-css">:first-of-type</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:first-of-type">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/f/first-of-type/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_focus"><code class="language-css">:focus</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:focus">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/f/focus/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_hover"><code class="language-css">:hover</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:hover">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/h/hover/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_in-range"><code class="language-css">:in-range</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:in-range">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/i/in-range/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_indeterminate"><code class="language-css">:indeterminate</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:indeterminate">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/i/indeterminate/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_invalid"><code class="language-css">:invalid</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:invalid">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/i/invalid/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_lang"><code class="language-css">:lang</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:lang">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/l/lang/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_last-child"><code class="language-css">:last-child</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-child">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/l/last-child/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_last-of-type"><code class="language-css">:last-of-type</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:last-of-type">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/l/last-of-type/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_left"><code class="language-css">:left</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:left">MDN</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_link"><code class="language-css">:link</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:link">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/l/link/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_not"><code class="language-css">:not</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:not">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/n/not/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_nth-child"><code class="language-css">:nth-child</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/n/nth-child/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_nth-last-child"><code class="language-css">:nth-last-child</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-child">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/n/nth-last-child/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_nth-last-of-type"><code class="language-css">:nth-last-of-type</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-last-of-type">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/n/nth-last-of-type/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_nth-of-type"><code class="language-css">:nth-of-type</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-of-type">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/n/nth-of-type/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_only-child"><code class="language-css">:only-child</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:only-child">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/o/only-child/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_only-of-type"><code class="language-css">:only-of-type</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:only-of-type">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/o/only-of-type/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_optional"><code class="language-css">:optional</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:optional">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/o/optional/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_out-of-range"><code class="language-css">:out-of-range</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:out-of-range">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/o/out-of-range/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_placeholder-shown"><code class="language-css">:placeholder-shown</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:placeholder-shown">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/p/placeholder-shown/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_read-only"><code class="language-css">:read-only</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-only">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/r/read-write-read/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_read-write"><code class="language-css">:read-write</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:read-write">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/r/read-write-read/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_required"><code class="language-css">:required</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:required">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/r/required/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_right"><code class="language-css">:right</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:right">MDN</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_root"><code class="language-css">:root</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/r/root/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_target"><code class="language-css">:target</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:target">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/t/target/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_valid"><code class="language-css">:valid</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:valid">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/v/valid/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoClasses_visited"><code class="language-css">:visited</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:visited">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/v/visited/">CSS-tricks</a></li>
     </ul>
   </div>
 
@@ -667,10 +1145,43 @@ h1 {
   </div>
   <p><a href="http://lukyvj.github.io/family.scss/">Family.scss</a> is a set of 26 smart Sass mixins which will help you to manage the style of :nth-child’ified elements, in an easy and classy way</p>
 
-  <h2 id="Selectors_Grouping">Групаваньне сэлектараў</h2>
+  <h3 id="Selectors_PseudoElements_after"><code class="language-css">::after</code></h3>
   <div class="refs">
     <ul>
-      <li><a href="http://reference.sitepoint.com/css/selectorgrouping/">SitePoint</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::after">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/a/after-and-before/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoElements_before"><code class="language-css">::before</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::before">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/a/after-and-before/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoElements_first-letter"><code class="language-css">::first-letter</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-letter">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/f/first-letter/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoElements_first-line"><code class="language-css">::first-line</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/f/first-line/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Selectors_PseudoElements_selection"><code class="language-css">::selection</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::selection">MDN</a></li>
+      <li><a href="https://css-tricks.com/almanac/selectors/s/selection/">CSS-tricks</a></li>
     </ul>
   </div>
 
@@ -680,6 +1191,48 @@ h1 {
       <li><a href="http://reference.sitepoint.com/css/combinators/">SitePoint</a></li>
     </ul>
   </div>
+
+  <h3 id="Selectors_Combinators_Descedant">Сэлектары элемэнтаў-нашчадкаў</h3>
+  <h3 id="Selectors_Combinators_Child">Сэлектары непасрэдных дзіцячых элемэнтаў</h3>
+  <h3 id="Selectors_Combinators_AdjacentSibling">Сэлектары непасрэдных суседзяў аднаго ўзроўню</h3>
+  <h3 id="Selectors_Combinators_GeneralSibling">Сэлектары любых суседзяў аднаго ўзроўню</h3>
+
+  <h2 id="Selectors_Grouping">Групаваньне сэлектараў</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://reference.sitepoint.com/css/selectorgrouping/">SitePoint</a></li>
+    </ul>
+  </div>
+  <p>Калі існуе неабходнасьць ужыць адны і тыя ж стылі да элемэнтаў, якія выбіраюцца рознымі сэлектарамі, іх можна зьмясьціць у адным аб'яўленьні, падзяліўшы коскай:</p>
+
+  <pre><code class="language-css">
+td, th {
+    &hellip;
+    }
+</code></pre>
+
+  <p>У дадзеным прыкладзе стыль будзе ўжыты як да элемэнтаў <a href="../html/index.html#td"><code class="language-html">td</code></a>, гэтак і да элемэнтаў <a href="../html/index.html#td"><code class="language-html">th</code></a>. Пры гэтым трэба памятаць, што сэлектары падзеленыя коскай зьяўляюцца абсалютна аўтаномнымі. Напрыклад, уявім што нам трэба ўжыць аднолькавы стыль да элемэнтаў <code class="language-html">td</code> і <code class="language-html">th</code>, якія зьмяшчаюцца ў блёку з ідэнтыфікатарам «foo». Пачатковец можа запісаць гэта такім чынам:</p>
+
+  <pre><code class="language-css">
+#foo td, th {
+    &hellip;
+    }
+</code></pre>
+
+  <p>Але гэта будзе памылкай. Вышэйазначаны прыклад будзе ўжыты да элемэнтаў <code class="language-html">td</code> у блёку з ідэнтыфікатарам <code class="language-html">«foo»</code>, і да <strong>ўсіх</strong> элемэнтаў <code class="language-html">th</code> незалежна ад іх герархіі. Гэты прыклад ідэнтычны наступнаму:</p>
+
+  <pre><code class="language-css">
+#foo td {&hellip;}
+th {&hellip;}
+</code></pre>
+
+  <p>Каб дабіцца патрэбнага нам эфэкту, аб'яўленьне павіннае быць такім:</p>
+
+  <pre><code class="language-css">
+#foo td, #foo th {
+    &hellip;
+    }
+</code></pre>
 
 </section>
 
@@ -734,6 +1287,16 @@ h1 {
       <li><a href="http://www.w3.org/TR/css3-layout/">W3C</a></li>
     </ul>
   </div>
+
+  <h4 id="Attributes_Layout_Flexbox">Flexbox</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://medium.freecodecamp.com/an-animated-guide-to-flexbox-d280cf6afc35#.pcrw8xhms">How it works</a></li>
+      <li><a href="https://flexbox.io/">Video course</a></li>
+      <li><a href="https://philipwalton.github.io/solved-by-flexbox/?mc_cid=c95a03a2f4&mc_eid=5b4e3f8de1">Showcase</a></li>
+    </ul>
+  </div>
+
 
   <h3 id="Attributes_ColorBackground">Color and background</h3>
   <div class="refs">
@@ -848,6 +1411,33 @@ h1 { font-size: 15px; }
 </section>
 
 <section>
+  <h1 id="Calc">Вылічэньні</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="http://caniuse.com/#search=calc">CanIUse</a></li>
+      <li><a href="https://developer.mozilla.org/en/docs/Web/CSS/calc">MDN</a></li>
+      <li><a href="http://www.w3schools.com/cssref/func_calc.asp">w3schools</a></li>
+      <li><a href="https://css-tricks.com/a-couple-of-use-cases-for-calc/">CSS-tricks</a></li>
+    </ul>
+  </div>
+
+</section>
+
+<section>
+  <h1 id="Vars">Зьменныя</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="http://caniuse.com/#search=CSS%20Variables">CanIUse</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables">MDN</a></li>
+      <li><a href="https://drafts.csswg.org/css-variables/">W3C</a></li>
+    </ul>
+  </div>
+  <p><a href="https://sgom.es/posts/2017-01-27-css-custom-properties-the-basics/">CSS Custom Properties - The Basics</a></p>
+  <p><a href="https://sgom.es/posts/2017-02-03-more-readable-css-with-css-custom-properties/">More Readable CSS with CSS Custom Properties</a></p>
+
+</section>
+
+<section>
   <h1 id="Images">Выявы</h1>
   <div class="refs">
     <ul>
@@ -859,6 +1449,7 @@ h1 { font-size: 15px; }
 
 <section>
   <h1 id="TipsTricks">Tips &amp; Tricks</h1>
+  <p><a href="http://significa.pt/labs/css-only-slider/">SCSS only slider</a></p>
 
   <h2 id="TipsTricks_Layout">Разьмяшчэньне</h2>
   <p><a href="http://camendesign.com/code/developpeurs_sans_frontieres">How to Centre and Layout Pages Without a Wrapper</a></p>
@@ -1407,6 +1998,7 @@ $ lessc &lt;STYLE_NAME&gt;.less
       <li><a href="http://sass-lang.com/">Sass</a></li>
     </ul>
   </div>
+  <p><a href="https://codepen.io/sasstantrum/post/intro-to-sass">Intro to Sass | SCSS101</a></p>
   <p><i>Sass</i>&nbsp;&ndash; гэта <i>CSS</i>-пашырэньне, якое дадае магчымасьць вызначаць пераменныя, дамешкі, укладзеныя правілы і іншае. <i>Sass</i>-фармат трансфармуецца ў <i>CSS</i>-фармат пры дапамозе прыладаў каманднага радку альбо пры дапамозе дадаткаў адпаведных вэб-фрэймворкаў.</p>
   <p><i>Sass</i> мае два варыянты сынтаксісу. Найбольш ужываны зь іх вядомы як «<i>SCSS</i>» (ад «<i>Sassy CSS</i>») і зьяўляецца па-над-клясай у адносінах да <i>CSS</i>-сынтаксісу. У прыватнасьці гэта азначае, што любы карэктны <i>CSS</i> зьяўляецца адначасова і карэктным <i>SCSS</i>. Файлы <i>SCSS</i> маюць пашырэньне <code>.scss</code>.</p>
   <p>Другі, састарэлы сынтаксіс вядомы як проста «<i>Sass</i>». Ён зьяўляецца <i><a href="http://www.yaml.org/">YAML</a></i>-падобным сынтаксісам і мае пашырэньне <code>.sass</code>.</p>
