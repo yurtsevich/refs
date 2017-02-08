@@ -52,16 +52,9 @@ disqus_shortname: coding-be
 
 <section>
   <h1 id="Microservices" data-content-item-open>Мікрасэрвісы</h1>
-  <p><a href="https://jersey.java.net/">RESTful Web Services in Java</a></p>
-  <p><a href="https://github.com/spotify/apollo/blob/master/apollo-api/README.md">Apollo is a set of Java libraries that we use at Spotify when writing microservices.</a></p>
-
-  <p><a href="https://blog.openshift.com/tag/microservices-video/">Building and Running Microservices on OpenShift</a></p>
-  <p><a href="http://serverless.com/">serverless.com</a></p>
-  <p><a href="https://www.tigerteam.dk/2014/micro-services-its-not-only-the-size-that-matters-its-also-how-you-use-them-part-1/">https://www.tigerteam.dk/2014/micro-services-its-not-only-the-size-that-matters-its-also-how-you-use-them-part-1/</a></p>
-  <p><a href="https://smartbear.com/learn/api-design/what-are-microservices/">https://smartbear.com/learn/api-design/what-are-microservices/</a></p>
-  <p><a href="http://lonelycode.com/2014/04/08/microservices-the-blind-leading-the-blind/">http://lonelycode.com/2014/04/08/microservices-the-blind-leading-the-blind/</a></p>
-  <p><a href="https://www.thoughtworks.com/insights/blog/scaling-microservices-event-stream">https://www.thoughtworks.com/insights/blog/scaling-microservices-event-stream</a></p>
-  <p><a href="https://www.nginx.com/blog/introduction-to-microservices/">https://www.nginx.com/blog/introduction-to-microservices/</a></p>
+  <p><a href="https://www.tigerteam.dk/2014/micro-services-its-not-only-the-size-that-matters-its-also-how-you-use-them-part-1/">Microservices: It’s not (only) the size that matters, it’s (also) how you use them (Tigerteam series)</a></p>
+  <p><a href="https://www.nginx.com/blog/introduction-to-microservices/">Introduction to Microservices (NGINX series)</a></p>
+  <p>An Introduction to Microservices (OAuth series): <a href="https://auth0.com/blog/an-introduction-to-microservices-part-1/">Part 1</a>, <a href="https://auth0.com/blog/an-introduction-to-microservices-part-2-API-gateway/">Part 2</a>, <a href="https://auth0.com/blog/an-introduction-to-microservices-part-3-the-service-registry/">Part 3</a>, <a href="https://auth0.com/blog/introduction-to-microservices-part-4-dependencies/">Part 4</a>.</p>
   <p>Лякальная кніга <i>Building microservices</i></p>
   <p>Курс Адама Біна</p>
 
@@ -76,7 +69,7 @@ disqus_shortname: coding-be
   <p>Калі коратка, то мікрасэрвісны архітэктурны стыль&nbsp;&ndash; гэта падыход у распрацоўцы праграмы, як <strong>сукупнасьці невялікіх сэрвісаў</strong>, кожны зь якіх <strong>працуе ў межах свайго працэсу</strong> (напр. <i>Docker</i>), якія <strong>асынхронна камунікуюць</strong> паміж сабою пры дапамозе <strong>легкаважнага мэханізму</strong>, як <i>WebSockets</i> альбо <i>HTTP resource API</i>, пры гэтым мовай камунікацыі зьяўляецца <i>JSON</i>. Кожны з сэрвісаў распрацоўваецца вакол вырашэньня <strong>вузкай бізнэс задачы</strong>. Яны цалкам <strong>аўтаматычна і незалежна адзін ад іншага разгортваюцца ў працоўным асяродку</strong>. </p>
 
   <h3 id="Microservices_Architecture_DiffWithLibs">Адрозьненьне ад бібліятэк</h3>
-  <p>Мікрасэрвісы, як і бібліятэкі (<i>library</i>), зьяўляюцца састаўнымі часткамі праграмы/сыстэмы, іншымі словамі&nbsp;&ndash; яе кампанэнтамі. Калі бібліятэкі зьяўляюцца неад'емнай часткай праграмы і зьвяртаньне да іх адбываецца праз <i>in-memory</i> функцыянальныя выклікі, то мікрасэрвісы гэта кампанэнты, якія працуюць за межамі сыстэмнага працэсу (строга кажучы кожны ў сваім асобным працэсе), і камунікацыя зь імі і паміж імі адбываецца пры дапамозе <i>HTTP</i> запытаў, альбо аддаленых працэдурных выклікаў (<i>RPC</i>).</p>
+  <p>Мікрасэрвісы, як і бібліятэкі (<i>library</i>), зьяўляюцца састаўнымі часткамі праграмы/сыстэмы, іншымі словамі&nbsp;&ndash; яе кампанэнтамі. Калі бібліятэкі зьяўляюцца неад'емнай часткай праграмы і зьвяртаньне да іх адбываецца праз <i>in-memory</i> функцыянальныя выклікі, то мікрасэрвісы гэта кампанэнты, якія працуюць за межамі сыстэмнага працэсу (строга кажучы кожны ў сваім асобным працэсе), і камунікацыя зь імі і паміж імі адбываецца пры дапамозе <i>HTTP</i> запытаў, шыны паведамленьняў, альбо аддаленых працэдурных выклікаў (<i>RPC</i>).</p>
 
   <h3 id="Microservices_Architecture_ProsCons">Перавагі і недахопы</h3>
   <div class="refs">
@@ -121,9 +114,16 @@ disqus_shortname: coding-be
     <li>ужываць <a href="#Reactive">рэактыўнае праграмаваньне</a>&nbsp;&ndash; асынхронныя выклікі, групаваньне малых выклікаў і агрэгацыя сэрвісаў, неразумныя хуткія каналы сувязі, <i>WebSocket</i>/<i>JSON</i>.</li>
   </ul>
 
+  <h3 id="Microservices_Architecture_DataConsistency">Цэласнасьць даных</h3>
+  <p><a href="http://blog.christianposta.com/microservices/the-hardest-part-about-microservices-data/">The Hardest Part About Microservices: Your Data</a></p>
+  <p><a href="https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/">Turning the database inside-out with Apache Samza</a></p>
+  <p>Адна з самых вялікіх цяжкасьцей пры рэалізацыі мікрасэрвісаў&nbsp;&ndash; гэта падтрымка цэласнасьці даных і забесьпячэньне транзакцыйнасьці. Гэта зьвязана з тым, што па ідэі кожны мікрасэрвіс павінен быць цалкам незалежны ад іншых, у тым ліку і яго даныя. Але ў рэальным жыцьці даныя ўзаемазалежныя: балянс карыстальніка (<i>customer service</i>), павінен зьменшыцца толькі ў тым выпадку, калі яго замова (<i>order service</i>) была цалкам праведзеная. Але калі гэта незалежныя сэрвісы, якім чынам забясьпечыць цэласнасьць гэтых даных? Што калі мы спачатку зьменшылі балянс, а потым даслалі сэрвісу замоваў, каб ён завяршыў замову, але паведамленьне згубілася, пры завяршэньні замовы здарылася памылка, ці яшчэ што. Ну і калі наадварот, мы спачатку завяршаем замову, а потым дасылаем паведамленьне аб зьмяншэньні балянсу, могуць здарыцца падобныя нечаканыя сытуацыі.</p>
+
   <h2 id="Microservices_Tools" data-content-item-open>Інструмэнты</h2>
   <p>Developing high-speed microservices (tools needed): Docker, Rocket, Vagrant, EC2, boto, Chef, Puppet, testing, perf testing.</p>
   <p>Service discovery and health: Consul, etcd, Zookeeper, Nagios, Sensu, SmartStack, Serf, StatsD.</p>
+  <p>Event Sourcing and CQRS: <a href="http://www.axonframework.org/">Axon Framework</a>, <a href="https://eventsourcing.com/es4j/">Eventsourcing for Java (es4j)</a></p>
+  <p><a href="http://serverless.com/">serverless.com</a></p>
 </section>
 
 <section>
