@@ -16,13 +16,14 @@ disqus_shortname: deploy-be
   </div>
   <p><a href="https://www.youtube.com/watch?v=aSATsLG59Zs">Arun Gupta "Docker and Kubernetes Recipes for Java Developers" 11.11.2015</a></p>
   <p><a href="https://www.youtube.com/watch?v=ZNdc4-yFTeA">Arun Gupta "Docker for Java Developers" 22.09.2016</a></p>
+  <p><a href="https://goldmann.pl/blog/2014/07/23/customizing-the-configuration-of-the-wildfly-docker-image/">Customizing the configuration of the WildFly Docker image</a></p>
 
   <p><a href="http://merrigrove.blogspot.co.uk/2015/10/visualizing-docker-containers-and-images.html?_tmc=Diy2bNEQqG5t8sSbcMW6T5Us4KCmgsInjBviObh0atg&mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4AS8VqI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Visualizing Docker Containers and Images</a></p>
   <p><a href="http://blog.xebia.com/2015/08/31/making-amazon-ecs-container-service-as-easy-to-use-as-docker-run/?mkt_tok=3RkMMJWWfF9wsRonuqTMZKXonjHpfsX57u4lX6G2lMI%2F0ER3fOvrPUfGjI4ASMRhI%2BSLDwEYGJlv6SgFQ7LMMaZq1rgMXBk%3D">Making Amazon ECS Container Service As Easy To Use As Docker Run</a></p>
   <br />
   <p><a href="http://www.javacodegeeks.com/2015/11/10-awesome-docker-tutorials-to-kick-start-your-devops-projects.html">10 Awesome Docker Tutorials to Kick-Start your DevOps Projects</a></p>
   <p><a href="https://codefresh.io/blog/everyday-hacks-docker/">Everyday Hacks for Docker</a></p>
-  <br />
+  <p><a href="http://blog.arungupta.me/9-docker-recipes-javaee-applications-techtip80/">9 Docker recipes for Java EE Applications – Tech Tip #80</a></p>
   <br />
   <br />
   <p><a href="https://www.digitalocean.com/community/tutorials/how-to-work-with-docker-data-volumes-on-ubuntu-14-04">How To Work with Docker Data Volumes on Ubuntu 14.04</a></p>
@@ -142,6 +143,11 @@ $ sudo usermod -G docker -a $(whoami)
 </code></pre>
 
   <h2 id="Docker_Commands">Каманды</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://docs.docker.com/engine/reference/commandline/docker/">Reference</a></li>
+    </ul>
+  </div>
   <p>У агульным выпадку каманда <i>docker</i>-сэрвісу выконваецца наступным чынам:</p>
 
   <pre><code class="language-bash">
@@ -406,6 +412,13 @@ latest: digest: sha256:f64b0d5b7bf099e4f50e1f7bb8bdeb668ab0adff605c76d903c72b784
     </ul>
   </div>
   <p>Ствараць вобразы можна не інтэрактыўна праз камандны радок, а пры дапамозе адмысловага скрыпту, які павінен захоўвацца ў файле <code class="language-bash">Dockerfile</code>.</p>
+  <p>Стварыць вобраз з дырэктываў, якія зьмешчаны ў гэтым файле, можна наступнай камандай (знаходзячыся ў тэчцы, дзе знаходзіцца файл <code class="language-bash">Dockerfile</code>, апошняя кропка ў камандзе пазначае шлях да гэтага файлу, у дадзеным выпадку&nbsp;&ndash; цяперашняя тэчка):</p>
+  <pre><code class="language-bash">
+$ docker build -t image_name .
+</code></pre>
+
+
+  <p><a href="https://www.digitalocean.com/community/tutorials/docker-explained-using-dockerfiles-to-automate-building-of-images">Docker Explained: Using Dockerfiles to Automate Building of Images</a></p>
 
   <h3 id="Docker_Dockerfile_Wildfly">Wildfly</h3>
   <p><a href="https://hub.docker.com/r/jboss/wildfly/~/dockerfile/">https://hub.docker.com/r/jboss/wildfly/~/dockerfile/</a></p>
@@ -517,6 +530,10 @@ docker-machine version 0.8.2, build e18a919
       <li><a href="https://docs.docker.com/swarm/">Docs</a></li>
     </ul>
   </div>
+  <p><a href="http://blog.arungupta.me/docker-swarm-cluster-using-consul/">Docker Swarm Cluster using Consul</a></p>
+  <p><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-consul-in-a-production-environment-on-ubuntu-14-04">How to Configure Consul in a Production Environment on Ubuntu 14.04</a></p>
+  <p><a href="http://www.smartjava.org/content/service-discovery-docker-and-consul-part-1">Service Discovery with Docker and Consul: part 1</a></p>
+  <p><a href="https://blog.vpetkov.net/2016/06/07/docker-swarm-tutorial-with-consul-service-discovery-and-examples/">Docker Swarm Tutorial with Consul (Service Discovery) and Examples</a></p>
 
   <h2 id="Docker_Kubernetes">Kubernetes</h2>
   <div class="refs">
