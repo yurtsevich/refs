@@ -5,7 +5,7 @@ disqus_shortname: deploy-be
 ---
 
 <section>
-  <h1 id="Docker">Docker</h1>
+  <h1 id="Docker" data-content-item-open>Docker</h1>
   <div class="refs">
     <ul>
       <li><a href="https://www.docker.com/">Home</a></li>
@@ -534,6 +534,7 @@ docker-machine version 0.8.2, build e18a919
   <p><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-consul-in-a-production-environment-on-ubuntu-14-04">How to Configure Consul in a Production Environment on Ubuntu 14.04</a></p>
   <p><a href="http://www.smartjava.org/content/service-discovery-docker-and-consul-part-1">Service Discovery with Docker and Consul: part 1</a></p>
   <p><a href="https://blog.vpetkov.net/2016/06/07/docker-swarm-tutorial-with-consul-service-discovery-and-examples/">Docker Swarm Tutorial with Consul (Service Discovery) and Examples</a></p>
+  <p><a href="https://habrahabr.ru/company/centosadmin/blog/310606/">Кластер Docker Swarm за 30 секунд</a></p>
 
   <h2 id="Docker_Kubernetes">Kubernetes</h2>
   <div class="refs">
@@ -548,11 +549,283 @@ docker-machine version 0.8.2, build e18a919
       <li><a href="https://codefresh.io/">codefresh.io</a></li>
     </ul>
   </div>
-
-
+  <p><a href="https://codefresh.io/blog/guide-automate-tests-docker-microservice-driven-applications/">How to automate tests for Docker and microservice driven applications</a></p>
 </section>
 
 <section>
+  <h1 id="Heroku" data-content-item-open>Heroku</h1>
+  <div class="refs">
+    <ul>
+      <li><a href="https://www.heroku.com">Home</a></li>
+      <li><a href="https://dashboard.heroku.com">Dashboard</a></li>
+      <li><a href="https://devcenter.heroku.com/categories/reference">Reference</a></li>
+    </ul>
+  </div>
+  <table>
+    <caption>Enterprise grade features</caption>
+    <tr>
+      <td><a href="https://www.heroku.com/private-spaces">Heroku Private Spaces</a></td>
+      <td><a href="https://www.heroku.com/kafka">Apache Kafka on Heroku</a></td>
+    </tr>
+  </table>
+
+  <h2 id="Heroku_CLI"><i>CLI</i></h2>
+  <p>Кіраваньне ўліковым запісам і праграмамі праз камандны радок.</p>
+
+  <aside>Прыклад усталяваньня на <i>Ubuntu</i>. Як усталяваць на іншыя сыстэмы глядзі <a href="https://devcenter.heroku.com/articles/heroku-cli">першакрыніцу</a>.</aside>
+  <h3 id="Heroku_CLI_Install">Усталёўка</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://devcenter.heroku.com/articles/heroku-cli">DevCenter</a></li>
+    </ul>
+  </div>
+  <p>Запускаем пасьлядоўна наступныя каманды:</p>
+
+  <pre><code class="language-bash">
+$ sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+$ curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+$ sudo apt-get update
+$ sudo apt-get install heroku
+</code></pre>
+
+  <p>І пераконваемся, што ўсё прайшло пасьпяхова:</p>
+
+  <pre><code class="language-bash">
+$ heroku --version
+heroku-cli/5.6.22-f9f7585 (linux-amd64) go1.7.5
+</code></pre>
+
+  <p>Апошнім крокам усталёўкі ажыцьцяўляем уваход (імэйл і пароль уліковага запісу на <i>Heroku</i>):</p>
+
+  <pre><code class="language-bash">
+$ heroku login
+Enter your Heroku credentials.
+Email: your@email.com
+Password (typing will be hidden):
+Logged in as your@email.com
+</code></pre>
+
+  <h3 id="Heroku_CLI_Commands">Каманды</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://devcenter.heroku.com/articles/using-the-cli">DevCenter</a></li>
+    </ul>
+  </div>
+  <p>Вывесьці дапамогу па камандах:</p>
+
+  <pre><code class="language-bash">
+$ heroku help
+Usage: heroku COMMAND [--app APP] [command-specific-options]
+
+Help topics, type "heroku help TOPIC" for more details:
+
+  heroku access         # manage user access to apps
+  heroku addons         # manage add-ons
+  heroku apps           # manage apps
+  heroku auth           # authentication (login/logout)
+  heroku authorizations # OAuth authorizations
+  heroku buildpacks     # manage the buildpacks for an app
+  heroku certs          # a topic for the ssl plugin
+  heroku clients        # OAuth clients on the platform
+  heroku config         # manage app config vars
+  heroku domains        # manage the domains for an app
+  heroku drains         # list all log drains
+  heroku features       # manage optional features
+  heroku git            # manage local git repository for app
+  heroku labs           # experimental features
+  heroku local          # run heroku app locally
+  heroku login          # login with your Heroku credentials.
+  heroku logs           # display recent log output
+  heroku maintenance    # manage maintenance mode for an app
+  heroku members        # manage organization members
+  heroku notifications  # display notifications
+  heroku orgs           # manage organizations
+  heroku pg             # manage postgresql databases
+  heroku pipelines      # manage collections of apps in pipelines
+  heroku plugins        # manage plugins
+  heroku ps             # manage dynos (dynos, workers)
+  heroku redis          # manage heroku redis instances
+  heroku regions        # list available regions
+  heroku releases       # manage app releases
+  heroku run            # run a one-off process inside a Heroku dyno
+  heroku sessions       # OAuth sessions
+  heroku spaces         # manage heroku private spaces
+  heroku status         # status of the Heroku platform
+  heroku teams          # manage teams
+  heroku update         # update heroku-cli
+</code></pre>
+
+  <p>Усе каманды падзяляюцца на каманды агульнага прызначэньня і праграмныя. Каманды агульнага прызначэньня апэрыруюць вашым рахункам увогуле, а не пэўнымі праграмамі. Напрыклад, вывесьці сьпіс праграмаў, якія належаць вашаму рахунку, можна камандай:</p>
+
+  <pre><code class="language-bash">
+$ heroku apps
+example
+collabapp                 owner@example.org
+example2
+</code></pre>
+
+  <p>Праграмныя ж каманды датычацца пэўнай праграмы вашага рахунку. Калі ваша кансоль знаходзіцца ў тэчцы праграмы, імя праграмы будзе вызначана аўтаматычна па <i>git remote</i> зь імем <i>heroku</i>:</p>
+
+  <pre><code class="language-bash">
+$ cd example
+$ heroku apps:info
+=== example
+Git Repo:       git@heroku.com:example.git
+Owner:          you@example.org
+Repo size:      960k
+Slug size:      512k
+Stack:          cedar-14
+Web URL:        http://example.heroku.com/
+</code></pre>
+
+  <p>Калі ж вы жадаеце выканаць каманду датычную праграмы і пры гэтым знаходзіцеся ня ў яе тэчцы, імя праграмы можна задаць адпаведным парамэтрам:</p>
+
+  <pre><code class="language-bash">
+$ heroku apps:info --app example
+</code></pre>
+
+  <h4 id="Heroku_CLI_Commands_Create">Стварэньне праграмы</h4>
+  <pre><code class="language-bash">
+$ heroku apps:create --app example
+</code></pre>
+
+  <h4 id="Heroku_CLI_Commands_Logs">Прагляд логаў</h4>
+  <pre><code class="language-bash">
+$ heroku logs --tail
+</code></pre>
+
+  <h4 id="Heroku_CLI_Commands_Local">Старт праграмы лякальна</h4>
+  <pre><code class="language-bash">
+$ heroku local:start
+</code></pre>
+
+  <h4 id="Heroku_CLI_Commands_Push">Разгортваньне праграмы на <i>Heroku</i></h4>
+  <pre><code class="language-bash">
+$ git push heroku master
+</code></pre>
+
+  <h4 id="Heroku_CLI_Commands_Addons">Праглядзець сьпіс дадаткаў</h4>
+  <pre><code class="language-bash">
+$ heroku addons
+</code></pre>
+
+  <h4 id="Heroku_CLI_Commands_DB">Падключэньне базы</h4>
+  <pre><code class="language-bash">
+$ heroku addons:create heroku-postgresql --app example --name example-db
+</code></pre>
+
+  <p>Праглядзець атрыбуты падключанай <i>PostgreSQL</i> базы:</p>
+
+  <pre><code class="language-bash">
+$ heroku pg
+=== DATABASE_URL
+Plan:        Hobby-dev
+Status:      Available
+Connections: 0
+PG Version:  9.3.3
+Created:     2014-08-08 13:54 UTC
+Data Size:   6.5 MB
+Tables:      0
+Rows:        0/10000 (In compliance)
+Fork/Follow: Unsupported
+Rollback:    Unsupported
+</code></pre>
+
+  <h4 id="Heroku_CLI_Commands_Config">Праглядзець сьпіс зьменных асяродку</h4>
+  <pre><code class="language-bash">
+$  heroku config
+=== example Config Vars
+DATABASE_URL: postgres://qplhasewkhqyxp:YXDPSRus9MrU4HglCPzjhOevee@ec2-54-204-47-58.compute-1.amazonaws.com:5432/dc9qsdnghia6v1
+...
+</code></pre>
+
+  <h2 id="Heroku_Java">Java</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="https://devcenter.heroku.com/articles/getting-started-with-java#introduction">Getting Started</a></li>
+      <li><a href="https://devcenter.heroku.com/categories/java">Tutorial</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/deploying-java">Deploy</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/java-support">Support</a></li>
+    </ul>
+  </div>
+
+
+  <h2 id="Heroku_Elements">Элемэнты</h2>
+
+  <h3 id="Heroku_Elements_Addons">Дадаткі</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://elements.heroku.com/addons">Сьпіс</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/managing-add-ons">DevCenter</a></li>
+    </ul>
+  </div>
+
+  <h4 id="Heroku_Elements_Addons_PostgreSQL">PostgreSQL</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://elements.heroku.com/addons/heroku-postgresql">Addon Home</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/heroku-postgresql">Tutorial</a></li>
+      <li><a href="https://devcenter.heroku.com/categories/heroku-postgres">Reference</a></li>
+    </ul>
+  </div>
+  <p>Дадаць базу да праграмы:</p>
+
+  <pre><code class="language-bash">
+$ heroku addons:create heroku-postgresql:hobby-dev --app &lt;APP_NAME&gt;
+</code></pre>
+
+  <p>Падключыцца да кансолі базы:</p>
+
+  <pre><code class="language-bash">
+$ heroku pg:psql &lt;DB_NAME&gt; --app &lt;APP_NAME&gt;
+</code></pre>
+
+  <h4 id="Heroku_Elements_Addons_Redis">Redis</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://elements.heroku.com/addons/heroku-redis">Addon Home</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/heroku-redis">DevCenter</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Heroku_Elements_Buttons">Кнопкі</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://elements.heroku.com/buttons">Сьпіс</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/heroku-button">DevCenter</a></li>
+    </ul>
+  </div>
+
+  <h3 id="Heroku_Elements_Buildpacks">Зборцы</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://elements.heroku.com/buildpacks">Сьпіс</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/buildpacks">DevCenter</a></li>
+    </ul>
+  </div>
+
+  <h2 id="Heroku_Docker">Docker</h2>
+  <p><a href="https://blog.heroku.com/introducing_heroku_docker_release_build_deploy_heroku_apps_with_docker">Introducing 'heroku docker:release': Build & Deploy Heroku Apps with Docker</a></p>
+  <p><a href="https://devcenter.heroku.com/articles/container-registry-and-runtime">Container Registry and Runtime</a></p>
+  <p><a href="https://devcenter.heroku.com/articles/local-development-with-docker-compose">Local Development with Docker Compose</a></p>
+
+  <h2 id="Heroku_API">Heroku API</h2>
+  <p><a href="https://devcenter.heroku.com/articles/platform-api-reference#rate-limits">Platform API Reference</a></p>
+</section>
+
+<section>
+  <h1 id="CI">Continuous Integration</h1>
+  <p><a href="https://travis-ci.org">travis-ci.org</a>&nbsp;&ndash; аўтаматычная зборка ў воблаку.</p>
+  <p><a href="https://circleci.com">circleci.com</a>&nbsp;&ndash; аўтаматычная зборка ў воблаку.</p>
+  <p>Усталёўка <i>Jenkins</i> на <i>Amazon Linux</i> праз <i>SSH</i>-кансоль:</p>
+  <ul>
+    <li><a href="http://sanketdangi.com/post/62715793234/install-configure-jenkins-on-amazon-linux">http://sanketdangi.com/post/62715793234/install-configure-jenkins-on-amazon-linux</a></li>
+    <li><a href="https://www.youtube.com/watch?v=1JSOGJQAhtE">https://www.youtube.com/watch?v=1JSOGJQAhtE</a></li>
+  </ul>
+
+</section>
+
+<!--section>
   <h1 id="EC2">EC2</h1>
   <div class="refs">
     <ul>
@@ -569,36 +842,6 @@ docker-machine version 0.8.2, build e18a919
   <p>Пры стварэньні <i>ssh</i>-сэсіі ў якасьці імені карыстальніка трэба ўвесьці <code>ec2-user</code>:</p>
   <p><img src="configureSsh.png" width="1000px"></p>
 
-</section>
-
-<section>
-  <h1 id="CI">Continuous Integration</h1>
-  <p><a href="https://travis-ci.org">travis-ci.org</a>&nbsp;&ndash; аўтаматычная зборка ў воблаку.</p>
-  <p><a href="https://circleci.com">circleci.com</a>&nbsp;&ndash; аўтаматычная зборка ў воблаку.</p>
-  <p>Усталёўка <i>Jenkins</i> на <i>Amazon Linux</i> праз <i>SSH</i>-кансоль:</p>
-  <ul>
-    <li><a href="http://sanketdangi.com/post/62715793234/install-configure-jenkins-on-amazon-linux">http://sanketdangi.com/post/62715793234/install-configure-jenkins-on-amazon-linux</a></li>
-    <li><a href="https://www.youtube.com/watch?v=1JSOGJQAhtE">https://www.youtube.com/watch?v=1JSOGJQAhtE</a></li>
-  </ul>
-
-  <h2 id="CI_Git">Git</h2>
-  <p>Усталёўка <i>Git</i> на <i>Amazon Linux</i> праз <i>SSH</i>-кансоль: <code>sudo yum install git</code></p>
-
-  <h2 id="CI_JDK">JDK</h2>
-  <p>Усталёўка <i>JDK</i> на <i>Amazon Linux</i> праз <i>SSH</i>-кансоль: <code>sudo yum install java-devel</code></p>
-
-  <h2 id="CI_Maven">Maven</h2>
-  <p>Спачатку сьцягваем пакет усталёўкі:</p>
-
-  <pre><code class="language-bash">
-$ wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-7/x86_64/apache-maven-3.2.5-1.el7.noarch.rpm
-</code></pre>
-
-  <p>А потым запускаем саму ўсталёўку:</p>
-
-  <pre><code class="language-bash">
-$ rpm -ivh apache-maven-3.2.5-1.el7.noarch.rpm
-</code></pre>
 </section>
 
 <section>
@@ -679,4 +922,4 @@ $ rhc cartridge add postgresql-9.2 -a myapp
   <p>І пасьлядоўна наступныя каманды ў самой кансолі (для зручнасьці агляду тут устаўлены пераносы радку, але на самай справе рабіць іх ня трэба):</p>
   <img style="margin-top: 10px;" src="wildfly_postgres.jpg">
   <p>Юзэр <code>_USER_NAME_</code> з паролем <code>_PASSWORD_</code> і экзэмпляр базы <code>_DB_NAME_</code> ужо павінны быць створаныя ў лякальным <i>PostgreSQL</i>.</p>
-</section>
+</section-->
