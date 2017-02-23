@@ -9,6 +9,7 @@ disqus_shortname: coding-be
   <p><a href="http://code.tutsplus.com/tutorials/solid-part-1-the-single-responsibility-principle--net-36074">SOLID: Part 1 - The Single Responsibility Principle</a></p>
   <p><a href="http://drboolean.gitbooks.io/mostly-adequate-guide/">Mostly Adequate Guide to functional programming</a></p>
   <p><a href="https://blog.codinghorror.com/code-smells/">Code Smells</a></p>
+  <p><a href="https://github.com/kamranahmedse/design-patterns-for-humans">Design patterns for humans</a></p>
 </section>
 
 <section>
@@ -102,6 +103,23 @@ disqus_shortname: coding-be
     <li><a href="http://microservices.io/patterns/microservice-chassis.html">Microservice chassis</a>&nbsp;&ndash; пабудова мікрасэрвісаў пры дапамозе адпаведных фрэймворкаў.</li>
   </ul>
   <img src="PatternsRelatedToMicroservices.jpg">
+
+  <h3 id="Microservices_Architecture_Antipatterns">Антышаблёны і падводныя камяні</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://www.oreilly.com/ideas/microservices-antipatterns-and-pitfalls">O'Reilly</a></li>
+    </ul>
+  </div>
+
+  <h4 id="Microservices_Architecture_Antipatterns_DataDrivenMigration">Антышаблён «Data-Driven Migration»</h4>
+  <p>Калі ідзе працэс разьбіўкі маналітнай праграмы на мікрасэрвісы, існуе спакуса адразу ўсё рабіць «як трэба», пэ-фэншую так бы мовіць. У тым ліку дзяліць на кавалкі ня толькі лёгіку, але і даныя (кожнаму з выдзеленых <i>Service Component</i> адразу зрабілі асобныя базы):</p>
+  <img src="https://d3ansictanv2wj.cloudfront.net/mapr_0101-1691c33f307ff43a4a6756e744196034.png" width="100%">
+  <p>Але праблема ў тым, што працэс разьбіўкі маналітнай праграмы на мікрасэрвісы&nbsp;&ndash; не заўсёды адназначны і відавочны. Мы можам спачатку зрабіць разьбіўку адным чынам, а потым убачыць, што зрабілі ня слушна і перайначыць яе:</p>
+  <img src="https://d3ansictanv2wj.cloudfront.net/mapr_0102-d855332b87b6d933ed19a6e1e63f988c.png" width="100%">
+  <p>Дык вось, перарабляць разьбіўку лёгікі даволі проста, а вось зьмяняць схемы, базы даных і рабіць міграцыю даных&nbsp;&ndash; працэс даволі складаны і працаёмкі. Таму рабіць міграцыю даных лепш на позьніх этапах, калі разьбіўка лёгікі ўжо замацавалася і прайшла выпрабаваньне:</p>
+  <img src="https://d3ansictanv2wj.cloudfront.net/mapr_0103-a1612b6cf55fa76e3bf16720379b5092.png" width="100%">
+
+  <h4 id="Microservices_Architecture_Antipatterns_Timeout">Антышаблён «Timeout»</h4>
 
   <h3 id="Microservices_Architecture_JSON">JSON</h3>
   <p>Стандарт для сеціўных праграмаў&nbsp;&ndash; гэта <i>JSON</i>. Ніякага <i>XML</i>, <i>SOAP</i>, <i>WSDL</i> альбо <i>WADL</i>. Толькі <i>JSON</i>! Можна прадстаўляць нешта ў дадатак да <i>JSON</i>, але <i>JSON</i>&nbsp;&ndash; гэта мінімум.</p>
