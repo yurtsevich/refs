@@ -95,7 +95,7 @@ disqus_shortname: coding-be
   <p>Існуе шэраг іншых патэрнаў дызайну, якія непасрэдна злучаныя з патэрнам мікрасэрвісаў:</p>
   <ul>
     <li><a href="http://microservices.io/patterns/monolithic.html">маналітная архітэктура</a>&nbsp;&ndash; архітэктура ў процівагу мікрасэрвісам;</li>
-    <li><a href="http://microservices.io/patterns/apigateway.html">шлюз для API</i></a>&nbsp;&ndash; вызначае якім чынам кліенты атрымліваюць доступ да сэрвісаў;</li>
+    <li><a href="http://microservices.io/patterns/apigateway.html">шлюз для <i>API</i></a>&nbsp;&ndash; вызначае якім чынам кліенты атрымліваюць доступ да сэрвісаў;</li>
     <li>выяўленьне сэрвісаў <a href="http://microservices.io/patterns/client-side-discovery.html">на баку кліента</a> і <a href="http://microservices.io/patterns/server-side-discovery.html">на баку сэрвэра</a>&nbsp;&ndash; напраўляе запыт кліента да даступнага экзэмпляра сэрвісу;</li>
     <li><a href=""></a>Messaging і RPC&nbsp;&ndash; два магчымыя спосабы камунікацыі паміж сэрвісамі;</li>
     <li><a href="http://microservices.io/patterns/deployment/single-service-per-host.html">адзін сэрвіс на хост</a> і <a href="http://microservices.io/patterns/deployment/multiple-services-per-host.html">шмат сэрвісаў на хост</a>&nbsp;&ndash; дзьве магчымыя стратэгіі разгортваньня;</li>
@@ -120,6 +120,10 @@ disqus_shortname: coding-be
   <img src="https://d3ansictanv2wj.cloudfront.net/mapr_0103-a1612b6cf55fa76e3bf16720379b5092.png" width="100%">
 
   <h4 id="Microservices_Architecture_Antipatterns_Timeout">Антышаблён «Timeout»</h4>
+  <p>Адна з неад'емных праблем, злучаных з рэалізацыяй разьмеркаванай праграмы&nbsp;&ndash; гэта аддаленыя выклікі, ці дакладней сказаць магчымасьць таго, что аддалены сэрвіс можа выконвацца няпэўны час. Праблема нават ня ў тым, што ён можа быць увогуле недасяжным, таму што мы адразу атрымаем адмоўны адказ, а менавіта доўгі час выкананьня. Адным са шляхоў вырашэньня дадзенай праблемы зьяўляецца пазначэньня таймаўтаў. Але таймаўты самі могуць быць праблемай. Напрыклад, існуе практыка выстаўляць значэньне таймаўта як падвойны час сярэдне-максымальнага выкананьня пэўнай задачы:</p>
+  <img src="https://d3ansictanv2wj.cloudfront.net/mapr_0202-24f51f9c4f7e334861b69ca641e5c605.png" width="100%">
+  <p>Выйсьцем з гэтай праблемы зьяўляецца рэалізацыя шаблёна «Разрыў Ланцугу» («Circuit Breaker»):</p>
+  <img src="https://d3ansictanv2wj.cloudfront.net/mapr_0203-f6181a9a1ef2e1cf22272aa45b15c0fd.png" width="100%">
 
   <h3 id="Microservices_Architecture_JSON">JSON</h3>
   <p>Стандарт для сеціўных праграмаў&nbsp;&ndash; гэта <i>JSON</i>. Ніякага <i>XML</i>, <i>SOAP</i>, <i>WSDL</i> альбо <i>WADL</i>. Толькі <i>JSON</i>! Можна прадстаўляць нешта ў дадатак да <i>JSON</i>, але <i>JSON</i>&nbsp;&ndash; гэта мінімум.</p>
