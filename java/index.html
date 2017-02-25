@@ -3208,6 +3208,23 @@ mvn install:install-file \
 $ mvn &lt;plugin-name&gt;:&lt;goal-name&gt;
 </code></pre>
 
+  <h4 id="Build_Maven_Plugins_Wildfly">WildFly</h4>
+  <p>Каб мець магчымасьць деплоіць праграму на <i>WildFly</i> праз мавен, трэба дадаць яго плагін:</p>
+
+  <pre><code class="language-xml">
+...
+&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.wildfly.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;wildfly-maven-plugin&lt;/artifactId&gt;
+      &lt;version&gt;1.1.0.Final&lt;/version&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+...
+</code></pre>
+
   <h4 id="Build_Maven_Plugins_Jetty">Jetty</h4>
   <div class="refs">
     <ul>
@@ -3405,6 +3422,17 @@ $ mvn &lt;plugin-name&gt;:&lt;goal-name&gt;
 &lt;/dependency&gt;
 </code></pre>
 
+  <p>Альбо калі не на <i>WildFly</i>:</p>
+
+  <pre><code class="language-xml">
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.ws.rs&lt;/groupId&gt;
+  &lt;artifactId&gt;javax.ws.rs-api&lt;/artifactId&gt;
+  &lt;version&gt;2.0.1&lt;/version&gt;
+  &lt;scope&gt;compile&lt;/scope&gt;
+&lt;/dependency&gt;
+</code></pre>
+
   <h4 id="Build_Maven_Dependencies_Logging">Лагіраваньне</h4>
 
   <pre><code class="language-xml">
@@ -3416,6 +3444,27 @@ $ mvn &lt;plugin-name&gt;:&lt;goal-name&gt;
   &lt;scope&gt;provided&lt;/scope&gt;
 &lt;/dependency&gt;
 </code></pre>
+
+  <p>Альбо калі не на <i>WildFly</i>:</p>
+
+  <pre><code class="language-xml">
+&lt;dependency&gt;
+  &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+  &lt;artifactId&gt;slf4j-api&lt;/artifactId&gt;
+  &lt;version&gt;1.7.12&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <p>І дадаткова <i>Log4J</i>-адаптар:</p>
+
+  <pre><code class="language-xml">
+&lt;dependency&gt;
+  &lt;groupId&gt;org.slf4j&lt;/groupId&gt;
+  &lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;
+  &lt;version&gt;1.7.12&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+
 
   <h4 id="Build_Maven_Dependencies_Testing">Testing</h4>
 
@@ -3733,16 +3782,4 @@ module add --name=org.postgres --resources=/tmp/postgresql-9.4-1202.jdbc42.jar -
 &lt;/subsystem&gt;
 </code></pre>
 
-</section>
-
-<section>
-  <h1 id="DeploymentInCloud">Воблачны хостынг</h1>
-
-  <h2 id="Heroku">Heroku</h2>
-
-  <p><a href="https://devcenter.heroku.com/categories/java">Java on Heroku</a></p>
-  <p><a href="https://devcenter.heroku.com/articles/java-learn-more">Learn More about Heroku for Java</a></p>
-  <p><a href="https://devcenter.heroku.com/articles/java-webapp-runner">Deploying Tomcat-based Java Web Applications with Webapp Runner</a></p>
-  <p><a href="https://devcenter.heroku.com/articles/play-java-websockets">Using WebSockets on Heroku with Java and the Play Framework</a></p>
-  <p><a href="https://github.com/heroku/devcenter-java-database">Connecting to Relational Databases on Heroku with Java</a></p>
 </section>
