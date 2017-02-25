@@ -744,8 +744,10 @@ DATABASE_URL: postgres://qplhasewkhqyxp:YXDPSRus9MrU4HglCPzjhOevee@ec2-54-204-47
     <ul>
       <li><a href="https://devcenter.heroku.com/articles/getting-started-with-java#introduction">Getting Started</a></li>
       <li><a href="https://devcenter.heroku.com/categories/java">Tutorial</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/java-learn-more">Learn More</a></li>
       <li><a href="https://devcenter.heroku.com/articles/deploying-java">Deploy</a></li>
       <li><a href="https://devcenter.heroku.com/articles/java-support">Support</a></li>
+      <li><a href="https://github.com/heroku/devcenter-java-database">DB</a></li>
     </ul>
   </div>
 
@@ -759,6 +761,44 @@ DATABASE_URL: postgres://qplhasewkhqyxp:YXDPSRus9MrU4HglCPzjhOevee@ec2-54-204-47
       <li><a href="https://devcenter.heroku.com/articles/managing-add-ons">DevCenter</a></li>
     </ul>
   </div>
+
+  <h4 id="Heroku_Elements_Addons_Newrelic">New Relic RPM</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://elements.heroku.com/addons/newrelic">Addon Home</a></li>
+      <li><a href="https://docs.newrelic.com/docs/agents/java-agent/heroku/java-agent-heroku">Tutorial</a></li>
+      <li><a href="https://devcenter.heroku.com/articles/newrelic">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>Дадаць дадатак да праграмы:</p>
+
+  <pre><code class="language-bash">
+$ heroku addons:create newrelic:wayne
+</code></pre>
+
+  <p>Заходзім на старонку «Account settings» свайго рахунку на <i>New Relic</i> і спампоўваем архіў агента (<i>Java SE 8 (3.36.0)</i> напрыклад). Распакоўваем у тэчку <code class="language-bash">newrelic</code> унутры праграмы і пакідаем там толькі 2 файлы: <code class="language-bash">newrelic.jar</code> і <code class="language-bash">newrelic.yml</code>, астатнія выдаляем. Потым у файле <code class="language-bash">newrelic.yml</code> зьмяняем імя праграмы <code class="language-bash">app_name</code> на адпаведнае.</p>
+  <p>Наступным крокам трэба дадаць альбо ў файл <code class="language-bash">Procfile</code>, альбо ў зьменную асяродка <i>Heroku</i> <code class="language-bash">JAVA_OPTS</code> старт агента:</p>
+
+  <pre><code class="language-bash">
+-javaagent:newrelic/newrelic.jar
+</code></pre>
+
+  <p>І пушым гэта ўсё на <i>Heroku</i>.</p>
+
+  <h4 id="Heroku_Elements_Addons_Loggly">Loggly</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://www.loggly.com/">Home</a></li>
+      <li><a href="https://www.loggly.com/docs/send-logs-heroku/">Tutorial</a></li>
+    </ul>
+  </div>
+  <p>Дадаць інтэграцыю з <i>Loggly</i> (<i>drain</i>, а не <i>addon</i>):</p>
+
+  <pre><code class="language-bash">
+$ heroku drains:add http://logs-01.loggly.com/bulk/TOKEN/tag/heroku --app HEROKU_APP_NAME
+</code></pre>
+
+  <p>дзе <code class="language-bash">TOKEN</code>&nbsp;&ndash; <a href="https://yurtsevich.loggly.com/tokens">токен <i>Loggly</i></a>, <code class="language-bash">HEROKU_APP_NAME</code>&nbsp;&ndash; праграма <i>Heroku</i>, да якой далучыць лагіраваньне.</p>
 
   <h4 id="Heroku_Elements_Addons_PostgreSQL">PostgreSQL</h4>
   <div class="refs">
