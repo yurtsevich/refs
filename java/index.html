@@ -3437,11 +3437,30 @@ $ mvn &lt;plugin-name&gt;:&lt;goal-name&gt;
 
   <pre><code class="language-xml">
 &lt;dependency&gt;
-  &lt;groupId&gt;javax.ws.rs&lt;/groupId&gt;
-  &lt;artifactId&gt;javax.ws.rs-api&lt;/artifactId&gt;
-  &lt;version&gt;2.0.1&lt;/version&gt;
-  &lt;scope&gt;compile&lt;/scope&gt;
+  &lt;groupId&gt;org.glassfish.jersey.containers&lt;/groupId&gt;
+  &lt;artifactId&gt;jersey-container-servlet&lt;/artifactId&gt;
 &lt;/dependency&gt;
+&lt;!-- З падтрымкай JSON --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.glassfish.jersey.media&lt;/groupId&gt;
+  &lt;artifactId&gt;jersey-media-moxy&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+  <p>Пры гэтым трэба дадаць кіраваньне залежнасьцямі <i>Glassfish Jersey</i>:</p>
+
+  <pre><code class="language-xml">
+&lt;dependencyManagement&gt;
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.glassfish.jersey&lt;/groupId&gt;
+      &lt;artifactId&gt;jersey-bom&lt;/artifactId&gt;
+      &lt;version&gt;2.25.1&lt;/version&gt;
+      &lt;type&gt;pom&lt;/type&gt;
+      &lt;scope&gt;import&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/dependencyManagement&gt;
 </code></pre>
 
   <h4 id="Build_Maven_Dependencies_Logging">Лагіраваньне</h4>
@@ -3598,6 +3617,7 @@ log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
       <li><a href="http://jmockit.org/">JMockit</a></li>
     </ul>
   </div>
+  <p><a href="http://www.vogella.com/tutorials/JUnit/article.html">Unit Testing with JUnit - Tutorial</a></p>
   <p><a href="http://site.mockito.org/mockito/docs/current/org/mockito/Mockito.html">Mockito JavaDoc</a></p>
   <p><a href="http://jmockit.org/tutorial.html">The JMockit Testing Toolkit Tutorial</a></p>
   <p><a href="https://github.com/jmockit/jmockit1/blob/master/samples/mockito/test/org/mockitousage/JavadocExamples_JMockit_Test.java">JMockit samples</a></p>
@@ -3661,8 +3681,8 @@ log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
     <a href="https://www.oreilly.com/learning/microservices-for-java-developers/page/2/spring-boot-for-microservices">Spring Boot for Microservices</a>,
     <a href="https://www.oreilly.com/learning/microservices-for-java-developers/page/4/wildfly-swarm-for-microservices">WildFly Swarm for Microservices</a>,
     <a href="https://www.oreilly.com/learning/microservices-for-java-developers/page/5/deploy-microservices-at-scale-with-docker-and-kubernetes">Deploy Microservices at Scale with Docker and Kubernetes</a>,
-    <a href="https://www.oreilly.com/learning/microservices-for-java-developers/page/6/hands-on-cluster-management-failover-and-load-balancing">Hands-on Cluster Management, Failover, and Load Balancing</a>,
-    <a href=""></a></p>
+    <a href="https://www.oreilly.com/learning/microservices-for-java-developers/page/6/hands-on-cluster-management-failover-and-load-balancing">Hands-on Cluster Management, Failover, and Load Balancing</a>
+  </p>
 
   <h2 id="Microservices_Discovery">Service Discovery and Health</h2>
   <div class="refs">
@@ -3674,6 +3694,15 @@ log4j.appender.file.layout.ConversionPattern=%5p[%d{mm:ss}]%M(%F:%L) %m%n
   <p><a href="http://www.mammatustech.com/Microservice-Service-Discovery-with-Consul">Microservice Service Discovery with Consul</a></p>
   <p>??? <a href="https://github.com/Netflix/eureka/">Eureka is a REST based service that is primarily used in the AWS cloud for locating services for the purpose of load balancing and failover of middle-tier servers.</a> ???</p>
 
+  <h2 id="Microservices_Vertx">Vert.x</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://vertx.io/">Home</a></li>
+      <li><a href="http://vertx.io/docs/">Docs</a></li>
+      <li><a href="http://vertx.io/blog/posts/introduction-to-vertx.html">Intro</a></li>
+      <li><a href="http://escoffier.me/vertx-hol/">Tutorial</a></li>
+    </ul>
+  </div>
 </section>
 
 <section>
