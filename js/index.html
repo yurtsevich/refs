@@ -2441,6 +2441,75 @@ mycar.make = undefined;
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">Reference</a></li>
     </ul>
   </div>
+  <p>Правярае ці зьяўляецца левы апэранд аб'ектам клясы, якая прадстаўленая правым апэрандам. Больш дакладна з тэхнічнага пункту гледжаньня&nbsp;&ndash; ці знаходзіцца значэньне атрыбуту <code class="language-js">prototype</code> правага апэранду (клясы, ці функцыі іншымі словамі) у прататыпным ланцугу левага апэранду:</p>
+
+  <pre><code class="language-js">
+// defining constructors
+function C() {}
+function D() {}
+
+var o = new C();
+
+// true, because: Object.getPrototypeOf(o) === C.prototype
+o instanceof C;
+
+// false, because D.prototype is nowhere in o's prototype chain
+o instanceof D;
+
+o instanceof Object; // true, because:
+C.prototype instanceof Object // true
+
+C.prototype = {};
+var o2 = new C();
+
+o2 instanceof C; // true
+
+// false, because C.prototype is nowhere in
+// o's prototype chain anymore
+o instanceof C;
+
+D.prototype = new C(); // add C to [[Prototype]] linkage like'inheritance'
+var o3 = new D();
+o3 instanceof D; // true
+o3 instanceof C; // true
+</code></pre>
+
+  <p>Ніжэй пададзены прыклад, які паказвае, што аб'екты клясаў <code class="language-js">String</code> і <code class="language-js">Date</code> зьяўляюцца таксама і аб'ектамі клясы <code class="language-js">Object</code>, ад якой яны насьледуюць. Ён таксама паказвае выключныя выпадкі, калі аб'ект створаны праз літаралы (функцыянальны <code class="language-js">{...}</code> і радковы):</p>
+
+  <pre><code class="language-js">
+var simpleStr = 'This is a simple string';
+var myString  = new String();
+var newStr    = new String('String created with constructor');
+var myDate    = new Date();
+var myObj     = {};
+
+simpleStr instanceof String; // returns false, checks the prototype chain, finds undefined
+myString  instanceof String; // returns true
+newStr    instanceof String; // returns true
+myString  instanceof Object; // returns true
+
+myObj instanceof Object;    // returns true, despite an undefined prototype
+({})  instanceof Object;    // returns true, same case as above
+
+myString instanceof Date;   // returns false
+
+myDate instanceof Date;     // returns true
+myDate instanceof Object;   // returns true
+myDate instanceof String;   // returns false
+</code></pre>
+
+  <p>І яшчэ адзін больш набліжаны да жыцьця прыклад:</p>
+
+  <pre><code class="language-js">
+function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+var mycar = new Car('Honda', 'Accord', 1998);
+var a = mycar instanceof Car;    // returns true
+var b = mycar instanceof Object; // returns true
+</code></pre>
 
   <h3 id="Operators_Object_new"><code class="language-js">new</code></h3>
   <div class="refs">
@@ -2448,6 +2517,20 @@ mycar.make = undefined;
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new">Reference</a></li>
     </ul>
   </div>
+  <p>Апэрацыя стварае новы аб'ект карыстальніцкай альбо убудаванай клясы:</p>
+
+  <pre><code class="language-js">
+function Car() {}
+car1 = new Car();
+
+console.log(car1.color);    // undefined
+
+Car.prototype.color = null;
+console.log(car1.color);    // null
+
+car1.color = 'black';
+console.log(car1.color);   // black
+</code></pre>
 
   <h3 id="Operators_Object_this"><code class="language-js">this</code></h3>
   <div class="refs">
@@ -2479,7 +2562,7 @@ myObject.sayHello.call(secondObject); // Вывядзе ў лог 'Hi! My name i
     </li>
     <li>Калі выклік функцыі адбыўся ў якасьці апрацоўшчыка падзеі (не знутры апрацоўшчыка падзеі, а менавіта як апрацоўшчык падзеі), тады <code class="language-js">this</code> будзе спасылацца на аб'ект, для якога гэтая падзея спрацавала.
 
-      <pre><code class="language-js">
+    <pre><code class="language-js">
 function bluify(e) {
   this.style.backgroundColor = '#A5D9F3'; // Пры кліку на пэўным элемэнце зробіць
 }                                         // яго колер блакітным
@@ -2503,6 +2586,60 @@ for(var i = 0 ; i < elements.length ; i++){
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">Reference</a></li>
     </ul>
   </div>
+  <p>Апэрацыя вяртае тэкставае значэньне тыпу свайго апэранду:</p>
+
+  <pre><code class="language-js">
+// Numbers
+typeof 37 === 'number';
+typeof 3.14 === 'number';
+typeof(42) === 'number';
+typeof Math.LN2 === 'number';
+typeof Infinity === 'number';
+typeof NaN === 'number'; // Despite being "Not-A-Number"
+typeof Number(1) === 'number'; // but never use this form!
+
+// Strings
+typeof '' === 'string';
+typeof "bla" === 'string';
+typeof (typeof 1) === 'string'; // typeof always returns a string
+typeof String('abc') === 'string'; // but never use this form!
+
+// Booleans
+typeof true === 'boolean';
+typeof false === 'boolean';
+typeof Boolean(true) === 'boolean'; // but never use this form!
+
+// Symbols
+typeof Symbol() === 'symbol'
+typeof Symbol('foo') === 'symbol'
+typeof Symbol.iterator === 'symbol'
+
+
+// Undefined, null
+typeof undefined === 'undefined';
+typeof declaredButUndefinedVariable === 'undefined';
+typeof undeclaredVariable === 'undefined';
+typeof null === 'object';
+
+// Objects
+typeof {a: 1} === 'object';
+
+// use Array.isArray or Object.prototype.toString.call
+// to differentiate regular objects from arrays
+typeof [1, 2, 4] === 'object';
+
+typeof new Date() === 'object';
+
+// The following is confusing. Don't use!
+typeof new Boolean(true) === 'object';
+typeof new Number(1) === 'object';
+typeof new String('abc') === 'object';
+
+// Functions
+typeof function() {} === 'function';
+typeof class C {} === 'function';
+typeof Math.sin === 'function';
+</code></pre>
 
   <h3 id="Operators_Object_get"><code class="language-js">get</code></h3>
   <div class="refs">
@@ -2510,7 +2647,18 @@ for(var i = 0 ; i < elements.length ; i++){
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">Reference</a></li>
     </ul>
   </div>
-  <p>Калі значэньне нейкага атрыбуту аб'екта павінна разьлічвацца дынамічна, яго можна не аб'яўляць наўпрост, а скарыстацца мэханізмам </p>
+  <p>Калі значэньне нейкага атрыбуту аб'екта павінна разьлічвацца дынамічна, яго можна не аб'яўляць наўпрост, а скарыстацца мэханізмам гэтэраў:</p>
+
+  <pre data-line="3,8"><code class="language-js">
+var obj = {
+  log: ['test'],
+  get latest() {
+    if (this.log.length == 0) return undefined;
+    return this.log[this.log.length - 1];
+  }
+}
+console.log(obj.latest); // Will return "test".
+</code></pre>
 
   <h3 id="Operators_Object_set"><code class="language-js">set</code></h3>
   <div class="refs">
@@ -2518,6 +2666,22 @@ for(var i = 0 ; i < elements.length ; i++){
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">Reference</a></li>
     </ul>
   </div>
+  <p>І аналягічна, калі ўстаноўка значэньня павінна быць дынамічнай, можна скарыстацца мэханізмам сэтэраў:</p>
+
+  <pre data-line="2,8,11"><code class="language-js">
+var language = {
+  set current(name) {
+    this.log.push(name);
+  },
+  log: []
+}
+
+language.current = 'EN';
+console.log(language.log); // ['EN']
+
+language.current = 'FA';
+console.log(language.log); // ['EN', 'FA']
+</code></pre>
 
   <h2 id="Operators_Special">Асаблівыя</h2>
 
@@ -2620,6 +2784,87 @@ for (i = 0; i < a.length; i++) {
 
   <h2 id="Statements_Declarations">Аб'яўленьняў</h2>
 
+  <h3 id="Statements_Declarations_class"><code class="language-js">class</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/class">Reference</a></li>
+    </ul>
+  </div>
+  <p><a href="#Lexic_Keywords">Ключавое слова</a> <code class="language-js">class</code> служыць для вызначэньня клясаў з пазначаным імем, выкарыстоўваючы прататыпнае насьледаваньне. Яно таксама можа быць выкарыстана ў выглядзе <a href="#Expressions">выразу</a>:</p>
+
+  <pre><code class="language-js">
+var MyClass = class [className] [extends] {  // Выраз (кляса прызначаецца зьменнай)
+  // class body
+};
+
+class name [extends] {                       // Інструкцыя
+  // class body
+}
+</code></pre>
+
+  <p>Прыклад:</p>
+
+  <pre><code class="language-js">
+var Foo = class {
+  constructor() {}
+  bar() {
+    return 'Hello World!';
+  }
+};
+
+var instance = new Foo();
+instance.bar(); // "Hello World!"
+Foo.name; // "Foo"
+</code></pre>
+
+  <p>Выраз і інструкцыя вызначэньня клясы падобныя адна на другую, але ў выпадку выразу імя клясы можна (але не абавязкова) апускаць. Калі імя клясы ў выразе пазначана, яно (імя) будзе даступнае толькі ў целе самой гэтай клясы:</p>
+
+  <pre><code class="language-js">
+var Foo = class NamedFoo {
+  constructor() {}
+  whoIsThere() {
+    return NamedFoo.name;
+  }
+}
+var bar = new Foo();
+bar.whoIsThere(); // "NamedFoo"
+NamedFoo.name; // ReferenceError: NamedFoo is not defined
+Foo.name; // "NamedFoo"
+</code></pre>
+
+  <p>У прыкладзе ніжэй мы вызначаем клясу <code class="language-js">Polygon</code>, а потым пашыраем яе вызначаючы клясу <code class="language-js">Square</code>. Зьвярніце ўвагу, што выклік <code class="language-js">super()</code>, які выкарыстоўваецца ў клясе <code class="language-js">Square</code>, можа быць выкліканы толькі ў канструктары і павінен быць выкліканы перад першым зьвяртаньнем да ключавога слова <code class="language-js">this</code>:</p>
+
+  <pre><code class="language-js">
+class Polygon {
+  constructor(height, width) {
+    this.name = 'Polygon';
+    this.height = height;
+    this.width = width;
+  }
+}
+
+class Square extends Polygon {
+  constructor(length) {
+    super(length, length);
+    this.name = 'Square';
+  }
+}
+</code></pre>
+
+  <h3 id="Statements_Declarations_const"><code class="language-js">const</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">Reference</a></li>
+    </ul>
+  </div>
+  <p>Аб'яўленьне <a href="#TypesValues_Variables_Scope">блёчных</a> <a href="#TypesValues_Constants">канстантаў</a>:</p>
+
+  <pre><code class="language-js">
+if (true) {
+  const MY_FAV = 20;
+}
+</code></pre>
+
   <h3 id="Statements_Declarations_function"><code class="language-js">function</code></h3>
   <div class="refs">
     <ul>
@@ -2645,13 +2890,27 @@ function funcname([arg1 [, arg2 [..., argn]]]) {
 
   <p>Дзе <code class="language-js">funcname</code>&nbsp;&ndash; гэта <a href="#Lexic_Identifiers">ідэнтыфікатар</a>, які задае імя новай функцыі. Пасьля імені ставяцца круглыя дужкі, у якіх праз коску могуць ісьці парамэтры функцыі (але сьпіс парамэтраў можа быць і пустым). Гэтыя ідэнтыфікатары выкарыстоўваюцца для доступу да значэньняў, якія перадаюцца ў функцыю пры яе выкліку. Цела функцыі можа складацца зь любой колькасьці інструкцыяў, якія заключаюцца ў фігурныя дужкі. Пры гэтым фігурныя дужкі абавязковыя для ўжываньня, нават калі цела функцыі пустое. Таксама фігурныя дужкі нельга апускаць, калі цела функцыі ўтрымлівае толькі адну інструкцыю, у адрозьненьні ад сынтаксісу напрыклад <a href="#Statements_Conditional_if...else">умоўнай інструкцыі</a>, дзе фігурныя дужкі дазваляецца апускаць у такім выпадку. Інструкцыі, якія ўтрымлівае цела функцыі выконваюцца не адразу пасьля аб'яўленьня функцыі, але пры яе выкліку.</p>
 
+  <h3 id="Statements_Declarations_let"><code class="language-js">let</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">Reference</a></li>
+    </ul>
+  </div>
+  <p>Аб'яўленьне <a href="#TypesValues_Variables_Scope">блёчных</a> <a href="#TypesValues_Variables">зьменных</a>:</p>
+
+  <pre><code class="language-js">
+if (true) {
+  let x = 2;        // Зьменная ўзроўню if-блёка, па-за межамі гэтага блёку не існуе
+}
+</code></pre>
+
   <h3 id="Statements_Declarations_var"><code class="language-js">var</code></h3>
   <div class="refs">
     <ul>
       <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">Reference</a></li>
     </ul>
   </div>
-  <p>Аб'яўленьне глябальных і <i>function-scoped</i> <a href="#TypesValues_Variables">зьменных</a>:</p>
+  <p>Аб'яўленьне <a href="#TypesValues_Variables_Scope">глябальных і <i>function-scoped</i></a> <a href="#TypesValues_Variables">зьменных</a>:</p>
 
   <pre><code class="language-js">
 var i;                                      // Аб'яўленьне без ініцыіраваньня
@@ -2663,34 +2922,6 @@ var x = 2, y = x*x; // Аб'яўленьне другой зьменнай вы�
 var x = 2,                                  // Шмат зьменных,
     f = function(x) { return x*x },         // кожная на асобным
     y = f(x);                               // радку
-</code></pre>
-
-  <h3 id="Statements_Declarations_let"><code class="language-js">let</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">Reference</a></li>
-    </ul>
-  </div>
-  <p>Аб'яўленьне блёчных <a href="#TypesValues_Variables">зьменных</a>:</p>
-
-  <pre><code class="language-js">
-if (true) {
-  let x = 2;        // Зьменная ўзроўню if-блёка, па-за межамі гэтага блёку не існуе
-}
-</code></pre>
-
-  <h3 id="Statements_Declarations_const"><code class="language-js">const</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">Reference</a></li>
-    </ul>
-  </div>
-  <p>Аб'яўленьне блёчных <a href="#TypesValues_Constants">канстантаў</a>:</p>
-
-  <pre><code class="language-js">
-if (true) {
-  const MY_FAV = 20;
-}
 </code></pre>
 
   <h2 id="Statements_Conditional">Умоўныя</h2>
@@ -4280,6 +4511,7 @@ React.renderComponent(
   <div class="refs">
     <ul>
       <li><a href="https://vuejs.org/">Home</a></li>
+      <li><a href="https://vuejs-tips.github.io/cheatsheet/">CheatSheet</a></li>
     </ul>
   </div>
   <p><a href="https://medium.com/js-dojo/4-things-vue-js-got-right-10820cc84004#.d4hjv138r">4 Things Vue.js Got Right</a></p>
