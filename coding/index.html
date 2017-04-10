@@ -143,11 +143,18 @@ disqus_shortname: coding-be
   <p><a href="https://www.confluent.io/blog/turning-the-database-inside-out-with-apache-samza/">Turning the database inside-out with Apache Samza</a></p>
   <p>Адна з самых вялікіх цяжкасьцей пры рэалізацыі мікрасэрвісаў&nbsp;&ndash; гэта падтрымка цэласнасьці даных і забесьпячэньне транзакцыйнасьці. Гэта зьвязана з тым, што па ідэі кожны мікрасэрвіс павінен быць цалкам незалежны ад іншых, у тым ліку і яго даныя. Але ў рэальным жыцьці даныя ўзаемазалежныя: балянс карыстальніка (<i>customer service</i>), павінен зьменшыцца толькі ў тым выпадку, калі яго замова (<i>order service</i>) была цалкам праведзеная. Але калі гэта незалежныя сэрвісы, якім чынам забясьпечыць цэласнасьць гэтых даных? Што калі мы спачатку зьменшылі балянс, а потым даслалі сэрвісу замоваў, каб ён завяршыў замову, але паведамленьне згубілася, пры завяршэньні замовы здарылася памылка, ці яшчэ што. Ну і калі наадварот, мы спачатку завяршаем замову, а потым дасылаем паведамленьне аб зьмяншэньні балянсу, могуць здарыцца падобныя нечаканыя сытуацыі.</p>
 
-  <h2 id="Microservices_Tools" data-content-item-open>Інструмэнты</h2>
+  <h2 id="Microservices_Tools">Інструмэнты</h2>
   <p>Developing high-speed microservices (tools needed): Docker, Rocket, Vagrant, EC2, boto, Chef, Puppet, testing, perf testing.</p>
   <p>Service discovery and health: Consul, etcd, Zookeeper, Nagios, Sensu, SmartStack, Serf, StatsD.</p>
   <p>Event Sourcing and CQRS: <a href="http://www.axonframework.org/">Axon Framework</a>, <a href="https://eventsourcing.com/es4j/">Eventsourcing for Java (es4j)</a></p>
-  <p><a href="http://serverless.com/">serverless.com</a></p>
+
+  <h3 id="Microservices_Tools_Serverless">Serverless</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="http://serverless.com/">Home</a></li>
+    </ul>
+  </div>
+  <p><a href="http://serverless-stack.com/">Serverless Stack is a comprehensive guide to creating full-stack serverless applications.</a></p>
 </section>
 
 <section>
