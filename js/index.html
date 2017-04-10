@@ -13,7 +13,7 @@ disqus_shortname: js-be
 <p><a href="http://habrahabr.ru/post/252323/">ECMAScript 6</a></p>
 <p><a href="https://codetower.github.io/es6-features/">ES6 Features</a></p>
 <p><a href="http://habrahabr.ru/post/267639/">Тонкости модульной системы ECMAScript 2015 (ES6)</a></p>
-<p><a href="http://es6-features.org/">ECMAScript 6 — New Features: Overview & Comparison</a></p>
+<p><a href="http://es6-features.org/">ECMAScript 6 — New Features: Overview & Comparison</a>, <a href="https://ponyfoo.com/articles/es6">ES6 Overview in 350 Bullet Points</a></p>
 <p><a href="https://ponyfoo.com/books/practical-es6/chapters#toc">Practical ES6</a></p>
 <p><a href="https://code.tutsplus.com/tutorials/grokking-scope-in-javascript--cms-26259">Grokking Scope in JavaScript</a></p>
 <p><a href="http://blog.avenuecode.com/lazy-loading-es2015-modules-in-the-browser/">Lazy-loading ES2015 modules in the browser</a></p>
@@ -2381,6 +2381,26 @@ a.length;                 // => 2: масіў утрымлівае цяпер 2 
   <p>Калі апэрацыя выкананая пасьпяхова, яна выдаляе атрыбут у аб'екта. Але, калі ў ланцугу прататыпаў аб'екта існуе атрыбут з такім жа імем, ён будзе успадкаваны аб'ектам адтуль.</p>
   <p>Апэрацыя ня можа быць ужытая да <a href="#TypesValues_Variables">зьменных</a>, функцый, а таксама да пэўных атрыбутаў <a href="#CoreObjects">базавых аб'ектаў</a>.</p>
 
+
+  <h3 id="Operators_Object_get"><code class="language-js">get</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">Reference</a></li>
+    </ul>
+  </div>
+  <p>Калі значэньне нейкага атрыбуту аб'екта павінна разьлічвацца дынамічна, яго можна не аб'яўляць наўпрост, а скарыстацца мэханізмам гэтэраў:</p>
+
+  <pre data-line="3,8"><code class="language-js">
+var obj = {
+  log: ['test'],
+  get latest() {
+    if (this.log.length == 0) return undefined;
+    return this.log[this.log.length - 1];
+  }
+}
+console.log(obj.latest); // Will return "test".
+</code></pre>
+
   <h3 id="Operators_Object_in"><code class="language-js">in</code></h3>
   <div class="refs">
     <ul>
@@ -2532,6 +2552,29 @@ car1.color = 'black';
 console.log(car1.color);   // black
 </code></pre>
 
+  <h3 id="Operators_Object_set"><code class="language-js">set</code></h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">Reference</a></li>
+    </ul>
+  </div>
+  <p>І аналягічна, калі ўстаноўка значэньня павінна быць дынамічнай, можна скарыстацца мэханізмам сэтэраў:</p>
+
+  <pre data-line="2,8,11"><code class="language-js">
+var language = {
+  set current(name) {
+    this.log.push(name);
+  },
+  log: []
+}
+
+language.current = 'EN';
+console.log(language.log); // ['EN']
+
+language.current = 'FA';
+console.log(language.log); // ['EN', 'FA']
+</code></pre>
+
   <h3 id="Operators_Object_this"><code class="language-js">this</code></h3>
   <div class="refs">
     <ul>
@@ -2639,48 +2682,6 @@ typeof new String('abc') === 'object';
 typeof function() {} === 'function';
 typeof class C {} === 'function';
 typeof Math.sin === 'function';
-</code></pre>
-
-  <h3 id="Operators_Object_get"><code class="language-js">get</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get">Reference</a></li>
-    </ul>
-  </div>
-  <p>Калі значэньне нейкага атрыбуту аб'екта павінна разьлічвацца дынамічна, яго можна не аб'яўляць наўпрост, а скарыстацца мэханізмам гэтэраў:</p>
-
-  <pre data-line="3,8"><code class="language-js">
-var obj = {
-  log: ['test'],
-  get latest() {
-    if (this.log.length == 0) return undefined;
-    return this.log[this.log.length - 1];
-  }
-}
-console.log(obj.latest); // Will return "test".
-</code></pre>
-
-  <h3 id="Operators_Object_set"><code class="language-js">set</code></h3>
-  <div class="refs">
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">Reference</a></li>
-    </ul>
-  </div>
-  <p>І аналягічна, калі ўстаноўка значэньня павінна быць дынамічнай, можна скарыстацца мэханізмам сэтэраў:</p>
-
-  <pre data-line="2,8,11"><code class="language-js">
-var language = {
-  set current(name) {
-    this.log.push(name);
-  },
-  log: []
-}
-
-language.current = 'EN';
-console.log(language.log); // ['EN']
-
-language.current = 'FA';
-console.log(language.log); // ['EN', 'FA']
 </code></pre>
 
   <h2 id="Operators_Special">Асаблівыя</h2>
@@ -4551,6 +4552,46 @@ React.renderComponent(
   <p><a href="http://robots.thoughtbot.com/emberjs-with-a-separate-rails-api">EmberJS with a Separate Rails API</a></p>
   <p><a href="http://landongn.com/ember/things-i-wish-someone-had-told-me-when-i-was-learning-ember-js/">Things I wish someone had told me when I was learning Ember.js</a></p>
   <p><a href="https://medium.com/@joaomdmoura/building-mobile-apps-with-ember-5b4f95d88547">Building Mobile Apps with Ember</a></p>
+
+  <h3 id="Frameworks_Ember_Install">Усталёўка</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/getting-started/">Guide</a></li>
+    </ul>
+  </div>
+  <p>Перш за ўсё трэба <a href="#Frameworks_Node_npm">ўсталяваць <i>Node.js</i> з <i>npm</i></a>. Таксама абавязковай залежнасьцю зьяўляецца <a href="../git/index.html"><i>Git</i></a> і <a href="https://bower.io/"><i>Bower</i></a>, апошні ўсталёўваецца праз <i>npm</i>:</p>
+
+  <pre><code class="language-bash">
+$ npm install -g bower
+</code></pre>
+
+  <p>Неабавязковымі залежнасьцямі зьяўляюцца <a href="https://facebook.github.io/watchman/docs/install.html"><i>Watchman</i></a>, які аптымізуе сачэньне за файламі, і <a href="http://phantomjs.org/"><i>PhantomJS</i></a> для тэставаньня адкрыцьця старонак без браўзэра (іншымі словамі безаконны вэб-кліент).</p>
+
+  <p>Напрыканцы ўсталёўваем сам <i>ember</i>:</p>
+
+  <pre><code class="language-bash">
+$ npm install -g ember-cli
+</code></pre>
+
+  <p>І правяраем усталёўку:</p>
+
+  <pre><code class="language-bash">
+$ ember -v
+ember-cli: 2.12.1
+node: 6.10.2
+os: linux x64
+</code></pre>
+
+  <h3 id="Frameworks_Ember_CLI">Ember CLI</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://ember-cli.com/">Home</a></li>
+    </ul>
+  </div>
+  <p><i>Ember CLI</i>&nbsp;&ndash; гэта ўтыліта каманднага радку, якая забясьпечвае <a href="https://github.com/broccolijs/broccoli#broccoli"><i>Broccoli-powered asset pipeline</i></a>, строгую герархію праектаў згодна з канвэнцыяй, моцную сыстэму пашырэньня пры дапамозе дадаткаў.</p>
+
+  <h3 id="Frameworks_Ember_CoreConcepts">Ключавыя канцэпцыі</h3>
+  <img src="https://guides.emberjs.com/v2.12.0/images/ember-core-concepts/ember-core-concepts.png" alt="Ключавыя канцэпцыі Ember" style="width: 98%;">
 
   <h3 id="Frameworks_Ember_Glimmer">Glimmer</h3>
   <div class="refs">
