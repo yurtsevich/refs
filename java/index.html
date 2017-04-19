@@ -348,11 +348,20 @@ PT655H49M49.245S
   <h2 id="Library_Collections">Калекцыі</h2>
 
   <h2 id="Library_Streaming">Streaming API</h2>
+  <div class="refs">
+    <ul>
+      <li><a href="http://www.baeldung.com/java-8-streams">baeldung.com</a></li>
+      <li><a href="http://winterbe.com/posts/2014/07/31/java8-stream-tutorial-examples/">Tutorial</a></li>
+    </ul>
+  </div>
   <p><a href="https://medium.com/@johnmcclean/java-8-streams-10-missing-features-ec82ee90b6c0#.33ukxgjvs">Java 8 Streams : 10 missing features</a></p>
   <p><a href="http://gist.asciidoctor.org/?github-aol/simple-react//user-guide/streams.adoc&doctype=book&toc=preamble">Working With Streams</a> (<i>StreamUtils</i>, <i>Streamable</i>, <i>ReactiveSeq</i>)</p>
   <br>
   <p><i>Streaming API</i>&nbsp;&ndash; гэта яшчэ адзін (у дадатак да <a href="#Core_Lambda">лямбда-выразаў</a>) зрух у <i>Java</i>&nbsp;8 у бок дэкляратыўнага, а не імпэратыўнага праграмаваньня, калі мы пазначаем пажаданы вынік замест рэалізацыі кожнай дробнай дэталі дасягненьня гэтага выніку. Напрыклад, мы кажам мове, што мы жадаем атрымаць адсартаваны ці адфільтраваны сьпіс элемэнтаў, пазначаючы толькі пэўныя парамэтры таго, якім чынам яны павінныя быць адсартаваныя і адфільтраваныя, а ўжо якім чынам іх адсартаваць і адфільтраваць, будзе заклапочана сама мова, прычым яно зробіць гэта аптымізаваным чынам.</p>
-  <p><i>Streaming API</i> прызначаны палепшыць працу з калекцыямі элемэнтаў. Плынь (<i>stream</i>) у <i>Java</i>&nbsp;8&nbsp;&ndash; гэта пасьлядоўнасьць пэўных элемэнтаў, прычым плынь не захоўвае самі элемэнты, але мае спасылку на іх крыніцу і перабірае элемэнтамі ў ходзе выкананьня праграмы. Шмат якія апэрацыі плыняў зроблены такім чынам, што яны ізноў вяртаюць плынь з ужо іншымі характарыстыкамі. Гэта зроблена, каб іх можна было злучаць у ланцуг выклікаў&nbsp;&ndash; у так званую трубу:</p>
+  <p><i>Streaming API</i> прызначаны палепшыць працу з калекцыямі элемэнтаў. Плынь (<i>stream</i>) у <i>Java</i>&nbsp;8&nbsp;&ndash; гэта пасьлядоўнасьць пэўных элемэнтаў, прычым плынь не захоўвае самі элемэнты, але мае спасылку на іх крыніцу і перабірае элемэнтамі ў ходзе выкананьня праграмы.</p>
+
+  <h3 id="Library_Streaming_Pipeline">Парадак выкарыстаньня</h3>
+  <p>Існуе пэўны парадак (пасьлядоўнасьць) якім чынам трэба выкарыстоўваць плыні: <strong><a href="#Library_Streaming_Creating">стварэньне</a></strong>, <strong>прамежкавыя апэрацыі</strong> (фільтрацыя, сартаваньне, маппінг), <strong>канцавая (ці тэрмінальная) апэрацыя</strong> (атрыманьне аднаго з шэрагу, ці выніковай калекцыі). Прамежкавыя апэрацыі ізноў вяртаюць экзэмпляр плыні, могуць выклікацца колькі заўгодна разоў адна за другой і нават аб'ядноўвацца ў ланцуг выклікаў&nbsp;&ndash; у так званую трубу:</p>
 
   <pre><code class="language-java">
 List&lt;Integer&gt; ids = invoices.stream()
@@ -362,14 +371,63 @@ List&lt;Integer&gt; ids = invoices.stream()
     .collect(Collectors.toList());
 </code></pre>
 
-  <p>Усе апэрацыі, якія падтрымлівае інтэрфэйс <code class="language-java">java.util.stream.Stream</code> падзяляюцца на 2 катэгорыі:</p>
-  <ul>
-    <li>такія апэрацыі, як <code class="language-java">filter</code>, <code class="language-java">sorted</code> і <code class="language-java">map</code>, якія могуць злучацца ў ланцуг (трубу).</li>
-    <li>а таксама апэрацыі, як <code class="language-java">collect</code>, <code class="language-java">findFirst</code> і <code class="language-java">allMatch</code>, якія перарываюць ланцуг выклікаў і вяртаюць вынік.</li>
-  </ul>
+  <p>А вось канцавая апэрацыя над плыньню можа выклікацца толькі адзін раз. Яна перарывае плынь і спроба выклікаць канцавую апэрацыю над перарванай плыньню кіне выключэньне.</p>
+
+  <h3 id="Library_Streaming_Creating">Стварэньне</h3>
+
+  <pre><code class="language-java">
+// Стварэньне пустой плыні, каб прадухіліць NPE
+public Stream&lt;String&gt; streamOf(List&lt;String&gt; list) {
+    return list == null || list.isEmpty() ? Stream.empty() : list.stream();
+}
+
+// Плынь з калекцыі
+Collection&lt;String&gt; collection = Arrays.asList("a", "b", "c");
+Stream&lt;String&gt; streamOfCollection = collection.stream();
+
+// Плынь з масіву
+Stream&lt;String&gt; streamOfArray = Stream.of("a", "b", "c");
+IntStream.range(1, 4).forEach(System.out::println);
+
+String[] arr = new String[]{"a", "b", "c"};
+Stream&lt;String&gt; streamOfArrayFull = Arrays.stream(arr);
+Stream&lt;String&gt; streamOfArrayPart = Arrays.stream(arr, 1, 3);
+
+// Stream.builder()
+Stream&lt;String&gt; streamBuilder =
+    Stream.&lt;String&gt;builder().add("a").add("b").add("c").build();
+
+// Stream.generate()
+// У выніку будзе створана плынь з 10 радковых элемэнтаў "element"
+Stream&lt;String&gt; streamGenerated = Stream.generate(() -> "element").limit(10);
+
+// Stream.iterate()
+// Першы элемэнт ланцугу перадаецца першым парамэтрам, астатнія атрымліваюцца ў выніку выкананьня
+// функцыі, якая перадаецца другім парамэтрам. Значэньне n - гэта значэньне папярэдняга элемэнту
+Stream&lt;String&gt; streamIterated = Stream.iterate(40, n -> n + 2).limit(20);
+
+// IntStream, LongStream, DoubleStream
+// Ад значэньня першага парамэтра да значэньня другога з крокам 1
+IntStream intStream = IntStream.range(1, 3);          // Не ўключае ў ланцуг значэньне другога парамэтра
+LongStream longStream = LongStream.rangeClosed(1, 3); // Са значэньнем другога парамэтра ўключна
+
+// Random
+Random random = new Random();
+DoubleStream doubleStream = random.doubles(3);
+
+// Strings
+IntStream streamOfChars = "abc".chars(); // CharStream няма, таму вяртаецца IntStream
+
+Stream&lt;String&gt; streamOfString = Pattern.compile(", ").splitAsStream("a, b, c");
+
+// File
+Path path = Paths.get("C:\\file.txt");
+Stream&lt;String&gt; streamOfStrings = Files.lines(path);
+Stream&lt;String&gt; streamWithCharset = Files.lines(path, Charset.forName("UTF-8"));
+</code></pre>
 
   <h3 id="Library_Streaming_Filtering">Фільтрацыя</h3>
-  <p>У <i>Streaming API</i> існуе шэраг апэрацыяў для фільтрацыі элемэнтаў, некаторыя зь іх:</p>
+  <p>У <i>Streaming API</i> існуе шэраг апэрацыяў для фільтрацыі элемэнтаў (прамежкавыя апэрацыі), некаторыя зь іх:</p>
   <table>
     <thead>
     <tr>
@@ -405,25 +463,8 @@ List&lt;Invoice&gt; expensiveInvoices = invoices.stream()
     .collect(Collectors.toList());
 </code></pre>
 
-  <h3 id="Library_Streaming_Matching">Праверка на адпаведнасьць</h3>
-  <p>Можна праверыць ці адпавядаюць усе/пэўныя/ніякія элемэнты плыні пэўнаму крытэру. Для гэтага ў <i>Streaming API</i> існуюць апэрацыі <code class="language-java">allMatch</code>, <code class="language-java">anyMatch</code> і <code class="language-java">noneMatch</code>. У якасьці парамэтру яны прымаюць <code class="language-java">Predicate</code>, а вяртаюць вынік тыпу <code class="language-java">boolean</code>. Прыклад праверкі ці ўсе чэкі маюць суму большую за 1000:</p>
-
-  <pre><code class="language-java">
-boolean expensive = invoices.stream()
-    .allMatch(inv -&gt; inv.getAmount() &gt; 1000);
-</code></pre>
-
-  <h3 id="Library_Streaming_Finding">Адзін з мноства</h3>
-  <p>Калі трэба атрымаць проста любы ці першы элемэнт з плыні, можна скарыстацца апэрацыямі <code class="language-java">findAny</code> і <code class="language-java">findFirst</code>. У выніку будзе вернуты аб'ект <a href="#Library_OtherIn_javautil_Optional"><code class="language-java">Optional</code></a>:</p>
-
-  <pre><code class="language-java">
-Optional&lt;Invoice&gt; = invoices.stream()
-    .filter(inv -&gt; inv.getCustomer() == Customer.ORACLE)
-    .findAny();
-</code></pre>
-
   <h3 id="Library_Streaming_Mapping">Mapping</h3>
-  <p>Пры дапамозе мэтаду <code class="language-java">map</code> можна пераўтварыць кожны элемэнт плыні ў іншы аб'ект. Мэтад прымае ў якасьці аргумэнту аб'ект <code class="language-java">Function</code>, які пасьлядоўна ўжываецца да кожнага з элемэнтаў плыні, а вынік яго выкананьня фармуе новую плынь. Напрыклад, такім чынам можна атрымаць <i>ID</i> усіх чэкаў, якія ўтрымліваюцца ў зыходнай плыні:</p>
+  <p>Пры дапамозе прамежкавага мэтаду <code class="language-java">map</code> можна пераўтварыць кожны элемэнт плыні ў іншы аб'ект. Мэтад прымае ў якасьці аргумэнту аб'ект <code class="language-java">Function</code>, які пасьлядоўна ўжываецца да кожнага з элемэнтаў плыні, а вынік яго выкананьня фармуе новую плынь. Напрыклад, такім чынам можна атрымаць <i>ID</i> усіх чэкаў, якія ўтрымліваюцца ў зыходнай плыні:</p>
 
   <pre><code class="language-java">
 List&lt;Integer&gt; ids = invoices.stream()
@@ -431,8 +472,32 @@ List&lt;Integer&gt; ids = invoices.stream()
     .collect(Collectors.toList());
 </code></pre>
 
+  <h3 id="Library_Streaming_forEach">Перабор</h3>
+  <p>Пры дапамозе прамежкавага мэтаду <code class="language-java">forEach</code> можна выканаць нейкія дзеяньні з кожным элемэнтам плыні:</p>
+
+  <pre><code class="language-java">
+new Random().ints().limit(10).forEach(System.out::println);
+</code></pre>
+
+  <h3 id="Library_Streaming_Matching">Праверка на адпаведнасьць</h3>
+  <p>Можна праверыць ці адпавядаюць усе/пэўныя/ніякія элемэнты плыні пэўнаму крытэру. Для гэтага ў <i>Streaming API</i> існуюць апэрацыі <code class="language-java">allMatch</code>, <code class="language-java">anyMatch</code> і <code class="language-java">noneMatch</code> (тэрмінальныя). У якасьці парамэтру яны прымаюць <code class="language-java">Predicate</code>, а вяртаюць вынік тыпу <code class="language-java">boolean</code>. Прыклад праверкі ці ўсе чэкі маюць суму большую за 1000:</p>
+
+  <pre><code class="language-java">
+boolean expensive = invoices.stream()
+    .allMatch(inv -&gt; inv.getAmount() &gt; 1000);
+</code></pre>
+
+  <h3 id="Library_Streaming_Finding">Адзін з мноства</h3>
+  <p>Калі трэба атрымаць проста любы ці першы элемэнт з плыні, можна скарыстацца апэрацыямі <code class="language-java">findAny</code> і <code class="language-java">findFirst</code> (тэрмінальныя). У выніку будзе вернуты аб'ект <a href="#Library_OtherIn_javautil_Optional"><code class="language-java">Optional</code></a>:</p>
+
+  <pre><code class="language-java">
+Optional&lt;Invoice&gt; = invoices.stream()
+    .filter(inv -&gt; inv.getCustomer() == Customer.ORACLE)
+    .findAny();
+</code></pre>
+
   <h3 id="Library_Streaming_Reducing">Reducing</h3>
-  <p>Яшчэ адна апэрацыя, якую часта трэба выканаць над шэрагам элемэнтаў&nbsp;&ndash; гэта аб'яднаць нейкім чынам гэтыя элемэнты, каб атрымаць у выніку адно значэньне. Напрыклад, вылічыць суму ўсіх чэкаў у плыні. Клясычна мы б вырашалі гэтую задачу наступным чынам:</p>
+  <p>Часам трэба аб'яднаць нейкім чынам выніковыя элемэнты плыні, каб атрымаць у выніку адно значэньне. Напрыклад, вылічыць суму ўсіх чэкаў у плыні. Клясычна мы б вырашалі гэтую задачу наступным чынам:</p>
 
   <pre><code class="language-java">
 double sum = 0;
@@ -465,6 +530,18 @@ List&lt;Invoice&gt; invoices = invoices.stream().collect(Collectors.toList());
   <pre><code class="language-java">
 Map&lt;Customer, List&lt;Invoice&gt;&gt; customerToInvoices = invoices.stream()
     .collect(Collectors.groupingBy(Invoice::getCustomer));
+
+Map&lt;Boolean, List&lt;Product&gt;&gt; mapPartioned = productList.stream()
+  .collect(Collectors.partitioningBy(element -&gt; element.getPrice() &gt; 15));
+
+String listToString = productList.stream().map(Product::getName)
+    .collect(Collectors.joining(", ", "[", "]"));
+
+double averagePrice = productList.stream()
+  .collect(Collectors.averagingDouble(Product::getPrice));
+
+int summingQuantity = productList.stream()
+  .collect(Collectors.summingInt(Product::getQuantity));
 </code></pre>
 
 
