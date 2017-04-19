@@ -3549,7 +3549,11 @@ sayHi(); // Вывядзе чараду "Hi there!" у кансоль
   <p><a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/workers.html#workers">whatwg.org</a></p>
   <p><a href="http://www.html5rocks.com/en/tutorials/service-worker/introduction/?mc_cid=31cc7c17cb&mc_eid=5b4e3f8de1">Introduction to Service Worker</a></p>
   <p><a href="https://una.im/save-offline/">Implementing "Save For Offline" with Service Workers</a></p>
+  <p><a href="https://github.com/mozilla/serviceworker-cookbook">ServiceWorker Cookbook</a></p>
+  <p><a href="https://vimeo.com/184236467">The Pragmatist’s Guide to Service Workers</a></p>
   <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">Fetch API</a></p>
+  <br>
+  <p><a href="https://bitsofco.de/asynchronous-functions-101/">Asynchronous Functions 101</a></p>
   <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/promise-based-validation/">Promise-Based Validation</a></p>
   <p><a href="http://robotlolita.me/2015/11/15/how-do-promises-work.html?mc_cid=b2ece7659c&mc_eid=5b4e3f8de1">How do Promises Work?</a></p>
   <p><a href="http://www.html5rocks.com/en/tutorials/es6/promises/?mc_cid=b2ece7659c&mc_eid=5b4e3f8de1">JavaScript Promises</a></p>
@@ -4105,8 +4109,11 @@ gulp.task('js-minify', function() {
   <p><a href="https://css-tricks.com/learning-react-router/">Leveling Up With React</a></p>
   <p><a href="https://www.codementor.io/reactjs/tutorial">Different tutorials</a></p>
   <p>React Router: <a href="https://github.com/ReactTraining/react-router">routing library for React</a>, <a href="https://css-tricks.com/learning-react-router/">Leveling Up With React: React Router</a>, <a href="http://codepen.io/pen?template=jyYjeW">real example</a></p>
+  <p><a href="https://codesandbox.io/"><strong>CodeSandbox</strong> makes it easier to create, share and reuse React projects with others.</a></p>
   <p><a href="https://github.com/djirdehh/react-living-app">Прыклад праграмы</a>, і <a href="https://github.com/elrumordelaluz/reactour">яшчэ адзін</a></p>
   <p><a href="https://github.com/team-gryff/react-monocle">react-monocle</a>&nbsp;&ndash; developer tool for generating visual representations of your React app's component hierarchy.</p>
+  <p><a href="https://github.com/storybooks/storybook">Storybook</a>&nbsp;&ndash; is a development environment for React UI components.</p>
+  <p><a href="https://react-move.js.org">ReactMove</a>&nbsp;&ndash; Beautifully and deterministically animate anything in react.</p>
   <p><a href="https://github.com/gajus/react-css-modules">React CSS Modules</a></p>
   <p><a href="https://www.triplet.fi/blog/practical-guide-to-react-and-css-modules/">Practical Guide to React and CSS Modules</a></p>
   <p><a href="https://github.com/styled-components/styled-components">styled-components</a></p>
@@ -4546,12 +4553,10 @@ React.renderComponent(
       <li><a href="http://emberjs.com/guides/">Guides</a></li>
     </ul>
   </div>
-  <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/getting-into-ember-js/">Getting Into Ember.js</a></p>
-  <p><a href="https://courses.tutsplus.com/courses/lets-learn-ember">Let's Learn Ember</a></p>
-  <p><a href="http://ember.codeschool.com/">Warming Up With Ember.js</a></p>
-  <p><a href="http://robots.thoughtbot.com/emberjs-with-a-separate-rails-api">EmberJS with a Separate Rails API</a></p>
   <p><a href="http://landongn.com/ember/things-i-wish-someone-had-told-me-when-i-was-learning-ember-js/">Things I wish someone had told me when I was learning Ember.js</a></p>
-  <p><a href="https://medium.com/@joaomdmoura/building-mobile-apps-with-ember-5b4f95d88547">Building Mobile Apps with Ember</a></p>
+  <p><a href="http://www.ember-cli-mirage.com/docs/v0.3.x/">Ember CLI MIRAGE</a>&nbsp;&ndash; Build, test and demo your app using a client-side server</p>
+  <p><a href="https://ember-fastboot.com/">Ember FastBoot</a>&nbsp;&ndash; progressive enhancement for ambitious web apps</p>
+  <p>Платныя курсы: <a href="https://code.tutsplus.com/courses/build-an-ambitious-app-with-ember-2">Tuts+</a>, <a href="https://app.pluralsight.com/library/courses/ember-2-getting-started/table-of-contents">Pluralsight</a></p>
 
   <h3 id="Frameworks_Ember_Install">Усталёўка</h3>
   <div class="refs">
@@ -4593,6 +4598,64 @@ os: linux x64
   <h3 id="Frameworks_Ember_CoreConcepts">Ключавыя канцэпцыі</h3>
   <img src="https://guides.emberjs.com/v2.12.0/images/ember-core-concepts/ember-core-concepts.png" alt="Ключавыя канцэпцыі Ember" style="width: 98%;">
 
+  <h3 id="Frameworks_Ember_Routing">Разводка шляхоў</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/routing/">Guide</a></li>
+    </ul>
+  </div>
+  <p>Разводка шляхоў (<i>routing</i>) вызначае, якія існуюць шляхі (<i>URLs</i>) у праграме. Разводка зьмяшчаецца ў файле <code class="language-bash">app/router.js</code>:</p>
+
+  <div class="pre-title"><code>app/router.js</code></div>
+  <pre><code class="language-js">
+Router.map(function() {
+  this.route('orders', { path: '/orders' }); // першы аргумэнт - імя разводкі, другі - шлях
+});
+</code></pre>
+
+  <p>Калі імя разводкі і шлях супадаюць, як у прыкладзе вышэй, шлях можна апускаць:</p>
+
+  <div class="pre-title"><code>app/router.js</code></div>
+  <pre><code class="language-js">
+Router.map(function() {
+  this.route('orders'); // кароткая форма
+});
+</code></pre>
+
+  <p>Іншымі словамі можна сказаць, што шляхі праграмы&nbsp;&ndash; гэта магчымыя станы праграмы. Калі карыстальнік уручную задае шлях у браўзэры, ён пераводзіць праграму ў пэўны стан, і наадварот, калі праграма пераходзіць у пэўны стан, яна адлюстроўвае адпаведны шлях у браўзэры. Трэба адзначыць, што калі карыстальнік уручную ўвядзе шлях, адбудзецца паўнавартаснае абнаўленьне старонкі. Калі ж праграма сама пераходзіць у пэўны стан, то абнаўленьне старонкі не адбываецца, праграма абнаўляе стан (і візуальнае адлюстраваньне) у межах цяперашняй старонкі.</p>
+
+  <h3 id="Frameworks_Ember_Templates">Візуальныя макеты</h3>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/templates/handlebars-basics/">Guide</a></li>
+      <li><a href="http://handlebarsjs.com">Handlebars</a></li>
+    </ul>
+  </div>
+  <p><code class="language-bash">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code> пазначае месца, куды будзе ўстаўляцца зьмест укладзеных шаблёноў:</p>
+
+  <div class="pre-title"><code>app/templates/application.hbs</code></div>
+  <pre data-line="3"><code class="language-html">
+&lt;h1&gt;Title&lt;/h1&gt;
+
+&lbrace;&lbrace;outlet&rbrace;&rbrace;
+</code></pre>
+
+  <h4 id="Frameworks_Ember_Templates_Helpers">Helpers</h4>
+  <p>Спасылка:</p>
+
+  <div class="pre-title"><code>app/templates/index.hbs</code></div>
+  <pre><code class="language-html">
+&lbrace;&lbrace;#link-to "orders" class="some-class" tagName="div"&rbrace;&rbrace;Orders&lbrace;&lbrace;/link-to&rbrace;&rbrace;
+</code></pre>
+
+  <p>Зьвярніце ўвагу на атрыбут <code class="language-html">tagName</code>, ён пазначае элемэнт <i>HTML</i> які будзе ў выніку адлюстраваны:</p>
+
+  <pre><code class="language-html">
+&lt;div id="ember3" class="some-class ember-view"&gt;Orders&lt;/div&gt;
+</code></pre>
+
+  <p>Эмбер аўтаматычна падставіў значэньне <code class="language-html">id</code>, дадаў да нашай клясы яшчэ сваю ўнутраную, і што найбольш важна, нягледзячы на тое, што гэта ня лінк, эмбер ведае, што клік на гэты блёк павінен перавесьці праграму ў новы стан (адбудзецца пераход па пазначанаму шляху).</p>
+
   <h3 id="Frameworks_Ember_Glimmer">Glimmer</h3>
   <div class="refs">
     <ul>
@@ -4600,7 +4663,8 @@ os: linux x64
       <li><a href="https://glimmerjs.com/guides/">Guides</a></li>
     </ul>
   </div>
-  <p><i>React-like</i> бібліятэка для пабудовы <i>UI</i>-кампанэнтаў альбо незалежных, якія наўпрост будуць падключацца да старонкі, альбо працаваць у межах <i>Ember</i>-праграмы.</p>
+  <p><a href="https://hackernoon.com/why-im-excited-about-glimmerjs-3631bd0c95c4">Why I’m excited about GlimmerJS</a></p>
+  <p>Бібліятэка для пабудовы <i>UI</i>-кампанэнтаў альбо незалежных, якія наўпрост будуць падключацца да старонкі, альбо працаваць у межах <i>Ember</i>-праграмы.</p>
 
   <h2 id="Frameworks_Backbone">Backbone</h2>
   <div class="refs">
