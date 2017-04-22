@@ -4,6 +4,9 @@
 @import 'font-stack';
 
 body {background: url('../images/bg.jpg'); font: 94% $optima-font-stack;}
+.top-alert {position: fixed; top: -100px; left: 0; width: 100%; line-height: 1.8em; padding: .5em 0; background-color: rgb(251, 247, 136); text-align: center; font-size: 18px;
+  .icon-cancel {float: right; margin-right: 20px; cursor: pointer;}
+}
 section, header, footer {max-width: 900px;}
 h1, h2, h3, h4, h5, h6 {font-family: $goudy-old-style-font-stack;
   a {text-decoration: none;} // excluding text underlying of links inside of headers
