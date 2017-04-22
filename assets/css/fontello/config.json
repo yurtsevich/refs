@@ -7,9 +7,15 @@
   "ascent": 850,
   "glyphs": [
     {
-      "uid": "7034e4d22866af82bef811f52fb1ba46",
-      "css": "code",
-      "code": 61729,
+      "uid": "8669af50382b53c48b9b803692828dd0",
+      "css": "github-circled-alt2",
+      "code": 61526,
+      "src": "mfglabs"
+    },
+    {
+      "uid": "5211af474d3a9848f67f945e2ccaf143",
+      "css": "cancel",
+      "code": 59392,
       "src": "fontawesome"
     }
   ]
