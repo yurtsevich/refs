@@ -4623,6 +4623,115 @@ Router.map(function() {
 </code></pre>
 
   <p>Іншымі словамі можна сказаць, што шляхі праграмы&nbsp;&ndash; гэта магчымыя станы праграмы. Калі карыстальнік уручную задае шлях у браўзэры, ён пераводзіць праграму ў пэўны стан, і наадварот, калі праграма пераходзіць у пэўны стан, яна адлюстроўвае адпаведны шлях у браўзэры. Трэба адзначыць, што калі карыстальнік уручную ўвядзе шлях, адбудзецца паўнавартаснае абнаўленьне старонкі. Калі ж праграма сама пераходзіць у пэўны стан, то абнаўленьне старонкі не адбываецца, праграма абнаўляе стан (і візуальнае адлюстраваньне) у межах цяперашняй старонкі.</p>
+  <p><i>Ember</i> аўтаматычна стварае разводку для каранёвага шляху нават калі яна ня створана яўна (<i>index</i>-разводка да
+    <a href="#Frameworks_Ember_Templates">макету</a> <code class="language-bash">app/templates/index.hbs</code>).</p>
+  <p>Калі ў праграме спрацоўвае пэўная разводка, <i>Ember</i> шукае аднайменныя <a href="#Frameworks_Ember_RouteHandlers">апрацоўшчык разводкі</a> і <a href="#Frameworks_Ember_Templates">макет</a>. Калі яны ня былі яшчэ створаныя, <i>Ember</i> аўтаматычна падставіць змоўчныя.</p>
+
+  <h4 id="Frameworks_Ember_Routing_DynamicSegments">Дынамічныя сэгмэнты</h4>
+  <p>Калі частка шляху дынамічная (напрыклад ID замовы), яна пазначаецца зьменнай, перад імем якой ставіцца двукроп'е: </p>
+
+  <div class="pre-title"><code>app/router.js</code></div>
+  <pre><code class="language-js">
+Router.map(function() {
+  this.route('orders', function() {
+    this.route('order', { path: '/:order_id' }); // менавіта 'order_id', не 'id',
+  });                                            // інакш можа ўзьнікнуць канфлікт імёнаў
+});
+</code></pre>
+
+  <p>Калі карыстальнік увядзе ў браўзэрным радку шлях <code class="language-js">/orders/5</code>, зьменная <code class="language-js">order_id</code> прыме значэньне <code class="language-js">5</code> і яно будзе даступнае ў апрацоўшчыку:</p>
+
+  <div class="pre-title"><code>app/routes/orders/order.js</code></div>
+  <pre><code class="language-js">
+export default Ember.Route.extend({
+  model(params) {
+    return [
+      { id: '1', name: 'Nate' },
+      { id: '2', name: 'Gregg' }
+    ].findBy('id', params.order_id);
+  }
+});
+</code></pre>
+
+  <h4 id="Frameworks_Ember_Routing_GlobingAndWildcard">Wildcard-разводка</h4>
+  <p>Можна вызначаць разводку, якая будзе спрацоўваць не на адзін шлях, а адразу на шмат шляхоў. Адно з магчымых варыянтаў выкарыстаньня&nbsp;&ndash; вызначэньне разводкі для няісных шляхоў: </p>
+
+  <div class="pre-title"><code>app/router.js</code></div>
+  <pre><code class="language-js">
+Router.map(function() {
+  this.route('not-found', { path: '/*path' });
+});
+</code></pre>
+
+  <p>Тады, калі карыстальнік увядзе шлях <code class="language-bash">/a/non-existent/path</code>, яму будзе адлюстраваны макет:</p>
+
+  <div class="pre-title"><code>app/templates/not-found.hbs</code></div>
+  <pre><code class="language-js">
+&lt;p&gt;Oops, the page you&#146;re looking for wasn&#146;t found&lt;/p&gt;
+</code></pre>
+
+  <h3 id="Frameworks_Ember_RouteHandlers">Апрацоўшчыкі разводкі</h3>
+
+  <h4 id="Frameworks_Ember_RouteHandlers_RenderingTemplate">Прамалёўка макету</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/routing/rendering-a-template/">Guide</a></li>
+    </ul>
+  </div>
+  <p>Адна з задачаў апрацоўшчыка разводкі&nbsp;&ndash; выбар адпаведнага макету і яго прамалёўка. Па змоўчваньні будзе абраны макет, імя якога супадае з імем разводкі:</p>
+
+  <div class="pre-title"><code>app/router.js</code></div>
+  <pre><code class="language-js">
+Router.map(function() {
+  this.route('posts', function() {
+    this.route('new');
+  });
+});
+</code></pre>
+
+  <p>У прыкладзе вышэй разводка <code class="language-bash">posts</code> прамалюе макет <code class="language-bash">posts.hbs</code>, а разводка <code class="language-bash">posts.new</code>&nbsp;&ndash; макет <code class="language-bash">posts/new.hbs</code></p>
+  <p>Вынік прамалёўкі кожнага з макетаў будзе ўстаўлены ў месцазнаходжаньне <code class="language-js">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code> макета яго бацькоўскай у герархіі разводкі. Калі вярнуцца да папярэдняга прыкладу, то разводка <code class="language-bash">posts.new</code> уставіць вынік прамалёўкі свайго макету ў <code class="language-js">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code>, які знаходзіцца ў макеце <code class="language-bash">posts.hbs</code>, а разводка <code class="language-bash">posts</code> уставіць вынік прамалёўкі свайго макету ў <code class="language-js">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code>, які знаходзіцца ў макеце <code class="language-bash">application.hbs</code>.</p>
+  <p>Пры неабходнасьці прамаляваць макет, адрозны ад змоўчнага, можна перавызначыць атрыбут <a href="http://emberjs.com/api/classes/Ember.Route.html#property_templateName"><code class="language-js">templateName</code></a> апрацоўшчыка:</p>
+
+  <div class="pre-title"><code>app/routes/posts.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  templateName: 'posts/favorite-posts'
+});
+</code></pre>
+
+  <p>Акрамя гэтага можна яшчэ перавызначыць і хук <a href="http://emberjs.com/api/classes/Ember.Route.html#method_renderTemplate"><code class="language-js">renderTemplate()</code></a> для большага кантролю над працэсам прамалёўкі макета.</p>
+
+  <h4 id="Frameworks_Ember_RouteHandlers_DefiningModel">Вызначэньне мадэлі даных</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/routing/specifying-a-routes-model/">Guide</a></li>
+    </ul>
+  </div>
+  <p>Часьцей за ўсё ў макеце трэба адлюстраваць пэўныя даныя, іншай задачай апрацоўшчыка разводкі як раз зьяўляецца вызначэньне мадэлі даных. Каб прадставіць мадэль даных макету, трэба перавызначыць хук <a href="http://emberjs.com/api/classes/Ember.Route.html#method_model"><code class="language-js">model()</code></a> апрацоўшчыка:</p>
+
+  <div class="pre-title"><code>app/routes/favorite-posts.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model() {
+    return this.get('store').query('post', { favorite: true });
+  }
+});
+</code></pre>
+
+  <p>Тыпова гэты хук будзе вяртаць існасьць <a href="https://guides.emberjs.com/v2.12.0/models/"><i>Ember Data</i></a>, але гэта можа быць і <a href="https://www.promisejs.org/"><i>promise</i></a>, і масіў, і ўвогуле любы аб'ект. Значэньне, вернутае хукам <code class="language-js">model()</code>, будзе даступна ў макеце ў якасьці атрыбуту <code class="language-js">model</code>.</p>
+
+  <div class="pre-title"><code>app/templates/favorite-posts.hbs</code></div>
+  <pre><code class="language-js">
+&lt;h1&gt;Favorite Posts&lt;/h1&gt;
+&lbrace;&lbrace;#each model as |post|&rbrace;&rbrace;
+  &lt;p&gt;&lbrace;&lbrace;post.body&rbrace;&rbrace;&lt;/p&gt;
+&lbrace;&lbrace;/each&rbrace;&rbrace;
+</code></pre>
 
   <h3 id="Frameworks_Ember_Templates">Візуальныя макеты</h3>
   <div class="refs">
@@ -4631,7 +4740,7 @@ Router.map(function() {
       <li><a href="http://handlebarsjs.com">Handlebars</a></li>
     </ul>
   </div>
-  <p><code class="language-bash">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code> пазначае месца, куды будзе ўстаўляцца зьмест укладзеных шаблёноў:</p>
+  <p><code class="language-js">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code> пазначае месца, куды будзе ўстаўляцца зьмест укладзеных шаблёноў:</p>
 
   <div class="pre-title"><code>app/templates/application.hbs</code></div>
   <pre data-line="3"><code class="language-html">
@@ -4639,6 +4748,8 @@ Router.map(function() {
 
 &lbrace;&lbrace;outlet&rbrace;&rbrace;
 </code></pre>
+
+  <p><i>Ember</i> аўтаматычна стварае шаблён <code class="language-bash">app/templates/index.hbs</code> для каранёвага шляху нават калі ён ня створаны яўна.</p>
 
   <h4 id="Frameworks_Ember_Templates_Helpers">Helpers</h4>
   <p>Спасылка:</p>
