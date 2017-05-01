@@ -4552,6 +4552,7 @@ React.renderComponent(
     <ul>
       <li><a href="http://emberjs.com/">Home</a></li>
       <li><a href="http://emberjs.com/guides/">Guides</a></li>
+      <li><a href="https://emberjs.com/api/">API</a></li>
     </ul>
   </div>
   <p><a href="http://landongn.com/ember/things-i-wish-someone-had-told-me-when-i-was-learning-ember-js/">Things I wish someone had told me when I was learning Ember.js</a></p>
@@ -4734,6 +4735,41 @@ export default Ember.Route.extend({
 &lbrace;&lbrace;/each&rbrace;&rbrace;
 </code></pre>
 
+  <p><strong>ЗАЎВАГА:</strong> у выпадку апрацоўкі шляху з <a href="#Frameworks_Ember_Routing_DynamicSegments">дынамічным сэгмэнтам</a>, хук <code class="language-js">model()</code> будзе абавязкова выкліканы ў выпадку непасрэднага уводу <i>URL'</i>а, але калі праграма патрапіць на яго праз праграмныя сродкі (напрыклад праз <code class="language-js">&lbrace;&lbrace;link-to&rbrace;&rbrace;</code>), тады хук будзе выкліканы толькі пры ўмове, што будзе вызначаны ідэнтыфікатар аб'екту:</p>
+
+  <div class="pre-title"><code>app/templates/photos.hbs</code></div>
+  <pre data-line="4"><code class="language-js">
+&lt;h1&gt;Photos&lt;/h1&gt;
+&lbrace;&lbrace;#each model as |photo|&rbrace;&rbrace;
+  &lt;p&gt;
+    &lbrace;&lbrace;#link-to 'photo' photo.id&rbrace;&rbrace;
+      &lt;img src="&lbrace;&lbrace;photo.thumbnailUrl&rbrace;&rbrace;" alt="&lbrace;&lbrace;photo.title&rbrace;&rbrace;" /&gt;
+    &lbrace;&lbrace;/link-to&rbrace;&rbrace;
+  &lt;/p&gt;
+&lbrace;&lbrace;/each&rbrace;&rbrace;
+</code></pre>
+
+  <p>Калі ж у <code class="language-js">&lbrace;&lbrace;link-to&rbrace;&rbrace;</code> будзе перададзена мадэль, тады хук <code class="language-js">model()</code> ня будзе выкліканы, а ў макет трапіць перададзеная мадэль:</p>
+
+  <div class="pre-title"><code>app/templates/photos.hbs</code></div>
+  <pre data-line="4"><code class="language-js">
+&lt;h1&gt;Photos&lt;/h1&gt;
+&lbrace;&lbrace;#each model as |photo|&rbrace;&rbrace;
+  &lt;p&gt;
+    &lbrace;&lbrace;#link-to 'photo' photo&rbrace;&rbrace;
+      &lt;img src="&lbrace;&lbrace;photo.thumbnailUrl&rbrace;&rbrace;" alt="&lbrace;&lbrace;photo.title&rbrace;&rbrace;" /&gt;
+    &lbrace;&lbrace;/link-to&rbrace;&rbrace;
+  &lt;/p&gt;
+&lbrace;&lbrace;/each&rbrace;&rbrace;
+</code></pre>
+
+  <h4 id="Frameworks_Ember_RouteHandlers_Redirecting">Перанакіраваньне</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/routing/redirection/">Guide</a></li>
+    </ul>
+  </div>
+
   <h3 id="Frameworks_Ember_Templates">Візуальныя макеты</h3>
   <div class="refs">
     <ul>
@@ -4767,6 +4803,142 @@ export default Ember.Route.extend({
 </code></pre>
 
   <p>Эмбер аўтаматычна падставіў значэньне <code class="language-html">id</code>, дадаў да нашай клясы яшчэ сваю ўнутраную, і што найбольш важна, нягледзячы на тое, што гэта ня лінк, эмбер ведае, што клік на гэты блёк павінен перавесьці праграму ў новы стан (адбудзецца пераход па пазначанаму шляху).</p>
+
+  <h3 id="Frameworks_Ember_ApplicationConcerns">Аспэкты функцыянаваньня праграмаў</h3>
+
+  <h4 id="Frameworks_Ember_ApplicationConcerns_ApplicationsAndInstances">Праграмы і іх экзэмпляры</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/applications/applications-and-instances/">Guide</a></li>
+    </ul>
+  </div>
+
+  <h4 id="Frameworks_Ember_ApplicationConcerns_DependencyInjection">Ін'екцыя залежнасьцяў</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/applications/dependency-injection/">Guide</a></li>
+    </ul>
+  </div>
+
+  <h4 id="Frameworks_Ember_ApplicationConcerns_Initializers">Initializers</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/applications/initializers/">Guide</a></li>
+    </ul>
+  </div>
+
+  <h4 id="Frameworks_Ember_ApplicationConcerns_Services">Сэрвісы</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/applications/services/">Guide</a></li>
+    </ul>
+  </div>
+  <p><a href="https://emberjs.com/api/classes/Ember.Service.html"><code class="language-js">Ember.Service</code></a>&nbsp;&ndash; аб'ект, які існуе на працягу працы ўсёй праграмы. Такія аб'екты патрэбныя ў сытуацыях, калі трэба падзяляць стан ці злучэньні (<i>connections</i>) паміж рознымі часткамі праграмы. Прыкладамі такіх сытуацыяў зьяўляюцца:</p>
+  <ul>
+    <li>Аўтэнтыфікацыя/сэсія карыстальніка</li>
+    <li>Геалякацыя</li>
+    <li><i>WebSockets</i></li>
+    <li>Адсылка падзеяў і паведамленьняў на сэрвэр.</li>
+    <li>Лагіраваньне</li>
+  </ul>
+
+  <h5 id="Frameworks_Ember_ApplicationConcerns_Services_Defining">Генэрацыя</h5>
+  <p>Сэрвіс можа быць створаны пры дапамозе <i>CLI</i>-генэратару:</p>
+
+  <pre><code class="language-bash">
+$ ember generate service shopping-cart
+</code></pre>
+
+  <p>У выніку будзе створаны сэрвіс <code class="language-js">ShoppingCart</code>, які пашырае <code class="language-js">Ember.Service</code> і можа мець свае ўласныя атрыбуты і мэтады:</p>
+
+  <div class="pre-title"><code>app/services/shopping-cart.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Service.extend({
+  items: null,
+
+  init() {
+    this._super(...arguments);
+    this.set('items', []);
+  },
+
+  add(item) {
+    this.get('items').pushObject(item);
+  },
+
+  remove(item) {
+    this.get('items').removeObject(item);
+  },
+
+  empty() {
+    this.get('items').clear();
+  }
+});
+</code></pre>
+
+  <h5 id="Frameworks_Ember_ApplicationConcerns_Services_Accessing">Доступ</h5>
+  <p>Каб зрабіць сэрвіс даступным да выкарыстаньня ў кампанэнце ці ў іншым сэрвісе, трэба зрабіць туды яго ін'екцыю:</p>
+
+  <div class="pre-title"><code>app/components/cart-contents.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+  //will load the service in file /app/services/shopping-cart.js
+  cart: Ember.inject.service('shopping-cart')
+});
+</code></pre>
+
+  <p>Калі імя атрыбуту для ін'екцыі супадае з імем сэрвісу, выклік можна рабіць без парамэтраў:</p>
+
+  <div class="pre-title"><code>app/components/cart-contents.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+  //will load the service in file /app/services/shopping-cart.js
+  shoppingCart: Ember.inject.service()
+});
+</code></pre>
+
+  <p>Такія атрыбуты для ін'екцыі маюць адкладзеную ініцыяцыю (<i>lazy loading</i>), гэта азначае, што сэрвіс ня будзе створаны пакуль да яго ня будзе зьвяртаньня. Гэта ў сваю чаргу азначае, што зьвяртацца да такога артыбуту трэба не наўпрост, але праз мэтад <code class="language-js">get</code>:</p>
+
+  <div class="pre-title"><code>app/components/cart-contents.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Component.extend({
+  cart: Ember.inject.service('shopping-cart'),
+
+  actions: {
+    remove(item) {
+      this.get('cart').remove(item);
+    }
+  }
+});
+</code></pre>
+
+  <p>Пасьля таго, як была зроблена ін'екцыя сэрвісу ў кампанэнт, ён можа быць выкарыстаны ў шаблёне:</p>
+
+  <div class="pre-title"><code>app/templates/components/cart-contents.hbs</code></div>
+  <pre><code class="language-html">
+&lt;ul&gt;
+  &lbrace;&lbrace;#each cart.items as |item|&rbrace;&rbrace;
+    &lt;li&gt;
+      &lbrace;&lbrace;item.name&rbrace;&rbrace;
+      &lt;button &lbrace;&lbrace;action "remove" item&rbrace;&rbrace;&gt;Remove&lt;/button&gt;
+    &lt;/li&gt;
+  &lbrace;&lbrace;/each&rbrace;&rbrace;
+&lt;/ul&gt;
+</code></pre>
+
+  <h4 id="Frameworks_Ember_ApplicationConcerns_RunLoop">Цыкл апрацоўкі</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.12.0/applications/run-loop/">Guide</a></li>
+    </ul>
+  </div>
 
   <h3 id="Frameworks_Ember_Glimmer">Glimmer</h3>
   <div class="refs">
