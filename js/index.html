@@ -4544,7 +4544,7 @@ React.renderComponent(
     </ul>
   </div>
   <p><a href="http://net.tutsplus.com/tutorials/javascript-ajax/building-a-web-app-from-scratch-in-angularjs/">Building a Web App From Scratch in AngularJS</a></p>
-  <p><a href="http://toddmotto.com/rethinking-angular-js-controllers/">Rethinking AngularJS Controllers</a></p>
+  <p><a href="https://www.guru99.com/angularjs-introduction.html">AngularJS Tutorial</a></p>
   <p><a href="http://codetunes.com/2014/5-tips-on-how-to-use-angularjs-with-rails-that-changed-how-we-work/">5 tips on how to use AngularJS with Rails that changed how we work</a></p>
   <p><a href="http://bandrzejczak.com/blog/2015/11/22/single-sign-on-with-keycloak-in-a-sigle-page-application-part-1-slash-2-angular-dot-js/">SSO for Your Single Page Application (Part 1/2 - AngularJS)</a></p>
 
@@ -4567,7 +4567,7 @@ React.renderComponent(
       <li><a href="https://guides.emberjs.com/v2.12.0/getting-started/">Guide</a></li>
     </ul>
   </div>
-  <p>Перш за ўсё трэба <a href="#Frameworks_Node_npm">ўсталяваць <i>Node.js</i> з <i>npm</i></a>. Таксама абавязковай залежнасьцю зьяўляецца <a href="../git/index.html"><i>Git</i></a> і <a href="https://bower.io/"><i>Bower</i></a>, апошні ўсталёўваецца праз <i>npm</i>:</p>
+  <p>Перш за ўсё трэба <a href="#Frameworks_Node_npm">ўсталяваць <i>Node.js</i> з <i>npm</i></a>. Таксама абавязковай залежнасьцю зьяўляецца <a href="../git/index.html"><i>Git</i></a> і <a href="https://bower.io/"><i>Bower</i></a> (<a href="https://www.emberjs.com/blog/2017/01/23/ember-2-11-released.html#toc_ember-no-longer-supplied-via-code-bower-code">да вэрсіі 2.11, пачынаючы зь вэрсіі 2.12 больш не зьяўляецца залежнасьцю</a>), апошні ўсталёўваецца праз <i>npm</i>:</p>
 
   <pre><code class="language-bash">
 $ npm install -g bower
@@ -4770,6 +4770,38 @@ export default Ember.Route.extend({
       <li><a href="https://guides.emberjs.com/v2.12.0/routing/redirection/">Guide</a></li>
     </ul>
   </div>
+  <p>Часам у апрацоўшчыку разводкі трэба зрабіць аўтаматычнае перанакіраваньне на іншую разводку, напрыклад на лагін-старонку, калі была спроба адкрыць прыватную старонку не ўвайшоўшым карыстальнікам. Для гэтага існуюць 2 мэтады: <code class="language-js">transitionTo()</code> (з захаваньнем гісторыі пераходаў у браўзэры) і <code class="language-js">replaceWith()</code> (без захаваньня гісторыі пераходаў).</p>
+  <p>Калі пераход магчымы нават без загрузкі мадэлі, рабіць гэта варта ў хуку <code class="language-js">beforeModel()</code>:</p>
+
+  <div class="pre-title"><code>app/routes/index.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  beforeModel(transition) {
+    this.transitionTo('posts'); // Перарывае цяперашні пераход і робіць новы - да разводкі 'posts'
+  }
+});
+</code></pre>
+
+  <p>У якасьці аргумэнту <code class="language-js">beforeModel()</code> атрымлівае цяперашні пераход, які можна будзе захаваць і выкарыстаць пазьней, напрыклад для вяртаньня да першапачатковага шляху пасьля ўваходу карыстальніка ў сыстэму.</p>
+  <p>Але бываюць выпадкі, калі рашэньне пра пераход магчыма зрабіць толькі пасьля загрузкі даных, тады зрабіць гэта можна ў хуку <code class="language-js">afterModel()</code>:</p>
+
+  <div class="pre-title"><code>app/routes/index.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  afterModel(model, transition) {
+    if (model.get('length') === 1) {
+      this.transitionTo('post', model.get('firstObject'));// Пры адкрыцьці разводкі 'posts' аўтаматычны пераход да
+                                                          // разводкі 'post', калі ў сыстэме існуе толькі адзін пост
+    }
+  }
+});
+</code></pre>
+
+  <p>Існуе яшчэ адзін хук, падобны да <code class="language-js">afterModel()</code>&nbsp;&ndash; гэта <code class="language-js">redirect()</code>. Ён адрозьніваецца ад першага тым, што хукі <code class="language-js">beforeModel()</code>, <code class="language-js">model()</code> і <code class="language-js">afterModel()</code> ня будуць паўторна выкліканыя пасьля пераходу.</p>
 
   <h3 id="Frameworks_Ember_Templates">Візуальныя макеты</h3>
   <div class="refs">
@@ -4778,7 +4810,7 @@ export default Ember.Route.extend({
       <li><a href="http://handlebarsjs.com">Handlebars</a></li>
     </ul>
   </div>
-  <p><code class="language-js">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code> пазначае месца, куды будзе ўстаўляцца зьмест укладзеных шаблёноў:</p>
+  <p><code class="language-js">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code> пазначае месца, куды будзе ўстаўляцца зьмест укладзеных шаблёнаў:</p>
 
   <div class="pre-title"><code>app/templates/application.hbs</code></div>
   <pre data-line="3"><code class="language-html">
