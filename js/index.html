@@ -4633,6 +4633,25 @@ Router.map(function() {
     <a href="#Frameworks_Ember_Templates">макету</a> <code class="language-bash">app/templates/index.hbs</code>).</p>
   <p>Калі ў праграме спрацоўвае пэўная разводка, <i>Ember</i> шукае аднайменныя <a href="#Frameworks_Ember_RouteHandlers">апрацоўшчык разводкі</a> і <a href="#Frameworks_Ember_Templates">макет</a>. Калі яны ня былі яшчэ створаныя, <i>Ember</i> аўтаматычна падставіць змоўчныя.</p>
 
+  <h4 id="Frameworks_Ember_Routing_NestedRoutes">Укладзеныя шляхі</h4>
+  <p>Часам патрэбна каб адзін макет быў адлюстраваны ўнутры іншага і пры гэтым каб меў свой асобны шлях. Для гэтага існуюць укладзеныя шляхі. Напрыклад, шлях <code class="language-bash">/orders</code> будзе агульным (бацькоўскім) для іншых: <code class="language-bash">/orders/index</code>, <code class="language-bash">/orders/new</code>, <code class="language-bash">/orders/edit</code>, і яго макет будзе ўтрымліваць агульны для ўсіх гэтых даччыных шляхоў код.</p>
+  <p>Вызначаюцца ўкладзеныя шляхі наступным чынам: </p>
+
+  <div class="pre-title"><code>app/router.js</code></div>
+  <pre><code class="language-js">
+Router.map(function() {
+  this.route('orders', function() {
+    this.route('order', {
+      this.route('index');
+      this.route('new');
+      this.route('edit');
+    });
+  });
+});
+</code></pre>
+
+  <p>Калі карыстальнік трапляе на шлях <code class="language-bash">/orders/new</code>, макет <code class="language-bash">/orders/new.hbs</code> будзе адлюстраваны на месцы <code class="language-js">&lbrace;&lbrace;outlet&rbrace;&rbrace;</code> бацькоўскага макету <code class="language-bash">orders.hbs</code>.</p>
+
   <h4 id="Frameworks_Ember_Routing_DynamicSegments">Дынамічныя сэгмэнты</h4>
   <p>Калі частка шляху дынамічная (напрыклад ID замовы), яна пазначаецца зьменнай, перад імем якой ставіцца двукроп'е: </p>
 
@@ -4739,6 +4758,39 @@ export default Ember.Route.extend({
 &lbrace;&lbrace;/each&rbrace;&rbrace;
 </code></pre>
 
+  <p>Прыклад вызначэньня мадэлі праз <a href="https://www.promisejs.org/"><i>promise</i></a>:</p>
+
+  <div class="pre-title"><code>app/routes/favorite-posts.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  model(params) {
+    return new RSVP.Promise(resolve => {
+      this.get('ajax')
+        .fetchModel(Post, `${SERVICES.posts}/${params.user_id}/favorite`)
+        .then(posts => resolve(posts));
+    });
+  });
+</code></pre>
+
+  <p>Калі трэба абнавіць даныя (напрыклад, пасьля абнаўленьня даных на сэрвэры), можна скарыстацца мэтадам <a href="https://emberjs.com/api/ember/2.15/classes/Ember.Route/methods/refresh?anchor=refresh"><code class="language-js">refresh()</code></a>:</p>
+
+  <div class="pre-title"><code>app/routes/favorite-posts.js</code></div>
+  <pre><code class="language-js">
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  actions() {
+    someAction() {
+      return new Promise((resolve, reject) {
+        ...
+      }).then(() => this.refresh());
+    }
+  }
+});
+</code></pre>
+
   <p><strong>ЗАЎВАГА:</strong> у выпадку апрацоўкі шляху з <a href="#Frameworks_Ember_Routing_DynamicSegments">дынамічным сэгмэнтам</a>, хук <code class="language-js">model()</code> будзе абавязкова выкліканы ў выпадку непасрэднага уводу <i>URL'</i>а, але калі праграма патрапіць на яго праз праграмныя сродкі (напрыклад праз <code class="language-js">&lbrace;&lbrace;link-to&rbrace;&rbrace;</code>), тады хук будзе выкліканы толькі пры ўмове, што будзе вызначаны ідэнтыфікатар аб'екту:</p>
 
   <div class="pre-title"><code>app/templates/photos.hbs</code></div>
@@ -4806,6 +4858,106 @@ export default Ember.Route.extend({
 
   <p>Існуе яшчэ адзін хук, падобны да <code class="language-js">afterModel()</code>&nbsp;&ndash; гэта <code class="language-js">redirect()</code>. Ён адрозьніваецца ад першага тым, што хукі <code class="language-js">beforeModel()</code>, <code class="language-js">model()</code> і <code class="language-js">afterModel()</code> ня будуць паўторна выкліканыя пасьля пераходу.</p>
 
+  <h4 id="Frameworks_Ember_RouteHandlers_PreventingRetryingTransitions">Перапыненьне і паўторная спроба пераходу</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.16.0/routing/preventing-and-retrying-transitions/">Guide</a></li>
+    </ul>
+  </div>
+  <p>Пры пераходзе ад аднаго шляху да іншага, разводчык шляхоў Эмбера перадае аб'ект <code class="language-js">transition</code> у розныя хукі апрацоўшчыкаў разводкі, якія ўдзельнічаюць у гэтым пераходзе. Любы хук і мэтад, якія маюць доступ да гэтага аб'екту, могуць імгненна спыніць такі пераход, зрабіўшы выклік <code class="language-js">transition.abort()</code>, і, калі аб'ект <code class="language-js">transition</code> быў захаваны, пазьней паўтарыць спробу пераходу, зрабіўшы выклік <code class="language-js">transition.retry()</code>.</p>
+
+  <h5 id="Frameworks_Ember_RouteHandlers_PreventingRetryingTransitions_willTransition">Перапыненьне пераходу ў <code class="language-js">willTransition()</code></h5>
+  <p>Пры любой спробе пераходу (<code class="language-js">&lbrace;&lbrace;link-to&rbrace;&rbrace;</code>, <code class="language-js">transitionTo()</code>, альбо нават пры зьмене адраса ў адрасным радку браўзэра), будзе выкліканы мэтад <code class="language-js">willTransition()</code> актыўнага апрацоўшчыка разводкі. Гэта дае магчымасьць любому актыўнаму апрацоўшчыку (ад самага ніжняга па герархіі да самага верхняга) вырашаць дазволіць пераход альбо не. Уявім, што наша праграма мае складаную форму, карыстальнік увёў у яе даныя і потым выпадкова альбо проста не падумаўшы націснуў кнопку браўзэра "назад". Калі ня мець магчымасьці адмяніць такі пераход, уведзеныя даныя будуць непажадана згубленыя і карыстальніку прыйдзецца ўводзіць іх наноў. Пазьбегнуць такой сытуацыі можна наступным чынам:</p>
+
+  <div class="pre-title"><code>app/routes/form.js</code></div>
+  <pre><code class="language-js">
+import Route from '@ember/routing/route';
+
+export default Route.extend({
+  actions: {
+    willTransition(transition) {
+      if (this.controller.get('userHasEnteredData')
+            && !confirm('Are you sure you want to abandon progress?')) {
+        transition.abort();
+      } else {
+        // Перадаць кіраваньне мэтаду `willTransition` бацькоўскага
+        // апрацоўшчыка, каб і ён меў магчымасьць умяшацца ў працэс.
+        return true;
+      }
+    }
+  }
+});
+</code></pre>
+
+  <p>Аднак трэба мець на ўвазе, што калі спроба зьмяніць шлях была зроблена непасрэдна ў адрасным радку альбо кнопкай браўзэра "назад", спачатку зьменіцца шлях у адрасным радку а ўжо потым будзе апрацаваны мэтад <code class="language-js">willTransition()</code>. Гэта азначае, што калі пераход нават будзе перапынены, у адрасным радку будзе ўсё роўна адлюстраваны новы шлях, куды была зроблена спроба пераходу.</p>
+
+  <h5 id="Frameworks_Ember_RouteHandlers_PreventingRetryingTransitions_modelHooks">Перапыненьне пераходу ў мадэльных хуках</h5>
+  <p>Акрамя перапыненьня пераходу ў актыўным апрацоўшчыку разводкі, яго можна перапыніць і ў апрацоўшчыку новага шляху. Мадэльныя хукі <code class="language-js">model()</code>, <code class="language-js">beforeModel()</code>, <code class="language-js">afterModel()</code> таксама прымаюць аб'ект <code class="language-js">transition</code> у якасьці парамэтру, і могуць перарваць пераход:</p>
+
+  <div class="pre-title"><code>app/routes/disco.js</code></div>
+  <pre><code class="language-js">
+import Route from '@ember/routing/route';
+
+export default Route.extend({
+  beforeModel(transition) {
+    if (new Date() > new Date('January 1, 2100')) {
+      alert('Sorry, you need a time machine to enter this route.');
+      transition.abort();
+    }
+  }
+});
+</code></pre>
+
+  <h5 id="Frameworks_Ember_RouteHandlers_PreventingRetryingTransitions_Retrying">Паўторная спроба пераходу</h5>
+  <p>У перарванага пераходу можа быць паўторная спроба ў пазьнейшы час. Адной з найбольш распаўсюджанай сфэрай выкарыстаньня зьяўляецца выпадак, калі апрацоўшчык шляху з абмежаваным доступам напраўляе карыстальніка для ўваходу ў сыстэму, а той у сваю чаргу вяртае карыстальніка назад да шляху з абмежаваным доступам пасьля пасьпяховага ўваходу ў сыстэму:</p>
+
+  <div class="pre-title"><code>app/routes/some-authenticated.js</code></div>
+  <pre><code class="language-js">
+import Route from '@ember/routing/route';
+
+export default Route.extend({
+  beforeModel(transition) {
+    if (!this.controllerFor('auth').get('userIsLoggedIn')) {
+      let loginController = this.controllerFor('login');
+      loginController.set('previousTransition', transition);
+      this.transitionTo('login');
+    }
+  }
+});
+</code></pre>
+
+  <div class="pre-title"><code>app/controllers/login.js</code></div>
+  <pre><code class="language-js">
+import Controller from '@ember/controller';
+
+export default Controller.extend({
+  actions: {
+    login() {
+      // Log the user in, then reattempt previous transition if it exists.
+      let previousTransition = this.get('previousTransition');
+      if (previousTransition) {
+        this.set('previousTransition', null);
+        previousTransition.retry();
+      } else {
+        // Default back to homepage
+        this.transitionToRoute('index');
+      }
+    }
+  }
+});
+</code></pre>
+
+  <h4 id="Frameworks_Ember_RouteHandlers_LoadingErrorSubstates">Станы загрузкі і памылак</h4>
+  <div class="refs">
+    <ul>
+      <li><a href="https://guides.emberjs.com/v2.16.0/routing/loading-and-error-substates/">Guide</a></li>
+    </ul>
+  </div>
+  <p>У момант пераходу звычайна адбываецца загрузка мадэлі даных, якая можа заняць пэўны час. Разводка шляхоў у гэты момант "спыняе" працэс да таго часу, пакуль усе <a href="https://www.promisejs.org/"><i>promise</i></a> загрузкі даных ня скончаць сваё выкананьне. Калі да гэтага была адкрытая пустая старонка ў браўзэры, яна і будзе заставацца пустой да поўнай загрузкі даных. Калі быў адкрыты іншы шлях праграмы, яго старонка таксама будзе адлюстраваная да поўнай загрузкі даных новага шляху. І калі такая загрузка займае пэўны час, трэба паказаць карыстальніку нейкім чынам, што ідзе нейкая апрацоўка, што праграма не вісіць. </p>
+
+  <h4 id="Frameworks_Ember_RouteHandlers_QueryParameters">Парамэтры запыту</h4>
+  <h4 id="Frameworks_Ember_RouteHandlers_AsynchronousRouting">Асынхронная разводка</h4>
+
   <h3 id="Frameworks_Ember_Templates">Візуальныя макеты</h3>
   <div class="refs">
     <ul>
@@ -4824,8 +4976,7 @@ export default Ember.Route.extend({
 
   <p><i>Ember</i> аўтаматычна стварае шаблён <code class="language-bash">app/templates/index.hbs</code> для каранёвага шляху нават калі ён ня створаны яўна.</p>
 
-  <h4 id="Frameworks_Ember_Templates_Helpers">Helpers</h4>
-  <p>Спасылка:</p>
+  <h4 id="Frameworks_Ember_Templates_Links">Спасылкі</h4>
 
   <div class="pre-title"><code>app/templates/index.hbs</code></div>
   <pre><code class="language-html">
@@ -4839,6 +4990,93 @@ export default Ember.Route.extend({
 </code></pre>
 
   <p>Эмбер аўтаматычна падставіў значэньне <code class="language-html">id</code>, дадаў да нашай клясы яшчэ сваю ўнутраную, і што найбольш важна, нягледзячы на тое, што гэта ня лінк, эмбер ведае, што клік на гэты блёк павінен перавесьці праграму ў новы стан (адбудзецца пераход па пазначанаму шляху).</p>
+
+  <h4 id="Frameworks_Ember_Templates_SubexpressionHelpers">Дапаможнікі падвыразаў</h4>
+
+  <h5 id="Frameworks_Ember_Templates_SubexpressionHelpers_Truth">Ісьціны</h5>
+  <div class="refs">
+    <ul>
+      <li><a href="https://github.com/jmurphyau/ember-truth-helpers">GitHub</a></li>
+    </ul>
+  </div>
+  <p>Пакет: <a href="https://www.npmjs.com/package/ember-truth-helpers"><code class="language-bash">ember-truth-helpers</code></a></p>
+  <table>
+    <thead>
+    <tr>
+      <th>Дапаможнік</th>
+      <th>Аналяг у <i>JavaScript</i></th>
+      <th>Прыклад у <i>HtmlBars</i></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><code class="language-bash">eq</code></td>
+      <td><code class="language-js">if (a === b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (eq a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">not-eq</code></td>
+      <td><code class="language-js">if (a !== b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (not-eq a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">not</code></td>
+      <td><code class="language-js">if (!a)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (not a)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">and</code></td>
+      <td><code class="language-js">if (a && b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (and a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">or</code></td>
+      <td><code class="language-js">if (a || b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (or a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">xor</code></td>
+      <td><code class="language-js">if (a && !b || !a && b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (xor a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">gt</code></td>
+      <td><code class="language-js">if (a > b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (gt a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">gte</code></td>
+      <td><code class="language-js">if (a >= b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (gte a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">lt</code></td>
+      <td><code class="language-js">if (a < b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (lt a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">lte</code></td>
+      <td><code class="language-js">if (a <= b)</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (lte a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">is-array</code></td>
+      <td><code class="language-js">if (Ember.isArray(a))</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (is-array a)&rbrace;&rbrace;</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-bash">is-equal</code></td>
+      <td><code class="language-js">if (Ember.isEqual(a, b))</code></td>
+      <td><code class="language-html">&lbrace;&lbrace;if (is-equal a b)&rbrace;&rbrace;</code></td>
+    </tr>
+    </tbody>
+  </table>
+
+
+
+  <h3 id="Frameworks_Ember_Components">Кампанэнты</h3>
+
+  <h3 id="Frameworks_Ember_Models">Мадэлі</h3>
 
   <h3 id="Frameworks_Ember_ApplicationConcerns">Аспэкты функцыянаваньня праграмаў</h3>
 
