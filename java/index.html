@@ -4,40 +4,113 @@ description: Даведнік па Java па-беларуску
 disqus_shortname: java-be
 ---
 
-<p><mark><a href="https://www.sitepoint.com/java-9-resources/">Top Resources to Get Started with Java 9</a></mark></p>
-<p><a href="https://www.toptal.com/artificial-intelligence/salesforce-einstein-api-tutorial">Salesforce Einstein AI: An API Tutorial</a></p>
-<p><a href="https://www.toptal.com/java/rest-assured-jmeter">REST Assured vs. JMeter: A Comparison of REST Test Tools</a></p>
-
 <section>
   <h1 id="Links">Карысныя спасылкі</h1>
-  <p><a href="https://github.com/Vedenin/useful-java-links/tree/master/link-rus">Сьпіс карысных спасылак для <i>Java</i>-праграміста</a><sup>ru</sup></p>
+  <p><a href="https://github.com/Vedenin/useful-java-links/tree/master/link-rus" target="_blank">Сьпіс карысных спасылак для <i>Java</i>-праграміста</a><sup>ru</sup> (<mark>OUTDATED?</mark>)</p>
 
   <h2 id="Links_Home">Хатняя старонка</h2>
-  <p>Хатняя старонка на <b>Oracle.com</b>: <a href="https://www.oracle.com/java/">https://www.oracle.com/java/</a></p>
+  <p>Хатняя старонка на <b>Oracle.com</b>: <a href="https://www.oracle.com/java/" target="_blank">https://www.oracle.com/java/</a></p>
 
   <h2 id="Links_Refs_Books">Даведнікі і кнігі</h2>
-  <p>Даведнік па <i>Java</i> на <b>Oracle.com</b>: <a href="http://docs.oracle.com/javase/tutorial/index.html">http://docs.oracle.com/javase/tutorial/index.html</a></p>
-  <p>Шэраг даведнікаў, прысьвечаных розным тэмам вакол <i>Java</i> на <b>tutorialspoint.com</b>: <a href="http://www.tutorialspoint.com/java_technology_tutorials.htm">http://www.tutorialspoint.com/java_technology_tutorials.htm</a></p>
-  <p><a href="http://www.amazon.com/Java-Complete-Reference-Herbert-Schildt/dp/0071808558/ref=sr_1_1?ie=UTF8&qid=1463765983">Java: The Complete Reference</a> (дзевятае выданьне папяровай кнігі, аўтарства <a href="http://www.amazon.com/Herbert-Schildt/e/B001H6PSMG/" title="Старонка, прысьвечаная Herbert Schildt на Amazon.com">Herbert Schildt</a> ад выдавецтва <a href="http://community.oraclepressbooks.com/" title="Хатняя старонка выдавецтва Oracle Press">Oracle&nbsp;Press</a>, на жаль электроннага варыянту няма ў вольным доступе). Ці перакладзенае на расейскую мову выданьне гэтай кнігі: <a href="http://www.ozon.ru/context/detail/id/31249554/">ozon.ru</a>.</p>
+  <p>Даведнік па <i>Java</i> на <b>Oracle.com</b>: <a href="http://docs.oracle.com/javase/tutorial/index.html" target="_blank">http://docs.oracle.com/javase/tutorial/index.html</a></p>
+  <p>Шэраг даведнікаў, прысьвечаных розным тэмам вакол <i>Java</i> на <b>tutorialspoint.com</b>: <a href="http://www.tutorialspoint.com/java_technology_tutorials.htm" target="_blank">http://www.tutorialspoint.com/java_technology_tutorials.htm</a></p>
 
   <h2 id="Links_Refs_Blogs">Блогі</h2>
-  <p><a href="http://www.baeldung.com/">baeldung.com</a></p>
+  <p><a href="http://www.baeldung.com/" target="_blank">baeldung.com</a></p>
 </section>
 
 <section>
   <h1 id="Core" data-content-item-open>Ядро</h1>
 
-  <h2 id="Core_DataTypes">Тыпы даных</h2><!-- зьменныя, type wrappers, autoboxing, масівы, пералічэньні -->
+  <p>Даведнік будзе ўтрымліваць толькі інфармацыю, якая зьяўляецца не абсалютна трывіяльнай. Наступныя разьдзелы цалкам ня будуць разгледжаныя праз сваю трывіяльнасьць альбо нізкую запатрабаванасьць:</p>
+  <ul>
+    <li>Прымітыўныя тыпы даных, сымбальныя радкі, масівы. Клясы-абгорткі па-над прымітыўнымі тыпамі, <i>autoboxing</i>. Пералічэньні</li>
+    <li>Апэрацыі</li>
+    <li>Інструкцыі</li>
+    <li><a href="http://openjdk.java.net/projects/jigsaw/">Модулі (<i>Java 9</i>)</a></li>
+  </ul>
 
-  <h2 id="Core_Operators">Апэрацыі</h2>
-
-  <h2 id="Core_Statements">Інструкцыі</h2>
-
-  <h2 id="Core_Classes">Клясы</h2><!-- пакеты, інтэрфэйсы, насьледаваньне -->
+  <h2 id="Core_Classes_Interfaces">Клясы і інтэрфэйсы</h2><!-- пакеты, інтэрфэйсы, насьледаваньне -->
+  <p>Пачынаючы з <i>Java&nbsp;8</i> інтэрфэйсы могуць уводзіць змоўчныя мэтады:</p>
+  <pre><code class="language-java">
+public interface Iterable&lt;T&gt; {
+    public default void forEach(Consumer&lt;? super T&gt; consumer) {
+        for (T t: this) {
+            consumer.accept(t);
+        }
+    }
+}
+</code></pre>
 
   <h2 id="Core_Generics">Generics</h2>
 
   <h2 id="Core_Exceptions">Выключэньні</h2>
+  <p>Памылкі і непрадбачаныя сытуацыі, якія ўзьнікаюць ў часе выкананьня праграмы, называюцца выключэньнямі.</p>
+  <p>Памылкі могуць быць <i>чаканымі</i>, зьяўленьне якіх прадугледжваецца яшчэ на стадыі напісаньня праграмы (насьледуюць непасрэдна ад <code class="language-java">Exception</code>). Яны правяраюцца на момант кампіляцыі&nbsp;&ndash; ці ловіць іх праграма. <strong>Яны павінны апрацоўвацца і праграма павінна аднаўляцца і працягваць пасьля іх працу</strong>, выдаўшы папярэджаньне, альбо робячы паўтор апэрацыі. Да шэрагу такіх памылак можна аднесьці: няправільныя дзеяньні карыстальніка праграмы, адсутнасьць неабходнага рэсурсу на дыску, альбо адсутнасьць злучэньня з сеткай.</p>
+  <p>Таксама выключэньні могуць быць <i>нечаканымі</i>, якія звычайна зьяўляюцца вынікам памылкі праграміста, альбо няправільнага выкарыстаньня староньняга API (насьледуюць ад <code class="language-java">RuntimeException</code>). <strong>Аднаўленьне працы праграмы пасьля такіх памылак звычайна немагчыма</strong>.</p>
+  <p>Выключэньні апрацоўваюцца пры дапамозе блёка <code class="language-java">try-catch</code>:</p>
+  <pre><code class="language-java">
+// Demonstrates the multi-catch feature.
+class MultiCatch {
+    public static void main(String args[]) {
+        int a=10, b=0;
+        int vals[] = { 1, 2, 3 };
+        try {
+            int result = a / b; // generates an ArithmeticException
+            vals[10] = 19;      // generates an ArrayIndexOutOfBoundsException,
+                                // but won't be invoked as line above generates exception
+        } catch(ArithmeticException | ArrayIndexOutOfBoundsException e) { // Catches both exceptions
+            System.out.println("Typed exception caught: " + e);
+        } catch (Exception ex) {
+            System.out.println("General exception caught: " + e); // catching more general exceptions
+                                                                  // should be placed after catching less general
+        }
+        System.out.println("After try-catch.");
+    }
+}
+</code></pre>
+  <p>Блёк <code class="language-java">finally</code> звычайна выкарыстоўваецца, каб абавязкова закрыць рэсурсы, якія былі адкрытыя ў блёку <code class="language-java">try</code> нават калі хада праграмы была перарванае выключэньнем:</p>
+  <pre><code class="language-java">
+Scanner scanner = null;
+try {
+    scanner = new Scanner(new File("test.txt"));
+    while (scanner.hasNext()) {
+        System.out.println(scanner.nextLine());
+    }
+} catch (FileNotFoundException e) {
+    e.printStackTrace();
+} finally {
+    if (scanner != null) {
+        scanner.close();
+    }
+}
+</code></pre>
+  <p>Але пачынаючы з <i>Java&nbsp;7</i> гэта можна рабіць больш ляканічна пры дапамозе блёку <i>try-with-resource</i>:</p>
+  <pre><code class="language-java">
+try (Scanner scanner = new Scanner(new File("test.txt"))) {
+    while (scanner.hasNext()) {
+        System.out.println(scanner.nextLine());
+    }
+} catch (FileNotFoundException e) {
+    e.printStackTrace();
+}
+</code></pre>
+  <p>Гэта можа рабіцца нават для некалькіх рэсурсаў:</p>
+  <pre><code class="language-java">
+try (Scanner scanner = new Scanner(new File("testRead.txt"));
+    PrintWriter writer = new PrintWriter(new File("testWrite.txt"))) {
+    while (scanner.hasNext()) {
+	      writer.print(scanner.nextLine());
+    }
+}
+</code></pre>
+  <p>Кепскія і добрыя практыкі:</p>
+  <ul>
+    <li>Ня варта кідаць і лавіць базавую клясу <code class="language-java">Exception</code>, але больш спэцыфічныя.</li>
+    <li>Апрацоўвацца выключэньні павінны там, дзе праграма можа адпаведным чынам прапанаваць выйсьце. Калі ваш мэтад не такое месца, ён павінен проста пракідваць выключэньне "вышэй".</li>
+    <li>Выключэньні не павінны выкарыстоўвацца для кіраваньня плыней праграмы, таму што гэта варыяцыя шкоднага падыходу <i>Go To</i></li>
+    <li>Калі мэтад ловіць адзін тып выключэньняў, каб кінуць далей іншы, зыходнае выключэньне павінна абгарнуцца&nbsp;&ndash; перадацца наступнаму ў якасьці прычыны.</li>
+  </ul>
 
   <h2 id="Core_Multithreading">Multithreading</h2>
 
