@@ -1,0 +1,20 @@
+body { font-size: 0.94em}
+section, header, footer { max-width: 1200px; }
+th { color: gray; }
+.pl { font-weight: bolder; color: #2c96ff;}
+.tr { color: #999; }
+.aux { color: lightcoral; }
+.emph { font-weight: bolder; }
+.ru { font-style: italic}
+#content table tr th { color: gray; }
+#content table tr th.center { text-align: center; }
+.row.flex-cards { width: 1200px;}
+#content h5 { font-size: 1.25rem; font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; }
+.card {text-align: center; }
+.card-body { padding: 0; }
+a.card-link { text-decoration: none; display: block; position: absolute; top: 5px; right: 10px;}
+.card-text {font-size: 0.9rem; color: #999;}
+.card-text:last-child { margin-bottom: 15px; }
+.card-footer .text-muted { font-size: 0.8rem }
+.hide { opacity: 0}
+.card:hover .hide { opacity: 1}

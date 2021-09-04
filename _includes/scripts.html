@@ -35,3 +35,14 @@
     $(".top-alert").fadeOut();
   }
 </script>
+{% if page.local_js %}
+  {% for script in page.local_js %}
+    <script type="text/javascript" src="{{ script }}.js"></script>
+  {% endfor %}
+{% endif %}
+
+{% if page.global_js %}
+  {% for script in page.global_js %}
+    <script type="text/javascript" src="{{ base_path }}/assets/js/{{ script }}.js"></script>
+  {% endfor %}
+{% endif %}
