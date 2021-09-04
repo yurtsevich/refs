@@ -11,7 +11,10 @@
 
 function table_of_content() {
   var content = $("<div id='toc'>"),
-      content_tree = $("<ul class='tree'></ul>");
+      content_tree = $("<ul></ul>", {
+        class: "tree",
+        style: "padding-left: 0;"
+      });
 
   $("#content section").each(function() {
     var section = $(this),
