@@ -1,5 +1,5 @@
 (function() {
-  const $content = $("#content");
+  const $content = $("#polski-content");
   const baseLang = $content.data("base-lang");
   const hideTranslation = $content.data("hide-translation");
   const $cards = $(".flex-card");
