@@ -21,25 +21,32 @@ layout: compress
 
 <body>
 <div id="container">
-  <div id="index">
+  <div class="row">
+    <div id="index">
 
-    {% include refs_index.html %}
+      {% include refs_index.html %}
 
+    </div>
+
+    <article id="content">
+      <!--div style="position: sticky; top: 20px;">
+        <button type="button" class="btn btn-sm btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg></button>
+      </div-->
+
+      <header>
+        {{page.title}}
+      </header>
+
+      {{ content }}
+
+      {% include disqus.html %}
+
+      {% include footer.html %}
+
+    </article>
   </div>
-
-  <article id="content">
-
-    <header>
-      {{page.title}}
-    </header>
-
-    {{ content }}
-
-    {% include disqus.html %}
-
-    {% include footer.html %}
-
-  </article>
 </div>
 
 <!-- - - - - - - - - - - - - - - - - - - - - -

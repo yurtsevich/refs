@@ -21,3 +21,17 @@ a.card-link { text-decoration: none; display: block; position: absolute; top: 5p
 .card-footer .text-muted { font-size: 0.8rem }
 .hide { opacity: 0}
 .card:hover .hide { opacity: 1}
+
+@media (max-width: 767px) {
+  #toc {
+    left: 0;
+  }
+}
+@media (max-width: 575px) {
+  #index {
+    display: none;
+  }
+  #content {
+    left: 50px;
+  }
+}
