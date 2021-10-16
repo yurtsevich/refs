@@ -16,6 +16,12 @@
   {% include styles-new.html %}
 
   <link rel="shortcut icon" href="{{ base_path }}/favicon.ico" type="image/x-icon">
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+  </script>
+  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="{{ base_path }}/assets/js/libs/jquery-1.7.1.min.js"%3E%3C/script%3E'))</script>
 </head>
 
 <body>

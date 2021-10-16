@@ -1,7 +1,6 @@
 (function() {
-  const $content = $("#polski-content");
-  const baseLang = $content.data("base-lang");
-  const hideTranslation = $content.data("hide-translation");
+  const baseLang = urlParams.has('lang') ? urlParams.get('lang') : 'pl';
+  const hideTranslation = urlParams.has('hide-translation') ? urlParams.get('hide-translation') : 'false';
   const $cards = $(".flex-card");
   $cards.each((index, obj) => {
     const $obj = $(obj);

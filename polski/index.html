@@ -9,6 +9,46 @@ global_js: polski
 {% include base_path %}
 
 <div id="polski-content" data-base-lang="pl" data-hide-translation="false">
+
+  <section id="buttons" style="margin-top: 40px;">
+
+  </section>
+  <script>
+    (function() {
+      const $buttons = $('#buttons');
+      const langParam = (urlParams.get('lang') === 'ru' ? '?lang=ru' : '?lang=pl');
+      const hideTranslationParam = (urlParams.get('hide-translation') === 'true' ? '&hide-translation=true' : '');
+      if (!urlParams.has('lang') || urlParams.get('lang') === 'pl') {
+        $buttons.append($("<a></a>", {
+          href: '?lang=ru' + hideTranslationParam,
+          class: 'btn btn-primary',
+          style: 'margin: 10px',
+          text: 'RU -> PL'
+        }));
+      } else {
+        $buttons.append($("<a></a>", {
+          href: '?lang=pl' + hideTranslationParam,
+          class: 'btn btn-primary',
+          style: 'margin: 10px',
+          text: 'PL -> RU'
+        }));
+      }
+      if (!urlParams.has('hide-translation') || urlParams.get('hide-translation') === 'false') {
+        $buttons.append($("<a></a>", {
+          href: langParam + '&hide-translation=true',
+          class: 'btn btn-primary',
+          text: 'Ukryć tłumaczenie'
+        }));
+      } else {
+        $buttons.append($("<a></a>", {
+          href: langParam + '&hide-translation=false',
+          class: 'btn btn-primary',
+          text: 'Pokazać tłumaczenie'
+        }));
+      }
+    })();
+  </script>
+
   <section>
     <h1 id="links" data-content-item-open>Linki</h1>
 
@@ -1161,29 +1201,41 @@ global_js: polski
 
     <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 flex-cards">
       <div class="flex-card" data-pl="być" data-ru="быть" data-variants="jestem, jesteś, był" data-link="https://pl.wiktionary.org/wiki/by%C4%87"></div>
+      <div class="flex-card" data-pl="istnieć" data-ru="быть (существовать в принципе)" data-variants="istnieję" data-link="https://pl.wiktionary.org/wiki/istnie%C4%87"></div>
+      <div class="flex-card" data-pl="urodzić się" data-ru="родиться" data-variants="urodzę" data-link="https://pl.wiktionary.org/wiki/urodzi%C4%87"></div>
+      <div class="flex-card" data-pl="ożenić się" data-ru="жениться" data-variants="ożenię" data-link="https://pl.wiktionary.org/wiki/o%C5%BCeni%C4%87"></div>
+      <div class="flex-card" data-pl="być żonatym" data-ru="быть женатым"></div>
+      <div class="flex-card" data-pl="wyjść za mąż" data-ru="выйти замуж"></div>
+      <div class="flex-card" data-pl="być mężatką" data-ru="быть замужем"></div>
+      <div class="flex-card" data-pl="urodzić" data-ru="родить" data-variants="urodzę" data-link="https://pl.wiktionary.org/wiki/urodzi%C4%87"></div>
+      <div class="flex-card" data-pl="umrzeć" data-ru="умереть" data-variants="umrę" data-link="https://pl.wiktionary.org/wiki/umrze%C4%87"></div>
       <div class="flex-card" data-pl="znaczyć" data-ru="значить" data-variants="znaczę, znaczysz, znaczył" data-link="https://pl.wiktionary.org/wiki/znaczy%C4%87"></div>
       <div class="flex-card" data-pl="robić" data-ru="делать" data-variants="robię, robisz, robił" data-link="https://pl.wiktionary.org/wiki/robi%C4%87"></div>
       <div class="flex-card" data-pl="zrobić" data-ru="сделать" data-variants="zrobię, zrobisz, zrobił" data-link="https://pl.wiktionary.org/wiki/mie%C4%87"></div>
       <div class="flex-card" data-pl="pracować" data-ru="работать" data-variants="pracuję, pracujesz, pracował" data-link="https://pl.wiktionary.org/wiki/pracowa%C4%87"></div>
+      <div class="flex-card" data-pl="zmęczyć się" data-ru="устать" data-link="https://pl.wiktionary.org/wiki/zm%C4%99czy%C4%87"></div>
       <div class="flex-card" data-pl="działać" data-ru="работать (функционировать), действовать" data-variants="działam, działasz, działał" data-link="https://pl.wiktionary.org/wiki/dzia%C5%82a%C4%87"></div>
-      <div class="flex-card" data-pl="" data-ru="" data-variants="" data-link=""></div>
+      <div class="flex-card" data-pl="sprawdzać" data-ru="проверять" data-variants="sprawdzam" data-link="https://pl.wiktionary.org/wiki/sprawdza%C4%87"></div>
+      <div class="flex-card" data-pl="sprawdzić" data-ru="проверить" data-variants="sprawdzę" data-link="https://pl.wiktionary.org/wiki/sprawdzi%C4%87"></div>
       <div class="flex-card" data-pl="załatwiać / załatwić" data-ru="решать / решить" ></div>
       <div class="flex-card" data-pl="zajmować (się)" data-ru="занимать(-ся)" data-variants="zajmuję, zajmujesz, zajmował" data-link="https://pl.wiktionary.org/wiki/zajmowa%C4%87"></div>
       <div class="flex-card" data-pl="wykonywać / wykonać" data-ru="выполнять / выполнить" ></div>
       <div class="flex-card" data-pl="próbować" data-ru="пробовать, пытаться" data-variants="spróbuję, spróbujesz, spróbował" data-link="https://pl.wiktionary.org/wiki/spr%C3%B3bowa%C4%87"></div>
       <div class="flex-card" data-pl="spróbować" data-ru="попробовать, попытаться" data-variants="próbuję, próbujesz, próbował" data-link="https://pl.wiktionary.org/wiki/pr%C3%B3bowa%C4%87"></div>
+      <div class="flex-card" data-pl="liczyć (na czegoś)" data-ru="считать (кол-во)" data-variants="liczę" data-link="https://pl.wiktionary.org/wiki/liczy%C4%87"></div>
       <div class="flex-card" data-pl="zmienić" data-ru="изменить" data-variants="zmienię, zmienisz, zmienił" data-link="https://pl.wiktionary.org/wiki/zmieni%C4%87"></div>
       <div class="flex-card" data-pl="spędzać" data-ru="проводить (время)" data-variants="spędzam, spędzasz, spędzał" data-link="https://pl.wiktionary.org/wiki/gra%C4%87"></div>
       <div class="flex-card" data-pl="grać" data-ru="играть" data-variants="gram, grasz, grał" data-link="https://pl.wiktionary.org/wiki/gra%C4%87"></div>
       <div class="flex-card" data-pl="pukać" data-ru="стучать" data-variants="pukam, pukasz, pukał" data-link="https://pl.wiktionary.org/wiki/puka%C4%87"></div>
     </div>
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="żyć" data-ru="жить (существовать)" data-variants="żyję, żyjesz, żył" data-link="https://pl.wiktionary.org/wiki/%C5%BCy%C4%87"></div>
       <div class="flex-card" data-pl="mieszkać" data-ru="жить (проживать)" data-variants="mieszkam, mieszkasz, mieszkał" data-link="https://pl.wiktionary.org/wiki/mieszka%C4%87"></div>
       <div class="flex-card" data-pl="jeść" data-ru="есть, кушать" data-variants="jem, jesz, jadł" data-link="https://pl.wiktionary.org/wiki/je%C5%9B%C4%87"></div>
       <div class="flex-card" data-pl="pić" data-ru="пить" data-variants="piję, pijesz, pił" data-link="https://pl.wiktionary.org/wiki/pi%C4%87"></div>
+      <div class="flex-card" data-pl="myć" data-ru="мыть" data-variants="myję" data-link="https://pl.wiktionary.org/wiki/my%C4%87"></div>
     </div>
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="ulżyć" data-ru="облегчить" ></div>
       <div class="flex-card" data-pl="ulżyło mi" data-ru="почувствовать облегчение"></div>
       <div class="flex-card" data-pl="uczestniczyć / brać udział" data-ru="участвовать / принимать участие (несов. форма)" data-link="https://pl.wiktionary.org/wiki/uczestniczy%C4%87"></div>
@@ -1205,10 +1257,9 @@ global_js: polski
       <div class="flex-card" data-pl="pozwalać / pozwolić (na coś)" data-ru="разрешать, разрешить"></div>
       <div class="flex-card" data-pl="zezwalać" data-ru="разрешать, позволять" data-variants="zezwalam, zezwalasz, zezwalał" data-link="https://pl.wiktionary.org/wiki/zezwala%C4%87"></div>
       <div class="flex-card" data-pl="zezwolić" data-ru="разрешить, позволить" data-variants="zezwolę, zezwolisz, zezwolił" data-link="https://pl.wiktionary.org/wiki/zezwoli%C4%87"></div>
-      <div class="flex-card" data-pl="" data-ru="" data-variants="" data-link=""></div>
     </div>
 
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="pomóc" data-ru="помочь" data-variants="pomogę, pomożesz, pomógł" data-link="https://pl.wiktionary.org/wiki/pomaga%C4%87"></div>
       <div class="flex-card" data-pl="pomagać" data-ru="помогать" data-variants="pomagam, pomagasz, pomagał" data-link="https://pl.wiktionary.org/wiki/pomaga%C4%87"></div>
       <div class="flex-card" data-pl="dbać / zadbać" data-ru="заботиться / позаботиться" data-variants="dbam, dbasz, dbał" data-link="https://pl.wiktionary.org/wiki/dba%C4%87"></div>
@@ -1229,7 +1280,7 @@ global_js: polski
       <div class="flex-card" data-pl="znaleźć" data-ru="найти" data-variants="znajdę, znajdziesz, znalazł" data-link="https://pl.wiktionary.org/wiki/znale%C5%BA%C4%87"></div>
     </div>
 
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="brać" data-ru="брать" data-variants="biorę, bierzesz, brał" data-link="https://pl.wiktionary.org/wiki/bra%C4%87"></div>
       <div class="flex-card" data-pl="wziąć" data-ru="взять" data-variants="wezmę, weźmiesz, wziął" data-link="https://pl.wiktionary.org/wiki/wzi%C4%85%C4%87"></div>
       <div class="flex-card" data-pl="zdobyć" data-ru="взять" data-variants="wezmę, weźmiesz, wziął" data-link="https://pl.wiktionary.org/wiki/zdoby%C4%87"></div>
@@ -1242,34 +1293,39 @@ global_js: polski
       <div class="flex-card" data-pl="dołączać / dołączyć" data-ru="присоединяться / присоединиться"></div>
       <div class="flex-card" data-pl="wyjmować" data-ru="вынимать, доставать" data-variants="wyjmuję, wyjmujesz, wyjmował" data-link="https://pl.wiktionary.org/wiki/wyjmowa%C4%87"></div>
       <div class="flex-card" data-pl="wyciągnąć" data-ru="вытянуть" data-variants="wyciągnę, wyciągniesz, wyciągnął" data-link="https://pl.wiktionary.org/wiki/wyci%C4%85gn%C4%85%C4%87"></div>
+      <div class="flex-card" data-pl="proponować" data-ru="предлагать" data-variants="proponuję, proponujesz, proponował" data-link="https://pl.wiktionary.org/wiki/proponowa%C4%87"></div>
+      <div class="flex-card" data-pl="zaproponować" data-ru="предложить" data-variants="zaproponuję, zaproponujesz, zaproponował" data-link="https://pl.wiktionary.org/wiki/zaproponowa%C4%87"></div>
       <div class="flex-card" data-pl="dać" data-ru="дать" data-variants="dam, dasz, dał" data-link="https://pl.wiktionary.org/wiki/da%C4%87"></div>
       <div class="flex-card" data-pl="dawać" data-ru="давать" data-variants="daję, dajesz, dawał" data-link="https://pl.wiktionary.org/wiki/dawa%C4%87"></div>
       <div class="flex-card" data-pl="dodawać" data-ru="добавлять" data-variants="dodaję, dodajesz, dodawał" data-link="https://pl.wiktionary.org/wiki/dodawa%C4%87"></div>
+      <div class="flex-card" data-pl="tracić" data-ru="терять" data-variants="tracę" data-link="https://pl.wiktionary.org/wiki/traci%C4%87"></div>
+      <div class="flex-card" data-pl="straсić" data-ru="потерять" data-variants="stracę" data-link="https://pl.wiktionary.org/wiki/straci%C4%87"></div>
       <div class="flex-card" data-pl="zwrócić" data-ru="вернуть, возвратить" data-variants="zwrócę, zwrócisz, zwrócił" data-link="https://pl.wiktionary.org/wiki/zwr%C3%B3ci%C4%87"></div>
       <div class="flex-card" data-pl="zwracać" data-ru="возвращать" data-variants="zwracam, zwracasz, zwracał" data-link="https://pl.wiktionary.org/wiki/zwraca%C4%87"></div>
+      <div class="flex-card" data-pl="zbierać" data-ru="собирать" data-variants="zbieram" data-link="https://pl.wiktionary.org/wiki/zbiera%C4%87"></div>
+      <div class="flex-card" data-pl="zebrać" data-ru="собрать" data-variants="zbiorę" data-link="https://pl.wiktionary.org/wiki/zebra%C4%87"></div>
       <div class="flex-card" data-pl="zmieniać" data-ru="менять" data-variants="zmieniam, zmieniasz, zmieniał" data-link="https://pl.wiktionary.org/wiki/zmienia%C4%87"></div>
       <div class="flex-card" data-pl="zmienić" data-ru="изменить" data-variants="zmienię, zmienisz, zmienił" data-link="https://pl.wiktionary.org/wiki/zmieni%C4%87"></div>
-      <div class="flex-card" data-pl="" data-ru="" data-variants="" data-link=""></div>
     </div>
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="kłaść" data-ru="класть" data-variants="kładę, kładziesz, kładł" data-link="https://pl.wiktionary.org/wiki/k%C5%82a%C5%9B%C4%87"></div>
       <div class="flex-card" data-pl="położyć" data-ru="положить" data-variants="położę, położysz, położył" data-link="https://pl.wiktionary.org/wiki/po%C5%82o%C5%BCy%C4%87"></div>
       <div class="flex-card" data-pl="zostawiać" data-ru="оставлять" data-variants="zostawiam, zostawiasz, zostawiał" data-link="https://pl.wiktionary.org/wiki/zostawia%C4%87"></div>
       <div class="flex-card" data-pl="zostawić" data-ru="оставить" data-variants="zostawię, zostawisz, zostawił" data-link="https://pl.wiktionary.org/wiki/zostawi%C4%87"></div>
     </div>
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="otwierać" data-ru="открывать" data-variants="otwieram, otwierasz, otwierał" data-link="https://pl.wiktionary.org/wiki/otwiera%C4%87"></div>
       <div class="flex-card" data-pl="otworzyć" data-ru="открыть" data-variants="otworzę, otworzysz, otworzył" data-link="https://pl.wiktionary.org/wiki/otworzy%C4%87"></div>
       <div class="flex-card" data-pl="zamknąć" data-ru="закрыть" data-variants="zamknę, zamkniesz, zamknął" data-link="https://pl.wiktionary.org/wiki/zamkn%C4%85%C4%87"></div>
     </div>
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="nieść" data-ru="нести" data-variants="niosę, niesiesz, niósł" data-link="https://pl.wiktionary.org/wiki/nie%C5%9B%C4%87"></div>
       <div class="flex-card" data-pl="wieźć" data-ru="везти" data-variants="wiozę, wieziesz, wiózł" data-link="https://pl.wiktionary.org/wiki/wie%C5%BA%C4%87"></div>
       <div class="flex-card" data-pl="rzucać" data-ru="бросать, кидать" data-variants="rzucam, rzucasz, rzucał" data-link="https://pl.wiktionary.org/wiki/rzuca%C4%87"></div>
       <div class="flex-card" data-pl="rzucić" data-ru="бросить, кинуть" data-variants="rzucę, rzucisz, rzucił" data-link="https://pl.wiktionary.org/wiki/rzuci%C4%87"></div>
     </div>
 
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="kosztować" data-ru="стоить" data-variants="kosztuję, kosztujesz, kosztował" data-link="https://pl.wiktionary.org/wiki/kosztowa%C4%87"></div>
       <div class="flex-card" data-pl="kupować" data-ru="покупать" data-variants="kupuję, kupujesz, kupował" data-link="https://pl.wiktionary.org/wiki/kupowa%C4%87"></div>
       <div class="flex-card" data-pl="kupić" data-ru="купить" data-variants="kupię, kupisz, kupił" data-link="https://pl.wiktionary.org/wiki/kupi%C4%87"></div>
@@ -1288,14 +1344,14 @@ global_js: polski
       <div class="flex-card" data-pl="oferować" data-ru="предлагать" data-variants="sprzedaję, oferujesz, oferuje" data-link="https://pl.wiktionary.org/wiki/oferowa%C4%87"></div>
       <div class="flex-card" data-pl="oferować" data-ru="предлагать" data-variants="sprzedaję, oferujesz, oferuje" data-link="https://pl.wiktionary.org/wiki/oferowa%C4%87"></div>
     </div>
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="wyslać" data-ru="послать, отправить" data-variants="wyślę, wyślesz, wysłał" data-link="https://pl.wiktionary.org/wiki/wys%C5%82a%C4%87"></div>
       <div class="flex-card" data-pl="wysyłać" data-ru="посылать, отправлять" data-variants="wysyłam, wysyłasz, wysyłał" data-link="https://pl.wiktionary.org/wiki/wysy%C5%82a%C4%87"></div>
       <div class="flex-card" data-pl="dostać / dostawać" data-ru="получить / получать" data-variants="dostanę, dostaniesz, dostał" data-link="https://pl.wiktionary.org/wiki/dosta%C4%87"></div>
       <div class="flex-card" data-pl="otrzymać / otrzymywać" data-ru="получить / получать" data-variants="otrzymuję, otrzymujesz, otrzymywał" data-link="https://pl.wiktionary.org/wiki/otrzymywa%C4%87"></div>
       <div class="flex-card" data-pl="zdobyć / zdobywać" data-ru="добиться / добиваться" data-variants="zdobywam, zdobywasz, zdobywał" data-link="https://pl.wiktionary.org/wiki/zdobywa%C4%87#zdobywa%C4%87_(j%C4%99zyk_polski)"></div>
     </div>
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="odbierać" data-ru="отбирать, отнимать"  data-variants="odbieram, odbierasz, odbierał" data-link="https://pl.wiktionary.org/wiki/odbiera%C4%87"></div>
       <div class="flex-card" data-pl="zabierać" data-ru="забирать"    data-variants="zabieram, zabierasz, zabierał" data-link="https://pl.wiktionary.org/wiki/zabiera%C4%87"></div>
     </div>
@@ -1322,17 +1378,13 @@ global_js: polski
       <div class="flex-card" data-pl="krzyczeć" data-ru="кричать" data-variants="krzyczę, krzyczysz, krzyczał" data-link="https://pl.wiktionary.org/wiki/krzycze%C4%87"></div>
       <div class="flex-card" data-pl="słyszeć" data-ru="слышать" data-variants="słyszę, słyszysz, słyszał" data-link="https://pl.wiktionary.org/wiki/s%C5%82ysze%C4%87"></div>
       <div class="flex-card" data-pl="słuchać" data-ru="слушать" data-variants="słucham, słuchasz, słuchał" data-link="https://pl.wiktionary.org/wiki/s%C5%82ucha%C4%87"></div>
+      <div class="flex-card" data-pl="słuchać musyki" data-ru="слушать музыку"></div>
       <div class="flex-card" data-pl="kłamać" data-ru="врать, соврать" data-variants="kłamię, kłamiesz, kłamał" data-link="https://pl.wiktionary.org/wiki/k%C5%82ama%C4%87"></div>
       <div class="flex-card" data-pl="obiecać" data-ru="обещать" data-variants="obiecam, obiecasz, obiecał" data-link="https://pl.wiktionary.org/wiki/obieca%C4%87"></div>
+      <div class="flex-card" data-pl="żartować" data-ru="шутить" data-variants="żartuję" data-link="https://pl.wiktionary.org/wiki/%C5%BCartowa%C4%87"></div>
     </div>
 
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
-      <div class='col'></div>
-      <div class='col'></div>
-      <div class="flex-card" data-pl="słuchać musyki" data-ru="слушать музыку"></div>
-    </div>
-
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="tłumaczyć" data-ru="объяснять, переводить" data-variants="tłumaczę, tłumaczysz, tłumaczył" data-link="https://pl.wiktionary.org/wiki/t%C5%82umaczy%C4%87"></div>
       <div class="flex-card" data-pl="drukować / wydrukować" data-ru="печатать, расчечатать" data-variants="drukuję, drukujesz, drukował" data-link="https://pl.wiktionary.org/wiki/drukowa%C4%87"></div>
       <div class="flex-card" data-pl="zapisać / zapisywać" data-ru="записать, записывать" data-variants="zapiszę, zapiszesz, zapisał" data-link="https://pl.wiktionary.org/wiki/zapisa%C4%87"></div>
@@ -1342,12 +1394,17 @@ global_js: polski
     <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="znać" data-ru="знать (кого-то, язык)" data-variants="znam, znasz, znał" data-link="https://pl.wiktionary.org/wiki/zna%C4%87"></div>
       <div class="flex-card" data-pl="wiedzieć" data-ru="знать (о чём-то)" data-variants="wiem, wiesz, wiedział" data-link="https://pl.wiktionary.org/wiki/wie%C5%BA%C4%87"></div>
+      <div class="flex-card" data-pl="mieć zainteresowanie" data-ru="интересоваться"></div>
       <div class="flex-card" data-pl="dowiadywać się / dowiedzieć się" data-ru="узнавать / узнать"></div>
       <div class="flex-card" data-pl="pamiętać" data-ru="помнить" data-variants="pamiętam, pamiętasz, pamiętał" data-link="https://pl.wiktionary.org/wiki/rzuca%C4%87"></div>
       <div class="flex-card" data-pl="zapamiętać" data-ru="запомнить" data-variants="zapamiętam, zapamiętasz, zapamiętał" data-link="https://pl.wiktionary.org/wiki/rzuci%C4%87"></div>
       <div class="flex-card" data-pl="zapamiętywać" data-ru="запоминать" data-variants="zapamiętuję, zapamiętujesz, zapamiętywał" data-link="https://pl.wiktionary.org/wiki/zapami%C4%99tywa%C4%87"></div>
       <div class="flex-card" data-pl="zapomnieć" data-ru="забыть" data-variants="zapomnę, zapomnisz, zapomniał" data-link="https://pl.wiktionary.org/wiki/zapomnie%C4%87"></div>
       <div class="flex-card" data-pl="zapominać" data-ru="забывать" data-variants="zapominam, zapominasz, zapominał" data-link="https://pl.wiktionary.org/wiki/zapomina%C4%87"></div>
+      <div class="flex-card" data-pl="uczyć się" data-ru="учить, изучать" data-variants="uczę" data-link="https://pl.wiktionary.org/wiki/uczy%C4%87"></div>
+      <div class="flex-card" data-pl="uczyć" data-ru="учить, преподавать" data-variants="uczę" data-link="https://pl.wiktionary.org/wiki/uczy%C4%87"></div>
+      <div class="flex-card" data-pl="studiować" data-ru="учиться (в вузе)" data-variants="studiuję" data-link="https://pl.wiktionary.org/wiki/studiowa%C4%87"></div>
+      <div class="flex-card" data-pl="" data-ru="" data-variants="" data-link=""></div>
     </div>
 
     <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
@@ -1380,10 +1437,15 @@ global_js: polski
 
       <div class="flex-card" data-pl="leżeć" data-ru="лежать" data-variants="leżę, leżysz, łeżał" data-link="https://pl.wiktionary.org/wiki/le%C5%BCe%C4%87"></div>
       <div class="flex-card" data-pl="położyć się" data-ru="лечь спать" data-variants="położę się, położysz się, położył się" data-link="https://pl.wiktionary.org/wiki/po%C5%82o%C5%BCy%C4%87"></div>
+      <div class="flex-card" data-pl="spać" data-ru="спать" data-variants="śpię" data-link="https://pl.wiktionary.org/wiki/spa%C4%87"></div>
+      <div class="flex-card" data-pl="obudzić się" data-ru="проснуться" data-variants="obudzę" data-link="https://pl.wiktionary.org/wiki/obudzi%C4%87"></div>
+      <div class="flex-card" data-pl="padać" data-ru="падать" data-variants="padam" data-link="https://pl.wiktionary.org/wiki/pada%C4%87"></div>
+      <div class="flex-card" data-pl="spaść" data-ru="упасть" data-variants="spadnę" data-link="https://pl.wiktionary.org/wiki/spa%C5%9B%C4%87"></div>
 
       <div class="flex-card" data-pl="prowadzić" data-ru="вести" data-variants="prowadzę, prowadzisz, prowadził" data-link="https://pl.wiktionary.org/wiki/prowadzi%C4%87"></div>
       <div class="flex-card" data-pl="prowadzić samochód" data-ru="вести машину" ></div>
       <div class="flex-card" data-pl="skręcać" data-ru="поворачивать"  data-variants="skręcam, skręcasz, skręcał" data-link="https://pl.wiktionary.org/wiki/skr%C4%99ca%C4%87"></div>
+      <div class="flex-card" data-pl="podróżować" data-ru="путешествовать"  data-variants="podróżuję" data-link="https://pl.wiktionary.org/wiki/podr%C3%B3%C5%BCowa%C4%87"></div>
 
 
     </div>
@@ -1395,7 +1457,7 @@ global_js: polski
       <div class="flex-card" data-pl="wyświetlać" data-ru="показывать, выяснять" data-variants="wyświetlam, wyświetlasz, wyświetlał" data-link="https://pl.wiktionary.org/wiki/wy%C5%9Bwietla%C4%87"></div>
     </div>
 
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="widzieć" data-ru="видеть" data-variants="widzę, widzisz, widział" data-link="https://pl.wiktionary.org/wiki/widzie%C4%87"></div>
       <div class="flex-card" data-pl="zobaczyć" data-ru="увидеть" data-variants="zobaczę, zobaczysz, zobaczył" data-link="https://pl.wiktionary.org/wiki/zobaczy%C4%87"></div>
       <div class="flex-card" data-pl="patrzeć" data-ru="смотреть" data-variants="patrzę, patrzysz, patrzył" data-link="https://pl.wiktionary.org/wiki/patrze%C4%87"></div>
@@ -1417,9 +1479,12 @@ global_js: polski
       <div class="flex-card" data-pl="martwić się" data-ru="волноваться, беспокоиться" data-variants="martwię, martwisz, martwił" data-link="https://pl.wiktionary.org/wiki/martwi%C4%87"></div>
       <div class="flex-card" data-pl="denerwować się" data-ru="нервничать, раздражаться" data-variants="denerwuję, denerwujesz, denerwował" data-link="https://pl.wiktionary.org/wiki/denerwowa%C4%87"></div>
       <div class="flex-card" data-pl="bać się" data-ru="бояться" data-variants="boję, boisz, bał" data-link="https://pl.wiktionary.org/wiki/ba%C4%87_si%C4%99"></div>
+      <div class="flex-card" data-pl="być pewnym" data-ru="быть уверенным"></div>
+      <div class="flex-card" data-pl="być zaskoczonym" data-ru="быть удивлённым"></div>
+      <div class="flex-card" data-pl="mieć rację" data-ru="быть правым"></div>
     </div>
 
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="сzuć" data-ru="чувствовать" data-variants="czuję, czujesz, czuł" data-link="https://pl.wiktionary.org/wiki/czu%C4%87"></div>
       <div class="flex-card" data-pl="kochać" data-ru="любить (человека)" data-variants="kocham, kochasz, kochał" data-link="https://pl.wiktionary.org/wiki/kocha%C4%87"></div>
       <div class="flex-card" data-pl="zakochać się w kimś"   data-ru="влюбиться в кого-то"></div>
@@ -1427,15 +1492,21 @@ global_js: polski
       <div class="flex-card" data-pl="wierzyć" data-ru="верить" data-variants="wierzę, wierzysz, wierzył" data-link="https://pl.wiktionary.org/wiki/wierzy%C4%87"></div>
       <div class="flex-card" data-pl="mieć nadzieję" data-ru="надеяться"></div>
       <div class="flex-card" data-pl="liczyć" data-ru="считать, рассчитывать, надеяться" data-variants="liczę, liczysz, liczył" data-link="https://pl.wiktionary.org/wiki/liczy%C4%87"></div>
+      <div class="flex-card" data-pl="wydawać się" data-ru="казаться" data-variants="wydaję" data-link="https://pl.wiktionary.org/wiki/wydawa%C4%87"></div>
     </div>
 
-    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-1 flex-cards">
+    <div class="row row-cols-3 row-cols-xl-5 g-2 g-lg-4 mt-5 flex-cards">
       <div class="flex-card" data-pl="cieszyć się" data-ru="радоваться" data-variants="cieszę, cieszysz, cieszył" data-link="https://pl.wiktionary.org/wiki/cieszy%C4%87"></div>
+      <div class="flex-card" data-pl="śmiać się" data-ru="смеяться" data-variants="śmieję" data-link="https://pl.wiktionary.org/wiki/%C5%9Bmia%C4%87_si%C4%99"></div>
+      <div class="flex-card" data-pl="być zadowolonym" data-ru="быть довольным"></div>
       <div class="flex-card" data-pl="płakać" data-ru="плакать" data-variants="płaczę, płaczesz, płakał" data-link="https://pl.wiktionary.org/wiki/p%C5%82aka%C4%87"></div>
+      <div class="flex-card" data-pl="przywyknąć do czegoś" data-ru="привыкнуть к чему-то" data-link="https://pl.wiktionary.org/wiki/przywykn%C4%85%C4%87"></div>
+      <div class="flex-card" data-pl="przyzwyczaić się" data-ru="привыкнуть" data-link="hhttps://pl.wiktionary.org/wiki/przyzwyczai%C4%87#przyzwyczai%C4%87_si%C4%99_(j%C4%99zyk_polski)"></div>
       <div class="flex-card" data-pl="podobać się" data-ru="нравиться" data-variants="podobam, podobasz, podobał" data-link="https://pl.wiktionary.org/wiki/podoba%C4%87_si%C4%99"></div>
       <div class="flex-card" data-pl="podoba mi się" data-ru="мне нравится"></div>
       <div class="flex-card" data-pl="żałować" data-ru="жалеть, сожалеть" data-variants="żałuję, żałujesz, żałował" data-link="https://pl.wiktionary.org/wiki/%C5%BCa%C5%82owa%C4%87"></div>
       <div class="flex-card" data-pl="ubolewać" data-ru="сожалеть" data-link="https://pl.wiktionary.org/wiki/ubolewa%C4%87"></div>
+      <div class="flex-card" data-pl="szanować" data-ru="уважать" data-variants="szanuję, szanujesz, szanował" data-link="https://pl.wiktionary.org/wiki/szanowa%C4%87"></div>
     </div>
 
     <h2 id="words_rzeczowniki">Rzeczowniki</h2>
