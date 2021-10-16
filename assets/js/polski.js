@@ -1,6 +1,6 @@
 (function() {
   const baseLang = urlParams.has('lang') ? urlParams.get('lang') : 'pl';
-  const hideTranslation = urlParams.has('hide-translation') ? urlParams.get('hide-translation') : 'false';
+  const hideTranslation = urlParams.has('hide-translation') ? urlParams.get('hide-translation') === 'true' : false;
   const $cards = $(".flex-card");
   $cards.each((index, obj) => {
     const $obj = $(obj);
